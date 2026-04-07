@@ -1,0 +1,10 @@
+/work/calib_nlu/calib_0000_input_ids.npy /work/calib_nlu/calib_0000_attention_mask.npy /work/calib_nlu/calib_0000_token_type_ids.npy
+/work/calib_nlu/calib_0001_input_ids.npy /work/calib_nlu/calib_0001_attention_mask.npy /work/calib_nlu/calib_0001_token_type_ids.npy
+/work/calib_nlu/calib_0002_input_ids.npy /work/calib_nlu/calib_0002_attention_mask.npy /work/calib_nlu/calib_0002_token_type_ids.npy
+/work/calib_nlu/calib_0003_input_ids.npy /work/calib_nlu/calib_0003_attention_mask.npy /work/calib_nlu/calib_0003_token_type_ids.npy
+/work/calib_nlu/calib_0004_input_ids.npy /work/calib_nlu/calib_0004_attention_mask.npy /work/calib_nlu/calib_0004_token_type_ids.npy
+/work/calib_nlu/calib_0005_input_ids.npy /work/calib_nlu/calib_0005_attention_mask.npy /work/calib_nlu/calib_0005_token_type_ids.npy
+/work/calib_nlu/calib_0006_input_ids.npy /work/calib_nlu/calib_0006_attention_mask.npy /work/calib_nlu/calib_0006_token_type_ids.npy
+/work/calib_nlu/calib_0007_input_ids.npy /work/calib_nlu/calib_0007_attention_mask.npy /work/calib_nlu/calib_0007_token_type_ids.npy
+/work/calib_nlu/calib_0008_input_ids.npy /work/calib_nlu/calib_0008_attention_mask.npy /work/calib_nlu/calib_0008_token_type_ids.npy
+/work/calib_nlu/calib_0009_input_ids.npy /work/calib_nlu/calib_0009_attention_mask.npy /work/calib_nlu/calib_0009_token_type_ids.npy

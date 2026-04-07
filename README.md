@@ -199,3 +199,46 @@ wav2vec2 Transformer 양자화 실패와 동일 원인: **Transformer self-atten
 - **CPU ONNX Runtime 사용** — INT8 106MB, WSL 12ms, T527 예상 50-100ms
 - Conformer STT가 NPU에서 되는 이유: CNN이 Attention 양자화 에러를 보정 (Macaron 구조)
 - 순수 Transformer(BERT)는 T527 NPU에서 양자화 실패
+
+---
+
+## NPU 양자화 전수 조사 결과
+
+MiniLM-L6 (6 layer, 22.7M params) 기준. pooler 포함/제거, 양자화 방식 전부 시도.
+
+| # | 모델 | 양자화 | NB | NPU 추론 | cos_sim |
+|---|------|--------|-----|---------|---------|
+| 1 | ko-sbert (12L) | uint8 AA KL | 87MB | 89ms | 0.33 |
+| 2 | MiniLM-L6 pooler (6L) | uint8 AA KL | 21MB | 22ms | -0.06 |
+| 3 | multi-MiniLM-L12 (12L) | uint8 AA KL | 110MB | 44ms | 0.07 |
+| 4 | MiniLM-L6 pooler (6L) | **INT16 DFP** | 40MB | 41ms | **-0.07** |
+| 5 | MiniLM-L6 pooler (6L) | BF16 | - | - | 변환 실패 |
+| 6 | MiniLM-L6 meanpool (6L) | uint8 AA KL | 21MB | 22ms | NaN (출력 0) |
+| 7 | MiniLM-L6 meanpool (6L) | int8 AA KL | 21MB | 22ms | 0.04 |
+| 8 | MiniLM-L6 meanpool (6L) | uint8 AA MA | 21MB | 22ms | NaN |
+| 9 | MiniLM-L6 meanpool (6L) | INT16 DFP | 40MB | 41ms | NaN |
+
+**9가지 조합 전부 실패.** cos_sim 최대 0.33 (의미 없음).
+
+### 시도한 변수
+
+- **모델**: ko-sbert 12L, MiniLM-L6 6L, multi-MiniLM 12L
+- **Layer 수**: 6, 12
+- **Pooler**: 포함(Tanh), 제거(mean pooling)
+- **양자화 방식**: asymmetric_affine, dynamic_fixed_point
+- **비트**: uint8, int8, int16, bf16
+- **알고리즘**: kl_divergence, moving_average
+
+### 결론
+
+**T527 Vivante NPU에서 BERT/Transformer 계열은 어떤 양자화로도 동작하지 않음.**
+
+원인: Self-Attention의 QKV matmul → softmax → weighted sum 과정에서 양자화 에러가 누적.
+Layer 수를 줄여도(12→6), pooler를 제거해도, INT16으로 올려도 해결 안 됨.
+
+Conformer STT가 되는 이유: Conv1D가 Attention 에러를 보정하는 "방파제" 역할.
+순수 Transformer에는 이 보정 메커니즘이 없음.
+
+### 확정 방식
+
+**CPU ONNX Runtime** — ko-sbert-sts INT8 106MB, 12ms/query (WSL), T527 예상 50-100ms

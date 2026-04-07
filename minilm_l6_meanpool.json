@@ -1,0 +1,4068 @@
+{
+    "MetaData": {
+        "Name": "main_graph",
+        "AcuityVersion": "6",
+        "Platform": "tensorflow",
+        "Org_Platform": "onnx"
+    },
+    "Layers": {
+        "attach_Div_/Div/out0_0": {
+            "name": "attach_Div_/Div/out0",
+            "op": "output",
+            "parameters": {},
+            "inputs": [
+                "@Div_/Div_1:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Div_/Div_1": {
+            "name": "Div_/Div",
+            "op": "real_div",
+            "inputs": [
+                "@ReduceSum_/ReduceSum_2:out0",
+                "@Clip_/Clip_3:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "ReduceSum_/ReduceSum_2": {
+            "name": "ReduceSum_/ReduceSum",
+            "op": "reducesum",
+            "parameters": {
+                "axis_list": [
+                    2
+                ],
+                "keep_dims": false
+            },
+            "inputs": [
+                "@Mul_/Mul_4:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Clip_/Clip_3": {
+            "name": "Clip_/Clip",
+            "op": "clipbyvalue",
+            "parameters": {
+                "clip_value_min": 1.0,
+                "clip_value_max": Infinity
+            },
+            "inputs": [
+                "@ReduceSum_/ReduceSum_1_5:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/Mul_4": {
+            "name": "Mul_/Mul",
+            "op": "multiply",
+            "parameters": {
+                "axis": 2,
+                "bias": true
+            },
+            "inputs": [
+                "@Mul_/Mul_4_acuity_mark_perm_291:out0",
+                "@Cast_/Cast_3_7:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "ReduceSum_/ReduceSum_1_5": {
+            "name": "ReduceSum_/ReduceSum_1",
+            "op": "reducesum",
+            "parameters": {
+                "axis_list": [
+                    2
+                ],
+                "keep_dims": false
+            },
+            "inputs": [
+                "@Cast_/Cast_3_7:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.5/output/LayerNorm/Add_1_6": {
+            "name": "Add_/bert/encoder/layer.5/output/LayerNorm/Add_1",
+            "op": "layernormalize",
+            "parameters": {
+                "axis_list": [
+                    -1
+                ],
+                "eps": 9.999999960041972e-13
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.5/output/Add_9:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Cast_/Cast_3_7": {
+            "name": "Cast_/Cast_3",
+            "op": "cast",
+            "parameters": {
+                "in_data_type": "float32",
+                "out_data_type": "float32"
+            },
+            "inputs": [
+                "@Cast_/Cast_3_7_acuity_mark_perm_292:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Unsqueeze_/Unsqueeze_8": {
+            "name": "Unsqueeze_/Unsqueeze",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    64,
+                    1
+                ]
+            },
+            "inputs": [
+                "@Cast_/Cast_1_11:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.5/output/Add_9": {
+            "name": "Add_/bert/encoder/layer.5/output/Add",
+            "op": "add",
+            "inputs": [
+                "@reshape_295:out0",
+                "@Add_/bert/encoder/layer.5/attention/output/LayerNorm/Add_1_10:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.5/attention/output/LayerNorm/Add_1_10": {
+            "name": "Add_/bert/encoder/layer.5/attention/output/LayerNorm/Add_1",
+            "op": "layernormalize",
+            "parameters": {
+                "axis_list": [
+                    -1
+                ],
+                "eps": 9.999999960041972e-13
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.5/attention/output/Add_13:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Cast_/Cast_1_11": {
+            "name": "Cast_/Cast_1",
+            "op": "cast",
+            "parameters": {
+                "in_data_type": "int64",
+                "out_data_type": "int64"
+            },
+            "inputs": [
+                "@Slice_/Slice_1_15:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.5/attention/output/Add_13": {
+            "name": "Add_/bert/encoder/layer.5/attention/output/Add",
+            "op": "add",
+            "inputs": [
+                "@reshape_298:out0",
+                "@Add_/bert/encoder/layer.4/output/LayerNorm/Add_1_14:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.4/output/LayerNorm/Add_1_14": {
+            "name": "Add_/bert/encoder/layer.4/output/LayerNorm/Add_1",
+            "op": "layernormalize",
+            "parameters": {
+                "axis_list": [
+                    -1
+                ],
+                "eps": 9.999999960041972e-13
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.4/output/Add_19:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Slice_/Slice_1_15": {
+            "name": "Slice_/Slice_1",
+            "op": "slice",
+            "parameters": {
+                "begin": [
+                    0,
+                    64
+                ],
+                "size": [
+                    1,
+                    64
+                ]
+            },
+            "inputs": [
+                "@combined_input_290:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.4/output/Add_19": {
+            "name": "Add_/bert/encoder/layer.4/output/Add",
+            "op": "add",
+            "inputs": [
+                "@reshape_301:out0",
+                "@Add_/bert/encoder/layer.4/attention/output/LayerNorm/Add_1_20:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.4/attention/output/LayerNorm/Add_1_20": {
+            "name": "Add_/bert/encoder/layer.4/attention/output/LayerNorm/Add_1",
+            "op": "layernormalize",
+            "parameters": {
+                "axis_list": [
+                    -1
+                ],
+                "eps": 9.999999960041972e-13
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.4/attention/output/Add_21:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.4/attention/output/Add_21": {
+            "name": "Add_/bert/encoder/layer.4/attention/output/Add",
+            "op": "add",
+            "inputs": [
+                "@reshape_307:out0",
+                "@Add_/bert/encoder/layer.3/output/LayerNorm/Add_1_29:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/bert/encoder/layer.5/intermediate/intermediate_act_fn/Mul_1_22": {
+            "name": "Mul_/bert/encoder/layer.5/intermediate/intermediate_act_fn/Mul_1",
+            "op": "gelu",
+            "parameters": {
+                "approximate": false
+            },
+            "inputs": [
+                "@reshape_304:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.3/output/LayerNorm/Add_1_29": {
+            "name": "Add_/bert/encoder/layer.3/output/LayerNorm/Add_1",
+            "op": "layernormalize",
+            "parameters": {
+                "axis_list": [
+                    -1
+                ],
+                "eps": 9.999999960041972e-13
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.3/output/Add_39:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/bert/encoder/layer.5/attention/self/Reshape_3_32": {
+            "name": "Reshape_/bert/encoder/layer.5/attention/self/Reshape_3",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Transpose_/bert/encoder/layer.5/attention/self/Transpose_3_44:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/bert/encoder/layer.4/intermediate/intermediate_act_fn/Mul_1_35": {
+            "name": "Mul_/bert/encoder/layer.4/intermediate/intermediate_act_fn/Mul_1",
+            "op": "gelu",
+            "parameters": {
+                "approximate": false
+            },
+            "inputs": [
+                "@reshape_310:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.3/output/Add_39": {
+            "name": "Add_/bert/encoder/layer.3/output/Add",
+            "op": "add",
+            "inputs": [
+                "@reshape_313:out0",
+                "@Add_/bert/encoder/layer.3/attention/output/LayerNorm/Add_1_40:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.3/attention/output/LayerNorm/Add_1_40": {
+            "name": "Add_/bert/encoder/layer.3/attention/output/LayerNorm/Add_1",
+            "op": "layernormalize",
+            "parameters": {
+                "axis_list": [
+                    -1
+                ],
+                "eps": 9.999999960041972e-13
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.3/attention/output/Add_42:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.3/attention/output/Add_42": {
+            "name": "Add_/bert/encoder/layer.3/attention/output/Add",
+            "op": "add",
+            "inputs": [
+                "@reshape_316:out0",
+                "@Add_/bert/encoder/layer.2/output/LayerNorm/Add_1_52:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/bert/encoder/layer.5/attention/self/Transpose_3_44": {
+            "name": "Transpose_/bert/encoder/layer.5/attention/self/Transpose_3",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1,
+                    3
+                ]
+            },
+            "inputs": [
+                "@MatMul_/bert/encoder/layer.5/attention/self/MatMul_1_53:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/bert/encoder/layer.4/attention/self/Reshape_3_47": {
+            "name": "Reshape_/bert/encoder/layer.4/attention/self/Reshape_3",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Transpose_/bert/encoder/layer.4/attention/self/Transpose_3_57:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.2/output/LayerNorm/Add_1_52": {
+            "name": "Add_/bert/encoder/layer.2/output/LayerNorm/Add_1",
+            "op": "layernormalize",
+            "parameters": {
+                "axis_list": [
+                    -1
+                ],
+                "eps": 9.999999960041972e-13
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.2/output/Add_63:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "MatMul_/bert/encoder/layer.5/attention/self/MatMul_1_53": {
+            "name": "MatMul_/bert/encoder/layer.5/attention/self/MatMul_1",
+            "op": "matmul",
+            "parameters": {
+                "transpose_a": false,
+                "transpose_b": false
+            },
+            "inputs": [
+                "@Softmax_/bert/encoder/layer.5/attention/self/Softmax_65:out0",
+                "@Transpose_/bert/encoder/layer.5/attention/self/Transpose_1_55:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/bert/encoder/layer.5/attention/self/Transpose_1_55": {
+            "name": "Transpose_/bert/encoder/layer.5/attention/self/Transpose_1",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1,
+                    3
+                ]
+            },
+            "inputs": [
+                "@Reshape_/bert/encoder/layer.5/attention/self/Reshape_2_66:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/bert/encoder/layer.4/attention/self/Transpose_3_57": {
+            "name": "Transpose_/bert/encoder/layer.4/attention/self/Transpose_3",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1,
+                    3
+                ]
+            },
+            "inputs": [
+                "@MatMul_/bert/encoder/layer.4/attention/self/MatMul_1_67:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/bert/encoder/layer.3/intermediate/intermediate_act_fn/Mul_1_59": {
+            "name": "Mul_/bert/encoder/layer.3/intermediate/intermediate_act_fn/Mul_1",
+            "op": "gelu",
+            "parameters": {
+                "approximate": false
+            },
+            "inputs": [
+                "@reshape_319:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.2/output/Add_63": {
+            "name": "Add_/bert/encoder/layer.2/output/Add",
+            "op": "add",
+            "inputs": [
+                "@reshape_322:out0",
+                "@Add_/bert/encoder/layer.2/attention/output/LayerNorm/Add_1_64:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.2/attention/output/LayerNorm/Add_1_64": {
+            "name": "Add_/bert/encoder/layer.2/attention/output/LayerNorm/Add_1",
+            "op": "layernormalize",
+            "parameters": {
+                "axis_list": [
+                    -1
+                ],
+                "eps": 9.999999960041972e-13
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.2/attention/output/Add_73:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Softmax_/bert/encoder/layer.5/attention/self/Softmax_65": {
+            "name": "Softmax_/bert/encoder/layer.5/attention/self/Softmax",
+            "op": "softmax",
+            "parameters": {
+                "sf_axis": -1,
+                "beta": 1.0
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.5/attention/self/Add_75:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/bert/encoder/layer.5/attention/self/Reshape_2_66": {
+            "name": "Reshape_/bert/encoder/layer.5/attention/self/Reshape_2",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    64,
+                    12,
+                    32
+                ]
+            },
+            "inputs": [
+                "@reshape_325:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "MatMul_/bert/encoder/layer.4/attention/self/MatMul_1_67": {
+            "name": "MatMul_/bert/encoder/layer.4/attention/self/MatMul_1",
+            "op": "matmul",
+            "parameters": {
+                "transpose_a": false,
+                "transpose_b": false
+            },
+            "inputs": [
+                "@Softmax_/bert/encoder/layer.4/attention/self/Softmax_77:out0",
+                "@Transpose_/bert/encoder/layer.4/attention/self/Transpose_1_78:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/bert/encoder/layer.3/attention/self/Reshape_3_70": {
+            "name": "Reshape_/bert/encoder/layer.3/attention/self/Reshape_3",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Transpose_/bert/encoder/layer.3/attention/self/Transpose_3_82:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.2/attention/output/Add_73": {
+            "name": "Add_/bert/encoder/layer.2/attention/output/Add",
+            "op": "add",
+            "inputs": [
+                "@reshape_328:out0",
+                "@Add_/bert/encoder/layer.1/output/LayerNorm/Add_1_74:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.1/output/LayerNorm/Add_1_74": {
+            "name": "Add_/bert/encoder/layer.1/output/LayerNorm/Add_1",
+            "op": "layernormalize",
+            "parameters": {
+                "axis_list": [
+                    -1
+                ],
+                "eps": 9.999999960041972e-13
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.1/output/Add_86:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.5/attention/self/Add_75": {
+            "name": "Add_/bert/encoder/layer.5/attention/self/Add",
+            "op": "add",
+            "inputs": [
+                "@MatMul_/bert/encoder/layer.5/attention/self/MatMul_88:out0",
+                "@Where_/bert/Where_1_89:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Softmax_/bert/encoder/layer.4/attention/self/Softmax_77": {
+            "name": "Softmax_/bert/encoder/layer.4/attention/self/Softmax",
+            "op": "softmax",
+            "parameters": {
+                "sf_axis": -1,
+                "beta": 1.0
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.4/attention/self/Add_92:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/bert/encoder/layer.4/attention/self/Transpose_1_78": {
+            "name": "Transpose_/bert/encoder/layer.4/attention/self/Transpose_1",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1,
+                    3
+                ]
+            },
+            "inputs": [
+                "@Reshape_/bert/encoder/layer.4/attention/self/Reshape_2_80:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/bert/encoder/layer.4/attention/self/Reshape_2_80": {
+            "name": "Reshape_/bert/encoder/layer.4/attention/self/Reshape_2",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    64,
+                    12,
+                    32
+                ]
+            },
+            "inputs": [
+                "@reshape_331:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/bert/encoder/layer.3/attention/self/Transpose_3_82": {
+            "name": "Transpose_/bert/encoder/layer.3/attention/self/Transpose_3",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1,
+                    3
+                ]
+            },
+            "inputs": [
+                "@MatMul_/bert/encoder/layer.3/attention/self/MatMul_1_94:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.1/output/Add_86": {
+            "name": "Add_/bert/encoder/layer.1/output/Add",
+            "op": "add",
+            "inputs": [
+                "@reshape_337:out0",
+                "@Add_/bert/encoder/layer.1/attention/output/LayerNorm/Add_1_87:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.1/attention/output/LayerNorm/Add_1_87": {
+            "name": "Add_/bert/encoder/layer.1/attention/output/LayerNorm/Add_1",
+            "op": "layernormalize",
+            "parameters": {
+                "axis_list": [
+                    -1
+                ],
+                "eps": 9.999999960041972e-13
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.1/attention/output/Add_100:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "MatMul_/bert/encoder/layer.5/attention/self/MatMul_88": {
+            "name": "MatMul_/bert/encoder/layer.5/attention/self/MatMul",
+            "op": "matmul",
+            "parameters": {
+                "transpose_a": false,
+                "transpose_b": false
+            },
+            "inputs": [
+                "@Mul_/bert/encoder/layer.5/attention/self/Mul_102:out0",
+                "@Mul_/bert/encoder/layer.5/attention/self/Mul_1_103:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Where_/bert/Where_1_89": {
+            "name": "Where_/bert/Where_1",
+            "op": "where",
+            "inputs": [
+                "@Cast_/bert/Cast_1_104:out0",
+                "@Initializer_/bert/Constant_6_output_0_105:out0",
+                "@Sub_/bert/Sub_106:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.4/attention/self/Add_92": {
+            "name": "Add_/bert/encoder/layer.4/attention/self/Add",
+            "op": "add",
+            "inputs": [
+                "@MatMul_/bert/encoder/layer.4/attention/self/MatMul_109:out0",
+                "@Where_/bert/Where_1_89:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "MatMul_/bert/encoder/layer.3/attention/self/MatMul_1_94": {
+            "name": "MatMul_/bert/encoder/layer.3/attention/self/MatMul_1",
+            "op": "matmul",
+            "parameters": {
+                "transpose_a": false,
+                "transpose_b": false
+            },
+            "inputs": [
+                "@Softmax_/bert/encoder/layer.3/attention/self/Softmax_113:out0",
+                "@Transpose_/bert/encoder/layer.3/attention/self/Transpose_1_114:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/bert/encoder/layer.2/intermediate/intermediate_act_fn/Mul_1_95": {
+            "name": "Mul_/bert/encoder/layer.2/intermediate/intermediate_act_fn/Mul_1",
+            "op": "gelu",
+            "parameters": {
+                "approximate": false
+            },
+            "inputs": [
+                "@reshape_334:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.1/attention/output/Add_100": {
+            "name": "Add_/bert/encoder/layer.1/attention/output/Add",
+            "op": "add",
+            "inputs": [
+                "@reshape_340:out0",
+                "@Add_/bert/encoder/layer.0/output/LayerNorm/Add_1_101:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.0/output/LayerNorm/Add_1_101": {
+            "name": "Add_/bert/encoder/layer.0/output/LayerNorm/Add_1",
+            "op": "layernormalize",
+            "parameters": {
+                "axis_list": [
+                    -1
+                ],
+                "eps": 9.999999960041972e-13
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.0/output/Add_122:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/bert/encoder/layer.5/attention/self/Mul_102": {
+            "name": "Mul_/bert/encoder/layer.5/attention/self/Mul",
+            "op": "multiply",
+            "parameters": {
+                "axis": 1,
+                "bias": true
+            },
+            "inputs": [
+                "@Transpose_/bert/encoder/layer.5/attention/self/Transpose_124:out0",
+                "@Initializer_/bert/encoder/layer.0/attention/self/Sqrt_1_output_0_125:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/bert/encoder/layer.5/attention/self/Mul_1_103": {
+            "name": "Mul_/bert/encoder/layer.5/attention/self/Mul_1",
+            "op": "multiply",
+            "parameters": {
+                "axis": 1,
+                "bias": true
+            },
+            "inputs": [
+                "@Transpose_/bert/encoder/layer.5/attention/self/Transpose_2_126:out0",
+                "@Initializer_/bert/encoder/layer.0/attention/self/Sqrt_1_output_0_125:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Cast_/bert/Cast_1_104": {
+            "name": "Cast_/bert/Cast_1",
+            "op": "cast",
+            "parameters": {
+                "in_data_type": "bool",
+                "out_data_type": "bool"
+            },
+            "inputs": [
+                "@Sub_/bert/Sub_106:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Initializer_/bert/Constant_6_output_0_105": {
+            "name": "Initializer_/bert/Constant_6_output_0",
+            "op": "variable",
+            "parameters": {
+                "shape": [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "is_scalar": false,
+                "type": "float32"
+            },
+            "inputs": [],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Sub_/bert/Sub_106": {
+            "name": "Sub_/bert/Sub",
+            "op": "subtract",
+            "inputs": [
+                "@Initializer_/bert/Constant_5_output_0_129:out0",
+                "@Cast_/bert/Cast_107:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Cast_/bert/Cast_107": {
+            "name": "Cast_/bert/Cast",
+            "op": "cast",
+            "parameters": {
+                "in_data_type": "float32",
+                "out_data_type": "float32"
+            },
+            "inputs": [
+                "@Expand_/bert/Expand_130:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "MatMul_/bert/encoder/layer.4/attention/self/MatMul_109": {
+            "name": "MatMul_/bert/encoder/layer.4/attention/self/MatMul",
+            "op": "matmul",
+            "parameters": {
+                "transpose_a": false,
+                "transpose_b": false
+            },
+            "inputs": [
+                "@Mul_/bert/encoder/layer.4/attention/self/Mul_131:out0",
+                "@Mul_/bert/encoder/layer.4/attention/self/Mul_1_110:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/bert/encoder/layer.4/attention/self/Mul_1_110": {
+            "name": "Mul_/bert/encoder/layer.4/attention/self/Mul_1",
+            "op": "multiply",
+            "parameters": {
+                "axis": 1,
+                "bias": true
+            },
+            "inputs": [
+                "@Transpose_/bert/encoder/layer.4/attention/self/Transpose_2_132:out0",
+                "@Initializer_/bert/encoder/layer.0/attention/self/Sqrt_1_output_0_125:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Softmax_/bert/encoder/layer.3/attention/self/Softmax_113": {
+            "name": "Softmax_/bert/encoder/layer.3/attention/self/Softmax",
+            "op": "softmax",
+            "parameters": {
+                "sf_axis": -1,
+                "beta": 1.0
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.3/attention/self/Add_136:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/bert/encoder/layer.3/attention/self/Transpose_1_114": {
+            "name": "Transpose_/bert/encoder/layer.3/attention/self/Transpose_1",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1,
+                    3
+                ]
+            },
+            "inputs": [
+                "@Reshape_/bert/encoder/layer.3/attention/self/Reshape_2_137:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/bert/encoder/layer.2/attention/self/Reshape_3_117": {
+            "name": "Reshape_/bert/encoder/layer.2/attention/self/Reshape_3",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Transpose_/bert/encoder/layer.2/attention/self/Transpose_3_141:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.0/output/Add_122": {
+            "name": "Add_/bert/encoder/layer.0/output/Add",
+            "op": "add",
+            "inputs": [
+                "@reshape_352:out0",
+                "@Add_/bert/encoder/layer.0/attention/output/LayerNorm/Add_1_123:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.0/attention/output/LayerNorm/Add_1_123": {
+            "name": "Add_/bert/encoder/layer.0/attention/output/LayerNorm/Add_1",
+            "op": "layernormalize",
+            "parameters": {
+                "axis_list": [
+                    -1
+                ],
+                "eps": 9.999999960041972e-13
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.0/attention/output/Add_147:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/bert/encoder/layer.5/attention/self/Transpose_124": {
+            "name": "Transpose_/bert/encoder/layer.5/attention/self/Transpose",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1,
+                    3
+                ]
+            },
+            "inputs": [
+                "@Reshape_/bert/encoder/layer.5/attention/self/Reshape_149:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Initializer_/bert/encoder/layer.0/attention/self/Sqrt_1_output_0_125": {
+            "name": "Initializer_/bert/encoder/layer.0/attention/self/Sqrt_1_output_0",
+            "op": "variable",
+            "parameters": {
+                "shape": [
+                    1
+                ],
+                "is_scalar": false,
+                "type": "float32"
+            },
+            "inputs": [],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/bert/encoder/layer.5/attention/self/Transpose_2_126": {
+            "name": "Transpose_/bert/encoder/layer.5/attention/self/Transpose_2",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    3,
+                    1
+                ]
+            },
+            "inputs": [
+                "@Reshape_/bert/encoder/layer.5/attention/self/Reshape_1_128:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/bert/encoder/layer.5/attention/self/Reshape_1_128": {
+            "name": "Reshape_/bert/encoder/layer.5/attention/self/Reshape_1",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    64,
+                    12,
+                    32
+                ]
+            },
+            "inputs": [
+                "@reshape_355:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Initializer_/bert/Constant_5_output_0_129": {
+            "name": "Initializer_/bert/Constant_5_output_0",
+            "op": "variable",
+            "parameters": {
+                "shape": [
+                    1,
+                    1,
+                    1,
+                    1
+                ],
+                "is_scalar": false,
+                "type": "float32"
+            },
+            "inputs": [],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Expand_/bert/Expand_130": {
+            "name": "Expand_/bert/Expand",
+            "op": "expand_broadcast",
+            "parameters": {
+                "shape": [
+                    1,
+                    1,
+                    64,
+                    64
+                ]
+            },
+            "inputs": [
+                "@Unsqueeze_/bert/Unsqueeze_1_151:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/bert/encoder/layer.4/attention/self/Mul_131": {
+            "name": "Mul_/bert/encoder/layer.4/attention/self/Mul",
+            "op": "multiply",
+            "parameters": {
+                "axis": 1,
+                "bias": true
+            },
+            "inputs": [
+                "@Transpose_/bert/encoder/layer.4/attention/self/Transpose_152:out0",
+                "@Initializer_/bert/encoder/layer.0/attention/self/Sqrt_1_output_0_125:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/bert/encoder/layer.4/attention/self/Transpose_2_132": {
+            "name": "Transpose_/bert/encoder/layer.4/attention/self/Transpose_2",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    3,
+                    1
+                ]
+            },
+            "inputs": [
+                "@Reshape_/bert/encoder/layer.4/attention/self/Reshape_1_133:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/bert/encoder/layer.4/attention/self/Reshape_1_133": {
+            "name": "Reshape_/bert/encoder/layer.4/attention/self/Reshape_1",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    64,
+                    12,
+                    32
+                ]
+            },
+            "inputs": [
+                "@reshape_343:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.3/attention/self/Add_136": {
+            "name": "Add_/bert/encoder/layer.3/attention/self/Add",
+            "op": "add",
+            "inputs": [
+                "@MatMul_/bert/encoder/layer.3/attention/self/MatMul_156:out0",
+                "@Where_/bert/Where_1_89:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/bert/encoder/layer.3/attention/self/Reshape_2_137": {
+            "name": "Reshape_/bert/encoder/layer.3/attention/self/Reshape_2",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    64,
+                    12,
+                    32
+                ]
+            },
+            "inputs": [
+                "@reshape_346:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/bert/encoder/layer.2/attention/self/Transpose_3_141": {
+            "name": "Transpose_/bert/encoder/layer.2/attention/self/Transpose_3",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1,
+                    3
+                ]
+            },
+            "inputs": [
+                "@MatMul_/bert/encoder/layer.2/attention/self/MatMul_1_160:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/bert/encoder/layer.1/intermediate/intermediate_act_fn/Mul_1_142": {
+            "name": "Mul_/bert/encoder/layer.1/intermediate/intermediate_act_fn/Mul_1",
+            "op": "gelu",
+            "parameters": {
+                "approximate": false
+            },
+            "inputs": [
+                "@reshape_349:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.0/attention/output/Add_147": {
+            "name": "Add_/bert/encoder/layer.0/attention/output/Add",
+            "op": "add",
+            "inputs": [
+                "@reshape_361:out0",
+                "@Add_/bert/embeddings/LayerNorm/Add_1_148:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/embeddings/LayerNorm/Add_1_148": {
+            "name": "Add_/bert/embeddings/LayerNorm/Add_1",
+            "op": "layernormalize",
+            "parameters": {
+                "axis_list": [
+                    -1
+                ],
+                "eps": 9.999999960041972e-13
+            },
+            "inputs": [
+                "@Add_/bert/embeddings/Add_1_168:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/bert/encoder/layer.5/attention/self/Reshape_149": {
+            "name": "Reshape_/bert/encoder/layer.5/attention/self/Reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    64,
+                    12,
+                    32
+                ]
+            },
+            "inputs": [
+                "@reshape_364:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Unsqueeze_/bert/Unsqueeze_1_151": {
+            "name": "Unsqueeze_/bert/Unsqueeze_1",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    1,
+                    64,
+                    1
+                ]
+            },
+            "inputs": [
+                "@Cast_/Cast_1_11:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/bert/encoder/layer.4/attention/self/Transpose_152": {
+            "name": "Transpose_/bert/encoder/layer.4/attention/self/Transpose",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1,
+                    3
+                ]
+            },
+            "inputs": [
+                "@Reshape_/bert/encoder/layer.4/attention/self/Reshape_153:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/bert/encoder/layer.4/attention/self/Reshape_153": {
+            "name": "Reshape_/bert/encoder/layer.4/attention/self/Reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    64,
+                    12,
+                    32
+                ]
+            },
+            "inputs": [
+                "@reshape_358:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "MatMul_/bert/encoder/layer.3/attention/self/MatMul_156": {
+            "name": "MatMul_/bert/encoder/layer.3/attention/self/MatMul",
+            "op": "matmul",
+            "parameters": {
+                "transpose_a": false,
+                "transpose_b": false
+            },
+            "inputs": [
+                "@Mul_/bert/encoder/layer.3/attention/self/Mul_177:out0",
+                "@Mul_/bert/encoder/layer.3/attention/self/Mul_1_157:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/bert/encoder/layer.3/attention/self/Mul_1_157": {
+            "name": "Mul_/bert/encoder/layer.3/attention/self/Mul_1",
+            "op": "multiply",
+            "parameters": {
+                "axis": 1,
+                "bias": true
+            },
+            "inputs": [
+                "@Transpose_/bert/encoder/layer.3/attention/self/Transpose_2_178:out0",
+                "@Initializer_/bert/encoder/layer.0/attention/self/Sqrt_1_output_0_125:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "MatMul_/bert/encoder/layer.2/attention/self/MatMul_1_160": {
+            "name": "MatMul_/bert/encoder/layer.2/attention/self/MatMul_1",
+            "op": "matmul",
+            "parameters": {
+                "transpose_a": false,
+                "transpose_b": false
+            },
+            "inputs": [
+                "@Softmax_/bert/encoder/layer.2/attention/self/Softmax_182:out0",
+                "@Transpose_/bert/encoder/layer.2/attention/self/Transpose_1_183:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/bert/encoder/layer.1/attention/self/Reshape_3_163": {
+            "name": "Reshape_/bert/encoder/layer.1/attention/self/Reshape_3",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Transpose_/bert/encoder/layer.1/attention/self/Transpose_3_187:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/embeddings/Add_1_168": {
+            "name": "Add_/bert/embeddings/Add_1",
+            "op": "add",
+            "inputs": [
+                "@Add_/bert/embeddings/Add_192:out0",
+                "@Initializer_/bert/embeddings/position_embeddings/Gather_output_0_169:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Initializer_/bert/embeddings/position_embeddings/Gather_output_0_169": {
+            "name": "Initializer_/bert/embeddings/position_embeddings/Gather_output_0",
+            "op": "variable",
+            "parameters": {
+                "shape": [
+                    1,
+                    64,
+                    384
+                ],
+                "is_scalar": false,
+                "type": "float32"
+            },
+            "inputs": [],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/bert/encoder/layer.3/attention/self/Mul_177": {
+            "name": "Mul_/bert/encoder/layer.3/attention/self/Mul",
+            "op": "multiply",
+            "parameters": {
+                "axis": 1,
+                "bias": true
+            },
+            "inputs": [
+                "@Transpose_/bert/encoder/layer.3/attention/self/Transpose_199:out0",
+                "@Initializer_/bert/encoder/layer.0/attention/self/Sqrt_1_output_0_125:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/bert/encoder/layer.3/attention/self/Transpose_2_178": {
+            "name": "Transpose_/bert/encoder/layer.3/attention/self/Transpose_2",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    3,
+                    1
+                ]
+            },
+            "inputs": [
+                "@Reshape_/bert/encoder/layer.3/attention/self/Reshape_1_179:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/bert/encoder/layer.3/attention/self/Reshape_1_179": {
+            "name": "Reshape_/bert/encoder/layer.3/attention/self/Reshape_1",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    64,
+                    12,
+                    32
+                ]
+            },
+            "inputs": [
+                "@reshape_367:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Softmax_/bert/encoder/layer.2/attention/self/Softmax_182": {
+            "name": "Softmax_/bert/encoder/layer.2/attention/self/Softmax",
+            "op": "softmax",
+            "parameters": {
+                "sf_axis": -1,
+                "beta": 1.0
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.2/attention/self/Add_203:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/bert/encoder/layer.2/attention/self/Transpose_1_183": {
+            "name": "Transpose_/bert/encoder/layer.2/attention/self/Transpose_1",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1,
+                    3
+                ]
+            },
+            "inputs": [
+                "@Reshape_/bert/encoder/layer.2/attention/self/Reshape_2_185:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/bert/encoder/layer.2/attention/self/Reshape_2_185": {
+            "name": "Reshape_/bert/encoder/layer.2/attention/self/Reshape_2",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    64,
+                    12,
+                    32
+                ]
+            },
+            "inputs": [
+                "@reshape_376:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/bert/encoder/layer.1/attention/self/Transpose_3_187": {
+            "name": "Transpose_/bert/encoder/layer.1/attention/self/Transpose_3",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1,
+                    3
+                ]
+            },
+            "inputs": [
+                "@MatMul_/bert/encoder/layer.1/attention/self/MatMul_1_205:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/bert/encoder/layer.0/intermediate/intermediate_act_fn/Mul_1_188": {
+            "name": "Mul_/bert/encoder/layer.0/intermediate/intermediate_act_fn/Mul_1",
+            "op": "gelu",
+            "parameters": {
+                "approximate": false
+            },
+            "inputs": [
+                "@reshape_370:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/embeddings/Add_192": {
+            "name": "Add_/bert/embeddings/Add",
+            "op": "add",
+            "inputs": [
+                "@Gather_/bert/embeddings/word_embeddings/Gather_210:out0",
+                "@Gather_/bert/embeddings/token_type_embeddings/Gather_197:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gather_/bert/embeddings/token_type_embeddings/Gather_197": {
+            "name": "Gather_/bert/embeddings/token_type_embeddings/Gather",
+            "op": "gather",
+            "parameters": {
+                "axis": 0,
+                "batch_dims": null
+            },
+            "inputs": [
+                "@Initializer_bert.embeddings.token_type_embeddings.weight_211:out0",
+                "@Cast_/Cast_2_212:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/bert/encoder/layer.3/attention/self/Transpose_199": {
+            "name": "Transpose_/bert/encoder/layer.3/attention/self/Transpose",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1,
+                    3
+                ]
+            },
+            "inputs": [
+                "@Reshape_/bert/encoder/layer.3/attention/self/Reshape_200:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/bert/encoder/layer.3/attention/self/Reshape_200": {
+            "name": "Reshape_/bert/encoder/layer.3/attention/self/Reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    64,
+                    12,
+                    32
+                ]
+            },
+            "inputs": [
+                "@reshape_373:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.2/attention/self/Add_203": {
+            "name": "Add_/bert/encoder/layer.2/attention/self/Add",
+            "op": "add",
+            "inputs": [
+                "@MatMul_/bert/encoder/layer.2/attention/self/MatMul_216:out0",
+                "@Where_/bert/Where_1_89:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "MatMul_/bert/encoder/layer.1/attention/self/MatMul_1_205": {
+            "name": "MatMul_/bert/encoder/layer.1/attention/self/MatMul_1",
+            "op": "matmul",
+            "parameters": {
+                "transpose_a": false,
+                "transpose_b": false
+            },
+            "inputs": [
+                "@Softmax_/bert/encoder/layer.1/attention/self/Softmax_220:out0",
+                "@Transpose_/bert/encoder/layer.1/attention/self/Transpose_1_221:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/bert/encoder/layer.0/attention/self/Reshape_3_208": {
+            "name": "Reshape_/bert/encoder/layer.0/attention/self/Reshape_3",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Transpose_/bert/encoder/layer.0/attention/self/Transpose_3_225:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gather_/bert/embeddings/word_embeddings/Gather_210": {
+            "name": "Gather_/bert/embeddings/word_embeddings/Gather",
+            "op": "gather",
+            "parameters": {
+                "axis": 0,
+                "batch_dims": null
+            },
+            "inputs": [
+                "@Initializer_bert.embeddings.word_embeddings.weight_226:out0",
+                "@Cast_/Cast_227:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Initializer_bert.embeddings.token_type_embeddings.weight_211": {
+            "name": "Initializer_bert.embeddings.token_type_embeddings.weight",
+            "op": "variable",
+            "parameters": {
+                "shape": [
+                    2,
+                    384
+                ],
+                "is_scalar": false,
+                "type": "float32"
+            },
+            "inputs": [],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Cast_/Cast_2_212": {
+            "name": "Cast_/Cast_2",
+            "op": "cast",
+            "parameters": {
+                "in_data_type": "int64",
+                "out_data_type": "int64"
+            },
+            "inputs": [
+                "@Slice_/Slice_2_228:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "MatMul_/bert/encoder/layer.2/attention/self/MatMul_216": {
+            "name": "MatMul_/bert/encoder/layer.2/attention/self/MatMul",
+            "op": "matmul",
+            "parameters": {
+                "transpose_a": false,
+                "transpose_b": false
+            },
+            "inputs": [
+                "@Mul_/bert/encoder/layer.2/attention/self/Mul_232:out0",
+                "@Mul_/bert/encoder/layer.2/attention/self/Mul_1_217:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/bert/encoder/layer.2/attention/self/Mul_1_217": {
+            "name": "Mul_/bert/encoder/layer.2/attention/self/Mul_1",
+            "op": "multiply",
+            "parameters": {
+                "axis": 1,
+                "bias": true
+            },
+            "inputs": [
+                "@Transpose_/bert/encoder/layer.2/attention/self/Transpose_2_233:out0",
+                "@Initializer_/bert/encoder/layer.0/attention/self/Sqrt_1_output_0_125:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Softmax_/bert/encoder/layer.1/attention/self/Softmax_220": {
+            "name": "Softmax_/bert/encoder/layer.1/attention/self/Softmax",
+            "op": "softmax",
+            "parameters": {
+                "sf_axis": -1,
+                "beta": 1.0
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.1/attention/self/Add_237:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/bert/encoder/layer.1/attention/self/Transpose_1_221": {
+            "name": "Transpose_/bert/encoder/layer.1/attention/self/Transpose_1",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1,
+                    3
+                ]
+            },
+            "inputs": [
+                "@Reshape_/bert/encoder/layer.1/attention/self/Reshape_2_223:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/bert/encoder/layer.1/attention/self/Reshape_2_223": {
+            "name": "Reshape_/bert/encoder/layer.1/attention/self/Reshape_2",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    64,
+                    12,
+                    32
+                ]
+            },
+            "inputs": [
+                "@reshape_382:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/bert/encoder/layer.0/attention/self/Transpose_3_225": {
+            "name": "Transpose_/bert/encoder/layer.0/attention/self/Transpose_3",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1,
+                    3
+                ]
+            },
+            "inputs": [
+                "@MatMul_/bert/encoder/layer.0/attention/self/MatMul_1_239:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Initializer_bert.embeddings.word_embeddings.weight_226": {
+            "name": "Initializer_bert.embeddings.word_embeddings.weight",
+            "op": "variable",
+            "parameters": {
+                "shape": [
+                    30522,
+                    384
+                ],
+                "is_scalar": false,
+                "type": "float32"
+            },
+            "inputs": [],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Cast_/Cast_227": {
+            "name": "Cast_/Cast",
+            "op": "cast",
+            "parameters": {
+                "in_data_type": "int64",
+                "out_data_type": "int64"
+            },
+            "inputs": [
+                "@Slice_/Slice_230:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Slice_/Slice_2_228": {
+            "name": "Slice_/Slice_2",
+            "op": "slice",
+            "parameters": {
+                "begin": [
+                    0,
+                    128
+                ],
+                "size": [
+                    1,
+                    64
+                ]
+            },
+            "inputs": [
+                "@combined_input_290:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Slice_/Slice_230": {
+            "name": "Slice_/Slice",
+            "op": "slice",
+            "parameters": {
+                "begin": [
+                    0,
+                    0
+                ],
+                "size": [
+                    1,
+                    64
+                ]
+            },
+            "inputs": [
+                "@combined_input_290:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/bert/encoder/layer.2/attention/self/Mul_232": {
+            "name": "Mul_/bert/encoder/layer.2/attention/self/Mul",
+            "op": "multiply",
+            "parameters": {
+                "axis": 1,
+                "bias": true
+            },
+            "inputs": [
+                "@Transpose_/bert/encoder/layer.2/attention/self/Transpose_241:out0",
+                "@Initializer_/bert/encoder/layer.0/attention/self/Sqrt_1_output_0_125:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/bert/encoder/layer.2/attention/self/Transpose_2_233": {
+            "name": "Transpose_/bert/encoder/layer.2/attention/self/Transpose_2",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    3,
+                    1
+                ]
+            },
+            "inputs": [
+                "@Reshape_/bert/encoder/layer.2/attention/self/Reshape_1_234:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/bert/encoder/layer.2/attention/self/Reshape_1_234": {
+            "name": "Reshape_/bert/encoder/layer.2/attention/self/Reshape_1",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    64,
+                    12,
+                    32
+                ]
+            },
+            "inputs": [
+                "@reshape_379:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.1/attention/self/Add_237": {
+            "name": "Add_/bert/encoder/layer.1/attention/self/Add",
+            "op": "add",
+            "inputs": [
+                "@MatMul_/bert/encoder/layer.1/attention/self/MatMul_245:out0",
+                "@Where_/bert/Where_1_89:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "MatMul_/bert/encoder/layer.0/attention/self/MatMul_1_239": {
+            "name": "MatMul_/bert/encoder/layer.0/attention/self/MatMul_1",
+            "op": "matmul",
+            "parameters": {
+                "transpose_a": false,
+                "transpose_b": false
+            },
+            "inputs": [
+                "@Softmax_/bert/encoder/layer.0/attention/self/Softmax_249:out0",
+                "@Transpose_/bert/encoder/layer.0/attention/self/Transpose_1_240:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/bert/encoder/layer.0/attention/self/Transpose_1_240": {
+            "name": "Transpose_/bert/encoder/layer.0/attention/self/Transpose_1",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1,
+                    3
+                ]
+            },
+            "inputs": [
+                "@Reshape_/bert/encoder/layer.0/attention/self/Reshape_2_250:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/bert/encoder/layer.2/attention/self/Transpose_241": {
+            "name": "Transpose_/bert/encoder/layer.2/attention/self/Transpose",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1,
+                    3
+                ]
+            },
+            "inputs": [
+                "@Reshape_/bert/encoder/layer.2/attention/self/Reshape_242:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/bert/encoder/layer.2/attention/self/Reshape_242": {
+            "name": "Reshape_/bert/encoder/layer.2/attention/self/Reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    64,
+                    12,
+                    32
+                ]
+            },
+            "inputs": [
+                "@reshape_385:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "MatMul_/bert/encoder/layer.1/attention/self/MatMul_245": {
+            "name": "MatMul_/bert/encoder/layer.1/attention/self/MatMul",
+            "op": "matmul",
+            "parameters": {
+                "transpose_a": false,
+                "transpose_b": false
+            },
+            "inputs": [
+                "@Mul_/bert/encoder/layer.1/attention/self/Mul_254:out0",
+                "@Mul_/bert/encoder/layer.1/attention/self/Mul_1_246:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/bert/encoder/layer.1/attention/self/Mul_1_246": {
+            "name": "Mul_/bert/encoder/layer.1/attention/self/Mul_1",
+            "op": "multiply",
+            "parameters": {
+                "axis": 1,
+                "bias": true
+            },
+            "inputs": [
+                "@Transpose_/bert/encoder/layer.1/attention/self/Transpose_2_255:out0",
+                "@Initializer_/bert/encoder/layer.0/attention/self/Sqrt_1_output_0_125:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Softmax_/bert/encoder/layer.0/attention/self/Softmax_249": {
+            "name": "Softmax_/bert/encoder/layer.0/attention/self/Softmax",
+            "op": "softmax",
+            "parameters": {
+                "sf_axis": -1,
+                "beta": 1.0
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.0/attention/self/Add_259:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/bert/encoder/layer.0/attention/self/Reshape_2_250": {
+            "name": "Reshape_/bert/encoder/layer.0/attention/self/Reshape_2",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    64,
+                    12,
+                    32
+                ]
+            },
+            "inputs": [
+                "@reshape_388:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/bert/encoder/layer.1/attention/self/Mul_254": {
+            "name": "Mul_/bert/encoder/layer.1/attention/self/Mul",
+            "op": "multiply",
+            "parameters": {
+                "axis": 1,
+                "bias": true
+            },
+            "inputs": [
+                "@Transpose_/bert/encoder/layer.1/attention/self/Transpose_264:out0",
+                "@Initializer_/bert/encoder/layer.0/attention/self/Sqrt_1_output_0_125:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/bert/encoder/layer.1/attention/self/Transpose_2_255": {
+            "name": "Transpose_/bert/encoder/layer.1/attention/self/Transpose_2",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    3,
+                    1
+                ]
+            },
+            "inputs": [
+                "@Reshape_/bert/encoder/layer.1/attention/self/Reshape_1_256:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/bert/encoder/layer.1/attention/self/Reshape_1_256": {
+            "name": "Reshape_/bert/encoder/layer.1/attention/self/Reshape_1",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    64,
+                    12,
+                    32
+                ]
+            },
+            "inputs": [
+                "@reshape_391:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/bert/encoder/layer.0/attention/self/Add_259": {
+            "name": "Add_/bert/encoder/layer.0/attention/self/Add",
+            "op": "add",
+            "inputs": [
+                "@MatMul_/bert/encoder/layer.0/attention/self/MatMul_268:out0",
+                "@Where_/bert/Where_1_89:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/bert/encoder/layer.1/attention/self/Transpose_264": {
+            "name": "Transpose_/bert/encoder/layer.1/attention/self/Transpose",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1,
+                    3
+                ]
+            },
+            "inputs": [
+                "@Reshape_/bert/encoder/layer.1/attention/self/Reshape_265:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/bert/encoder/layer.1/attention/self/Reshape_265": {
+            "name": "Reshape_/bert/encoder/layer.1/attention/self/Reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    64,
+                    12,
+                    32
+                ]
+            },
+            "inputs": [
+                "@reshape_394:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "MatMul_/bert/encoder/layer.0/attention/self/MatMul_268": {
+            "name": "MatMul_/bert/encoder/layer.0/attention/self/MatMul",
+            "op": "matmul",
+            "parameters": {
+                "transpose_a": false,
+                "transpose_b": false
+            },
+            "inputs": [
+                "@Mul_/bert/encoder/layer.0/attention/self/Mul_276:out0",
+                "@Mul_/bert/encoder/layer.0/attention/self/Mul_1_269:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/bert/encoder/layer.0/attention/self/Mul_1_269": {
+            "name": "Mul_/bert/encoder/layer.0/attention/self/Mul_1",
+            "op": "multiply",
+            "parameters": {
+                "axis": 1,
+                "bias": true
+            },
+            "inputs": [
+                "@Transpose_/bert/encoder/layer.0/attention/self/Transpose_2_271:out0",
+                "@Initializer_/bert/encoder/layer.0/attention/self/Sqrt_1_output_0_125:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/bert/encoder/layer.0/attention/self/Transpose_2_271": {
+            "name": "Transpose_/bert/encoder/layer.0/attention/self/Transpose_2",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    3,
+                    1
+                ]
+            },
+            "inputs": [
+                "@Reshape_/bert/encoder/layer.0/attention/self/Reshape_1_277:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/bert/encoder/layer.0/attention/self/Mul_276": {
+            "name": "Mul_/bert/encoder/layer.0/attention/self/Mul",
+            "op": "multiply",
+            "parameters": {
+                "axis": 1,
+                "bias": true
+            },
+            "inputs": [
+                "@Transpose_/bert/encoder/layer.0/attention/self/Transpose_281:out0",
+                "@Initializer_/bert/encoder/layer.0/attention/self/Sqrt_1_output_0_125:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/bert/encoder/layer.0/attention/self/Reshape_1_277": {
+            "name": "Reshape_/bert/encoder/layer.0/attention/self/Reshape_1",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    64,
+                    12,
+                    32
+                ]
+            },
+            "inputs": [
+                "@reshape_397:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/bert/encoder/layer.0/attention/self/Transpose_281": {
+            "name": "Transpose_/bert/encoder/layer.0/attention/self/Transpose",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1,
+                    3
+                ]
+            },
+            "inputs": [
+                "@Reshape_/bert/encoder/layer.0/attention/self/Reshape_282:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/bert/encoder/layer.0/attention/self/Reshape_282": {
+            "name": "Reshape_/bert/encoder/layer.0/attention/self/Reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    64,
+                    12,
+                    32
+                ]
+            },
+            "inputs": [
+                "@reshape_400:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "combined_input_290": {
+            "name": "combined_input",
+            "op": "input",
+            "parameters": {
+                "size": "",
+                "channels": 1,
+                "shape": [
+                    1,
+                    192
+                ],
+                "is_scalar": false,
+                "type": "float32"
+            },
+            "inputs": [],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/Mul_4_acuity_mark_perm_291": {
+            "name": "Mul_/Mul_4_acuity_mark_perm",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1
+                ]
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.5/output/LayerNorm/Add_1_6:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Cast_/Cast_3_7_acuity_mark_perm_292": {
+            "name": "Cast_/Cast_3_7_acuity_mark_perm",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1
+                ]
+            },
+            "inputs": [
+                "@Unsqueeze_/Unsqueeze_8:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_293": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    1536
+                ]
+            },
+            "inputs": [
+                "@Mul_/bert/encoder/layer.5/intermediate/intermediate_act_fn/Mul_1_22:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_294": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_293:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_295": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_294:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_296": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Reshape_/bert/encoder/layer.5/attention/self/Reshape_3_32:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_297": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_296:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_298": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_297:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_299": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    1536
+                ]
+            },
+            "inputs": [
+                "@Mul_/bert/encoder/layer.4/intermediate/intermediate_act_fn/Mul_1_35:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_300": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_299:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_301": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_300:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_302": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.5/attention/output/LayerNorm/Add_1_10:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_303": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 1536,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_302:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_304": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    1536
+                ]
+            },
+            "inputs": [
+                "@fullconnect_303:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_305": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Reshape_/bert/encoder/layer.4/attention/self/Reshape_3_47:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_306": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_305:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_307": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_306:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_308": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.4/attention/output/LayerNorm/Add_1_20:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_309": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 1536,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_308:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_310": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    1536
+                ]
+            },
+            "inputs": [
+                "@fullconnect_309:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_311": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    1536
+                ]
+            },
+            "inputs": [
+                "@Mul_/bert/encoder/layer.3/intermediate/intermediate_act_fn/Mul_1_59:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_312": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_311:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_313": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_312:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_314": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Reshape_/bert/encoder/layer.3/attention/self/Reshape_3_70:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_315": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_314:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_316": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_315:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_317": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.3/attention/output/LayerNorm/Add_1_40:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_318": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 1536,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_317:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_319": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    1536
+                ]
+            },
+            "inputs": [
+                "@fullconnect_318:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_320": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    1536
+                ]
+            },
+            "inputs": [
+                "@Mul_/bert/encoder/layer.2/intermediate/intermediate_act_fn/Mul_1_95:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_321": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_320:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_322": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_321:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_323": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.4/output/LayerNorm/Add_1_14:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_324": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_323:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_325": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_324:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_326": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Reshape_/bert/encoder/layer.2/attention/self/Reshape_3_117:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_327": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_326:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_328": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_327:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_329": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.3/output/LayerNorm/Add_1_29:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_330": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_329:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_331": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_330:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_332": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.2/attention/output/LayerNorm/Add_1_64:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_333": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 1536,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_332:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_334": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    1536
+                ]
+            },
+            "inputs": [
+                "@fullconnect_333:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_335": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    1536
+                ]
+            },
+            "inputs": [
+                "@Mul_/bert/encoder/layer.1/intermediate/intermediate_act_fn/Mul_1_142:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_336": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_335:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_337": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_336:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_338": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Reshape_/bert/encoder/layer.1/attention/self/Reshape_3_163:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_339": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_338:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_340": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_339:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_341": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.3/output/LayerNorm/Add_1_29:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_342": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_341:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_343": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_342:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_344": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.2/output/LayerNorm/Add_1_52:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_345": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_344:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_346": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_345:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_347": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.1/attention/output/LayerNorm/Add_1_87:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_348": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 1536,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_347:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_349": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    1536
+                ]
+            },
+            "inputs": [
+                "@fullconnect_348:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_350": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    1536
+                ]
+            },
+            "inputs": [
+                "@Mul_/bert/encoder/layer.0/intermediate/intermediate_act_fn/Mul_1_188:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_351": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_350:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_352": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_351:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_353": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.4/output/LayerNorm/Add_1_14:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_354": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_353:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_355": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_354:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_356": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.3/output/LayerNorm/Add_1_29:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_357": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_356:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_358": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_357:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_359": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Reshape_/bert/encoder/layer.0/attention/self/Reshape_3_208:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_360": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_359:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_361": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_360:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_362": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.4/output/LayerNorm/Add_1_14:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_363": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_362:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_364": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_363:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_365": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.2/output/LayerNorm/Add_1_52:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_366": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_365:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_367": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_366:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_368": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.0/attention/output/LayerNorm/Add_1_123:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_369": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 1536,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_368:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_370": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    1536
+                ]
+            },
+            "inputs": [
+                "@fullconnect_369:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_371": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.2/output/LayerNorm/Add_1_52:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_372": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_371:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_373": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_372:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_374": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.1/output/LayerNorm/Add_1_74:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_375": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_374:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_376": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_375:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_377": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.1/output/LayerNorm/Add_1_74:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_378": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_377:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_379": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_378:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_380": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.0/output/LayerNorm/Add_1_101:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_381": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_380:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_382": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_381:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_383": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.1/output/LayerNorm/Add_1_74:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_384": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_383:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_385": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_384:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_386": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Add_/bert/embeddings/LayerNorm/Add_1_148:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_387": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_386:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_388": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_387:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_389": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.0/output/LayerNorm/Add_1_101:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_390": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_389:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_391": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_390:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_392": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Add_/bert/encoder/layer.0/output/LayerNorm/Add_1_101:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_393": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_392:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_394": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_393:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_395": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Add_/bert/embeddings/LayerNorm/Add_1_148:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_396": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_395:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_397": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_396:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_398": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@Add_/bert/embeddings/LayerNorm/Add_1_148:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_399": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_398:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_400": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_399:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        }
+    },
+    "quantize_info": {}
+}

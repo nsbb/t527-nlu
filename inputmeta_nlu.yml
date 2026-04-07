@@ -1,0 +1,47 @@
+input_meta:
+  databases:
+  - path: /work/dataset_calib_nlu.txt
+    type: TEXT
+    ports:
+    - lid: input_ids_540
+      category: frequency
+      dtype: float32
+      sparse: false
+      layout: nc
+      shape:
+      - 1
+      - 64
+      fitting: scale
+      preprocess:
+        reverse_channel: false
+        scale: 1.0
+        preproc_node_params:
+          add_preproc_node: false
+    - lid: attention_mask_541
+      category: frequency
+      dtype: float32
+      sparse: false
+      layout: nc
+      shape:
+      - 1
+      - 64
+      fitting: scale
+      preprocess:
+        reverse_channel: false
+        scale: 1.0
+        preproc_node_params:
+          add_preproc_node: false
+    - lid: token_type_ids_542
+      category: frequency
+      dtype: float32
+      sparse: false
+      layout: nc
+      shape:
+      - 1
+      - 64
+      fitting: scale
+      preprocess:
+        reverse_channel: false
+        scale: 1.0
+        preproc_node_params:
+          add_preproc_node: false

@@ -1,0 +1,19 @@
+input_meta:
+  databases:
+  - path: /work/dataset_calib_single.txt
+    type: TEXT
+    ports:
+    - lid: combined_input_545
+      category: frequency
+      dtype: float32
+      sparse: false
+      layout: nc
+      shape:
+      - 1
+      - 192
+      fitting: scale
+      preprocess:
+        reverse_channel: false
+        scale: 1.0
+        preproc_node_params:
+          add_preproc_node: false
