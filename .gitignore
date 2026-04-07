@@ -1,0 +1,10 @@
+*.onnx
+*.data
+*.nb
+*.quantize
+*.dat
+wksp_*/
+calib_*/
+ko_sbert*.json
+!intent_db.json
+__pycache__/
