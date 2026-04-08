@@ -1,0 +1,77 @@
+utterance,intent
+너무 추워,heating_on
+추워 죽겠다,heating_on
+얼어 죽겠다,heating_on
+집이 추워,heating_on
+방이 추워,heating_on
+실내가 쌀쌀해,heating_on
+한기가 느껴져,heating_on
+코끝이 시려,heating_on
+오들오들 떨려,heating_on
+따뜻하게 해줘,heating_on
+온기가 필요해,heating_on
+이불 덮어도 추워,heating_on
+발이 시려,heating_on
+손이 꽁꽁,heating_on
+겨울인가봐,heating_on
+추워서 못 자겠어,heating_on
+히터 필요해,heating_on
+입김이 나와,heating_on
+체온이 떨어져,heating_on
+냉기가 올라와,heating_on
+거실이 추워,heating_on
+안방이 추워,heating_on
+침실이 추워,heating_on
+어두워,light_on
+안 보여,light_on
+캄캄해,light_on
+컴컴해,light_on
+어두침침해,light_on
+빛 좀,light_on
+밝게 좀,light_on
+환하게 해줘,light_on
+불빛이 없어,light_on
+시야가 안 보여,light_on
+눈이 안 보여,light_on
+어두워서 못 보겠어,light_on
+거실이 어두워,light_on
+주방이 어두워,light_on
+너무 밝아,light_off
+눈부셔,light_off
+빛이 강해,light_off
+눈이 아파,light_off
+밝아서 잠이 안 와,light_off
+잠 좀 자려고,light_off
+너무 더워,ac_on
+덥다,ac_on
+땀이 나,ac_on
+무더워,ac_on
+찜통이야,ac_on
+더워 죽겠다,ac_on
+시원하게 해줘,ac_on
+열대야야,ac_on
+습해,ac_on
+후덥지근해,ac_on
+더워서 못 자겠어,ac_on
+거실이 더워,ac_on
+안방이 더워,ac_on
+공기가 탁해,ventilation_on
+답답해,ventilation_on
+숨이 막혀,ventilation_on
+환기가 필요해,ventilation_on
+냄새 나,ventilation_on
+공기가 안 좋아,ventilation_on
+숨쉬기 힘들어,ventilation_on
+머리가 아파 환기,ventilation_on
+음식 냄새 빼줘,ventilation_on
+이산화탄소 많은 것 같아,ventilation_on
+공기 정화 좀,ventilation_on
+택배 왔어,door_open
+손님 오셨어,door_open
+들어갈게,door_open
+문 잠겨있어,door_open
+로비문 열어,door_open
+우산 가져가야 해,weather_query
+빨래 널어도 돼,weather_query
+세차해도 돼,weather_query
+옷 어떻게 입어,weather_query
