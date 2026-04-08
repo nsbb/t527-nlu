@@ -4,17 +4,14 @@
 
 | 항목 | 값 |
 |------|-----|
-| 아키텍처 | Pure CNN (Conv1d + ReLU + BatchNorm) |
-| Layer | 4 |
-| Params | 4.4M |
-| Embedding | 128dim, CPU에서 처리 |
-| Conv filters | 128 |
-| Conv kernels | 3, 5, 7, 3 (반복) |
-| NB 크기 | **~300KB** |
-| NPU 추론 | **~1ms** |
-| Intent 수 | **94개** |
-| d_model | 256 |
+| 아키텍처 | ko-sbert Embedding(frozen) + Linear(768→256) + CNN 4L |
+| Layer | 4 (Conv1d + ReLU + BN + Dropout) |
+| Embedding | **ko-sbert-sts 768dim 사전학습 (frozen)** |
+| CNN dim | 256 |
+| Conv kernels | 3, 5, 7, 3 |
 | Dropout | 0.1 |
+| Total Params | 25.98M (임베딩 24.58M frozen + CNN 1.40M trainable) |
+| Intent 수 | **94개** |
 
 ## 파이프라인
 
@@ -48,8 +45,18 @@ STT 텍스트 → Tokenizer (CPU) → Embedding (CPU) → uint8 양자화 (CPU) 
 | v13 8L | 6.51M | 128 | 0.0 | 13,780 | 2,452 | 93.64% |
 | **v13 4L d256** | **9.40M** | **256** | **0.1** | **13,780** | **2,452** | **96.0%** |
 
-**v13 d256이 최종** — 94개 intent, 학습/테스트 완전 분리 기준 96.0%.
-남은 오류 98개 중 12개는 weather↔dust 경계 모호성(구조적).
+### 르엘 시나리오 기준 최종 정확도 (테스트 겹침 0%)
+
+**테스트셋:** 르엘 219개 + 간접 표현 + STT 오류 + 비유/관용 = 431개
+**학습셋:** 르엘과 겹치지 않는 16,632개
+
+| 모델 | 임베딩 | 르엘 219 | 간접 76 | STT 47 | 비유 43 | 전체 431 |
+|------|--------|---------|--------|--------|--------|---------|
+| CNN 4L d256 (랜덤) | 랜덤 128d | 92.2% | 93.4% | 76.6% | 37.2% | 80.7% |
+| CNN 4L d256 (KLUE-RoBERTa) | KLUE 768d | 94.0% | - | - | - | - |
+| **CNN 4L d256 (ko-sbert)** | **ko-sbert 768d** | **97.2%** | **96.1%** | **78.7%** | **51.2%** | **87.0%** |
+
+**ko-sbert 사전학습 임베딩이 최종.** 랜덤 대비 르엘 +5%p, 비유 +14%p.
 
 ### Intent 정리 (v4→v8)
 
