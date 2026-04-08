@@ -1,0 +1,1997 @@
+{
+    "MetaData": {
+        "Name": "main_graph",
+        "AcuityVersion": "6",
+        "Platform": "tensorflow",
+        "Org_Platform": "onnx"
+    },
+    "Layers": {
+        "attach_Gemm_/intent_fc/Gemm/out0_0": {
+            "name": "attach_Gemm_/intent_fc/Gemm/out0",
+            "op": "output",
+            "parameters": {},
+            "inputs": [
+                "@Gemm_/intent_fc/Gemm_1:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gemm_/intent_fc/Gemm_1": {
+            "name": "Gemm_/intent_fc/Gemm",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 55,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@Gather_/Gather_2_acuity_opt_gather_reshape_170:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gather_/Gather_2": {
+            "name": "Gather_/Gather",
+            "op": "gather",
+            "parameters": {
+                "axis": 1,
+                "batch_dims": null
+            },
+            "inputs": [
+                "@Add_/blocks.1/final_norm/Add_1_3:out0",
+                "@Initializer_/blocks.0/attn/Constant_output_0_4:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.1/final_norm/Add_1_3": {
+            "name": "Add_/blocks.1/final_norm/Add_1",
+            "op": "layernormalize",
+            "parameters": {
+                "axis_list": [
+                    -1
+                ],
+                "eps": 9.999999747378752e-06
+            },
+            "inputs": [
+                "@Add_/blocks.1/Add_3_5:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Initializer_/blocks.0/attn/Constant_output_0_4": {
+            "name": "Initializer_/blocks.0/attn/Constant_output_0",
+            "op": "variable",
+            "parameters": {
+                "shape": [
+                    1
+                ],
+                "is_scalar": true,
+                "type": "float32"
+            },
+            "inputs": [],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.1/Add_3_5": {
+            "name": "Add_/blocks.1/Add_3",
+            "op": "add",
+            "inputs": [
+                "@Add_/blocks.1/Add_2_7:out0",
+                "@Mul_/blocks.1/Mul_1_6:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/blocks.1/Mul_1_6": {
+            "name": "Mul_/blocks.1/Mul_1",
+            "op": "multiply",
+            "parameters": {
+                "axis": 1,
+                "bias": true
+            },
+            "inputs": [
+                "@reshape_142:out0",
+                "@Initializer_/blocks.0/Constant_output_0_9:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.1/Add_2_7": {
+            "name": "Add_/blocks.1/Add_2",
+            "op": "add",
+            "inputs": [
+                "@Add_/blocks.1/Add_1_10:out0",
+                "@Conv_/blocks.1/conv/conv.2/Conv_16:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Initializer_/blocks.0/Constant_output_0_9": {
+            "name": "Initializer_/blocks.0/Constant_output_0",
+            "op": "variable",
+            "parameters": {
+                "shape": [
+                    1
+                ],
+                "is_scalar": true,
+                "type": "float32"
+            },
+            "inputs": [],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.1/Add_1_10": {
+            "name": "Add_/blocks.1/Add_1",
+            "op": "add",
+            "inputs": [
+                "@Add_/blocks.1/Add_14:out0",
+                "@Transpose_/blocks.1/attn/Transpose_6_15:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.1/Add_14": {
+            "name": "Add_/blocks.1/Add",
+            "op": "add",
+            "inputs": [
+                "@Add_/blocks.0/final_norm/Add_1_19:out0",
+                "@Mul_/blocks.1/Mul_20:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/blocks.1/attn/Transpose_6_15": {
+            "name": "Transpose_/blocks.1/attn/Transpose_6",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    1,
+                    0,
+                    2
+                ]
+            },
+            "inputs": [
+                "@Reshape_/blocks.1/attn/Reshape_7_21:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Conv_/blocks.1/conv/conv.2/Conv_16": {
+            "name": "Conv_/blocks.1/conv/conv.2/Conv",
+            "op": "conv1d",
+            "parameters": {
+                "padding_mode": "CONSTANT",
+                "weights": 128,
+                "padding": "VALID",
+                "bias": true,
+                "group_number": 1,
+                "ksize": 1,
+                "stride": 1,
+                "pad_method": "padding_const",
+                "pad": [
+                    0,
+                    0
+                ],
+                "dilation": [
+                    1,
+                    1,
+                    1
+                ]
+            },
+            "inputs": [
+                "@Relu_/blocks.1/conv/conv.1/Relu_22:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Relu_/blocks.1/ffn2/ffn2.2/Relu_17": {
+            "name": "Relu_/blocks.1/ffn2/ffn2.2/Relu",
+            "op": "relu",
+            "inputs": [
+                "@reshape_145:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.0/final_norm/Add_1_19": {
+            "name": "Add_/blocks.0/final_norm/Add_1",
+            "op": "layernormalize",
+            "parameters": {
+                "axis_list": [
+                    -1
+                ],
+                "eps": 9.999999747378752e-06
+            },
+            "inputs": [
+                "@Add_/blocks.0/Add_3_24:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/blocks.1/Mul_20": {
+            "name": "Mul_/blocks.1/Mul",
+            "op": "multiply",
+            "parameters": {
+                "axis": 1,
+                "bias": true
+            },
+            "inputs": [
+                "@reshape_151:out0",
+                "@Initializer_/blocks.0/Constant_output_0_9:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/blocks.1/attn/Reshape_7_21": {
+            "name": "Reshape_/blocks.1/attn/Reshape_7",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    32,
+                    1,
+                    128
+                ]
+            },
+            "inputs": [
+                "@Gemm_/blocks.1/attn/Gemm_28:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Relu_/blocks.1/conv/conv.1/Relu_22": {
+            "name": "Relu_/blocks.1/conv/conv.1/Relu",
+            "op": "relu",
+            "inputs": [
+                "@Conv_/blocks.1/conv/conv.0/Conv_29:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.0/Add_3_24": {
+            "name": "Add_/blocks.0/Add_3",
+            "op": "add",
+            "inputs": [
+                "@Add_/blocks.0/Add_2_32:out0",
+                "@Mul_/blocks.0/Mul_1_25:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/blocks.0/Mul_1_25": {
+            "name": "Mul_/blocks.0/Mul_1",
+            "op": "multiply",
+            "parameters": {
+                "axis": 1,
+                "bias": true
+            },
+            "inputs": [
+                "@reshape_148:out0",
+                "@Initializer_/blocks.0/Constant_output_0_9:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gemm_/blocks.1/attn/Gemm_28": {
+            "name": "Gemm_/blocks.1/attn/Gemm",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 128,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@Reshape_/blocks.1/attn/Reshape_6_37:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Conv_/blocks.1/conv/conv.0/Conv_29": {
+            "name": "Conv_/blocks.1/conv/conv.0/Conv",
+            "op": "depthwise_conv1d",
+            "parameters": {
+                "padding_mode": "CONSTANT",
+                "weights": 128,
+                "padding": "VALID",
+                "bias": true,
+                "group_number": 128,
+                "ksize": 7,
+                "stride": 1,
+                "pad_method": "padding_const",
+                "pad": [
+                    3,
+                    3
+                ],
+                "dilation": [
+                    1,
+                    1,
+                    1
+                ],
+                "multiplier": 1
+            },
+            "inputs": [
+                "@Add_/blocks.1/conv_norm/Add_1_49:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.0/Add_2_32": {
+            "name": "Add_/blocks.0/Add_2",
+            "op": "add",
+            "inputs": [
+                "@Add_/blocks.0/Add_1_41:out0",
+                "@Conv_/blocks.0/conv/conv.2/Conv_54:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/blocks.1/attn/Reshape_6_37": {
+            "name": "Reshape_/blocks.1/attn/Reshape_6",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    32,
+                    128
+                ]
+            },
+            "inputs": [
+                "@Transpose_/blocks.1/attn/Transpose_5_48:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.1/ffn2/ffn2.0/Add_1_39": {
+            "name": "Add_/blocks.1/ffn2/ffn2.0/Add_1",
+            "op": "layernormalize",
+            "parameters": {
+                "axis_list": [
+                    -1
+                ],
+                "eps": 9.999999747378752e-06
+            },
+            "inputs": [
+                "@Add_/blocks.1/Add_2_7:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.0/Add_1_41": {
+            "name": "Add_/blocks.0/Add_1",
+            "op": "add",
+            "inputs": [
+                "@Add_/blocks.0/Add_52:out0",
+                "@Transpose_/blocks.0/attn/Transpose_6_53:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Relu_/blocks.0/ffn2/ffn2.2/Relu_44": {
+            "name": "Relu_/blocks.0/ffn2/ffn2.2/Relu",
+            "op": "relu",
+            "inputs": [
+                "@reshape_154:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Relu_/blocks.1/ffn1/ffn1.2/Relu_46": {
+            "name": "Relu_/blocks.1/ffn1/ffn1.2/Relu",
+            "op": "relu",
+            "inputs": [
+                "@reshape_157:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/blocks.1/attn/Transpose_5_48": {
+            "name": "Transpose_/blocks.1/attn/Transpose_5",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    1,
+                    0,
+                    2
+                ]
+            },
+            "inputs": [
+                "@MatMul_/blocks.1/attn/MatMul_2_50:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.1/conv_norm/Add_1_49": {
+            "name": "Add_/blocks.1/conv_norm/Add_1",
+            "op": "layernormalize",
+            "parameters": {
+                "axis_list": [
+                    -1
+                ],
+                "eps": 9.999999747378752e-06
+            },
+            "inputs": [
+                "@Add_/blocks.1/Add_1_10:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "MatMul_/blocks.1/attn/MatMul_2_50": {
+            "name": "MatMul_/blocks.1/attn/MatMul_2",
+            "op": "matmul",
+            "parameters": {
+                "transpose_a": false,
+                "transpose_b": false
+            },
+            "inputs": [
+                "@Softmax_/blocks.1/attn/Softmax_57:out0",
+                "@Transpose_/blocks.1/attn/Transpose_3_51:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/blocks.1/attn/Transpose_3_51": {
+            "name": "Transpose_/blocks.1/attn/Transpose_3",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    1,
+                    0,
+                    2
+                ]
+            },
+            "inputs": [
+                "@Reshape_/blocks.1/attn/Reshape_5_58:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.0/Add_52": {
+            "name": "Add_/blocks.0/Add",
+            "op": "add",
+            "inputs": [
+                "@embedding_input_135:out0",
+                "@Mul_/blocks.0/Mul_60:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/blocks.0/attn/Transpose_6_53": {
+            "name": "Transpose_/blocks.0/attn/Transpose_6",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    1,
+                    0,
+                    2
+                ]
+            },
+            "inputs": [
+                "@Reshape_/blocks.0/attn/Reshape_7_61:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Conv_/blocks.0/conv/conv.2/Conv_54": {
+            "name": "Conv_/blocks.0/conv/conv.2/Conv",
+            "op": "conv1d",
+            "parameters": {
+                "padding_mode": "CONSTANT",
+                "weights": 128,
+                "padding": "VALID",
+                "bias": true,
+                "group_number": 1,
+                "ksize": 1,
+                "stride": 1,
+                "pad_method": "padding_const",
+                "pad": [
+                    0,
+                    0
+                ],
+                "dilation": [
+                    1,
+                    1,
+                    1
+                ]
+            },
+            "inputs": [
+                "@Relu_/blocks.0/conv/conv.1/Relu_62:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Softmax_/blocks.1/attn/Softmax_57": {
+            "name": "Softmax_/blocks.1/attn/Softmax",
+            "op": "softmax",
+            "parameters": {
+                "sf_axis": -1,
+                "beta": 1.0
+            },
+            "inputs": [
+                "@MatMul_/blocks.1/attn/MatMul_1_67:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/blocks.1/attn/Reshape_5_58": {
+            "name": "Reshape_/blocks.1/attn/Reshape_5",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    32,
+                    4,
+                    32
+                ]
+            },
+            "inputs": [
+                "@Gather_/blocks.1/attn/Gather_2_59_acuity_opt_gather_reshape_171:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gather_/blocks.1/attn/Gather_2_59": {
+            "name": "Gather_/blocks.1/attn/Gather_2",
+            "op": "gather",
+            "parameters": {
+                "axis": 0,
+                "batch_dims": null
+            },
+            "inputs": [
+                "@Squeeze_/blocks.1/attn/Squeeze_68:out0",
+                "@Initializer_/blocks.0/attn/Constant_1_output_0_69:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/blocks.0/Mul_60": {
+            "name": "Mul_/blocks.0/Mul",
+            "op": "multiply",
+            "parameters": {
+                "axis": 1,
+                "bias": true
+            },
+            "inputs": [
+                "@reshape_160:out0",
+                "@Initializer_/blocks.0/Constant_output_0_9:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/blocks.0/attn/Reshape_7_61": {
+            "name": "Reshape_/blocks.0/attn/Reshape_7",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    32,
+                    1,
+                    128
+                ]
+            },
+            "inputs": [
+                "@Gemm_/blocks.0/attn/Gemm_72:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Relu_/blocks.0/conv/conv.1/Relu_62": {
+            "name": "Relu_/blocks.0/conv/conv.1/Relu",
+            "op": "relu",
+            "inputs": [
+                "@Conv_/blocks.0/conv/conv.0/Conv_73:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "MatMul_/blocks.1/attn/MatMul_1_67": {
+            "name": "MatMul_/blocks.1/attn/MatMul_1",
+            "op": "matmul",
+            "parameters": {
+                "transpose_a": false,
+                "transpose_b": false
+            },
+            "inputs": [
+                "@Mul_/blocks.1/attn/Mul_78:out0",
+                "@Transpose_/blocks.1/attn/Transpose_4_79:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Squeeze_/blocks.1/attn/Squeeze_68": {
+            "name": "Squeeze_/blocks.1/attn/Squeeze",
+            "op": "squeeze",
+            "parameters": {
+                "axis_list": [
+                    3
+                ],
+                "name": null
+            },
+            "inputs": [
+                "@Transpose_/blocks.1/attn/Transpose_1_80:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Initializer_/blocks.0/attn/Constant_1_output_0_69": {
+            "name": "Initializer_/blocks.0/attn/Constant_1_output_0",
+            "op": "variable",
+            "parameters": {
+                "shape": [
+                    1
+                ],
+                "is_scalar": true,
+                "type": "float32"
+            },
+            "inputs": [],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gemm_/blocks.0/attn/Gemm_72": {
+            "name": "Gemm_/blocks.0/attn/Gemm",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 128,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@Reshape_/blocks.0/attn/Reshape_6_84:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Conv_/blocks.0/conv/conv.0/Conv_73": {
+            "name": "Conv_/blocks.0/conv/conv.0/Conv",
+            "op": "depthwise_conv1d",
+            "parameters": {
+                "padding_mode": "CONSTANT",
+                "weights": 128,
+                "padding": "VALID",
+                "bias": true,
+                "group_number": 128,
+                "ksize": 7,
+                "stride": 1,
+                "pad_method": "padding_const",
+                "pad": [
+                    3,
+                    3
+                ],
+                "dilation": [
+                    1,
+                    1,
+                    1
+                ],
+                "multiplier": 1
+            },
+            "inputs": [
+                "@Add_/blocks.0/conv_norm/Add_1_86:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.0/ffn2/ffn2.0/Add_1_74": {
+            "name": "Add_/blocks.0/ffn2/ffn2.0/Add_1",
+            "op": "layernormalize",
+            "parameters": {
+                "axis_list": [
+                    -1
+                ],
+                "eps": 9.999999747378752e-06
+            },
+            "inputs": [
+                "@Add_/blocks.0/Add_2_32:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.1/ffn1/ffn1.0/Add_1_76": {
+            "name": "Add_/blocks.1/ffn1/ffn1.0/Add_1",
+            "op": "layernormalize",
+            "parameters": {
+                "axis_list": [
+                    -1
+                ],
+                "eps": 9.999999747378752e-06
+            },
+            "inputs": [
+                "@Add_/blocks.0/final_norm/Add_1_19:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/blocks.1/attn/Mul_78": {
+            "name": "Mul_/blocks.1/attn/Mul",
+            "op": "multiply",
+            "parameters": {
+                "axis": 1,
+                "bias": true
+            },
+            "inputs": [
+                "@Transpose_/blocks.1/attn/Transpose_2_90:out0",
+                "@Initializer_/blocks.0/attn/Constant_15_output_0_91:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/blocks.1/attn/Transpose_4_79": {
+            "name": "Transpose_/blocks.1/attn/Transpose_4",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    1,
+                    2,
+                    0
+                ]
+            },
+            "inputs": [
+                "@Reshape_/blocks.1/attn/Reshape_4_92:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/blocks.1/attn/Transpose_1_80": {
+            "name": "Transpose_/blocks.1/attn/Transpose_1",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    3,
+                    1,
+                    2,
+                    0,
+                    4
+                ]
+            },
+            "inputs": [
+                "@Unsqueeze_/blocks.1/attn/Unsqueeze_93:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Relu_/blocks.0/ffn1/ffn1.2/Relu_82": {
+            "name": "Relu_/blocks.0/ffn1/ffn1.2/Relu",
+            "op": "relu",
+            "inputs": [
+                "@reshape_163:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/blocks.0/attn/Reshape_6_84": {
+            "name": "Reshape_/blocks.0/attn/Reshape_6",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    32,
+                    128
+                ]
+            },
+            "inputs": [
+                "@Transpose_/blocks.0/attn/Transpose_5_87:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.0/conv_norm/Add_1_86": {
+            "name": "Add_/blocks.0/conv_norm/Add_1",
+            "op": "layernormalize",
+            "parameters": {
+                "axis_list": [
+                    -1
+                ],
+                "eps": 9.999999747378752e-06
+            },
+            "inputs": [
+                "@Add_/blocks.0/Add_1_41:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/blocks.0/attn/Transpose_5_87": {
+            "name": "Transpose_/blocks.0/attn/Transpose_5",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    1,
+                    0,
+                    2
+                ]
+            },
+            "inputs": [
+                "@MatMul_/blocks.0/attn/MatMul_2_88:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "MatMul_/blocks.0/attn/MatMul_2_88": {
+            "name": "MatMul_/blocks.0/attn/MatMul_2",
+            "op": "matmul",
+            "parameters": {
+                "transpose_a": false,
+                "transpose_b": false
+            },
+            "inputs": [
+                "@Softmax_/blocks.0/attn/Softmax_95:out0",
+                "@Transpose_/blocks.0/attn/Transpose_3_89:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/blocks.0/attn/Transpose_3_89": {
+            "name": "Transpose_/blocks.0/attn/Transpose_3",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    1,
+                    0,
+                    2
+                ]
+            },
+            "inputs": [
+                "@Reshape_/blocks.0/attn/Reshape_5_96:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/blocks.1/attn/Transpose_2_90": {
+            "name": "Transpose_/blocks.1/attn/Transpose_2",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    1,
+                    0,
+                    2
+                ]
+            },
+            "inputs": [
+                "@Reshape_/blocks.1/attn/Reshape_3_97:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Initializer_/blocks.0/attn/Constant_15_output_0_91": {
+            "name": "Initializer_/blocks.0/attn/Constant_15_output_0",
+            "op": "variable",
+            "parameters": {
+                "shape": [
+                    1
+                ],
+                "is_scalar": true,
+                "type": "float32"
+            },
+            "inputs": [],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/blocks.1/attn/Reshape_4_92": {
+            "name": "Reshape_/blocks.1/attn/Reshape_4",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    32,
+                    4,
+                    32
+                ]
+            },
+            "inputs": [
+                "@Gather_/blocks.1/attn/Gather_1_98_acuity_opt_gather_reshape_172:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Unsqueeze_/blocks.1/attn/Unsqueeze_93": {
+            "name": "Unsqueeze_/blocks.1/attn/Unsqueeze",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    32,
+                    1,
+                    3,
+                    128
+                ]
+            },
+            "inputs": [
+                "@Reshape_/blocks.1/attn/Reshape_2_99:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Softmax_/blocks.0/attn/Softmax_95": {
+            "name": "Softmax_/blocks.0/attn/Softmax",
+            "op": "softmax",
+            "parameters": {
+                "sf_axis": -1,
+                "beta": 1.0
+            },
+            "inputs": [
+                "@MatMul_/blocks.0/attn/MatMul_1_102:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/blocks.0/attn/Reshape_5_96": {
+            "name": "Reshape_/blocks.0/attn/Reshape_5",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    32,
+                    4,
+                    32
+                ]
+            },
+            "inputs": [
+                "@Gather_/blocks.0/attn/Gather_2_103_acuity_opt_gather_reshape_173:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/blocks.1/attn/Reshape_3_97": {
+            "name": "Reshape_/blocks.1/attn/Reshape_3",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    32,
+                    4,
+                    32
+                ]
+            },
+            "inputs": [
+                "@Gather_/blocks.1/attn/Gather_104_acuity_opt_gather_reshape_174:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gather_/blocks.1/attn/Gather_1_98": {
+            "name": "Gather_/blocks.1/attn/Gather_1",
+            "op": "gather",
+            "parameters": {
+                "axis": 0,
+                "batch_dims": null
+            },
+            "inputs": [
+                "@Squeeze_/blocks.1/attn/Squeeze_68:out0",
+                "@Initializer_/blocks.0/Constant_1_output_0_106:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/blocks.1/attn/Reshape_2_99": {
+            "name": "Reshape_/blocks.1/attn/Reshape_2",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    32,
+                    1,
+                    3,
+                    128
+                ]
+            },
+            "inputs": [
+                "@reshape_166:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "MatMul_/blocks.0/attn/MatMul_1_102": {
+            "name": "MatMul_/blocks.0/attn/MatMul_1",
+            "op": "matmul",
+            "parameters": {
+                "transpose_a": false,
+                "transpose_b": false
+            },
+            "inputs": [
+                "@Mul_/blocks.0/attn/Mul_110:out0",
+                "@Transpose_/blocks.0/attn/Transpose_4_111:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gather_/blocks.0/attn/Gather_2_103": {
+            "name": "Gather_/blocks.0/attn/Gather_2",
+            "op": "gather",
+            "parameters": {
+                "axis": 0,
+                "batch_dims": null
+            },
+            "inputs": [
+                "@Squeeze_/blocks.0/attn/Squeeze_112:out0",
+                "@Initializer_/blocks.0/attn/Constant_1_output_0_69:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gather_/blocks.1/attn/Gather_104": {
+            "name": "Gather_/blocks.1/attn/Gather",
+            "op": "gather",
+            "parameters": {
+                "axis": 0,
+                "batch_dims": null
+            },
+            "inputs": [
+                "@Squeeze_/blocks.1/attn/Squeeze_68:out0",
+                "@Initializer_/blocks.0/attn/Constant_output_0_4:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Initializer_/blocks.0/Constant_1_output_0_106": {
+            "name": "Initializer_/blocks.0/Constant_1_output_0",
+            "op": "variable",
+            "parameters": {
+                "shape": [
+                    1
+                ],
+                "is_scalar": true,
+                "type": "float32"
+            },
+            "inputs": [],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.0/ffn1/ffn1.0/Add_1_108": {
+            "name": "Add_/blocks.0/ffn1/ffn1.0/Add_1",
+            "op": "layernormalize",
+            "parameters": {
+                "axis_list": [
+                    -1
+                ],
+                "eps": 9.999999747378752e-06
+            },
+            "inputs": [
+                "@embedding_input_135:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/blocks.0/attn/Mul_110": {
+            "name": "Mul_/blocks.0/attn/Mul",
+            "op": "multiply",
+            "parameters": {
+                "axis": 1,
+                "bias": true
+            },
+            "inputs": [
+                "@Transpose_/blocks.0/attn/Transpose_2_119:out0",
+                "@Initializer_/blocks.0/attn/Constant_15_output_0_91:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/blocks.0/attn/Transpose_4_111": {
+            "name": "Transpose_/blocks.0/attn/Transpose_4",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    1,
+                    2,
+                    0
+                ]
+            },
+            "inputs": [
+                "@Reshape_/blocks.0/attn/Reshape_4_121:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Squeeze_/blocks.0/attn/Squeeze_112": {
+            "name": "Squeeze_/blocks.0/attn/Squeeze",
+            "op": "squeeze",
+            "parameters": {
+                "axis_list": [
+                    3
+                ],
+                "name": null
+            },
+            "inputs": [
+                "@Transpose_/blocks.0/attn/Transpose_1_114:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/blocks.0/attn/Transpose_1_114": {
+            "name": "Transpose_/blocks.0/attn/Transpose_1",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    3,
+                    1,
+                    2,
+                    0,
+                    4
+                ]
+            },
+            "inputs": [
+                "@Unsqueeze_/blocks.0/attn/Unsqueeze_122:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/blocks.1/attn/Transpose_118": {
+            "name": "Transpose_/blocks.1/attn/Transpose",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    1,
+                    0,
+                    2
+                ]
+            },
+            "inputs": [
+                "@Add_/blocks.1/attn_norm/Add_1_123:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/blocks.0/attn/Transpose_2_119": {
+            "name": "Transpose_/blocks.0/attn/Transpose_2",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    1,
+                    0,
+                    2
+                ]
+            },
+            "inputs": [
+                "@Reshape_/blocks.0/attn/Reshape_3_124:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/blocks.0/attn/Reshape_4_121": {
+            "name": "Reshape_/blocks.0/attn/Reshape_4",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    32,
+                    4,
+                    32
+                ]
+            },
+            "inputs": [
+                "@Gather_/blocks.0/attn/Gather_1_125_acuity_opt_gather_reshape_175:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Unsqueeze_/blocks.0/attn/Unsqueeze_122": {
+            "name": "Unsqueeze_/blocks.0/attn/Unsqueeze",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    32,
+                    1,
+                    3,
+                    128
+                ]
+            },
+            "inputs": [
+                "@Reshape_/blocks.0/attn/Reshape_2_126:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.1/attn_norm/Add_1_123": {
+            "name": "Add_/blocks.1/attn_norm/Add_1",
+            "op": "layernormalize",
+            "parameters": {
+                "axis_list": [
+                    -1
+                ],
+                "eps": 9.999999747378752e-06
+            },
+            "inputs": [
+                "@Add_/blocks.1/Add_14:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/blocks.0/attn/Reshape_3_124": {
+            "name": "Reshape_/blocks.0/attn/Reshape_3",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    32,
+                    4,
+                    32
+                ]
+            },
+            "inputs": [
+                "@Gather_/blocks.0/attn/Gather_129_acuity_opt_gather_reshape_176:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gather_/blocks.0/attn/Gather_1_125": {
+            "name": "Gather_/blocks.0/attn/Gather_1",
+            "op": "gather",
+            "parameters": {
+                "axis": 0,
+                "batch_dims": null
+            },
+            "inputs": [
+                "@Squeeze_/blocks.0/attn/Squeeze_112:out0",
+                "@Initializer_/blocks.0/Constant_1_output_0_106:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/blocks.0/attn/Reshape_2_126": {
+            "name": "Reshape_/blocks.0/attn/Reshape_2",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    32,
+                    1,
+                    3,
+                    128
+                ]
+            },
+            "inputs": [
+                "@reshape_169:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gather_/blocks.0/attn/Gather_129": {
+            "name": "Gather_/blocks.0/attn/Gather",
+            "op": "gather",
+            "parameters": {
+                "axis": 0,
+                "batch_dims": null
+            },
+            "inputs": [
+                "@Squeeze_/blocks.0/attn/Squeeze_112:out0",
+                "@Initializer_/blocks.0/attn/Constant_output_0_4:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/blocks.0/attn/Transpose_133": {
+            "name": "Transpose_/blocks.0/attn/Transpose",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    1,
+                    0,
+                    2
+                ]
+            },
+            "inputs": [
+                "@Add_/blocks.0/attn_norm/Add_1_134:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.0/attn_norm/Add_1_134": {
+            "name": "Add_/blocks.0/attn_norm/Add_1",
+            "op": "layernormalize",
+            "parameters": {
+                "axis_list": [
+                    -1
+                ],
+                "eps": 9.999999747378752e-06
+            },
+            "inputs": [
+                "@Add_/blocks.0/Add_52:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "embedding_input_135": {
+            "name": "embedding_input",
+            "op": "input",
+            "parameters": {
+                "size": "",
+                "channels": 1,
+                "shape": [
+                    1,
+                    32,
+                    128
+                ],
+                "is_scalar": false,
+                "type": "float32"
+            },
+            "inputs": [],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_140": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    256
+                ]
+            },
+            "inputs": [
+                "@Relu_/blocks.1/ffn2/ffn2.2/Relu_17:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_141": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 128,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_140:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_142": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    32,
+                    128
+                ]
+            },
+            "inputs": [
+                "@fullconnect_141:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_143": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    128
+                ]
+            },
+            "inputs": [
+                "@Add_/blocks.1/ffn2/ffn2.0/Add_1_39:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_144": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 256,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_143:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_145": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    32,
+                    256
+                ]
+            },
+            "inputs": [
+                "@fullconnect_144:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_146": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    256
+                ]
+            },
+            "inputs": [
+                "@Relu_/blocks.0/ffn2/ffn2.2/Relu_44:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_147": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 128,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_146:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_148": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    32,
+                    128
+                ]
+            },
+            "inputs": [
+                "@fullconnect_147:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_149": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    256
+                ]
+            },
+            "inputs": [
+                "@Relu_/blocks.1/ffn1/ffn1.2/Relu_46:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_150": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 128,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_149:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_151": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    32,
+                    128
+                ]
+            },
+            "inputs": [
+                "@fullconnect_150:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_152": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    128
+                ]
+            },
+            "inputs": [
+                "@Add_/blocks.0/ffn2/ffn2.0/Add_1_74:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_153": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 256,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_152:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_154": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    32,
+                    256
+                ]
+            },
+            "inputs": [
+                "@fullconnect_153:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_155": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    128
+                ]
+            },
+            "inputs": [
+                "@Add_/blocks.1/ffn1/ffn1.0/Add_1_76:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_156": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 256,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_155:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_157": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    32,
+                    256
+                ]
+            },
+            "inputs": [
+                "@fullconnect_156:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_158": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    256
+                ]
+            },
+            "inputs": [
+                "@Relu_/blocks.0/ffn1/ffn1.2/Relu_82:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_159": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 128,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_158:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_160": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    32,
+                    128
+                ]
+            },
+            "inputs": [
+                "@fullconnect_159:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_161": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    128
+                ]
+            },
+            "inputs": [
+                "@Add_/blocks.0/ffn1/ffn1.0/Add_1_108:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_162": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 256,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_161:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_163": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    32,
+                    256
+                ]
+            },
+            "inputs": [
+                "@fullconnect_162:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_164": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    128
+                ]
+            },
+            "inputs": [
+                "@Transpose_/blocks.1/attn/Transpose_118:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_165": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_164:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_166": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_165:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_167": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    128
+                ]
+            },
+            "inputs": [
+                "@Transpose_/blocks.0/attn/Transpose_133:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_168": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 384,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_167:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_169": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    1,
+                    384
+                ]
+            },
+            "inputs": [
+                "@fullconnect_168:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gather_/Gather_2_acuity_opt_gather_reshape_170": {
+            "name": "Gather_/Gather_2_acuity_opt_gather_reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    128
+                ]
+            },
+            "inputs": [
+                "@Gather_/Gather_2:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gather_/blocks.1/attn/Gather_2_59_acuity_opt_gather_reshape_171": {
+            "name": "Gather_/blocks.1/attn/Gather_2_59_acuity_opt_gather_reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    32,
+                    1,
+                    128
+                ]
+            },
+            "inputs": [
+                "@Gather_/blocks.1/attn/Gather_2_59:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gather_/blocks.1/attn/Gather_1_98_acuity_opt_gather_reshape_172": {
+            "name": "Gather_/blocks.1/attn/Gather_1_98_acuity_opt_gather_reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    32,
+                    1,
+                    128
+                ]
+            },
+            "inputs": [
+                "@Gather_/blocks.1/attn/Gather_1_98:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gather_/blocks.0/attn/Gather_2_103_acuity_opt_gather_reshape_173": {
+            "name": "Gather_/blocks.0/attn/Gather_2_103_acuity_opt_gather_reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    32,
+                    1,
+                    128
+                ]
+            },
+            "inputs": [
+                "@Gather_/blocks.0/attn/Gather_2_103:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gather_/blocks.1/attn/Gather_104_acuity_opt_gather_reshape_174": {
+            "name": "Gather_/blocks.1/attn/Gather_104_acuity_opt_gather_reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    32,
+                    1,
+                    128
+                ]
+            },
+            "inputs": [
+                "@Gather_/blocks.1/attn/Gather_104:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gather_/blocks.0/attn/Gather_1_125_acuity_opt_gather_reshape_175": {
+            "name": "Gather_/blocks.0/attn/Gather_1_125_acuity_opt_gather_reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    32,
+                    1,
+                    128
+                ]
+            },
+            "inputs": [
+                "@Gather_/blocks.0/attn/Gather_1_125:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gather_/blocks.0/attn/Gather_129_acuity_opt_gather_reshape_176": {
+            "name": "Gather_/blocks.0/attn/Gather_129_acuity_opt_gather_reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    32,
+                    1,
+                    128
+                ]
+            },
+            "inputs": [
+                "@Gather_/blocks.0/attn/Gather_129:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        }
+    },
+    "quantize_info": {}
+}
