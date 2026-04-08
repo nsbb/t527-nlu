@@ -1,0 +1,683 @@
+utterance,intent
+거실 난방 켜줘,heating_on
+거실 보일러 켜줘,heating_on
+거실 난방 켜줄래,heating_on
+거실 보일러 켜줄래,heating_on
+거실 난방 틀어줘,heating_on
+거실 보일러 틀어줘,heating_on
+거실 난방 올려줘,heating_on
+거실 보일러 올려줘,heating_on
+거실 난방 켜주세요,heating_on
+거실 보일러 켜주세요,heating_on
+안방 난방 켜줘,heating_on
+안방 보일러 켜줘,heating_on
+안방 난방 켜줄래,heating_on
+안방 보일러 켜줄래,heating_on
+안방 난방 틀어줘,heating_on
+안방 보일러 틀어줘,heating_on
+안방 난방 올려줘,heating_on
+안방 보일러 올려줘,heating_on
+안방 난방 켜주세요,heating_on
+안방 보일러 켜주세요,heating_on
+침실 난방 켜줘,heating_on
+침실 보일러 켜줘,heating_on
+침실 난방 켜줄래,heating_on
+침실 보일러 켜줄래,heating_on
+침실 난방 틀어줘,heating_on
+침실 보일러 틀어줘,heating_on
+침실 난방 올려줘,heating_on
+침실 보일러 올려줘,heating_on
+침실 난방 켜주세요,heating_on
+침실 보일러 켜주세요,heating_on
+주방 난방 켜줘,heating_on
+주방 보일러 켜줘,heating_on
+주방 난방 켜줄래,heating_on
+주방 보일러 켜줄래,heating_on
+주방 난방 틀어줘,heating_on
+주방 보일러 틀어줘,heating_on
+주방 난방 올려줘,heating_on
+주방 보일러 올려줘,heating_on
+주방 난방 켜주세요,heating_on
+주방 보일러 켜주세요,heating_on
+방 난방 켜줘,heating_on
+방 보일러 켜줘,heating_on
+방 난방 켜줄래,heating_on
+방 보일러 켜줄래,heating_on
+방 난방 틀어줘,heating_on
+방 보일러 틀어줘,heating_on
+방 난방 올려줘,heating_on
+방 보일러 올려줘,heating_on
+방 난방 켜주세요,heating_on
+방 보일러 켜주세요,heating_on
+큰방 난방 켜줘,heating_on
+큰방 보일러 켜줘,heating_on
+큰방 난방 켜줄래,heating_on
+큰방 보일러 켜줄래,heating_on
+큰방 난방 틀어줘,heating_on
+큰방 보일러 틀어줘,heating_on
+큰방 난방 올려줘,heating_on
+큰방 보일러 올려줘,heating_on
+큰방 난방 켜주세요,heating_on
+큰방 보일러 켜주세요,heating_on
+작은방 난방 켜줘,heating_on
+작은방 보일러 켜줘,heating_on
+작은방 난방 켜줄래,heating_on
+작은방 보일러 켜줄래,heating_on
+작은방 난방 틀어줘,heating_on
+작은방 보일러 틀어줘,heating_on
+작은방 난방 올려줘,heating_on
+작은방 보일러 올려줘,heating_on
+작은방 난방 켜주세요,heating_on
+작은방 보일러 켜주세요,heating_on
+아이방 난방 켜줘,heating_on
+아이방 보일러 켜줘,heating_on
+아이방 난방 켜줄래,heating_on
+아이방 보일러 켜줄래,heating_on
+아이방 난방 틀어줘,heating_on
+아이방 보일러 틀어줘,heating_on
+아이방 난방 올려줘,heating_on
+아이방 보일러 올려줘,heating_on
+아이방 난방 켜주세요,heating_on
+아이방 보일러 켜주세요,heating_on
+서재 난방 켜줘,heating_on
+서재 보일러 켜줘,heating_on
+서재 난방 켜줄래,heating_on
+서재 보일러 켜줄래,heating_on
+서재 난방 틀어줘,heating_on
+서재 보일러 틀어줘,heating_on
+서재 난방 올려줘,heating_on
+서재 보일러 올려줘,heating_on
+서재 난방 켜주세요,heating_on
+서재 보일러 켜주세요,heating_on
+너무 추워,heating_on
+거실이 너무 추워,heating_on
+안방이 너무 추워,heating_on
+침실이 너무 추워,heating_on
+추워 죽겠다,heating_on
+거실이 추워 죽겠다,heating_on
+안방이 추워 죽겠다,heating_on
+침실이 추워 죽겠다,heating_on
+얼어 죽겠다,heating_on
+거실이 얼어 죽겠다,heating_on
+안방이 얼어 죽겠다,heating_on
+침실이 얼어 죽겠다,heating_on
+집이 추워,heating_on
+거실이 집이 추워,heating_on
+안방이 집이 추워,heating_on
+침실이 집이 추워,heating_on
+쌀쌀해,heating_on
+거실 쌀쌀해,heating_on
+안방 쌀쌀해,heating_on
+침실 쌀쌀해,heating_on
+한기가 느껴져,heating_on
+거실이 한기가 느껴져,heating_on
+안방이 한기가 느껴져,heating_on
+침실이 한기가 느껴져,heating_on
+코끝이 시려,heating_on
+거실이 코끝이 시려,heating_on
+안방이 코끝이 시려,heating_on
+침실이 코끝이 시려,heating_on
+오들오들 떨려,heating_on
+거실이 오들오들 떨려,heating_on
+안방이 오들오들 떨려,heating_on
+침실이 오들오들 떨려,heating_on
+입김이 나와,heating_on
+거실이 입김이 나와,heating_on
+안방이 입김이 나와,heating_on
+침실이 입김이 나와,heating_on
+발이 시려,heating_on
+거실이 발이 시려,heating_on
+안방이 발이 시려,heating_on
+침실이 발이 시려,heating_on
+이불 덮어도 추워,heating_on
+거실이 이불 덮어도 추워,heating_on
+안방이 이불 덮어도 추워,heating_on
+침실이 이불 덮어도 추워,heating_on
+겨울인가봐,heating_on
+거실이 겨울인가봐,heating_on
+안방이 겨울인가봐,heating_on
+침실이 겨울인가봐,heating_on
+추워서 못 자겠어,heating_on
+거실이 추워서 못 자겠어,heating_on
+안방이 추워서 못 자겠어,heating_on
+침실이 추워서 못 자겠어,heating_on
+히터 필요해,heating_on
+거실 히터 필요해,heating_on
+안방 히터 필요해,heating_on
+침실 히터 필요해,heating_on
+따뜻하게 해줘,heating_on
+거실이 따뜻하게 해줘,heating_on
+안방이 따뜻하게 해줘,heating_on
+침실이 따뜻하게 해줘,heating_on
+체온이 떨어져,heating_on
+거실이 체온이 떨어져,heating_on
+안방이 체온이 떨어져,heating_on
+침실이 체온이 떨어져,heating_on
+남방 커줘,heating_on
+남방커줘,heating_on
+보일라 커줘,heating_on
+보일러커줘,heating_on
+난방 킬어줘,heating_on
+남방 틀어줘,heating_on
+보일러 커주,heating_on
+보일라켜줘,heating_on
+남방켜주,heating_on
+넘추워,heating_on
+너무추워,heating_on
+추워죽겠따,heating_on
+거실 난방 꺼줘,heating_off
+거실 보일러 꺼줘,heating_off
+안방 난방 꺼줘,heating_off
+안방 보일러 꺼줘,heating_off
+침실 난방 꺼줘,heating_off
+침실 보일러 꺼줘,heating_off
+주방 난방 꺼줘,heating_off
+주방 보일러 꺼줘,heating_off
+방 난방 꺼줘,heating_off
+방 보일러 꺼줘,heating_off
+거실 불 켜줘,light_on
+거실 조명 켜줘,light_on
+거실 불 좀 켜줘,light_on
+거실 불 켜줄래,light_on
+거실 조명 켜주세요,light_on
+거실 불 꺼줘,light_off
+거실 조명 꺼줘,light_off
+거실 불 좀 꺼줘,light_off
+안방 불 켜줘,light_on
+안방 조명 켜줘,light_on
+안방 불 좀 켜줘,light_on
+안방 불 켜줄래,light_on
+안방 조명 켜주세요,light_on
+안방 불 꺼줘,light_off
+안방 조명 꺼줘,light_off
+안방 불 좀 꺼줘,light_off
+침실 불 켜줘,light_on
+침실 조명 켜줘,light_on
+침실 불 좀 켜줘,light_on
+침실 불 켜줄래,light_on
+침실 조명 켜주세요,light_on
+침실 불 꺼줘,light_off
+침실 조명 꺼줘,light_off
+침실 불 좀 꺼줘,light_off
+주방 불 켜줘,light_on
+주방 조명 켜줘,light_on
+주방 불 좀 켜줘,light_on
+주방 불 켜줄래,light_on
+주방 조명 켜주세요,light_on
+주방 불 꺼줘,light_off
+주방 조명 꺼줘,light_off
+주방 불 좀 꺼줘,light_off
+방 불 켜줘,light_on
+방 조명 켜줘,light_on
+방 불 좀 켜줘,light_on
+방 불 켜줄래,light_on
+방 조명 켜주세요,light_on
+방 불 꺼줘,light_off
+방 조명 꺼줘,light_off
+방 불 좀 꺼줘,light_off
+큰방 불 켜줘,light_on
+큰방 조명 켜줘,light_on
+큰방 불 좀 켜줘,light_on
+큰방 불 켜줄래,light_on
+큰방 조명 켜주세요,light_on
+큰방 불 꺼줘,light_off
+큰방 조명 꺼줘,light_off
+큰방 불 좀 꺼줘,light_off
+작은방 불 켜줘,light_on
+작은방 조명 켜줘,light_on
+작은방 불 좀 켜줘,light_on
+작은방 불 켜줄래,light_on
+작은방 조명 켜주세요,light_on
+작은방 불 꺼줘,light_off
+작은방 조명 꺼줘,light_off
+작은방 불 좀 꺼줘,light_off
+아이방 불 켜줘,light_on
+아이방 조명 켜줘,light_on
+아이방 불 좀 켜줘,light_on
+아이방 불 켜줄래,light_on
+아이방 조명 켜주세요,light_on
+아이방 불 꺼줘,light_off
+아이방 조명 꺼줘,light_off
+아이방 불 좀 꺼줘,light_off
+서재 불 켜줘,light_on
+서재 조명 켜줘,light_on
+서재 불 좀 켜줘,light_on
+서재 불 켜줄래,light_on
+서재 조명 켜주세요,light_on
+서재 불 꺼줘,light_off
+서재 조명 꺼줘,light_off
+서재 불 좀 꺼줘,light_off
+어두워,light_on
+거실이 어두워,light_on
+주방이 어두워,light_on
+안방이 어두워,light_on
+안 보여,light_on
+거실이 안 보여,light_on
+주방이 안 보여,light_on
+안방이 안 보여,light_on
+캄캄해,light_on
+거실이 캄캄해,light_on
+주방이 캄캄해,light_on
+안방이 캄캄해,light_on
+컴컴해,light_on
+거실이 컴컴해,light_on
+주방이 컴컴해,light_on
+안방이 컴컴해,light_on
+어두침침해,light_on
+거실이 어두침침해,light_on
+주방이 어두침침해,light_on
+안방이 어두침침해,light_on
+빛 좀,light_on
+거실이 빛 좀,light_on
+주방이 빛 좀,light_on
+안방이 빛 좀,light_on
+환하게 해줘,light_on
+거실이 환하게 해줘,light_on
+주방이 환하게 해줘,light_on
+안방이 환하게 해줘,light_on
+불빛이 없어,light_on
+거실이 불빛이 없어,light_on
+주방이 불빛이 없어,light_on
+안방이 불빛이 없어,light_on
+앞이 안 보여,light_on
+거실이 앞이 안 보여,light_on
+주방이 앞이 안 보여,light_on
+안방이 앞이 안 보여,light_on
+시야가 안 보여,light_on
+거실이 시야가 안 보여,light_on
+주방이 시야가 안 보여,light_on
+안방이 시야가 안 보여,light_on
+어두워서 못 보겠어,light_on
+거실이 어두워서 못 보겠어,light_on
+주방이 어두워서 못 보겠어,light_on
+안방이 어두워서 못 보겠어,light_on
+너무 밝아,light_off
+눈부셔,light_off
+빛이 강해,light_off
+눈이 아파,light_off
+밝아서 잠이 안 와,light_off
+불커줘,light_on
+불 커줘,light_on
+불커주,light_on
+조명커줘,light_on
+불켜주,light_on
+불 켜주,light_on
+볼켜줘,light_on
+부ㄹ켜줘,light_on
+거실 에어컨 켜줘,ac_on
+거실 에어컨 꺼줘,ac_off
+거실 에어컨 23도,ac_temp
+거실 에어컨 25도로 맞춰줘,ac_temp
+안방 에어컨 켜줘,ac_on
+안방 에어컨 꺼줘,ac_off
+안방 에어컨 23도,ac_temp
+안방 에어컨 25도로 맞춰줘,ac_temp
+침실 에어컨 켜줘,ac_on
+침실 에어컨 꺼줘,ac_off
+침실 에어컨 23도,ac_temp
+침실 에어컨 25도로 맞춰줘,ac_temp
+주방 에어컨 켜줘,ac_on
+주방 에어컨 꺼줘,ac_off
+주방 에어컨 23도,ac_temp
+주방 에어컨 25도로 맞춰줘,ac_temp
+방 에어컨 켜줘,ac_on
+방 에어컨 꺼줘,ac_off
+방 에어컨 23도,ac_temp
+방 에어컨 25도로 맞춰줘,ac_temp
+너무 더워,ac_on
+덥다,ac_on
+땀이 나,ac_on
+무더워,ac_on
+찜통이야,ac_on
+더워 죽겠다,ac_on
+시원하게 해줘,ac_on
+열대야야,ac_on
+습해,ac_on
+후덥지근해,ac_on
+더워서 못 자겠어,ac_on
+에에컨 켜줘,ac_on
+에어컨커줘,ac_on
+에어컨 커줘,ac_on
+냉방커줘,ac_on
+에에컨꺼줘,ac_on
+에어콘 켜줘,ac_on
+제습 모드로 해줘,ac_mode
+에어컨 제습으로,ac_mode
+송풍 모드로 해줘,ac_mode
+에어컨 송풍으로,ac_mode
+냉방 모드로 해줘,ac_mode
+에어컨 냉방으로,ac_mode
+자동 모드로 해줘,ac_mode
+에어컨 자동으로,ac_mode
+공기가 탁해,ventilation_on
+답답해,ventilation_on
+숨이 막혀,ventilation_on
+환기가 필요해,ventilation_on
+냄새 나,ventilation_on
+공기가 안 좋아,ventilation_on
+숨쉬기 힘들어,ventilation_on
+음식 냄새 빼줘,ventilation_on
+공기 정화 좀,ventilation_on
+이산화탄소 많은 것 같아,ventilation_on
+머리가 아파 환기,ventilation_on
+환기 켜줘,ventilation_on
+환기 좀 시켜줘,ventilation_on
+공기청정기 켜줘,ventilation_on
+환기 틀어줘,ventilation_on
+완기 켜줘,ventilation_on
+환기커줘,ventilation_on
+환기 커줘,ventilation_on
+공기청정기커줘,ventilation_on
+문 열어줘,door_open
+현관문 열어줘,door_open
+열어줘,door_open
+문 좀 열어,door_open
+로비문 열어,door_open
+택배 왔어,door_open
+손님 오셨어,door_open
+들어갈게,door_open
+문 잠겨있어,door_open
+문열어줘,door_open
+문열어,door_open
+무너러줘,door_open
+문 열어주,door_open
+뭄열어줘,door_open
+날씨 어때,weather_query
+오늘 날씨,weather_query
+내일 날씨,weather_query
+비 와,weather_query
+우산 가져가야 해,weather_query
+이번 주 날씨,weather_query
+주말 날씨,weather_query
+오늘 춥나,weather_query
+내일 더워?,weather_query
+비올까,weather_query
+날시 어때,weather_query
+날씨어때,weather_query
+날씨 어때요,weather_query
+내일날씨,weather_query
+날시알려줘,weather_query
+지금 몇 시야,time_query
+시간 알려줘,time_query
+몇 시인지,time_query
+지금 시간,time_query
+몇시야,time_query
+커튼 열어줘,curtain_control
+커튼 닫아줘,curtain_control
+블라인드 열어,curtain_control
+블라인드 닫아,curtain_control
+전동커튼 열어,curtain_control
+가스 잠궈줘,gas_off
+가스 밸브 잠가,gas_off
+가스 차단,gas_off
+가스 잠갔어?,gas_off
+네가 할 수 있는 일이 뭐야,manual_query
+사용법 알려줘,manual_query
+너는 누가 만들었어,manual_query
+너 이름이 뭐야,manual_query
+엘리베이터 불러줘,elevator_control
+엘리베이터 호출,elevator_control
+엘베 불러줘,elevator_control
+엘레베이터 불러,elevator_control
+모닝콜 설정,alarm_setting
+알람 맞춰줘,alarm_setting
+아침에 깨워줘,alarm_setting
+7시에 깨워줘,alarm_setting
+외출 설정,security_mode
+재택 설정,security_mode
+방범 모드,security_mode
+나 지금 나가,security_mode
+외출할게,security_mode
+거실 난방 좀 올려줄래,heating_up
+거실 보일러 온도 좀,heating_up
+거실 난방 세게,heating_up
+거실 온도 좀 높여줘,heating_up
+거실 따뜻하게 좀,heating_up
+거실 난방 좀 낮춰,heating_down
+거실 온도 좀 내려줘,heating_down
+거실 난방 약하게,heating_down
+안방 난방 좀 올려줄래,heating_up
+안방 보일러 온도 좀,heating_up
+안방 난방 세게,heating_up
+안방 온도 좀 높여줘,heating_up
+안방 따뜻하게 좀,heating_up
+안방 난방 좀 낮춰,heating_down
+안방 온도 좀 내려줘,heating_down
+안방 난방 약하게,heating_down
+침실 난방 좀 올려줄래,heating_up
+침실 보일러 온도 좀,heating_up
+침실 난방 세게,heating_up
+침실 온도 좀 높여줘,heating_up
+침실 따뜻하게 좀,heating_up
+침실 난방 좀 낮춰,heating_down
+침실 온도 좀 내려줘,heating_down
+침실 난방 약하게,heating_down
+주방 난방 좀 올려줄래,heating_up
+주방 보일러 온도 좀,heating_up
+주방 난방 세게,heating_up
+주방 온도 좀 높여줘,heating_up
+주방 따뜻하게 좀,heating_up
+주방 난방 좀 낮춰,heating_down
+주방 온도 좀 내려줘,heating_down
+주방 난방 약하게,heating_down
+방 난방 좀 올려줄래,heating_up
+방 보일러 온도 좀,heating_up
+방 난방 세게,heating_up
+방 온도 좀 높여줘,heating_up
+방 따뜻하게 좀,heating_up
+방 난방 좀 낮춰,heating_down
+방 온도 좀 내려줘,heating_down
+방 난방 약하게,heating_down
+큰방 난방 좀 올려줄래,heating_up
+큰방 보일러 온도 좀,heating_up
+큰방 난방 세게,heating_up
+큰방 온도 좀 높여줘,heating_up
+큰방 따뜻하게 좀,heating_up
+큰방 난방 좀 낮춰,heating_down
+큰방 온도 좀 내려줘,heating_down
+큰방 난방 약하게,heating_down
+작은방 난방 좀 올려줄래,heating_up
+작은방 보일러 온도 좀,heating_up
+작은방 난방 세게,heating_up
+작은방 온도 좀 높여줘,heating_up
+작은방 따뜻하게 좀,heating_up
+작은방 난방 좀 낮춰,heating_down
+작은방 온도 좀 내려줘,heating_down
+작은방 난방 약하게,heating_down
+아이방 난방 좀 올려줄래,heating_up
+아이방 보일러 온도 좀,heating_up
+아이방 난방 세게,heating_up
+아이방 온도 좀 높여줘,heating_up
+아이방 따뜻하게 좀,heating_up
+아이방 난방 좀 낮춰,heating_down
+아이방 온도 좀 내려줘,heating_down
+아이방 난방 약하게,heating_down
+서재 난방 좀 올려줄래,heating_up
+서재 보일러 온도 좀,heating_up
+서재 난방 세게,heating_up
+서재 온도 좀 높여줘,heating_up
+서재 따뜻하게 좀,heating_up
+서재 난방 좀 낮춰,heating_down
+서재 온도 좀 내려줘,heating_down
+서재 난방 약하게,heating_down
+화장실 난방 좀 올려줄래,heating_up
+화장실 보일러 온도 좀,heating_up
+화장실 난방 세게,heating_up
+화장실 온도 좀 높여줘,heating_up
+화장실 따뜻하게 좀,heating_up
+화장실 난방 좀 낮춰,heating_down
+화장실 온도 좀 내려줘,heating_down
+화장실 난방 약하게,heating_down
+베란다 난방 좀 올려줄래,heating_up
+베란다 보일러 온도 좀,heating_up
+베란다 난방 세게,heating_up
+베란다 온도 좀 높여줘,heating_up
+베란다 따뜻하게 좀,heating_up
+베란다 난방 좀 낮춰,heating_down
+베란다 온도 좀 내려줘,heating_down
+베란다 난방 약하게,heating_down
+거실 밝기 좀 낮춰,light_dim
+거실 은은하게 해줘,light_dim
+거실 아늑하게,light_dim
+거실 분위기 있게,light_dim
+거실 영화 볼 거야,light_dim
+거실 조명 어둡게,light_dim
+안방 밝기 좀 낮춰,light_dim
+안방 은은하게 해줘,light_dim
+안방 아늑하게,light_dim
+안방 분위기 있게,light_dim
+안방 영화 볼 거야,light_dim
+안방 조명 어둡게,light_dim
+침실 밝기 좀 낮춰,light_dim
+침실 은은하게 해줘,light_dim
+침실 아늑하게,light_dim
+침실 분위기 있게,light_dim
+침실 영화 볼 거야,light_dim
+침실 조명 어둡게,light_dim
+주방 밝기 좀 낮춰,light_dim
+주방 은은하게 해줘,light_dim
+주방 아늑하게,light_dim
+주방 분위기 있게,light_dim
+주방 영화 볼 거야,light_dim
+주방 조명 어둡게,light_dim
+방 밝기 좀 낮춰,light_dim
+방 은은하게 해줘,light_dim
+방 아늑하게,light_dim
+방 분위기 있게,light_dim
+방 영화 볼 거야,light_dim
+방 조명 어둡게,light_dim
+큰방 밝기 좀 낮춰,light_dim
+큰방 은은하게 해줘,light_dim
+큰방 아늑하게,light_dim
+큰방 분위기 있게,light_dim
+큰방 영화 볼 거야,light_dim
+큰방 조명 어둡게,light_dim
+에어컨 18도,ac_temp
+거실 에어컨 18도로 맞춰줘,ac_temp
+안방 에어컨 18도,ac_temp
+에어컨 19도,ac_temp
+거실 에어컨 19도로 맞춰줘,ac_temp
+안방 에어컨 19도,ac_temp
+에어컨 20도,ac_temp
+거실 에어컨 20도로 맞춰줘,ac_temp
+안방 에어컨 20도,ac_temp
+에어컨 21도,ac_temp
+거실 에어컨 21도로 맞춰줘,ac_temp
+안방 에어컨 21도,ac_temp
+에어컨 22도,ac_temp
+거실 에어컨 22도로 맞춰줘,ac_temp
+안방 에어컨 22도,ac_temp
+에어컨 23도,ac_temp
+거실 에어컨 23도로 맞춰줘,ac_temp
+에어컨 24도,ac_temp
+거실 에어컨 24도로 맞춰줘,ac_temp
+안방 에어컨 24도,ac_temp
+에어컨 25도,ac_temp
+안방 에어컨 25도,ac_temp
+에어컨 26도,ac_temp
+거실 에어컨 26도로 맞춰줘,ac_temp
+안방 에어컨 26도,ac_temp
+에어컨 27도,ac_temp
+거실 에어컨 27도로 맞춰줘,ac_temp
+안방 에어컨 27도,ac_temp
+에어컨 28도,ac_temp
+거실 에어컨 28도로 맞춰줘,ac_temp
+안방 에어컨 28도,ac_temp
+거실 에어컨 바람 세게,ac_wind
+거실 에어컨 바람 줄여줘,ac_wind
+거실 에어컨 강풍으로,ac_wind
+거실 에어컨 약풍으로,ac_wind
+거실 에어컨 풍향 고정,ac_wind
+안방 에어컨 바람 세게,ac_wind
+안방 에어컨 바람 줄여줘,ac_wind
+안방 에어컨 강풍으로,ac_wind
+안방 에어컨 약풍으로,ac_wind
+안방 에어컨 풍향 고정,ac_wind
+침실 에어컨 바람 세게,ac_wind
+침실 에어컨 바람 줄여줘,ac_wind
+침실 에어컨 강풍으로,ac_wind
+침실 에어컨 약풍으로,ac_wind
+침실 에어컨 풍향 고정,ac_wind
+주방 에어컨 바람 세게,ac_wind
+주방 에어컨 바람 줄여줘,ac_wind
+주방 에어컨 강풍으로,ac_wind
+주방 에어컨 약풍으로,ac_wind
+주방 에어컨 풍향 고정,ac_wind
+환기 자동으로,ventilation_mode
+환기 수동,ventilation_mode
+환기 강하게,ventilation_mode
+환기 약하게,ventilation_mode
+취침 환기 모드,ventilation_mode
+거실 취침 환기 모드,ventilation_mode
+안방 취침 환기 모드,ventilation_mode
+침실 취침 환기 모드,ventilation_mode
+주방 취침 환기 모드,ventilation_mode
+전기요금 얼마야,energy_query
+이번 달 전기 사용량,energy_query
+수도 사용량,energy_query
+가스 사용량,energy_query
+에너지 절약 방법,energy_query
+전기 많이 쓰고 있어?,energy_query
+이번 달 요금,energy_query
+작년보다 많이 쓰나,energy_query
+오늘 뉴스 알려줘,news_query
+최신 뉴스,news_query
+헤드라인 뉴스,news_query
+경제 뉴스,news_query
+스포츠 뉴스,news_query
+IT 뉴스,news_query
+부동산 뉴스,news_query
+국제 뉴스,news_query
+정치 뉴스,news_query
+연예 뉴스,news_query
+출근길 어때,traffic_query
+지하철 정보,traffic_query
+버스 정보,traffic_query
+강남역까지 얼마나,traffic_query
+회사까지 몇 분,traffic_query
+교통 상황,traffic_query
+도로 막히나,traffic_query
+길 막혀?,traffic_query
+근처 병원,medical_query
+약국 어디,medical_query
+응급실 찾아줘,medical_query
+오늘 진료하는 병원,medical_query
+치과 추천,medical_query
+주식 어때,stock_query
+코스피,stock_query
+삼성전자 주가,stock_query
+오늘 증시,stock_query
+코스닥,stock_query
+기름값,fuel_query
+주유소 가격,fuel_query
+경유 가격,fuel_query
+휘발유 가격,fuel_query
+가장 싼 주유소,fuel_query
+관리사무소 전화번호,complex_info
+단지 소식,complex_info
+관리비 얼마,complex_info
+택배 보관함 어디,complex_info
+도와줘,emergency
+비상,emergency
+긴급,emergency
+화재,emergency
+119 불러줘,emergency
+경비실 연결,emergency
+거실 난방 켜줄래요,heating_on
+거실 보일러 켜줄래요,heating_on
+안방 난방 켜줄래요,heating_on
+안방 보일러 켜줄래요,heating_on
+침실 난방 켜줄래요,heating_on
+침실 보일러 켜줄래요,heating_on
+주방 난방 켜줄래요,heating_on
+주방 보일러 켜줄래요,heating_on
+방 난방 켜줄래요,heating_on
+방 보일러 켜줄래요,heating_on
+큰방 난방 켜줄래요,heating_on
+큰방 보일러 켜줄래요,heating_on
+작은방 난방 켜줄래요,heating_on
+작은방 보일러 켜줄래요,heating_on
+아이방 난방 켜줄래요,heating_on
+아이방 보일러 켜줄래요,heating_on
+서재 난방 켜줄래요,heating_on
+서재 보일러 켜줄래요,heating_on
