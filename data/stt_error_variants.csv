@@ -1,0 +1,48 @@
+utterance,intent
+남방 켜줘,heating_on
+남방 커줘,heating_on
+난방 커줘,heating_on
+난방커줘,heating_on
+보일라 켜줘,heating_on
+보일러 커줘,heating_on
+보일러 켜주,heating_on
+보일러켜줘,heating_on
+난방 킬어줘,heating_on
+너무추워,heating_on
+넘추워,heating_on
+너무 추어,heating_on
+추워죽겠다,heating_on
+불커줘,light_on
+불 커줘,light_on
+불 켜주,light_on
+조명 커줘,light_on
+불켜줘,light_on
+어두어,light_on
+안보여,light_on
+안 보여요,light_on
+불꺼줘,light_off
+불 꺼주,light_off
+불 커줘 아 꺼줘,light_off
+조명 꺼주,light_off
+에에컨 켜줘,ac_on
+에어컨 커줘,ac_on
+에어컨커줘,ac_on
+냉방커줘,ac_on
+넘더워,ac_on
+너무더워,ac_on
+더워죽겠다,ac_on
+에어컨 커줘 아니 꺼줘,ac_off
+에에컨 꺼줘,ac_off
+완기 켜줘,ventilation_on
+환기커줘,ventilation_on
+환기 커줘,ventilation_on
+공기청정기 커줘,ventilation_on
+답답해요,ventilation_on
+숨막혀,ventilation_on
+문열어줘,door_open
+문열어,door_open
+무너러줘,door_open
+문 열어주,door_open
+날시 어때,weather_query
+날씨어때,weather_query
+날씨 어때요,weather_query
