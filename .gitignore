@@ -1,11 +1,31 @@
+# NPU conversion artifacts (large, reproducible)
+npu/
+wksp_*/
+calib_*/
 *.onnx
 *.data
 *.nb
 *.quantize
 *.dat
-wksp_*/
-calib_*/
+*.tensor
+
+# Acuity json (not intent_db.json or label_map.json)
 ko_sbert*.json
-!intent_db.json
-__pycache__/
+cnn_*.json
+tc_*.json
+pure_cnn*.json
+minilm_*.json
+multi_minilm_*.json
+
+# Large model checkpoints
 checkpoints/cnn_24L_best.pt
+
+# Experiments (not tracked)
+experiments/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Logs
+*.log
