@@ -1,0 +1,385 @@
+{
+    "MetaData": {
+        "Name": "main_graph",
+        "AcuityVersion": "6",
+        "Platform": "tensorflow",
+        "Org_Platform": "onnx"
+    },
+    "Layers": {
+        "attach_Gemm_/fc/Gemm/out0_0": {
+            "name": "attach_Gemm_/fc/Gemm/out0",
+            "op": "output",
+            "parameters": {},
+            "inputs": [
+                "@Gemm_/fc/Gemm_1:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gemm_/fc/Gemm_1": {
+            "name": "Gemm_/fc/Gemm",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 55,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@ReduceMean_/ReduceMean_2:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "ReduceMean_/ReduceMean_2": {
+            "name": "ReduceMean_/ReduceMean",
+            "op": "reducemean",
+            "parameters": {
+                "axis_list": [
+                    1
+                ],
+                "keep_dims": false
+            },
+            "inputs": [
+                "@BatchNormalization_/convs/convs.17/BatchNormalization_3:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "BatchNormalization_/convs/convs.17/BatchNormalization_3": {
+            "name": "BatchNormalization_/convs/convs.17/BatchNormalization",
+            "op": "batchnormalize",
+            "parameters": {
+                "eps": 9.999999747378752e-06
+            },
+            "inputs": [
+                "@Relu_/convs/convs.16/Relu_4:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Relu_/convs/convs.16/Relu_4": {
+            "name": "Relu_/convs/convs.16/Relu",
+            "op": "relu",
+            "inputs": [
+                "@Conv_/convs/convs.15/Conv_5:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Conv_/convs/convs.15/Conv_5": {
+            "name": "Conv_/convs/convs.15/Conv",
+            "op": "conv1d",
+            "parameters": {
+                "padding_mode": "CONSTANT",
+                "weights": 256,
+                "padding": "VALID",
+                "bias": true,
+                "group_number": 1,
+                "ksize": 7,
+                "stride": 1,
+                "pad_method": "padding_const",
+                "pad": [
+                    3,
+                    3
+                ],
+                "dilation": [
+                    1,
+                    1,
+                    1
+                ]
+            },
+            "inputs": [
+                "@BatchNormalization_/convs/convs.14/BatchNormalization_6:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "BatchNormalization_/convs/convs.14/BatchNormalization_6": {
+            "name": "BatchNormalization_/convs/convs.14/BatchNormalization",
+            "op": "batchnormalize",
+            "parameters": {
+                "eps": 9.999999747378752e-06
+            },
+            "inputs": [
+                "@Relu_/convs/convs.13/Relu_7:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Relu_/convs/convs.13/Relu_7": {
+            "name": "Relu_/convs/convs.13/Relu",
+            "op": "relu",
+            "inputs": [
+                "@Conv_/convs/convs.12/Conv_8:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Conv_/convs/convs.12/Conv_8": {
+            "name": "Conv_/convs/convs.12/Conv",
+            "op": "conv1d",
+            "parameters": {
+                "padding_mode": "CONSTANT",
+                "weights": 256,
+                "padding": "VALID",
+                "bias": true,
+                "group_number": 1,
+                "ksize": 7,
+                "stride": 1,
+                "pad_method": "padding_const",
+                "pad": [
+                    3,
+                    3
+                ],
+                "dilation": [
+                    1,
+                    1,
+                    1
+                ]
+            },
+            "inputs": [
+                "@BatchNormalization_/convs/convs.11/BatchNormalization_9:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "BatchNormalization_/convs/convs.11/BatchNormalization_9": {
+            "name": "BatchNormalization_/convs/convs.11/BatchNormalization",
+            "op": "batchnormalize",
+            "parameters": {
+                "eps": 9.999999747378752e-06
+            },
+            "inputs": [
+                "@Relu_/convs/convs.10/Relu_10:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Relu_/convs/convs.10/Relu_10": {
+            "name": "Relu_/convs/convs.10/Relu",
+            "op": "relu",
+            "inputs": [
+                "@Conv_/convs/convs.9/Conv_11:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Conv_/convs/convs.9/Conv_11": {
+            "name": "Conv_/convs/convs.9/Conv",
+            "op": "conv1d",
+            "parameters": {
+                "padding_mode": "CONSTANT",
+                "weights": 256,
+                "padding": "VALID",
+                "bias": true,
+                "group_number": 1,
+                "ksize": 5,
+                "stride": 1,
+                "pad_method": "padding_const",
+                "pad": [
+                    2,
+                    2
+                ],
+                "dilation": [
+                    1,
+                    1,
+                    1
+                ]
+            },
+            "inputs": [
+                "@BatchNormalization_/convs/convs.8/BatchNormalization_12:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "BatchNormalization_/convs/convs.8/BatchNormalization_12": {
+            "name": "BatchNormalization_/convs/convs.8/BatchNormalization",
+            "op": "batchnormalize",
+            "parameters": {
+                "eps": 9.999999747378752e-06
+            },
+            "inputs": [
+                "@Relu_/convs/convs.7/Relu_13:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Relu_/convs/convs.7/Relu_13": {
+            "name": "Relu_/convs/convs.7/Relu",
+            "op": "relu",
+            "inputs": [
+                "@Conv_/convs/convs.6/Conv_14:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Conv_/convs/convs.6/Conv_14": {
+            "name": "Conv_/convs/convs.6/Conv",
+            "op": "conv1d",
+            "parameters": {
+                "padding_mode": "CONSTANT",
+                "weights": 256,
+                "padding": "VALID",
+                "bias": true,
+                "group_number": 1,
+                "ksize": 5,
+                "stride": 1,
+                "pad_method": "padding_const",
+                "pad": [
+                    2,
+                    2
+                ],
+                "dilation": [
+                    1,
+                    1,
+                    1
+                ]
+            },
+            "inputs": [
+                "@BatchNormalization_/convs/convs.5/BatchNormalization_15:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "BatchNormalization_/convs/convs.5/BatchNormalization_15": {
+            "name": "BatchNormalization_/convs/convs.5/BatchNormalization",
+            "op": "batchnormalize",
+            "parameters": {
+                "eps": 9.999999747378752e-06
+            },
+            "inputs": [
+                "@Relu_/convs/convs.4/Relu_16:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Relu_/convs/convs.4/Relu_16": {
+            "name": "Relu_/convs/convs.4/Relu",
+            "op": "relu",
+            "inputs": [
+                "@Conv_/convs/convs.3/Conv_17:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Conv_/convs/convs.3/Conv_17": {
+            "name": "Conv_/convs/convs.3/Conv",
+            "op": "conv1d",
+            "parameters": {
+                "padding_mode": "CONSTANT",
+                "weights": 256,
+                "padding": "VALID",
+                "bias": true,
+                "group_number": 1,
+                "ksize": 3,
+                "stride": 1,
+                "pad_method": "padding_const",
+                "pad": [
+                    1,
+                    1
+                ],
+                "dilation": [
+                    1,
+                    1,
+                    1
+                ]
+            },
+            "inputs": [
+                "@BatchNormalization_/convs/convs.2/BatchNormalization_18:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "BatchNormalization_/convs/convs.2/BatchNormalization_18": {
+            "name": "BatchNormalization_/convs/convs.2/BatchNormalization",
+            "op": "batchnormalize",
+            "parameters": {
+                "eps": 9.999999747378752e-06
+            },
+            "inputs": [
+                "@Relu_/convs/convs.1/Relu_19:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Relu_/convs/convs.1/Relu_19": {
+            "name": "Relu_/convs/convs.1/Relu",
+            "op": "relu",
+            "inputs": [
+                "@Conv_/convs/convs.0/Conv_20:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Conv_/convs/convs.0/Conv_20": {
+            "name": "Conv_/convs/convs.0/Conv",
+            "op": "conv1d",
+            "parameters": {
+                "padding_mode": "CONSTANT",
+                "weights": 256,
+                "padding": "VALID",
+                "bias": true,
+                "group_number": 1,
+                "ksize": 3,
+                "stride": 1,
+                "pad_method": "padding_const",
+                "pad": [
+                    1,
+                    1
+                ],
+                "dilation": [
+                    1,
+                    1,
+                    1
+                ]
+            },
+            "inputs": [
+                "@embedding_input_22:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "embedding_input_22": {
+            "name": "embedding_input",
+            "op": "input",
+            "parameters": {
+                "size": "",
+                "channels": 1,
+                "shape": [
+                    1,
+                    32,
+                    128
+                ],
+                "is_scalar": false,
+                "type": "float32"
+            },
+            "inputs": [],
+            "outputs": [
+                "out0"
+            ]
+        }
+    },
+    "quantize_info": {}
+}
