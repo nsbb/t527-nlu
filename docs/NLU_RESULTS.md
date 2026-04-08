@@ -10,14 +10,14 @@
 | Embedding | 128dim, CPU에서 처리 |
 | Conv filters | 128 |
 | Conv kernels | 3, 5, 7, 3 (반복) |
-| NB 크기 | **291KB** |
+| NB 크기 | **~300KB** |
 | NPU 추론 | **~1ms** |
-| Intent 수 | 55개 |
+| Intent 수 | **50개** |
 
 ## 파이프라인
 
 ```
-STT 텍스트 → Tokenizer (CPU) → Embedding (CPU) → uint8 양자화 (CPU) → CNN body (NPU, 291KB, ~1ms) → Intent
+STT 텍스트 → Tokenizer (CPU) → Embedding (CPU) → uint8 양자화 (CPU) → CNN body (NPU, ~300KB, ~1ms) → Intent
 ```
 
 ---
@@ -26,28 +26,36 @@ STT 텍스트 → Tokenizer (CPU) → Embedding (CPU) → uint8 양자화 (CPU) 
 
 ### 682개 검증 데이터 (CPU)
 
-| 모델 버전 | 학습 데이터 | 정확도 | val_acc |
-|----------|-----------|--------|---------|
-| v2 (cnn_4L_v2) | smarthome_v2 1,908개 | 96.0% (655/682) | 99.5% |
-| v3 (cnn_4L_v3) | smarthome_v3 2,026개 | 98.2% (670/682) | 99.6% |
-| **v4 (cnn_4L_v4)** | **smarthome_v4 2,067개** | **99.4% (678/682)** | **99.7%** |
-| v5 (cnn_4L_v5) | smarthome_v5 2,075개 | 99.0% (675/682) | 99.7% |
+| 모델 버전 | Intent | 학습 데이터 | 정확도 | val_acc |
+|----------|--------|-----------|--------|---------|
+| v2 | 55개 | 1,908개 | 96.0% (655/682) | 99.5% |
+| v4 | 54개 | 2,067개 | 99.4% (678/682) | 99.4% |
+| v6 | 50개 | 2,636개 | 99.56% (679/682) | 98.4% |
+| **v8** | **50개** | **2,675개** | **100% (682/682)** | **98.9%** |
 
-**v4가 최적** — v5는 time_query 데이터 추가 + label 수정했으나 오히려 0.4%p 하락 (과적합).
+**v8이 최종** — 르엘 시나리오 기준 intent 50개로 정리 + 데이터 확장 + 오분류 보강.
+
+### Intent 정리 (v4→v8)
+
+| 변경 | 내용 |
+|------|------|
+| 추가 (3개) | `doorlock_control`, `notice_query`, `password_change` |
+| 통합 (6개) | `weather`→`weather_query`, `dust`→`dust_query`, `light_specific`→`light_on`, `heating_away`→`heating_schedule`, `temp_query`→`heating_query`, `ac_schedule`→`ac_mode` |
+| 삭제 (2개) | `restaurant`, `travel` (kochat 전용, 르엘에 없음) |
 
 ### 모델 크기별 비교
 
 레이어를 늘려도 정확도가 향상되지 않음. **데이터가 핵심, 모델 크기는 무관.**
 
-| 모델 | Params | Val_Acc | 학습시간 | NB 크기 | NPU 추론 |
-|------|--------|---------|---------|---------|---------|
-| **cnn_4L** | **4.40M** | **0.9852** | **21.9s** | **291KB** | **~1ms** |
-| cnn_8L | 6.51M | 0.9847 | 26.8s | - | - |
-| cnn_12L | 7.95M | 0.9847 | 33.8s | - | - |
-| cnn_16L | 9.14M | 0.9837 | 40.4s | - | - |
-| cnn_24L | 35.03M | 0.9837 | 125.1s | - | - |
+| 모델 | Params | Val_Acc | NB 크기 | NPU 추론 |
+|------|--------|---------|---------|---------|
+| **cnn_4L** | **4.40M** | **0.9852** | **291KB** | **~1ms** |
+| cnn_8L | 6.51M | 0.9847 | - | - |
+| cnn_12L | 7.95M | 0.9847 | - | - |
+| cnn_16L | 9.14M | 0.9837 | - | - |
+| cnn_24L | 35.03M | 0.9837 | - | - |
 
-### 21개 핵심 테스트 (NPU)
+### 21개 핵심 테스트 (NPU, v4 기준)
 
 | 항목 | 값 |
 |------|-----|
@@ -60,16 +68,18 @@ STT 텍스트 → Tokenizer (CPU) → Embedding (CPU) → uint8 양자화 (CPU) 
 |------|------|------|
 | 너무 추워 | heating_on | O |
 | 얼어 죽겠다 | heating_on | O |
-| 집이 너무 춥다 | heating_on | O |
+| 코가 시려 | heating_on | O |
 | 어두워 | light_on | O |
 | 캄캄해 | light_on | O |
+| 눈이 침침해 | light_on | O |
 | 너무 밝아 | light_off | O |
+| 눈부셔 | light_off | O |
 | 너무 더워 | ac_on | O |
 | 찜통이야 | ac_on | O |
-| 시원하게 해줘 | ac_on | O |
+| 땀이 나 | ac_on | O |
 | 공기가 탁해 | ventilation_on | O |
-| 답답해 | ventilation_on | O |
 | 숨이 막혀 | ventilation_on | O |
+| 냄새 나 | ventilation_on | O |
 | 택배 왔어 | door_open | O |
 
 ### STT 오류 변형 (CPU)
@@ -79,17 +89,11 @@ STT 텍스트 → Tokenizer (CPU) → Embedding (CPU) → uint8 양자화 (CPU) 
 | 남방 커줘 | heating_on | O |
 | 보일라 커줘 | heating_on | O |
 | 불커줘 | light_on | O |
+| 부ㄹ켜줘 | light_on | O |
 | 에에컨 켜줘 | ac_on | O |
 | 완기 켜줘 | ventilation_on | O |
 | 문열어 | door_open | O |
-
----
-
-## 남은 오류 (v4 기준, 4/682)
-
-주로 **heating_on vs heating_up** 구분 문제:
-- "보일러 올려줘" → heating_on (모델) vs heating_up (정답)
-- 학습 데이터에서 heating_up 예시를 더 추가하면 해결 가능하나, v5에서 시도 시 다른 곳에서 성능 하락
+| 뭄열어줘 | door_open | O |
 
 ---
 
@@ -97,10 +101,29 @@ STT 텍스트 → Tokenizer (CPU) → Embedding (CPU) → uint8 양자화 (CPU) 
 
 | 데이터 | 크기 | 출처 |
 |--------|------|------|
-| 스마트홈 증강 v4 | 2,067개 | 자체 생성 (51 intent) |
-| STT 오류 변형 | 47개 | 자체 생성 |
-| kochat | 19,992개 | github.com/hyunwoongko/kochat |
-| **총** | **22,059개** | |
+| 스마트홈 v8 | 2,675개 | 자체 생성 (50 intent) |
+| kochat v6 | 9,996개 | github.com/hyunwoongko/kochat (weather_query, dust_query만) |
+| **총** | **12,671개** | |
+
+---
+
+## Intent 목록 (50개)
+
+| 카테고리 | Intent | 설명 |
+|---------|--------|------|
+| 조명 | light_on, light_off, light_dim, light_query, light_schedule | 조명 제어/조회/예약 |
+| 난방 | heating_on, heating_off, heating_up, heating_down, heating_query, heating_schedule | 난방 제어/조회/예약 |
+| 에어컨 | ac_on, ac_off, ac_temp, ac_mode, ac_wind, ac_query, ac_exception | 에어컨 제어/조회 |
+| 환기 | ventilation_on, ventilation_off, ventilation_mode, ventilation_query | 환기 제어/조회 |
+| 커튼 | curtain_control | 전동커튼 제어 |
+| 출입 | door_open, doorlock_control | 공동현관/도어락 |
+| 가스 | gas_off | 가스 밸브 |
+| 보안 | security_mode, emergency | 외출모드/비상 |
+| 엘리베이터 | elevator_control | 호출/조회 |
+| 에너지 | energy_query | 사용량 조회 |
+| 설정 | system_setting, alarm_setting, password_change | 시스템/알람/비밀번호 |
+| 정보 | home_status_query, notification_query, notice_query, manual_query, complex_info | 상태/알림/단지정보 |
+| 생활 | weather_query, dust_query, news_query, traffic_query, stock_query, fuel_query, medical_query, time_query, car_history, community_query, visitor_parking, ev_charging | 날씨/뉴스/교통 등 |
 
 ---
 
@@ -125,18 +148,20 @@ STT 텍스트 → Tokenizer (CPU) → Embedding (CPU) → uint8 양자화 (CPU) 
 ```
 t527-nlu/
 ├── checkpoints/
-│   ├── cnn_4L_v4_best.pt             # 최종 모델 (99.4%)
-│   └── label_map.json                # 55 intent 매핑
+│   ├── cnn_4L_v8_best.pt             # 최종 모델 (100%)
+│   └── label_map.json                # 50 intent 매핑
 ├── data/
-│   ├── smarthome_intent_v4.csv       # 최종 학습 데이터 2,067개
-│   ├── kochat_intent.csv             # kochat 19,992개
-│   ├── test_1000_cases_v2.csv        # 검증 682개
+│   ├── smarthome_intent_v8.csv       # 최종 학습 데이터 2,675개
+│   ├── kochat_intent_v6.csv          # kochat 9,996개
+│   ├── test_v8.csv                   # 검증 682개
 │   ├── ruel_scenarios.csv            # 르엘 219개 시나리오
 │   ├── indirect_expressions.csv      # 간접 표현 76개
 │   └── stt_error_variants.csv        # STT 오류 47개
 ├── tokenizer/                        # BERT tokenizer
-├── train_textconformer.py            # 모델 정의 + 학습
-├── NPU_NLU_EXPERIMENTS.md            # NPU 실험 전수 조사
-├── NLU_RESULTS.md                    # 이 문서
-└── TRAINING_ROADMAP.md               # 학습 로드맵
+├── train_cnn_v6.py                   # PureCNN 학습 스크립트
+├── docs/
+│   ├── NLU_RESULTS.md                # 이 문서
+│   ├── NPU_NLU_EXPERIMENTS.md        # NPU 실험 전수 조사
+│   └── TRAINING_ROADMAP.md           # 학습 로드맵
+└── README.md
 ```
