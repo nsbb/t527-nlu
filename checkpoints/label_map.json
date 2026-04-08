@@ -53,8 +53,7 @@
     "ventilation_on": 50,
     "ventilation_query": 51,
     "visitor_parking": 52,
-    "weather": 53,
-    "weather_query": 54
+    "weather": 53
   },
   "id2label": {
     "0": "ac_exception",
@@ -110,7 +109,6 @@
     "50": "ventilation_on",
     "51": "ventilation_query",
     "52": "visitor_parking",
-    "53": "weather",
-    "54": "weather_query"
+    "53": "weather"
   }
 }
