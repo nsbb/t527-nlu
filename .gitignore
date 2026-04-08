@@ -8,3 +8,4 @@ calib_*/
 ko_sbert*.json
 !intent_db.json
 __pycache__/
+checkpoints/cnn_24L_best.pt
