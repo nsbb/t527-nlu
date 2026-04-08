@@ -26,10 +26,26 @@ STT 텍스트 → Tokenizer (CPU) → Embedding (CPU) → uint8 양자화 (CPU) 
 
 ### 682개 검증 데이터 (CPU)
 
-| 항목 | 값 |
-|------|-----|
-| 전체 정확도 | **96.0%** (655/682) |
-| val_acc (학습) | 99.5% |
+| 모델 버전 | 학습 데이터 | 정확도 | val_acc |
+|----------|-----------|--------|---------|
+| v2 (cnn_4L_v2) | smarthome_v2 1,908개 | 96.0% (655/682) | 99.5% |
+| v3 (cnn_4L_v3) | smarthome_v3 2,026개 | 98.2% (670/682) | 99.6% |
+| **v4 (cnn_4L_v4)** | **smarthome_v4 2,067개** | **99.4% (678/682)** | **99.7%** |
+| v5 (cnn_4L_v5) | smarthome_v5 2,075개 | 99.0% (675/682) | 99.7% |
+
+**v4가 최적** — v5는 time_query 데이터 추가 + label 수정했으나 오히려 0.4%p 하락 (과적합).
+
+### 모델 크기별 비교
+
+레이어를 늘려도 정확도가 향상되지 않음. **데이터가 핵심, 모델 크기는 무관.**
+
+| 모델 | Params | Val_Acc | 학습시간 | NB 크기 | NPU 추론 |
+|------|--------|---------|---------|---------|---------|
+| **cnn_4L** | **4.40M** | **0.9852** | **21.9s** | **291KB** | **~1ms** |
+| cnn_8L | 6.51M | 0.9847 | 26.8s | - | - |
+| cnn_12L | 7.95M | 0.9847 | 33.8s | - | - |
+| cnn_16L | 9.14M | 0.9837 | 40.4s | - | - |
+| cnn_24L | 35.03M | 0.9837 | 125.1s | - | - |
 
 ### 21개 핵심 테스트 (NPU)
 
@@ -69,14 +85,22 @@ STT 텍스트 → Tokenizer (CPU) → Embedding (CPU) → uint8 양자화 (CPU) 
 
 ---
 
+## 남은 오류 (v4 기준, 4/682)
+
+주로 **heating_on vs heating_up** 구분 문제:
+- "보일러 올려줘" → heating_on (모델) vs heating_up (정답)
+- 학습 데이터에서 heating_up 예시를 더 추가하면 해결 가능하나, v5에서 시도 시 다른 곳에서 성능 하락
+
+---
+
 ## 학습 데이터
 
 | 데이터 | 크기 | 출처 |
 |--------|------|------|
-| 스마트홈 증강 | 1,908개 | 자체 생성 (51 intent) |
+| 스마트홈 증강 v4 | 2,067개 | 자체 생성 (51 intent) |
 | STT 오류 변형 | 47개 | 자체 생성 |
 | kochat | 19,992개 | github.com/hyunwoongko/kochat |
-| **총** | **21,900개** | |
+| **총** | **22,059개** | |
 
 ---
 
@@ -96,31 +120,23 @@ STT 텍스트 → Tokenizer (CPU) → Embedding (CPU) → uint8 양자화 (CPU) 
 
 ---
 
-## 남은 오류 (27/682)
-
-대부분 **heating_on vs heating_up** 구분 문제:
-- "보일러 올려줘" → heating_on (모델) vs heating_up (정답)
-- 학습 데이터에 "보일러 올려줘"→heating_up 추가하면 해결
-
----
-
 ## 파일 구조
 
 ```
 t527-nlu/
 ├── checkpoints/
-│   ├── cnn_4L_v2_best.pt          # 학습된 모델
-│   └── label_map.json             # 55 intent 매핑
+│   ├── cnn_4L_v4_best.pt             # 최종 모델 (99.4%)
+│   └── label_map.json                # 55 intent 매핑
 ├── data/
-│   ├── smarthome_intent_v2.csv    # 학습 데이터 1,908개
-│   ├── kochat_intent.csv          # kochat 19,992개
-│   ├── test_1000_cases_fixed.csv  # 검증 682개
-│   ├── ruel_scenarios.csv         # 르엘 219개 시나리오
-│   ├── indirect_expressions.csv   # 간접 표현 76개
-│   └── stt_error_variants.csv     # STT 오류 47개
-├── tokenizer/                     # BERT tokenizer
-├── train_textconformer.py         # 학습 스크립트
-├── NPU_NLU_EXPERIMENTS.md         # NPU 실험 전수 조사
-├── NLU_RESULTS.md                 # 이 문서
-└── TRAINING_ROADMAP.md            # 학습 로드맵
+│   ├── smarthome_intent_v4.csv       # 최종 학습 데이터 2,067개
+│   ├── kochat_intent.csv             # kochat 19,992개
+│   ├── test_1000_cases_v2.csv        # 검증 682개
+│   ├── ruel_scenarios.csv            # 르엘 219개 시나리오
+│   ├── indirect_expressions.csv      # 간접 표현 76개
+│   └── stt_error_variants.csv        # STT 오류 47개
+├── tokenizer/                        # BERT tokenizer
+├── train_textconformer.py            # 모델 정의 + 학습
+├── NPU_NLU_EXPERIMENTS.md            # NPU 실험 전수 조사
+├── NLU_RESULTS.md                    # 이 문서
+└── TRAINING_ROADMAP.md               # 학습 로드맵
 ```
