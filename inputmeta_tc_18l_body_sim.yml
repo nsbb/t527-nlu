@@ -1,0 +1,20 @@
+input_meta:
+  databases:
+  - path: /work/dataset_calib_big_body.txt
+    type: TEXT
+    ports:
+    - lid: embedding_input_1619
+      category: frequency
+      dtype: float32
+      sparse: false
+      layout: nchw
+      shape:
+      - 1
+      - 64
+      - 512
+      fitting: scale
+      preprocess:
+        reverse_channel: false
+        scale: 1.0
+        preproc_node_params:
+          add_preproc_node: false
