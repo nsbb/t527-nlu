@@ -1,0 +1,54 @@
+============================================================
+=== TextConformer Small (2L, 128d) — 빠른 검증 ===
+============================================================
+Device: cuda
+Loading data...
+  Classes: 55
+  Smarthome: 227, Kochat: 19992
+  Train: 18197, Val: 2022
+  Model: 4.54M params, 2L 128d
+train_textconformer.py:158: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(batch["label"]).to(device)
+train_textconformer.py:182: UserWarning: To copy construct from a tensor, it is recommended to use sourceTensor.clone().detach() or sourceTensor.clone().detach().requires_grad_(True), rather than torch.tensor(sourceTensor).
+  labels = torch.tensor(batch["label"]).to(device)
+Epoch 1/30 | loss=0.3990 | train_acc=0.8696 | val_acc=0.9664
+  → Saved best (val_acc=0.9664)
+Epoch 2/30 | loss=0.1106 | train_acc=0.9730 | val_acc=0.9768
+  → Saved best (val_acc=0.9768)
+Epoch 3/30 | loss=0.0856 | train_acc=0.9788 | val_acc=0.9768
+Epoch 4/30 | loss=0.0688 | train_acc=0.9826 | val_acc=0.9787
+  → Saved best (val_acc=0.9787)
+Epoch 5/30 | loss=0.0573 | train_acc=0.9844 | val_acc=0.9782
+Epoch 6/30 | loss=0.0480 | train_acc=0.9862 | val_acc=0.9822
+  → Saved best (val_acc=0.9822)
+Epoch 7/30 | loss=0.0359 | train_acc=0.9892 | val_acc=0.9827
+  → Saved best (val_acc=0.9827)
+Epoch 8/30 | loss=0.0269 | train_acc=0.9918 | val_acc=0.9792
+Epoch 9/30 | loss=0.0251 | train_acc=0.9920 | val_acc=0.9763
+Epoch 10/30 | loss=0.0194 | train_acc=0.9935 | val_acc=0.9827
+Epoch 11/30 | loss=0.0130 | train_acc=0.9958 | val_acc=0.9827
+Epoch 12/30 | loss=0.0186 | train_acc=0.9941 | val_acc=0.9842
+  → Saved best (val_acc=0.9842)
+Epoch 13/30 | loss=0.0168 | train_acc=0.9940 | val_acc=0.9822
+Epoch 14/30 | loss=0.0122 | train_acc=0.9955 | val_acc=0.9822
+Epoch 15/30 | loss=0.0140 | train_acc=0.9952 | val_acc=0.9842
+Epoch 16/30 | loss=0.0133 | train_acc=0.9953 | val_acc=0.9847
+  → Saved best (val_acc=0.9847)
+Epoch 17/30 | loss=0.0102 | train_acc=0.9963 | val_acc=0.9837
+Epoch 18/30 | loss=0.0108 | train_acc=0.9958 | val_acc=0.9792
+Epoch 19/30 | loss=0.0116 | train_acc=0.9961 | val_acc=0.9852
+  → Saved best (val_acc=0.9852)
+Epoch 20/30 | loss=0.0081 | train_acc=0.9969 | val_acc=0.9847
+Epoch 21/30 | loss=0.0082 | train_acc=0.9960 | val_acc=0.9832
+Epoch 22/30 | loss=0.0110 | train_acc=0.9958 | val_acc=0.9812
+Epoch 23/30 | loss=0.0090 | train_acc=0.9963 | val_acc=0.9842
+Epoch 24/30 | loss=0.0105 | train_acc=0.9964 | val_acc=0.9832
+Epoch 25/30 | loss=0.0103 | train_acc=0.9962 | val_acc=0.9852
+Epoch 26/30 | loss=0.0065 | train_acc=0.9973 | val_acc=0.9871
+  → Saved best (val_acc=0.9871)
+Epoch 27/30 | loss=0.0070 | train_acc=0.9971 | val_acc=0.9837
+Epoch 28/30 | loss=0.0121 | train_acc=0.9950 | val_acc=0.9837
+Epoch 29/30 | loss=0.0112 | train_acc=0.9958 | val_acc=0.9842
+Epoch 30/30 | loss=0.0080 | train_acc=0.9970 | val_acc=0.9857
+
+Best val_acc: 0.9871

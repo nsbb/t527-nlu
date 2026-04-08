@@ -1,0 +1,1874 @@
+{
+    "MetaData": {
+        "Name": "main_graph",
+        "AcuityVersion": "6",
+        "Platform": "tensorflow",
+        "Org_Platform": "onnx"
+    },
+    "Layers": {
+        "attach_Gemm_/intent_fc/Gemm/out0_0": {
+            "name": "attach_Gemm_/intent_fc/Gemm/out0",
+            "op": "output",
+            "parameters": {},
+            "inputs": [
+                "@Gemm_/intent_fc/Gemm_1:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gemm_/intent_fc/Gemm_1": {
+            "name": "Gemm_/intent_fc/Gemm",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 51,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@Gather_/Gather_2_acuity_opt_gather_reshape_146:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gather_/Gather_2": {
+            "name": "Gather_/Gather",
+            "op": "gather",
+            "parameters": {
+                "axis": 1,
+                "batch_dims": null
+            },
+            "inputs": [
+                "@Div_/blocks.0/final_norm/Div_3:out0",
+                "@Initializer_/embedding/Constant_output_0_4:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Div_/blocks.0/final_norm/Div_3": {
+            "name": "Div_/blocks.0/final_norm/Div",
+            "op": "real_div",
+            "inputs": [
+                "@Sub_/blocks.0/final_norm/Sub_5:out0",
+                "@Sqrt_/blocks.0/final_norm/Sqrt_6:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Initializer_/embedding/Constant_output_0_4": {
+            "name": "Initializer_/embedding/Constant_output_0",
+            "op": "variable",
+            "parameters": {
+                "shape": [
+                    1
+                ],
+                "is_scalar": true,
+                "type": "float32"
+            },
+            "inputs": [],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Sub_/blocks.0/final_norm/Sub_5": {
+            "name": "Sub_/blocks.0/final_norm/Sub",
+            "op": "subtract",
+            "inputs": [
+                "@Add_/blocks.0/Add_3_7:out0",
+                "@Sub_/blocks.0/final_norm/Sub_5_acuity_mark_perm_110:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Sqrt_/blocks.0/final_norm/Sqrt_6": {
+            "name": "Sqrt_/blocks.0/final_norm/Sqrt",
+            "op": "sqrt",
+            "inputs": [
+                "@Add_/blocks.0/final_norm/Add_9:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.0/Add_3_7": {
+            "name": "Add_/blocks.0/Add_3",
+            "op": "add",
+            "inputs": [
+                "@Add_/blocks.0/Add_2_10:out0",
+                "@Mul_/blocks.0/Mul_1_11:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "ReduceMean_/blocks.0/final_norm/ReduceMean_8": {
+            "name": "ReduceMean_/blocks.0/final_norm/ReduceMean",
+            "op": "reducemean",
+            "parameters": {
+                "axis_list": [
+                    1
+                ],
+                "keep_dims": true
+            },
+            "inputs": [
+                "@ReduceMean_/blocks.0/final_norm/ReduceMean_8_acuity_mark_perm_109:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.0/final_norm/Add_9": {
+            "name": "Add_/blocks.0/final_norm/Add",
+            "op": "add",
+            "inputs": [
+                "@Add_/blocks.0/final_norm/Add_9_acuity_mark_perm_112:out0",
+                "@Initializer_/blocks.0/ffn1/ffn1.0/Constant_1_output_0_14:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.0/Add_2_10": {
+            "name": "Add_/blocks.0/Add_2",
+            "op": "add",
+            "inputs": [
+                "@Add_/blocks.0/Add_1_15:out0",
+                "@Conv_/blocks.0/conv/conv.2/Conv_21:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/blocks.0/Mul_1_11": {
+            "name": "Mul_/blocks.0/Mul_1",
+            "op": "multiply",
+            "parameters": {
+                "axis": 1,
+                "bias": true
+            },
+            "inputs": [
+                "@reshape_133:out0",
+                "@Initializer_/blocks.0/Constant_output_0_12:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Initializer_/blocks.0/Constant_output_0_12": {
+            "name": "Initializer_/blocks.0/Constant_output_0",
+            "op": "variable",
+            "parameters": {
+                "shape": [
+                    1
+                ],
+                "is_scalar": true,
+                "type": "float32"
+            },
+            "inputs": [],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "ReduceMean_/blocks.0/final_norm/ReduceMean_1_13": {
+            "name": "ReduceMean_/blocks.0/final_norm/ReduceMean_1",
+            "op": "reducemean",
+            "parameters": {
+                "axis_list": [
+                    1
+                ],
+                "keep_dims": true
+            },
+            "inputs": [
+                "@ReduceMean_/blocks.0/final_norm/ReduceMean_1_13_acuity_mark_perm_114:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Initializer_/blocks.0/ffn1/ffn1.0/Constant_1_output_0_14": {
+            "name": "Initializer_/blocks.0/ffn1/ffn1.0/Constant_1_output_0",
+            "op": "variable",
+            "parameters": {
+                "shape": [
+                    1
+                ],
+                "is_scalar": true,
+                "type": "float32"
+            },
+            "inputs": [],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.0/Add_1_15": {
+            "name": "Add_/blocks.0/Add_1",
+            "op": "add",
+            "inputs": [
+                "@Add_/blocks.0/Add_19:out0",
+                "@Transpose_/blocks.0/attn/Transpose_6_20:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Pow_/blocks.0/final_norm/Pow_18": {
+            "name": "Pow_/blocks.0/final_norm/Pow",
+            "op": "pow",
+            "inputs": [
+                "@Sub_/blocks.0/final_norm/Sub_5:out0",
+                "@Initializer_/blocks.0/ffn1/ffn1.0/Constant_output_0_25:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.0/Add_19": {
+            "name": "Add_/blocks.0/Add",
+            "op": "add",
+            "inputs": [
+                "@Add_/Add_26:out0",
+                "@Mul_/blocks.0/Mul_27:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/blocks.0/attn/Transpose_6_20": {
+            "name": "Transpose_/blocks.0/attn/Transpose_6",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    1,
+                    0,
+                    2
+                ]
+            },
+            "inputs": [
+                "@Reshape_/blocks.0/attn/Reshape_7_28:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Conv_/blocks.0/conv/conv.2/Conv_21": {
+            "name": "Conv_/blocks.0/conv/conv.2/Conv",
+            "op": "conv1d",
+            "parameters": {
+                "padding_mode": "CONSTANT",
+                "weights": 64,
+                "padding": "VALID",
+                "bias": true,
+                "group_number": 1,
+                "ksize": 1,
+                "stride": 1,
+                "pad_method": "padding_const",
+                "pad": [
+                    0,
+                    0
+                ],
+                "dilation": [
+                    1,
+                    1,
+                    1
+                ]
+            },
+            "inputs": [
+                "@Relu_/blocks.0/conv/conv.1/Relu_29:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Initializer_/blocks.0/ffn1/ffn1.0/Constant_output_0_25": {
+            "name": "Initializer_/blocks.0/ffn1/ffn1.0/Constant_output_0",
+            "op": "variable",
+            "parameters": {
+                "shape": [
+                    1
+                ],
+                "is_scalar": true,
+                "type": "float32"
+            },
+            "inputs": [],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/Add_26": {
+            "name": "Add_/Add",
+            "op": "add",
+            "inputs": [
+                "@Gather_/embedding/Gather_31:out0",
+                "@Initializer_onnx//Add_218_32:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/blocks.0/Mul_27": {
+            "name": "Mul_/blocks.0/Mul",
+            "op": "multiply",
+            "parameters": {
+                "axis": 1,
+                "bias": true
+            },
+            "inputs": [
+                "@reshape_136:out0",
+                "@Initializer_/blocks.0/Constant_output_0_12:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/blocks.0/attn/Reshape_7_28": {
+            "name": "Reshape_/blocks.0/attn/Reshape_7",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    32,
+                    1,
+                    64
+                ]
+            },
+            "inputs": [
+                "@Gemm_/blocks.0/attn/Gemm_35:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Relu_/blocks.0/conv/conv.1/Relu_29": {
+            "name": "Relu_/blocks.0/conv/conv.1/Relu",
+            "op": "relu",
+            "inputs": [
+                "@Conv_/blocks.0/conv/conv.0/Conv_36:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Relu_/blocks.0/ffn2/ffn2.2/Relu_30": {
+            "name": "Relu_/blocks.0/ffn2/ffn2.2/Relu",
+            "op": "relu",
+            "inputs": [
+                "@reshape_139:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gather_/embedding/Gather_31": {
+            "name": "Gather_/embedding/Gather",
+            "op": "gather",
+            "parameters": {
+                "axis": 0,
+                "batch_dims": null
+            },
+            "inputs": [
+                "@Initializer_embedding.weight_38:out0",
+                "@Cast_/Cast_39:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Initializer_onnx//Add_218_32": {
+            "name": "Initializer_onnx//Add_218",
+            "op": "variable",
+            "parameters": {
+                "shape": [
+                    1,
+                    32,
+                    64
+                ],
+                "is_scalar": false,
+                "type": "float32"
+            },
+            "inputs": [],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gemm_/blocks.0/attn/Gemm_35": {
+            "name": "Gemm_/blocks.0/attn/Gemm",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 64,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@Reshape_/blocks.0/attn/Reshape_6_42:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Conv_/blocks.0/conv/conv.0/Conv_36": {
+            "name": "Conv_/blocks.0/conv/conv.0/Conv",
+            "op": "depthwise_conv1d",
+            "parameters": {
+                "padding_mode": "CONSTANT",
+                "weights": 64,
+                "padding": "VALID",
+                "bias": true,
+                "group_number": 64,
+                "ksize": 7,
+                "stride": 1,
+                "pad_method": "padding_const",
+                "pad": [
+                    3,
+                    3
+                ],
+                "dilation": [
+                    1,
+                    1,
+                    1
+                ],
+                "multiplier": 1
+            },
+            "inputs": [
+                "@Div_/blocks.0/conv_norm/Div_50:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Initializer_embedding.weight_38": {
+            "name": "Initializer_embedding.weight",
+            "op": "variable",
+            "parameters": {
+                "shape": [
+                    8000,
+                    64
+                ],
+                "is_scalar": false,
+                "type": "float32"
+            },
+            "inputs": [],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Cast_/Cast_39": {
+            "name": "Cast_/Cast",
+            "op": "cast",
+            "parameters": {
+                "in_data_type": "int64",
+                "out_data_type": "int64"
+            },
+            "inputs": [
+                "@input_ids_108:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/blocks.0/attn/Reshape_6_42": {
+            "name": "Reshape_/blocks.0/attn/Reshape_6",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    32,
+                    64
+                ]
+            },
+            "inputs": [
+                "@Transpose_/blocks.0/attn/Transpose_5_49:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Relu_/blocks.0/ffn1/ffn1.2/Relu_47": {
+            "name": "Relu_/blocks.0/ffn1/ffn1.2/Relu",
+            "op": "relu",
+            "inputs": [
+                "@reshape_142:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/blocks.0/attn/Transpose_5_49": {
+            "name": "Transpose_/blocks.0/attn/Transpose_5",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    1,
+                    0,
+                    2
+                ]
+            },
+            "inputs": [
+                "@MatMul_/blocks.0/attn/MatMul_2_53:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Div_/blocks.0/conv_norm/Div_50": {
+            "name": "Div_/blocks.0/conv_norm/Div",
+            "op": "real_div",
+            "inputs": [
+                "@Sub_/blocks.0/conv_norm/Sub_54:out0",
+                "@Sqrt_/blocks.0/conv_norm/Sqrt_55:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Div_/blocks.0/ffn2/ffn2.0/Div_51": {
+            "name": "Div_/blocks.0/ffn2/ffn2.0/Div",
+            "op": "real_div",
+            "inputs": [
+                "@Sub_/blocks.0/ffn2/ffn2.0/Sub_56:out0",
+                "@Sqrt_/blocks.0/ffn2/ffn2.0/Sqrt_57:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "MatMul_/blocks.0/attn/MatMul_2_53": {
+            "name": "MatMul_/blocks.0/attn/MatMul_2",
+            "op": "matmul",
+            "parameters": {
+                "transpose_a": false,
+                "transpose_b": false
+            },
+            "inputs": [
+                "@Softmax_/blocks.0/attn/Softmax_60:out0",
+                "@Transpose_/blocks.0/attn/Transpose_3_61:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Sub_/blocks.0/conv_norm/Sub_54": {
+            "name": "Sub_/blocks.0/conv_norm/Sub",
+            "op": "subtract",
+            "inputs": [
+                "@Add_/blocks.0/Add_1_15:out0",
+                "@Sub_/blocks.0/conv_norm/Sub_54_acuity_mark_perm_119:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Sqrt_/blocks.0/conv_norm/Sqrt_55": {
+            "name": "Sqrt_/blocks.0/conv_norm/Sqrt",
+            "op": "sqrt",
+            "inputs": [
+                "@Add_/blocks.0/conv_norm/Add_64:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Sub_/blocks.0/ffn2/ffn2.0/Sub_56": {
+            "name": "Sub_/blocks.0/ffn2/ffn2.0/Sub",
+            "op": "subtract",
+            "inputs": [
+                "@Add_/blocks.0/Add_2_10:out0",
+                "@Sub_/blocks.0/ffn2/ffn2.0/Sub_56_acuity_mark_perm_120:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Sqrt_/blocks.0/ffn2/ffn2.0/Sqrt_57": {
+            "name": "Sqrt_/blocks.0/ffn2/ffn2.0/Sqrt",
+            "op": "sqrt",
+            "inputs": [
+                "@Add_/blocks.0/ffn2/ffn2.0/Add_67:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Softmax_/blocks.0/attn/Softmax_60": {
+            "name": "Softmax_/blocks.0/attn/Softmax",
+            "op": "softmax",
+            "parameters": {
+                "sf_axis": -1,
+                "beta": 1.0
+            },
+            "inputs": [
+                "@MatMul_/blocks.0/attn/MatMul_1_70:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/blocks.0/attn/Transpose_3_61": {
+            "name": "Transpose_/blocks.0/attn/Transpose_3",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    1,
+                    0,
+                    2
+                ]
+            },
+            "inputs": [
+                "@Reshape_/blocks.0/attn/Reshape_5_62:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/blocks.0/attn/Reshape_5_62": {
+            "name": "Reshape_/blocks.0/attn/Reshape_5",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    32,
+                    2,
+                    32
+                ]
+            },
+            "inputs": [
+                "@Gather_/blocks.0/attn/Gather_2_71_acuity_opt_gather_reshape_147:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "ReduceMean_/blocks.0/conv_norm/ReduceMean_63": {
+            "name": "ReduceMean_/blocks.0/conv_norm/ReduceMean",
+            "op": "reducemean",
+            "parameters": {
+                "axis_list": [
+                    1
+                ],
+                "keep_dims": true
+            },
+            "inputs": [
+                "@ReduceMean_/blocks.0/conv_norm/ReduceMean_63_acuity_mark_perm_113:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.0/conv_norm/Add_64": {
+            "name": "Add_/blocks.0/conv_norm/Add",
+            "op": "add",
+            "inputs": [
+                "@Add_/blocks.0/conv_norm/Add_64_acuity_mark_perm_121:out0",
+                "@Initializer_/blocks.0/ffn1/ffn1.0/Constant_1_output_0_14:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "ReduceMean_/blocks.0/ffn2/ffn2.0/ReduceMean_66": {
+            "name": "ReduceMean_/blocks.0/ffn2/ffn2.0/ReduceMean",
+            "op": "reducemean",
+            "parameters": {
+                "axis_list": [
+                    1
+                ],
+                "keep_dims": true
+            },
+            "inputs": [
+                "@ReduceMean_/blocks.0/ffn2/ffn2.0/ReduceMean_66_acuity_mark_perm_111:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.0/ffn2/ffn2.0/Add_67": {
+            "name": "Add_/blocks.0/ffn2/ffn2.0/Add",
+            "op": "add",
+            "inputs": [
+                "@Add_/blocks.0/ffn2/ffn2.0/Add_67_acuity_mark_perm_123:out0",
+                "@Initializer_/blocks.0/ffn1/ffn1.0/Constant_1_output_0_14:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Div_/blocks.0/ffn1/ffn1.0/Div_68": {
+            "name": "Div_/blocks.0/ffn1/ffn1.0/Div",
+            "op": "real_div",
+            "inputs": [
+                "@Sub_/blocks.0/ffn1/ffn1.0/Sub_77:out0",
+                "@Sqrt_/blocks.0/ffn1/ffn1.0/Sqrt_78:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "MatMul_/blocks.0/attn/MatMul_1_70": {
+            "name": "MatMul_/blocks.0/attn/MatMul_1",
+            "op": "matmul",
+            "parameters": {
+                "transpose_a": false,
+                "transpose_b": false
+            },
+            "inputs": [
+                "@Mul_/blocks.0/attn/Mul_79:out0",
+                "@Transpose_/blocks.0/attn/Transpose_4_80:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gather_/blocks.0/attn/Gather_2_71": {
+            "name": "Gather_/blocks.0/attn/Gather_2",
+            "op": "gather",
+            "parameters": {
+                "axis": 0,
+                "batch_dims": null
+            },
+            "inputs": [
+                "@Squeeze_/blocks.0/attn/Squeeze_81:out0",
+                "@Initializer_/blocks.0/attn/Constant_output_0_72:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Initializer_/blocks.0/attn/Constant_output_0_72": {
+            "name": "Initializer_/blocks.0/attn/Constant_output_0",
+            "op": "variable",
+            "parameters": {
+                "shape": [
+                    1
+                ],
+                "is_scalar": true,
+                "type": "float32"
+            },
+            "inputs": [],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "ReduceMean_/blocks.0/conv_norm/ReduceMean_1_73": {
+            "name": "ReduceMean_/blocks.0/conv_norm/ReduceMean_1",
+            "op": "reducemean",
+            "parameters": {
+                "axis_list": [
+                    1
+                ],
+                "keep_dims": true
+            },
+            "inputs": [
+                "@ReduceMean_/blocks.0/conv_norm/ReduceMean_1_73_acuity_mark_perm_122:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Pow_/blocks.0/conv_norm/Pow_74": {
+            "name": "Pow_/blocks.0/conv_norm/Pow",
+            "op": "pow",
+            "inputs": [
+                "@Sub_/blocks.0/conv_norm/Sub_54:out0",
+                "@Initializer_/blocks.0/ffn1/ffn1.0/Constant_output_0_25:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "ReduceMean_/blocks.0/ffn2/ffn2.0/ReduceMean_1_75": {
+            "name": "ReduceMean_/blocks.0/ffn2/ffn2.0/ReduceMean_1",
+            "op": "reducemean",
+            "parameters": {
+                "axis_list": [
+                    1
+                ],
+                "keep_dims": true
+            },
+            "inputs": [
+                "@ReduceMean_/blocks.0/ffn2/ffn2.0/ReduceMean_1_75_acuity_mark_perm_124:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Pow_/blocks.0/ffn2/ffn2.0/Pow_76": {
+            "name": "Pow_/blocks.0/ffn2/ffn2.0/Pow",
+            "op": "pow",
+            "inputs": [
+                "@Sub_/blocks.0/ffn2/ffn2.0/Sub_56:out0",
+                "@Initializer_/blocks.0/ffn1/ffn1.0/Constant_output_0_25:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Sub_/blocks.0/ffn1/ffn1.0/Sub_77": {
+            "name": "Sub_/blocks.0/ffn1/ffn1.0/Sub",
+            "op": "subtract",
+            "inputs": [
+                "@Add_/Add_26:out0",
+                "@Sub_/blocks.0/ffn1/ffn1.0/Sub_77_acuity_mark_perm_125:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Sqrt_/blocks.0/ffn1/ffn1.0/Sqrt_78": {
+            "name": "Sqrt_/blocks.0/ffn1/ffn1.0/Sqrt",
+            "op": "sqrt",
+            "inputs": [
+                "@Add_/blocks.0/ffn1/ffn1.0/Add_88:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Mul_/blocks.0/attn/Mul_79": {
+            "name": "Mul_/blocks.0/attn/Mul",
+            "op": "multiply",
+            "parameters": {
+                "axis": 1,
+                "bias": true
+            },
+            "inputs": [
+                "@Transpose_/blocks.0/attn/Transpose_2_89:out0",
+                "@Initializer_/blocks.0/attn/Constant_14_output_0_90:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/blocks.0/attn/Transpose_4_80": {
+            "name": "Transpose_/blocks.0/attn/Transpose_4",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    1,
+                    2,
+                    0
+                ]
+            },
+            "inputs": [
+                "@Reshape_/blocks.0/attn/Reshape_4_91:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Squeeze_/blocks.0/attn/Squeeze_81": {
+            "name": "Squeeze_/blocks.0/attn/Squeeze",
+            "op": "squeeze",
+            "parameters": {
+                "axis_list": [
+                    3
+                ],
+                "name": null
+            },
+            "inputs": [
+                "@Transpose_/blocks.0/attn/Transpose_1_82:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/blocks.0/attn/Transpose_1_82": {
+            "name": "Transpose_/blocks.0/attn/Transpose_1",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    3,
+                    1,
+                    2,
+                    0,
+                    4
+                ]
+            },
+            "inputs": [
+                "@Unsqueeze_/blocks.0/attn/Unsqueeze_84:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Unsqueeze_/blocks.0/attn/Unsqueeze_84": {
+            "name": "Unsqueeze_/blocks.0/attn/Unsqueeze",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    32,
+                    1,
+                    3,
+                    64
+                ]
+            },
+            "inputs": [
+                "@Reshape_/blocks.0/attn/Reshape_2_85:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/blocks.0/attn/Reshape_2_85": {
+            "name": "Reshape_/blocks.0/attn/Reshape_2",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    32,
+                    1,
+                    3,
+                    64
+                ]
+            },
+            "inputs": [
+                "@reshape_145:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "ReduceMean_/blocks.0/ffn1/ffn1.0/ReduceMean_87": {
+            "name": "ReduceMean_/blocks.0/ffn1/ffn1.0/ReduceMean",
+            "op": "reducemean",
+            "parameters": {
+                "axis_list": [
+                    1
+                ],
+                "keep_dims": true
+            },
+            "inputs": [
+                "@ReduceMean_/blocks.0/ffn1/ffn1.0/ReduceMean_87_acuity_mark_perm_117:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.0/ffn1/ffn1.0/Add_88": {
+            "name": "Add_/blocks.0/ffn1/ffn1.0/Add",
+            "op": "add",
+            "inputs": [
+                "@Add_/blocks.0/ffn1/ffn1.0/Add_88_acuity_mark_perm_126:out0",
+                "@Initializer_/blocks.0/ffn1/ffn1.0/Constant_1_output_0_14:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/blocks.0/attn/Transpose_2_89": {
+            "name": "Transpose_/blocks.0/attn/Transpose_2",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    1,
+                    0,
+                    2
+                ]
+            },
+            "inputs": [
+                "@Reshape_/blocks.0/attn/Reshape_3_97:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Initializer_/blocks.0/attn/Constant_14_output_0_90": {
+            "name": "Initializer_/blocks.0/attn/Constant_14_output_0",
+            "op": "variable",
+            "parameters": {
+                "shape": [
+                    1,
+                    1,
+                    1
+                ],
+                "is_scalar": false,
+                "type": "float32"
+            },
+            "inputs": [],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/blocks.0/attn/Reshape_4_91": {
+            "name": "Reshape_/blocks.0/attn/Reshape_4",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    32,
+                    2,
+                    32
+                ]
+            },
+            "inputs": [
+                "@Gather_/blocks.0/attn/Gather_1_98_acuity_opt_gather_reshape_148:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Transpose_/blocks.0/attn/Transpose_92": {
+            "name": "Transpose_/blocks.0/attn/Transpose",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    1,
+                    0,
+                    2
+                ]
+            },
+            "inputs": [
+                "@Div_/blocks.0/attn_norm/Div_94:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Div_/blocks.0/attn_norm/Div_94": {
+            "name": "Div_/blocks.0/attn_norm/Div",
+            "op": "real_div",
+            "inputs": [
+                "@Sub_/blocks.0/attn_norm/Sub_99:out0",
+                "@Sqrt_/blocks.0/attn_norm/Sqrt_100:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "ReduceMean_/blocks.0/ffn1/ffn1.0/ReduceMean_1_95": {
+            "name": "ReduceMean_/blocks.0/ffn1/ffn1.0/ReduceMean_1",
+            "op": "reducemean",
+            "parameters": {
+                "axis_list": [
+                    1
+                ],
+                "keep_dims": true
+            },
+            "inputs": [
+                "@ReduceMean_/blocks.0/ffn1/ffn1.0/ReduceMean_1_95_acuity_mark_perm_127:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Pow_/blocks.0/ffn1/ffn1.0/Pow_96": {
+            "name": "Pow_/blocks.0/ffn1/ffn1.0/Pow",
+            "op": "pow",
+            "inputs": [
+                "@Sub_/blocks.0/ffn1/ffn1.0/Sub_77:out0",
+                "@Initializer_/blocks.0/ffn1/ffn1.0/Constant_output_0_25:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Reshape_/blocks.0/attn/Reshape_3_97": {
+            "name": "Reshape_/blocks.0/attn/Reshape_3",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    32,
+                    2,
+                    32
+                ]
+            },
+            "inputs": [
+                "@Gather_/blocks.0/attn/Gather_103_acuity_opt_gather_reshape_149:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gather_/blocks.0/attn/Gather_1_98": {
+            "name": "Gather_/blocks.0/attn/Gather_1",
+            "op": "gather",
+            "parameters": {
+                "axis": 0,
+                "batch_dims": null
+            },
+            "inputs": [
+                "@Squeeze_/blocks.0/attn/Squeeze_81:out0",
+                "@Initializer_/Constant_output_0_105:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Sub_/blocks.0/attn_norm/Sub_99": {
+            "name": "Sub_/blocks.0/attn_norm/Sub",
+            "op": "subtract",
+            "inputs": [
+                "@Add_/blocks.0/Add_19:out0",
+                "@Sub_/blocks.0/attn_norm/Sub_99_acuity_mark_perm_130:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Sqrt_/blocks.0/attn_norm/Sqrt_100": {
+            "name": "Sqrt_/blocks.0/attn_norm/Sqrt",
+            "op": "sqrt",
+            "inputs": [
+                "@Add_/blocks.0/attn_norm/Add_101:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.0/attn_norm/Add_101": {
+            "name": "Add_/blocks.0/attn_norm/Add",
+            "op": "add",
+            "inputs": [
+                "@Add_/blocks.0/attn_norm/Add_101_acuity_mark_perm_128:out0",
+                "@Initializer_/blocks.0/ffn1/ffn1.0/Constant_1_output_0_14:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "ReduceMean_/blocks.0/attn_norm/ReduceMean_1_102": {
+            "name": "ReduceMean_/blocks.0/attn_norm/ReduceMean_1",
+            "op": "reducemean",
+            "parameters": {
+                "axis_list": [
+                    1
+                ],
+                "keep_dims": true
+            },
+            "inputs": [
+                "@ReduceMean_/blocks.0/attn_norm/ReduceMean_1_102_acuity_mark_perm_129:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gather_/blocks.0/attn/Gather_103": {
+            "name": "Gather_/blocks.0/attn/Gather",
+            "op": "gather",
+            "parameters": {
+                "axis": 0,
+                "batch_dims": null
+            },
+            "inputs": [
+                "@Squeeze_/blocks.0/attn/Squeeze_81:out0",
+                "@Initializer_/embedding/Constant_output_0_4:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Initializer_/Constant_output_0_105": {
+            "name": "Initializer_/Constant_output_0",
+            "op": "variable",
+            "parameters": {
+                "shape": [
+                    1
+                ],
+                "is_scalar": true,
+                "type": "float32"
+            },
+            "inputs": [],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Pow_/blocks.0/attn_norm/Pow_106": {
+            "name": "Pow_/blocks.0/attn_norm/Pow",
+            "op": "pow",
+            "inputs": [
+                "@Sub_/blocks.0/attn_norm/Sub_99:out0",
+                "@Initializer_/blocks.0/ffn1/ffn1.0/Constant_output_0_25:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "ReduceMean_/blocks.0/attn_norm/ReduceMean_107": {
+            "name": "ReduceMean_/blocks.0/attn_norm/ReduceMean",
+            "op": "reducemean",
+            "parameters": {
+                "axis_list": [
+                    1
+                ],
+                "keep_dims": true
+            },
+            "inputs": [
+                "@ReduceMean_/blocks.0/attn_norm/ReduceMean_107_acuity_mark_perm_115:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "input_ids_108": {
+            "name": "input_ids",
+            "op": "input",
+            "parameters": {
+                "size": "",
+                "channels": 1,
+                "shape": [
+                    1,
+                    32
+                ],
+                "is_scalar": false,
+                "type": "float32"
+            },
+            "inputs": [],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "ReduceMean_/blocks.0/final_norm/ReduceMean_8_acuity_mark_perm_109": {
+            "name": "ReduceMean_/blocks.0/final_norm/ReduceMean_8_acuity_mark_perm",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1
+                ]
+            },
+            "inputs": [
+                "@Add_/blocks.0/Add_3_7:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Sub_/blocks.0/final_norm/Sub_5_acuity_mark_perm_110": {
+            "name": "Sub_/blocks.0/final_norm/Sub_5_acuity_mark_perm",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1
+                ]
+            },
+            "inputs": [
+                "@ReduceMean_/blocks.0/final_norm/ReduceMean_8:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "ReduceMean_/blocks.0/ffn2/ffn2.0/ReduceMean_66_acuity_mark_perm_111": {
+            "name": "ReduceMean_/blocks.0/ffn2/ffn2.0/ReduceMean_66_acuity_mark_perm",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1
+                ]
+            },
+            "inputs": [
+                "@Add_/blocks.0/Add_2_10:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.0/final_norm/Add_9_acuity_mark_perm_112": {
+            "name": "Add_/blocks.0/final_norm/Add_9_acuity_mark_perm",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1
+                ]
+            },
+            "inputs": [
+                "@ReduceMean_/blocks.0/final_norm/ReduceMean_1_13:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "ReduceMean_/blocks.0/conv_norm/ReduceMean_63_acuity_mark_perm_113": {
+            "name": "ReduceMean_/blocks.0/conv_norm/ReduceMean_63_acuity_mark_perm",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1
+                ]
+            },
+            "inputs": [
+                "@Add_/blocks.0/Add_1_15:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "ReduceMean_/blocks.0/final_norm/ReduceMean_1_13_acuity_mark_perm_114": {
+            "name": "ReduceMean_/blocks.0/final_norm/ReduceMean_1_13_acuity_mark_perm",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1
+                ]
+            },
+            "inputs": [
+                "@Pow_/blocks.0/final_norm/Pow_18:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "ReduceMean_/blocks.0/attn_norm/ReduceMean_107_acuity_mark_perm_115": {
+            "name": "ReduceMean_/blocks.0/attn_norm/ReduceMean_107_acuity_mark_perm",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1
+                ]
+            },
+            "inputs": [
+                "@Add_/blocks.0/Add_19:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "ReduceMean_/blocks.0/ffn1/ffn1.0/ReduceMean_87_acuity_mark_perm_117": {
+            "name": "ReduceMean_/blocks.0/ffn1/ffn1.0/ReduceMean_87_acuity_mark_perm",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1
+                ]
+            },
+            "inputs": [
+                "@Add_/Add_26:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Sub_/blocks.0/conv_norm/Sub_54_acuity_mark_perm_119": {
+            "name": "Sub_/blocks.0/conv_norm/Sub_54_acuity_mark_perm",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1
+                ]
+            },
+            "inputs": [
+                "@ReduceMean_/blocks.0/conv_norm/ReduceMean_63:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Sub_/blocks.0/ffn2/ffn2.0/Sub_56_acuity_mark_perm_120": {
+            "name": "Sub_/blocks.0/ffn2/ffn2.0/Sub_56_acuity_mark_perm",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1
+                ]
+            },
+            "inputs": [
+                "@ReduceMean_/blocks.0/ffn2/ffn2.0/ReduceMean_66:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.0/conv_norm/Add_64_acuity_mark_perm_121": {
+            "name": "Add_/blocks.0/conv_norm/Add_64_acuity_mark_perm",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1
+                ]
+            },
+            "inputs": [
+                "@ReduceMean_/blocks.0/conv_norm/ReduceMean_1_73:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "ReduceMean_/blocks.0/conv_norm/ReduceMean_1_73_acuity_mark_perm_122": {
+            "name": "ReduceMean_/blocks.0/conv_norm/ReduceMean_1_73_acuity_mark_perm",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1
+                ]
+            },
+            "inputs": [
+                "@Pow_/blocks.0/conv_norm/Pow_74:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.0/ffn2/ffn2.0/Add_67_acuity_mark_perm_123": {
+            "name": "Add_/blocks.0/ffn2/ffn2.0/Add_67_acuity_mark_perm",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1
+                ]
+            },
+            "inputs": [
+                "@ReduceMean_/blocks.0/ffn2/ffn2.0/ReduceMean_1_75:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "ReduceMean_/blocks.0/ffn2/ffn2.0/ReduceMean_1_75_acuity_mark_perm_124": {
+            "name": "ReduceMean_/blocks.0/ffn2/ffn2.0/ReduceMean_1_75_acuity_mark_perm",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1
+                ]
+            },
+            "inputs": [
+                "@Pow_/blocks.0/ffn2/ffn2.0/Pow_76:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Sub_/blocks.0/ffn1/ffn1.0/Sub_77_acuity_mark_perm_125": {
+            "name": "Sub_/blocks.0/ffn1/ffn1.0/Sub_77_acuity_mark_perm",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1
+                ]
+            },
+            "inputs": [
+                "@ReduceMean_/blocks.0/ffn1/ffn1.0/ReduceMean_87:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.0/ffn1/ffn1.0/Add_88_acuity_mark_perm_126": {
+            "name": "Add_/blocks.0/ffn1/ffn1.0/Add_88_acuity_mark_perm",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1
+                ]
+            },
+            "inputs": [
+                "@ReduceMean_/blocks.0/ffn1/ffn1.0/ReduceMean_1_95:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "ReduceMean_/blocks.0/ffn1/ffn1.0/ReduceMean_1_95_acuity_mark_perm_127": {
+            "name": "ReduceMean_/blocks.0/ffn1/ffn1.0/ReduceMean_1_95_acuity_mark_perm",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1
+                ]
+            },
+            "inputs": [
+                "@Pow_/blocks.0/ffn1/ffn1.0/Pow_96:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Add_/blocks.0/attn_norm/Add_101_acuity_mark_perm_128": {
+            "name": "Add_/blocks.0/attn_norm/Add_101_acuity_mark_perm",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1
+                ]
+            },
+            "inputs": [
+                "@ReduceMean_/blocks.0/attn_norm/ReduceMean_1_102:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "ReduceMean_/blocks.0/attn_norm/ReduceMean_1_102_acuity_mark_perm_129": {
+            "name": "ReduceMean_/blocks.0/attn_norm/ReduceMean_1_102_acuity_mark_perm",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1
+                ]
+            },
+            "inputs": [
+                "@Pow_/blocks.0/attn_norm/Pow_106:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Sub_/blocks.0/attn_norm/Sub_99_acuity_mark_perm_130": {
+            "name": "Sub_/blocks.0/attn_norm/Sub_99_acuity_mark_perm",
+            "op": "permute",
+            "parameters": {
+                "perm": [
+                    0,
+                    2,
+                    1
+                ]
+            },
+            "inputs": [
+                "@ReduceMean_/blocks.0/attn_norm/ReduceMean_107:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_131": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    128
+                ]
+            },
+            "inputs": [
+                "@Relu_/blocks.0/ffn2/ffn2.2/Relu_30:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_132": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 64,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_131:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_133": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    32,
+                    64
+                ]
+            },
+            "inputs": [
+                "@fullconnect_132:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_134": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    128
+                ]
+            },
+            "inputs": [
+                "@Relu_/blocks.0/ffn1/ffn1.2/Relu_47:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_135": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 64,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_134:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_136": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    32,
+                    64
+                ]
+            },
+            "inputs": [
+                "@fullconnect_135:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_137": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64
+                ]
+            },
+            "inputs": [
+                "@Div_/blocks.0/ffn2/ffn2.0/Div_51:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_138": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 128,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_137:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_139": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    32,
+                    128
+                ]
+            },
+            "inputs": [
+                "@fullconnect_138:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_140": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64
+                ]
+            },
+            "inputs": [
+                "@Div_/blocks.0/ffn1/ffn1.0/Div_68:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_141": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 128,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_140:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_142": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    32,
+                    128
+                ]
+            },
+            "inputs": [
+                "@fullconnect_141:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_143": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    64
+                ]
+            },
+            "inputs": [
+                "@Transpose_/blocks.0/attn/Transpose_92:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "fullconnect_144": {
+            "name": "fullconnect",
+            "op": "fullconnect",
+            "parameters": {
+                "weights": 192,
+                "bias": true,
+                "regularize": false,
+                "axis": 1
+            },
+            "inputs": [
+                "@reshape_143:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "reshape_145": {
+            "name": "reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    -1,
+                    1,
+                    192
+                ]
+            },
+            "inputs": [
+                "@fullconnect_144:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gather_/Gather_2_acuity_opt_gather_reshape_146": {
+            "name": "Gather_/Gather_2_acuity_opt_gather_reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    1,
+                    64
+                ]
+            },
+            "inputs": [
+                "@Gather_/Gather_2:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gather_/blocks.0/attn/Gather_2_71_acuity_opt_gather_reshape_147": {
+            "name": "Gather_/blocks.0/attn/Gather_2_71_acuity_opt_gather_reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    32,
+                    1,
+                    64
+                ]
+            },
+            "inputs": [
+                "@Gather_/blocks.0/attn/Gather_2_71:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gather_/blocks.0/attn/Gather_1_98_acuity_opt_gather_reshape_148": {
+            "name": "Gather_/blocks.0/attn/Gather_1_98_acuity_opt_gather_reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    32,
+                    1,
+                    64
+                ]
+            },
+            "inputs": [
+                "@Gather_/blocks.0/attn/Gather_1_98:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        },
+        "Gather_/blocks.0/attn/Gather_103_acuity_opt_gather_reshape_149": {
+            "name": "Gather_/blocks.0/attn/Gather_103_acuity_opt_gather_reshape",
+            "op": "reshape",
+            "parameters": {
+                "shape": [
+                    32,
+                    1,
+                    64
+                ]
+            },
+            "inputs": [
+                "@Gather_/blocks.0/attn/Gather_103:out0"
+            ],
+            "outputs": [
+                "out0"
+            ]
+        }
+    },
+    "quantize_info": {}
+}
