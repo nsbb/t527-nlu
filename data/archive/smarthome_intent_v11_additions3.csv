@@ -1,0 +1,21 @@
+에너지 사용량 알림 끄기,energy_alert_off
+에너지 알림 다 꺼줘,energy_alert_off
+초과 사용 알림 끄기,energy_alert_off
+에너지 사용량 알림 켜줘,energy_alert_on
+에너지 초과 알림 받을게,energy_alert_on
+사용량 초과 알림 켜기,energy_alert_on
+기름값 오를까 내릴까,fuel_exception
+유가 앞으로 어떻게 될지 알려줘,fuel_exception
+난방 예약 현황,heating_schedule_query
+보일러 스케줄 조회해줘,heating_schedule_query
+만든 곳이 어디야,manual_creator
+어느 곳에서 만든 거야,manual_creator
+이름이 어떻게 돼,manual_name
+AI 이름 알려줘,manual_unsupported
+이름 다른 걸로 바꿀 수 있어,manual_unsupported
+뉴스 정기 브리핑 설정해줘,news_exception
+뉴스 어디서 가져오는 거야,news_info
+환기 예약 걸려있어,ventilation_schedule_query
+환기 타이머 상태,ventilation_schedule_query
+다음 달 날씨 예보해줘,weather_exception
+장기 기상 예보 알려줘,weather_exception

@@ -1,0 +1,8 @@
+가스 밸브 잠가줘,gas_close
+가스 지금 잠궈,gas_close
+환기 타이머 걸어줘,ventilation_schedule_set
+제작사 어디야,manual_creator
+비밀번호 재발급,password_change
+도어락 열려있나,doorlock_query
+환기 예약 뭐가 있어,ventilation_schedule_query
+가스 지금 상태 어때,gas_query

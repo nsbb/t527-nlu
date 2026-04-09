@@ -1,0 +1,249 @@
+모닝콜 있어,alarm_query
+모닝콜 기능 있나,alarm_query
+알람 기능 있어,alarm_query
+알람 어떻게 설정해,alarm_query
+기상 알람 설정 방법,alarm_query
+차량 출입 기록 다 지워줘,car_history_delete
+출입 기록 전부 삭제해줘,car_history_delete
+차량 기록 전부 지워줘,car_history_delete
+오늘 차량 출입 내역 삭제,car_history_delete
+차량 출입 이력 삭제해줘,car_history_delete
+지난 차량 기록 지워줘,car_history_delete
+차량 출입 내역 초기화해줘,car_history_delete
+주차 이력 삭제해줘,car_history_delete
+엘리베이터 몇 층에 있어,elevator_query
+엘리베이터 지금 어디 있어,elevator_query
+엘베 몇 층에 있어,elevator_query
+엘리베이터 올라오고 있어,elevator_query
+엘리베이터 내려오고 있어,elevator_query
+에너지 사용 목표 정해줘,energy_goal_set
+에너지 한도 설정해줘,energy_goal_set
+전기 한도 설정해줘,energy_goal_set
+가스 목표 설정해줘,energy_goal_set
+에너지 월 한도 설정,energy_goal_set
+사용량 알림 켜줘,energy_alert_on
+전기 알림 켜줘,energy_alert_on
+에너지 초과 알림 켜줘,energy_alert_on
+에너지 알림 받을게,energy_alert_on
+목표 초과 알림 받을게,energy_alert_on
+에너지 경고 설정해줘,energy_alert_on
+사용량 경고 켜줘,energy_alert_on
+에너지 알림 없애줘,energy_alert_off
+사용량 알림 없애줘,energy_alert_off
+에너지 경고 없애줘,energy_alert_off
+전기 알림 꺼줘,energy_alert_off
+에너지 초과 알림 꺼줘,energy_alert_off
+사용량 경고 꺼줘,energy_alert_off
+알림 끄기 해줘,energy_alert_off
+기름값 안 내리나,fuel_exception
+유가 떨어질까,fuel_exception
+기름 가격 전망,fuel_exception
+기름값 오를까,fuel_exception
+유가 예측 알려줘,fuel_exception
+석유 가격 전망,fuel_exception
+원유 가격 예측,fuel_exception
+내일 기름값 예측,fuel_exception
+주유소 위치 알려줘,fuel_station_search
+주유소 어디야,fuel_station_search
+싼 주유소 어디야,fuel_station_search
+근처 주유소 찾아줘,fuel_station_search
+가까운 주유소 찾아줘,fuel_station_search
+경유 싼 주유소 어디야,fuel_station_search
+LPG 주유소 어디야,fuel_station_search
+주유소 지도 알려줘,fuel_station_search
+가스 밸브 확인해줘,gas_query
+가스 지금 열려있어,gas_query
+가스 잠겼는지 봐줘,gas_query
+가스 열려있는지 확인해줘,gas_query
+가스 상태 체크해줘,gas_query
+가스 안전한지 확인해줘,gas_query
+난방 스케줄 있어,heating_schedule_query
+난방 예약 뭐가 있어,heating_schedule_query
+난방 예약 뭐야,heating_schedule_query
+난방 예약 조회해줘,heating_schedule_query
+보일러 예약 조회해줘,heating_schedule_query
+난방 예약 없애줘,heating_schedule_cancel
+난방 예약 다 없애줘,heating_schedule_cancel
+보일러 예약 취소,heating_schedule_cancel
+난방 예약 삭제,heating_schedule_cancel
+보일러 타이머 취소해줘,heating_schedule_cancel
+난방 타이머 삭제해줘,heating_schedule_cancel
+기능 뭐가 있어,manual_capability
+뭐 도와줄 수 있어,manual_capability
+어떤 거 해줄 수 있어,manual_capability
+무슨 기능 지원해,manual_capability
+할 수 있는 거 알려줘,manual_capability
+AI가 뭐 해줄 수 있어,manual_capability
+어떤 것 물어볼 수 있어,manual_capability
+만든 사람 누구야,manual_creator
+누가 개발한 거야,manual_creator
+어디서 개발했어,manual_creator
+만든 곳 어디야,manual_creator
+제작한 회사 어디야,manual_creator
+어떤 회사가 만들었어,manual_creator
+어느 브랜드야,manual_creator
+어떤 브랜드야,manual_creator
+이름이 어떻게 돼,manual_name
+월패드 AI 이름이 뭐야,manual_name
+어떻게 불러야 해,manual_name
+이름 알려줘,manual_name
+AI 이름이 뭐야,manual_name
+호출어가 뭐야,manual_name
+어떻게 부르면 돼,manual_name
+이름 다른 걸로 해줘,manual_unsupported
+이름 수정해줘,manual_unsupported
+다른 이름 쓸 수 있어,manual_unsupported
+호출어 바꿀 수 있어,manual_unsupported
+AI 이름 바꿔줘,manual_unsupported
+월패드 AI 이름 바꿔줘,manual_unsupported
+호출어 변경 가능해,manual_unsupported
+이름 변경할 수 있어,manual_unsupported
+이름 바꾸는 방법 알려줘,manual_unsupported
+다른 이름으로 설정해줘,manual_unsupported
+어떻게 사용하면 돼,manual_usage
+사용 방법 알려줘,manual_usage
+어떻게 사용하는지 알려줘,manual_usage
+사용법 알려줄래,manual_usage
+어떻게 써,manual_usage
+어떻게 명령해,manual_usage
+사용 안내 해줘,manual_usage
+사용 설명 해줘,manual_usage
+병원 예약 가능해,medical_exception
+병원 예약 해줄 수 있어,medical_exception
+진료 예약 가능해,medical_exception
+의사 연결해줘,medical_exception
+병원 처방 받아줘,medical_exception
+병원 취소해줘,medical_exception
+의료 예약 해줘,medical_exception
+처방전 발급해줘,medical_exception
+건강 상담해줘,medical_exception
+약 처방 받아줘,medical_exception
+병원 오늘 열었어,medical_hours
+병원 영업 시간,medical_hours
+진료 시간이 언제야,medical_hours
+내과 오늘 해,medical_hours
+소아과 오늘 열었어,medical_hours
+약국 몇 시에 열어,medical_hours
+병원 휴무야,medical_hours
+치과 몇 시까지 해,medical_hours
+이비인후과 진료 시간,medical_hours
+병원 언제 열어,medical_hours
+뉴스 어디서 받아와,news_info
+뉴스 채널이 뭐야,news_info
+어떤 뉴스 볼 수 있어,news_info
+뉴스 서비스 어디야,news_info
+뉴스 언론사 알려줘,news_info
+뉴스 구독 어떻게 해,news_info
+뉴스 카테고리 선택 가능해,news_info
+뉴스 설정 방법 알려줘,news_info
+뉴스 어떻게 들을 수 있어,news_info
+뉴스 브리핑 예약해줘,news_exception
+뉴스 정기 알림 설정,news_exception
+아침마다 뉴스 알려줘,news_exception
+매일 뉴스 들을 수 있어,news_exception
+뉴스 매일 듣고 싶어,news_exception
+정기 뉴스 설정해줘,news_exception
+매일 아침 뉴스 받을게,news_exception
+뉴스 자동 알림 설정,news_exception
+뉴스 매일 받고 싶어,news_exception
+외출모드 켜도 돼,security_query
+외출모드 어떻게 해,security_query
+외출 잠금 설정 방법,security_query
+귀가 시 연동 설정해줘,security_return_set
+집에 오면 조명 켜줘,security_return_set
+집에 돌아올 때 난방 켜줘,security_return_set
+돌아올 때 보일러 켜줘,security_return_set
+귀가 시 에어컨 켜줘,security_return_set
+돌아오면 집 설정해줘,security_return_set
+귀가하면 자동으로 켜줘,security_return_set
+복귀 시 자동 설정해줘,security_return_set
+주식 추천 부탁해,stock_exception
+어떤 주식 괜찮아,stock_exception
+주식 매수 추천해줘,stock_exception
+지금 사야 할 주식,stock_exception
+주가 오를 것 같은 거 알려줘,stock_exception
+내 주식 관리해줘,stock_exception
+투자 종목 추천해줘,stock_exception
+매도 추천해줘,stock_exception
+매수 신호 알려줘,stock_exception
+주식 시장 분석해줘,stock_exception
+LG전자 주가,stock_price_query
+현대차 주가 알려줘,stock_price_query
+SK하이닉스 오늘 얼마야,stock_price_query
+KOSPI 관련주 주가,stock_price_query
+삼성SDI 주가,stock_price_query
+화면 밝기 더 높여줘,system_brightness_set
+화면 밝기 더 낮춰줘,system_brightness_set
+화면 너무 어두워,system_brightness_set
+화면 눈부셔 낮춰줘,system_brightness_set
+낮에 화면 밝기 예약해줘,system_brightness_schedule
+자기 전 화면 어둡게 해줘,system_brightness_schedule
+기상 시 화면 밝기 올려줘,system_brightness_schedule
+취침 시 화면 밝기 낮춰줘,system_brightness_schedule
+화면 밝기 시간대별 설정,system_brightness_schedule
+시간에 맞춰 밝기 조절해줘,system_brightness_schedule
+에티켓모드인데 소리 키울 수 있어,system_exception
+에티켓모드 해제하지 말고 소리 켜줘,system_exception
+취침모드 중에 소리 올려줘,system_exception
+절전모드인데 기능 써도 돼,system_exception
+에티켓모드 무시하고 알람 켜줘,system_exception
+지원되지 않는 기능이야,system_exception
+지원 안 되는 거야,system_exception
+에티켓모드에서 볼륨 올려줘,system_exception
+그건 안 되는 기능 아냐,system_exception
+할 수 없는 기능이야,system_exception
+버스 몇 분 후에 와,traffic_bus_query
+근처 버스 정류장 알려줘,traffic_bus_query
+버스 정류장 어디야,traffic_bus_query
+다음 버스 몇 분 남았어,traffic_bus_query
+버스 막차 지나갔어,traffic_bus_query
+버스 도착 시간,traffic_bus_query
+버스 배차 시간 알려줘,traffic_bus_query
+버스 언제 오는지 알려줘,traffic_bus_query
+환기 어떻게 됐어,ventilation_exception
+환기 기기 점검해줘,ventilation_exception
+환기 시스템 AS 신청,ventilation_exception
+환기 고장 수리,ventilation_exception
+환기 필터 사줘,ventilation_exception
+환기 교체해줘,ventilation_exception
+환기 기기 구입,ventilation_exception
+환기 용량 변경해줘,ventilation_exception
+환기 예약 뭐야,ventilation_schedule_query
+환기 예약 상태 알려줘,ventilation_schedule_query
+환기 자동 예약 확인,ventilation_schedule_query
+환기 스케줄 확인해줘,ventilation_schedule_query
+지금 환기 예약 상태,ventilation_schedule_query
+환기 예약 있어,ventilation_schedule_query
+환기 타이머 확인해줘,ventilation_schedule_query
+환기 예약 조회해줘,ventilation_schedule_query
+환기 예약 설정해줘,ventilation_schedule_set
+저녁에 환기 예약해줘,ventilation_schedule_set
+아침에 환기 켜줘,ventilation_schedule_set
+매일 환기 예약해줘,ventilation_schedule_set
+환기 자동 설정해줘,ventilation_schedule_set
+환기 타이머 걸어줘,ventilation_schedule_set
+방문 차량 목록,visitor_parking_query
+방문 차량 있어,visitor_parking_query
+방문객 주차 목록,visitor_parking_query
+방문 차량 등록 상태,visitor_parking_query
+방문 주차 목록 알려줘,visitor_parking_query
+등록된 방문객 차량,visitor_parking_query
+방문 주차 현황 알려줘,visitor_parking_query
+방문 차량 확인해줘,visitor_parking_query
+비 맞을 것 같아,weather_activity
+빨래 해도 돼,weather_activity
+야외 행사 가도 돼,weather_activity
+낚시 가도 돼,weather_activity
+스키 타러 가도 돼,weather_activity
+오늘 뭐 입어,weather_clothing
+외출하는데 뭐 입을까,weather_clothing
+내일 뭐 입으면 돼,weather_clothing
+오늘 기온에 맞는 옷 알려줘,weather_clothing
+이번 주 날씨에 맞는 옷 알려줘,weather_exception
+다음 달 기온 알려줘,weather_exception
+내년 여름 날씨,weather_exception
+6개월 뒤 날씨,weather_exception
+겨울 날씨 예측해줘,weather_exception
+여름 날씨 예측해줘,weather_exception
+정밀 기상 예보 알려줘,weather_exception
+강수량 정확히 알려줘,weather_exception

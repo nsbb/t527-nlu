@@ -1,0 +1,1414 @@
+먼지 농도 얼마야,dust_query
+먼지 수치 알려줘,dust_query
+미세먼지 지금 어때,dust_query
+초미세먼지 확인해줘,dust_query
+바깥 공기 어때,dust_query
+오늘 미세먼지 심해,dust_query
+공기질 지금 괜찮아,dust_query
+미세먼지 나쁜 거야,dust_query
+미세먼지 수치가 얼마야,dust_query
+먼지 얼마나 심해,dust_query
+바깥에 먼지 많아,dust_query
+오늘 공기 좋아,dust_query
+미세먼지 레벨 뭐야,dust_query
+미세먼지 어디 확인해,dust_query
+대기질 어때,dust_query
+먼지야 오늘 미세먼지,dust_query
+창문 열어도 돼 먼지 때문에,dust_query
+오늘 황사 있어,dust_query
+공기 오염 수치,dust_query
+미세먼지 때문에 목이 따가워 지금 어때,dust_query
+오늘 먼지 심한 날이야,dust_query
+먼지 경보 떴어,dust_query
+먼지 보통이야 나쁨이야,dust_query
+미세먼지 예보 알려줘,dust_query
+내일 미세먼지 어때,dust_query
+미세 먼지,dust_query
+먼지 상태 알려줘,dust_query
+공기 질 확인,dust_query
+미세먼지 수준 알려줘,dust_query
+오늘 대기 상태,dust_query
+차량 운행 기록 알려줘,car_history
+내 차 어디 다녔어,car_history
+차 이동 기록,car_history
+오늘 차 얼마나 달렸어,car_history
+차량 주행 기록,car_history
+내 차 최근 기록,car_history
+차 운행 내역 확인,car_history
+이번 달 차 운행량,car_history
+차량 위치 기록,car_history
+차 어디 세워뒀어,car_history
+주차 위치 알려줘,car_history
+어디 주차했어,car_history
+차 어디 있어,car_history
+주차 기록 알려줘,car_history
+차 주행 거리 알려줘,car_history
+이번 주 운전 얼마나 했어,car_history
+차 기록 보여줘,car_history
+내차 최근 어디 갔어,car_history
+차 경로 알려줘,car_history
+지난주 차 어디 갔어,car_history
+단지 공지 알려줘,community_query
+아파트 소식 있어,community_query
+단지 게시판 확인,community_query
+입주민 공지 뭐야,community_query
+아파트 공지사항,community_query
+단지 뉴스 알려줘,community_query
+공동주택 소식,community_query
+아파트 소식 알려줘,community_query
+단지 이벤트 있어,community_query
+주민 센터 공지,community_query
+단지 행사 뭐 있어,community_query
+아파트 공지 뭐야,community_query
+단지 내 소식,community_query
+최근 공지 알려줘,community_query
+입주민 게시판,community_query
+아파트 소식 뭐 있어,community_query
+단지 안내,community_query
+아파트 이번 달 소식,community_query
+커뮤니티 공지,community_query
+주민 공지 알려줘,community_query
+오늘 휘발유 얼마야,fuel_query
+기름값 지금 얼마야,fuel_query
+주유소 가격 알려줘,fuel_query
+리터당 얼마야,fuel_query
+경유 가격,fuel_query
+휘발유 요즘 얼마,fuel_query
+기름 가격 올랐어,fuel_query
+주유 가격 확인,fuel_query
+가스 가격 얼마야,fuel_query
+LPG 가격 알려줘,fuel_query
+오늘 주유 가격,fuel_query
+주유소 가격 지금,fuel_query
+기름값 변동,fuel_query
+근처 주유소 가격,fuel_query
+이번 주 기름값,fuel_query
+가격 얼마야 기름,fuel_query
+국제 유가 얼마야,fuel_query
+기름 저렴한 데 어디야,fuel_query
+주유 가격 많이 올랐어,fuel_query
+기름값 많이 내렸어,fuel_query
+집 전기 얼마나 썼어,home_status_query
+집 에너지 사용량,home_status_query
+지금 집에 누가 있어,home_status_query
+집 전체 상태 알려줘,home_status_query
+집 안 어때,home_status_query
+현재 집 상황,home_status_query
+지금 집 어때,home_status_query
+집 온도 어때,home_status_query
+모든 기기 상태,home_status_query
+집 켜진 거 뭐 있어,home_status_query
+지금 뭐 켜져 있어,home_status_query
+집 전체 켜진 것,home_status_query
+집 현황 알려줘,home_status_query
+집 안 상황 확인,home_status_query
+집 상태 체크,home_status_query
+집 전반적인 상태,home_status_query
+집 전체 확인,home_status_query
+우리 집 지금 어때,home_status_query
+집 요약 알려줘,home_status_query
+집 상태 보고,home_status_query
+오늘 주식 얼마야,stock_query
+삼성 주가 알려줘,stock_query
+코스피 지금 얼마,stock_query
+주식 시장 어때,stock_query
+코스닥 어때,stock_query
+내 주식 수익률,stock_query
+주식 지금 떨어지고 있어,stock_query
+나스닥 얼마야,stock_query
+S&P 오늘 어때,stock_query
+오늘 주식 시장,stock_query
+주가 확인해줘,stock_query
+삼성 전자 주식,stock_query
+현대차 주가,stock_query
+오늘 장 어때,stock_query
+주식 오늘 올랐어,stock_query
+주식 많이 빠졌어,stock_query
+오늘 증시 어때,stock_query
+주식 최근 시세,stock_query
+내 포트폴리오 어때,stock_query
+주식 수익 확인,stock_query
+지금 온도 얼마야,temp_query
+실내 온도 어때,temp_query
+방 온도 얼마야,temp_query
+현재 온도 확인,temp_query
+거실 온도 알려줘,temp_query
+집 안 온도,temp_query
+지금 몇 도야,temp_query
+온도 지금 어때,temp_query
+집 온도 몇 도야,temp_query
+오늘 바깥 온도,temp_query
+밖에 몇 도야,temp_query
+지금 실내 온도,temp_query
+현재 기온,temp_query
+온도계 얼마야,temp_query
+방 온도 알려줘,temp_query
+안방 온도,temp_query
+서재 온도,temp_query
+화장실 온도,temp_query
+발코니 온도,temp_query
+외부 온도,temp_query
+와이파이 설정,system_setting
+알람 소리 크게,system_setting
+음량 설정 변경,system_setting
+언어 설정,system_setting
+디스플레이 밝기 조절,system_setting
+시스템 업데이트,system_setting
+초기화 해줘,system_setting
+설정 열어줘,system_setting
+환경설정,system_setting
+네트워크 설정,system_setting
+블루투스 설정,system_setting
+화면 잠금 설정,system_setting
+자동 절전 설정,system_setting
+기기 설정 열어,system_setting
+앱 설정,system_setting
+알림 설정 바꿔,system_setting
+소리 설정,system_setting
+음성 설정,system_setting
+개인정보 설정,system_setting
+계정 설정,system_setting
+아파트 관리비 정보,complex_info
+단지 주차 정보,complex_info
+단지 내 시설 알려줘,complex_info
+공용 시설 정보,complex_info
+단지 내 연락처,complex_info
+관리사무소 전화번호,complex_info
+공동현관 비밀번호,complex_info
+단지 지도,complex_info
+쓰레기 분리수거 날짜,complex_info
+택배 보관함 위치,complex_info
+아파트 단지 정보,complex_info
+단지 내 CCTV 위치,complex_info
+단지 보안 정보,complex_info
+엘리베이터 점검 일정,complex_info
+단지 이용 안내,complex_info
+공용시설 예약,complex_info
+커뮤니티 센터 정보,complex_info
+단지 규정 알려줘,complex_info
+운동시설 정보,complex_info
+단지 내 놀이터,complex_info
+방문 차량 등록,visitor_parking
+손님 차량 등록해줘,visitor_parking
+방문자 주차 신청,visitor_parking
+방문객 차 등록,visitor_parking
+손님 차 주차 가능해,visitor_parking
+방문 주차 어떻게,visitor_parking
+방문 차량 어디 주차,visitor_parking
+손님 주차 신청,visitor_parking
+방문자 주차 어디,visitor_parking
+임시 주차 등록,visitor_parking
+방문객 차량 등록,visitor_parking
+방문 차 어디 세워,visitor_parking
+손님 차 어디 주차해,visitor_parking
+방문 차량 주차 가능,visitor_parking
+방문 차 등록 방법,visitor_parking
+방문자 주차권,visitor_parking
+방문 주차 인증,visitor_parking
+손님 주차 몇 시간,visitor_parking
+방문 주차 요금,visitor_parking
+주차 방문 등록해줘,visitor_parking
+알림 확인해줘,notification_query
+메시지 왔어,notification_query
+알람 뭐 왔어,notification_query
+새 알림 있어,notification_query
+최근 알림 알려줘,notification_query
+어떤 알림 왔어,notification_query
+알림 내용 뭐야,notification_query
+읽지 않은 알림,notification_query
+알림 목록 보여줘,notification_query
+아파트 알림,notification_query
+새 공지 알림,notification_query
+알림 읽어줘,notification_query
+최신 알림,notification_query
+알림 몇 개야,notification_query
+안 읽은 알림 있어,notification_query
+알림 확인 해줘,notification_query
+시스템 알림,notification_query
+중요 알림 있어,notification_query
+알림 내역,notification_query
+알림 요약,notification_query
+가스 꺼줘,gas_off
+가스 잠가줘,gas_off
+가스 밸브 잠그기,gas_off
+가스 끄기,gas_off
+가스 밸브 잠가줘,gas_off
+가스 잠궈줘,gas_off
+보일러 가스 끄기,gas_off
+가스 배관 잠가,gas_off
+가스 잠금 해줘,gas_off
+가스 밸브 잠금,gas_off
+가스 벨브 잠궈,gas_off
+가스 닫아줘,gas_off
+가스 확실히 잠겼어,gas_off
+가스 잠금 확인,gas_off
+외출 전에 가스 잠가줘,gas_off
+가스 잠갔는지 확인해줘,gas_off
+가스 밸브 확인,gas_off
+나갈 때 가스 잠가,gas_off
+가쓰 꺼줘,gas_off
+가쓰 잠궈줘,gas_off
+전기차 충전 어디서 해,ev_charging
+전기차 충전소 위치,ev_charging
+충전 가능한 곳 알려줘,ev_charging
+전기차 충전 현황,ev_charging
+충전기 있어,ev_charging
+단지 내 충전기,ev_charging
+전기차 충전 가능,ev_charging
+EV 충전 어디서,ev_charging
+충전소 예약,ev_charging
+전기차 충전 비용,ev_charging
+충전기 지금 사용 중이야,ev_charging
+전기차 충전 얼마나 됐어,ev_charging
+배터리 충전 상태,ev_charging
+충전 완료됐어,ev_charging
+충전 예약 해줘,ev_charging
+충전기 빈 자리 있어,ev_charging
+전기차 충전량,ev_charging
+단지 충전 현황,ev_charging
+내 차 충전 상태,ev_charging
+EV 충전 상태,ev_charging
+엘리베이터 불러줘,elevator_control
+엘리베이터 호출,elevator_control
+승강기 불러줘,elevator_control
+엘리베이터 내려줘,elevator_control
+엘리베이터 올려줘,elevator_control
+엘리베이터 몇 층이야,elevator_control
+승강기 몇 층에 있어,elevator_control
+엘리베이터 어디 있어,elevator_control
+엘리베이터 기다려,elevator_control
+엘리베이터 지금 몇 층,elevator_control
+엘리베이터 왔어,elevator_control
+엘리베이터 빨리 와줘,elevator_control
+승강기 호출해줘,elevator_control
+엘리베이터 1층으로,elevator_control
+승강기 예약,elevator_control
+엘리베이터 올라가,elevator_control
+엘리베이터 내려오고 있어,elevator_control
+엘리베이터 언제 와,elevator_control
+엘이베이터 불러줘,elevator_control
+엘리베이타 와줘,elevator_control
+보안 모드 켜줘,security_mode
+외출 모드,security_mode
+집 비움 모드,security_mode
+방범 모드 설정,security_mode
+보안 설정,security_mode
+집 잠금 설정,security_mode
+보안 모드 활성화,security_mode
+집 비워 보안,security_mode
+외출 전 보안,security_mode
+방범 켜줘,security_mode
+집 경비 모드,security_mode
+보안 시스템 켜줘,security_mode
+집 지킴이 모드,security_mode
+보안 모드 해제,security_mode
+취침 보안 모드,security_mode
+야간 보안 모드,security_mode
+보안 해제해줘,security_mode
+보안 상태 확인,security_mode
+집 경보 시스템,security_mode
+보안 모드 꺼줘,security_mode
+환기 꺼줘,ventilation_off
+환기팬 꺼,ventilation_off
+환기 시스템 꺼줘,ventilation_off
+환기 그만,ventilation_off
+환기 멈춰,ventilation_off
+환기장치 꺼줘,ventilation_off
+환기 중지,ventilation_off
+환기 끄기,ventilation_off
+환기팬 끄기,ventilation_off
+환기 정지,ventilation_off
+환기 꺼,ventilation_off
+환기 종료,ventilation_off
+환기 멈춰줘,ventilation_off
+환기팬 꺼줘,ventilation_off
+환기 중단,ventilation_off
+환기 잠깐 꺼줘,ventilation_off
+환기 그만해,ventilation_off
+완기 꺼줘,ventilation_off
+완기팬 꺼줘,ventilation_off
+환기 오프,ventilation_off
+환기 상태 어때,ventilation_query
+환기팬 켜져 있어,ventilation_query
+환기 지금 어때,ventilation_query
+환기 얼마나 됐어,ventilation_query
+환기 수치 알려줘,ventilation_query
+환기 작동 중이야,ventilation_query
+환기 레벨 뭐야,ventilation_query
+환기량 알려줘,ventilation_query
+환기 현재 상태,ventilation_query
+환기 정보,ventilation_query
+환기 동작 확인,ventilation_query
+환기팬 상태,ventilation_query
+환기 언제부터 켰어,ventilation_query
+환기 설정 어때,ventilation_query
+현재 환기 상태,ventilation_query
+환기 켜져 있어,ventilation_query
+환기 정도,ventilation_query
+환기 얼마나,ventilation_query
+환기 속도,ventilation_query
+환기 강도,ventilation_query
+에어컨 예약 꺼줘,ac_schedule
+에어컨 타이머 설정,ac_schedule
+에어컨 자동 꺼짐,ac_schedule
+에어컨 예약 켜기,ac_schedule
+에어컨 스케줄,ac_schedule
+에어컨 몇 시에 켜줘,ac_schedule
+에어컨 몇 시에 꺼줘,ac_schedule
+에어컨 예약 설정,ac_schedule
+에어컨 타이머 꺼줘,ac_schedule
+에어컨 30분 후에 꺼줘,ac_schedule
+에어컨 1시간 후 꺼줘,ac_schedule
+에어컨 2시간 후 꺼줘,ac_schedule
+에어컨 오전 7시에 켜줘,ac_schedule
+에어컨 밤 11시에 꺼줘,ac_schedule
+에어컨 자동 꺼짐 설정,ac_schedule
+에어컨 잠들면 꺼줘,ac_schedule
+에어컨 예약 취소,ac_schedule
+에어컨 타이머 해제,ac_schedule
+에어컨 스케줄 확인,ac_schedule
+에어컨 예약 알려줘,ac_schedule
+에어컨 예외 설정,ac_exception
+에어컨 특수 모드,ac_exception
+에어컨 수면 모드,ac_exception
+에어컨 스마트 모드,ac_exception
+에어컨 에너지 절약 모드,ac_exception
+에어컨 파워 모드,ac_exception
+에어컨 자동 설정,ac_exception
+에어컨 점검 필요해,ac_exception
+에어컨 이상해,ac_exception
+에어컨 안 켜져,ac_exception
+에어컨 오작동,ac_exception
+에어컨 소리 이상해,ac_exception
+에어컨 필터 청소,ac_exception
+에어컨 냄새 나,ac_exception
+에어컨 물 떨어져,ac_exception
+에어컨 작동 안 돼,ac_exception
+에어컨 리셋,ac_exception
+에어컨 초기화,ac_exception
+에어컨 응급 모드,ac_exception
+에어컨 절전 모드,ac_exception
+알람 설정해줘,alarm_setting
+내일 7시에 알람,alarm_setting
+알람 맞춰줘,alarm_setting
+아침 6시 30분 알람,alarm_setting
+알람 꺼줘,alarm_setting
+알람 취소,alarm_setting
+알람 해제,alarm_setting
+알람 반복 설정,alarm_setting
+매일 알람 설정,alarm_setting
+주말 알람 꺼줘,alarm_setting
+평일 알람 맞춰줘,alarm_setting
+알람 시간 바꿔줘,alarm_setting
+알람 몇 시야,alarm_setting
+알람 추가,alarm_setting
+알람 삭제,alarm_setting
+알람 목록,alarm_setting
+5시 알람 맞춰,alarm_setting
+내일 오전 8시 알람,alarm_setting
+알람 10분 후에 다시,alarm_setting
+알람 끄기,alarm_setting
+난방 꺼줘,heating_off
+난방 꺼,heating_off
+보일러 꺼줘,heating_off
+난방 끄기,heating_off
+보일러 꺼,heating_off
+난방 중지,heating_off
+난방 멈춰,heating_off
+보일러 중지,heating_off
+난방 종료,heating_off
+보일러 정지,heating_off
+난방 오프,heating_off
+난방 그만,heating_off
+보일러 끄기,heating_off
+따뜻해졌어 난방 꺼줘,heating_off
+이제 따뜻해 꺼줘,heating_off
+더워졌어 난방 꺼,heating_off
+난방 그만해도 될 것 같아,heating_off
+보일라 꺼줘,heating_off
+남방 꺼줘,heating_off
+난방 그만 돌려,heating_off
+에어컨 꺼줘,ac_off
+에어컨 꺼,ac_off
+에어컨 끄기,ac_off
+에어컨 오프,ac_off
+에어컨 중지,ac_off
+에어컨 그만,ac_off
+시원해졌어 에어컨 꺼줘,ac_off
+이제 선선해 꺼줘,ac_off
+에어컨 그만 해도 될 것 같아,ac_off
+에어컨 끄기 좀,ac_off
+에어컨 오프 해줘,ac_off
+에어컨 멈춰,ac_off
+에어컨 종료,ac_off
+에에컨 꺼줘,ac_off
+에어켠 꺼줘,ac_off
+에어컨 잠깐 꺼줘,ac_off
+에어컨 전원 꺼,ac_off
+에어컨 오프 해,ac_off
+에어컨 닫아,ac_off
+에어컨 안 필요해,ac_off
+불 꺼줘,light_off
+조명 꺼줘,light_off
+불 꺼,light_off
+조명 꺼,light_off
+불 끄기,light_off
+조명 끄기,light_off
+어두워도 돼,light_off
+불 그만,light_off
+조명 오프,light_off
+방 불 꺼줘,light_off
+거실 불 꺼,light_off
+불 다 꺼줘,light_off
+모든 조명 꺼,light_off
+불 좀 꺼줘,light_off
+밝아서 눈이 부셔 꺼줘,light_off
+눈이 너무 밝아,light_off
+조명 끄고 싶어,light_off
+불 꺼줘 자고 싶어,light_off
+빛이 눈에 들어와,light_off
+눈이 너무 밝아서 꺼줘,light_off
+종명 꺼줘,light_off
+불꺼줘,light_off
+조명꺼줘,light_off
+불 켜줘,light_on
+조명 켜줘,light_on
+불 켜,light_on
+조명 켜,light_on
+불 좀 켜줘,light_on
+거실 불 켜줘,light_on
+방 조명 켜줘,light_on
+불 좀 밝게,light_on
+조명 좀 켜줘,light_on
+어두워 불 켜줘,light_on
+눈이 침침해,light_on
+어두워서 잘 안 보여,light_on
+환해야 할 것 같아,light_on
+불 켜봐,light_on
+조명 환하게,light_on
+좀 밝게 해줘,light_on
+너무 어두워,light_on
+불켜줘,light_on
+조명켜줘,light_on
+불 좀,light_on
+난방 틀어줘,heating_on
+보일러 켜줘,heating_on
+난방 켜줘,heating_on
+따뜻하게 해줘,heating_on
+난방 좀 틀어줘,heating_on
+춥다 난방 켜,heating_on
+보일러 틀어줘,heating_on
+코가 시려,heating_on
+손이 차가워,heating_on
+발이 냉해,heating_on
+너무 추워,heating_on
+좀 따뜻하게,heating_on
+아 추워,heating_on
+춥네 난방 좀,heating_on
+난방 온,heating_on
+보일라 켜줘,heating_on
+남방 틀어줘,heating_on
+보일러켜줘,heating_on
+난방켜줘,heating_on
+집이 너무 추워,heating_on
+에어컨 켜줘,ac_on
+에어컨 틀어줘,ac_on
+더워 에어컨 켜줘,ac_on
+에어컨 좀 켜줘,ac_on
+시원하게 해줘,ac_on
+에어컨 온,ac_on
+땀이 나,ac_on
+너무 더워,ac_on
+에어컨 좀,ac_on
+더위 에어컨 켜,ac_on
+에어컨 켜봐,ac_on
+에에컨 켜줘,ac_on
+에어켠 켜줘,ac_on
+에어컨켜줘,ac_on
+방 너무 더워,ac_on
+커튼 열어줘,curtain_control
+커튼 닫아줘,curtain_control
+블라인드 올려줘,curtain_control
+블라인드 내려줘,curtain_control
+커튼 좀 열어줘,curtain_control
+커튼 좀 닫아줘,curtain_control
+블라인드 올려,curtain_control
+블라인드 내려,curtain_control
+커튼 올려줘,curtain_control
+커튼 내려줘,curtain_control
+커텐 열어줘,curtain_control
+커텐 닫아줘,curtain_control
+거튼 열어줘,curtain_control
+거튼 닫아줘,curtain_control
+블라인드 열어줘,curtain_control
+블라인드 닫아줘,curtain_control
+커튼 반만 열어줘,curtain_control
+커튼 완전히 닫아,curtain_control
+블라인드 반쯤,curtain_control
+커튼 조금 열어,curtain_control
+환기 켜줘,ventilation_on
+환기 틀어줘,ventilation_on
+환기팬 켜줘,ventilation_on
+공기 환기,ventilation_on
+환기 좀 켜줘,ventilation_on
+환기해줘,ventilation_on
+공기 좀 환기,ventilation_on
+환기 시켜줘,ventilation_on
+답답해 환기,ventilation_on
+공기 탁해 환기 켜,ventilation_on
+완기 켜줘,ventilation_on
+완기팬 켜줘,ventilation_on
+환기켜줘,ventilation_on
+공기 바꿔줘,ventilation_on
+환기 가동,ventilation_on
+현관문 열어줘,door_open
+문 열어줘,door_open
+현관 열어줘,door_open
+출입문 열어줘,door_open
+문 좀 열어줘,door_open
+현관문 열어,door_open
+도어 열어줘,door_open
+문 오픈,door_open
+현관 문 열어줘,door_open
+입구 열어줘,door_open
+문 열어봐,door_open
+택배 왔어 문 열어줘,door_open
+손님 왔어 문 열어,door_open
+문열어줘,door_open
+현관문열어줘,door_open
+에너지 얼마나 썼어,energy_query
+이번 달 전기 요금,energy_query
+전기세 얼마야,energy_query
+가스비 얼마야,energy_query
+에너지 사용량 알려줘,energy_query
+이번 달 에너지,energy_query
+전기 얼마나 썼어,energy_query
+전력 사용량,energy_query
+전기 요금 조회,energy_query
+에너지 절약 어떻게 해,energy_query
+에너지 사용 현황,energy_query
+이달 전기 요금,energy_query
+가스 사용량,energy_query
+수도 요금,energy_query
+이번 달 관리비,energy_query
+에너지 소비,energy_query
+전기 소비량,energy_query
+에너지 비용,energy_query
+전기 요금 내역,energy_query
+에너지 리포트,energy_query
+날씨 어때,weather
+오늘 날씨,weather
+내일 날씨 어때,weather
+비 올 것 같아,weather
+우산 필요해,weather
+날씨 좋아,weather
+날씨 흐려,weather
+기상 정보,weather
+날씨 예보,weather
+주말 날씨 어때,weather
+오늘 기상,weather
+날씨 맑아,weather
+비 오는 날씨,weather
+눈 올 것 같아,weather
+천둥 번개 친다고,weather
+기온 어때,weather
+내일 기상,weather
+이번 주 날씨,weather
+날씨 알려줘,weather
+오늘 비 와,weather
+지금 몇 시야,time_query
+지금 시간 알려줘,time_query
+몇 시야,time_query
+현재 시각,time_query
+시간이 얼마야,time_query
+오늘 무슨 요일이야,time_query
+오늘 날짜,time_query
+지금 시각,time_query
+몇 월 며칠이야,time_query
+지금 오전이야 오후야,time_query
+현재 시간,time_query
+지금 몇 분이야,time_query
+오전 몇 시야,time_query
+오후 몇 시야,time_query
+지금 새벽이야,time_query
+오늘이 무슨 날,time_query
+이번 주 며칠,time_query
+달력 알려줘,time_query
+무슨 달이야,time_query
+오늘 시간,time_query
+뉴스 알려줘,news_query
+오늘 뉴스,news_query
+최신 뉴스,news_query
+지금 뉴스 뭐야,news_query
+헤드라인 알려줘,news_query
+오늘 주요 뉴스,news_query
+뉴스 보여줘,news_query
+연예 뉴스,news_query
+스포츠 뉴스,news_query
+경제 뉴스,news_query
+뉴스 읽어줘,news_query
+뉴스 브리핑,news_query
+지금 이슈 뭐야,news_query
+뉴스 요약,news_query
+오늘의 뉴스,news_query
+뉴스 검색,news_query
+사건사고,news_query
+뉴스 최신,news_query
+뉴스 속보,news_query
+뉴스 확인,news_query
+교통 어때,traffic_query
+지금 막혀,traffic_query
+도로 상황,traffic_query
+고속도로 어때,traffic_query
+지금 막히는 곳,traffic_query
+출근길 교통,traffic_query
+퇴근 교통 어때,traffic_query
+교통 정보,traffic_query
+차 막혀,traffic_query
+교통 체증 어때,traffic_query
+지금 도로,traffic_query
+교통 상황 알려줘,traffic_query
+사고 났어,traffic_query
+통행 가능해,traffic_query
+교통 지금 어때,traffic_query
+통근 길,traffic_query
+지하철 어때,traffic_query
+버스 운행,traffic_query
+대중교통 정보,traffic_query
+도로 체증,traffic_query
+사용 설명서 어딨어,manual_query
+매뉴얼 알려줘,manual_query
+사용법 알려줘,manual_query
+설명서 확인,manual_query
+사용 방법,manual_query
+매뉴얼 보여줘,manual_query
+기기 사용법,manual_query
+앱 사용 방법,manual_query
+어떻게 사용해,manual_query
+사용 가이드,manual_query
+기능 설명,manual_query
+설명 해줘,manual_query
+어떻게 하는 거야,manual_query
+사용 안내,manual_query
+매뉴얼 PDF,manual_query
+사용자 설명서,manual_query
+도움말,manual_query
+FAQ,manual_query
+자주 묻는 질문,manual_query
+도움 요청,manual_query
+난방 예약 설정,heating_schedule
+보일러 예약,heating_schedule
+난방 타이머,heating_schedule
+보일러 타이머 설정,heating_schedule
+난방 몇 시에 켜줘,heating_schedule
+보일러 몇 시에 꺼줘,heating_schedule
+난방 스케줄 설정,heating_schedule
+아침에 난방 켜줘,heating_schedule
+난방 자동 꺼짐,heating_schedule
+보일러 자동 꺼짐,heating_schedule
+난방 예약 취소,heating_schedule
+보일러 예약 확인,heating_schedule
+난방 타이머 해제,heating_schedule
+아침 6시 난방 켜줘,heating_schedule
+밤 12시 난방 꺼줘,heating_schedule
+난방 예약 알려줘,heating_schedule
+보일러 스케줄,heating_schedule
+자다가 난방 꺼줘,heating_schedule
+출근 전 난방 꺼줘,heating_schedule
+퇴근 전 난방 켜줘,heating_schedule
+조명 예약,light_schedule
+불 몇 시에 꺼줘,light_schedule
+조명 타이머,light_schedule
+불 자동 꺼짐,light_schedule
+조명 스케줄,light_schedule
+불 예약 꺼줘,light_schedule
+조명 몇 시에 켜줘,light_schedule
+잠들면 불 꺼줘,light_schedule
+30분 후에 불 꺼줘,light_schedule
+1시간 후 조명 꺼,light_schedule
+조명 타이머 설정,light_schedule
+불 타이머 설정,light_schedule
+자동으로 불 꺼줘,light_schedule
+자동 조명,light_schedule
+불 자동 켜줘,light_schedule
+조명 예약 확인,light_schedule
+불 타이머 해제,light_schedule
+조명 일정 설정,light_schedule
+밤에 불 꺼줘,light_schedule
+아침에 불 켜줘,light_schedule
+조명 조금 낮춰줘,light_dim
+불 좀 어둡게,light_dim
+조명 좀 어둡게,light_dim
+불 조금 낮춰줘,light_dim
+조명 줄여줘,light_dim
+조명 절반으로,light_dim
+불 좀 줄여줘,light_dim
+조명 덜 밝게,light_dim
+불 어둡게 해줘,light_dim
+조명 다운,light_dim
+불 낮춰줘,light_dim
+좀 어둡게,light_dim
+은은하게 해줘,light_dim
+조명 살짝 줄여줘,light_dim
+불 좀 줄여봐,light_dim
+조명 반만,light_dim
+눈이 부셔 좀 낮춰줘,light_dim
+영화 볼 거야 조명 낮춰줘,light_dim
+잠 올 것 같아 조명 낮춰,light_dim
+분위기 있게 조명 낮춰줘,light_dim
+에어컨 정보 알려줘,ac_query
+에어컨 지금 어때,ac_query
+에어컨 온도 몇 도야,ac_query
+에어컨 모드 뭐야,ac_query
+에어컨 켜져 있어,ac_query
+에어컨 상태,ac_query
+에어컨 설정 확인,ac_query
+에어컨 현재 설정,ac_query
+에어컨 바람 세기,ac_query
+에어컨 현재 온도,ac_query
+에어컨 작동 중이야,ac_query
+에어컨 냉방 설정,ac_query
+에어컨 정보,ac_query
+에어컨 확인,ac_query
+에어컨 지금 설정,ac_query
+에어컨 어떻게 설정돼 있어,ac_query
+에어컨 지금 몇 도,ac_query
+에어컨 지금 어떤 모드,ac_query
+에에컨 상태 어때,ac_query
+에어컨 온 상태야 꺼진 상태야,ac_query
+난방 켜줘 거실,heating_on
+침실 난방 켜줘,heating_on
+안방 보일러 켜줘,heating_on
+서재 난방 켜줘,heating_on
+욕실 난방 켜줘,heating_on
+복도 난방 켜줘,heating_on
+발코니 난방 켜줘,heating_on
+다용도실 난방 켜줘,heating_on
+드레스룸 난방 켜줘,heating_on
+화장실 난방 켜줘,heating_on
+거실 불 켜줘,light_on
+침실 불 켜줘,light_on
+안방 조명 켜줘,light_on
+서재 불 켜줘,light_on
+주방 불 켜줘,light_on
+화장실 불 켜줘,light_on
+복도 불 켜줘,light_on
+발코니 조명 켜줘,light_on
+드레스룸 불 켜줘,light_on
+다용도실 불 켜줘,light_on
+거실 에어컨 켜줘,ac_on
+침실 에어컨 켜줘,ac_on
+안방 에어컨 켜줘,ac_on
+서재 에어컨 켜줘,ac_on
+침실 에어컨 꺼줘,ac_off
+거실 에어컨 꺼줘,ac_off
+안방 에어컨 꺼줘,ac_off
+서재 에어컨 꺼줘,ac_off
+거실 조명 꺼줘,light_off
+침실 조명 꺼줘,light_off
+안방 불 꺼줘,light_off
+서재 불 꺼줘,light_off
+주방 불 꺼줘,light_off
+화장실 불 꺼줘,light_off
+복도 불 꺼줘,light_off
+발코니 불 꺼줘,light_off
+드레스룸 불 꺼줘,light_off
+다용도실 불 꺼줘,light_off
+거실 환기 켜줘,ventilation_on
+주방 환기 켜줘,ventilation_on
+화장실 환기 켜줘,ventilation_on
+침실 환기 켜줘,ventilation_on
+욕실 환기 켜줘,ventilation_on
+다용도실 환기 켜줘,ventilation_on
+거실 환기 꺼줘,ventilation_off
+주방 환기 꺼줘,ventilation_off
+화장실 환기 꺼줘,ventilation_off
+침실 환기 꺼줘,ventilation_off
+응급 상황이야,emergency
+도와줘 위험해,emergency
+사람 쓰러졌어,emergency
+불났어,emergency
+119 불러줘,emergency
+위험해 빨리,emergency
+빨리 도움 요청해줘,emergency
+구급차 불러줘,emergency
+심장이 아파,emergency
+응급이야,emergency
+사고났어,emergency
+다쳤어 빨리,emergency
+화재야,emergency
+도둑이야,emergency
+폭발했어,emergency
+가스 새고 있어,emergency
+빨리 도움,emergency
+긴급 상황,emergency
+긴급 도움,emergency
+위험 신호,emergency
+병원 어디야,medical_query
+응급실 어디야,medical_query
+약국 어디 있어,medical_query
+의사 연락처,medical_query
+내과 어디야,medical_query
+소아과 전화번호,medical_query
+병원 예약,medical_query
+가까운 병원,medical_query
+근처 약국,medical_query
+의료 정보,medical_query
+처방전 확인,medical_query
+병원 예약 있어,medical_query
+오늘 병원 예약,medical_query
+진료 예약,medical_query
+병원 운영 시간,medical_query
+내일 진료 있어,medical_query
+약 복용 시간,medical_query
+병원 정보,medical_query
+가까운 클리닉,medical_query
+의료 도움,medical_query
+집이 너무 더워 에어컨 켜줘,ac_on
+방이 찜통이야 에어컨,ac_on
+너무 쪄 에어컨 켜줘,ac_on
+에어컨 빨리 켜줘 더워,ac_on
+방에서 땀나 에어컨 좀,ac_on
+에어컨 서늘하게 해줘,ac_on
+선풍기 켜줘,ac_on
+방이 너무 더워 식혀줘,ac_on
+열 식혀줘 에어컨 켜,ac_on
+더워서 못 살겠어 에어컨,ac_on
+추운데 난방 켜줘,heating_on
+집이 싸늘해 보일러,heating_on
+바람이 차가워 난방 켜,heating_on
+온기 좀 줘,heating_on
+으슬으슬해 난방 켜줘,heating_on
+겨울인데 난방 왜 안 켜,heating_on
+따뜻하게 해 보일러,heating_on
+발이 시려 난방 좀,heating_on
+이 추위에 난방 좀,heating_on
+냉기가 돌아 난방 켜줘,heating_on
+난방 온도 올려줘,heating_up
+보일러 온도 높여줘,heating_up
+더 따뜻하게 해줘,heating_up
+난방 세게,heating_up
+난방 강하게 켜줘,heating_up
+보일러 세게 틀어줘,heating_up
+온도 더 높여,heating_up
+난방 업,heating_up
+더 더운 거 원해,heating_up
+난방 조금 더,heating_up
+난방 온도 내려줘,heating_down
+보일러 온도 낮춰줘,heating_down
+덜 따뜻해도 돼,heating_down
+난방 약하게,heating_down
+온도 낮춰줘,heating_down
+난방 다운,heating_down
+보일러 조금 줄여줘,heating_down
+난방 조금 줄여,heating_down
+너무 따뜻해 낮춰줘,heating_down
+온도 내려,heating_down
+난방 언제 켜,heating_query
+보일러 켜져 있어,heating_query
+난방 지금 어때,heating_query
+난방 설정 온도,heating_query
+보일러 몇 도야,heating_query
+난방 작동 중이야,heating_query
+보일러 상태,heating_query
+난방 켜져 있어,heating_query
+난방 현재 상태,heating_query
+보일러 지금 어때,heating_query
+난방 확인,heating_query
+보일러 동작 중이야,heating_query
+난방 설정 확인,heating_query
+난방 정보,heating_query
+보일러 정보,heating_query
+조명 정보,light_query
+불 켜져 있어,light_query
+조명 상태 어때,light_query
+불 어때,light_query
+조명 몇 개 켜져 있어,light_query
+불 다 켜져 있어,light_query
+조명 확인,light_query
+불 확인,light_query
+조명 켜져 있어,light_query
+조명 지금 어때,light_query
+불 상태,light_query
+조명 현재 상태,light_query
+어느 방 불 켜져 있어,light_query
+모든 조명 상태,light_query
+불 정보,light_query
+조명 밝기 어때,light_query
+환기 모드 바꿔줘,ventilation_mode
+환기 강도 설정,ventilation_mode
+환기 자동 모드,ventilation_mode
+환기 수동 모드,ventilation_mode
+환기 세기 조절,ventilation_mode
+환기 빠르게,ventilation_mode
+환기 느리게,ventilation_mode
+환기 강으로 설정,ventilation_mode
+환기 약으로 설정,ventilation_mode
+환기 중으로 설정,ventilation_mode
+환기 풍량 조절,ventilation_mode
+환기 고속,ventilation_mode
+환기 저속,ventilation_mode
+환기 자동으로,ventilation_mode
+환기 수동으로,ventilation_mode
+환기 설정 바꿔,ventilation_mode
+환기 모드 확인,ventilation_mode
+환기 모드 변경,ventilation_mode
+환기 풍속,ventilation_mode
+환기 세기 변경,ventilation_mode
+에어컨 온도 올려줘,ac_temp
+에어컨 온도 내려줘,ac_temp
+에어컨 온도 설정,ac_temp
+에어컨 몇 도로 맞춰줘,ac_temp
+에어컨 24도,ac_temp
+에어컨 26도로 맞춰줘,ac_temp
+에어컨 온도 더 낮춰줘,ac_temp
+에어컨 더 시원하게,ac_temp
+에어컨 덜 시원하게,ac_temp
+에어컨 온도 변경,ac_temp
+에어컨 온도 조절,ac_temp
+에어컨 22도,ac_temp
+에어컨 25도,ac_temp
+에어컨 온도 높여줘,ac_temp
+에어컨 시원하게 더,ac_temp
+에어컨 모드 변경,ac_mode
+에어컨 냉방 모드,ac_mode
+에어컨 제습 모드,ac_mode
+에어컨 송풍 모드,ac_mode
+에어컨 자동 모드,ac_mode
+에어컨 모드 바꿔줘,ac_mode
+에어컨 냉방으로 바꿔,ac_mode
+에어컨 제습으로 설정,ac_mode
+에어컨 송풍으로,ac_mode
+에어컨 모드 확인,ac_mode
+에어컨 냉방,ac_mode
+에어컨 제습,ac_mode
+에어컨 모드 정보,ac_mode
+에어컨 현재 모드,ac_mode
+에어컨 자동으로 설정,ac_mode
+에어컨 바람 조절,ac_wind
+에어컨 바람 세기,ac_wind
+에어컨 바람 강하게,ac_wind
+에어컨 바람 약하게,ac_wind
+에어컨 풍속 조절,ac_wind
+에어컨 바람 세게,ac_wind
+에어컨 풍량 줄여줘,ac_wind
+에어컨 풍량 높여줘,ac_wind
+에어컨 바람 방향,ac_wind
+에어컨 바람 적당하게,ac_wind
+에어컨 바람 빠르게,ac_wind
+에어컨 바람 느리게,ac_wind
+에어컨 바람 세기 변경,ac_wind
+에어컨 풍속 세게,ac_wind
+에어컨 바람 강도,ac_wind
+특정 조명 켜줘,light_specific
+거실 스탠드 켜줘,light_specific
+침실 간접 조명,light_specific
+주방 등 켜줘,light_specific
+화장실 조명 특정,light_specific
+복도 센서등,light_specific
+발코니 조명 특정,light_specific
+서재 독서등 켜줘,light_specific
+안방 무드등 켜줘,light_specific
+주방 식탁 조명,light_specific
+거실 메인 조명,light_specific
+침실 수면등,light_specific
+LED 스트립 켜줘,light_specific
+조명 특정 켜줘,light_specific
+부분 조명,light_specific
+외출 중 난방 꺼줘,heating_away
+집 비워 난방 설정,heating_away
+여행 중 난방,heating_away
+장기 외출 난방,heating_away
+비워 있을 때 난방,heating_away
+오래 집 비울 때 난방,heating_away
+외출 모드 난방,heating_away
+집 없을 때 보일러,heating_away
+여행 가는 동안 난방,heating_away
+휴가 기간 난방 설정,heating_away
+집 자리 비울 때,heating_away
+출장 중 난방,heating_away
+외박할 때 난방,heating_away
+집 비워도 돼 난방,heating_away
+부재 중 난방 설정,heating_away
+외출할 때 보일러 설정,heating_away
+집 바깥에서 난방,heating_away
+나갈 건데 난방,heating_away
+여행 가는데 보일러,heating_away
+며칠 없을 건데 난방,heating_away
+먼지 수치 지금,dust_query
+오늘 미세먼지 보통이야,dust_query
+미세먼지 빨간불,dust_query
+미세먼지 파란불,dust_query
+공기 좋은 날이야,dust_query
+목이 간질간질 먼지 때문인가,dust_query
+창문 닫아야 해 먼지 때문에,dust_query
+미세먼지 나쁨 단계야,dust_query
+마스크 써야 해,dust_query
+미세먼지 보통이야 좋음이야,dust_query
+기름값 많이 오른 거야,fuel_query
+경유 많이 비싸,fuel_query
+휘발유 싼 곳 어디야,fuel_query
+주유소 어디야,fuel_query
+내 차 기름 얼마나 남았어,fuel_query
+기름 넣어야 해,fuel_query
+주유 할인 있어,fuel_query
+최저가 주유소,fuel_query
+주유 카드 할인,fuel_query
+기름값 비싸다,fuel_query
+주식 오늘 많이 올랐어,stock_query
+주식 폭락했어,stock_query
+내가 산 주식 어때,stock_query
+주가 정보,stock_query
+투자 수익률,stock_query
+주식 시장 동향,stock_query
+오늘 코스피,stock_query
+나스닥 어제보다 올랐어,stock_query
+주식 종목 확인,stock_query
+요즘 주식 어때,stock_query
+차 마지막 운행 언제야,car_history
+차 총 주행거리,car_history
+차 기름 어디서 넣었어,car_history
+차 지난주 어디 갔어,car_history
+차 오늘 얼마나 달렸어,car_history
+차 기록 확인,car_history
+내 차 이동 경로,car_history
+차 운행 통계,car_history
+차 많이 탔어,car_history
+차 운행 거리 이번 달,car_history
+단지 내 쓰레기 처리,community_query
+재활용 수거 날,community_query
+아파트 공용 부분 청소,community_query
+단지 내 음식물 쓰레기,community_query
+단지 회의 언제야,community_query
+주민 회의 있어,community_query
+입주민 행사 뭐 있어,community_query
+아파트 규정 알려줘,community_query
+단지 내 공지 새로 뭐 있어,community_query
+주민센터 공지 확인,community_query
+집 전체 상황 파악,home_status_query
+집 안전 상태,home_status_query
+집 전체 점검,home_status_query
+집 모니터링,home_status_query
+우리집 정보,home_status_query
+집 현재 상황 요약,home_status_query
+집 운영 상태,home_status_query
+집 이상 없어,home_status_query
+집 이상 있어,home_status_query
+집 전체 확인해줘,home_status_query
+온도 확인해줘,temp_query
+지금 실외 온도,temp_query
+밖에 온도 어때,temp_query
+집 내부 온도,temp_query
+안방 온도 알려줘,temp_query
+거실 온도 지금,temp_query
+주방 온도,temp_query
+욕실 온도,temp_query
+다용도실 온도,temp_query
+현재 외부 온도,temp_query
+가스 밸브 잠궜어,gas_off
+외출 전 가스 확인,gas_off
+가스 확인해줘,gas_off
+가스 잠겼는지 확인,gas_off
+가스 잘 잠겼어,gas_off
+가스 안전 확인,gas_off
+가스 잠금 상태,gas_off
+가스 닫혀 있어,gas_off
+가스 확실히 잠가줘,gas_off
+가스 잠금 확인해줘,gas_off
+전기차 언제 충전,ev_charging
+충전 다 됐어,ev_charging
+충전 진행 중이야,ev_charging
+충전 얼마나 걸려,ev_charging
+충전기 고장,ev_charging
+충전 안 돼,ev_charging
+충전 중단,ev_charging
+급속 충전 가능,ev_charging
+완속 충전 설정,ev_charging
+충전 요금 확인,ev_charging
+엘리베이터 1층으로 내려줘,elevator_control
+승강기 올라가줘,elevator_control
+엘리베이터 예약해줘,elevator_control
+엘리베이터 빨리 와,elevator_control
+승강기 운행 중이야,elevator_control
+엘리베이터 점검 중이야,elevator_control
+엘리베이터 문 잡아줘,elevator_control
+엘리베이터 몇 층이야,elevator_control
+승강기 탈 건데,elevator_control
+엘리베이터 올라가는 중이야,elevator_control
+방범 설정 해줘,security_mode
+집 경보 켜줘,security_mode
+집 잠금 확인,security_mode
+보안 카메라 켜줘,security_mode
+CCTV 확인,security_mode
+외출 경보 설정,security_mode
+침입자 감지 모드,security_mode
+집 잠금 상태,security_mode
+보안 시스템 상태,security_mode
+경보 해제,security_mode
+환기팬 끄기,ventilation_off
+공기청정기 끄기,ventilation_off
+환기 자동 꺼짐,ventilation_off
+환기 멈춰줘,ventilation_off
+환기 꺼줘 이제,ventilation_off
+환기 그만 해줘,ventilation_off
+환기 중단해줘,ventilation_off
+환기 오프,ventilation_off
+공기 순환 꺼줘,ventilation_off
+환기 종료해줘,ventilation_off
+환기 상태 알려줘,ventilation_query
+현재 환기 정보,ventilation_query
+환기 켜져 있어,ventilation_query
+환기 지금 작동 중이야,ventilation_query
+환기팬 상태 어때,ventilation_query
+환기 수치,ventilation_query
+환기 풍량 확인,ventilation_query
+환기 동작 상태,ventilation_query
+환기 모니터링,ventilation_query
+환기 정보 알려줘,ventilation_query
+에어컨 예약 확인해줘,ac_schedule
+에어컨 오전 설정,ac_schedule
+에어컨 저녁에 꺼줘,ac_schedule
+에어컨 예약 목록,ac_schedule
+에어컨 타이머 목록,ac_schedule
+에어컨 잘 때 꺼줘,ac_schedule
+에어컨 깨어나면 켜줘,ac_schedule
+에어컨 자동 운전,ac_schedule
+에어컨 예약 추가,ac_schedule
+에어컨 예약 수정,ac_schedule
+에어컨 특별 설정,ac_exception
+에어컨 특수 상황,ac_exception
+에어컨 오류 코드,ac_exception
+에어컨 이상 상태,ac_exception
+에어컨 점검 요청,ac_exception
+에어컨 특이 소리,ac_exception
+에어컨 과부하,ac_exception
+에어컨 응급 처리,ac_exception
+에어컨 비상 모드,ac_exception
+에어컨 오류 해결,ac_exception
+알람 몇 개 설정돼 있어,alarm_setting
+알람 수정해줘,alarm_setting
+알람 다시 맞춰줘,alarm_setting
+기상 알람,alarm_setting
+알람 끄기 지금,alarm_setting
+알람 일시 정지,alarm_setting
+알람 10분 더,alarm_setting
+알람 내일도 울려줘,alarm_setting
+알람 주말만,alarm_setting
+알람 새로 설정,alarm_setting
+불 좀 밝게 해줘,light_on
+불 세게 켜줘,light_on
+밝게 해줘,light_on
+조명 최대로,light_on
+조명 환하게 해줘,light_on
+밝아야 해,light_on
+어두워서 안 보여,light_on
+불이 필요해,light_on
+조명 좀 더,light_on
+조명 완전히 켜줘,light_on
+조명 특정 켜줘 서재,light_specific
+스탠드 켜줘,light_specific
+독서등 켜줘,light_specific
+무드등 켜줘,light_specific
+수면등 켜줘,light_specific
+취침등 켜줘,light_specific
+야간등 켜줘,light_specific
+간접 조명 켜줘,light_specific
+식탁 조명 켜줘,light_specific
+포인트 조명 켜줘,light_specific
+외출할 때 난방 어떻게 해,heating_away
+비울 때 보일러 어떻게,heating_away
+집 비우는 동안 난방,heating_away
+외출 중 보일러 설정,heating_away
+집 비워도 돼 보일러,heating_away
+없는 동안 난방 어떻게,heating_away
+자리 비울 때 보일러,heating_away
+나갈 때 난방 어떻게,heating_away
+여행 가는데 난방,heating_away
+휴가 때 보일러,heating_away
+주식 지금 내려가고 있어,stock_query
+환경이 어때,home_status_query
+집 안 환경,home_status_query
+내부 환경 알려줘,home_status_query
+집 환경 체크,home_status_query
+집 모든 기기 상태,home_status_query
+에너지 이번 달,energy_query
+이번 달 사용량,energy_query
+전기 요금 조회해줘,energy_query
+에너지 사용 내역,energy_query
+관리비 확인,energy_query
+전기세 확인,energy_query
+가스비 확인,energy_query
+수도요금 확인,energy_query
+공과금 알려줘,energy_query
+에너지 소비 패턴,energy_query
+오늘 비 와,weather
+내일 맑아,weather
+비 올 거야,weather
+눈 와,weather
+폭우 경보,weather
+태풍 온다,weather
+강풍 주의보,weather
+황사 심해,weather
+기온이 내려간다,weather
+날이 풀린다,weather
+오늘 몇 시야,time_query
+오늘이 무슨 요일,time_query
+이번 주 며칠째야,time_query
+지금 밤이야 낮이야,time_query
+오전 오후 확인,time_query
+시계 확인,time_query
+현재 시각 알려줘,time_query
+지금 시간 정확히,time_query
+시간 체크,time_query
+날짜 확인,time_query
+뉴스 오늘 주요,news_query
+스포츠 결과,news_query
+야구 결과,news_query
+축구 결과,news_query
+엔터 뉴스,news_query
+사회면 뉴스,news_query
+정치 뉴스,news_query
+국제 뉴스,news_query
+IT 뉴스,news_query
+과학 뉴스,news_query
+교통 막혀,traffic_query
+퇴근길 막혀,traffic_query
+출근 정체,traffic_query
+교통 사고 어디야,traffic_query
+지금 도로 어때,traffic_query
+가는 길 막혀,traffic_query
+시내 교통 어때,traffic_query
+IC 막혀,traffic_query
+지하철 지연,traffic_query
+버스 언제 와,traffic_query
+제품 사용법 어떻게,manual_query
+기기 설명,manual_query
+매뉴얼 찾아줘,manual_query
+사용 안내 보여줘,manual_query
+어떻게 써,manual_query
+초보 사용법,manual_query
+가이드 알려줘,manual_query
+도움말 찾아줘,manual_query
+기기 어떻게 사용해,manual_query
+사용 가이드 알려줘,manual_query
+조명 예약 확인,light_schedule
+자동 소등 설정,light_schedule
+자동 점등 설정,light_schedule
+조명 타이머 확인,light_schedule
+조명 예약 취소,light_schedule
+조명 스케줄 확인,light_schedule
+불 타이머 확인,light_schedule
+불 예약 확인,light_schedule
+조명 자동 설정,light_schedule
+조명 예약 추가,light_schedule
+난방 예약 확인,heating_schedule
+보일러 예약 확인,heating_schedule
+난방 타이머 확인,heating_schedule
+난방 스케줄 확인,heating_schedule
+보일러 타이머 확인,heating_schedule
+자동 난방 설정,heating_schedule
+난방 예약 취소,heating_schedule
+보일러 자동 설정,heating_schedule
+난방 예약 추가,heating_schedule
+보일러 예약 추가,heating_schedule
+조명 어둡게 해줘,light_dim
+조명 줄여,light_dim
+불 어둡게,light_dim
+조명 낮춰,light_dim
+불 좀 낮게,light_dim
+조명 최소로,light_dim
+조명 침침하게,light_dim
+불 희미하게,light_dim
+취침 조명,light_dim
+잠 잘 건데 조명 낮춰줘,light_dim
+에어컨 상태 확인,ac_query
+에어컨 언제부터 켜졌어,ac_query
+에어컨 얼마나 됐어,ac_query
+에어컨 온도 지금,ac_query
+에어컨 설정 어때,ac_query
+에어컨 풍량 어때,ac_query
+에어컨 모드 어때,ac_query
+에어컨 냉방 중이야,ac_query
+에어컨 정상이야,ac_query
+에어컨 동작 확인,ac_query
+에어컨 정보 확인,ac_query
+난방 상태 알려줘,heating_query
+보일러 현재 상태,heating_query
+난방 얼마나 됐어,heating_query
+난방 언제부터 켜져 있어,heating_query
+보일러 설정 온도,heating_query
+난방 작동 확인,heating_query
+보일러 정상 작동,heating_query
+난방 확인해줘,heating_query
+보일러 켜져 있는지,heating_query
+보일러 온도 설정 어때,heating_query
+조명 확인해줘,light_query
+불 상태 어때,light_query
+조명 켜져 있는지,light_query
+어느 방 조명 켜진 거야,light_query
+전체 조명 상태,light_query
+조명 다 꺼져 있어,light_query
+조명 얼마나 켜져 있어,light_query
+불 확인해줘,light_query
+불 켜진 거 어디야,light_query
+조명 정보 알려줘,light_query
+환기 모드 세기,ventilation_mode
+환기 풍량 모드,ventilation_mode
+환기 자동 모드로,ventilation_mode
+환기 수동 모드로,ventilation_mode
+환기 최대 모드,ventilation_mode
+환기 최소 모드,ventilation_mode
+환기 모드 세게,ventilation_mode
+환기 모드 약하게,ventilation_mode
+환기 1단계,ventilation_mode
+환기 3단계,ventilation_mode
+커튼 조금 열어,curtain_control
+블라인드 조금 내려,curtain_control
+커튼 완전히 열어,curtain_control
+블라인드 완전히 올려,curtain_control
+거실 커튼 열어,curtain_control
+침실 블라인드 내려,curtain_control
+안방 커튼 닫아,curtain_control
+서재 블라인드 올려,curtain_control
+발코니 커튼 열어,curtain_control
+복도 블라인드 닫아,curtain_control
+현관문 잠궈줘,door_open
+문 잠가줘,door_open
+현관문 열어줘 손님 왔어,door_open
+문 잠금 해제,door_open
+현관 잠금 확인,door_open
+문 잠겨 있어,door_open
+문 열려 있어,door_open
+현관 잠겨 있는지,door_open
+출입문 잠금,door_open
+현관문 상태,door_open
+에어컨 온도 23도,ac_temp
+에어컨 온도 18도,ac_temp
+에어컨 온도 20도,ac_temp
+에어컨 온도 28도,ac_temp
+에어컨 온도 조금 올려줘,ac_temp
+에어컨 온도 조금 내려줘,ac_temp
+에어컨 1도 올려,ac_temp
+에어컨 1도 내려,ac_temp
+에어컨 온도 최저,ac_temp
+에어컨 온도 최고,ac_temp
+에어컨 냉방 모드 설정,ac_mode
+에어컨 제습으로 바꿔줘,ac_mode
+에어컨 송풍으로 변경,ac_mode
+에어컨 자동 모드 설정,ac_mode
+에어컨 모드 냉방으로,ac_mode
+에어컨 모드 자동으로,ac_mode
+에어컨 모드 바꿔,ac_mode
+에어컨 선풍기 모드,ac_mode
+에어컨 에너지 절약 모드,ac_mode
+에어컨 모드 정보 알려줘,ac_mode
+에어컨 바람 강하게 해줘,ac_wind
+에어컨 바람 약하게 해줘,ac_wind
+에어컨 풍속 강하게,ac_wind
+에어컨 풍속 약하게,ac_wind
+에어컨 바람 최강,ac_wind
+에어컨 바람 최약,ac_wind
+에어컨 바람 1단계,ac_wind
+에어컨 바람 3단계,ac_wind
+에어컨 바람 중간,ac_wind
+에어컨 바람 조금 세게,ac_wind

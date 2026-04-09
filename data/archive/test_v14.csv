@@ -1,0 +1,2453 @@
+question,label
+집 상태 알려해,home_status_query
+집 뭐 켜져있어,home_status_query
+집 기기 상태 알려줘,home_status_query
+집 상태 알려해줘,home_status_query
+집안 상태 알려줘,home_status_query
+집 어떤 게 켜져있어,home_status_query
+알림 확인,notification_query
+알림 온 거 있어,notification_query
+공지사항 알려줘?,notification_query
+알림 있나?,notification_query
+공지사항 알려줄래,notification_query
+새로운 알림,notification_query
+할로윈 언제야,time_query
+런던 은 몇 시야,time_query
+무슨 요일이지,time_query
+지금 시카고 는 몇 시야,time_query
+파리 는 몇 시야,time_query
+시간 좀 알려줘,time_query
+dubai 몇 시야,time_query
+경상남도 부산 지금 몇 시니,time_query
+며칠이야,time_query
+현재 날짜 뭐야,time_query
+이십육일 은 무슨 요일이야,time_query
+이번 달 며칠까지 있어,time_query
+런던 시간 알려줄래,time_query
+날짜 말해줘,time_query
+현재 날짜 시간,time_query
+델리 의 현재 시간은,time_query
+오늘 날짜와 월 알려줘,time_query
+도시 에서 자정 까지 몇 시간 남았어,time_query
+중부 표준시 로 몇 시야,time_query
+오늘 며칠인지 알려줘,time_query
+일몰 시간 언제야,time_query
+호놀룰루 몇 시야,time_query
+인도 의 시간 말해줘,time_query
+올해 십삼일의 금요일 은 언제야,time_query
+시간 알려좀 줘,time_query
+현재 시간 알려줘,time_query
+삼십일일 은 무슨 요일인지 보여줘,time_query
+몇 시인지 알려해줘,time_query
+이 도시 는 몇 시지,time_query
+필리핀 은 지금 몇 시야,time_query
+지금 한국 몇 시지,time_query
+시카고 시간,time_query
+춘천 몇 시야,time_query
+뉴욕 의 현재 시간,time_query
+뉴욕 현재 시간,time_query
+현재 몇 시인지 알려줄래,time_query
+오후 일곱시 면 p. s. t. 로는 몇 시인지 알려 줄래,time_query
+현재 날짜 말해줘,time_query
+오월 이십이일 이 내 생일 인데 오월 이십삼일 무슨 요일인지 알고 싶어,time_query
+오늘 날짜 보여줘,time_query
+이 시간대 의 시간은 몇 시야,time_query
+지금 이 순간 태평양 표준시 시간은 몇 시야,time_query
+일본 도쿄 는 몇 시인지 말해줘,time_query
+십일월 팔일 은 월요일이야 아니면 다른 요일이야,time_query
+olly 덴버 는 몇 시야,time_query
+뉴욕 몇 시인지 알려줘,time_query
+오늘 의 정확한 날짜가 뭐야,time_query
+시간 있어,time_query
+서울 시간 좀 알려줘,time_query
+일본에 타이머는 무엇입니까,time_query
+할 수 있는 거 알려줘,manual_capability
+기능 목록 알려줘,manual_capability
+AI가 뭐 해줄 수 있어,manual_capability
+스마트홈 기능 뭐 있어,manual_capability
+기능 알려줘,manual_capability
+월패드 사용법 알려줘,manual_usage
+월패드 사용법?,manual_usage
+어떻게 써,manual_usage
+어떻게 사용하면 돼,manual_usage
+사용 설명 해줘,manual_usage
+제조사 어디야,manual_creator
+너 만든 곳이 어디야,manual_creator
+누가 개발한 거야,manual_creator
+만든 회사 어디야,manual_creator
+누가 만든 거야,manual_creator
+호출어가 뭐야,manual_name
+너 이름은,manual_name
+월패드 AI 뭐라고 불러,manual_name
+이름이 어떻게 되는지 알려줘,manual_name
+호출명 알려줘,manual_name
+다른 이름으로 바꿔줘,manual_unsupported
+다른 이름 쓸 수 있어,manual_unsupported
+이름 바꾸고 싶어?,manual_unsupported
+다른 이름으로 설정해줘,manual_unsupported
+다른 이름으로 불러줘,manual_unsupported
+배달왔어,door_open
+문열어줘,door_open
+현관문 열어주세요,door_open
+로비문 열어,door_open
+열어해줘,door_open
+안방이 손님 오셨어,door_open
+뭔열어줘,door_open
+문열어,door_open
+열어좀 줘,door_open
+문 좀 열어줘,door_open
+문 좀 열어?,door_open
+현관문 열어줄래,door_open
+조명 어때,light_query
+조명 상태,light_query
+침실 주방 불 켜져있어,light_query
+불 켜져있나요,light_query
+침실 조명 상태,light_query
+거실 불 켜져있어요,light_query
+침실이 빛 좀,light_on
+주방이 앞이 안 보여,light_on
+거실 안 보여,light_on
+주방 간접등 켜줘,light_on
+안방이 앞이 안 보여,light_on
+전등 켜줄래,light_on
+안방이 환하게 해줘,light_on
+안방 불 좀 켜줘,light_on
+안보여,light_on
+불빛이 없어,light_on
+침실 커튼등 켜줘,light_on
+컴컴해,light_on
+커튼등 켜해,light_on
+안방 식탁 다운라이트,light_on
+주방 불 켜줘,light_on
+우리 집 불 켜 줘,light_on
+밝게 좀,light_on
+빛 좀,light_on
+주방이 불빛이 없어,light_on
+간접등 켜주세요,light_on
+큰방 조명 켜주세요,light_on
+거실 조명 켜줘,light_on
+깜깜해,light_on
+안방 거실 불 켜줘,light_on
+조명 켜줘,light_on
+침실 불 켜줄래,light_on
+어두어,light_on
+볼켜줘,light_on
+어두워서 못 보겠어,light_on
+안방 불 켜줘,light_on
+다운라이트 켜해줘,light_on
+침실 밝게 해줘,light_on
+다운라이트 켜줄래,light_on
+불 켜줘,light_on
+침실이 밝게 좀,light_on
+침실이 시야가 안 보여,light_on
+조명 켜줄래,light_on
+다용도실 불 켜줘,light_on
+거실 밝게 해줘,light_on
+전체 조명 낮 시간 동안 꺼 줘,light_off
+조명 꺼주,light_off
+방 중간 조명 꺼주세요,light_off
+이 번 침실 조명 꺼 줘,light_off
+안방 눈이 아파,light_off
+주방 불 꺼줘,light_off
+침실 불 꺼,light_off
+너무 밝아?,light_off
+눈부셔,light_off
+전등 꺼해줘,light_off
+거실 조명 꺼,light_off
+위층 화장실 불 꺼,light_off
+침실 빛이 강해,light_off
+지금 조명들 꺼,light_off
+빛이 눈에 들어와,light_off
+올리 여기 너무 밝으니 불 꺼 줘,light_off
+안방이 취침할게,light_off
+침실이 어둡게 해줘,light_off
+종명 꺼줘,light_off
+안방 불 꺼줘,light_off
+차고 조명 꺼,light_off
+안방이 밝아서 잠이 안 와,light_off
+조명 꺼줄래,light_off
+주방 조명 꺼 주세요,light_off
+스탠드 꺼 줘,light_off
+침실 전등 꺼줘,light_off
+조명 제어 방 불 꺼 줘,light_off
+거실 쪽 빼고 모든 조명 꺼줘,light_off
+불 꺼 줘,light_off
+침실이 잠 좀 자려고,light_off
+내 방 불 꺼줘,light_off
+집 조명 색상 변경,light_dim
+불 줄여줘,light_dim
+여기 조명 조금 더 따뜻하게 해 줘,light_dim
+집 조명 다른 색 으로 바꿔줘,light_dim
+밝기 줄여,light_dim
+불 다른 색 으로 바꿔줘,light_dim
+현관 불 어둡게 해줘,light_dim
+올리 불 어둡게 해줘,light_dim
+조명들 조금 어둡게 해,light_dim
+조명 어두운 파란색 으로 낮춰 줘,light_dim
+라벤더 톤의 조명 해줘,light_dim
+집 조명 바꿔서 어둡게 해,light_dim
+조명 이십 퍼센트 낮춰줄 수 있어,light_dim
+큰방 은은하게 해줘,light_dim
+조명 은은하게,light_dim
+집 안의 불 초록색 으로 바꿔줘,light_dim
+안방 아늑하게,light_dim
+조명 파란색 으로 만들어 주세요,light_dim
+안방 은은하게 해줘,light_dim
+방 아늑하게,light_dim
+올리 모든 조명 파란색 으로 변경,light_dim
+침실 밝기 조절,light_dim
+방 은은하게 해줘,light_dim
+조명 파란색 에서 노란색 으로 변경,light_dim
+집 모든 조명들 주황색 만들어,light_dim
+거실 조명 어둡게,light_dim
+조명 조금 더 낮춰,light_dim
+나 우리 집 빨간색 이면 좋겠으니 바꿔줘,light_dim
+조명 좀 덜 밝게 해줘,light_dim
+집 조명 색 계속 바꿔줄래,light_dim
+안방 영화 볼 거야,light_dim
+색상 빨강 으로 바꿔,light_dim
+욕실 조명 어둡게 해,light_dim
+등 초록색 으로 바꿔줘,light_dim
+머리 맡 조명들 어둡게 해,light_dim
+배경 변경,light_dim
+거실 취침모드,light_schedule
+안방 취침모드 설정,light_schedule
+아침에 조명 켜줘,light_schedule
+취침모드 켜줘,light_schedule
+조명 스케줄 설정해줘,light_schedule
+조명 예약,light_schedule
+거실 온도 어때,heating_query
+지금 온도 몇도,heating_query
+실내 온도 알려줄래,heating_query
+침실 온도 어때,heating_query
+거실 난방 상태,heating_query
+서재 난방 켜주세요,heating_on
+안방 손이 꽁꽁,heating_on
+거실 난방 켜주세요,heating_on
+보일러 켜주,heating_on
+안방 보일러 올려줘,heating_on
+으슬으슬해,heating_on
+거실 보일러 켜줘,heating_on
+거실 발이 시려,heating_on
+서재 난방 켜줄래요,heating_on
+서재 난방 틀어줘,heating_on
+남방 켜줘,heating_on
+안방 난방 틀어줘,heating_on
+방 보일러 켜주세요,heating_on
+안방이 추워서 못 자겠어,heating_on
+아이방 보일러 켜주세요,heating_on
+큰방 난방 틀어줘,heating_on
+방이 추워,heating_on
+방 보일러 켜줄래요,heating_on
+침실 보일러 틀어줘,heating_on
+서늘해,heating_on
+큰방 난방 켜주세요,heating_on
+거실이 추워 죽겠다,heating_on
+거실이 이불 덮어도 추워,heating_on
+거실이 추워서 못 자겠어,heating_on
+침실이 코끝이 시려,heating_on
+거실 난방 켜줘,heating_on
+침실이 추워서 못 자겠어,heating_on
+거실 집이 추워,heating_on
+보일러 켜줄래,heating_on
+거실이 코끝이 시려,heating_on
+손이 얼었어,heating_on
+실내가 쌀쌀해,heating_on
+서재 보일러 올려줘,heating_on
+보일러 켜주세요,heating_on
+전체 난방 켜줘,heating_on
+안방 너무 추워,heating_on
+각 침실 난방 켜해줘,heating_on
+거실이 입김이 나와,heating_on
+침실이 실내가 쌀쌀해,heating_on
+너무 추워?,heating_on
+방 보일러 꺼줘,heating_off
+안방 보일러 꺼줘,heating_off
+거실 보일러 꺼줘,heating_off
+침실이 너무 뜨거워 난방,heating_off
+다용도실 난방 꺼줘,heating_off
+난방 꺼줘,heating_off
+난방 꺼줘?,heating_off
+보일러 꺼주세요,heating_off
+보일러 꺼해,heating_off
+안방 난방 세게,heating_up
+온도 좀 더 올려,heating_up
+서재 보일러 좀 올려줘,heating_up
+침실 따뜻하게 좀,heating_up
+서재 난방 더 올려,heating_up
+화장실 보일러 온도 좀,heating_up
+거실 난방 올려줘,heating_up
+거실 온도 좀 높여줘,heating_up
+침실 난방 좀 올려,heating_up
+방 난방 세게,heating_up
+방 난방 좀 올려줄래,heating_up
+주방 더 따뜻하게,heating_up
+보일러 더 올려줘,heating_up
+온도 올려줄래,heating_up
+온도 올려줘,heating_up
+거실 더 따뜻하게,heating_up
+안방 더 따뜻하게,heating_up
+아이방 보일러 온도 좀,heating_up
+온도 올려좀 줘,heating_up
+작은방 난방 더 올려,heating_up
+아이방 난방 세게,heating_up
+난방 올려줘,heating_up
+아이방 난방 더 올려,heating_up
+큰방 난방 약하게,heating_down
+주방 온도 좀 내려줘,heating_down
+베란다 난방 약하게,heating_down
+거실 난방 낮춰줘,heating_down
+안방 좀 덜 뜨겁게,heating_down
+난방 낮춰해줘,heating_down
+아이방 난방 내려줘,heating_down
+서재 난방 약하게,heating_down
+남방 내려,heating_down
+주방 난방 약하게,heating_down
+난방 예약?,heating_schedule_set
+외출 모드,heating_schedule_set
+거실 난방 예약,heating_schedule_set
+외출 모드로 해해,heating_schedule_set
+안방 외출 난방,heating_schedule_set
+외출 모드로 해줘?,heating_schedule_set
+난방 예약 조회,heating_schedule_query
+난방 예약 뭐가 있어,heating_schedule_query
+보일러 예약 조회해줘,heating_schedule_query
+보일러 예약 확인해줘,heating_schedule_query
+안방 난방 예약 뭐있어,heating_schedule_query
+난방 예약 취소해,heating_schedule_cancel
+보일러 예약 전부 취소,heating_schedule_cancel
+안방 난방 예약 취소,heating_schedule_cancel
+침실 난방 예약 취소,heating_schedule_cancel
+난방 예약 취소?,heating_schedule_cancel
+안방 에어컨 다 켜져있어,ac_query
+주방 에어컨 되고 있나,ac_query
+침실 바람 세기 뭐야,ac_query
+에어컨 어때,ac_query
+거실 바람 세기 뭐야,ac_query
+주방 에어컨 켜져있어,ac_query
+침실이 무더워,ac_on
+안방이 더워 죽겠다,ac_on
+에어컨 커줘,ac_on
+거실 덥다,ac_on
+거실이 시원하게 해줘,ac_on
+더워 죽겠어,ac_on
+침실 냉방 켜줘,ac_on
+거실 에어컨 켜좀 줘,ac_on
+거실이 열대야야,ac_on
+안방 시원하게 해줘,ac_on
+주방 덥다,ac_on
+더워 죽겠다,ac_on
+안방 땀이 나,ac_on
+거실이 찜통이야,ac_on
+침실 땀이 나,ac_on
+에어칸 켜줘,ac_on
+거실이 무더워,ac_on
+습해,ac_on
+거실 땀이 나,ac_on
+안방이 열대야야,ac_on
+거실 냉방 꺼줘,ac_off
+주방 냉방 꺼줘,ac_off
+안방 냉방 꺼줘,ac_off
+에이컨 꺼줘,ac_off
+에에컨 꺼줘,ac_off
+에어콘 꺼줘,ac_off
+에에컨꺼줘,ac_off
+에어컨 꺼줘,ac_off
+거실 에어컨 22도로 맞춰줘,ac_temp
+안방 거실 에어컨 23도로,ac_temp
+침실 에어컨 23도,ac_temp
+에어컨 낮춰줘,ac_temp
+에어컨 낮춰줄래,ac_temp
+에어컨 온도 맞춰줘,ac_temp
+에어컨 올려좀 줘,ac_temp
+안방 에어컨 19도,ac_temp
+주방 에어컨 23도,ac_temp
+주방 에어컨 낮춰줘,ac_temp
+거실 에어컨 25도로 맞춰줘,ac_temp
+안방 송풍 모드,ac_mode
+안방 냉방 모드로,ac_mode
+에어컨 냉방으로 해줘,ac_mode
+냉방 모드?,ac_mode
+주방 송풍 모드,ac_mode
+침실 냉방 모드,ac_mode
+냉방 모드로 전환,ac_mode
+거실 제습으로 해줘,ac_mode
+제습 모드로 해줘,ac_mode
+거실 에어컨 자동모드,ac_mode
+거실 제습으로,ac_mode
+제습으로 해해줘,ac_mode
+안방 에어컨 약풍으로,ac_wind
+바람 줄여줘,ac_wind
+바람 줄여좀 줘,ac_wind
+안방 바람 세게,ac_wind
+주방 바람 세게,ac_wind
+바람 줄여줘?,ac_wind
+풍향 고정,ac_wind
+침실 에어컨 약풍으로,ac_wind
+수면모드 에어컨 예약,ac_mode_schedule
+에어컨 취침 예약 설정,ac_mode_schedule
+주방 취침모드 에어컨,ac_mode_schedule
+잠들면 에어컨 조용하게,ac_mode_schedule
+잘 때 에어컨 자동으로 해줘,ac_mode_schedule
+밤에 에어컨 자동으로 해줘,ac_mode_schedule
+자고있을 때 에어컨 자동으로 해줘,ac_mode_schedule
+에어컨 A/S 해줘,ac_exception
+에어컨 전기요금 줄여줘,ac_exception
+에어컨 청소해줘,ac_exception
+전기요금 아끼게,ac_exception
+에어컨 바람 이상해,ac_exception
+에어컨 가스 충전,ac_exception
+꿉꿉해,ventilation_on
+공기청정기 켜줘,ventilation_on
+숨이 막혀?,ventilation_on
+안방 환기 좀 시켜줘,ventilation_on
+환기 틀어줘,ventilation_on
+안방이 음식 냄새 빼줘,ventilation_on
+답답해요,ventilation_on
+침실이 숨쉬기 힘들어,ventilation_on
+냄새 좀,ventilation_on
+환기 좀 시켜해,ventilation_on
+거실이 공기가 안 좋아,ventilation_on
+환기 좀 시켜줘,ventilation_on
+침실이 공기가 탁해,ventilation_on
+안방 공기청정기 켜줘,ventilation_on
+답답해?,ventilation_on
+냄새 나,ventilation_on
+환기 켜좀 줘,ventilation_on
+환기장치 꺼줘,ventilation_off
+거실 환기 꺼,ventilation_off
+환기 그만 해줘,ventilation_off
+주방 환기 끄자,ventilation_off
+환기 종료해줘,ventilation_off
+환기 완전히 꺼줘,ventilation_off
+환기 되고 있나,ventilation_query
+주방 공기질 어때,ventilation_query
+환기 풍량 어때,ventilation_query
+지금 환기 되고 있어?,ventilation_query
+공기질 어때,ventilation_query
+안방 공기질 어때,ventilation_query
+안방 환기 자동,ventilation_mode
+환기 자동,ventilation_mode
+환기 모드 바꿔,ventilation_mode
+주방 환기 강하게,ventilation_mode
+환기 수동?,ventilation_mode
+환기 수동으로,ventilation_mode
+까스 잠가,gas_close
+가스 밸브 닫아주세요,gas_close
+가스 밸브 잠가줘,gas_close
+가스 차단?,gas_close
+가스 꺼,gas_close
+가스 잠겼어?,gas_query
+가스 밸브 상태?,gas_query
+가스 열려있는지 확인해줘,gas_query
+지금 가스 어때,gas_query
+가스 밸브 잠겨있어?,gas_query
+커튼 열어줘?,curtain_open
+블라인드 열어?,curtain_open
+커튼 완전 개방,curtain_open
+거실 커튼 열어줘,curtain_open
+커튼 완전히 열어줘,curtain_open
+전동커튼 열어,curtain_open
+블라인드 좀 올려줘,curtain_open
+전동커튼 닫아주세요,curtain_close
+거실 블라인드 닫아,curtain_close
+전동커튼 닫아줘,curtain_close
+커튼 닫아주세요,curtain_close
+커튼 내려줘,curtain_close
+외출 잠금 설정 방법,security_query
+재택 방범이 뭐야,security_query
+재택 설정,security_query
+외출모드,security_query
+외출설정 시간 알려줘,security_query
+잠깐 나갈게,security_activate
+외출할게,security_activate
+집 비울게,security_activate
+방범모드 켜줘,security_activate
+나 나간다,security_activate
+광양 날씨 어떠냐,weather_info
+이번주 날씨,weather_info
+여주 날씨 흐리니,weather_info
+김포 우산 필요할까,weather_info
+군포 우산 필요해,weather_info
+구미 날씨 어떠냐,weather_info
+아니 논산 날씨 말해줘,weather_info
+미추홀구 날씨 알려줘,weather_info
+예산 비 올까,weather_info
+군산 춥냐,weather_info
+그니까 태안 날씨 말해줘,weather_info
+하동 우산 필요하니,weather_info
+의왕 우산 필요할까,weather_info
+전주 맑냐,weather_info
+보성 우산 필요하니,weather_info
+내일 그니까 충청남도 계룡 날씨 알려줄래,weather_info
+오산 날씨 덥냐,weather_info
+광명 비오니,weather_info
+화천 더울까,weather_info
+밀양 날씨 춥냐,weather_info
+익산 여행 가는데 날씨 알려줘,weather_info
+야 포천 더울까,weather_info
+그럼 인제 비 올지 부탁 해,weather_info
+서울 종로구 춥니,weather_info
+함안 날씨 흐리냐,weather_info
+영광 날씨 춥니,weather_info
+거제 흐리냐,weather_info
+성남 날씨 궁금해,weather_info
+내일 강원도 동해시 갈 것 같은데 날씨 알려줄래,weather_info
+경주 우산 쓸까,weather_info
+아무튼 하남 날씨 어떠니,weather_info
+서울 금천구 춥냐,weather_info
+연천 흐리냐,weather_info
+오전 상주 춥니,weather_info
+순창 날씨 맑니,weather_info
+천둥 치나,weather_info
+보은 눈 오냐,weather_info
+영암 우산 챙겨야해,weather_info
+순창 우산 필요하냐,weather_info
+금산 날씨 춥냐,weather_info
+서귀포 날씨 알려주세요,weather_info
+양산 날씨 맑냐,weather_info
+당진 내일 맑겠지,weather_info
+김제 춥냐,weather_info
+광양 우산 가져갈까,weather_info
+경주 날씨 흐리니,weather_info
+보성 흐리니,weather_info
+설마 내일 영천 날씨 춥니,weather_info
+순창 날씨 어떠니,weather_info
+언제 맑아질까,weather_info
+경상남도 눈 오는지 말해 줄 수 있니,weather_info
+올리야 오늘의 경기도 인천 날씨는 어때,weather_info
+군포 우산 챙겨야해,weather_info
+서울 송파구 덥니,weather_info
+서울 광진구 덥니,weather_info
+상주 비 올까,weather_info
+영동 날씨 덥니,weather_info
+이번 주 일기 예보 알려줘,weather_info
+의령 우산 챙길까,weather_info
+문경 날씨 맑냐,weather_info
+그 때 혹시 흐리니,weather_info
+사실 내일 강원 정선군 날씨 알려줄래,weather_info
+영광 우산 써야하니,weather_info
+혹시 날씨 알려줘,weather_info
+이천 이번 주 흐리려나 하늘,weather_info
+청송 우산 가져가야하니,weather_info
+산청 우산 챙길까,weather_info
+영광 비 오는지 말해 줘주라,weather_info
+양산 해 떴니 현재,weather_info
+강원도 지금 날씨 어때,weather_info
+아니 청양 날씨 말해줘,weather_info
+수원 더울까,weather_info
+군포 흐리냐,weather_info
+서울 송파구 우산 쓸까,weather_info
+완도 추울까,weather_info
+담양 우산 가져갈까,weather_info
+사천 눈 올까,weather_info
+그니까 화천 눈 오는지 말해 줘,weather_info
+서울 용산 우산 챙겨야 할까,weather_info
+오늘 서울 도봉구 날씨 알려줄래,weather_info
+공주 날씨 추울까,weather_info
+응 이번 주 서울 눈 오니,weather_info
+전라남도 날씨 알려주라,weather_info
+목포 우산 가져갈까,weather_info
+칠곡 이제 우산 필요할까,weather_info
+제천 날씨 춥다,weather_info
+오늘 바람이 불까,weather_info
+천안 맑냐,weather_info
+서울 동작구 날씨 덥냐,weather_info
+현재 경기도 기온 어떄,weather_info
+밀양 우산 가져가야하니,weather_info
+청주 비 올까,weather_info
+영주 날씨 좋니,weather_info
+음성 눈 오냐,weather_info
+눈 올까,weather_info
+나주 눈 오니,weather_info
+지금 남원 온도 많이 덥니,weather_info
+오늘 저녁 날씨는 어때,weather_info
+하여튼 부산 이번 주 날씨 맑은지 알려줄래,weather_info
+봉화 날씨 어때,weather_info
+아울러 오늘 평창군 날씨 알려줘,weather_info
+오늘 날씨 훌륭해,weather_info
+인천 서구 날씨 알려줘,weather_info
+영동 우산 챙겨야 할까,weather_info
+월요일 전북 날씨 알려주겠니,weather_info
+서울 영등포구 맑을까,weather_info
+시흥 이제 우산 챙겨야 할까,weather_info
+신안 날씨 어떠니,weather_info
+내일모레 서울시 노원 날씨 알려줄 수 있겠니 좀,weather_info
+서울 구로구 우산 챙겨야해,weather_info
+서울 종로구 눈 올까,weather_info
+내일 화순 날씨 말해줘 ㅋㅋㅋㅋㅋ,weather_info
+서울 강서구 날씨 흐릴까,weather_info
+동해 흐리냐,weather_info
+다음 주 ㅎㅎ 전주 날씨 알려줘,weather_info
+오산 날씨 춥냐,weather_info
+논산 맑을까,weather_info
+하늘 해 떴니 지금,weather_info
+그 때 하늘 어떠려나,weather_info
+고창 우산 챙길까 말까,weather_info
+제주 그럼 날씨 맑니,weather_info
+제천 우산 챙겨야해,weather_info
+김제 더울까,weather_info
+서울 마포 우산 쓸까,weather_info
+미추홀 추울까,weather_info
+춘천 우산 가져가야하니,weather_info
+이번 주의 날씨는 어때,weather_info
+완도 우산 써야 할까,weather_info
+의왕 날씨 추울까,weather_info
+이번 주말 에 눈 내리는지 알려줘,weather_info
+동대문구 눈 오는지 알려주세요,weather_info
+안산 날씨 흐릴까,weather_info
+영동 날씨 추울까,weather_info
+영암 날씨 덥냐,weather_info
+미추홀 우산 챙겨야 할까,weather_info
+강원도 눈 오는지 알려주세요,weather_info
+양양 우산 챙겨야해,weather_info
+강릉 맑니,weather_info
+내일 그니까 충남 계룡 날씨 알려줄래,weather_info
+보통 수준의 기온,weather_info
+이제 제발 날씨 알려줘,weather_info
+화성 우산 필요해,weather_info
+양구 날씨 맑을까,weather_info
+아니 옥서면 날씨 말해줘,weather_info
+경주 우산 필요할까,weather_info
+서울 서대문 맑을까,weather_info
+영암 눈 올까,weather_info
+서울 중구 우산 필요할까,weather_info
+여주 날씨 춥니,weather_info
+울릉 혹시 날씨 흐리니,weather_info
+그럼 이번 주 부산 날씨 알려줘,weather_info
+창녕 우산 챙겨야해,weather_info
+내일 단양 눈 오겠지 아마,weather_info
+화천 우산 가져가야하니,weather_info
+오후 사천 눈 오니,weather_info
+금산 눈 오니,weather_info
+이번 주 과천 눈 오냐고,weather_info
+충청남도 아산 날씨,weather_info
+거창 월요일 비 오나,weather_info
+성남 날씨 어떠냐,weather_info
+목포 알려주세요 날씨,weather_info
+날씨 궁금한데 알려주겠니,weather_info
+평택 춥냐,weather_info
+보령 비오냐,weather_info
+학교 주간 날씨는 어때,weather_info
+음성 우산 필요하냐,weather_info
+용산 날씨 더울까,weather_info
+서산 눈 오냐,weather_info
+태백 날씨 덥니,weather_info
+아니 거창 비 오는지 알려줄 수 있니,weather_info
+울릉도 토요일 우산 챙길까 말까,weather_info
+바깥 기온 이 어때,weather_info
+혹시라도 모레 김제 덥니,weather_info
+이천 더울까,weather_info
+진안 흐릴까,weather_info
+태안군 날씨 알려줘,weather_info
+안산 눈 올까,weather_info
+구리 날씨 맑냐,weather_info
+양양의 눈 축적량 예상,weather_info
+미추홀 우산 필요하냐,weather_info
+오늘의 강원도 날씨 알려줘,weather_info
+내일모레 제천시 날씨 알려줘,weather_info
+동해 덥니,weather_info
+부천 날씨 흐릴까,weather_info
+의령 혹시 흐리니,weather_info
+수원 덥니,weather_info
+모레 날씨,weather_info
+동두천 날씨 맑니,weather_info
+기온 궁금해서 물어봤어,weather_info
+통영 덥냐,weather_info
+그러면 양양군 날씨 알려줄래,weather_info
+지금 날씨가 얼마나 춥나,weather_info
+창녕 날씨 덥냐,weather_info
+영월 흐리다,weather_info
+단양 덥냐,weather_info
+그래 군산 대야 날씨 말해줄래,weather_info
+전북 군산 가는데 화요일 날씨 알려줄래,weather_info
+계룡 날씨 좋니,weather_info
+보령 우산 챙길까,weather_info
+밀양 춥니,weather_info
+전라남도 눈 올지 말해 줘주라,weather_info
+서울 강서구 날씨 맑을까,weather_info
+평택 날씨 덥냐,weather_info
+속초 덥냐,weather_info
+가평 우산 써야하니,weather_info
+4월 11일 눈 오나요,weather_info
+오늘의 예보,weather_info
+글쎄 안산 맑냐,weather_info
+청송 덥니,weather_info
+서천 혹시 눈 올까,weather_info
+파주 우산 필요할까,weather_info
+임실 날씨 춥니,weather_info
+남원 우산 필요하니,weather_info
+울진 날씨 흐리냐,weather_info
+전주 날씨 어떠니,weather_info
+문경 우산 가져갈까,weather_info
+아니 이번 주 전주 비 오는지 알려줄래,weather_info
+그럼 이번 주 인천 날씨 눈 오니,weather_info
+보령 춥냐,weather_info
+서울 도봉구 날씨 더울까,weather_info
+내일모레 광명 그러면 날씨 알려줄래,weather_info
+삼척 날씨 어때,weather_info
+그러면 관악구 날씨 알려줘,weather_info
+날씨 예보,weather_info
+춥겠지 아마,weather_info
+오늘 영등포 날씨 어떠려나,weather_info
+마지막 서울 강서구 날씨 더울까,weather_info
+해운대 맑을까,weather_info
+고양 날씨 덥냐,weather_info
+서울 구로구 날씨 어떠냐,weather_info
+ㅋㅋ 천안 날씨 말해줘,weather_info
+의령 날씨 덥냐,weather_info
+혹시 토요일 비오나 우산 챙길까,weather_info
+화순 흐릴까,weather_info
+영광 우산 필요하냐,weather_info
+구례 덥냐,weather_info
+나주 날씨 덥다,weather_info
+영천 날씨 어떠냐,weather_info
+이번 주 대구 날씨 비 오는지 알려줘 ㅋㅋ,weather_info
+금요일 맑겠지,weather_info
+영암 그러면 우산 쓸까,weather_info
+인제 날씨 덥니,weather_info
+용인 우산 챙겨야 할까,weather_info
+대구 맑을까,weather_info
+영동 덥니,weather_info
+오늘 더구나 정성군 날씨 알려줘,weather_info
+용산구 날씨 맑나요,weather_info
+서울 성동구 맑을까,weather_info
+바깥 날씨가 어때 흐려,weather_info
+춥진 않겠지,weather_info
+통영 우산 챙길까,weather_info
+무안 비오니,weather_info
+광양 날씨 흐릴까,weather_info
+옥천 비 올까,weather_info
+장성 비 올까,weather_info
+시흥 우산 써야하니,weather_info
+나 월요일 오산 가는데 날씨 궁금해,weather_info
+논산 날씨 맑니,weather_info
+포천 날씨 맑니,weather_info
+삼척 춥냐,weather_info
+이번 주 홍대 기상상태 알려줄래,weather_info
+밖에 얼마나 춥나,weather_info
+동두천 추울까,weather_info
+경주 날씨 덥냐,weather_info
+1월 3O일 날씨 정보 알려주세요,weather_info
+광주 비오니,weather_info
+혹시 그 때 대구 날씨 어떨까,weather_info
+보은 우산 쓸까,weather_info
+이번 주 군산 갈 것 같은데 비 오니,weather_info
+강남구 눈 오는지 알려줄래,weather_info
+충청남도 날씨 말해 줘봐,weather_info
+광진구 날씨 ㅎ,weather_info
+서울 영등포구 날씨 맑을까,weather_info
+해남 날씨 추울까,weather_info
+아무튼 충남 계룡 날씨 말해줄래,weather_info
+제천 우산 필요하냐,weather_info
+정선 날씨 덥니,weather_info
+다음 주 정선 날씨 알려줘,weather_info
+청양 날씨 흐리니,weather_info
+양양 우산 필요해,weather_info
+전북 체감 날씨 어떠려나,weather_info
+아산 우산 필요할까,weather_info
+경상북도 날씨 부탁 합니다,weather_info
+무주 춥냐,weather_info
+시흥 우산 챙겨야해,weather_info
+양구 우산 필요할까,weather_info
+오늘 재킷 입어야 하나,weather_info
+오늘의 날씨는 어때,weather_info
+데이트 때 날씨가 어떨 것 같아,weather_info
+영월 더울까,weather_info
+지역 날씨 보여줘,weather_info
+목요일 하 서천 맑을까,weather_info
+홍성 비 올까,weather_info
+무안 우산 필요해,weather_info
+경상도 비 오는지 말해 줘주세요,weather_info
+성주 날씨 더울까,weather_info
+서울 노원구 덥냐,weather_info
+아 맞다 이번 주 날씨,weather_info
+이번 주의 일기 예보 뭐야,weather_info
+아 이번 주 인천 날씨 눈 오니,weather_info
+어떤데 날씨,weather_info
+제발 이번 주 군산 날씨 알려줘,weather_info
+강릉 추우려나,weather_info
+안산 날씨 춥냐,weather_info
+경주 우산 써야하니,weather_info
+전라북도 날씨 알려줘,weather_info
+장흥 더울까,weather_info
+군산 날씨 추울까 정말,weather_info
+청송 우산 필요하니,weather_info
+예산 날씨 덥냐,weather_info
+당진 우산 필요할까,weather_info
+서울 동작구 날씨 어떠니,weather_info
+그러면 광주 이번 주 눈 오려나,weather_info
+서울 성동구 추울까,weather_info
+오산 우산 필요하냐,weather_info
+오늘 비 가 올 확률이 얼마나 될까,weather_info
+혹시 그 때 종로구 날씨 어떨까,weather_info
+장수 구름 많이 끼고 추우려나,weather_info
+부여 날씨 어떠니,weather_info
+고흥 날씨 어때,weather_info
+수원 눈 올지 알려줄래,weather_info
+서울 도봉구 우산 가져가야하니,weather_info
+함평 오늘 날씨 알려줘,weather_info
+구로 다음 주 기상상태 알려줄래,weather_info
+안성 날씨 좋니,weather_info
+우비 입을까,weather_info
+임실 그럼 비 올까,weather_info
+진주 흐릴까,weather_info
+안동 춥니,weather_info
+성주 날씨 흐리냐,weather_info
+오늘 오후 에는 코트 를 입어야 할까,weather_info
+가평 날씨 어때,weather_info
+그럼 부안 비 올지 말해 줄 수 있니,weather_info
+강원도 날씨 말해 줘,weather_info
+우산 쓸까,weather_info
+서울 광진 날씨 춥냐,weather_info
+구미 날씨 어떠려나,weather_info
+전라북도 비 오는지 말해 줘봐,weather_info
+가평 날씨 흐리니,weather_info
+문경 맑냐,weather_info
+서울 영등포구 우산 필요하냐,weather_info
+기온 어떨 것 같은데,weather_info
+비 안 내려야 하는데,weather_info
+음 양구 흐리니,weather_info
+봉화 우산 가져가야하니,weather_info
+일산 날씨 덥다,weather_info
+그러면 서울 중구 눈 올까,weather_info
+충청북도 눈 올지 알려줘,weather_info
+약속 잡았는데 비 오네,weather_info
+서울 관악구 우산 챙길까,weather_info
+제주 우산 챙길까,weather_info
+영동 맑으려나,weather_info
+아 울산 이번 주 비 오니,weather_info
+포천 비오니,weather_info
+여주 더울까,weather_info
+영양 우산 챙길까,weather_info
+비 와?,weather_info
+목요일 음 철원 날씨 추울까,weather_info
+무주 더울까,weather_info
+예천 날씨 맑냐,weather_info
+맑으려나 금요일,weather_info
+금산 맑니,weather_info
+보은 우산 챙길까,weather_info
+거제 맑니,weather_info
+일요일 부산 날씨 말해주라,weather_info
+현재 용인 날씨 예보 알려줘,weather_info
+안산 날씨 궁금해요,weather_info
+담양 날씨 맑을까,weather_info
+광주 우산 필요해,weather_info
+봉화 날씨 알려줘,weather_info
+제주도 비 오는지 말해 줄 수 있니,weather_info
+구름 꼈나,weather_info
+다음 주 날씨 알려줘,weather_info
+안산 덥냐,weather_info
+김포 눈 오냐,weather_info
+괴산 우산 챙겨야해,weather_info
+화순 하늘 비 내리니,weather_info
+구미 날씨 흐리냐,weather_info
+예산군 날씨 알려줘,weather_info
+내일 기온 은 이십 도 이상 으로 올라갈까,weather_info
+홍천 우산 써야 할까,weather_info
+이번 주 속초 갈 것 같은데 날씨 맑니,weather_info
+영동 비 올까,weather_info
+곡성 우산 써야하니,weather_info
+모레 맑니,weather_info
+경상북도 비 오는지 말해 줄 수 있니,weather_info
+평창 비 올지 알려주세요,weather_info
+미추홀 날씨 추울까,weather_info
+해운대 우산 챙길까,weather_info
+화천 추울까,weather_info
+청도 눈 올까,weather_info
+경주 이번 주 드디어 맑아,weather_info
+이번 주 날씨 많이 덥니,weather_info
+수요일 상암동 가려는데 날씨 어때,weather_info
+그러니까 모레 서울특별시 날씨 알려줘,weather_info
+논산 비 오는지 말해 줄 수 있니,weather_info
+영암 비오냐,weather_info
+군포 날씨 흐리니,weather_info
+신안 날씨 맑니,weather_info
+오늘 밤 에 눈이 오나,weather_info
+청도 흐리냐,weather_info
+익산 우산 챙길까,weather_info
+군포 비오냐,weather_info
+충북 보은 날씨 말해줄래 좀,weather_info
+광주 덥니,weather_info
+남해 비오냐,weather_info
+서울 영등포구 흐리니,weather_info
+안성 날씨 덥냐,weather_info
+양산 눈 오냐,weather_info
+정선 눈 오는지 알려주세요,weather_info
+서울 동대문구 흐리냐,weather_info
+이번 주 월요일 맑니,weather_info
+온도 알려줘,weather_info
+일산 기상상태 어떻게 돼요,weather_info
+오늘 어쨋든 김포 날씨 알려줄래,weather_info
+비가 와,weather_info
+광주 날씨 추울까,weather_info
+양산 우산 가져갈까,weather_info
+청주 우산 가져가야하니,weather_info
+한편 삼척시 날씨 알려줘,weather_info
+함안 날씨 좋니,weather_info
+경상도 날씨 좀 체크해줄래,weather_info
+단양 우산 쓸까,weather_info
+창녕 비오니,weather_info
+알았으니까 내일모레 대구광역시 날씨 알려줘,weather_info
+울진 맑냐,weather_info
+아하 진도 날씨 추울까,weather_info
+이번 주 전체 날씨가 어때,weather_info
+아 내일 강원도 고성군 날씨 알려줄래,weather_info
+구미 비 올까,weather_info
+서울 중랑구 흐리냐,weather_info
+목포 날씨 어떠니,weather_info
+혹시 비 오니,weather_info
+인제 눈 올까,weather_info
+서울 영등포구 날씨 어떠니,weather_info
+그러면 서울 구로구 맑을까,weather_info
+과천 흐리니,weather_info
+거기 날씨 춥나,weather_info
+광명 우산 필요하냐,weather_info
+오늘 광양 날씨 덥냐,weather_info
+동두천 눈 오니,weather_info
+청송 눈 올까,weather_info
+오늘 충주 날씨 맑냐,weather_info
+예산 날씨 흐리냐,weather_info
+의정부 날씨 맑을까,weather_info
+모레 곡성 아니 날씨 춥니,weather_info
+오후 안산 우산 써야 할까,weather_info
+제천 비 올까,weather_info
+남해 눈 올까,weather_info
+날시알려줘,weather_info
+구미 날씨 어떠니,weather_info
+의령 날씨 좋으려나,weather_info
+일산 우산 필요해,weather_info
+예산 흐리냐,weather_info
+보령 우산 써야하니,weather_info
+그 때 관악구 날씨 좋겠지,weather_info
+제주도 눈 오는지 알려줘,weather_info
+대구 우산 챙길까,weather_info
+홍천 그러면 춥니,weather_info
+진짜 서울 성북구 우산 필요할까,weather_info
+지금 이 시간 기온,weather_info
+제주 날씨 좋니,weather_info
+이번 주 과천 눈 오니 좀,weather_info
+아 온도 흐리네,weather_info
+서울 구로구 우산 가져갈까,weather_info
+장흥 우산 필요하냐,weather_info
+게다가 함양 비 올까,weather_info
+모레 날씨 궁금해,weather_info
+아 이번 주 강릉 맑아,weather_info
+양구 날씨 알고싶어,weather_info
+서울 금천구 우산 필요하냐,weather_info
+제주 많이 추울까,weather_info
+남해 우산 쓸까,weather_info
+오늘 울 스웨터 를 입기에는 날씨가 너무 따뜻한가,weather_info
+해운대 우산 필요하냐,weather_info
+동해 그러면 날씨 추울까,weather_info
+평창 흐릴까,weather_info
+시흥 눈 오냐,weather_info
+춘천 날씨 어떠니,weather_info
+장흥 눈 올까,weather_info
+전라북도 비 오는지 말해 줘,weather_info
+충주 날씨 알려주세요 맑나요,weather_info
+고령 우산 필요할까,weather_info
+경상도 비 오는지 말해 줘주라,weather_info
+오산 날씨 어때,weather_info
+내일 게다가 광명 우산 가져가야하니,weather_info
+아니 보령 날씨 말해줘,weather_info
+영양 날씨 어때,weather_info
+혹시 담양 이번 주 비 오니,weather_info
+양양 이제 우산 가져갈까,weather_info
+시흥 그럼 우산 챙겨야 할까,weather_info
+영천 우산 챙겨야해,weather_info
+태안 날씨 말해 줘주라,weather_info
+서울 강남구 날씨 흐리니,weather_info
+영암 눈 오는지 말해 줘주세요,weather_info
+야 목포 날씨 덥니,weather_info
+금요일 여행갈건데 날씨 알려줘,weather_info
+예산 덥니,weather_info
+가평 맑냐,weather_info
+전남 여수 가려는데 날씨 궁금해,weather_info
+해운대 우산 필요해,weather_info
+부천 날씨 어떠니,weather_info
+고창 맑니,weather_info
+금요일 강릉 그럼 비오니,weather_info
+이번 주 강남구 날씨,weather_info
+밀양 날씨 어떠니,weather_info
+토요일 오산 눈오겠지 아마,weather_info
+오늘 은 맑은 날일까 아닐까,weather_info
+ㅋㅋㅋ 순천 눈 오냐,weather_info
+기온 어떠니,weather_info
+서울 동대문구 날씨 맑냐,weather_info
+오늘 경기도 구리 날씨,weather_info
+경상도 눈 올지 알려주세요,weather_info
+남구 다음 주 날씨 알려줘,weather_info
+칠곡 우산 필요하냐,weather_info
+하남 우산 가져갈까,weather_info
+강릉 춥니,weather_info
+무안 춥니,weather_info
+문경 우산 필요하니,weather_info
+오늘 오후 에 재킷 필요할까,weather_info
+게다가 김제 맑을까,weather_info
+평택 현재 날씨 어때,weather_info
+화성 춥냐,weather_info
+금요일 눈 오면 안되는데,weather_info
+기온,weather_info
+산청 눈 오니,weather_info
+이번 주 과천 눈 오니,weather_info
+전라남도 비 올지 알려주세요,weather_info
+이번 주 최고 기온 은 몇도야,weather_info
+대구 흐리려나,weather_info
+오늘 화남 ㅋㅋㅋ 날씨,weather_info
+서울 강북구 우산 써야 할까,weather_info
+오전 사천 더울까,weather_info
+서울 강북구 비 올까,weather_info
+서울 광진 우산 필요하냐,weather_info
+영광 덥다,weather_info
+익산 날씨 어떨 것 같은지 말해줘,weather_info
+3월 3일 쌀쌀한가,weather_info
+영주 우산 써야하니,weather_info
+경상북도 날씨 말해 줘주라,weather_info
+서울 눈 오는지 알려줄래,weather_info
+강남구 눈 오는지 말해 줘,weather_info
+나주 날씨 맑을까,weather_info
+청양 우산 가져갈까,weather_info
+울진 우산 가져갈까,weather_info
+서울 강서구 춥냐,weather_info
+그럼 이제 우도 화요일 날씨 알려줘,weather_info
+영양 덥니,weather_info
+이번 주 인천 날씨 눈 오니 ㅋ,weather_info
+모레 기온 알려줘,weather_info
+오늘 가평 ㅋㅋㅋ 날씨,weather_info
+봉화 우산 써야 할까,weather_info
+양평 날씨 맑니,weather_info
+계룡 우산 필요하니,weather_info
+서울 중구 날씨 어떠니,weather_info
+오늘 예보 알려줘,weather_info
+우산 필요해?,weather_info
+영암 가는데 날씨 궁금해,weather_info
+그러면 오늘 날씨 알려줘,weather_info
+순창 날씨 덥냐,weather_info
+양구 비 올까,weather_info
+게다가 서천 날씨 덥냐,weather_info
+횡성 비오니,weather_info
+아 그러게 날씨 알려줄래,weather_info
+문경 날씨 추울까,weather_info
+오늘의 일기 예보는 어때,weather_info
+모레 오산 날씨 ㅋㅋ 알려줘,weather_info
+아 충북 영동 날씨 말해줄래,weather_info
+강원도 날씨 알려줄래,weather_info
+서울 구로구 날씨 어때,weather_info
+대구 춥니,weather_info
+칠곡 그러면 우산 필요할까,weather_info
+김천 눈 오냐,weather_info
+그러게 의정부 날씨 덥냐,weather_info
+화천 우산 가져갈까,weather_info
+정읍 맑냐,weather_info
+이번 주 인천 날씨 눈 오니 ㅋㅋ,weather_info
+신안 흐릴까,weather_info
+해운대구 날씨 어떠려나,weather_info
+창녕 춥니,weather_info
+나 아마 내일 서울 가는데 날씨 알려줘,weather_info
+전라도 눈 올지 알아봐줘,weather_info
+화천 ㅋㅋ 덥니,weather_info
+김포 날씨 덥니,weather_info
+이천 덥냐,weather_info
+바람 불면 안되는데,weather_info
+파주 흐리냐,weather_info
+용산 눈 오냐,weather_info
+미추홀 우산 써야 할까,weather_info
+강진 눈 오는지 알려주세요,weather_info
+따뜻한 옷 가져가야 할까,weather_info
+토요일 에 비가 오나,weather_info
+금요일 동두천 먹구름 궁금해요,weather_info
+아하 상주 비오냐,weather_info
+홍성 흐리냐,weather_info
+천안 우산 챙겨야해,weather_info
+서울 관악구 날씨 흐리냐,weather_info
+평창 우산 가져가야하니,weather_info
+이번 주 과천 갈 것 같은데 눈 오니,weather_info
+오늘 날씨가 좋을까,weather_info
+용산 2월 22일 날씨 뭔데,weather_info
+그니까 의성 비 올지 알 수 있을까,weather_info
+김제 흐릴까,weather_info
+강원도 날씨 말해 줘줘,weather_info
+따라서 내일모레 부산 날씨 알려줘,weather_info
+청양 날씨 덥니,weather_info
+태안 날씨 춥니,weather_info
+논산 우산 필요할까,weather_info
+수요일 통영 가는데 날씨 알려줘,weather_info
+울진 아무튼 날씨 덥냐,weather_info
+안양 날씨 덥니,weather_info
+함양 날씨 덥냐,weather_info
+현재 바깥 기온 어때,weather_info
+고창 흐릴까,weather_info
+만약 비가 오면 난 일하러 안 가,weather_info
+서천 맑니,weather_info
+서울 종로구 우산 챙겨야 할까,weather_info
+용산 날씨 흐리냐,weather_info
+경상도 비 올지 알고싶어,weather_info
+연천 우산 쓸까,weather_info
+오늘 어때,weather_info
+장성 춥냐,weather_info
+청주시 흥덕구 날씨 알려줘,weather_info
+송파구 눈 올지 부탁 해,weather_info
+서울 강북구 흐리니,weather_info
+양평 날씨 어때,weather_info
+신안 흐리니,weather_info
+광주 춥냐,weather_info
+오늘 주 그러니까 김포 날씨 알려줄래,weather_info
+홍대 혹시 더울까,weather_info
+서울 종로 날씨 덥냐,weather_info
+오늘밤 에 비가 오나,weather_info
+안산 가려는데 수요일 날씨 맑나요,weather_info
+서울 동작구 덥냐,weather_info
+오전 안동 우산 쓸까,weather_info
+기온 알려주세요,weather_info
+하 신안 덥니,weather_info
+서울 강서구 눈 오냐,weather_info
+군포 비 올지 알려주세요,weather_info
+서울 동대문구 눈 올까,weather_info
+음성 그럼 날씨 맑니,weather_info
+삼척 날씨 흐리니,weather_info
+서울 강북구 우산 필요할까,weather_info
+의왕 흐릴까,weather_info
+아마 이번 주 대구 날씨 비 오는지 알려줘,weather_info
+여수 우산 써야 할까,weather_info
+고흥 날씨 알려주세요,weather_info
+화순 눈 오냐,weather_info
+구례 춥니,weather_info
+8월 안산 날씨 알려주라,weather_info
+무안 눈 올까,weather_info
+무주 흐리냐,weather_info
+서울 강남구 우산 챙길까,weather_info
+보령 에 비가 오나,weather_info
+안동 날씨 추울까,weather_info
+광양 흐리니,weather_info
+아 오늘 영광 날씨 맑니,weather_info
+고창 덥니,weather_info
+서울 강서구 날씨 더울까,weather_info
+온도 많이 흐리려나,weather_info
+오전 울릉 우산 필요하냐,weather_info
+아하 거제 날씨 덥냐,weather_info
+춘천 더울까,weather_info
+홍천 우산 쓸까,weather_info
+아니 서천 날씨 말해줘,weather_info
+오늘 하남 날씨 알려줄래 그러니까,weather_info
+금요일 우산 필요해,weather_info
+내일 하 여수 더울까,weather_info
+송파구 눈 올지 말해 줘줘,weather_info
+공주 우산 필요하다,weather_info
+그래 금산 비 올지 알려주세요,weather_info
+밖에 추울까 나 뭐입어,weather_info
+구미 우산 필요하다,weather_info
+오늘 최고 기온 은 뭐야,weather_info
+아 서울 동작구 덥냐,weather_info
+장수 날씨 춥냐,weather_info
+알려주세요 춘천 날씨,weather_info
+파주 우산 가져갈까,weather_info
+구미시 날씨 어때,weather_info
+오늘 강원도 날씨 말해줘,weather_info
+의령 날씨 어떠니,weather_info
+괴산 우산 챙겨야 할까,weather_info
+오늘 날씨 화창한가,weather_info
+삼척 비 올까,weather_info
+남해 흐리냐,weather_info
+강진 춥니,weather_info
+서울 광진구 날씨 맑냐,weather_info
+충청도 비 올지 알아봐줘,weather_info
+의령 비 올지 말해 줘줘,weather_info
+서울 동대문구 날씨 맑을까,weather_info
+양평 날씨 맑을까,weather_info
+김포 날씨 추울까,weather_info
+그 때 대전 날씨 좋겠지,weather_info
+그 때 기온 좋으려나,weather_info
+영암 날씨 흐릴까,weather_info
+그러면 내일모레 횡성 날씨 말해줘,weather_info
+모레 서대문구 날씨 뭔데,weather_info
+삼척 날씨 흐리냐,weather_info
+현재 의령 혹시 흐리니,weather_info
+경북 영월 수요일 날씨 알려줘,weather_info
+거창 날씨 맑니,weather_info
+고창 맑냐,weather_info
+서울 노원구 날씨 흐릴까,weather_info
+서대문구 눈 오는지 말해 줘,weather_info
+일산 날씨 어때,weather_info
+단양 춥니,weather_info
+대구 가는데 날씨 어떠니,weather_info
+하동 그러면 날씨 추울까,weather_info
+대구 추울까,weather_info
+의정부 눈올까,weather_info
+오늘 고향 날씨는 어때,weather_info
+현재 날씨는 어때,weather_info
+음 영동 날씨 어떠냐,weather_info
+당진 아무튼 맑냐,weather_info
+오늘 당진시 결국 날씨 뭐야,weather_info
+혹시라도 모레 횡성 날씨 맑니,weather_info
+안성 더울까,weather_info
+오전 양산 맑냐,weather_info
+양주 우산 필요할까,weather_info
+울릉도 가려는데 수요일 날씨 알려줘,weather_info
+함평 눈 오니,weather_info
+파주 날씨 추울까,weather_info
+오늘 저녁 에 비가 올까,weather_info
+안성시 날씨 어때,weather_info
+외출할 때 선글라스 가져 가야 할까,weather_info
+오늘 용산구 날씨 어떠려나,weather_info
+우산 가져가야 해,weather_info
+용인 날씨 춥냐,weather_info
+내일 서울시 종로구 날씨 어떠려나,weather_info
+야 고흥 비 올까,weather_info
+금산 비 오는지 부탁 합니다,weather_info
+내일 경기 날씨 알려줘,weather_info
+온도 알려줬으면 졸겠어,weather_info
+야 산청 우산 가져가야하니,weather_info
+수요일 부안 가는데 날씨 궁금해,weather_info
+서울 은평 날씨 흐리냐,weather_info
+나주 날씨 어떠니,weather_info
+서울 은평 날씨 맑을까,weather_info
+12월 11일 더워서 어떠려나,weather_info
+이천 흐릴까,weather_info
+완주 다음 주 날씨 알려줘,weather_info
+오후 횡성 흐릴까,weather_info
+횡성 날씨 맑을까,weather_info
+군포 날씨 흐리냐,weather_info
+내일 날씨 광양 알려줄수 있어,weather_info
+오늘 제천 그럼 날씨 어떠냐,weather_info
+서울 양천구 눈 오니,weather_info
+아울러 오늘 속초시 날씨 알려줘,weather_info
+고흥 맑니,weather_info
+아니 오늘 논산시 날씨 뭐야,weather_info
+홍천 눈 오니,weather_info
+모레 날씨 알려주겠니,weather_info
+남원 날씨 추울까,weather_info
+담양 덥니,weather_info
+그럼 다음 주 전주 비 오려나,weather_info
+원주 하늘 해 떴니 현재,weather_info
+진도 맑니,weather_info
+이번 주 아니 전주 비 오는지 알려줄래,weather_info
+목요일 우산 챙길까,weather_info
+백령도 가려는데 수요일 날씨 알려주세요,weather_info
+구리 날씨 덥냐,weather_info
+은평구 비 올지 알려줄 수 있니,weather_info
+영월 우산 챙길까,weather_info
+오늘밤 에 날씨 흐린가,weather_info
+무안 날씨 어떠니,weather_info
+원주 비오니,weather_info
+단양 우산 필요할까,weather_info
+곡성 눈 올까,weather_info
+신안 이제 날씨 더울까,weather_info
+서산 비오냐,weather_info
+날씨 리포트 알려줘,weather_info
+신안 날씨 좋으려나,weather_info
+고성 날씨 흐리냐,weather_info
+봉화 춥냐,weather_info
+사천 흐리냐,weather_info
+해남 아무튼 우산 필요할까,weather_info
+부천 날씨 어때,weather_info
+이번 주 강릉 갈 것 같은데 맑아,weather_info
+익산 눈 오는지 알 수 있을까,weather_info
+남양주 눈 오니,weather_info
+구미 우산 가져갈까,weather_info
+양주 날씨 어때,weather_info
+김해 맑을까,weather_info
+속초 비오니,weather_info
+창녕 눈 올까,weather_info
+일요일 경주 해 뜰까,weather_info
+날씨 정보 알려주세요,weather_info
+봉화 날씨 흐릴까,weather_info
+홍천 우산 필요하니,weather_info
+이번 달 이따가 강릉 맑아,weather_info
+이제 서울 동작구 날씨 덥냐,weather_info
+아하 오산 날씨 더울까,weather_info
+서울 중랑구 날씨 춥니,weather_info
+안성 우산 필요해,weather_info
+올리야 나 선크림 발라야 되니,weather_info
+광주 날씨 알려주세요,weather_info
+대전 강북구 마스크 챙겨야 할까,dust_query
+영광 아하 공기 미세먼지,dust_query
+제주 공기 미세먼지,dust_query
+진안 미세먼지 어떨까,dust_query
+전주 양천구 미세먼지,dust_query
+부여 마스크 필요할까,dust_query
+울산 내일 마스크 써야 하니,dust_query
+청도 미세먼지,dust_query
+토요일 오산 미세먼지 글쎄,dust_query
+먼지 많이 심하니,dust_query
+서울 마포구 초미세먼지 어때,dust_query
+오늘 그리고 여주 미세먼지 알려줘,dust_query
+전주 도봉구 마스크 챙겨야해,dust_query
+광주 강서구 미세먼지,dust_query
+제주 마스크 써야 할까,dust_query
+양구 마스크 가져가야하니,dust_query
+모레 공기 궁금해,dust_query
+성남 먼지 심할지 알려주라,dust_query
+내일 광동구 ㅋ 미세먼지,dust_query
+내일 정선 미세먼지,dust_query
+전라북도 먼지 말해 주세요,dust_query
+파주 미세먼지 좀 알려줄래,dust_query
+속초 미세먼지 어떨까,dust_query
+오늘 진천군 스모그 미세먼지,dust_query
+ㅇㅇ 오늘 익산시 미세먼지 알려주라,dust_query
+금산 오존 미세먼지,dust_query
+경상도 오존 어떤지 부탁 합니다,dust_query
+상주 마스크 쓸까,dust_query
+내일 충북 청주 미세먼지 그니까 말해줘,dust_query
+진짜 영덕 그 때 미세먼지,dust_query
+사천 오존 올까,dust_query
+저번 주 공기 말해주세요,dust_query
+일산 마스크 챙겨야 할까,dust_query
+아 서울 동작구 미세먼지,dust_query
+오전 충주 마스크 가져갈까,dust_query
+양양 마스크 필요해,dust_query
+부산 강북구 미세먼지 심할까,dust_query
+고양 미세먼지,dust_query
+충청도 미세먼지 심할지 말해 주라,dust_query
+경기도 초미세먼지 어떤지 알려주세요,dust_query
+영등포구 초미세먼지 심할지 알려줄 수 있니,dust_query
+미세먼지 마포구 미세먼지,dust_query
+성주 미세먼지,dust_query
+내일 날짜 울산광역시 미세먼지 알려줘,dust_query
+혹시 먼지 알려줘,dust_query
+경기도 오존 심할지 부탁 합니다,dust_query
+영광 미세먼지 어떤지 말해 주라,dust_query
+용산 미세먼지 심할지 말해 주세요,dust_query
+평창 마스크 가져가야하니,dust_query
+시흥 공기 공기상태,dust_query
+남양주 공기 미세먼지,dust_query
+보성 공기 미세먼지,dust_query
+하여튼 부산 이번 주 미세먼지 맑은지 알려줄래,dust_query
+수원 마스크 쓸까,dust_query
+횡성 마스크 써야 할까,dust_query
+혹시 미세먼지 어떠니,dust_query
+안성 마스크 써야 할까,dust_query
+여주 미세먼지 어떤지 알려줄래,dust_query
+홍천 공기 미세먼지,dust_query
+내일 안성 미세먼지 ㅋㅋ,dust_query
+서울 성북 먼지 공기상태,dust_query
+그러면 증평 공기 말해줘,dust_query
+수요일 통영 가는데 미세먼지 알려줘,dust_query
+종로구 초미세먼지 심할지 알아봐줘,dust_query
+부산 금천구 미세먼지,dust_query
+구리 마스크 필요하니,dust_query
+4월 12일 미세먼지 심하면 안 되겠다,dust_query
+일요일 근데 구미 미세먼지 어떠려나,dust_query
+황사 올까,dust_query
+그래 내일 전라북도 임실군 미세먼지 알려줄래,dust_query
+이번 주 평택 미세먼지 알려주세요,dust_query
+태안 마스크 챙겨야 할까,dust_query
+그럼 상주 미세먼지,dust_query
+충청도 오존 어떤지 부탁 해,dust_query
+경상북도 미세먼지 어떤지 알려줄 수 있니,dust_query
+광주 구로구 미세먼지 심할까,dust_query
+오전 울릉 마스크 필요하냐,dust_query
+다음 주 전주 갈 건데 미세먼지 심하려나,dust_query
+송천동 먼지 말해줄래,dust_query
+안성 공기 미세먼지,dust_query
+부산 종로구 미세먼지 심할까,dust_query
+수원 마스크 써야하니,dust_query
+문경 공기 미세먼지,dust_query
+서울 종로구 미세먼지 어떠냐,dust_query
+서울 용산 먼지 미세먼지,dust_query
+제주도 미세먼지 심할지 알려주라,dust_query
+토요일 마스크 챙길까,dust_query
+이번 주 전주 미세먼지 어떤지 알려줄래 ㄷㄷ,dust_query
+너무 먼지 심하지 않으려나,dust_query
+목요일 하 서천 미세먼지,dust_query
+내일 음 양구 미세먼지,dust_query
+미추홀 마스크 가져가야하니,dust_query
+괴산 미세먼지,dust_query
+충청북도 미세먼지 어떤지 알 수 있을까,dust_query
+양평 그러면 마스크 필요하냐,dust_query
+하남 미세먼지,dust_query
+양주 공기 미세먼지,dust_query
+제주도 미세먼지 어떤지 알려줄래,dust_query
+서울 강북구 마스크 가져가야하니,dust_query
+밀양 초미세먼지 어떨까,dust_query
+광진구 미세먼지 ㅎ,dust_query
+미세먼지 어떠냐,dust_query
+계룡 먼지 어떠냐,dust_query
+화요일 금천구 미세먼지 알려줄래,dust_query
+아니 군산시 옥구 공기 말해줄래,dust_query
+부여 황사 오니,dust_query
+미세먼지 좀 안산 공기,dust_query
+이제 서울 구로구 공기상태,dust_query
+영광 마스크 챙겨야하나 모르겠네,dust_query
+그러면 청양 오존 어떤지 알려줄 수 있니,dust_query
+춘천 마스크 챙겨야해,dust_query
+공기 어떨 것 같은데,dust_query
+산청 먼지 미세먼지,dust_query
+진안 미세먼지,dust_query
+먼지 정보 알려주세요 ㅋㅋ,dust_query
+수원 오존 올까,dust_query
+고양시 덕양구 미세먼지 알려줘,dust_query
+응 정읍 공기 뭐야,dust_query
+이번 주 부산 미세먼지 알려줘,dust_query
+청송 마스크 가져갈까,dust_query
+신안 공기 말해 주세요,dust_query
+춘천 마스크 필요하냐,dust_query
+그러면 양양군 미세먼지 알려줄래,dust_query
+목요일 음 철원 마스크 가져갈까,dust_query
+양주시 미세먼지 알려주세요,dust_query
+응 전북 김제 공기 좀 말해주세요,dust_query
+나 목요일 여행가는데 먼지 알려줘,dust_query
+하지만 서울 종로구 미세먼지,dust_query
+함평 미세먼지 알려줘,dust_query
+그럼 제주 미세먼지,dust_query
+양평 이제 마스크 필요하냐,dust_query
+경기도 오존 심할지 말해 주세요,dust_query
+안동 다음 주 초미세먼지 알려줄래요,dust_query
+남원 마스크 필요하냐,dust_query
+구리시 미세먼지 알려줘,dust_query
+성남 미세먼지 궁금해,dust_query
+광주 강서구 미세먼지 심할까,dust_query
+익산 미세먼지 알려줬으면 졸겠어,dust_query
+완주 오늘 미세먼지 어때,dust_query
+오후 충주 마스크 가져갈까,dust_query
+태백 먼지 좋니,dust_query
+과천 초미세먼지 어떨까,dust_query
+인천 구로구 미세먼지 어떠니,dust_query
+영암 마스크 필요하냐,dust_query
+서귀포 미세먼지 알려주세요,dust_query
+포천 먼지 어떻게 돼,dust_query
+의령 미세먼지 어떨까,dust_query
+모레 미세먼지 알려주겠니,dust_query
+오늘 을왕리 가는데 근처 미세먼지 어때,dust_query
+담양 공기상태,dust_query
+서울 성북 미세먼지,dust_query
+그러게 오늘 봉화 공기 미세먼지,dust_query
+미세먼지 괜찮아?,dust_query
+이태원 마스크 써야하나,dust_query
+공기 미세먼지 현재,dust_query
+서울 오존 심할지 말해 줄 수 있니,dust_query
+그니까 서울 마포구 오존 미세먼지,dust_query
+인천 미세먼지 심해,dust_query
+서울 도봉구 미세먼지,dust_query
+고령 미세먼지,dust_query
+군위 마스크 가져가야하니,dust_query
+모레 예천 혹시 미세먼지,dust_query
+순창 미세먼지 어떤지 말해 줄 수 있니,dust_query
+해남 혹시 미세먼지 깨끗하니,dust_query
+연천 공기 미세먼지,dust_query
+대전 은평구 미세먼지 심할까,dust_query
+영월 공기 미세먼지,dust_query
+곡성 가려는데 미세먼지 어때,dust_query
+교동도 황사 알려줘,dust_query
+무안 오존 심하냐고,dust_query
+11월 9일 인천 미세먼지 ㅎ,dust_query
+진안 마스크 쓸까,dust_query
+아산 오존 심하냐고,dust_query
+의왕 먼지 공기,dust_query
+서울 미세먼지 심할지 부탁 해,dust_query
+구리 마스크 써야하니,dust_query
+월요일 먼지 심하겠지,dust_query
+안동 공기 미세먼지,dust_query
+영양 미세먼지,dust_query
+그러면 서울 광진구 공기 공기,dust_query
+광주 양천구 마스크 챙길까,dust_query
+현재 태백 설마 마스크 필요할까,dust_query
+보은 마스크 챙길까,dust_query
+먼지 궁금해,dust_query
+아 오늘 군산 공기 미세먼지,dust_query
+울릉 혹시 공기 미세먼지,dust_query
+경산 미세먼지 어떤지 알려주세요,dust_query
+무안 꽃가루 없니,dust_query
+그러면 화요일 서초 미세먼지 알려줘,dust_query
+2월 2O일 먼지 와,dust_query
+토요일 먼지 심하니,dust_query
+오늘 군산 공기 미세먼지,dust_query
+공주 미세먼지,dust_query
+울릉도 토요일 마스크 챙길까 말까,dust_query
+임실 공기 미세먼지,dust_query
+속초 마스크 가져갈까,dust_query
+한강 가는데 근처 미세먼지 알려줘,dust_query
+용인 미세먼지 심할지 말해 주세요,dust_query
+이번 주 전주 미세먼지 어떤지 알려줄래 ㅋㅋ,dust_query
+구리 황사 심하냐고,dust_query
+서울 성동구 미세먼지 심할까,dust_query
+청도 이따가 꽃가루 없으려나,dust_query
+안동 공기 어떨지,dust_query
+창녕 꽃가루 심하니,dust_query
+내일 그래서 서울 종로구 ㅋ 미세먼지,dust_query
+논현동 황사좀 알려줘,dust_query
+서울 동작구 미세먼지,dust_query
+계룡 미세먼지 알려줘 월요일,dust_query
+서울 종로구 마스크 챙겨야 할까,dust_query
+계룡 공기,dust_query
+경산 공기 부탁 합니다,dust_query
+금천구 야 공기 미세먼지,dust_query
+전주 먼지 공기상태,dust_query
+금요일 목포 그면 미세먼지,dust_query
+내일 하 의령 미세먼지,dust_query
+월요일 전북 미세먼지 알려주겠니,dust_query
+서울 영등포구 마스크 필요하니,dust_query
+해남 공기 미세먼지,dust_query
+월요일 부평구 미세먼지 어때,dust_query
+토요일 비오겠지,dust_query
+의성 초미세먼지 어때,dust_query
+대전 동대문구 마스크 써야하니,dust_query
+창원 공기 궁금해서 물어봤어요,dust_query
+덕진동 미세먼지 어떨까,dust_query
+이제 제발 미세먼지 알려줘,dust_query
+내일모레 동두천 여행 가는데 공기 말해줘,dust_query
+혹시 먼지 심하니,dust_query
+목요일 혹시 미세먼지,dust_query
+함양 오존 미세먼지,dust_query
+이번 주 목요일 미세먼지,dust_query
+천안 모레 먼지 궁금해,dust_query
+진주 오존 미세먼지,dust_query
+내일 경기 동두천 미세먼지 알려줘,dust_query
+진도 마스크 챙겨야 할까,dust_query
+증평 하늘 미세먼지 어때 그 날,dust_query
+오늘 인제군 가는데 미세먼지 알려줘,dust_query
+영월 마스크 필요할까,dust_query
+내일 이천 공기,dust_query
+서울 성동 마스크 챙겨야해,dust_query
+울산 북구 스모그 미세먼지,dust_query
+화천 공기상태,dust_query
+ㅋㅋㅋ 순천 황사 심하냐고,dust_query
+함평 공기 미세먼지,dust_query
+아 아하 화요일 마포구 미세먼지 알려줘,dust_query
+내일모레 날짜 경기도 안양 미세먼지 알려줘,dust_query
+지금 공기 어떤데,dust_query
+그니까 내일 충청남도 금산군 미세먼지 알려줄래,dust_query
+서울 서대문구 마스크 필요하냐,dust_query
+구미 마스크 필요하다,dust_query
+영동 공기 미세먼지,dust_query
+아니 이번 주 과천 황사 오니,dust_query
+부산 강서구 미세먼지 심할까,dust_query
+창녕 ㅋㅋ 미세먼지,dust_query
+단양 마스크 가져가야하니,dust_query
+동두천 공기 미세먼지,dust_query
+오전 양산 공기,dust_query
+영암 미세먼지 어떨까,dust_query
+무안 공기 미세먼지,dust_query
+제주 많이 미세먼지 어떨까 나쁠까,dust_query
+다음 주 전주 미세먼지 심하려나 아하,dust_query
+헐 서울 송파구 공기상태,dust_query
+아 그러게 미세먼지 알려줄래,dust_query
+화천 ㅋㅋ 미세먼지,dust_query
+의왕 미세먼지,dust_query
+영동 마스크 챙겨야 할까,dust_query
+부산 도봉구 마스크 챙겨야 할까,dust_query
+목포 오존 미세먼지,dust_query
+서울 송파구 미세먼지,dust_query
+이번 주 가로수길 미세먼지 알려줄래,dust_query
+고양시 미세먼지 상태 어떠려나,dust_query
+미세먼지 김포 미세먼지,dust_query
+5월 5일 추워서 오존 심한가,dust_query
+아 서울 구로구 공기 미세먼지,dust_query
+인천 성북구 마스크 필요해,dust_query
+무주 미세먼지 궁금한데 알려주겠니,dust_query
+홍성 마스크 챙겨야 할까,dust_query
+봉화 미세먼지 알려줘,dust_query
+서울 노원 마스크 챙길까,dust_query
+진천 마스크 써야하니,dust_query
+내일 서울 구로구 ㅋ 미세먼지,dust_query
+강원도 초미세먼지 심할지 말해 주세요,dust_query
+오늘 양주 오존 미세먼지,dust_query
+하 안산 마스크 쓸까,dust_query
+충청북도 미세먼지 심할지 말해 줄 수 있니,dust_query
+하늘 미세먼지,dust_query
+창녕 미세먼지,dust_query
+그러면 미세먼지 뭐야,dust_query
+양양 마스크 챙길까,dust_query
+장성 하늘 미세먼지,dust_query
+부안 미세먼지 어떤지 알려줄래,dust_query
+하 진주 공기 공기,dust_query
+가평군 미세먼지 궁금해,dust_query
+무안 미세먼지 어때,dust_query
+전라도 미세먼지 알려줄래,dust_query
+영암 그럼 마스크 쓸까,dust_query
+서울 노원구 마스크 필요해,dust_query
+경산 공기 좋니,dust_query
+충청북도 미세먼지 심할지 알려줄래,dust_query
+서울 마포구 마스크 필요할까,dust_query
+강화도 가려는데 오늘 미세먼지 궁금해요,dust_query
+군포 미세먼지,dust_query
+진짜 영덕 미세먼지 어떨까 하,dust_query
+맑으려나 화요일,dust_query
+그 때 관악구 미세먼지 좋겠지,dust_query
+고흥 마스크 가져갈까,dust_query
+그러면 광명 미세먼지 어떤지 말해 줘,dust_query
+울산 중랑구 마스크 가져갈까,dust_query
+신안 이제 공기 미세먼지,dust_query
+어떤데 공기,dust_query
+미세먼지 의정부 먼지,dust_query
+인제 초미세먼지 심하냐고,dust_query
+광주 서대문구 미세먼지,dust_query
+이천 심하니,dust_query
+시흥 그러면 마스크 챙겨야 할까,dust_query
+부평구 가려는데 미세먼지 알려줘,dust_query
+아하 모레 강원 고성 미세먼지 알려줄래,dust_query
+그 때 미세먼지 어떨까 ㅎㅎ,dust_query
+논산 미세먼지 어떨까,dust_query
+서울 도봉구 미세먼지 심할까,dust_query
+노원구 일요일 먼지 알려줬으면,dust_query
+이번 주 강릉 맑아 좀,dust_query
+경주 미세먼지 어떨까,dust_query
+완도 미세먼지 그 때,dust_query
+2월 2O일 미세먼지 알려주겠니,dust_query
+광명 미세먼지,dust_query
+화순 하늘 미세먼지 심하니,dust_query
+서울 금천구 미세먼지 공기상태,dust_query
+서울 동대문 미세먼지 어떨까,dust_query
+연천 미세먼지 어떨까,dust_query
+예산 마스크 써야 할까,dust_query
+창녕 미세먼지 어떤지 말해 줘,dust_query
+하 서천 미세먼지,dust_query
+하늘 미세먼지 심하니 지금,dust_query
+내일모레 동작구 미세먼지 말해줘,dust_query
+금산 먼지 어떤지 말해 줘봐,dust_query
+광주 그리고 이번 주 황사 오려나,dust_query
+아 영동 공기 말해줘,dust_query
+강원도 오존 심할지 알고싶어,dust_query
+음성 마스크 필요하니,dust_query
+춘천 마스크 필요하니,dust_query
+지금 미세먼지 상태 미세먼지,dust_query
+오늘 양주 미세먼지 알려줄래,dust_query
+익산 그럼 공기 미세먼지,dust_query
+부산 종로 오늘 미세먼지 알려줘,dust_query
+내일 그러면 안성 ㅋㅋ 미세먼지,dust_query
+그럼 부산 이번 주 미세먼지 맑은지 알려줄래,dust_query
+정선 공기 미세먼지,dust_query
+현재 성북구 미세먼지 완전 문젠데,dust_query
+안동 미세먼지,dust_query
+가평 꽃가루 알려줘,dust_query
+구례 미세먼지 심할지 알려줄 수 있니,dust_query
+시흥 초미세먼지 심하냐고,dust_query
+무안 미세먼지 심할지 말해 주세요,dust_query
+양양 의정부 미세먼지 없을까,dust_query
+부산 미세먼지,dust_query
+청주 그럼 공기 미세먼지,dust_query
+ㅋ 임실 황사 올까,dust_query
+포항 마스크 챙길까,dust_query
+거창 마스크 챙겨야 할까,dust_query
+내일 서울시 노원 미세먼지 말해달라고 좀,dust_query
+서울 성북구 마스크 필요할까,dust_query
+가평 공기 미세먼지,dust_query
+안성 마스크 필요해,dust_query
+광양 미세먼지,dust_query
+지금 먼지 어떤데,dust_query
+그럼 강남 미세먼지 미세먼지,dust_query
+영양 마스크 챙길까,dust_query
+연천군 미세먼지 심할까,dust_query
+화요일 미세먼지 영덕 알려줄 수 있어,dust_query
+그 때 하늘 어떠려나,dust_query
+충청남도 미세먼지 어떤지 말해 줄 수 있니,dust_query
+서울 강동구 초미세먼지 심하냐고,dust_query
+함안 공기 미세먼지,dust_query
+영덕 마스크 챙기다,dust_query
+먼지 많이 심한가,dust_query
+김제 미세먼지,dust_query
+하늘 미세먼지 어떨까,dust_query
+공주 마스크 필요하다,dust_query
+전주 설마 마스크 챙길까,dust_query
+대구 관악구 미세먼지,dust_query
+영광 황사 오니,dust_query
+서울 강남구 미세먼지 어떨까,dust_query
+미세먼지 그럼 마스크 써야하니,dust_query
+내일 강원도 태백시 여행 가는데 미세먼지 알려줄래,dust_query
+내일 아무튼 충청남도 계룡시 미세먼지 알려줄래,dust_query
+하남 마스크 챙겨야 할까,dust_query
+당진 공기 말해줘 결국,dust_query
+경산 미세먼지,dust_query
+모레 서초 미세먼지 그러면 알려줘,dust_query
+칠곡 그럼 마스크 필요할까,dust_query
+서울 도봉구 미세먼지 어떨까,dust_query
+미세먼지 정보 알려주세요,dust_query
+그러게 오늘 화천 미세먼지,dust_query
+김천 ㅋㅋ 마스크 필요하니,dust_query
+광주 금천구 마스크 필요할까,dust_query
+강남구 초미세먼지 어떤지 알려줄래,dust_query
+일산 오존 어떤지 말해 줄 수 있니,dust_query
+예천 오존 미세먼지,dust_query
+오늘 경기도 구리 미세먼지,dust_query
+서울 양천구 마스크 가져가야하니,dust_query
+논산 미세먼지,dust_query
+동래구 황사 궁금해,dust_query
+홍성 미세먼지 어떤지 부탁 해,dust_query
+응 오늘 완주군 미세먼지 알려주라,dust_query
+고양시 현재 먼지 어떠려나,dust_query
+현재 광양 설마 마스크 써야 할까,dust_query
+봉화 미세먼지 어떨까,dust_query
+울진 미세먼지 안되는데,dust_query
+오늘 안성시 미세먼지 알려줄래,dust_query
+수요일 먼지 깨끗하니,dust_query
+일요일 부산 공기 말해주라,dust_query
+이번 주 오산 미세먼지 알려줘,dust_query
+다음 주 ㅎㅎ 전주 미세먼지 알려줘,dust_query
+혹시 오늘 광명 공기 미세먼지,dust_query
+미세먼지 궁금하네,dust_query
+구리 심하려나,dust_query
+이천 공기 미세먼지,dust_query
+공기 미세먼지 좀 알려줄래,dust_query
+충청도 오존 심할지 알 수 있을까,dust_query
+그러니까 이번 주 인천 미세먼지 황사 오니,dust_query
+예천 혹시 미세먼지,dust_query
+합천 먼지 어떤지 부탁 합니다,dust_query
+오늘 남양주 ㅋㅋㅋ 미세먼지,dust_query
+서울 노원구 마스크 가져가야하니,dust_query
+ㅋㅋ 내일 충청남도 당진 미세먼지 알려줄래,dust_query
+성동구 초미세먼지 심할지 말해 줄 수 있니,dust_query
+춘천 먼지 미세먼지,dust_query
+양평 미세먼지 심할지 알려줘,dust_query
+화성 미세먼지 어떤지 말해 주세요,dust_query
+일요일 경주 미세먼지 심할까,dust_query
+오늘 강원도 미세먼지 말해줘,dust_query
+경산 이제 마스크 써야 할까,dust_query
+아하 내일 충청북도 미세먼지 알려줘,dust_query
+전라북도 미세먼지 알려줘,dust_query
+오늘 ㅋㅋ 안성 미세먼지 ㅋㅋ,dust_query
+인천 성동구 미세먼지 심할까,dust_query
+대전 서초구 마스크 가져가야하니,dust_query
+원주 마스크 쓸까,dust_query
+여주 그럼 마스크 쓸까,dust_query
+오늘 제천 그럼 공기 어떠냐,dust_query
+초미세먼지 어떻게 돼,dust_query
+대구 은평구 미세먼지,dust_query
+인천 도봉구 미세먼지 어떠니,dust_query
+의령 마스크 쓸까,dust_query
+익산 공기 뭐야 좀,dust_query
+충청남도 미세먼지 심할지 부탁 해,dust_query
+양주 공기,dust_query
+강동 미세먼지 어떤지 좀 말해줘,dust_query
+서울 은평 먼지 미세먼지,dust_query
+이제 서울 서대문구 미세먼지,dust_query
+홍천 마스크 챙겨야 할까,dust_query
+김포 공기 미세먼지,dust_query
+거창 미세먼지,dust_query
+이번 주 제천 미세먼지 알려줄래,dust_query
+그럼 거제 미세먼지 심할까,dust_query
+외출할 때 마스크 필요해?,dust_query
+하동 공기 미세먼지,dust_query
+화순 마스크 쓸까,dust_query
+서울 강동 먼지 좋니,dust_query
+내일 하 태백 미세먼지,dust_query
+김포 미세먼지 어떨까,dust_query
+서울 서초구 초미세먼지 어때,dust_query
+충남 홍성 공기 말해줄래 아니,dust_query
+그럼 부안 미세먼지 심할지 말해 줄 수 있니,dust_query
+고령 공기 미세먼지,dust_query
+원주 마스크 챙겨야 할까,dust_query
+토요일 서천 미세먼지 어떨까 좀 알려줄수 있니,dust_query
+전주 동작구 미세먼지,dust_query
+순창 마스크 필요해,dust_query
+전북 김제 공기 좀 말해주세요 좀,dust_query
+삼척시 미세먼지 궁금해요,dust_query
+야 미세먼지 말해줄래,dust_query
+가평 먼지 공기,dust_query
+ㅇㅇ 나주 먼지 말해 줘,dust_query
+제주도 오존 심할지 말해 줄 수 있니,dust_query
+평택 공기 미세먼지,dust_query
+창문 열어도 돼?,dust_query
+속초 그러면 공기 좋니,dust_query
+이번 주 덕진구 미세먼지 알려줘,dust_query
+수요일 을왕리 미세먼지 어때,dust_query
+해운대 미세먼지 알려줘,dust_query
+그럼 오늘 괴산 미세먼지,dust_query
+양양 오존 올까,dust_query
+송파구 아 미세먼지 말해줘,dust_query
+동작구 초미세먼지 심할지 알려줄 수 있니,dust_query
+동두천 그럼 공기 미세먼지,dust_query
+응 울산 이번 주 미세먼지 어때,dust_query
+오후 의성 미세먼지,dust_query
+서울 강동구 마스크 챙길까,dust_query
+충청도 오존 심할지 말해 주라,dust_query
+그럼 먼지 알려주겠니,dust_query
+서울 용산 미세먼지 어떨까,dust_query
+이번 주 토요일 먼지 심하니,dust_query
+미세먼지 상태 어떠려나,dust_query
+이번 주 삼척 꽃가루 많이 없니,dust_query
+구리시 미세먼지 어때,dust_query
+혹시라도 모레 울릉 공기 미세먼지,dust_query
+이번 주 구리 미세먼지 알려줘,dust_query
+응 부산 이번 주 공기 맑은지 알려줄래,dust_query
+참 내일 전라북도 부안 미세먼지 알려줘,dust_query
+화성 공기,dust_query
+서울 서대문구 마스크 가져갈까,dust_query
+파주 마스크 챙겨야해,dust_query
+해운대 목요일 먼지 없을까,dust_query
+공기상태 알려줘,dust_query
+대전 종로구 미세먼지 공기,dust_query
+하늘 먼지 많네,dust_query
+오늘 태백시 여행 가는데 미세먼지 알려줘,dust_query
+강남구 미세먼지 알려주세요,dust_query
+정읍 먼지 어떻게 돼요,dust_query
+아니 군산시 미룡동 공기 말해줄래,dust_query
+서울 마포 미세먼지,dust_query
+연천 오존 미세먼지,dust_query
+음성 먼지 좋니,dust_query
+의왕 먼지 어떨까,dust_query
+하늘공원 가는데 근처 황사 궁금해,dust_query
+서산 공기 맑으려나,dust_query
+구미 공기 미세먼지,dust_query
+경상남도 오존 심할지 알려줘,dust_query
+하 태백 미세먼지,dust_query
+그럼 부천 오존 어떤지 알고싶어,dust_query
+문경 그럼 미세먼지,dust_query
+전라남도 미세먼지 심할지 알려주세요,dust_query
+영주 미세먼지 심할지 알 수 있을까,dust_query
+충청도 오존 심할지 말해 줘,dust_query
+하남 미세먼지 어떨까,dust_query
+부안 미세먼지,dust_query
+미세먼지 심하면 안되는데,dust_query
+경북 영월 수요일 미세먼지 알려줘,dust_query
+영덕 먼지 공기상태,dust_query
+밀양 공기상태,dust_query
+부산 구로구 미세먼지 어떨까,dust_query
+부산 중랑구 미세먼지 심할까,dust_query
+상당구 미세먼지 궁금해,dust_query
+미세먼지 그러면 마스크 써야하니,dust_query
+미세먼지 공기 어떠려나,dust_query
+내일 먼지 알려주세요,dust_query
+안성 맑으려나 일요일,dust_query
+인천 구로구 마스크 써야하니,dust_query
+아니 충남 논산 공기 말해줄래,dust_query
+서울 은평구 마스크 가져갈까,dust_query
+환기해도 돼?,dust_query
+의령 미세먼지 심할지 말해 주세요,dust_query
+남양주 황사 오니,dust_query
+내일 군포 여행갈건데 오존 알려줘,dust_query
+경기도 미세먼지 알려주라,dust_query
+속초 미세먼지,dust_query
+의정부 미세먼지,dust_query
+경상북도 먼지 부탁 합니다,dust_query
+경주 마스크 써야 할까,dust_query
+용인 일요일 먼지 알려주겠니,dust_query
+월요일 강진 미세먼지 심할까,dust_query
+양산 오존 올까,dust_query
+서울 동대문구 미세먼지,dust_query
+마스크 써야하나,dust_query
+1월 11일 먼지 궁금해서 물어봤는데,dust_query
+장성 마스크 챙겨야 할까,dust_query
+아울러 이번 주 대구 미세먼지,dust_query
+내일모레 원주 가는데 미세먼지 말해줘,dust_query
+영등포구 초미세먼지 어떤지 말해 줄 수 있니,dust_query
+ㅋㅋ 함평 마스크 가져갈까,dust_query
+제천 그럼 공기 어떠냐,dust_query
+아니 이번 주 강릉 맑아,dust_query
+완주 가는데 미세먼지 어때,dust_query
+정선 마스크 쓸까,dust_query
+서울 먼지 심하니,dust_query
+대전 관악구 미세먼지 어때,dust_query
+군포 마스크 챙겨야해,dust_query
+먼지 알려줬으면 졸겠어,dust_query
+문경 마스크 필요해,dust_query
+영월 먼지 많이 심한가,dust_query
+강릉 심하니,dust_query
+하남 황사 오니,dust_query
+그러면 가평 미세먼지 어떤지 부탁 합니다,dust_query
+아니 청양 공기 말해줘,dust_query
+개봉동 가는데 황사 미세먼지,dust_query
+서울 은평구 공기,dust_query
+서울 강동구 마스크 써야하니,dust_query
+전라남도 먼지 말해 주라,dust_query
+제주 그럼 공기 미세먼지,dust_query
+홍성 초미세먼지 어때,dust_query
+무안 마스크 써야하니,dust_query
+안성 그럼 공기 미세먼지,dust_query
+군산 미세먼지 어떨까,dust_query
+안산 미세먼지 궁금해요,dust_query
+목포 마스크 가져가야하니,dust_query
+모레 미세먼지,dust_query
+서울 종로 미세먼지 어떨까,dust_query
+공기 궁금한데 알려주겠니,dust_query
+예산 공기 미세먼지,dust_query
+구로 다음 주 미세먼지 알려줄래,dust_query
+도봉구 미세먼지 어떤지 말해 줘봐,dust_query
+그러면 오늘 횡성군 미세먼지 알려줘,dust_query
+그니까 영월 미세먼지 어떤지 말해 줘,dust_query
+나주 먼지 심할지 말해 줘봐,dust_query
+아 오늘 동대문구 미세먼지 어떠려나,dust_query
+부산 동작구 미세먼지 심할까,dust_query
+김제 공기 미세먼지,dust_query
+하남 공기 미세먼지,dust_query
+이제 서울 동작구 공기 미세먼지,dust_query
+남원 오존 미세먼지,dust_query
+설마 내일 일산 미세먼지,dust_query
+대구 영등포구 미세먼지 어떠니,dust_query
+미세먼지 알려줬으면 졸겠어,dust_query
+포항 미세먼지 어떨까,dust_query
+미세먼지 좀 미세먼지,dust_query
+이번 주 대구 공기 미세먼지 어떤지 알려줘 ㅋㅋ,dust_query
+상주 마스크 필요하니,dust_query
+진짜 서울 노원구 오존 심하냐고,dust_query
+하여튼 서울 강동구 미세먼지,dust_query
+미세먼지 너무 심할까 알려줘,dust_query
+거제시 미세먼지 어때,dust_query
+금산 미세먼지 어떤지 부탁 합니다,dust_query
+용인 어떨지,dust_query
+통영 미세먼지,dust_query
+오늘 미세먼지 익산시 스모그,dust_query
+서산 초미세먼지 궁금해서,dust_query
+내일 서울시 용산구 미세먼지 말해줘,dust_query
+토요일 혹시 미세먼지 심하려나,dust_query
+서대문구 미세먼지 어떤지 말해 주세요,dust_query
+영월 미세먼지 어떨 것 같아,dust_query
+제발 이번 주 군산 미세먼지 알려줘,dust_query
+함양 미세먼지 어떤지 알려줄 수 있니,dust_query
+경기도 초미세먼지 어떤지 알 수 있을까,dust_query
+경상북도 오존 심할지 알 수 있을까,dust_query
+모레 양평 혹시 미세먼지,dust_query
+보은 미세먼지 알려줘,dust_query
+부산 이번 주 미세먼지 어떻니,dust_query
+광화문 미세먼지 알려줘,dust_query
+이번 주 용인 미세먼지 알려주세요,dust_query
+원주시 미세먼지 물어볼게,dust_query
+해남 오존 올까,dust_query
+경산 하늘 먼지 많네,dust_query
+조국 관련 뉴스 어떤 게 있었니,news_play
+조국 관련 뉴스 기사 찾아봐,news_play
+신규 출시된 사륜 차,news_play
+한겨레에서 백신 패스 뉴스 찾아줘,news_play
+뉴스 보여줘,news_play
+어떤 세계 소식이 있습니까,news_play
+오늘의 세계 사건 찾아서 읽어줘,news_play
+s. b. s. 세계 뉴스,news_play
+한겨레 기사에서 노숙자 언급하는 기업가 뉴스가 뭐야,news_play
+최신 금융 소식,news_play
+국제 뉴스 어떤 게 있니,news_play
+영국 뉴스는 어때,news_play
+게임 산업에서 새로운거 뭐 있어,news_play
+문재인 관련 최신 뉴스 말해줘,news_play
+문재인 경제 정책 어떤거야,news_play
+아프리카 관련 뉴스 어떤 게 있니,news_play
+조선일보 속보 확인해,news_play
+개인용 정보 단말기,news_play
+최근 특정 주제 뉴스,news_play
+김정은 관련 뉴스 읽어줘,news_play
+페이스북 가짜 뉴스 단속하기 위해 논란이된 태그를 출시했다,news_play
+뉴스 제공사로 부터 오늘 뉴스가 뭐였니,news_play
+최신 뉴스?,news_play
+어제 설강화 무슨 일이야,news_play
+엠 비 씨 뉴스,news_play
+s. b. s. 뉴스 좀 보여 줘,news_play
+문재인 대통령의 백신패스 새 정책 무엇이야,news_play
+축구 업데이트 부탁해,news_play
+어떤 게 k. b. s. 의 최신 뉴스야,news_play
+k. b. s. 뉴스 지금 당장 말해줘,news_play
+olly 뉴스 일면 기사 부탁해,news_play
+탑 뉴스,news_play
+이재명 이야기 가져다 줘,news_play
+스포츠 뉴스,news_play
+뉴스 알려줘?,news_play
+최신 패션 소식이 뭐야,news_play
+매일경제 소식 뭐 있어,news_play
+어제 정오 서울광장에서 무슨 일이 있었니,news_play
+세계의 최근 뉴스 읽어줘,news_play
+헤드라인 뉴스 알려줘,news_play
+중국 상황 업데이트해줘,news_play
+내 서비스 제공자 관련된 뉴스를 줘,news_play
+이 토픽 관련해서 문재인에 대해 뭐라고 얘기하고 있어,news_play
+olly 지역 뉴스 있어,news_play
+최신 비즈니스 뉴스 꼭 알려줘,news_play
+뉴스 뭐야,news_play
+이명박 검색해줘,news_play
+수원의 현재 시나리오에 관한 소식 말해주십시오,news_play
+정치 뉴스 보고 싶어,news_play
+경향신문으로 데려가줘,news_play
+여기 무슨 일 있어,news_play
+내 차 네비게이션 새 알림 추가해줘,news_play
+문재인 대통령에 무슨 일 있어,news_play
+오늘 k. b. s. 뉴스 뭐 있니,news_play
+네이버 닷컴으로 가,news_play
+올리씨 부산일보 헤드라인 뭐야,news_play
+강원도 속초 화재,news_play
+올리야 새로운 강동원 뉴스,news_play
+세계 최신 뉴스 제공해줘,news_play
+한일전 소식에 관해 알려줘,news_play
+사회 뉴스,news_play
+대선에 관해 말해줘,news_play
+국제 뉴스 제목들 읽어줘,news_play
+가장 최신 뉴스 알고 싶어,news_play
+최근 뉴스 확인 해줘,news_play
+y. t. n. 주요 기사 알려줘,news_play
+최신 뉴스의 주제 알고 싶어,news_play
+새 소식 뭐야,news_play
+동아일보 뉴스 목록 얻을 수 있을까,news_play
+오늘의 세계 뉴스 보여줘,news_play
+무슨 뉴스 잇어,news_play
+조선일보 일 면 읽어줘,news_play
+경제 관련 최근 속보는 어떤 거야,news_play
+부산 뉴스 헤드라인 읽어줘,news_play
+문재인 신년사 관련 뉴스 좀 찾아줘,news_play
+정치 최신 뉴스 말해줄래,news_play
+제이 티 비 씨 최신 뉴스 기사 확인해줘,news_play
+내 새로운 뉴스 채널에서 가장 최신 뉴스 검색해줄래,news_play
+경기도 가는 도로 시원해,traffic_route_query
+천안 가는데 얼마나 더 가야 해,traffic_route_query
+지금 출발하면 늦어?,traffic_route_query
+교통 상황 보여줘,traffic_route_query
+청량리 가는 기차 표 찾아줘,traffic_route_query
+평택 에서 파주 가는 기차 시간 좀 알려줘,traffic_route_query
+전라북도 군산 에 일요일 마다 운행되는 기차 몇 시에 있어,traffic_route_query
+방향,traffic_route_query
+여기서 부산 가는 경로 알려줘,traffic_route_query
+여기서 익선동 온천집 까지 어떻게 갈지 알려줘,traffic_route_query
+월요일 에 서울역 에서 일공일일 열차 시간 확인 좀 해줘,traffic_route_query
+평택 가는 다음 세 대 의 기차 는 언제 있니,traffic_route_query
+이 기차의 출발 도착 시간은 언제인가요,traffic_route_query
+청주 시내 교통 상황이 복잡하다,traffic_route_query
+기차 스케쥴,traffic_route_query
+가장 가까운 이마트 는 어디야,traffic_route_query
+호미곶 어떻게 가,traffic_route_query
+오늘 삼번 국도 많이 막혀,traffic_route_query
+대구 가는 기차 표 한장 예매해줄래,traffic_route_query
+부천시 가는 다음 기차 언제 있어,traffic_route_query
+사호선 기차 는 몇 시에 역을 떠나,traffic_route_query
+포항 가는 다음 기차,traffic_route_query
+지금 현재 교통 상황 어때,traffic_route_query
+서울 에서 도쿄 가는 가능한 여행이 뭐가 있지,traffic_route_query
+오후 네시 에 목적지 로 가는 남은 여행 시간이 얼마나 남아 있지,traffic_route_query
+회사 에서 출발하는 마지막 기차 시간 언제니,traffic_route_query
+내 근처 공원 가는 길 좀 알려줘,traffic_route_query
+도로 막히나,traffic_route_query
+올리 바리케이트 가 있니,traffic_route_query
+인천 에서 서울 로 가는 기차 가 언제 있지,traffic_route_query
+지금 수원 일번 국도 에 교통체증 있니,traffic_route_query
+공항 근처 교통이 얼마나 안좋니,traffic_route_query
+이 위치로 가는 기차 표를 원해,traffic_route_query
+부천 가는 기차 언제 출발해,traffic_route_query
+지도 보여줘,traffic_route_query
+교통은 어때,traffic_route_query
+강남역까지 몇 분,traffic_route_query
+통영에서 남해 가는 오늘 다음 두 시간 동안의 기차 스케쥴 알려줘,traffic_route_query
+내일 기차 시간,traffic_route_query
+기차 시간 장소,traffic_route_query
+우리 집에서 강릉 얼마나 멀어,traffic_route_query
+기차로 오전 중으로 인천 가려면 어떻게 해야 해,traffic_route_query
+교통 어때요,traffic_route_query
+시내 까지 얼마나 걸릴까,traffic_route_query
+부산 으로 가는 기차 가 몇 시에 있지,traffic_route_query
+기차 표 어디서 사,traffic_route_query
+부천에서 압구정 가는 기차 몇 시에 출발해,traffic_route_query
+오늘 기차 나 버스 로 시내를 가로지를 수 있는지 알려줘,traffic_route_query
+서울 에서 전주 까지 기차 로 얼마나 걸려,traffic_route_query
+기차 시간,traffic_route_query
+olly 구미 로 가는 기차 표 좀 구해줘,traffic_route_query
+출근길 어때,traffic_route_query
+지금 차 막혀,traffic_route_query
+부산 에서 오는 기차 시간이 어떻게 돼,traffic_route_query
+회사 까지 운전 해서 가면 얼마나 걸릴까,traffic_route_query
+버스 몇 분 남았어,traffic_bus_query
+101번 버스 언제 와,traffic_bus_query
+다음 버스 언제야,traffic_bus_query
+버스 노선 알려줘,traffic_bus_query
+버스 정류장 어디야,traffic_bus_query
+작년 대비 사용량 어때,energy_usage_query
+전기요금 얼마나 나올까,energy_usage_query
+가스 사용량,energy_usage_query
+에너지 많이 쓰고 있어?,energy_usage_query
+전기 사용량,energy_usage_query
+에너지 절약하고 있어?,energy_usage_query
+에너지 사용량?,energy_usage_query
+전기요금,energy_usage_query
+에너지 절약,energy_usage_query
+엘리베이터 좀 불러줘,elevator_call
+엘리베이터 올려보내줘,elevator_call
+엘리베이터 불러줘?,elevator_call
+엘베 불러줘,elevator_call
+엘리베이터 불러줄래,elevator_call
+엘리베이터 어디 있어?,elevator_query
+엘리베이터 내려오고 있어?,elevator_query
+엘리베이터 위치 알려줘,elevator_query
+엘레베이터 지금 어디 있어,elevator_query
+엘베 몇 층이야,elevator_query
+다음 으로 울릴 알람 세 개 알려줘,alarm_query
+알람 설정,alarm_query
+내가 가진 알람들 검토,alarm_query
+앞으로 있는 알람 전부 알려줘,alarm_query
+기상 알람 설정 방법,alarm_query
+내가 가진 알람들 알려줘,alarm_query
+내일 알람 상황 어때,alarm_query
+모닝콜 환기 연동 되나,alarm_query
+내가 어떤 알람들 설정했지,alarm_query
+나 알람 설정한 거 있나,alarm_query
+폰 에 설정된 알람 뭐 있어,alarm_query
+설정된 알람들 어떤 게 있어,alarm_query
+알람 설정된 거 있어 있으면 몇 시야,alarm_query
+어떤 알람이 설정되어 있어,alarm_query
+잠이라고 되어있는 알람 알려줘,alarm_query
+모든 알람 나열해,alarm_query
+내가 설정한 알람들 알려줄래,alarm_query
+모닝콜 울릴 때 환기 켜줘,alarm_query
+내가 오늘 로 맞춰둔 알람 있어,alarm_query
+설정된 알람 전부 보여줘,alarm_query
+알람,alarm_query
+내 알람 이 몇 시에 나 깨우지,alarm_query
+나 알람 있어,alarm_query
+오늘 회의 알람 확인해줘,alarm_query
+오늘 아침에 생성한 알람 삭제해줘,alarm_set
+내 휴대폰 에 알람 설정해주시겠어요,alarm_set
+설정된 전체 알람 해제,alarm_set
+목요일 밤 오후 아홉 시 알람 설정,alarm_set
+내 알람 변경,alarm_set
+오전 여섯 시 알람 부탁해,alarm_set
+시간에 맞춰 내 알람 설정,alarm_set
+오전 일곱 시 에 내일의 회의 알람 맞춰주시겠어요,alarm_set
+알람 켜,alarm_set
+오후 아홉 시 알람 설정해,alarm_set
+내일 아침 오전 여섯 시 알람 설정해서 깨워주세요,alarm_set
+내일 아침 네 시에 알람 설정해줘,alarm_set
+오전 여덟 시 에 알람 시계 맞춰줘,alarm_set
+올리 기상 알람 삭제해줘,alarm_set
+첫 번째로 예약된 알람 켜줘,alarm_set
+오늘 알람 설정해주시겠어요,alarm_set
+시리 축구 연습 알람들 모두 취소해,alarm_set
+전체 알람 다 지워줘,alarm_set
+오전 일곱 시 에 깨워줘,alarm_set
+오전 여덟시 알람 설정,alarm_set
+팀 과 하는 다음 회의 를 위해 다음 금요일 오후 세 시 로 알람 시계 설정해주시겠어요,alarm_set
+오후 네 시 알람 만들어줘,alarm_set
+오후 다섯시 에 알람 설정해주세요,alarm_set
+알람 설정해줘,alarm_set
+알람 맞춰좀 줘,alarm_set
+오늘 저녁 에이전트 와의 회의 를 위한 리마인더 알람 설정해,alarm_set
+오후 다섯 시 알람,alarm_set
+오늘 모든 알람 꺼,alarm_set
+오전 여섯 시 에 일어나고 싶어요,alarm_set
+이번 토요일 열 시 알람 설정해줘,alarm_set
+아침에 깨워해줘,alarm_set
+오늘의 모든 알람을 영구적으로 스누즈 해줘,alarm_set
+오전 다섯 시 에 알람 설정,alarm_set
+내 알람 설정해주세요,alarm_set
+오전 일곱 시 에 스누즈 옵션 없이 지속적인 알람 설정해줘,alarm_set
+오늘 저녁 오후 여덟 시 알람 설정,alarm_set
+모든 평일 여덟 시 로 알람 설정해줘,alarm_set
+오전 여덟 시 알람 설정해줘,alarm_set
+구글 내 알람 한 시간 후에 울리도록 설정해줘,alarm_set
+알람 대로 진행해줘,alarm_set
+모든 평일 오전 일곱 시 에 나를 깨워줘,alarm_set
+내일 오후 열두 시 에 내 약 먹기 잊지 않도록 알람 설정해줘,alarm_set
+충전 상태 어때,ev_charging
+충전 시작해줘?,ev_charging
+전기차 충전 상태,ev_charging
+전기차 충전 상태 어때,ev_charging
+충전기 사용 가능해,ev_charging
+충전 얼마나 남았어,ev_charging
+부모님 차 등록해줘,visitor_parking_register
+방문 차량 등록,visitor_parking_register
+차량 등록해줘?,visitor_parking_register
+방문객 차량?,visitor_parking_register
+차량 등록해주세요,visitor_parking_register
+방문객 주차 상태,visitor_parking_query
+방문객 차량 확인,visitor_parking_query
+방문 차량 조회,visitor_parking_query
+방문 차량 있어,visitor_parking_query
+방문객 주차 현황,visitor_parking_query
+차량 출입 현황,car_history_query
+언제 차 들어왔어,car_history_query
+주차 출입,car_history_query
+차량 내역 확인?,car_history_query
+언제 차 나갔어,car_history_query
+단지 정보,complex_info
+관리사무소 연락처 알려줘,complex_info
+단지 정보?,complex_info
+우리 단지 정보,complex_info
+관리사무소 전화번호 알려줘,complex_info
+화면 밝기 조절 방법,system_faq
+AS 어디에 해,system_faq
+수리 신청 어떻게 해,system_faq
+통화 알림음 변경,system_faq
+이사 갈 때 정보 삭제 방법,system_faq
+볼륨 조절?,system_faq
+좋은 식당 알려줘,medical_search
+응급실 찾아줘,medical_search
+근처 병원 찾아줘,medical_search
+내 근처에서 스포츠 장비 어디서 살 수 있어,medical_search
+근처 병원 알려줘,medical_search
+이 주변 쇼핑 갈만한 곳 어디야,medical_search
+저녁 먹을 근사한 식당 찾아줘,medical_search
+내 근처에 있는 철도 회사 뭐야,medical_search
+지역 최고의 가게,medical_search
+우리 집 근처 타코 레스토랑 찾아,medical_search
+서울 강남에서 최고의 리뷰를 받고 있는 식당 찾아줘,medical_search
+오 키로 이내에 괜찮은 버거 어디에서 구할 수 있어,medical_search
+내 근처 제일 좋은 옷 가게들 알려줘,medical_search
+가장 가까운 맛있는 식당이 어디지,medical_search
+청어 피클 판매하는 슈퍼마켓 찾아줘,medical_search
+동네 피자 가게 위치 알려줘,medical_search
+좋은 식당 어디있어,medical_search
+자정 뒤에 문 여는 식당이 어디야,medical_search
+내 지역에 중화 요리점 어디 있어,medical_search
+올리 맥주 파는 곳 알려줘,medical_search
+시리 근처에 있는 가게 리스트 알려줘,medical_search
+헤이 올리 지역 가게들 다 보여줘,medical_search
+가장 가까운 투썸플레이스 어디야,medical_search
+내 주변에 종합상가 있어,medical_search
+동네 가장 유명한 카레 식당이 어디야,medical_search
+지역에 있는 가게들 보여줘,medical_search
+경기도 광주의 가게들 목록 보여줘,medical_search
+약국 영업시간,medical_search
+지역 특산물 있는 농장 시장 있어,medical_search
+오늘 진료하는 병원 알려줘,medical_search
+여기 등산용품 가게 있어,medical_search
+가까운 병원 알려줘,medical_search
+근처 피자 가게 최고 잘 하는 데 어디야,medical_search
+오늘 주유해도 돼?,fuel_price_query
+기름값 어때,fuel_price_query
+유가 정보,fuel_price_query
+현재 유가,fuel_price_query
+오늘 유가,fuel_price_query
+휘발유 싼 주유소,fuel_station_search
+근처 주유소 어디야,fuel_station_search
+주유소 위치 알려줘,fuel_station_search
+주유소 어디야,fuel_station_search
+주유소 가격 비교,fuel_station_search
+주식의 최근 가격은,stock_index_query
+어젯밤 네이버 주식 얼마나 올랐어,stock_index_query
+넷마블 주식은 어때,stock_index_query
+코스닥 떨어졌어?,stock_index_query
+나스닥에서 애플 주가 찾아줄래,stock_index_query
+최신 롯데케미칼 주가 나열해줘,stock_index_query
+셀트리온 주가,stock_index_query
+삼성전기 한 주 가격은 얼마야,stock_index_query
+현대차 주가는 얼마야,stock_index_query
+한국전력 주식 보여줘,stock_index_query
+삼성전자 현재 주가는 얼마야,stock_index_query
+코스닥 얼마야,stock_index_query
+삼성전자 주식 가치는 얼마야,stock_index_query
+주식 환율,stock_index_query
+주식 어때?,stock_index_query
+오늘 카카오 주식 어때,stock_index_query
+다우 선물에 관한 정확한 비율을 알려줄 수 있어,stock_index_query
+동진쎄미캠 회사 주가,stock_index_query
+삼전 주가 보여 줘,stock_index_query
+카카오의 주가 얼마야,stock_index_query
+엘지 전자 주식의 시작가 알려줘,stock_index_query
+주식 상세 정보,stock_index_query
+주식시장 새로운 소식 있어,stock_index_query
+셀트리온 주식의 일일 가격은 얼마야,stock_index_query
+삼성전자 는 어떻게 끝맺었어,stock_index_query
+알렉사 한국조선해양 현재 주가,stock_index_query
+카카오 주가 알려줘,stock_price_query
+크래프톤 주가,stock_price_query
+카카오 지금 얼마야,stock_price_query
+현대차 주가 알려줘,stock_price_query
+하이닉스 얼마야,stock_price_query
+입주민 게시판?,community_query
+동호회,community_query
+커뮤니티 운영시간 알려줘,community_query
+골프장 예약,community_query
+커뮤니티 운영 시간,community_query
+수영장 예약,community_query
+이상한 소리가 나,emergency
+비상!,emergency
+112 불러줘,emergency
+경보 울려줘,emergency
+119 불러해줘,emergency
+경비 호출,emergency
+119 불러줘,emergency
+경비실 전화해줘,emergency
+도어락 열어,doorlock_open
+도어락 비밀번호 바꾸고 싶어,doorlock_open
+현관 잠금 풀어줘,doorlock_open
+문 열어주세요,doorlock_open
+도어락 열어해,doorlock_open
+도어락 열어주세요,doorlock_open
+현관문 잠겼어?,doorlock_query
+현관 잠금 상태,doorlock_query
+도어락 잠겨있어,doorlock_query
+도어락 어때,doorlock_query
+도어락 잠겼어,doorlock_query
+관리사무소 공지 있어,notice_query
+관리사무소 공지사항,notice_query
+아파트 소식,notice_query
+관리사무소 소식 알려줘,notice_query
+단지소식 읽어줘,notice_query
+월패드 비밀번호 변경,password_change
+현재 비밀번호 뭐야?,password_change
+비밀번호 변경해주세요,password_change
+비밀번호 뭐야,password_change
+비밀번호 바꿔줘,password_change
+지난 차량 기록 지워줘,car_history_delete
+차량 출입 이력 삭제해줘,car_history_delete
+차량 기록 삭제해줘,car_history_delete
+오늘 차량 출입 내역 삭제,car_history_delete
+차 출입 기록 지워줘,car_history_delete
+조용히,system_volume_set
+오디오 세팅 변경해,system_volume_set
+올리 볼륨 줄여줘,system_volume_set
+더 조용히,system_volume_set
+더 크게 재생해줘,system_volume_set
+볼륨 바꿔,system_volume_set
+오케이 구글 스피커 음소거 부탁해,system_volume_set
+미디어 볼륨 높여줘,system_volume_set
+스피커 무음으로 해줘,system_volume_set
+스피커 볼륨 낮춰줘,system_volume_set
+전화 걸어야 하니까 스피커 일분 동안 음소거해줘,system_volume_set
+무음 모드,system_volume_set
+볼륨 조금 낮춰줘,system_volume_set
+볼륨 조금 높여줘,system_volume_set
+볼륨 약간 키워줘,system_volume_set
+크게 말해줘,system_volume_set
+스피커 무음으로 해,system_volume_set
+라디오 음소거로 설정할 수 있어,system_volume_set
+나의 알람이 울릴 때까지 무음 모드로,system_volume_set
+월패드 볼륨 최대,system_volume_set
+음소거해줘,system_volume_set
+볼륨 세팅 부탁해,system_volume_set
+회의 중이니까 소리 내지 마,system_volume_set
+너무 시끄럽네,system_volume_set
+오후 세 시까지 무음으로 해,system_volume_set
+볼륨 십으로 줄여줘,system_volume_set
+내 스피커 볼륨 높여,system_volume_set
+저거 소리 줄여줄래,system_volume_set
+오디오 음소거,system_volume_set
+볼륨 최대로 높여줘,system_volume_set
+조용하게,system_volume_set
+안 들려 다시 한번 크게 말해줘,system_volume_set
+스피커 켜기,system_volume_set
+음악 플레이어 볼륨 육십으로 설정해줘,system_volume_set
+오분동안 알림 꺼줘,system_volume_set
+볼륨 설정 봐야 해,system_volume_set
+스피커 볼륨 좀 작게 해 줘,system_volume_set
+스피커 볼륨 줄여줘,system_volume_set
+조용히 해,system_volume_set
+스피커 음소거로 해줬으면 좋겠어,system_volume_set
+스피커 볼륨 높여줘,system_volume_set
+스피커 소리 줄여라,system_volume_set
+화면 어둡게 해줘,system_brightness_set
+화면 밝기 최대로 해줘,system_brightness_set
+화면 밝게,system_brightness_set
+화면 밝기 높여줘,system_brightness_set
+화면 눈부셔 어둡게 해줘,system_brightness_set
+지원 안 되는 거야,system_exception
+월패드로 TV 켜줘,system_exception
+에티켓모드 해제하지 말고 소리 켜줘,system_exception
+에티켓모드 무시하고 소리 키워,system_exception
+조명 밝을 때 화면 자동 조절,system_exception
+아이 옷 어떻게 입혀,weather_clothing
+얇은 옷 입어도 돼,weather_clothing
+오늘 뭐 입지,weather_clothing
+오늘 코트 필요해,weather_clothing
+오늘 뭐 입고 나가,weather_clothing
+바베큐 해도 돼?,weather_activity
+세차해도 돼?,weather_activity
+공원 가기 좋아,weather_activity
+세차 지금 해도 돼,weather_activity
+조깅해도 돼,weather_activity
+나 택시 잡아야 해,traffic_exception
+오늘 오후 일곱 시 카카오택시 타게 불러줘,traffic_exception
+호프집 으로 가는 차편 좀 찾아봐,traffic_exception
+오늘 밤 오후 일곱 시 에 카카오택시 예약해,traffic_exception
+신세계백화점 가는 택시 좀 예약해줘,traffic_exception
+지역 택시 불러줘,traffic_exception
+시리야 오전 아홉시 에 다음 택시 한 대 예약해줘,traffic_exception
+올리 삼십분 에 카카오택시 불러줘,traffic_exception
+택시 앱 연결,traffic_exception
+우리 집에 한 시간 후에 도착하는 택시를 잡을 수 있어,traffic_exception
+오늘밤 다섯 시 에 도착하게 택시 한 대 불러,traffic_exception
+카카오택시,traffic_exception
+카카오택시 불러서 아침 세 시 정각 에 택시 예약해,traffic_exception
+카카오 택시 예약해줘,traffic_exception
+올리 택시 예약해,traffic_exception
+제일 싼 가격으로 택시 예약해줘,traffic_exception
+제습 좀 해줘,ac_mode_noroom
+에어컨 풍향 바꿔줘,ac_mode_noroom
+에어컨 팬온리,ac_mode_noroom
+에어컨 절전모드로 해줘,ac_mode_noroom
+에어컨 스마트 모드,ac_mode_noroom
+냉방으로 해줘,ac_mode_noroom
+침실 전동커튼 열려있어?,curtain_query
+주방 커튼 어때,curtain_query
+거실 커튼 열려있어?,curtain_query
+지금 커튼 어때,curtain_query
+전동커튼 상태 알려줘,curtain_query
+커튼 멈춰줘,curtain_stop
+안방 커튼 멈춰,curtain_stop
+커튼 움직임 멈춰,curtain_stop
+커튼 그만해줘,curtain_stop
+전동커튼 멈춰,curtain_stop
+커튼 자동화 설정해줘,curtain_schedule
+매일 저녁 커튼 닫아줘,curtain_schedule
+저녁에 커튼 닫히게 해줘,curtain_schedule
+매일 밤 커튼 닫아줘,curtain_schedule
+오전 7시에 커튼 열어줘,curtain_schedule
+에너지 월 한도 설정,energy_goal_set
+에너지 사용 목표 정해줘,energy_goal_set
+수도 사용량 목표 설정,energy_goal_set
+목표 사용량 높여줘,energy_goal_set
+전기 사용 한도 설정,energy_goal_set
+사용량 경고 켜줘,energy_alert_on
+에너지 사용 초과 알림 켜줘,energy_alert_on
+에너지 초과 경보 켜줘,energy_alert_on
+초과 사용 시 알림 켜줘,energy_alert_on
+전기 사용 한도 정해줘,energy_alert_on
+에너지 알림 비활성화,energy_alert_off
+초과 사용 알림 끄기,energy_alert_off
+초과 알림 꺼줘,energy_alert_off
+사용량 알림 꺼줘,energy_alert_off
+에너지 초과 알림 꺼줘,energy_alert_off
+유가 떨어질까,fuel_exception
+원유 가격 예측,fuel_exception
+기름값 예측 가능해,fuel_exception
+유가 앞으로 어떻게 될지 알려줘,fuel_exception
+유가 전망 알려줘,fuel_exception
+보이지 않으니 더 밝게 해줘,light_brighten
+홀을 더 밝게 만들어줘,light_brighten
+더 환하게,light_brighten
+안방 좀 밝게,light_brighten
+집 조명 색 스위치 켜,light_brighten
+방 더 밝게 해 줘,light_brighten
+거실 좀 밝게,light_brighten
+조명 강도 올려,light_brighten
+조명 칠십 퍼센트로 밝게 해줘,light_brighten
+밝기 이십 퍼센트 높여줘,light_brighten
+좀 더 많은 조명,light_brighten
+안방 밝기 올려줘,light_brighten
+조명 밝기 높여줘,light_brighten
+방 밝게 해줄래,light_brighten
+조명 올려 줘,light_brighten
+병원 예약 해줄 수 있어,medical_exception
+대기 몇 명이야,medical_exception
+의사 연결해줘,medical_exception
+의료 상담해줘,medical_exception
+병원 오늘 진료 가능해,medical_exception
+내과 몇 시야,medical_hours
+소아과 오늘 열었어,medical_hours
+병원 지금 해?,medical_hours
+치과 오늘 진료해?,medical_hours
+병원 몇 시까지 해?,medical_hours
+뉴스 어디서 가져와,news_info
+뉴스 카테고리 알려줘,news_info
+뉴스 설정 방법 알려줘,news_info
+뉴스 종류 뭐 있어,news_info
+뉴스 서비스 안내,news_info
+매일 뉴스 들을 수 있어,news_exception
+뉴스 예약 설정해줘,news_exception
+뉴스 구독 신청해줘,news_exception
+매일 아침 뉴스 알려줘,news_exception
+뉴스 예약 브리핑,news_exception
+복귀할 때 일괄소등 해제,security_return_set
+집에 오면 조명 켜줘,security_return_set
+외출 복귀 시 연동 설정,security_return_set
+돌아올 때 난방 켜줘,security_return_set
+복귀할 때 설정해줘,security_return_set
+종목 분석해줘,stock_exception
+매도 추천해줘,stock_exception
+주가 전망,stock_exception
+매수 신호 알려줘,stock_exception
+주가 투자 조언 해줘,stock_exception
+시간에 따라 화면 밝기 바꿔줘,system_brightness_schedule
+시간에 맞춰 밝기 조절해줘,system_brightness_schedule
+기상 시 화면 밝게 해줘,system_brightness_schedule
+시간대별 화면 밝기 설정,system_brightness_schedule
+저녁에 화면 어둡게 해줘,system_brightness_schedule
+환기 기기 이상해,ventilation_exception
+환기 기기 진단,ventilation_exception
+환기 작동 안 해,ventilation_exception
+환기 시스템 AS 신청,ventilation_exception
+환기 AS 해줘,ventilation_exception
+환기 스케줄 확인해줘,ventilation_schedule_query
+환기 예약 뭐가 있어,ventilation_schedule_query
+지금 환기 예약 있어,ventilation_schedule_query
+환기 예약 조회해줘,ventilation_schedule_query
+환기 예약 상태 알려줘,ventilation_schedule_query
+귀가하면 환기 켜줘,ventilation_schedule_set
+매일 저녁 환기 켜줘,ventilation_schedule_set
+환기 예약 걸어줘,ventilation_schedule_set
+집에 오면 환기 켜줘,ventilation_schedule_set
+환기 시간 예약해줘,ventilation_schedule_set
+이번 달 날씨 예보,weather_exception
+3개월 날씨 알려줘,weather_exception
+내년 여름 날씨,weather_exception
+정확한 강수량,weather_exception
+3개월 뒤 날씨,weather_exception

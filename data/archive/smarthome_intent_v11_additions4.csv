@@ -1,0 +1,78 @@
+뭐라고 불러야 해,manual_name
+AI 뭐라고 불러,manual_name
+월패드 AI 뭐라고 불러,manual_name
+이름이 어떻게 되는지 알려줘,manual_name
+AI 호출어 알려줘,manual_name
+네 이름이 어떻게 돼,manual_name
+가스 상태 알려줘,gas_query
+가스 밸브 열렸나,gas_query
+가스 새고 있어,gas_query
+가스 안전해,gas_query
+가스 잠겼어 확인해줘,gas_query
+주가 투자 조언 해줘,stock_exception
+주식 사야 해 말아야 해,stock_exception
+주가 오를 것 같아,stock_exception
+매수 전략 알려줘,stock_exception
+종목 분석해줘,stock_exception
+주유소 어디 있어,fuel_station_search
+LPG 주유소 위치,fuel_station_search
+가성비 주유소 알려줘,fuel_station_search
+주유소 거리 알려줘,fuel_station_search
+환기 청소 신청해줘,ventilation_exception
+환기 시스템 수리 신청,ventilation_exception
+환기 장치 이상해,ventilation_exception
+환기 필터 갈아줘,ventilation_exception
+환기 예약 확인해줘,ventilation_schedule_query
+환기 타이머 뭐 걸려있어,ventilation_schedule_query
+환기 스케줄 뭐야,ventilation_schedule_query
+환기 자동 설정 확인,ventilation_schedule_query
+현관 도어락 열렸어,doorlock_query
+현관문 잠겼는지 봐줘,doorlock_query
+도어락 상태 어때,doorlock_query
+도어락 잠금 여부 확인,doorlock_query
+엘리베이터 현재 몇 층이야,elevator_query
+엘베 지금 몇 층이야,elevator_query
+엘리베이터 내 층에 있어,elevator_query
+엘레베이터 지금 어디 있어,elevator_query
+사용법 좀 더 알려줘,manual_usage
+어떻게 명령해야 해,manual_usage
+명령하는 방법 알려줘,manual_usage
+어떻게 말하면 돼,manual_usage
+병원 오늘 진료 가능해,medical_exception
+진료 예약 할 수 있어,medical_exception
+약 사다줄 수 있어,medical_exception
+병원 픽업 서비스 있어,medical_exception
+난방 예약 취소해,heating_schedule_cancel
+난방 예약 없애,heating_schedule_cancel
+보일러 예약 없애줘,heating_schedule_cancel
+비밀번호 변경하려면 어떻게 해,password_change
+비밀번호 초기화해줘,password_change
+비번 새로 설정해줘,password_change
+가스 밸브 잠궈줘,gas_close
+가스 밸브 잠가,gas_close
+가스 꺼줘 지금,gas_close
+방문 차량 목록 알려줘,visitor_parking_query
+방문객 주차 상태,visitor_parking_query
+방문 차량 등록 목록,visitor_parking_query
+누가 만든 거야,manual_creator
+어느 회사가 개발했어,manual_creator
+에너지 알림 해제해줘,energy_alert_off
+사용량 초과 알림 꺼줘,energy_alert_off
+이름 다른 걸로 불러줘,manual_unsupported
+이름 재설정해줘,manual_unsupported
+버스 몇 시에 와,traffic_bus_query
+버스 지금 오고 있어,traffic_bus_query
+장기 날씨 예보해줘,weather_exception
+이번 달 내내 날씨 알려줘,weather_exception
+환기 예약 시간 알려줘,ventilation_schedule_set
+매일 환기 예약해줘,ventilation_schedule_set
+기름값 예측 가능해,fuel_exception
+유가 앞으로 어떻게 될까,fuel_exception
+뭘 할 수 있는지 알려줘,manual_capability
+에너지 목표 설정해줘,energy_goal_set
+전기 사용 한도 정해줘,energy_alert_on
+SKT 주가 알려줘,stock_price_query
+KT 주가 알려줘,medical_hours
+응급실 지금 열었어,medical_hours
+뉴스 기능 소개해줘,news_info
+화면 밝기 낮춰줘,system_brightness_schedule
