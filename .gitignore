@@ -32,3 +32,5 @@ __pycache__/
 checkpoints/teacher_*.pt
 checkpoints/student_*.pt
 checkpoints/sap_best.pt
+checkpoints/multihead_*.pt
+checkpoints/cnn_sbert_v7_best.pt
