@@ -29,3 +29,6 @@ __pycache__/
 
 # Logs
 *.log
+checkpoints/teacher_*.pt
+checkpoints/student_*.pt
+checkpoints/sap_best.pt
