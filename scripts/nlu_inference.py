@@ -184,8 +184,8 @@ class NLUPipeline:
         print(f"로딩 완료 — {len(self.i2l)}개 intent")
 
     def predict(self, text):
-        # 특수문자/공백 정리
-        text = text.strip()
+        # 공백/특수문자 정리
+        text = re.sub(r'\s+', ' ', text).strip()
         if not text:
             return 'manual_capability', 0.0
         tokens = self.tokenizer(text, padding="max_length", truncation=True,
