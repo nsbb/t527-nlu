@@ -1,0 +1,607 @@
+{
+  "ac_exception": {
+    "type": "fixed",
+    "response": "저는 조명, 난방, 에어컨, 환기 시스템을 켤 수 있어요. 필요한 것을 정해서 말씀해주세요"
+  },
+  "ac_mode": {
+    "type": "device",
+    "device": "ac",
+    "action": "set_mode",
+    "slots": [
+      "room",
+      "mode"
+    ],
+    "response_template": "네, {room} 에어컨을 {mode} 모드로 설정합니다"
+  },
+  "ac_mode_noroom": {
+    "type": "fixed",
+    "response": "에어컨을 송풍으로 제어할 공간명을 포함하여 다시 말씀해주세요"
+  },
+  "ac_mode_schedule": {
+    "type": "device",
+    "device": "ac",
+    "action": "schedule_mode",
+    "slots": [
+      "time",
+      "mode"
+    ],
+    "response_template": "네, {room} 에어컨을 {mode}모드로 운전합니다"
+  },
+  "ac_off": {
+    "type": "device",
+    "device": "ac",
+    "action": "power_off",
+    "slots": [
+      "room"
+    ],
+    "response_template": "네, {room} 에어컨을 끕니다"
+  },
+  "ac_on": {
+    "type": "device",
+    "device": "ac",
+    "action": "power_on",
+    "slots": [
+      "room"
+    ],
+    "response_template": "네, {room} 에어컨을 켭니다"
+  },
+  "ac_query": {
+    "type": "api",
+    "api": "device_status",
+    "device": "ac",
+    "response_template": "각 실은 꺼져 있고, 거실은 자동 모드로 작동 중이며 설정 온도는 22도 입니다."
+  },
+  "ac_temp": {
+    "type": "device",
+    "device": "ac",
+    "action": "set_temp",
+    "slots": [
+      "room",
+      "temp"
+    ],
+    "response_template": "네, {room} 에어컨 온도를 {temp}도로 설정합니다"
+  },
+  "ac_wind": {
+    "type": "device",
+    "device": "ac",
+    "action": "set_wind",
+    "slots": [
+      "room",
+      "level"
+    ],
+    "response_template": "네, {room} 에어컨 풍량을 {level}으로 설정합니다"
+  },
+  "alarm_query": {
+    "type": "api",
+    "api": "alarm",
+    "action": null,
+    "response_template": "모닝콜이 울릴 때 월패드 화면에 팝업이 뜨고 알림음이 함께 나옵니다."
+  },
+  "alarm_set": {
+    "type": "device",
+    "device": "alarm",
+    "action": "set",
+    "response_template": "네, 모닝콜이 설정되었습니다."
+  },
+  "car_history_delete": {
+    "type": "device",
+    "device": "parking",
+    "action": "delete",
+    "response_template": "월패드 차량출입내역 메뉴에서 전체 삭제 버튼을 눌러서 삭제 가능합니다."
+  },
+  "car_history_query": {
+    "type": "api",
+    "api": "parking",
+    "response_template": "세대에 등록된 차량의 주차 출입 정보만 확인 할 수 있습니다."
+  },
+  "community_query": {
+    "type": "fixed",
+    "response": "골프장 예약은 입주민 전용 앱 또는 월패드 화면에서 진행해주시기 바랍니다. (고정값)"
+  },
+  "complex_info": {
+    "type": "api",
+    "api": "complex_info",
+    "response_template": "르엘 어퍼하우스는 0000년 0월 0일 준공 승인되었습니다."
+  },
+  "curtain_close": {
+    "type": "device",
+    "device": "curtain",
+    "action": "close",
+    "slots": [
+      "room"
+    ],
+    "response_template": "네, {room} 전동커튼을 닫고 있습니다"
+  },
+  "curtain_open": {
+    "type": "device",
+    "device": "curtain",
+    "action": "open",
+    "slots": [
+      "room"
+    ],
+    "response_template": "네, {room} 전동커튼을 열고 있습니다"
+  },
+  "curtain_query": {
+    "type": "api",
+    "api": "device_status",
+    "device": "curtain",
+    "response_template": "네, 전체 전동커튼이 열려 있습니다."
+  },
+  "curtain_schedule": {
+    "type": "device",
+    "device": "curtain",
+    "action": "schedule",
+    "slots": [
+      "time"
+    ],
+    "response_template": "네 내일부터 모닝콜이 울리는 시간에 전체 전동커튼 열겠습니다"
+  },
+  "curtain_stop": {
+    "type": "device",
+    "device": "curtain",
+    "action": "stop",
+    "slots": [
+      "room"
+    ],
+    "response_template": "네, {room} 전동커튼 동작을 중단시켰습니다"
+  },
+  "door_open": {
+    "type": "device",
+    "device": "door",
+    "action": "open",
+    "slots": [
+      "room"
+    ],
+    "response_template": "네, {room} 문을 열었습니다"
+  },
+  "doorlock_open": {
+    "type": "device",
+    "device": "doorlock",
+    "action": "open",
+    "slots": [
+      "room"
+    ],
+    "response_template": "네, {room} 도어락을 열었습니다"
+  },
+  "doorlock_query": {
+    "type": "api",
+    "api": "device_status",
+    "device": "doorlock",
+    "response_template": "현재 도어락 상태는 알 수 없습니다."
+  },
+  "dust_query": {
+    "type": "api",
+    "api": "air_quality",
+    "response_template": "현재 OO구 OO동 초미세먼지가 나쁨 수준으로 창문 개방은 권장하지 않습니다."
+  },
+  "elevator_call": {
+    "type": "device",
+    "device": "elevator",
+    "action": "call",
+    "response_template": "네, 엘리베이터를 호출합니다."
+  },
+  "elevator_query": {
+    "type": "api",
+    "api": "device_status",
+    "device": "elevator",
+    "response_template": "실시간 엘리베이터 층수는 호출 시 월패드 화면에 표시됩니다."
+  },
+  "emergency": {
+    "type": "device",
+    "device": "emergency",
+    "action": "emergency",
+    "response_template": "(비상 경보)"
+  },
+  "energy_alert_off": {
+    "type": "device",
+    "device": "energy",
+    "action": "off",
+    "response_template": "에너지 사용량 알림을 비활성화합니다."
+  },
+  "energy_alert_on": {
+    "type": "device",
+    "device": "energy",
+    "action": "on",
+    "response_template": "목표 수치가 설정된 전기 사용량 알림을 활성화합니다."
+  },
+  "energy_goal_set": {
+    "type": "device",
+    "device": "energy",
+    "action": "set",
+    "response_template": "최근 3개월 간 사용량은 000kWh 입니다. 목표 수치를 숫자로 말씀해주세요"
+  },
+  "energy_usage_query": {
+    "type": "api",
+    "api": "energy",
+    "response_template": "최근 3개월 간 에너지 사용량이 감소하고 있습니다."
+  },
+  "ev_charging": {
+    "type": "api",
+    "api": "ev",
+    "response_template": "현재 세대 충전 차량은 총 0대 입니다. 충전 상태 확인이 필요한 차량번호를 말씀해주세요"
+  },
+  "fuel_exception": {
+    "type": "fixed",
+    "response": "죄송합니다. 해당 기능은 지원하지 않는 기능입니다."
+  },
+  "fuel_price_query": {
+    "type": "api",
+    "api": "fuel",
+    "response_template": "전국 평균 휘발유는 0000원, 경유는 0000원입니다."
+  },
+  "fuel_station_search": {
+    "type": "api",
+    "api": "fuel",
+    "response_template": "반경 3km 내 최저가는 ○○주유소, 1,698원입니다."
+  },
+  "gas_close": {
+    "type": "device",
+    "device": "gas",
+    "action": "close",
+    "slots": [
+      "room"
+    ],
+    "response_template": "네, {room} 가스 밸브를 잠금 처리하였습니다"
+  },
+  "gas_query": {
+    "type": "api",
+    "api": "device_status",
+    "device": "gas",
+    "response_template": "현재 가스 밸브는 잠겨있습니다."
+  },
+  "heating_down": {
+    "type": "device",
+    "device": "heating",
+    "action": "temp_down",
+    "slots": [
+      "room"
+    ],
+    "response_template": "네, {room} 난방 설정 온도를 내리겠습니다"
+  },
+  "heating_off": {
+    "type": "device",
+    "device": "heating",
+    "action": "power_off",
+    "slots": [
+      "room"
+    ],
+    "response_template": "네, {room} 난방을 껐습니다"
+  },
+  "heating_on": {
+    "type": "device",
+    "device": "heating",
+    "action": "power_on",
+    "slots": [
+      "room"
+    ],
+    "response_template": "네, {room} 난방을 켰습니다"
+  },
+  "heating_query": {
+    "type": "api",
+    "api": "device_status",
+    "device": "heating",
+    "response_template": "현재 실내 온도는 23도이며 난방 설정은 25도로 되어 있습니다."
+  },
+  "heating_schedule_cancel": {
+    "type": "device",
+    "device": "heating",
+    "action": "schedule",
+    "slots": [
+      "time"
+    ],
+    "response_template": "네, 난방 예약이 모두 취소되었습니다"
+  },
+  "heating_schedule_query": {
+    "type": "device",
+    "device": "heating",
+    "action": "schedule",
+    "slots": [
+      "time"
+    ],
+    "response_template": "네, 매일 저녁 6시에 (지정된 공간명) 난방을 켜는 것으로 예약되어 있습니다."
+  },
+  "heating_schedule_set": {
+    "type": "device",
+    "device": "heating",
+    "action": "schedule",
+    "slots": [
+      "time"
+    ],
+    "response_template": "네, 전체 난방 외출모드 운영시간이 저장되었습니다."
+  },
+  "heating_up": {
+    "type": "device",
+    "device": "heating",
+    "action": "temp_up",
+    "slots": [
+      "room"
+    ],
+    "response_template": "네, {room} 난방 설정 온도를 올리겠습니다"
+  },
+  "home_status_query": {
+    "type": "api",
+    "api": "device_status",
+    "device": "home_status",
+    "response_template": "현재 각실 조명과 난방이 켜져 있고 실내 온도는 00도 입니다"
+  },
+  "light_brighten": {
+    "type": "device",
+    "device": "light",
+    "action": "brighten",
+    "slots": [
+      "room"
+    ],
+    "response_template": "네, {room} 조명을 최대 밝기로 켰습니다"
+  },
+  "light_dim": {
+    "type": "device",
+    "device": "light",
+    "action": "dim",
+    "slots": [
+      "room"
+    ],
+    "response_template": "네, {room} 조명을 조절했습니다"
+  },
+  "light_off": {
+    "type": "device",
+    "device": "light",
+    "action": "power_off",
+    "slots": [
+      "room"
+    ],
+    "response_template": "네, {room} 조명을 껐습니다"
+  },
+  "light_on": {
+    "type": "device",
+    "device": "light",
+    "action": "power_on",
+    "slots": [
+      "room"
+    ],
+    "response_template": "네, {room} 조명을 켰습니다"
+  },
+  "light_query": {
+    "type": "api",
+    "api": "device_status",
+    "device": "light",
+    "response_template": "현재 주방 조명은 모두 꺼져 있습니다."
+  },
+  "light_schedule": {
+    "type": "device",
+    "device": "light",
+    "action": "schedule",
+    "slots": [
+      "time"
+    ],
+    "response_template": "전체 조명이 매일 밤 10시 취침모드로 설정되어 있습니다. (몇시 몇분 또는 몇분뒤 실행하는 스케쥴 창 등록정보에 따라서 TTS처리)"
+  },
+  "manual_capability": {
+    "type": "fixed",
+    "response": "네, 저는 사용자 요청에 따라 조명 등 집안 기기 상태를 조회하고 조절 및 예약할 수 있어요"
+  },
+  "manual_creator": {
+    "type": "fixed",
+    "response": "저는 HDC랩스에서 개발한 AI모델입니다."
+  },
+  "manual_name": {
+    "type": "fixed",
+    "response": "제가 필요할 때 '하이 원더' 라고 호출한 뒤 필요한 걸 말씀해주세요"
+  },
+  "manual_unsupported": {
+    "type": "fixed",
+    "response": "죄송합니다. 해당 기능은 지원하지 않는 기능입니다."
+  },
+  "manual_usage": {
+    "type": "fixed",
+    "response": "(AIoT 홈 메인 화면 디자인변경에 따라 가이드 화면 경로 안내)"
+  },
+  "medical_exception": {
+    "type": "fixed",
+    "response": "죄송합니다. 현재 의료 상담은 제공하지 않습니다. 가까운 병원 정보를 안내해 드릴 수 있습니다."
+  },
+  "medical_hours": {
+    "type": "api",
+    "api": "hospital",
+    "response_template": "해당 병원은 오늘 정상 진료중입니다."
+  },
+  "medical_search": {
+    "type": "api",
+    "api": "hospital",
+    "response_template": "현재 위치 기준 1km 내 병원 3곳이 있습니다. ○○내과, ○○이비인후과, ○○가정의학과입니다."
+  },
+  "news_exception": {
+    "type": "fixed",
+    "response": "죄송합니다. 해당 기능은 지원하지 않는 기능입니다."
+  },
+  "news_info": {
+    "type": "api",
+    "api": "news",
+    "response_template": "뉴스는 네이버 웹 검색 기반 제공됩니다."
+  },
+  "news_play": {
+    "type": "api",
+    "api": "news",
+    "response_template": "오늘 또는 0월 0일 네이버 뉴스 검색 결과 입니다. (특정 주제, OO 뉴스 3건을 요약하여 브리핑)"
+  },
+  "notice_query": {
+    "type": "api",
+    "api": "notice",
+    "response_template": "새로 등록된 단지소식이 없습니다."
+  },
+  "notification_query": {
+    "type": "api",
+    "api": "notification",
+    "response_template": "단지 소식 등록되어있을 경우 제목만 읽어주는 알림 서비스로 변경(단지서버)"
+  },
+  "password_change": {
+    "type": "fixed",
+    "response": "죄송합니다. 세대 보안을 위해 비밀번호는 음성으로 안내할 수 없습니다."
+  },
+  "security_activate": {
+    "type": "device",
+    "device": "security",
+    "action": "activate",
+    "response_template": "네, 외출 감지 0초/0분 후 외출모드로 전환됩니다."
+  },
+  "security_query": {
+    "type": "api",
+    "api": "security",
+    "action": null,
+    "response_template": "네, 외출 및 재택방범 메뉴에서 실행 및 대기시간을 설정할 수 있습니다."
+  },
+  "security_return_set": {
+    "type": "device",
+    "device": "security",
+    "action": "set",
+    "response_template": "네, 외출 복귀 대기 시간은 30초, 1분, 2분, 3분 중에 설정할 수 있습니다."
+  },
+  "stock_exception": {
+    "type": "fixed",
+    "response": "종목 추천은 제공하지 않습니다."
+  },
+  "stock_index_query": {
+    "type": "api",
+    "api": "stock",
+    "response_template": "오늘 코스피는 0.8% 상승한 2,620포인트입니다. 코스닥은 0.3% 하락했습니다."
+  },
+  "stock_price_query": {
+    "type": "api",
+    "api": "stock",
+    "response_template": "오늘/현재/0시 기준 삼성전자 주가는 000000원입니다."
+  },
+  "system_brightness_schedule": {
+    "type": "device",
+    "device": "system",
+    "action": "schedule",
+    "slots": [
+      "time"
+    ],
+    "response_template": "네, 오전 7시부터 오후 4시까지 월패드 화면 밝기를 2단계로 설정합니다."
+  },
+  "system_brightness_set": {
+    "type": "device",
+    "device": "system",
+    "action": "set",
+    "response_template": "월패드 화면 밝기를 1단계로 조절합니다."
+  },
+  "system_exception": {
+    "type": "fixed",
+    "response": "죄송합니다. 해당 기능은 지원하지 않는 기능입니다."
+  },
+  "system_faq": {
+    "type": "api",
+    "api": "system_faq",
+    "action": null,
+    "response_template": "시스템 볼륨은 월패드의 버튼, 응답 멘트의 음량, 알림음 음량이 포함되며 조절가능합다."
+  },
+  "system_volume_set": {
+    "type": "device",
+    "device": "system",
+    "action": "set",
+    "response_template": "시스템 볼륨을 0단계에서 10단계로 조절합니다."
+  },
+  "time_query": {
+    "type": "api",
+    "api": "time",
+    "response_template": "네, 지금은 00시 00분 입니다."
+  },
+  "traffic_bus_query": {
+    "type": "api",
+    "api": "bus",
+    "response_template": "(1대 일 경우) 000번 버스가 0분 후 도착 예정입니다."
+  },
+  "traffic_exception": {
+    "type": "fixed",
+    "response": "죄송합니다. 해당 기능은 지원하지 않는 기능입니다."
+  },
+  "traffic_route_query": {
+    "type": "api",
+    "api": "traffic",
+    "response_template": "대중교통 기준 버스 탑승 시 약 00분, 자가용 기준 약 00분 소요됩니다."
+  },
+  "ventilation_exception": {
+    "type": "fixed",
+    "response": "현재 환기시스템 필터 구매는 지원하지 않습니다. 관리사무소에 문의해주세요. (고정값)"
+  },
+  "ventilation_mode": {
+    "type": "device",
+    "device": "ventilation",
+    "action": "set_mode",
+    "slots": [
+      "mode"
+    ],
+    "response_template": "네, {room} 환기시스템 풍량을 {mode}으로 조절했습니다"
+  },
+  "ventilation_off": {
+    "type": "device",
+    "device": "ventilation",
+    "action": "power_off",
+    "slots": [
+      "room"
+    ],
+    "response_template": "네, {room} 환기시스템을 껐습니다"
+  },
+  "ventilation_on": {
+    "type": "device",
+    "device": "ventilation",
+    "action": "power_on",
+    "slots": [
+      "room"
+    ],
+    "response_template": "네, {room} 환기시스템을 켰습니다"
+  },
+  "ventilation_query": {
+    "type": "api",
+    "api": "device_status",
+    "device": "ventilation",
+    "response_template": "네, 현재 환기 장치는 동작 중입니다"
+  },
+  "ventilation_schedule_query": {
+    "type": "device",
+    "device": "ventilation",
+    "action": "schedule",
+    "slots": [
+      "time"
+    ],
+    "response_template": "현재 예약된 환기 운전 계획은 없습니다."
+  },
+  "ventilation_schedule_set": {
+    "type": "device",
+    "device": "ventilation",
+    "action": "schedule",
+    "slots": [
+      "time"
+    ],
+    "response_template": "네, 실내 환기시스템을 평균 귀가시간 저녁 8시부터 켜도록 하겠습니다."
+  },
+  "visitor_parking_query": {
+    "type": "api",
+    "api": "parking",
+    "response_template": "네, 현재 방문객 차량 등록 내역에 00월 00일 등록, 00월 00일 만료로 확인됩니다."
+  },
+  "visitor_parking_register": {
+    "type": "device",
+    "device": "parking",
+    "action": "register",
+    "response_template": "방문객 차량 등록은 차량번호, 차량 별칭, 등록 날짜, 등록 기간을 모두 말씀해주세요"
+  },
+  "weather_activity": {
+    "type": "api",
+    "api": "weather",
+    "response_template": "오늘 서울 지역 기온은 쾌적하나 미세먼지가 나쁨 수준입니다. 장시간 야외활동은 권장하지 않습니다."
+  },
+  "weather_clothing": {
+    "type": "api",
+    "api": "weather",
+    "response_template": "오늘 OO구 OO동 날씨는 최고 27도로 따뜻합니다. 얇은 긴팔 또는 반팔이 적당합니다."
+  },
+  "weather_exception": {
+    "type": "fixed",
+    "response": "시간에 따른 예상 강수량은 제공이 어렵습니다."
+  },
+  "weather_info": {
+    "type": "api",
+    "api": "weather",
+    "response_template": "오늘 OO구 OO동 날씨는 맑고/흐리고/비가 오고/춥고/덥고 최고 00도, 최저 00도이며 미세먼지는 나쁨/보통/좋음 수준입니다."
+  }
+}
