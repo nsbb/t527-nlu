@@ -4,7 +4,12 @@
     python scripts/nlu_inference.py "난방 켜줘"
     python scripts/nlu_inference.py    # 대화형 모드
 """
-import torch, torch.nn as nn, json, re, sys
+import torch, torch.nn as nn, json, re, sys, os
+
+# 프로젝트 루트로 이동
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+os.chdir(ROOT)
+
 from transformers import AutoModel, AutoTokenizer
 
 # ============================================================
