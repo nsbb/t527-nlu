@@ -184,7 +184,11 @@ class NLUPipeline:
         print(f"로딩 완료 — {len(self.i2l)}개 intent")
 
     def predict(self, text):
-        tokens = self.tokenizer([text], padding="max_length", truncation=True,
+        # 특수문자/공백 정리
+        text = text.strip()
+        if not text:
+            return 'manual_capability', 0.0
+        tokens = self.tokenizer(text, padding="max_length", truncation=True,
                                 max_length=32, return_tensors="pt")
         with torch.no_grad():
             logits = self.model(tokens["input_ids"])
