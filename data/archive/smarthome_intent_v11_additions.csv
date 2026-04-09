@@ -1,0 +1,812 @@
+커튼 멈춰,curtain_stop
+커튼 멈춰줘,curtain_stop
+커튼 멈춰주세요,curtain_stop
+커튼 정지해줘,curtain_stop
+커튼 정지해,curtain_stop
+커튼 정지시켜줘,curtain_stop
+커튼 그만해줘,curtain_stop
+커튼 그만,curtain_stop
+커튼 동작 멈춰줘,curtain_stop
+커튼 동작 정지,curtain_stop
+커튼 움직임 멈춰,curtain_stop
+커튼 잠깐만 멈춰,curtain_stop
+거실 커튼 멈춰,curtain_stop
+안방 커튼 멈춰,curtain_stop
+침실 커튼 멈춰,curtain_stop
+주방 커튼 멈춰,curtain_stop
+거실 커튼 정지,curtain_stop
+커튼 스톱,curtain_stop
+블라인드 멈춰,curtain_stop
+블라인드 정지,curtain_stop
+전동커튼 멈춰,curtain_stop
+전동커튼 정지해줘,curtain_stop
+거실 블라인드 멈춰,curtain_stop
+커튼 지금 멈춰,curtain_stop
+커튼 일단 멈춰줘,curtain_stop
+매일 아침 커튼 열어줘,curtain_schedule
+아침에 커튼 자동으로 열어줘,curtain_schedule
+밤에 커튼 닫아줘,curtain_schedule
+저녁에 커튼 닫히게 해줘,curtain_schedule
+오전 7시에 커튼 열어줘,curtain_schedule
+오후 10시에 커튼 닫아줘,curtain_schedule
+커튼 예약 설정해줘,curtain_schedule
+커튼 타이머 설정,curtain_schedule
+커튼 스케줄 설정,curtain_schedule
+커튼 자동화 설정해줘,curtain_schedule
+매일 저녁 커튼 닫아줘,curtain_schedule
+취침 시 커튼 닫아줘,curtain_schedule
+기상 시 커튼 열어줘,curtain_schedule
+커튼 예약 걸어줘,curtain_schedule
+아침마다 커튼 열어줘,curtain_schedule
+밤마다 커튼 닫아줘,curtain_schedule
+거실 커튼 매일 아침 열어줘,curtain_schedule
+침실 커튼 밤에 닫아줘,curtain_schedule
+커튼 자동 예약,curtain_schedule
+커튼 시간 예약해줘,curtain_schedule
+커튼 예약 확인,curtain_schedule
+커튼 예약 뭐있어,curtain_schedule
+커튼 스케줄 알려줘,curtain_schedule
+커튼 열려있어,curtain_query
+커튼 열려있어?,curtain_query
+커튼 닫혀있어,curtain_query
+커튼 닫혀있어?,curtain_query
+커튼 상태 어때,curtain_query
+커튼 상태 알려줘,curtain_query
+거실 커튼 열려있어?,curtain_query
+안방 커튼 닫혀있어?,curtain_query
+침실 커튼 상태,curtain_query
+주방 커튼 어때,curtain_query
+지금 커튼 어때,curtain_query
+커튼 지금 열려있어?,curtain_query
+커튼 확인해줘,curtain_query
+블라인드 열려있어?,curtain_query
+블라인드 상태,curtain_query
+거실 블라인드 상태,curtain_query
+커튼 몇 퍼센트 열려있어,curtain_query
+커튼 완전히 열려있어?,curtain_query
+전동커튼 상태,curtain_query
+커튼 체크해줘,curtain_query
+창문 커튼 어때,curtain_query
+커튼 어떻게 돼있어,curtain_query
+커튼 좀 더 열어줘,curtain_open
+커튼 반만 열어줘,curtain_open
+커튼 완전히 열어줘,curtain_open
+거실 커튼 활짝 열어줘,curtain_open
+아침이니까 커튼 열어줘,curtain_open
+환기시킬게 커튼 열어줘,curtain_open
+커튼 좀 열어봐,curtain_open
+블라인드 좀 올려줘,curtain_open
+블라인드 올려줘,curtain_open
+블라인드 올려주세요,curtain_open
+안방 커튼 열어봐,curtain_open
+침실 커튼 활짝 열어줘,curtain_open
+주방 블라인드 올려줘,curtain_open
+전동 커튼 열어줘,curtain_open
+커튼 다 열어줘,curtain_open
+커튼 완전 개방,curtain_open
+도어락 잠겼어,doorlock_query
+도어락 잠겼어?,doorlock_query
+현관 잠금 됐어?,doorlock_query
+현관 잠겼어?,doorlock_query
+도어락 상태 알려줘,doorlock_query
+도어락 확인해줘,doorlock_query
+문 잠겼어?,doorlock_query
+현관문 잠겼어?,doorlock_query
+도어락 열려있어?,doorlock_query
+현관 잠금 상태,doorlock_query
+도어락 어때,doorlock_query
+지금 현관 잠겼어?,doorlock_query
+집 문 잠겼어?,doorlock_query
+도어록 상태,doorlock_query
+현관 상태 알려줘,doorlock_query
+출입문 잠금 상태,doorlock_query
+도어락 체크해줘,doorlock_query
+잠금 확인해줘,doorlock_query
+도어락 잠금 확인,doorlock_query
+현관문 상태 어때,doorlock_query
+도어락 열어줘,doorlock_open
+현관 열어줘,doorlock_open
+현관문 열어줘,doorlock_open
+문 열어줘,doorlock_open
+도어락 좀 열어줘,doorlock_open
+도어락 열어주세요,doorlock_open
+도어락 열어줄래,doorlock_open
+현관 잠금 해제해줘,doorlock_open
+현관 열어주세요,doorlock_open
+도어락 해제해줘,doorlock_open
+문 열어주세요,doorlock_open
+도어락 좀 열어,doorlock_open
+현관 잠금 풀어줘,doorlock_open
+출입문 열어줘,doorlock_open
+도어록 열어줘,doorlock_open
+가스 열려있어,gas_query
+가스 열려있어?,gas_query
+가스 잠겼어?,gas_query
+가스 상태 알려줘,gas_query
+가스 밸브 열려있어?,gas_query
+가스 밸브 상태,gas_query
+가스 확인해줘,gas_query
+가스 잠겼는지 확인해줘,gas_query
+가스 상태 어때,gas_query
+가스 밸브 어때,gas_query
+가스 잠금 상태,gas_query
+지금 가스 어때,gas_query
+가스 밸브 확인해줘,gas_query
+가스 체크해줘,gas_query
+가스 밸브 잠겨있어?,gas_query
+가스 잠궈줘,gas_close
+가스 밸브 잠궈줘,gas_close
+가스 꺼줘,gas_close
+가스 닫아줘,gas_close
+가스 잠궈주세요,gas_close
+가스 밸브 잠궈주세요,gas_close
+가스 잠금 해줘,gas_close
+가스 잠궈줄래,gas_close
+가스 잠가줘,gas_close
+엘리베이터 몇 층이야,elevator_query
+엘리베이터 지금 몇 층이야?,elevator_query
+엘리베이터 어디 있어,elevator_query
+엘리베이터 어디 있어?,elevator_query
+엘리베이터 위치 알려줘,elevator_query
+엘리베이터 현재 위치,elevator_query
+지금 엘리베이터 몇 층,elevator_query
+엘리베이터 확인해줘,elevator_query
+엘레베이터 몇 층이야,elevator_query
+엘리베이터 상태,elevator_query
+엘베 몇 층이야,elevator_query
+엘베 지금 어디 있어,elevator_query
+엘리베이터 지금 어디야,elevator_query
+엘리베이터 올라오고 있어?,elevator_query
+엘리베이터 내려오고 있어?,elevator_query
+엘리베이터 대기 중이야?,elevator_query
+엘리베이터 몇 층에 있어,elevator_query
+엘리베이터 오고 있어?,elevator_query
+엘리베이터 불러줘,elevator_call
+엘리베이터 좀 불러줘,elevator_call
+엘리베이터 불러주세요,elevator_call
+엘리베이터 호출해줘,elevator_call
+엘리베이터 호출해주세요,elevator_call
+엘리베이터 올려보내줘,elevator_call
+엘리베이터 내려줘,elevator_call
+엘베 불러줘,elevator_call
+엘베 호출해줘,elevator_call
+엘리베이터 내려오게 해줘,elevator_call
+엘리베이터 올려줘,elevator_call
+엘레베이터 불러줘,elevator_call
+엘리베이터 빨리 불러줘,elevator_call
+엘리베이터 지금 불러줘,elevator_call
+엘리베이터 잡아줘,elevator_call
+엘리베이터 대기시켜줘,elevator_call
+엘리베이터 이쪽으로 불러줘,elevator_call
+에어컨 송풍해줘,ac_mode_noroom
+에어컨 제습해줘,ac_mode_noroom
+에어컨 냉방해줘,ac_mode_noroom
+에어컨 자동모드로 해줘,ac_mode_noroom
+에어컨 취침모드로 해줘,ac_mode_noroom
+에어컨 절전모드로 해줘,ac_mode_noroom
+에어컨 쾌적모드 해줘,ac_mode_noroom
+송풍으로 틀어줘,ac_mode_noroom
+제습으로 바꿔줘,ac_mode_noroom
+냉방으로 설정해줘,ac_mode_noroom
+에어컨 모드 바꿔줘,ac_mode_noroom
+에어컨 모드 변경해줘,ac_mode_noroom
+에어컨 제습모드,ac_mode_noroom
+에어컨 송풍모드,ac_mode_noroom
+에어컨 냉방모드,ac_mode_noroom
+에어컨 자동으로,ac_mode_noroom
+송풍 틀어줘,ac_mode_noroom
+제습 켜줘,ac_mode_noroom
+냉방으로 해줘,ac_mode_noroom
+에어컨 쿨링모드,ac_mode_noroom
+에어컨 팬온리,ac_mode_noroom
+에어컨 풍향 바꿔줘,ac_mode_noroom
+자동으로 해줘,ac_mode_noroom
+에어컨 스마트 모드,ac_mode_noroom
+잘 때 에어컨 자동모드로 해줘,ac_mode_schedule
+취침 시 에어컨 켜줘,ac_mode_schedule
+자는 동안 에어컨 틀어줘,ac_mode_schedule
+밤에 에어컨 취침모드로,ac_mode_schedule
+수면 시 에어컨 예약해줘,ac_mode_schedule
+잠들면 에어컨 조용하게,ac_mode_schedule
+침실 에어컨 취침모드 예약,ac_mode_schedule
+안방 에어컨 밤에 자동으로,ac_mode_schedule
+에어컨 취침 예약 설정,ac_mode_schedule
+밤 11시 에어컨 취침모드,ac_mode_schedule
+매일 밤 에어컨 예약,ac_mode_schedule
+에어컨 시간 예약해줘,ac_mode_schedule
+에어컨 스케줄 설정,ac_mode_schedule
+에어컨 예약 걸어줘,ac_mode_schedule
+수면모드 에어컨 예약,ac_mode_schedule
+오후 10시 에어컨 취침모드,ac_mode_schedule
+취침 에어컨 예약 설정해줘,ac_mode_schedule
+에어컨 자동 타이머,ac_mode_schedule
+에어컨 전체 다 켜,ac_exception
+에어컨 고장났어,ac_exception
+에어컨 고장인 것 같아,ac_exception
+에어컨 A/S 해줘,ac_exception
+에어컨 수리해줘,ac_exception
+에어컨 점검 해줘,ac_exception
+에어컨 필터 청소해줘,ac_exception
+에어컨 필터 교체해줘,ac_exception
+에어컨 청소해줘,ac_exception
+에어컨 전기요금 줄여줘,ac_exception
+에어컨 사용량 보여줘,ac_exception
+거실 안방 동시에 켜줘,ac_exception
+에어컨 한꺼번에 다 켜,ac_exception
+에어컨 다 같이 켜줘,ac_exception
+에어컨 이상해,ac_exception
+에어컨 소리 이상해,ac_exception
+에어컨 바람 이상해,ac_exception
+에어컨 가스 충전,ac_exception
+조명 켜져있어,light_query
+불 켜져있나,light_query
+조명 확인해줘,light_query
+조명 체크해줘,light_query
+불 켜져있나요,light_query
+거실 불 켜져있어요,light_query
+지금 불 켜져있어,light_query
+지금 조명 상태 어때,light_query
+조명 어때,light_query
+침실 조명 어때,light_query
+안방 불 어때,light_query
+주방 조명 어때,light_query
+불 다 꺼져있어,light_query
+조명 다 꺼졌어,light_query
+어느 방 불 켜져있어,light_query
+침실 조명 켜져있어,light_query
+조명 예약해줘,light_schedule
+취침모드 켜줘,light_schedule
+취침모드 해줘,light_schedule
+취침 조명 설정해줘,light_schedule
+아침에 조명 켜줘,light_schedule
+밤에 조명 꺼줘,light_schedule
+오후 11시 조명 꺼줘,light_schedule
+자동 소등 설정,light_schedule
+취침 시 소등 예약,light_schedule
+조명 예약 확인,light_schedule
+조명 타이머 설정,light_schedule
+조명 스케줄 설정해줘,light_schedule
+취침모드 설정해줄래,light_schedule
+자기 전 조명 꺼줘,light_schedule
+기상 시 조명 켜줘,light_schedule
+수면모드 조명 설정,light_schedule
+외출모드 설정 가능해?,security_query
+외출모드 어떻게 설정해,security_query
+방범 설정 방법 알려줘,security_query
+외출모드 대기시간 설정,security_query
+방범 모드 뭐야,security_query
+재택 방범이 뭐야,security_query
+외출 모드 안내해줘,security_query
+보안 설정 어떻게 해,security_query
+외출모드 기능 알려줘,security_query
+방범 시스템 어떻게 돼,security_query
+외출설정 시간 알려줘,security_query
+방범모드 종류 알려줘,security_query
+잠깐 나갔다 올게,security_activate
+잠깐 나갈게,security_activate
+외출할게요,security_activate
+나 외출해,security_activate
+외출 나간다,security_activate
+집 비울게,security_activate
+나 밖에 나간다,security_activate
+집 나갈게,security_activate
+외출 시작해줘,security_activate
+외출모드 작동해줘,security_activate
+방범 켜줘,security_activate
+방범 시작해줘,security_activate
+귀가 시 조명 켜줘,security_return_set
+복귀할 때 에어컨 켜줘,security_return_set
+귀가하면 환기 켜줘,security_return_set
+돌아올 때 난방 켜줘,security_return_set
+집 올 때 조명 켜줘,security_return_set
+귀가 시 보일러 켜줘,security_return_set
+복귀할 때 설정해줘,security_return_set
+돌아올 때 조명 다 켜줘,security_return_set
+귀가 연동 설정해줘,security_return_set
+외출 복귀 시 자동 설정,security_return_set
+귀가 시 일괄소등 해제해줘,security_return_set
+집에 들어올 때 환기 켜줘,security_return_set
+복귀 연동 기능 설정,security_return_set
+볼륨 조절 어떻게 해,system_faq
+화면 밝기 조절 방법,system_faq
+AS 어디서 해,system_faq
+이사 갈 때 정보 삭제 방법,system_faq
+설정 방법 알려줘,system_faq
+월패드 설정 방법,system_faq
+절전모드 시간 어떻게 바꿔,system_faq
+알림 설정 방법,system_faq
+소리 조절 어떻게 해,system_faq
+인터폰 설정 방법,system_faq
+AS 센터 어디야,system_faq
+수리 신청 어떻게 해,system_faq
+이사 시 초기화 방법,system_faq
+통화음 설정 방법,system_faq
+화면 밝게 해줘,system_brightness_set
+화면 어둡게 해줘,system_brightness_set
+화면 밝기 높여줘,system_brightness_set
+화면 밝기 낮춰줘,system_brightness_set
+화면 밝기 최대로 해줘,system_brightness_set
+화면 밝기 최소로 해줘,system_brightness_set
+월패드 밝기 올려줘,system_brightness_set
+월패드 밝기 내려줘,system_brightness_set
+화면 너무 어두워 밝게 해줘,system_brightness_set
+화면 눈부셔 어둡게 해줘,system_brightness_set
+화면 더 밝게,system_brightness_set
+화면 좀 어둡게,system_brightness_set
+화면 밝기 조금 올려줘,system_brightness_set
+화면 밝기 조금 내려줘,system_brightness_set
+월패드 화면 밝기 최대,system_brightness_set
+아침에 화면 밝게 해줘,system_brightness_schedule
+밤에 화면 어둡게 해줘,system_brightness_schedule
+오전에 화면 밝기 높여줘,system_brightness_schedule
+저녁에 화면 어둡게 해줘,system_brightness_schedule
+낮에는 밝게 밤에는 어둡게 해줘,system_brightness_schedule
+취침 시 화면 어둡게 해줘,system_brightness_schedule
+시간에 따라 화면 밝기 바꿔줘,system_brightness_schedule
+기상 시 화면 밝게 해줘,system_brightness_schedule
+오후 10시부터 어둡게 해줘,system_brightness_schedule
+아침 7시부터 화면 밝게 해줘,system_brightness_schedule
+화면 밝기 예약 설정,system_brightness_schedule
+화면 밝기 자동 설정해줘,system_brightness_schedule
+밤 되면 화면 어둡게,system_brightness_schedule
+낮 되면 화면 밝게,system_brightness_schedule
+에티켓모드인데 소리 높여줘,system_exception
+에티켓모드 중인데 볼륨 올려,system_exception
+에티켓모드 무시하고 켜줘,system_exception
+취침모드인데 소리 켜줘,system_exception
+취침모드 해제 안 되는데 켜줘,system_exception
+지원 안 되는 기능이야,system_exception
+그건 안 되는 기능이야,system_exception
+월패드로 TV 켜줘,system_exception
+에어컨 스마트홈 앱 연결해줘,system_exception
+월패드 스피커 켜줘,system_exception
+월패드로 음악 틀어줘,system_exception
+모닝콜 어떻게 설정해,alarm_query
+모닝콜 설정 방법 알려줘,alarm_query
+모닝콜 기능 있어,alarm_query
+모닝콜 기능 알려줘,alarm_query
+알람 설정 방법,alarm_query
+모닝콜 연동 뭐 있어,alarm_query
+모닝콜 울릴 때 뭐 할 수 있어,alarm_query
+알람 기능 어떻게 써,alarm_query
+모닝콜 조명 연동 가능해,alarm_query
+모닝콜 환기 연동 되나,alarm_query
+모닝콜 연동 설정 방법,alarm_query
+알람 연동 기능 알려줘,alarm_query
+모닝콜 어떻게 쓰면 돼,alarm_query
+모닝콜 기능 설명해줘,alarm_query
+모닝콜 울릴 때 조명 켜지게 해줘,alarm_query
+모닝콜 사용법,alarm_query
+비밀번호 바꿔줘,password_change
+비밀번호 변경해줘,password_change
+비밀번호 바꿔주세요,password_change
+비밀번호 변경해주세요,password_change
+비번 변경해줘,password_change
+월패드 비밀번호 바꿔줘,password_change
+비밀번호 새로 설정해줘,password_change
+비번 새로 해줘,password_change
+비밀번호 어떻게 바꿔,password_change
+비밀번호 변경 방법 알려줘,password_change
+비밀번호 재설정해줘,password_change
+전기 사용량 목표 설정해줘,energy_goal_set
+전기 목표 300으로 설정해줘,energy_goal_set
+가스 사용량 목표 설정,energy_goal_set
+에너지 목표 바꿔줘,energy_goal_set
+전기 사용 목표 줄여줘,energy_goal_set
+에너지 목표량 설정해줘,energy_goal_set
+이번 달 전기 목표 설정,energy_goal_set
+사용량 한도 설정해줘,energy_goal_set
+전기 사용 한도 설정,energy_goal_set
+목표 사용량 높여줘,energy_goal_set
+목표 사용량 낮춰줘,energy_goal_set
+에너지 목표치 설정해줘,energy_goal_set
+에너지 월 목표 설정,energy_goal_set
+전기 월 목표 설정해줘,energy_goal_set
+에너지 목표 수정해줘,energy_goal_set
+사용량 알림 설정해줘,energy_alert_on
+에너지 사용 초과 알림 켜줘,energy_alert_on
+전기 초과 시 알려줘,energy_alert_on
+에너지 경고 알림 설정,energy_alert_on
+사용량 넘으면 바로 알려줘,energy_alert_on
+전기 많이 쓰면 알려줘,energy_alert_on
+에너지 알림 설정해줘,energy_alert_on
+초과 사용 시 알림 켜줘,energy_alert_on
+에너지 초과 경보 켜줘,energy_alert_on
+사용량 한도 초과 알림 설정,energy_alert_on
+에너지 알림 꺼줘,energy_alert_off
+사용량 알림 꺼줘,energy_alert_off
+에너지 알림 끄기,energy_alert_off
+초과 알림 끄기,energy_alert_off
+에너지 경고 알림 꺼줘,energy_alert_off
+전기 초과 알림 해제,energy_alert_off
+사용량 경고 알림 꺼줘,energy_alert_off
+에너지 알림 필요없어,energy_alert_off
+사용량 알림 더 이상 필요없어,energy_alert_off
+에너지 경보 꺼줘,energy_alert_off
+난방 예약 확인해줘,heating_schedule_query
+난방 예약 뭐 있어,heating_schedule_query
+난방 스케줄 어때,heating_schedule_query
+난방 예약 알려줘,heating_schedule_query
+지금 난방 예약 있어,heating_schedule_query
+난방 예약 상태 알려줘,heating_schedule_query
+난방 자동 예약 있어,heating_schedule_query
+보일러 예약 뭐있어,heating_schedule_query
+보일러 예약 확인해줘,heating_schedule_query
+난방 타이머 뭐 있어,heating_schedule_query
+안방 난방 예약 뭐있어,heating_schedule_query
+거실 난방 예약 확인,heating_schedule_query
+난방 예약 취소해줘,heating_schedule_cancel
+난방 예약 전부 취소해줘,heating_schedule_cancel
+난방 예약 없애줘,heating_schedule_cancel
+보일러 예약 취소해줘,heating_schedule_cancel
+난방 예약 삭제해줘,heating_schedule_cancel
+안방 난방 예약 취소,heating_schedule_cancel
+침실 난방 예약 취소해줘,heating_schedule_cancel
+거실 난방 예약 다 취소,heating_schedule_cancel
+주방 난방 예약 취소,heating_schedule_cancel
+난방 타이머 취소해줘,heating_schedule_cancel
+보일러 예약 전부 취소,heating_schedule_cancel
+난방 예약 초기화해줘,heating_schedule_cancel
+환기 예약 뭐있어,ventilation_schedule_query
+환기 예약 확인해줘,ventilation_schedule_query
+환기 스케줄 뭐 있어,ventilation_schedule_query
+환기 예약 알려줘,ventilation_schedule_query
+환기 자동 예약 있어,ventilation_schedule_query
+환기 타이머 뭐 있어,ventilation_schedule_query
+지금 환기 예약 있어,ventilation_schedule_query
+환기 스케줄 어때,ventilation_schedule_query
+환기 예약 어떻게 돼있어,ventilation_schedule_query
+환기 예약 상태,ventilation_schedule_query
+환기 예약해줘,ventilation_schedule_set
+귀가 시 환기 예약해줘,ventilation_schedule_set
+매일 아침 환기 켜줘,ventilation_schedule_set
+환기 타이머 설정해줘,ventilation_schedule_set
+저녁에 환기 켜줘,ventilation_schedule_set
+오전 6시에 환기 켜줘,ventilation_schedule_set
+귀가하면 환기 켜줘,ventilation_schedule_set
+집에 오면 환기 켜줘,ventilation_schedule_set
+환기 스케줄 등록해줘,ventilation_schedule_set
+환기 자동 예약 설정,ventilation_schedule_set
+환기 시간 예약해줘,ventilation_schedule_set
+매일 저녁 환기 예약해줘,ventilation_schedule_set
+환기 예약 걸어줘,ventilation_schedule_set
+아침마다 환기 켜줘,ventilation_schedule_set
+환기 필터 주문해줘,ventilation_exception
+환기 수리해줘,ventilation_exception
+환기 AS 해줘,ventilation_exception
+환기 고장났어,ventilation_exception
+환기 소음 있어,ventilation_exception
+환기 청소해줘,ventilation_exception
+환기 필터 교체해줘,ventilation_exception
+환기 기기 이상해,ventilation_exception
+환기 작동 안 해,ventilation_exception
+환기 고장 신고,ventilation_exception
+환기 설치해줘,ventilation_exception
+환기 용량 업그레이드,ventilation_exception
+환기 상태 어때,ventilation_query
+환기 켜져있어,ventilation_query
+환기 돌아가고 있어,ventilation_query
+환기 지금 돌아가,ventilation_query
+환기 풍량 어때,ventilation_query
+환기 속도 어때,ventilation_query
+지금 환기 상태,ventilation_query
+환기 작동 중이야,ventilation_query
+환기 강도 어때,ventilation_query
+공기 순환 되고 있어,ventilation_query
+환기 잘 되고 있어,ventilation_query
+환기 끄기,ventilation_off
+환기 꺼,ventilation_off
+환기 종료해줘,ventilation_off
+환기 완전히 꺼줘,ventilation_off
+환기 다 꺼줘,ventilation_off
+거실 환기 꺼,ventilation_off
+안방 환기 꺼줘,ventilation_off
+침실 환기 꺼줘,ventilation_off
+주방 환기 꺼,ventilation_off
+환기 정지해줘,ventilation_off
+환기 그만 해줘,ventilation_off
+환기 꺼줄래,ventilation_off
+뭐 할 수 있어,manual_capability
+어떤 기능 있어,manual_capability
+기능 목록 알려줘,manual_capability
+뭘 도와줄 수 있어,manual_capability
+뭐 할 수 있는지 알려줘,manual_capability
+어떤 거 할 수 있어,manual_capability
+도움말 보여줘,manual_capability
+무슨 기능 있어,manual_capability
+할 수 있는 것 알려줘,manual_capability
+기능 알려줘,manual_capability
+어떤 것들 할 수 있어,manual_capability
+AI 기능 뭐 있어,manual_capability
+스마트홈 기능 뭐 있어,manual_capability
+월패드 기능 알려줘,manual_capability
+사용법 알려줘,manual_usage
+월패드 사용법 알려줘,manual_usage
+사용 방법 알려줘,manual_usage
+어떻게 사용해,manual_usage
+어떻게 쓰면 돼,manual_usage
+사용 방법 궁금해,manual_usage
+월패드 어떻게 써,manual_usage
+사용 안내해줘,manual_usage
+사용 설명서 보여줘,manual_usage
+사용법 좀 알려줘,manual_usage
+어떻게 작동해,manual_usage
+이름이 뭐야,manual_name
+너 이름이 뭐야,manual_name
+뭐라고 불러,manual_name
+뭐라고 부르면 돼,manual_name
+네 이름 알려줘,manual_name
+호출명 알려줘,manual_name
+어떻게 불러야 해,manual_name
+월패드 AI 이름이 뭐야,manual_name
+넌 뭐야,manual_name
+너 이름은,manual_name
+누가 만들었어,manual_creator
+어디서 만든 거야,manual_creator
+제조사 어디야,manual_creator
+개발사 어디야,manual_creator
+너 어디 제품이야,manual_creator
+만든 회사 어디야,manual_creator
+어떤 회사 제품이야,manual_creator
+누가 개발했어,manual_creator
+누가 만든 거야,manual_creator
+개발한 곳이 어디야,manual_creator
+이름 바꿔줘,manual_unsupported
+이름 변경해줘,manual_unsupported
+호출명 바꿔줘,manual_unsupported
+다른 이름으로 불러줘,manual_unsupported
+이름 변경 가능해,manual_unsupported
+이름 바꿀 수 있어,manual_unsupported
+호출명 변경해줘,manual_unsupported
+다른 이름 설정해줘,manual_unsupported
+이름 다시 설정해줘,manual_unsupported
+호출명 수정해줘,manual_unsupported
+버스 언제 와,traffic_bus_query
+몇 번 버스 언제 와,traffic_bus_query
+버스 시간 알려줘,traffic_bus_query
+집 앞 버스 시간,traffic_bus_query
+버스 도착 알려줘,traffic_bus_query
+버스 몇 분 남았어,traffic_bus_query
+다음 버스 언제야,traffic_bus_query
+버스 도착 시간 알려줘,traffic_bus_query
+101번 버스 언제 와,traffic_bus_query
+버스 배차 간격 알려줘,traffic_bus_query
+근처 버스 정류장,traffic_bus_query
+버스 몇 분 남았어,traffic_bus_query
+버스 첫차 시간,traffic_bus_query
+버스 막차 시간,traffic_bus_query
+버스 노선 알려줘,traffic_bus_query
+오늘 뭐 입을까,weather_clothing
+겉옷 가져가야 해,weather_clothing
+두꺼운 옷 입어야 해,weather_clothing
+얇은 옷 입어도 돼,weather_clothing
+오늘 코트 필요해,weather_clothing
+패딩 가져가야 해,weather_clothing
+우산 가져가야 해,weather_clothing
+오늘 옷차림 추천해줘,weather_clothing
+아이 어떻게 입혀야 해,weather_clothing
+아이 외출복 뭐 입혀야 해,weather_clothing
+반팔 입어도 돼,weather_clothing
+반바지 입어도 돼,weather_clothing
+선글라스 챙겨야 해,weather_clothing
+모자 써야 해,weather_clothing
+오늘 날씨에 맞는 옷 알려줘,weather_clothing
+빨래 마를까,weather_activity
+운동하기 좋아,weather_activity
+세차 지금 해도 돼,weather_activity
+캠핑 가도 돼,weather_activity
+산책 지금 가도 돼,weather_activity
+등산 가도 돼,weather_activity
+조깅해도 돼,weather_activity
+야외 활동 하기 좋아,weather_activity
+빨래 널어도 돼,weather_activity
+이불 빨아도 돼,weather_activity
+우산 없이 가도 돼,weather_activity
+자전거 타도 돼,weather_activity
+수영장 가도 돼,weather_activity
+피크닉 가기 좋아,weather_activity
+공원 가기 좋아,weather_activity
+다음 달 날씨 알려줘,weather_exception
+한 달 뒤 날씨 알려줘,weather_exception
+장기 예보 알려줘,weather_exception
+이번 달 날씨 예보,weather_exception
+다음 주 전체 날씨,weather_exception
+월별 날씨 알려줘,weather_exception
+연간 날씨 알려줘,weather_exception
+겨울 날씨 예보,weather_exception
+여름 날씨 예보,weather_exception
+3개월 날씨 알려줘,weather_exception
+뉴스 어디서 가져와,news_info
+뉴스 출처 어디야,news_info
+뉴스 카테고리 알려줘,news_info
+뉴스 종류 뭐 있어,news_info
+뉴스 구독 방법,news_info
+어떤 뉴스 들을 수 있어,news_info
+뉴스 기능 안내해줘,news_info
+뉴스 채널 알려줘,news_info
+뉴스 언론사 어디야,news_info
+뉴스 사용 방법,news_info
+매일 뉴스 브리핑해줘,news_exception
+아침 7시 뉴스 들려줘,news_exception
+뉴스 구독 설정해줘,news_exception
+매일 아침 뉴스 알려줘,news_exception
+뉴스 자동 재생 설정,news_exception
+뉴스 구독 신청해줘,news_exception
+특정 시간 뉴스 설정,news_exception
+아침마다 뉴스 틀어줘,news_exception
+뉴스 알림 받을게,news_exception
+뉴스 예약 설정해줘,news_exception
+주식 추천해줘,stock_exception
+어떤 주식 사야 해,stock_exception
+지금 주식 사야 해,stock_exception
+매수 타이밍 알려줘,stock_exception
+종목 추천해줘,stock_exception
+내 수익률 알려줘,stock_exception
+주가 전망 알려줘,stock_exception
+주식 언제 팔아야 해,stock_exception
+투자 조언해줘,stock_exception
+내 계좌 확인해줘,stock_exception
+삼성전자 주가 알려줘,stock_price_query
+카카오 주가 알려줘,stock_price_query
+네이버 주가 알려줘,stock_price_query
+현대차 주가,stock_price_query
+LG전자 주가,stock_price_query
+하이닉스 얼마야,stock_price_query
+셀트리온 주가,stock_price_query
+삼성전자 오늘 얼마야,stock_price_query
+카카오 지금 얼마야,stock_price_query
+삼성바이오로직스 주가,stock_price_query
+기아 주가 알려줘,stock_price_query
+포스코 주가,stock_price_query
+NAVER 주가 알려줘,stock_price_query
+크래프톤 주가,stock_price_query
+주유소 어디야,fuel_station_search
+근처 주유소 어디야,fuel_station_search
+가까운 주유소 알려줘,fuel_station_search
+제일 싼 주유소 어디야,fuel_station_search
+저렴한 주유소 찾아줘,fuel_station_search
+내 근처 주유소,fuel_station_search
+주유소 검색해줘,fuel_station_search
+휘발유 싼 주유소,fuel_station_search
+근처 셀프 주유소,fuel_station_search
+주유소 위치 알려줘,fuel_station_search
+기름값 예측해줘,fuel_exception
+유가 전망 알려줘,fuel_exception
+기름값 언제 내려가,fuel_exception
+휘발유 떨어질까,fuel_exception
+기름값 예보 알려줘,fuel_exception
+유가 내릴까,fuel_exception
+정유사 마진 알려줘,fuel_exception
+기름값 예측 해줘,fuel_exception
+기름값 어떻게 될까,fuel_exception
+앞으로 유가 어떻게 돼,fuel_exception
+현재 기름값,fuel_price_query
+오늘 기름값,fuel_price_query
+기름값 알려줘,fuel_price_query
+현재 유가,fuel_price_query
+오늘 유가,fuel_price_query
+현재 휘발유 가격,fuel_price_query
+현재 경유 가격,fuel_price_query
+오늘 경유 가격,fuel_price_query
+LPG 현재 가격,fuel_price_query
+우리 동네 기름값 알려줘,fuel_price_query
+병원 예약해줘,medical_exception
+진료 예약해줘,medical_exception
+병원 대기 인원 알려줘,medical_exception
+대기 몇 명이야,medical_exception
+병원 처방전 받아줘,medical_exception
+의료 상담해줘,medical_exception
+병원 픽업해줘,medical_exception
+약 배달해줘,medical_exception
+병원 검사 예약,medical_exception
+병원 취소해줘,medical_exception
+병원 오늘 진료해,medical_hours
+병원 지금 진료해,medical_hours
+병원 몇 시까지야,medical_hours
+진료 시간 알려줘,medical_hours
+이비인후과 오늘 해,medical_hours
+약국 지금 열었어,medical_hours
+치과 진료 시간,medical_hours
+내과 몇 시야,medical_hours
+소아과 오늘 진료해,medical_hours
+응급실 어디야,medical_hours
+차량 출입 기록 확인해줘,car_history_query
+차량 출입 내역 보여줘,car_history_query
+언제 차 나갔어,car_history_query
+언제 차 들어왔어,car_history_query
+오늘 차 출입 있었어,car_history_query
+우리 차 언제 나갔어,car_history_query
+차 출입 기록 알려줘,car_history_query
+주차 기록 조회해줘,car_history_query
+차 언제 들어왔어,car_history_query
+차량 출입 현황,car_history_query
+차량 출입 기록 삭제해줘,car_history_delete
+주차 기록 지워줘,car_history_delete
+차량 내역 삭제,car_history_delete
+차 출입 기록 지워줘,car_history_delete
+주차 기록 삭제해줘,car_history_delete
+차량 정보 삭제해줘,car_history_delete
+출입 내역 지워줘,car_history_delete
+차량 기록 다 삭제해줘,car_history_delete
+출입 기록 전체 삭제,car_history_delete
+차량 내역 지워줘,car_history_delete
+방문 차량 현황,visitor_parking_query
+방문 차량 목록 보여줘,visitor_parking_query
+방문 차량 등록 현황,visitor_parking_query
+방문객 주차 확인해줘,visitor_parking_query
+방문 차량 있어,visitor_parking_query
+방문 주차 등록 현황,visitor_parking_query
+등록된 방문 차량 알려줘,visitor_parking_query
+방문객 차량 확인,visitor_parking_query
+방문 차량 조회해줘,visitor_parking_query
+방문 차량 등록되어 있어,visitor_parking_query
+방문 차량 등록해줘,visitor_parking_register
+방문객 차량 등록해줘,visitor_parking_register
+손님 차 등록해줘,visitor_parking_register
+방문 주차 신청해줘,visitor_parking_register
+오늘 방문 차량 등록해줘,visitor_parking_register
+친구 차 등록해줘,visitor_parking_register
+부모님 차 등록해줘,visitor_parking_register
+방문 차량 추가해줘,visitor_parking_register
+방문객 주차 등록해줘,visitor_parking_register
+방문 주차 허가해줘,visitor_parking_register
+전기차 충전 상태 알려줘,ev_charging
+전기차 충전 얼마나 됐어,ev_charging
+충전 완료 됐어,ev_charging
+충전기 사용 가능해,ev_charging
+단지 내 충전기 어디야,ev_charging
+전기차 충전기 예약해줘,ev_charging
+충전 남은 시간,ev_charging
+내 차 충전 상태,ev_charging
+전기차 완충 됐어,ev_charging
+충전기 고장났어,ev_charging
+집 뭐 켜져있어,home_status_query
+집 전체 상태 알려줘,home_status_query
+지금 집 상태,home_status_query
+집 어떤 게 켜져있어,home_status_query
+집 전체 확인해줘,home_status_query
+집에 뭐 켜져있어,home_status_query
+우리집 지금 어때,home_status_query
+집 상태 전체 보여줘,home_status_query
+지금 집에 뭐 작동 중이야,home_status_query
+집 기기 상태 알려줘,home_status_query
+알림 뭐 왔어,notification_query
+알림 확인해줘,notification_query
+새 알림 있어,notification_query
+미확인 알림 있어,notification_query
+알림 읽어줘,notification_query
+오늘 알림 뭐야,notification_query
+알림 온 거 있어,notification_query
+뭐 알림 왔어,notification_query
+알림 내용 알려줘,notification_query
+알림 확인,notification_query
+단지 소식 있어,notice_query
+단지 공지 알려줘,notice_query
+아파트 공지 있어,notice_query
+단지 소식 읽어줘,notice_query
+관리사무소 공지 있어,notice_query
+단지 게시판 확인해줘,notice_query
+새 공지 있어,notice_query
+관리사무소 소식 알려줘,notice_query
+아파트 소식 있어,notice_query
+단지 새 소식 있어,notice_query
+단지 정보 알려줘,complex_info
+우리 단지 정보,complex_info
+관리사무소 연락처 알려줘,complex_info
+관리사무소 전화번호,complex_info
+아파트 정보 알려줘,complex_info
+단지 세대수 알려줘,complex_info
+준공일 알려줘,complex_info
+주차장 정보 알려줘,complex_info
+택배 보관함 위치,complex_info
+단지 면적 알려줘,complex_info
+커뮤니티 시설 알려줘,community_query
+헬스장 이용 방법,community_query
+수영장 예약해줘,community_query
+골프장 예약해줘,community_query
+독서실 예약 방법,community_query
+GX룸 이용 가능해,community_query
+커뮤니티 운영 시간,community_query
+헬스장 몇 시까지야,community_query
+수영장 운영 시간,community_query
+단지 시설 예약해줘,community_query
