@@ -1,0 +1,660 @@
+{
+  "light_on": {
+    "device": "light",
+    "action": "power_on",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "light_off": {
+    "device": "light",
+    "action": "power_off",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "light_dim": {
+    "device": "light",
+    "action": "control",
+    "api": "none",
+    "param_type": "brightness",
+    "judgment": "none"
+  },
+  "light_brighten": {
+    "device": "light",
+    "action": "control",
+    "api": "none",
+    "param_type": "brightness",
+    "judgment": "none"
+  },
+  "light_query": {
+    "device": "light",
+    "action": "query",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "light_schedule": {
+    "device": "light",
+    "action": "schedule",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "heating_on": {
+    "device": "heating",
+    "action": "power_on",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "heating_off": {
+    "device": "heating",
+    "action": "power_off",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "heating_up": {
+    "device": "heating",
+    "action": "control",
+    "api": "none",
+    "param_type": "temperature",
+    "judgment": "none"
+  },
+  "heating_down": {
+    "device": "heating",
+    "action": "control",
+    "api": "none",
+    "param_type": "temperature",
+    "judgment": "none"
+  },
+  "heating_query": {
+    "device": "heating",
+    "action": "query",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "heating_schedule_query": {
+    "device": "heating",
+    "action": "query",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "heating_schedule_set": {
+    "device": "heating",
+    "action": "schedule",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "heating_schedule_cancel": {
+    "device": "heating",
+    "action": "schedule",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "ac_on": {
+    "device": "ac",
+    "action": "power_on",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "ac_off": {
+    "device": "ac",
+    "action": "power_off",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "ac_temp": {
+    "device": "ac",
+    "action": "control",
+    "api": "none",
+    "param_type": "temperature",
+    "judgment": "none"
+  },
+  "ac_mode": {
+    "device": "ac",
+    "action": "control",
+    "api": "none",
+    "param_type": "mode",
+    "judgment": "none"
+  },
+  "ac_mode_schedule": {
+    "device": "ac",
+    "action": "schedule",
+    "api": "none",
+    "param_type": "mode",
+    "judgment": "none"
+  },
+  "ac_mode_noroom": {
+    "device": "ac",
+    "action": "control",
+    "api": "none",
+    "param_type": "mode",
+    "judgment": "none"
+  },
+  "ac_wind": {
+    "device": "ac",
+    "action": "control",
+    "api": "none",
+    "param_type": "wind",
+    "judgment": "none"
+  },
+  "ac_query": {
+    "device": "ac",
+    "action": "query",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "ac_exception": {
+    "device": "ac",
+    "action": "exception",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "ventilation_on": {
+    "device": "ventilation",
+    "action": "power_on",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "ventilation_off": {
+    "device": "ventilation",
+    "action": "power_off",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "ventilation_mode": {
+    "device": "ventilation",
+    "action": "control",
+    "api": "none",
+    "param_type": "mode",
+    "judgment": "none"
+  },
+  "ventilation_query": {
+    "device": "ventilation",
+    "action": "query",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "ventilation_schedule_query": {
+    "device": "ventilation",
+    "action": "query",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "ventilation_schedule_set": {
+    "device": "ventilation",
+    "action": "schedule",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "ventilation_exception": {
+    "device": "ventilation",
+    "action": "exception",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "curtain_open": {
+    "device": "curtain",
+    "action": "power_on",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "curtain_close": {
+    "device": "curtain",
+    "action": "power_off",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "curtain_stop": {
+    "device": "curtain",
+    "action": "control",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "curtain_query": {
+    "device": "curtain",
+    "action": "query",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "curtain_schedule": {
+    "device": "curtain",
+    "action": "schedule",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "door_open": {
+    "device": "door",
+    "action": "power_on",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "doorlock_open": {
+    "device": "doorlock",
+    "action": "power_on",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "doorlock_query": {
+    "device": "doorlock",
+    "action": "query",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "gas_close": {
+    "device": "gas",
+    "action": "power_off",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "gas_query": {
+    "device": "gas",
+    "action": "query",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "security_activate": {
+    "device": "security",
+    "action": "power_on",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "security_query": {
+    "device": "security",
+    "action": "query",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "security_return_set": {
+    "device": "security",
+    "action": "schedule",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "emergency": {
+    "device": "emergency",
+    "action": "call",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "elevator_call": {
+    "device": "elevator",
+    "action": "call",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "elevator_query": {
+    "device": "elevator",
+    "action": "query",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "system_faq": {
+    "device": "system",
+    "action": "query",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "system_volume_set": {
+    "device": "system",
+    "action": "control",
+    "api": "none",
+    "param_type": "volume",
+    "judgment": "none"
+  },
+  "system_brightness_set": {
+    "device": "system",
+    "action": "control",
+    "api": "none",
+    "param_type": "brightness",
+    "judgment": "none"
+  },
+  "system_brightness_schedule": {
+    "device": "system",
+    "action": "schedule",
+    "api": "none",
+    "param_type": "brightness",
+    "judgment": "none"
+  },
+  "system_exception": {
+    "device": "system",
+    "action": "exception",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "alarm_query": {
+    "device": "alarm",
+    "action": "query",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "alarm_set": {
+    "device": "alarm",
+    "action": "schedule",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "password_change": {
+    "device": "system",
+    "action": "control",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "home_status_query": {
+    "device": "home",
+    "action": "query",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "notification_query": {
+    "device": "notification",
+    "action": "query",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "notice_query": {
+    "device": "notification",
+    "action": "query",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "manual_capability": {
+    "device": "assistant",
+    "action": "query",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "manual_usage": {
+    "device": "assistant",
+    "action": "query",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "manual_creator": {
+    "device": "assistant",
+    "action": "query",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "manual_name": {
+    "device": "assistant",
+    "action": "query",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "manual_unsupported": {
+    "device": "assistant",
+    "action": "exception",
+    "api": "none",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "complex_info": {
+    "device": "none",
+    "action": "query",
+    "api": "complex",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "community_query": {
+    "device": "none",
+    "action": "query",
+    "api": "complex",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "energy_usage_query": {
+    "device": "none",
+    "action": "query",
+    "api": "energy",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "energy_goal_set": {
+    "device": "none",
+    "action": "control",
+    "api": "energy",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "energy_alert_on": {
+    "device": "none",
+    "action": "power_on",
+    "api": "energy",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "energy_alert_off": {
+    "device": "none",
+    "action": "power_off",
+    "api": "energy",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "ev_charging": {
+    "device": "none",
+    "action": "query",
+    "api": "parking",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "weather_info": {
+    "device": "none",
+    "action": "query",
+    "api": "weather",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "weather_clothing": {
+    "device": "none",
+    "action": "query",
+    "api": "weather",
+    "param_type": "none",
+    "judgment": "clothing"
+  },
+  "weather_activity": {
+    "device": "none",
+    "action": "query",
+    "api": "weather",
+    "param_type": "none",
+    "judgment": "outdoor_activity"
+  },
+  "weather_exception": {
+    "device": "none",
+    "action": "exception",
+    "api": "weather",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "dust_query": {
+    "device": "none",
+    "action": "query",
+    "api": "air_quality",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "news_play": {
+    "device": "none",
+    "action": "query",
+    "api": "news",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "news_info": {
+    "device": "none",
+    "action": "query",
+    "api": "news",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "news_exception": {
+    "device": "none",
+    "action": "exception",
+    "api": "news",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "traffic_route_query": {
+    "device": "none",
+    "action": "query",
+    "api": "traffic",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "traffic_bus_query": {
+    "device": "none",
+    "action": "query",
+    "api": "traffic",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "traffic_exception": {
+    "device": "none",
+    "action": "exception",
+    "api": "traffic",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "stock_index_query": {
+    "device": "none",
+    "action": "query",
+    "api": "stock",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "stock_price_query": {
+    "device": "none",
+    "action": "query",
+    "api": "stock",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "stock_exception": {
+    "device": "none",
+    "action": "exception",
+    "api": "stock",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "fuel_price_query": {
+    "device": "none",
+    "action": "query",
+    "api": "fuel",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "fuel_station_search": {
+    "device": "none",
+    "action": "query",
+    "api": "fuel",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "fuel_exception": {
+    "device": "none",
+    "action": "exception",
+    "api": "fuel",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "medical_search": {
+    "device": "none",
+    "action": "query",
+    "api": "medical",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "medical_hours": {
+    "device": "none",
+    "action": "query",
+    "api": "medical",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "medical_exception": {
+    "device": "none",
+    "action": "exception",
+    "api": "medical",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "time_query": {
+    "device": "none",
+    "action": "query",
+    "api": "time",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "car_history_query": {
+    "device": "none",
+    "action": "query",
+    "api": "parking",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "car_history_delete": {
+    "device": "none",
+    "action": "control",
+    "api": "parking",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "visitor_parking_query": {
+    "device": "none",
+    "action": "query",
+    "api": "parking",
+    "param_type": "none",
+    "judgment": "none"
+  },
+  "visitor_parking_register": {
+    "device": "none",
+    "action": "control",
+    "api": "parking",
+    "param_type": "none",
+    "judgment": "none"
+  }
+}
