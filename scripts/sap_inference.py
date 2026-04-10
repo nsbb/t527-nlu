@@ -84,7 +84,13 @@ def generate_response(preds, text):
 
     if exec_t == 'control_then_confirm':
         template = RESPONSE_TEMPLATES['control_then_confirm'].get(fn, '네, 처리했습니다.')
-        action = '켰습니다' if any(w in text for w in ['켜','틀어','열어','올려']) else '껐습니다' if any(w in text for w in ['꺼','닫','잠가','내려']) else '설정했습니다'
+        # direction으로 action 결정
+        direction = preds.get('param_direction', 'on')
+        action_map = {
+            'on': '켰습니다', 'off': '껐습니다', 'open': '열었습니다', 'close': '닫았습니다',
+            'up': '올렸습니다', 'down': '내렸습니다', 'set': '설정합니다', 'stop': '중단했습니다',
+        }
+        action = action_map.get(direction, '설정했습니다')
         if param == 'mode':
             for mode in ['제습','송풍','자동','냉방','외출','재택']:
                 if mode in text:
@@ -92,7 +98,15 @@ def generate_response(preds, text):
                     break
         if param == 'temperature':
             m = re.search(r'(\d+)\s*도', text)
-            if m: action = f'{m.group(1)}도로 설정합니다'
+            if m:
+                action = f'온도를 {m.group(1)}도로 설정합니다'
+            elif direction == 'up':
+                action = '온도를 올렸습니다'
+            elif direction == 'down':
+                action = '온도를 내렸습니다'
+        if param == 'brightness':
+            if direction == 'up': action = '밝기를 올렸습니다'
+            elif direction == 'down': action = '밝기를 낮췄습니다'
         return template.format(room=room, device=device, action=action, mode=preds.get('param_type',''))
 
     elif exec_t == 'query_then_respond':
@@ -175,6 +189,7 @@ class SAPPipeline:
 
         # 요약 출력
         parts = [f"fn={preds['fn']}", f"exec={preds['exec_type']}"]
+        if preds.get('param_direction', 'none') != 'none': parts.append(f"dir={preds['param_direction']}")
         if preds['room'] not in ('none', ''): parts.append(f"room={preds['room']}")
         if preds['param_type'] != 'none': parts.append(f"param={preds['param_type']}")
         if preds['judge'] != 'none': parts.append(f"judge={preds['judge']}")
