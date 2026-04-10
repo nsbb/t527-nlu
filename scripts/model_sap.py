@@ -12,6 +12,7 @@ HEAD_CLASSES = {
            'schedule_manage', 'weather_query', 'news_query', 'traffic_query', 'energy_query', 'info_query'],
     'room': ['living', 'kitchen', 'bedroom_main', 'bedroom_sub', 'all', 'external', 'none', 'ambiguous'],
     'param_type': ['none', 'temperature', 'brightness', 'mode', 'speed', 'direction', 'time', 'keyword'],
+    'param_direction': ['none', 'up', 'down', 'set', 'on', 'off', 'open', 'close', 'stop'],
     'api': ['none', 'inbase_device', 'weather_api', 'news_api', 'traffic_api', 'energy_api', 'local_info_api'],
     'judge': ['none', 'outdoor_activity', 'clothing', 'air_quality', 'cost_trend'],
     'multi_action': ['single', 'composite'],

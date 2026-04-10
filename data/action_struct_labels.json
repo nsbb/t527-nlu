@@ -12,7 +12,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -28,7 +29,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -44,7 +46,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -60,7 +63,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -76,7 +80,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -92,7 +97,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -108,7 +114,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -124,7 +131,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -140,7 +148,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "open"
     }
   },
   {
@@ -156,7 +165,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -172,7 +182,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -188,7 +199,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "on"
     }
   },
   {
@@ -204,7 +216,8 @@
       "param_type": "brightness",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "down"
     }
   },
   {
@@ -220,7 +233,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "on"
     }
   },
   {
@@ -236,7 +250,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "on"
     }
   },
   {
@@ -252,7 +267,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "on"
     }
   },
   {
@@ -268,7 +284,8 @@
       "param_type": "brightness",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "on"
     }
   },
   {
@@ -284,7 +301,8 @@
       "param_type": "time",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -300,7 +318,8 @@
       "param_type": "time",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -316,7 +335,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -332,7 +352,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "on"
     }
   },
   {
@@ -348,7 +369,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "on"
     }
   },
   {
@@ -364,7 +386,8 @@
       "param_type": "temperature",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "up"
     }
   },
   {
@@ -380,7 +403,8 @@
       "param_type": "temperature",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "up"
     }
   },
   {
@@ -396,7 +420,8 @@
       "param_type": "time",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -412,7 +437,8 @@
       "param_type": "time",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "on"
     }
   },
   {
@@ -428,7 +454,8 @@
       "param_type": "mode",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "on"
     }
   },
   {
@@ -444,7 +471,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -460,7 +488,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -476,7 +505,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -492,7 +522,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -508,7 +539,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -524,7 +556,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "on"
     }
   },
   {
@@ -540,7 +573,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "off"
     }
   },
   {
@@ -556,7 +590,8 @@
       "param_type": "temperature",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "set"
     }
   },
   {
@@ -572,7 +607,8 @@
       "param_type": "temperature",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "down"
     }
   },
   {
@@ -588,7 +624,8 @@
       "param_type": "mode",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "on"
     }
   },
   {
@@ -604,7 +641,8 @@
       "param_type": "mode",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "on"
     }
   },
   {
@@ -620,7 +658,8 @@
       "param_type": "speed",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "up"
     }
   },
   {
@@ -636,7 +675,8 @@
       "param_type": "speed",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "down"
     }
   },
   {
@@ -652,7 +692,8 @@
       "param_type": "speed",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "on"
     }
   },
   {
@@ -668,7 +709,8 @@
       "param_type": "mode",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -684,7 +726,8 @@
       "param_type": "mode",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -700,7 +743,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -716,7 +760,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -732,7 +777,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -748,7 +794,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -764,7 +811,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -780,7 +828,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -796,7 +845,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -812,7 +862,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -828,7 +879,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "on"
     }
   },
   {
@@ -844,7 +896,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "off"
     }
   },
   {
@@ -860,7 +913,8 @@
       "param_type": "mode",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "up"
     }
   },
   {
@@ -876,7 +930,8 @@
       "param_type": "mode",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "on"
     }
   },
   {
@@ -892,7 +947,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -908,7 +964,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -924,7 +981,8 @@
       "param_type": "time",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -940,7 +998,8 @@
       "param_type": "time",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "on"
     }
   },
   {
@@ -956,7 +1015,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -972,7 +1032,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -988,7 +1049,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "open"
     }
   },
   {
@@ -1004,7 +1066,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "close"
     }
   },
   {
@@ -1020,7 +1083,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1036,7 +1100,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "open"
     }
   },
   {
@@ -1052,7 +1117,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1068,7 +1134,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "open"
     }
   },
   {
@@ -1084,7 +1151,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "open"
     }
   },
   {
@@ -1100,7 +1168,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "close"
     }
   },
   {
@@ -1116,7 +1185,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "off"
     }
   },
   {
@@ -1132,7 +1202,8 @@
       "param_type": "time",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1148,7 +1219,8 @@
       "param_type": "time",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1164,7 +1236,8 @@
       "param_type": "mode",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1180,7 +1253,8 @@
       "param_type": "mode",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1196,7 +1270,8 @@
       "param_type": "mode",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1212,7 +1287,8 @@
       "param_type": "mode",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1228,7 +1304,8 @@
       "param_type": "mode",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1244,7 +1321,8 @@
       "param_type": "mode",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "composite"
+      "multi_action": "composite",
+      "param_direction": "on"
     }
   },
   {
@@ -1260,7 +1338,8 @@
       "param_type": "mode",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "on"
     }
   },
   {
@@ -1276,7 +1355,8 @@
       "param_type": "mode",
       "api": "none",
       "judge": "none",
-      "multi_action": "composite"
+      "multi_action": "composite",
+      "param_direction": "none"
     }
   },
   {
@@ -1292,7 +1372,8 @@
       "param_type": "none",
       "api": "energy_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1308,7 +1389,8 @@
       "param_type": "none",
       "api": "energy_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1324,7 +1406,8 @@
       "param_type": "none",
       "api": "energy_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1340,7 +1423,8 @@
       "param_type": "none",
       "api": "energy_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1356,7 +1440,8 @@
       "param_type": "none",
       "api": "energy_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1372,7 +1457,8 @@
       "param_type": "none",
       "api": "energy_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1388,7 +1474,8 @@
       "param_type": "none",
       "api": "energy_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1404,7 +1491,8 @@
       "param_type": "none",
       "api": "energy_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1420,7 +1508,8 @@
       "param_type": "none",
       "api": "energy_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1436,7 +1525,8 @@
       "param_type": "none",
       "api": "energy_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1452,7 +1542,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1468,7 +1559,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "on"
     }
   },
   {
@@ -1484,7 +1576,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1500,7 +1593,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1516,7 +1610,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1532,7 +1627,8 @@
       "param_type": "keyword",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1548,7 +1644,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1564,7 +1661,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1580,7 +1678,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1596,7 +1695,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1612,7 +1712,8 @@
       "param_type": "keyword",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1628,7 +1729,8 @@
       "param_type": "keyword",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1644,7 +1746,8 @@
       "param_type": "keyword",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1660,7 +1763,8 @@
       "param_type": "brightness",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1676,7 +1780,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1692,7 +1797,8 @@
       "param_type": "brightness",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1708,7 +1814,8 @@
       "param_type": "brightness",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1724,7 +1831,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1740,7 +1848,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1756,7 +1865,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1772,7 +1882,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1788,7 +1899,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1804,7 +1916,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1820,7 +1933,8 @@
       "param_type": "brightness",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "up"
     }
   },
   {
@@ -1836,7 +1950,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "down"
     }
   },
   {
@@ -1852,7 +1967,8 @@
       "param_type": "brightness",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1868,7 +1984,8 @@
       "param_type": "time",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1884,7 +2001,8 @@
       "param_type": "mode",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1900,7 +2018,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1916,7 +2035,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1932,7 +2052,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1948,7 +2069,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1964,7 +2086,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1980,7 +2103,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -1996,7 +2120,8 @@
       "param_type": "time",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "composite"
+      "multi_action": "composite",
+      "param_direction": "none"
     }
   },
   {
@@ -2012,7 +2137,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "on"
     }
   },
   {
@@ -2028,7 +2154,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "on"
     }
   },
   {
@@ -2044,7 +2171,8 @@
       "param_type": "none",
       "api": "inbase_device",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "on"
     }
   },
   {
@@ -2060,7 +2188,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2076,7 +2205,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2092,7 +2222,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2108,7 +2239,8 @@
       "param_type": "none",
       "api": "news_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2124,7 +2256,8 @@
       "param_type": "none",
       "api": "news_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2140,7 +2273,8 @@
       "param_type": "none",
       "api": "news_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2156,7 +2290,8 @@
       "param_type": "none",
       "api": "news_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2172,7 +2307,8 @@
       "param_type": "none",
       "api": "news_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2188,7 +2324,8 @@
       "param_type": "keyword",
       "api": "news_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2204,7 +2341,8 @@
       "param_type": "keyword",
       "api": "news_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2220,7 +2358,8 @@
       "param_type": "none",
       "api": "news_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2236,7 +2375,8 @@
       "param_type": "none",
       "api": "news_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2252,7 +2392,8 @@
       "param_type": "none",
       "api": "news_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2268,7 +2409,8 @@
       "param_type": "none",
       "api": "news_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2284,7 +2426,8 @@
       "param_type": "none",
       "api": "news_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2300,7 +2443,8 @@
       "param_type": "none",
       "api": "news_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2316,7 +2460,8 @@
       "param_type": "none",
       "api": "news_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2332,7 +2477,8 @@
       "param_type": "none",
       "api": "news_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2348,7 +2494,8 @@
       "param_type": "time",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2364,7 +2511,8 @@
       "param_type": "none",
       "api": "weather_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2380,7 +2528,8 @@
       "param_type": "none",
       "api": "weather_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2396,7 +2545,8 @@
       "param_type": "none",
       "api": "weather_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2412,7 +2562,8 @@
       "param_type": "none",
       "api": "weather_api",
       "judge": "outdoor_activity",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2428,7 +2579,8 @@
       "param_type": "none",
       "api": "weather_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2444,7 +2596,8 @@
       "param_type": "none",
       "api": "weather_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2460,7 +2613,8 @@
       "param_type": "none",
       "api": "weather_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2476,7 +2630,8 @@
       "param_type": "none",
       "api": "weather_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2492,7 +2647,8 @@
       "param_type": "none",
       "api": "weather_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2508,7 +2664,8 @@
       "param_type": "none",
       "api": "weather_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2524,7 +2681,8 @@
       "param_type": "none",
       "api": "weather_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2540,7 +2698,8 @@
       "param_type": "none",
       "api": "weather_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2556,7 +2715,8 @@
       "param_type": "none",
       "api": "weather_api",
       "judge": "air_quality",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2572,7 +2732,8 @@
       "param_type": "none",
       "api": "weather_api",
       "judge": "air_quality",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2588,7 +2749,8 @@
       "param_type": "none",
       "api": "weather_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2604,7 +2766,8 @@
       "param_type": "none",
       "api": "weather_api",
       "judge": "clothing",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2620,7 +2783,8 @@
       "param_type": "none",
       "api": "weather_api",
       "judge": "clothing",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2636,7 +2800,8 @@
       "param_type": "none",
       "api": "weather_api",
       "judge": "clothing",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2652,7 +2817,8 @@
       "param_type": "none",
       "api": "weather_api",
       "judge": "outdoor_activity",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2668,7 +2834,8 @@
       "param_type": "none",
       "api": "weather_api",
       "judge": "outdoor_activity",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2684,7 +2851,8 @@
       "param_type": "none",
       "api": "weather_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2700,7 +2868,8 @@
       "param_type": "none",
       "api": "weather_api",
       "judge": "outdoor_activity",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2716,7 +2885,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2732,7 +2902,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2748,7 +2919,8 @@
       "param_type": "none",
       "api": "traffic_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2764,7 +2936,8 @@
       "param_type": "none",
       "api": "traffic_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2780,7 +2953,8 @@
       "param_type": "none",
       "api": "traffic_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2796,7 +2970,8 @@
       "param_type": "none",
       "api": "traffic_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2812,7 +2987,8 @@
       "param_type": "none",
       "api": "traffic_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2828,7 +3004,8 @@
       "param_type": "none",
       "api": "traffic_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2844,7 +3021,8 @@
       "param_type": "none",
       "api": "traffic_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2860,7 +3038,8 @@
       "param_type": "none",
       "api": "traffic_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2876,7 +3055,8 @@
       "param_type": "none",
       "api": "traffic_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2892,7 +3072,8 @@
       "param_type": "none",
       "api": "traffic_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2908,7 +3089,8 @@
       "param_type": "none",
       "api": "traffic_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2924,7 +3106,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2940,7 +3123,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2956,7 +3140,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2972,7 +3157,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -2988,7 +3174,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3004,7 +3191,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3020,7 +3208,8 @@
       "param_type": "keyword",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3036,7 +3225,8 @@
       "param_type": "keyword",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3052,7 +3242,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3068,7 +3259,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3084,7 +3276,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3100,7 +3293,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3116,7 +3310,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3132,7 +3327,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3148,7 +3344,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3164,7 +3361,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3180,7 +3378,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3196,7 +3395,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3212,7 +3412,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3228,7 +3429,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3244,7 +3446,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3260,7 +3463,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "cost_trend",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3276,7 +3480,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3292,7 +3497,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3308,7 +3514,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3324,7 +3531,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3340,7 +3548,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3356,7 +3565,8 @@
       "param_type": "keyword",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3372,7 +3582,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3388,7 +3599,8 @@
       "param_type": "keyword",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3404,7 +3616,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3420,7 +3633,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3436,7 +3650,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3452,7 +3667,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3468,7 +3684,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3484,7 +3701,8 @@
       "param_type": "none",
       "api": "none",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   },
   {
@@ -3500,7 +3718,8 @@
       "param_type": "none",
       "api": "local_info_api",
       "judge": "none",
-      "multi_action": "single"
+      "multi_action": "single",
+      "param_direction": "none"
     }
   }
 ]
