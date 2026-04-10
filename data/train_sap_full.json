@@ -168283,5 +168283,5570 @@
     },
     "source": "llm_aug2",
     "context_token": "NONE"
+  },
+  {
+    "utterance": "엘리베이터 부탁해",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "on",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘베 부탁해",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "on",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘리베이터 올려보내줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "on",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘베 올려보내줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "on",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘리베이터 내려보내줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "on",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘베 내려보내줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "on",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘리베이터 한 대 보내줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "on",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘베 한 대 보내줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "on",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘리베이터 좀 불러줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "on",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘베 좀 불러줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "on",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘리베이터 불러봐",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "on",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘베 불러봐",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "on",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘리베이터 호출해주세요",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "on",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘베 호출해주세요",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "on",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘리베이터 위치 알려줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘베 위치 알려줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘리베이터 어디에 있어",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘베 어디에 있어",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘리베이터 몇 층이야?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘베 몇 층이야?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘리베이터 위치 확인",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘베 위치 확인",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘리베이터 어디쯤이야",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘베 어디쯤이야",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘레베이터 불러줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "on",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘레베이터 호출",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "on",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘배 불러줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "on",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘리베이타 불러",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "on",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘베 부탁",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "on",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 가스 잠가줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 가스 잠가주세요",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 가스 잠가",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 가스 잠가줄래",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 가스 닫아줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 가스 닫아",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 가스 꺼줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 가스 좀 잠가줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 가스 잠가봐",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 가스 밸브 잠가",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 가스 열려있어?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 가스 잠겼어?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 가스 잠겨있어?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 가스 상태",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 가스 상태 알려줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 가스 어때",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 가스 확인해줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 가스 잠가줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 가스 잠가주세요",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 가스 잠가",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 가스 잠가줄래",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 가스 닫아줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 가스 닫아",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 가스 꺼줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 가스 좀 잠가줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 가스 잠가봐",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 가스 밸브 잠가",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 가스 열려있어?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 가스 잠겼어?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 가스 잠겨있어?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 가스 상태",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 가스 상태 알려줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 가스 어때",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 가스 확인해줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 가스 잠가줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 가스 잠가주세요",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 가스 잠가",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 가스 잠가줄래",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 가스 닫아줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 가스 닫아",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 가스 꺼줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 가스 좀 잠가줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 가스 잠가봐",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 가스 밸브 잠가",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 가스 열려있어?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 가스 잠겼어?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 가스 잠겨있어?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 가스 상태",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 가스 상태 알려줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 가스 어때",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 가스 확인해줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "가스 잠가줄래",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "가스 잠겨있어?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "가스 상태 알려줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "가스 어때",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "까스 잠가줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "까스 잠가",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "까쓰 잠가줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "가스잠가줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "까스 상태",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "에너지 사용량 어때",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전기 사용량 어때",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "수도 사용량 어때",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "에너지 사용량 확인",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전기 사용량 확인",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "가스 사용량 확인",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "수도 사용량 확인",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "에너지 사용량 보여줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전기 사용량 보여줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "가스 사용량 보여줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "수도 사용량 보여줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "에너지 사용량 어떻게 돼",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전기 사용량 어떻게 돼",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "가스 사용량 어떻게 돼",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "수도 사용량 어떻게 돼",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "에너지 사용량 알려줄래",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전기 사용량 알려줄래",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "가스 사용량 알려줄래",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "수도 사용량 알려줄래",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전기 사용량 확인해줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "가스 사용량 확인해줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "수도 사용량 확인해줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "에너지 사용량 어때?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전기 사용량 어때?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "가스 사용량 어때?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "수도 사용량 어때?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "에너지 사용량 얼마야",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전기 사용량 얼마야",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "가스 사용량 얼마야",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "수도 사용량 얼마야",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "에너지 사용량 어떠니",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전기 사용량 어떠니",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "가스 사용량 어떠니",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "수도 사용량 어떠니",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "에너지 사용량 어떠하니",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전기 사용량 어떠하니",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "가스 사용량 어떠하니",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "수도 사용량 어떠하니",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전기요금 얼마나 나올까",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "이번 달 에너지 어때",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전기 사용 비교해줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "가스 사용 비교",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "작년보다 많이 썼나",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "에너지 절약하고 있나",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전기차 충전 상태",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "충전 얼마나 됐어",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "충전기 위치 알려줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "충전기 있어?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "에너지 목표 설정",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "set",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "사용량 목표",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "set",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "초과 알림 설정해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "set",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "사용량 알림 해제해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "off",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "에너지 사용 현황",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전기요금 확인",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "수도요금 얼마야",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "energy_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "energy_api",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 커튼 닫아줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 전동커튼 닫아줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 커튼 닫아주세요",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 전동커튼 닫아주세요",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 커튼 닫아줄래",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 전동커튼 닫아줄래",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 커튼 닫아봐",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 전동커튼 닫아봐",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 커튼 좀 닫아줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 전동커튼 좀 닫아줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 커튼 닫아해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 전동커튼 닫아해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 커튼 닫아줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 전동커튼 닫아줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 커튼 닫아주세요",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 전동커튼 닫아주세요",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 커튼 닫아줄래",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 전동커튼 닫아줄래",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 커튼 닫아봐",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 전동커튼 닫아봐",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 커튼 좀 닫아줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 전동커튼 좀 닫아줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 커튼 닫아해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 전동커튼 닫아해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 커튼 닫아줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 전동커튼 닫아줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 커튼 닫아주세요",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 전동커튼 닫아주세요",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 커튼 닫아줄래",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 전동커튼 닫아줄래",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 커튼 닫아봐",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 전동커튼 닫아봐",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 커튼 좀 닫아줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 전동커튼 좀 닫아줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 커튼 닫아해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 전동커튼 닫아해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "주방 커튼 닫아줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "kitchen",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "주방 전동커튼 닫아줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "kitchen",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "주방 커튼 닫아주세요",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "kitchen",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "주방 전동커튼 닫아주세요",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "kitchen",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "주방 커튼 닫아줄래",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "kitchen",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "주방 전동커튼 닫아줄래",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "kitchen",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "주방 커튼 닫아봐",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "kitchen",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "주방 전동커튼 닫아봐",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "kitchen",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "주방 커튼 좀 닫아줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "kitchen",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "주방 전동커튼 좀 닫아줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "kitchen",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "주방 커튼 닫아해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "kitchen",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "주방 전동커튼 닫아해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "kitchen",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전체 커튼 닫아줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "all",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전체 전동커튼 닫아줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "all",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전체 커튼 닫아주세요",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "all",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전체 전동커튼 닫아주세요",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "all",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전체 커튼 닫아줄래",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "all",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전체 전동커튼 닫아줄래",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "all",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전체 커튼 닫아봐",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "all",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전체 전동커튼 닫아봐",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "all",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전체 커튼 좀 닫아줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "all",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전체 전동커튼 좀 닫아줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "all",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전체 커튼 닫아해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "all",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전체 전동커튼 닫아해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "all",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전동커튼 닫아줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "커튼 닫아주세요",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전동커튼 닫아주세요",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "커튼 닫아줄래",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전동커튼 닫아줄래",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "커튼 닫아봐",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전동커튼 닫아봐",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "커튼 좀 닫아줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전동커튼 좀 닫아줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "커튼 닫아해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전동커튼 닫아해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 커튼 멈춰",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 커튼 멈춰줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 커튼 정지",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 커튼 정지해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 커튼 중단",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 커튼 중단해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 커튼 그만",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 커튼 스탑",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 커튼 멈춰",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 커튼 멈춰줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 커튼 정지",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 커튼 정지해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 커튼 중단",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 커튼 중단해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 커튼 그만",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 커튼 스탑",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 커튼 멈춰",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 커튼 멈춰줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 커튼 정지",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 커튼 정지해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 커튼 중단",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 커튼 중단해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 커튼 그만",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 커튼 스탑",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "커튼 멈춰",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "커튼 멈춰줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "커튼 정지",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "커튼 정지해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "커튼 중단",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "커튼 중단해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "커튼 그만",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "커튼 스탑",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "stop",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 커튼 열어줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 커튼 열어주세요",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 커튼 열어줄래",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 커튼 열어봐",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 커튼 좀 열어줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 커튼 열어해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 커튼 열어줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 커튼 열어주세요",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 커튼 열어줄래",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 커튼 열어봐",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 커튼 좀 열어줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 커튼 열어해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 커튼 열어줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 커튼 열어주세요",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 커튼 열어줄래",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 커튼 열어봐",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 커튼 좀 열어줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 커튼 열어해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "주방 커튼 열어줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "kitchen",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "주방 커튼 열어주세요",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "kitchen",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "주방 커튼 열어줄래",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "kitchen",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "주방 커튼 열어봐",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "kitchen",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "주방 커튼 좀 열어줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "kitchen",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "주방 커튼 열어해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "kitchen",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전체 커튼 열어줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "all",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전체 커튼 열어주세요",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "all",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전체 커튼 열어줄래",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "all",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전체 커튼 열어봐",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "all",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전체 커튼 좀 열어줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "all",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전체 커튼 열어해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "all",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "커튼 열어주세요",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "커튼 열어줄래",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "커튼 열어봐",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "커튼 좀 열어줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "커튼 열어해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "난방 상태가 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "heat_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "난방 어떤지",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "heat_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "난방 어떤지 알려줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "heat_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "난방 좀 알려줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "heat_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "난방 지금 어때",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "heat_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "난방 지금 상태",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "heat_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "난방 현재 상태",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "heat_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "난방 작동해?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "heat_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "난방 가동중이야?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "heat_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "난방 돌아가고있어?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "heat_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 난방 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "heat_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 난방 상태가 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "heat_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 난방 어떤지",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "heat_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 난방 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "heat_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 난방 상태가 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "heat_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 난방 어떤지",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "heat_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 난방 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "heat_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 난방 상태가 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "heat_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 난방 어떤지",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "heat_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "에어컨 상태가 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "ac_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "에어컨 어떤지",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "ac_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "에어컨 어떤지 알려줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "ac_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "에어컨 좀 알려줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "ac_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "에어컨 지금 어때",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "ac_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "에어컨 지금 상태",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "ac_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "에어컨 현재 상태",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "ac_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "에어컨 작동해?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "ac_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "에어컨 가동중이야?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "ac_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "에어컨 돌아가고있어?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "ac_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 에어컨 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "ac_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 에어컨 상태가 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "ac_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 에어컨 어떤지",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "ac_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 에어컨 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "ac_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 에어컨 상태가 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "ac_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 에어컨 어떤지",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "ac_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 에어컨 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "ac_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 에어컨 상태가 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "ac_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 에어컨 어떤지",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "ac_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "환기 상태가 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "vent_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "환기 어떤지",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "vent_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "환기 어떤지 알려줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "vent_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "환기 좀 알려줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "vent_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "환기 지금 어때",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "vent_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "환기 지금 상태",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "vent_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "환기 현재 상태",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "vent_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "환기 작동해?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "vent_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "환기 가동중이야?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "vent_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "환기 돌아가고있어?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "vent_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 환기 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "vent_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 환기 상태가 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "vent_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 환기 어떤지",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "vent_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 환기 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "vent_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 환기 상태가 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "vent_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 환기 어떤지",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "vent_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 환기 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "vent_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 환기 상태가 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "vent_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 환기 어떤지",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "vent_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "조명 상태가 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "light_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "조명 어떤지",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "light_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "조명 어떤지 알려줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "light_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "조명 좀 알려줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "light_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "조명 지금 어때",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "light_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "조명 지금 상태",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "light_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "조명 현재 상태",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "light_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "조명 작동해?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "light_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "조명 가동중이야?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "light_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "조명 돌아가고있어?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "light_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 조명 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "light_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 조명 상태가 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "light_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 조명 어떤지",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "light_control",
+      "room": "living",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 조명 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "light_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 조명 상태가 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "light_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 조명 어떤지",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "light_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 조명 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "light_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 조명 상태가 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "light_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "침실 조명 어떤지",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "light_control",
+      "room": "bedroom_main",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "fill2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "야 불 좀 켜",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "light_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "on",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "colloquial2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "야 불 좀 꺼",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "light_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "off",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "colloquial2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "아 에어컨 좀",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "ac_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "on",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "colloquial2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "아 추워 좀 틀어",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "heat_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "on",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "colloquial2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "아 더워 좀 켜",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "ac_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "on",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "colloquial2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "그거 좀 켜봐",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "light_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "on",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "colloquial2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "이거 좀 꺼",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "light_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "off",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "colloquial2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "야 환기 좀",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "vent_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "on",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "colloquial2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "야 커튼 좀 열어",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "colloquial2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "야 커튼 좀 닫아",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "curtain_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "colloquial2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "가스 좀 잠가봐",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "gas_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "close",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "colloquial2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "문 좀 열어봐",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "door_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "open",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "colloquial2",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "엘베 좀 불러봐",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "elevator_call",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "on",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single"
+    },
+    "source": "colloquial2",
+    "context_token": "NONE"
   }
 ]
