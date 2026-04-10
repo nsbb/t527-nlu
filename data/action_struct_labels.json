@@ -13,7 +13,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -30,7 +33,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -47,7 +53,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -64,7 +73,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -81,7 +93,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -98,7 +113,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -115,7 +133,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -132,7 +153,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -149,7 +173,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "open"
+      "param_direction": "open",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -166,7 +193,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -183,7 +213,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -200,7 +233,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "on"
+      "param_direction": "on",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -217,7 +253,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "down"
+      "param_direction": "down",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -234,7 +273,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "on"
+      "param_direction": "on",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -251,7 +293,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "on"
+      "param_direction": "on",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -268,7 +313,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "on"
+      "param_direction": "on",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -285,7 +333,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "on"
+      "param_direction": "on",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -302,7 +353,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -319,7 +373,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -336,7 +393,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -353,7 +413,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "on"
+      "param_direction": "on",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -370,7 +433,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "on"
+      "param_direction": "on",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -387,7 +453,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "up"
+      "param_direction": "up",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -404,7 +473,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "up"
+      "param_direction": "up",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -421,7 +493,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -438,7 +513,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "on"
+      "param_direction": "on",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -455,7 +533,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "on"
+      "param_direction": "on",
+      "has_value": 1,
+      "value_start": 2,
+      "value_end": 2
     }
   },
   {
@@ -472,7 +553,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -489,7 +573,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -506,7 +593,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -523,7 +613,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -540,7 +633,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -557,7 +653,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "on"
+      "param_direction": "on",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -574,7 +673,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "off"
+      "param_direction": "off",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -591,7 +693,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "set"
+      "param_direction": "set",
+      "has_value": 1,
+      "value_start": 3,
+      "value_end": 3
     }
   },
   {
@@ -608,7 +713,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "down"
+      "param_direction": "down",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -625,7 +733,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "on"
+      "param_direction": "on",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -642,7 +753,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "on"
+      "param_direction": "on",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -659,7 +773,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "up"
+      "param_direction": "up",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -676,7 +793,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "down"
+      "param_direction": "down",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -693,7 +813,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "on"
+      "param_direction": "on",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -710,7 +833,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -727,7 +853,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -744,7 +873,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -761,7 +893,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -778,7 +913,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -795,7 +933,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -812,7 +953,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -829,7 +973,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -846,7 +993,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -863,7 +1013,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -880,7 +1033,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "on"
+      "param_direction": "on",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -897,7 +1053,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "off"
+      "param_direction": "off",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -914,7 +1073,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "up"
+      "param_direction": "up",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -931,7 +1093,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "on"
+      "param_direction": "on",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -948,7 +1113,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -965,7 +1133,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -982,7 +1153,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -999,7 +1173,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "on"
+      "param_direction": "on",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1016,7 +1193,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1033,7 +1213,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1050,7 +1233,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "open"
+      "param_direction": "open",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1067,7 +1253,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "close"
+      "param_direction": "close",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1084,7 +1273,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1101,7 +1293,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "open"
+      "param_direction": "open",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1118,7 +1313,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1135,7 +1333,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "open"
+      "param_direction": "open",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1152,7 +1353,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "open"
+      "param_direction": "open",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1169,7 +1373,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "close"
+      "param_direction": "close",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1186,7 +1393,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "off"
+      "param_direction": "off",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1203,7 +1413,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1220,7 +1433,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 1,
+      "value_start": 6,
+      "value_end": 6
     }
   },
   {
@@ -1237,7 +1453,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1254,7 +1473,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1271,7 +1493,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1288,7 +1513,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1305,7 +1533,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1322,7 +1553,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "composite",
-      "param_direction": "on"
+      "param_direction": "on",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1339,7 +1573,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "on"
+      "param_direction": "on",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1356,7 +1593,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "composite",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1373,7 +1613,10 @@
       "api": "energy_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1390,7 +1633,10 @@
       "api": "energy_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1407,7 +1653,10 @@
       "api": "energy_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1424,7 +1673,10 @@
       "api": "energy_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1441,7 +1693,10 @@
       "api": "energy_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1458,7 +1713,10 @@
       "api": "energy_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1475,7 +1733,10 @@
       "api": "energy_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1492,7 +1753,10 @@
       "api": "energy_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1509,7 +1773,10 @@
       "api": "energy_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1526,7 +1793,10 @@
       "api": "energy_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1543,7 +1813,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1560,7 +1833,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "on"
+      "param_direction": "on",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1577,7 +1853,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1594,7 +1873,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1611,7 +1893,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1628,7 +1913,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1645,7 +1933,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1662,7 +1953,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1679,7 +1973,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1696,7 +1993,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1713,7 +2013,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1730,7 +2033,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1747,7 +2053,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1764,7 +2073,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1781,7 +2093,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1798,7 +2113,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1815,7 +2133,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1832,7 +2153,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1849,7 +2173,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1866,7 +2193,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1883,7 +2213,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1900,7 +2233,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1917,7 +2253,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1934,7 +2273,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "up"
+      "param_direction": "up",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1951,7 +2293,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "down"
+      "param_direction": "down",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1968,7 +2313,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -1985,7 +2333,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 1,
+      "value_start": 8,
+      "value_end": 8
     }
   },
   {
@@ -2002,7 +2353,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2019,7 +2373,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2036,7 +2393,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2053,7 +2413,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2070,7 +2433,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2087,7 +2453,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2104,7 +2473,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2121,7 +2493,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "composite",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 1,
+      "value_start": 4,
+      "value_end": 4
     }
   },
   {
@@ -2138,7 +2513,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "on"
+      "param_direction": "on",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2155,7 +2533,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "on"
+      "param_direction": "on",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2172,7 +2553,10 @@
       "api": "inbase_device",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "on"
+      "param_direction": "on",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2189,7 +2573,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2206,7 +2593,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2223,7 +2613,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2240,7 +2633,10 @@
       "api": "news_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2257,7 +2653,10 @@
       "api": "news_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2274,7 +2673,10 @@
       "api": "news_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2291,7 +2693,10 @@
       "api": "news_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2308,7 +2713,10 @@
       "api": "news_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2325,7 +2733,10 @@
       "api": "news_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2342,7 +2753,10 @@
       "api": "news_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2359,7 +2773,10 @@
       "api": "news_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2376,7 +2793,10 @@
       "api": "news_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2393,7 +2813,10 @@
       "api": "news_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2410,7 +2833,10 @@
       "api": "news_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2427,7 +2853,10 @@
       "api": "news_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2444,7 +2873,10 @@
       "api": "news_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2461,7 +2893,10 @@
       "api": "news_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2478,7 +2913,10 @@
       "api": "news_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2495,7 +2933,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 1,
+      "value_start": 4,
+      "value_end": 4
     }
   },
   {
@@ -2512,7 +2953,10 @@
       "api": "weather_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2529,7 +2973,10 @@
       "api": "weather_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2546,7 +2993,10 @@
       "api": "weather_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2563,7 +3013,10 @@
       "api": "weather_api",
       "judge": "outdoor_activity",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2580,7 +3033,10 @@
       "api": "weather_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2597,7 +3053,10 @@
       "api": "weather_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2614,7 +3073,10 @@
       "api": "weather_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2631,7 +3093,10 @@
       "api": "weather_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2648,7 +3113,10 @@
       "api": "weather_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2665,7 +3133,10 @@
       "api": "weather_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2682,7 +3153,10 @@
       "api": "weather_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2699,7 +3173,10 @@
       "api": "weather_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2716,7 +3193,10 @@
       "api": "weather_api",
       "judge": "air_quality",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2733,7 +3213,10 @@
       "api": "weather_api",
       "judge": "air_quality",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2750,7 +3233,10 @@
       "api": "weather_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2767,7 +3253,10 @@
       "api": "weather_api",
       "judge": "clothing",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2784,7 +3273,10 @@
       "api": "weather_api",
       "judge": "clothing",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2801,7 +3293,10 @@
       "api": "weather_api",
       "judge": "clothing",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2818,7 +3313,10 @@
       "api": "weather_api",
       "judge": "outdoor_activity",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2835,7 +3333,10 @@
       "api": "weather_api",
       "judge": "outdoor_activity",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2852,7 +3353,10 @@
       "api": "weather_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2869,7 +3373,10 @@
       "api": "weather_api",
       "judge": "outdoor_activity",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2886,7 +3393,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 1,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2903,7 +3413,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2920,7 +3433,10 @@
       "api": "traffic_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2937,7 +3453,10 @@
       "api": "traffic_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2954,7 +3473,10 @@
       "api": "traffic_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2971,7 +3493,10 @@
       "api": "traffic_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -2988,7 +3513,10 @@
       "api": "traffic_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3005,7 +3533,10 @@
       "api": "traffic_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3022,7 +3553,10 @@
       "api": "traffic_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3039,7 +3573,10 @@
       "api": "traffic_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3056,7 +3593,10 @@
       "api": "traffic_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3073,7 +3613,10 @@
       "api": "traffic_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3090,7 +3633,10 @@
       "api": "traffic_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3107,7 +3653,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3124,7 +3673,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3141,7 +3693,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3158,7 +3713,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3175,7 +3733,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3192,7 +3753,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3209,7 +3773,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3226,7 +3793,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3243,7 +3813,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3260,7 +3833,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3277,7 +3853,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3294,7 +3873,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 1,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3311,7 +3893,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3328,7 +3913,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3345,7 +3933,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3362,7 +3953,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3379,7 +3973,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3396,7 +3993,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3413,7 +4013,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3430,7 +4033,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3447,7 +4053,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3464,7 +4073,10 @@
       "api": "local_info_api",
       "judge": "cost_trend",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3481,7 +4093,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3498,7 +4113,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3515,7 +4133,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3532,7 +4153,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3549,7 +4173,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3566,7 +4193,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3583,7 +4213,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3600,7 +4233,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3617,7 +4253,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3634,7 +4273,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3651,7 +4293,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3668,7 +4313,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3685,7 +4333,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3702,7 +4353,10 @@
       "api": "none",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   },
   {
@@ -3719,7 +4373,10 @@
       "api": "local_info_api",
       "judge": "none",
       "multi_action": "single",
-      "param_direction": "none"
+      "param_direction": "none",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
     }
   }
 ]

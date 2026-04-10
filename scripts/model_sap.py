@@ -150,4 +150,13 @@ def compute_loss(logits, labels, head_weights=None):
     if 'has_value' in labels:
         loss += head_weights.get('has_value', 1.0) * F.cross_entropy(logits['has_value'], labels['has_value'])
 
+    # value pointer (only where has_value=1)
+    if 'value_start' in labels and 'has_value' in labels:
+        mask = (labels['has_value'] == 1)
+        if mask.any() and logits['start_ptr'].shape[1] > 0:
+            start_targets = labels['value_start'][mask].clamp(0, logits['start_ptr'].shape[1] - 1)
+            end_targets = labels['value_end'][mask].clamp(0, logits['end_ptr'].shape[1] - 1)
+            loss += 1.5 * F.cross_entropy(logits['start_ptr'][mask], start_targets)
+            loss += 1.5 * F.cross_entropy(logits['end_ptr'][mask], end_targets)
+
     return loss
