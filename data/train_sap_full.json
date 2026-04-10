@@ -287506,5 +287506,1895 @@
     },
     "source": "stt_ns",
     "context_token": "NONE"
+  },
+  {
+    "utterance": "밖에 비 와?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "weather_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "weather_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "밖에 눈 와?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "weather_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "weather_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "밖에 추워?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "weather_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "weather_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "밖에 더워?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "weather_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "weather_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "밖에 바람 불어?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "weather_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "weather_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "밖에 날이 어때",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "weather_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "weather_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "외출하기 어때",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "weather_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "weather_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "나가도 돼?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "weather_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "weather_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "오늘 기온",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "weather_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "weather_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "내일 기온",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "weather_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "weather_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "주말 기온",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "weather_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "weather_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "오늘 최고 기온",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "weather_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "weather_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "오늘 최저 기온",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "weather_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "weather_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "날씨 정보",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "weather_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "weather_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "기상 정보",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "weather_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "weather_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "일기 예보",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "weather_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "weather_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "주간 예보",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "weather_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "weather_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "오늘 자외선",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "weather_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "weather_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "우산 가져가야 해?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "weather_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "weather_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "비 올까?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "weather_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "weather_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "눈 올까?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "weather_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "weather_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "비 오겠지",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "weather_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "weather_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "공기 어때",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "weather_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "weather_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "밖에 공기 어때",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "weather_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "weather_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "미세먼지 수준",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "weather_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "weather_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "대기 상태",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "weather_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "weather_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "대기질",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "weather_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "weather_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "밖에 차 많아?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "traffic_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "traffic_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "도로 상황 어때",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "traffic_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "traffic_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "밖에 길 어때",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "traffic_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "traffic_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "출퇴근길 어때",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "traffic_query",
+      "room": "external",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "traffic_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "난방 확인",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "heat_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "난방 잠겼어?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "heat_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "에어컨 확인",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "ac_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "에어컨 잠겼어?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "ac_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "환기 확인",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "vent_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "환기 잠겼어?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "vent_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "조명 확인",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "light_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "조명 잠겼어?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "light_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "가스 어때?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "가스 어떠니",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "가스 어떠하니",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "가스 알려줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "가스 되고있어?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "가스 켜져있어?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "가스 돌아가고있어?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "가스 어떻냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "가스 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "gas_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "도어락 어때",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "door_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "도어락 어때?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "door_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "도어락 어떠니",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "door_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "도어락 어떠하니",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "door_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "도어락 상태 알려줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "door_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "도어락 알려줘",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "door_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "도어락 되고있어?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "door_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "도어락 켜져있어?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "door_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "도어락 돌아가고있어?",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "door_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "도어락 어떻냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "door_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "도어락 어떠냐",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "door_control",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "그건 안 돼",
+    "labels": {
+      "exec_type": "direct_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "none",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "그 기능은 없어",
+    "labels": {
+      "exec_type": "direct_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "none",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "지원하지 않아",
+    "labels": {
+      "exec_type": "direct_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "none",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "할 수 없어",
+    "labels": {
+      "exec_type": "direct_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "none",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "그건 못해",
+    "labels": {
+      "exec_type": "direct_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "none",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "그런 기능 없어",
+    "labels": {
+      "exec_type": "direct_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "none",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "서비스 안 돼",
+    "labels": {
+      "exec_type": "direct_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "none",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "지원 안 해",
+    "labels": {
+      "exec_type": "direct_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "none",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "처리 안 돼",
+    "labels": {
+      "exec_type": "direct_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "none",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "불가능해",
+    "labels": {
+      "exec_type": "direct_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "none",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "에어컨 AS",
+    "labels": {
+      "exec_type": "direct_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "none",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "에어컨 점검",
+    "labels": {
+      "exec_type": "direct_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "none",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "난방 수리",
+    "labels": {
+      "exec_type": "direct_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "none",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "환기 수리",
+    "labels": {
+      "exec_type": "direct_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "none",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "가스 점검",
+    "labels": {
+      "exec_type": "direct_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "none",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "전기요금 절약",
+    "labels": {
+      "exec_type": "direct_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "none",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "에너지 절약 팁",
+    "labels": {
+      "exec_type": "direct_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "none",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "절전 모드 자동",
+    "labels": {
+      "exec_type": "direct_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "none",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "자동 절전",
+    "labels": {
+      "exec_type": "direct_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "none",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "외출 설정 복귀 시간",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "security_mode",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "복귀 시간",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "security_mode",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "외출 복귀",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "security_mode",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "외출 설정 대기 시간",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "security_mode",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "외출 대기 시간",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "security_mode",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "방범 설정 시간",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "security_mode",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "재택방범 설정",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "security_mode",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "제습으로",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "ac_control",
+      "room": "none",
+      "param_type": "mode",
+      "param_direction": "set",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "송풍으로",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "ac_control",
+      "room": "none",
+      "param_type": "mode",
+      "param_direction": "set",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "냉방으로",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "ac_control",
+      "room": "none",
+      "param_type": "mode",
+      "param_direction": "set",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "제습 해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "ac_control",
+      "room": "none",
+      "param_type": "mode",
+      "param_direction": "set",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "송풍 해줘",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "ac_control",
+      "room": "none",
+      "param_type": "mode",
+      "param_direction": "set",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "제습 모드",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "ac_control",
+      "room": "none",
+      "param_type": "mode",
+      "param_direction": "set",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "송풍 모드",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "ac_control",
+      "room": "none",
+      "param_type": "mode",
+      "param_direction": "set",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 제습",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "ac_control",
+      "room": "living",
+      "param_type": "mode",
+      "param_direction": "set",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 제습",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "ac_control",
+      "room": "bedroom_main",
+      "param_type": "mode",
+      "param_direction": "set",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "거실 송풍",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "ac_control",
+      "room": "living",
+      "param_type": "mode",
+      "param_direction": "set",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "안방 송풍",
+    "labels": {
+      "exec_type": "control_then_confirm",
+      "fn": "ac_control",
+      "room": "bedroom_main",
+      "param_type": "mode",
+      "param_direction": "set",
+      "api": "inbase_device",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "화면 밝기 어떻게 조절해",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "local_info_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "볼륨 어떻게 조절해",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "local_info_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "절전모드 어떻게 설정해",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "local_info_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "화면 밝기 조절 방법",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "local_info_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "볼륨 조절 방법",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "local_info_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "시스템 설정 방법",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "local_info_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "AS 어디서 해",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "local_info_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "서비스 신청 어디서",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "local_info_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
+  },
+  {
+    "utterance": "이사갈 때 삭제",
+    "labels": {
+      "exec_type": "query_then_respond",
+      "fn": "info_query",
+      "room": "none",
+      "param_type": "none",
+      "param_direction": "none",
+      "api": "local_info_api",
+      "judge": "none",
+      "multi_action": "single",
+      "has_value": 0,
+      "value_start": 0,
+      "value_end": 0
+    },
+    "source": "improve",
+    "context_token": "NONE"
   }
 ]
