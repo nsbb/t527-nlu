@@ -162,7 +162,8 @@ class SAPPipeline:
         print(f"로딩 완료 — 7 heads, {sum(p.numel() for p in self.model.parameters())/1e6:.1f}M params")
 
     def predict(self, text):
-        text = re.sub(r'[\s\u00a0\u200b\u200c\u200d\ufeff\u3000]+', ' ', text).strip()
+        text = ''.join(c if c.isprintable() or c == ' ' else ' ' for c in text)
+        text = re.sub(r'\s+', ' ', text).strip()
         if not text:
             return {h: 'none' for h in HEAD_NAMES}
 
