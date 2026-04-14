@@ -1,0 +1,227 @@
+[
+  {
+    "scenario_id": 44,
+    "cat": "제어",
+    "func": "에어컨",
+    "stype": "예외",
+    "utterance": "전기요금 아끼게 해 줘",
+    "response": "자동 절전 설정은 지원하지 않습니다. 냉난방기 온도 조정을 권장합니다.",
+    "labels": {
+      "fn": "unknown",
+      "exec_type": "direct_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    }
+  },
+  {
+    "scenario_id": 55,
+    "cat": "제어",
+    "func": "환기",
+    "stype": "예외",
+    "utterance": "환기 필터 주문해줘",
+    "response": "현재 환기시스템 필터 구매는 지원하지 않습니다. 관리사무소에 문의해주세요. (고정값)",
+    "labels": {
+      "fn": "unknown",
+      "exec_type": "direct_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    }
+  },
+  {
+    "scenario_id": 56,
+    "cat": "제어",
+    "func": "환기",
+    "stype": "예외",
+    "utterance": "환기 고쳐줘",
+    "response": "현재 환기 기기 진단은 지원하지 않습니다. 관리사무소에 문의해주세요. (고정값)",
+    "labels": {
+      "fn": "unknown",
+      "exec_type": "direct_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    }
+  },
+  {
+    "scenario_id": 115,
+    "cat": "설정",
+    "func": "환경설정",
+    "stype": "조절",
+    "utterance": "거실 조명이 밝을 때 월패드 화면이 어두워졌으면 좋겠어",
+    "response": "죄송합니다. 해당 기능은 지원하지 않는 기능입니다.",
+    "labels": {
+      "fn": "unknown",
+      "exec_type": "direct_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    }
+  },
+  {
+    "scenario_id": 119,
+    "cat": "설정",
+    "func": "비밀번호 변경",
+    "stype": "조회",
+    "utterance": "월패드 비밀번호 알아서 바꿔줘/추천해",
+    "response": "비밀번호 관련 정보는 세대 정보 보호 대상입니다. 월패드 화면에서 직접 진행해주세요",
+    "labels": {
+      "fn": "unknown",
+      "exec_type": "direct_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    }
+  },
+  {
+    "scenario_id": 146,
+    "cat": "부가",
+    "func": "뉴스",
+    "stype": "조회",
+    "utterance": "매일 아침 7시 증시 뉴스 브리핑 해줘",
+    "response": "죄송합니다. 해당 기능은 지원하지 않는 기능입니다.",
+    "labels": {
+      "fn": "unknown",
+      "exec_type": "direct_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    }
+  },
+  {
+    "scenario_id": 182,
+    "cat": "부가",
+    "func": "교통정보",
+    "stype": "예외",
+    "utterance": "택시 불러줘",
+    "response": "죄송합니다. 해당 기능은 지원하지 않는 기능입니다.",
+    "labels": {
+      "fn": "unknown",
+      "exec_type": "direct_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    }
+  },
+  {
+    "scenario_id": 195,
+    "cat": "부가",
+    "func": "의료",
+    "stype": "조회",
+    "utterance": "OOO 증상 있는데 어디 가야 해?",
+    "response": "죄송합니다. 현재 의료 상담은 제공하지 않습니다. 가까운 병원 정보를 안내해 드릴 수 있습니다.",
+    "labels": {
+      "fn": "unknown",
+      "exec_type": "direct_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    }
+  },
+  {
+    "scenario_id": 197,
+    "cat": "부가",
+    "func": "의료",
+    "stype": "예외",
+    "utterance": "OOO 병원 예약해 줘",
+    "response": "죄송합니다. 현재 병원 예약 기능은 지원하지 않습니다.",
+    "labels": {
+      "fn": "unknown",
+      "exec_type": "direct_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    }
+  },
+  {
+    "scenario_id": 204,
+    "cat": "부가",
+    "func": "유가정보",
+    "stype": "예외",
+    "utterance": "오늘 최저가 할인하는 곳 있어?",
+    "response": "죄송합니다. 해당 기능은 지원하지 않는 기능입니다.",
+    "labels": {
+      "fn": "unknown",
+      "exec_type": "direct_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    }
+  },
+  {
+    "scenario_id": 205,
+    "cat": "부가",
+    "func": "유가정보",
+    "stype": "예외",
+    "utterance": "기다리면 휘발유 떨어질까?",
+    "response": "가격 예측 정보는 제공하지 않습니다. 현재 가격 정보만 안내 가능합니다.",
+    "labels": {
+      "fn": "unknown",
+      "exec_type": "direct_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    }
+  },
+  {
+    "scenario_id": 206,
+    "cat": "부가",
+    "func": "유가정보",
+    "stype": "예외",
+    "utterance": "정유사 마진 얼마야?",
+    "response": "죄송합니다. 해당 기능은 지원하지 않는 기능입니다.",
+    "labels": {
+      "fn": "unknown",
+      "exec_type": "direct_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    }
+  },
+  {
+    "scenario_id": 214,
+    "cat": "부가",
+    "func": "증시",
+    "stype": "조회",
+    "utterance": "뭐 사야 돼?",
+    "response": "종목 추천은 제공하지 않습니다.",
+    "labels": {
+      "fn": "unknown",
+      "exec_type": "direct_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    }
+  },
+  {
+    "scenario_id": 215,
+    "cat": "부가",
+    "func": "증시",
+    "stype": "조회",
+    "utterance": "내 계좌 수익률 얼마야?",
+    "response": "개인 수익 정보는 제공하지 않습니다.",
+    "labels": {
+      "fn": "unknown",
+      "exec_type": "direct_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    }
+  },
+  {
+    "scenario_id": 216,
+    "cat": "부가",
+    "func": "증시",
+    "stype": "조회",
+    "utterance": "OOO 매수 타이밍 알려줘",
+    "response": "투자 조언은 제공하지 않습니다.",
+    "labels": {
+      "fn": "unknown",
+      "exec_type": "direct_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    }
+  }
+]
