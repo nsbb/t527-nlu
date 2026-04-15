@@ -65,38 +65,37 @@ def predict(text):
     text = ''.join(c if c.isprintable() or c == ' ' else ' ' for c in text)
     text = re.sub(r'\s+', ' ', text).strip()
     if not text:
-        return None, None, 0
+        return None, None
 
     tk = tok(text, padding='max_length', truncation=True, max_length=32, return_tensors='pt')
     with torch.no_grad():
         logits = model(tk['input_ids'])
 
-    preds = {h: HEAD_I2L[h][logits[h].argmax(1).item()] for h in HEAD_NAMES}
-    probs = F.softmax(logits['fn'], dim=1)[0]
-    conf = probs.max().item()
+    preds = {}
+    all_probs = {}
+    for h in HEAD_NAMES:
+        probs = F.softmax(logits[h], dim=1)[0]
+        pred_idx = probs.argmax().item()
+        preds[h] = HEAD_I2L[h][pred_idx]
+        # top 3 per head
+        top_k = min(3, len(probs))
+        top_idx = probs.topk(top_k).indices.tolist()
+        all_probs[h] = [(HEAD_I2L[h][i], probs[i].item()) for i in top_idx]
 
-    # Top 3
-    top3_idx = probs.topk(3).indices.tolist()
-    top3 = [(HEAD_I2L['fn'][i], probs[i].item()) for i in top3_idx]
-
-    return preds, top3, conf
+    return preds, all_probs
 
 
-def format_result(text, preds, top3, conf):
+def format_result(text, preds, all_probs):
     fn = preds['fn']
-    ex = preds['exec_type']
-    dr = preds['param_direction']
-    pt = preds['param_type']
-    jd = preds['judge']
 
-    # Room
+    # Room (rule)
     room = 'none'
     for kw, rm in ROOMS.items():
         if kw in text:
             room = rm
             break
 
-    # Value
+    # Value (rule)
     value = None
     m = re.search(r'(\d+)\s*도', text)
     if m: value = f"{m.group(1)}도"
@@ -110,38 +109,42 @@ def format_result(text, preds, top3, conf):
             unsupported = True
             break
 
-    # 출력
+    # 출력 — 5 head 전부
     lines = []
-    lines.append(f"  fn:        {fn} ({conf*100:.0f}%)")
-    lines.append(f"  exec:      {ex}")
-    if dr != 'none': lines.append(f"  direction: {dr}")
-    if pt != 'none': lines.append(f"  param:     {pt}")
-    if jd != 'none': lines.append(f"  judge:     {jd}")
-    if room != 'none': lines.append(f"  room:      {room}")
-    if value: lines.append(f"  value:     {value}")
+    lines.append(f"  ┌─ Multi-Head 결과 ─────────────────────────────")
+    for h in HEAD_NAMES:
+        top = all_probs[h]
+        pred_val = preds[h]
+        conf = top[0][1]
+        top_str = ' | '.join(f'{n}({p*100:.0f}%)' for n, p in top)
+        lines.append(f"  │ {h:17s}: {pred_val:25s} [{top_str}]")
 
-    # Top 3
-    lines.append(f"  top3:      {', '.join(f'{n}({p*100:.0f}%)' for n, p in top3)}")
+    lines.append(f"  ├─ Rule 추출 ──────────────────────────────────")
+    if room != 'none': lines.append(f"  │ room:              {room}")
+    if value:          lines.append(f"  │ value:             {value}")
+    if room == 'none' and not value:
+                       lines.append(f"  │ (없음)")
 
-    # 응답
+    lines.append(f"  ├─ 판정 ──────────────────────────────────────")
     if fn == 'unknown':
-        lines.append(f"  → 서버로 전송")
+        lines.append(f"  │ → 🔀 서버로 전송")
     elif unsupported:
-        lines.append(f"  → 죄송합니다. 해당 기능은 지원하지 않습니다.")
-    elif ex == 'clarify':
-        lines.append(f"  → 어떤 공간의 기기를 제어할지 말씀해주세요.")
+        lines.append(f"  │ → ❌ 미지원: 해당 기능은 지원하지 않습니다.")
+    elif preds['exec_type'] == 'clarify':
+        lines.append(f"  │ → ❓ 어떤 공간의 기기를 제어할지 말씀해주세요.")
     else:
-        lines.append(f"  → [정상 처리]")
+        lines.append(f"  │ → ✅ 정상 처리")
+    lines.append(f"  └────────────────────────────────────────────")
 
     return '\n'.join(lines)
 
 
 if single_text:
-    preds, top3, conf = predict(single_text)
+    preds, all_probs = predict(single_text)
     print(f"입력: {single_text}")
-    print(format_result(single_text, preds, top3, conf))
+    print(format_result(single_text, preds, all_probs))
 else:
-    print("=== NLU 대화형 테스트 ===")
+    print("=== NLU 대화형 테스트 (5-Head Multi-Head) ===")
     print(f"모델: {version}")
     print("종료: q / quit / 종료\n")
 
@@ -156,7 +159,7 @@ else:
         if not text:
             continue
 
-        preds, top3, conf = predict(text)
+        preds, all_probs = predict(text)
         if preds:
-            print(format_result(text, preds, top3, conf))
+            print(format_result(text, preds, all_probs))
         print()
