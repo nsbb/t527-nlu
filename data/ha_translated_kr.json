@@ -1,0 +1,6998 @@
+[
+  {
+    "utterance": "서재 도어락 잠가줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "please lock the library door."
+  },
+  {
+    "utterance": "아이방 도어락 잠가주세요",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "lock down the nursery door lock"
+  },
+  {
+    "utterance": "창고 도어락 잠가봐",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "please lock the storage room door."
+  },
+  {
+    "utterance": "차고 문 잠가줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "secure the rear gate lock and shut the primary gar"
+  },
+  {
+    "utterance": "게스트룸 도어락 잠금해줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "please lock the guest room door."
+  },
+  {
+    "utterance": "지하 현관문 잠금해줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "lock the conservatory lock and lower the basement "
+  },
+  {
+    "utterance": "도어락 잠가줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "make sure the fence gate is locked."
+  },
+  {
+    "utterance": "계단 문 잠가줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "lock the staircase gate lock"
+  },
+  {
+    "utterance": "도어락 잠금해줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "secure the music room lock and shut the greenhouse"
+  },
+  {
+    "utterance": "창고 도어락 잠금해줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "ensure wine cellar lock is secure"
+  },
+  {
+    "utterance": "주방 현관문 잠금해줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "lock the pool gate lock and lower the kitchen blin"
+  },
+  {
+    "utterance": "주방 현관문 잠가봐",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "lock the pantry lock and lower the kitchen window "
+  },
+  {
+    "utterance": "현관문 잠금해줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "secure the playroom lock"
+  },
+  {
+    "utterance": "차고 도어락 잠가줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "secure the service entrance lock and shut the rv g"
+  },
+  {
+    "utterance": "현관문 잠가",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "lock down the service entrance lock"
+  },
+  {
+    "utterance": "도어락 잠가주세요",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "secure the swimming pool gate"
+  },
+  {
+    "utterance": "창고 현관문 잠가봐",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "lock the wine cellar lock"
+  },
+  {
+    "utterance": "도어락 잠가",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "engage the music room lock lock"
+  },
+  {
+    "utterance": "현관문 잠가주세요",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "engage the walk-in closet lock lock"
+  },
+  {
+    "utterance": "현관 문 잠가줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "please lock the front door."
+  },
+  {
+    "utterance": "복도 문 잠가줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "lock the safety deposit box and lower the first ha"
+  },
+  {
+    "utterance": "현관문 잠가줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "ensure second shed lock is secure"
+  },
+  {
+    "utterance": "화장실 문 잠가줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "lock the laundry room lock and lower the bathroom "
+  },
+  {
+    "utterance": "문 잠가줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "lock down the pantry lock"
+  },
+  {
+    "utterance": "거실 현관문 잠가봐",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "lock the yale living room"
+  },
+  {
+    "utterance": "후문 현관문 잠가주세요",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "ensure back door lock is secure"
+  },
+  {
+    "utterance": "서재 문 잠가줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "i'd like the home office locked up."
+  },
+  {
+    "utterance": "서재 도어락 잠가봐",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "ensure office cabinet lock is secure"
+  },
+  {
+    "utterance": "서재 현관문 잠가",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "secure the office cabinet lock"
+  },
+  {
+    "utterance": "현관 도어락 잠가주세요",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "lock the front porch door."
+  },
+  {
+    "utterance": "안방 문 잠가줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "make sure bike rack lock and third bedroom lock ar"
+  },
+  {
+    "utterance": "메인 도어락 잠가",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "ensure the main gate is locked."
+  },
+  {
+    "utterance": "옆 문 잠가줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "lock the side gate lock"
+  },
+  {
+    "utterance": "후문 현관문 잠금해줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "lock down the backyard entry lock"
+  },
+  {
+    "utterance": "아이방 도어락 잠가줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "lock the walk-in closet lock and lower the kids' r"
+  },
+  {
+    "utterance": "식당 문 잠가줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "lock the nursery door lock and lower the dining ro"
+  },
+  {
+    "utterance": "발코니 문 잠가줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "engage the balcony access lock lock"
+  },
+  {
+    "utterance": "지하 문 잠가줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "lock up the basement door."
+  },
+  {
+    "utterance": "복도 현관문 잠가줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "make sure hallway closet lock and rear gate lock a"
+  },
+  {
+    "utterance": "후문 문 잠가줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "engage the back door lock"
+  },
+  {
+    "utterance": "서재 도어락 잠가주세요",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "please lock the office"
+  },
+  {
+    "utterance": "아이방 현관문 잠가봐",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "can you secure the nursery door"
+  },
+  {
+    "utterance": "창고 문 잠가줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "could you lock the wine cellar"
+  },
+  {
+    "utterance": "주방 문 잠가줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "engage the kitchen entry lock lock"
+  },
+  {
+    "utterance": "다락 문 잠가줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "attic door needs locking."
+  },
+  {
+    "utterance": "게스트룸 도어락 잠가봐",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "make sure gun safe lock and guest room lock are lo"
+  },
+  {
+    "utterance": "세탁실 도어락 잠가주세요",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "ensure laundry room lock is secure"
+  },
+  {
+    "utterance": "거실 현관문 잠가주세요",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "ensure sunroom lock is secure"
+  },
+  {
+    "utterance": "차고 현관문 잠가주세요",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "make sure tool shed lock and private elevator lock"
+  },
+  {
+    "utterance": "도어락 잠가봐",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "ensure yard shed lock is secure"
+  },
+  {
+    "utterance": "안방 도어락 잠가",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "lock the master bedroom lock and lower the master "
+  },
+  {
+    "utterance": "현관 현관문 잠가봐",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "lock the front door"
+  },
+  {
+    "utterance": "게스트룸 문 잠가줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "secure the guest room lock"
+  },
+  {
+    "utterance": "창고 현관문 열어주세요",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "disengage the wine cellar lock lock"
+  },
+  {
+    "utterance": "현관문 열어주세요",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "unsecure the pool gate lock"
+  },
+  {
+    "utterance": "도어락 열어",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "disengage the yard shed lock lock"
+  },
+  {
+    "utterance": "현관 도어락 열어봐",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "make sure front door lock is unlocked"
+  },
+  {
+    "utterance": "후문 현관문 열어줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "can you unlock the back door?"
+  },
+  {
+    "utterance": "문 열어줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "make sure tool shed lock is unlocked"
+  },
+  {
+    "utterance": "아이방 문 열어줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "unlock the nursery door lock"
+  },
+  {
+    "utterance": "아이방 도어락 열어봐",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "the nursery door needs to be unlocked."
+  },
+  {
+    "utterance": "정원 도어락 열어줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "disengage the garden gate lock lock"
+  },
+  {
+    "utterance": "세탁실 도어락 열어줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "make sure laundry room lock is unlocked"
+  },
+  {
+    "utterance": "세탁실 도어락 열어주세요",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "unlock the laundry room lock"
+  },
+  {
+    "utterance": "후문 현관문 열어봐",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "could you disengage the back door lock"
+  },
+  {
+    "utterance": "안방 문 열어줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "unlock the second bedroom lock"
+  },
+  {
+    "utterance": "서재 현관문 열어",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "disengage the office cabinet lock lock"
+  },
+  {
+    "utterance": "도어락 열어봐",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "make sure yard shed lock is unlocked"
+  },
+  {
+    "utterance": "안방 현관문 열어",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "unlock the third bedroom lock"
+  },
+  {
+    "utterance": "현관문 열어",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "unlock the boathouse door."
+  },
+  {
+    "utterance": "도어락 열어줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "unsecure the bike rack lock"
+  },
+  {
+    "utterance": "현관 문 열어줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "unlock the front door"
+  },
+  {
+    "utterance": "도어락 열어주세요",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "unsecure the gun safe lock"
+  },
+  {
+    "utterance": "후문 도어락 열어봐",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "can we have the backyard gate unlocked?"
+  },
+  {
+    "utterance": "차고 도어락 열어",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "garage side door should be unlocked."
+  },
+  {
+    "utterance": "주방 현관문 열어주세요",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "open the lock on the kitchen window."
+  },
+  {
+    "utterance": "게스트룸 문 열어줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "disengage the guest room lock lock"
+  },
+  {
+    "utterance": "거실 도어락 열어줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "make sure home theater lock is unlocked"
+  },
+  {
+    "utterance": "안방 도어락 열어줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "disengage the second bedroom lock lock"
+  },
+  {
+    "utterance": "지하 현관문 열어봐",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "unlock the basement lock"
+  },
+  {
+    "utterance": "화장실 현관문 열어줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "could you unlock the bathroom window?"
+  },
+  {
+    "utterance": "발코니 현관문 열어주세요",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "unlock the balcony door for me."
+  },
+  {
+    "utterance": "거실 현관문 열어봐",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "disengage the home theater lock lock"
+  },
+  {
+    "utterance": "주방 도어락 열어봐",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "unlock the yale kitchen"
+  },
+  {
+    "utterance": "거실 문 열어줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "please unlock the sunroom door."
+  },
+  {
+    "utterance": "옆 도어락 열어봐",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "unlock our side entrance."
+  },
+  {
+    "utterance": "차고 문 열어줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "unsecure the garage door lock"
+  },
+  {
+    "utterance": "창고 문 열어줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "make sure storage room lock is unlocked"
+  },
+  {
+    "utterance": "현관문 열어줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "make sure driveway gate lock is unlocked"
+  },
+  {
+    "utterance": "메인 현관문 열어주세요",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "unlock the main entry lock"
+  },
+  {
+    "utterance": "후문 도어락 열어주세요",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "unlock the back door lock"
+  },
+  {
+    "utterance": "거실 현관문 열어줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "disengage the yale living room lock"
+  },
+  {
+    "utterance": "서재 문 열어줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "please unlock the office"
+  },
+  {
+    "utterance": "거실 도어락 열어주세요",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "unlock the sunroom lock"
+  },
+  {
+    "utterance": "현관문 열어봐",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "unlock the swimming pool gate"
+  },
+  {
+    "utterance": "식당 문 열어줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "unsecure the dining room lock"
+  },
+  {
+    "utterance": "계단 도어락 열어줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_door_control",
+    "en_original": "unsecure the staircase gate lock"
+  },
+  {
+    "utterance": "주방 커튼 열어주세요",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "open the kitchen blinds"
+  },
+  {
+    "utterance": "주방 커튼 좀 열어줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "see to it that the kitchen window blinds are open"
+  },
+  {
+    "utterance": "거실 커튼 열어봐",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "open the main living room blinds"
+  },
+  {
+    "utterance": "커튼 열어주세요",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "lift the rv storage door"
+  },
+  {
+    "utterance": "안방 커튼 열어봐",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "raise the master bedroom blinds"
+  },
+  {
+    "utterance": "아래층 커튼 열어주세요",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "open carport garage door and activate downstairs w"
+  },
+  {
+    "utterance": "창고 커튼 좀 열어줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "raise the wine cellar door"
+  },
+  {
+    "utterance": "창고 커튼 열어",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "open bike storage garage and unlock wine cellar lo"
+  },
+  {
+    "utterance": "차고 커튼 열어주세요",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "open side garage door and unlock mudroom lock"
+  },
+  {
+    "utterance": "차고 커튼 열어줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "make certain the primary garage door is open"
+  },
+  {
+    "utterance": "거실 커튼 열어줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "raise main living room blinds and activate hallway"
+  },
+  {
+    "utterance": "차고 커튼 열어",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "make certain the rv garage door is open"
+  },
+  {
+    "utterance": "안방 커튼 열어주세요",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "raise the master bedroom blinds and speed up the r"
+  },
+  {
+    "utterance": "화장실 커튼 열어줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "open the guest bathroom blinds"
+  },
+  {
+    "utterance": "현관 커튼 열어줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "see to it that the front window blinds are open"
+  },
+  {
+    "utterance": "차고 커튼 열어봐",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "make certain the motorcycle garage is open"
+  },
+  {
+    "utterance": "지하 커튼 열어주세요",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "please raise the basement garage door"
+  },
+  {
+    "utterance": "아이방 커튼 열어봐",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "open the nursery blinds"
+  },
+  {
+    "utterance": "아이방 커튼 열어",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "raise the nursery blinds"
+  },
+  {
+    "utterance": "거실 커튼 좀 열어줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "raise home theater blinds and activate study light"
+  },
+  {
+    "utterance": "커튼 열어줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "open the skylight blinds"
+  },
+  {
+    "utterance": "차고 커튼 좀 열어줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "lift the garage blinds blinds"
+  },
+  {
+    "utterance": "복도 커튼 좀 열어줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "lift the second hallway blinds blinds"
+  },
+  {
+    "utterance": "후문 커튼 열어봐",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "see to it that the back window blinds are open"
+  },
+  {
+    "utterance": "게스트룸 커튼 열어주세요",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "open the guest room blinds"
+  },
+  {
+    "utterance": "서재 커튼 열어줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "lift the office blinds blinds"
+  },
+  {
+    "utterance": "복도 커튼 열어줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "see to it that the hallway blinds are open"
+  },
+  {
+    "utterance": "거실 커튼 열어주세요",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "open the main garage door and lift the sunroom bli"
+  },
+  {
+    "utterance": "화장실 커튼 좀 열어줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "raise the first bathroom blinds"
+  },
+  {
+    "utterance": "지하 커튼 열어봐",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "raise the basement blinds"
+  },
+  {
+    "utterance": "커튼 열어",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "lift the chamberlain"
+  },
+  {
+    "utterance": "화장실 커튼 열어주세요",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "open the second shed door and lift the bathroom bl"
+  },
+  {
+    "utterance": "아래층 커튼 열어봐",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "raise first hallway blinds and activate downstairs"
+  },
+  {
+    "utterance": "커튼 열어봐",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "lift the first shed door"
+  },
+  {
+    "utterance": "게스트룸 커튼 열어줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "open chamberlain and activate guest room lights"
+  },
+  {
+    "utterance": "주방 커튼 열어",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "lift the kitchen window blinds blinds"
+  },
+  {
+    "utterance": "복도 커튼 열어봐",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "raise the first hallway blinds"
+  },
+  {
+    "utterance": "복도 커튼 열어",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "open the carport door and lift the first hallway b"
+  },
+  {
+    "utterance": "안방 커튼 열어줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "open chamberlain and unlock second bedroom lock"
+  },
+  {
+    "utterance": "커튼 좀 열어줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "lift the skylight blinds blinds"
+  },
+  {
+    "utterance": "지하 커튼 열어줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "make certain the basement garage door is open"
+  },
+  {
+    "utterance": "후문 커튼 열어줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "open the back window blinds"
+  },
+  {
+    "utterance": "식당 커튼 열어주세요",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "open the dining room blinds"
+  },
+  {
+    "utterance": "화장실 커튼 열어봐",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "raise the guest bathroom blinds and speed up the o"
+  },
+  {
+    "utterance": "아이방 커튼 좀 열어줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "lift the nursery blinds blinds"
+  },
+  {
+    "utterance": "안방 커튼 열어",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "raise second hallway blinds and activate upstairs "
+  },
+  {
+    "utterance": "커튼 닫아봐",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "lower the liftmaster"
+  },
+  {
+    "utterance": "커튼 닫아주세요",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "see to it that the craft room blinds are closed"
+  },
+  {
+    "utterance": "복도 커튼 닫아줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "shut the hallway blinds"
+  },
+  {
+    "utterance": "주방 커튼 닫아",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "shut the kitchen window blinds"
+  },
+  {
+    "utterance": "서재 커튼 닫아줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "see to it that the office window blinds are closed"
+  },
+  {
+    "utterance": "서재 커튼 좀 닫아줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "lower the office blinds"
+  },
+  {
+    "utterance": "차고 커튼 좀 닫아줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "lower the primary garage door"
+  },
+  {
+    "utterance": "주방 커튼 닫아봐",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "close office blinds and deactivate kitchen fans"
+  },
+  {
+    "utterance": "안방 커튼 닫아주세요",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "close the master bedroom blinds"
+  },
+  {
+    "utterance": "거실 커튼 닫아",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "see to it that the living room blinds are closed"
+  },
+  {
+    "utterance": "차고 커튼 닫아줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "see to it that the garage blinds are closed"
+  },
+  {
+    "utterance": "거실 커튼 닫아주세요",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "lower the main living room blinds"
+  },
+  {
+    "utterance": "화장실 커튼 좀 닫아줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "close the first bathroom blinds"
+  },
+  {
+    "utterance": "차고 커튼 닫아주세요",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "shut the one car garage"
+  },
+  {
+    "utterance": "현관 커튼 좀 닫아줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "shut the front window blinds"
+  },
+  {
+    "utterance": "차고 커튼 닫아",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "close the carport garage door"
+  },
+  {
+    "utterance": "커튼 닫아",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "see to it that the patio blinds are closed"
+  },
+  {
+    "utterance": "차고 커튼 닫아봐",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "lower the workshop garage door"
+  },
+  {
+    "utterance": "화장실 커튼 닫아",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "close kitchen window blinds and deactivate bathroo"
+  },
+  {
+    "utterance": "지하 커튼 좀 닫아줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "lower the basement garage door"
+  },
+  {
+    "utterance": "지하 커튼 닫아",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "make certain the basement garage door is closed"
+  },
+  {
+    "utterance": "거실 커튼 좀 닫아줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "close the living room blinds"
+  },
+  {
+    "utterance": "커튼 닫아줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "see to it that the skylight blinds are closed"
+  },
+  {
+    "utterance": "아이방 커튼 닫아주세요",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "close golf cart door and deactivate kids' room fan"
+  },
+  {
+    "utterance": "커튼 좀 닫아줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "lower the ikea smart blinds"
+  },
+  {
+    "utterance": "식당 커튼 닫아",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "close dining room blinds and deactivate bedroom fa"
+  },
+  {
+    "utterance": "지하 커튼 닫아봐",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "close hallway blinds and deactivate basement fan"
+  },
+  {
+    "utterance": "게스트룸 커튼 닫아주세요",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "shut the guest room blinds"
+  },
+  {
+    "utterance": "식당 커튼 닫아봐",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "see to it that the dining room blinds are closed"
+  },
+  {
+    "utterance": "거실 커튼 닫아봐",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "close the main living room blinds"
+  },
+  {
+    "utterance": "게스트룸 커튼 닫아봐",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "lower the guest room blinds"
+  },
+  {
+    "utterance": "현관 커튼 닫아봐",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "see to it that the front window blinds are closed"
+  },
+  {
+    "utterance": "후문 커튼 닫아",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "see to it that the back window blinds are closed"
+  },
+  {
+    "utterance": "복도 커튼 닫아",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "close the first hallway blinds"
+  },
+  {
+    "utterance": "창고 커튼 닫아봐",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "shut the wine cellar door"
+  },
+  {
+    "utterance": "거실 커튼 닫아줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "lower the home theater blinds"
+  },
+  {
+    "utterance": "아래층 커튼 닫아",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "close basement blinds and deactivate fan in downst"
+  },
+  {
+    "utterance": "게스트룸 커튼 좀 닫아줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "close carport garage door and deactivate guest roo"
+  },
+  {
+    "utterance": "오른쪽 커튼 닫아줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "close ikea smart blinds and deactivate right-side "
+  },
+  {
+    "utterance": "안방 커튼 닫아줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "shut the master bedroom blinds"
+  },
+  {
+    "utterance": "복도 커튼 좀 닫아줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "close the second hallway blinds"
+  },
+  {
+    "utterance": "게스트룸 커튼 닫아",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "close the guest room blinds"
+  },
+  {
+    "utterance": "화장실 커튼 닫아봐",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "close the guest bathroom blinds"
+  },
+  {
+    "utterance": "후문 커튼 그만",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "halt the back window blinds"
+  },
+  {
+    "utterance": "차고 커튼 중지해줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "halt the garage blinds"
+  },
+  {
+    "utterance": "식당 커튼 멈춰",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "freeze the dining room blinds"
+  },
+  {
+    "utterance": "게스트룸 커튼 중지해줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "stop the guest room blinds"
+  },
+  {
+    "utterance": "커튼 그만",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "stop the rv storage door right now"
+  },
+  {
+    "utterance": "복도 커튼 멈춰",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "stop the second hallway blinds"
+  },
+  {
+    "utterance": "서재 커튼 중지해줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "stop the office window blinds"
+  },
+  {
+    "utterance": "주방 커튼 그만",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "stop the kitchen blinds"
+  },
+  {
+    "utterance": "차고 커튼 멈춰줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "halt the bike storage garage"
+  },
+  {
+    "utterance": "거실 커튼 중지해줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "stop the main living room blinds"
+  },
+  {
+    "utterance": "지하 커튼 멈춰",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "freeze the basement blinds"
+  },
+  {
+    "utterance": "거실 커튼 멈춰줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "stop the living room blinds"
+  },
+  {
+    "utterance": "커튼 멈춰",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "stop the lawn equipment door right now"
+  },
+  {
+    "utterance": "안방 커튼 멈춰",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "please halt the master bedroom blinds"
+  },
+  {
+    "utterance": "창고 커튼 멈춰",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "halt the wine cellar door"
+  },
+  {
+    "utterance": "차고 커튼 멈춰",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "stop the bike storage garage right now"
+  },
+  {
+    "utterance": "서재 커튼 그만",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "halt the office window blinds"
+  },
+  {
+    "utterance": "거실 커튼 그만",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "freeze the living room blinds"
+  },
+  {
+    "utterance": "커튼 멈춰줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "freeze the ikea smart blinds"
+  },
+  {
+    "utterance": "복도 커튼 멈춰줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "freeze the first hallway blinds"
+  },
+  {
+    "utterance": "차고 커튼 그만",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "halt the two car garage"
+  },
+  {
+    "utterance": "커튼 중지해줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "stop the chamberlain right now"
+  },
+  {
+    "utterance": "화장실 커튼 그만",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "halt the first bathroom blinds"
+  },
+  {
+    "utterance": "안방 커튼 그만",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "stop the master bedroom blinds"
+  },
+  {
+    "utterance": "화장실 커튼 멈춰줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "freeze the first bathroom blinds"
+  },
+  {
+    "utterance": "창고 커튼 중지해줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "stop the wine cellar door"
+  },
+  {
+    "utterance": "복도 커튼 그만",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "freeze the hallway blinds"
+  },
+  {
+    "utterance": "현관 커튼 멈춰줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "stop the front window blinds"
+  },
+  {
+    "utterance": "화장실 커튼 중지해줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "halt the bathroom blinds"
+  },
+  {
+    "utterance": "화장실 커튼 멈춰",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "freeze the bathroom blinds"
+  },
+  {
+    "utterance": "후문 커튼 중지해줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "freeze the back window blinds"
+  },
+  {
+    "utterance": "지하 커튼 그만",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "stop the basement garage door"
+  },
+  {
+    "utterance": "아이방 커튼 중지해줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "stop the kids' room blinds"
+  },
+  {
+    "utterance": "식당 커튼 중지해줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "halt the dining room blinds"
+  },
+  {
+    "utterance": "지하 커튼 멈춰줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "stop the basement blinds"
+  },
+  {
+    "utterance": "주방 커튼 멈춰",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "stop the kitchen window blinds"
+  },
+  {
+    "utterance": "창고 커튼 그만",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "freeze the wine cellar door"
+  },
+  {
+    "utterance": "아이방 커튼 멈춰줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "stop",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_curtain_control",
+    "en_original": "freeze the kids' room blinds"
+  },
+  {
+    "utterance": "난방 온도 16도",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "set the temperature to 60 degrees."
+  },
+  {
+    "utterance": "온도 17도로 맞춰",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "raise the temperature to 63 degrees"
+  },
+  {
+    "utterance": "난방 27도로 설정해줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "raise the temperature to 80 degrees"
+  },
+  {
+    "utterance": "난방 온도 26도",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "set the temperature to 78 degrees."
+  },
+  {
+    "utterance": "난방 온도 설정해줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "can you change the temperature to 15 celsius?"
+  },
+  {
+    "utterance": "난방 온도 22도",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "set the temperature to 71 degrees."
+  },
+  {
+    "utterance": "난방 온도 해줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "can you lower the temperature to 20?"
+  },
+  {
+    "utterance": "난방 20도로 설정해",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "raise the temperature to 68 degrees"
+  },
+  {
+    "utterance": "난방 온도 설정해",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "can you lower the temperature to 15?"
+  },
+  {
+    "utterance": "온도 23도로 맞춰줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "set the temperature to 74 degrees."
+  },
+  {
+    "utterance": "온도 21도로 설정해",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "raise the temperature to 69 degrees"
+  },
+  {
+    "utterance": "난방 19도로 해줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "set the temperature to 66 degrees."
+  },
+  {
+    "utterance": "난방 16도로 해줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "i'd like the room at 60 degrees fahrenheit,8\nclima"
+  },
+  {
+    "utterance": "온도 23도로 맞춰",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "set the temperature to 73 degrees."
+  },
+  {
+    "utterance": "난방 온도 맞춰줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "can you lower the temperature to 18?"
+  },
+  {
+    "utterance": "온도 21도로 맞춰",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "raise the temperature to 70 degrees"
+  },
+  {
+    "utterance": "온도 18도로 설정해줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "set the temperature to 65 degrees."
+  },
+  {
+    "utterance": "난방 온도 19도",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "set the temperature to 67 degrees."
+  },
+  {
+    "utterance": "온도 25도로 설정해",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "i'd like the room at 77 degrees fahrenheit,8\nclima"
+  },
+  {
+    "utterance": "온도 20도로 설정해",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "i'd like the room at 68 degrees fahrenheit,8\nclima"
+  },
+  {
+    "utterance": "난방 22도로 해줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "i'd like the room at 72 degrees fahrenheit,8\nclima"
+  },
+  {
+    "utterance": "온도 18도로 해줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "i'd like the room at 65 degrees fahrenheit,8\nclima"
+  },
+  {
+    "utterance": "온도 18도로 맞춰",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "set the temperature to 64 degrees."
+  },
+  {
+    "utterance": "온도 19도로 맞춰줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "i'd like the room at 66 degrees fahrenheit,8\nclima"
+  },
+  {
+    "utterance": "난방 24도로 해줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "i'd like the room at 75 degrees fahrenheit,8\nclima"
+  },
+  {
+    "utterance": "난방 온도 맞춰",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "can you lower the temperature to 22?"
+  },
+  {
+    "utterance": "온도 19도로 설정해줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "raise the temperature to 67 degrees"
+  },
+  {
+    "utterance": "난방 온도 27도",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "set the temperature to 80 degrees."
+  },
+  {
+    "utterance": "난방 온도 23도",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "raise the temperature to 73 degrees"
+  },
+  {
+    "utterance": "난방 20도로 설정해줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "set the temperature to 68 degrees."
+  },
+  {
+    "utterance": "온도 26도로 맞춰",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "i'd like the room at 78 degrees fahrenheit,8\nclima"
+  },
+  {
+    "utterance": "난방 16도로 설정해",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "set the temperature to 61 degrees."
+  },
+  {
+    "utterance": "온도 25도로 설정해줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "raise the temperature to 77 degrees"
+  },
+  {
+    "utterance": "온도 27도로 설정해줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "i'd like the room at 80 degrees fahrenheit,8\nclima"
+  },
+  {
+    "utterance": "온도 26도로 설정해",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "raise the temperature to 78 degrees"
+  },
+  {
+    "utterance": "난방 온도 24도",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "set the temperature to 76 degrees."
+  },
+  {
+    "utterance": "온도 16도로 설정해",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "raise the temperature to 60 degrees"
+  },
+  {
+    "utterance": "온도 17도로 설정해",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "i'd like the room at 63 degrees fahrenheit,8\nclima"
+  },
+  {
+    "utterance": "온도 21도로 해줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "i'd like the room at 69 degrees fahrenheit,8\nclima"
+  },
+  {
+    "utterance": "난방 24도로 설정해줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "i'd like the room at 76 degrees fahrenheit,8\nclima"
+  },
+  {
+    "utterance": "난방 온도 17도",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "set the temperature to 62 degrees."
+  },
+  {
+    "utterance": "난방 26도로 설정해줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "i'd like the room at 79 degrees fahrenheit,8\nclima"
+  },
+  {
+    "utterance": "온도 19도로 설정해",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "i'd like the room at 67 degrees fahrenheit,8\nclima"
+  },
+  {
+    "utterance": "난방 19도로 맞춰줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "raise the temperature to 66 degrees"
+  },
+  {
+    "utterance": "난방 18도로 해줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "raise the temperature to 64 degrees"
+  },
+  {
+    "utterance": "난방 17도로 설정해",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "set the temperature to 63 degrees."
+  },
+  {
+    "utterance": "난방 온도 21도",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "set the temperature to 69 degrees."
+  },
+  {
+    "utterance": "난방 온도 25도",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "set the temperature to 77 degrees."
+  },
+  {
+    "utterance": "난방 24도로 맞춰",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "temperature",
+      "judge": "none"
+    },
+    "source": "ha_translated_heat_control",
+    "en_original": "set the temperature to 75 degrees."
+  },
+  {
+    "utterance": "에어컨 송풍 모드로 맞춰줘",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "mode",
+      "judge": "none"
+    },
+    "source": "ha_translated_ac_control",
+    "en_original": "set the climate fan to on low speed."
+  },
+  {
+    "utterance": "에어컨 제습 모드로 맞춰",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "mode",
+      "judge": "none"
+    },
+    "source": "ha_translated_ac_control",
+    "en_original": "set the climate fan to auto low speed."
+  },
+  {
+    "utterance": "에어컨 자동 모드로 맞춰줘",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "mode",
+      "judge": "none"
+    },
+    "source": "ha_translated_ac_control",
+    "en_original": "set the climate fan to auto high speed."
+  },
+  {
+    "utterance": "에어컨 냉방 모드로 맞춰",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "mode",
+      "judge": "none"
+    },
+    "source": "ha_translated_ac_control",
+    "en_original": "change the air conditioning fan to on low."
+  },
+  {
+    "utterance": "에어컨 자동 모드로 설정해",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "mode",
+      "judge": "none"
+    },
+    "source": "ha_translated_ac_control",
+    "en_original": "please put the climate fan on off."
+  },
+  {
+    "utterance": "에어컨 강풍 모드로 맞춰줘",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "mode",
+      "judge": "none"
+    },
+    "source": "ha_translated_ac_control",
+    "en_original": "set the climate fan to on high speed."
+  },
+  {
+    "utterance": "에어컨 송풍 모드로 설정해줘",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "mode",
+      "judge": "none"
+    },
+    "source": "ha_translated_ac_control",
+    "en_original": "please put the climate fan on on high."
+  },
+  {
+    "utterance": "에어컨 약풍 모드로 해줘",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "mode",
+      "judge": "none"
+    },
+    "source": "ha_translated_ac_control",
+    "en_original": "change the air conditioning fan to on high."
+  },
+  {
+    "utterance": "에어컨 자동 모드로 설정해줘",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "mode",
+      "judge": "none"
+    },
+    "source": "ha_translated_ac_control",
+    "en_original": "please put the climate fan on on low."
+  },
+  {
+    "utterance": "에어컨 냉방 모드로 설정해",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "mode",
+      "judge": "none"
+    },
+    "source": "ha_translated_ac_control",
+    "en_original": "please put the climate fan on auto low."
+  },
+  {
+    "utterance": "에어컨 약풍 모드로 설정해",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "mode",
+      "judge": "none"
+    },
+    "source": "ha_translated_ac_control",
+    "en_original": "change the air conditioning fan to auto low."
+  },
+  {
+    "utterance": "에어컨 송풍 모드로 설정해",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "mode",
+      "judge": "none"
+    },
+    "source": "ha_translated_ac_control",
+    "en_original": "change the air conditioning fan to off."
+  },
+  {
+    "utterance": "에어컨 냉방 모드로 해줘",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "mode",
+      "judge": "none"
+    },
+    "source": "ha_translated_ac_control",
+    "en_original": "please put the climate fan on auto high."
+  },
+  {
+    "utterance": "에어컨 약풍 모드로 맞춰",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "mode",
+      "judge": "none"
+    },
+    "source": "ha_translated_ac_control",
+    "en_original": "switch the system to fan_only mode."
+  },
+  {
+    "utterance": "에어컨 제습 모드로 설정해",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "mode",
+      "judge": "none"
+    },
+    "source": "ha_translated_ac_control",
+    "en_original": "change the hvac to cool."
+  },
+  {
+    "utterance": "에어컨 약풍 모드로 맞춰줘",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "mode",
+      "judge": "none"
+    },
+    "source": "ha_translated_ac_control",
+    "en_original": "switch the system to off mode."
+  },
+  {
+    "utterance": "에어컨 제습 모드로 맞춰줘",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "mode",
+      "judge": "none"
+    },
+    "source": "ha_translated_ac_control",
+    "en_original": "switch the system to heat mode."
+  },
+  {
+    "utterance": "에어컨 자동 모드로 맞춰",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "mode",
+      "judge": "none"
+    },
+    "source": "ha_translated_ac_control",
+    "en_original": "change the hvac to auto."
+  },
+  {
+    "utterance": "에어컨 제습 모드로 해줘",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "mode",
+      "judge": "none"
+    },
+    "source": "ha_translated_ac_control",
+    "en_original": "can we set the hvac to auto?"
+  },
+  {
+    "utterance": "에어컨 강풍 모드로 맞춰",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "mode",
+      "judge": "none"
+    },
+    "source": "ha_translated_ac_control",
+    "en_original": "change the hvac to fan_only."
+  },
+  {
+    "utterance": "에어컨 강풍 모드로 설정해줘",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "mode",
+      "judge": "none"
+    },
+    "source": "ha_translated_ac_control",
+    "en_original": "can we set the hvac to heat_cool?"
+  },
+  {
+    "utterance": "화장실 환기 켜줄래",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "make certain the master bathroom fan is running"
+  },
+  {
+    "utterance": "오른쪽 환기 켜",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "make sure the right-side bedroom fan is on"
+  },
+  {
+    "utterance": "아이방 환기 좀 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "make certain the kids' room fan is running"
+  },
+  {
+    "utterance": "안방 환기 켜주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on office fan open chamberlain and unlock sec"
+  },
+  {
+    "utterance": "주방 환기 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "activate the kitchen fans"
+  },
+  {
+    "utterance": "주방 환풍기 켜봐",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on the kitchen fans"
+  },
+  {
+    "utterance": "세탁실 환기시스템 켜",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "make certain the laundry room fan is running"
+  },
+  {
+    "utterance": "환풍기 켜",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "activate the ceiling fans"
+  },
+  {
+    "utterance": "환기 켜줄래",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "please start the study fan"
+  },
+  {
+    "utterance": "화장실 환기시스템 켜줄래",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on attic fan close main garage door and bathr"
+  },
+  {
+    "utterance": "아이방 환기시스템 켜주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on kids' room fan open one car garage and unl"
+  },
+  {
+    "utterance": "다락 환풍기 켜줄래",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "make certain the attic ventilation fan is running"
+  },
+  {
+    "utterance": "안방 환기시스템 켜",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on nursery fan and turn off master bedroom fa"
+  },
+  {
+    "utterance": "발코니 환풍기 켜줄래",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "activate the balcony fan"
+  },
+  {
+    "utterance": "복도 환기시스템 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on indoor gym fan close boat garage door and "
+  },
+  {
+    "utterance": "화장실 환풍기 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on the master bathroom fan"
+  },
+  {
+    "utterance": "거실 환풍기 좀 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "start the living room fan"
+  },
+  {
+    "utterance": "환기 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on the ceiling fans"
+  },
+  {
+    "utterance": "주방 환기시스템 켜봐",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on the outdoor kitchen fan"
+  },
+  {
+    "utterance": "발코니 환기시스템 켜",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "activate balcony fan and deactivate front arcade l"
+  },
+  {
+    "utterance": "식당 환기시스템 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on the dining room fan"
+  },
+  {
+    "utterance": "현관 환기시스템 켜주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on the porch ceiling fan"
+  },
+  {
+    "utterance": "주방 환기시스템 켜줄래",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "enable the kitchen fan"
+  },
+  {
+    "utterance": "세탁실 환풍기 좀 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "please start the laundry room fan"
+  },
+  {
+    "utterance": "환기 켜주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "switch on the study fan"
+  },
+  {
+    "utterance": "현관 환풍기 켜",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "make sure the front porch fan is on"
+  },
+  {
+    "utterance": "주방 환풍기 좀 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on attic fan and turn off cooling kitchen fan"
+  },
+  {
+    "utterance": "발코니 환풍기 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "make certain the balcony fan is running"
+  },
+  {
+    "utterance": "환풍기 켜주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "make sure the dining area fan is on"
+  },
+  {
+    "utterance": "게스트룸 환풍기 켜주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on the guest room fan"
+  },
+  {
+    "utterance": "주방 환기 좀 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on kitchen fans open liftmaster and unlock ya"
+  },
+  {
+    "utterance": "안방 환풍기 켜봐",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on master bedroom fan open side garage door a"
+  },
+  {
+    "utterance": "환기시스템 켜줄래",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "please start the indoor gym fan"
+  },
+  {
+    "utterance": "환풍기 켜줄래",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on the honeywell turbo fan"
+  },
+  {
+    "utterance": "복도 환풍기 좀 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "enable the hallway fan"
+  },
+  {
+    "utterance": "발코니 환기 켜",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "make sure the balcony fan is on"
+  },
+  {
+    "utterance": "세탁실 환풍기 켜주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on laundry room fan close pet entry door and "
+  },
+  {
+    "utterance": "후문 환기시스템 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "activate ceiling fans and deactivate back fireplac"
+  },
+  {
+    "utterance": "주방 환기 켜줄래",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "make certain the cooling kitchen fan is running"
+  },
+  {
+    "utterance": "거실 환기시스템 켜봐",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "activate the living room fan"
+  },
+  {
+    "utterance": "식당 환기시스템 켜주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "make certain the dining room fan is running"
+  },
+  {
+    "utterance": "식당 환기 켜줄래",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on kitchen fans and turn off dining room fan"
+  },
+  {
+    "utterance": "게스트룸 환기 켜",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on guest room fan open main garage door and u"
+  },
+  {
+    "utterance": "주방 환풍기 켜주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "make certain the kitchen fans is running"
+  },
+  {
+    "utterance": "환풍기 좀 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "activate the indoor gym fan"
+  },
+  {
+    "utterance": "화장실 환기 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "make sure the master bathroom fan is on"
+  },
+  {
+    "utterance": "거실 환기시스템 좀 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on the center living room fan"
+  },
+  {
+    "utterance": "세탁실 환풍기 켜봐",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "activate the laundry room fan"
+  },
+  {
+    "utterance": "다락 환기 켜",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "make sure the attic fans is on"
+  },
+  {
+    "utterance": "지하 환풍기 켜",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "make sure the basement fan is on"
+  },
+  {
+    "utterance": "아래층 환기 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "activate honeywell turbo fan and deactivate downst"
+  },
+  {
+    "utterance": "식당 환풍기 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "activate shed fan and deactivate dining room light"
+  },
+  {
+    "utterance": "화장실 환기시스템 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "activate the bathroom fan"
+  },
+  {
+    "utterance": "환풍기 켜봐",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "make certain the study fan is running"
+  },
+  {
+    "utterance": "지하 환기시스템 켜",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "make certain the basement fan is running"
+  },
+  {
+    "utterance": "거실 환풍기 켜주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on cooling kitchen fan open workshop garage d"
+  },
+  {
+    "utterance": "주방 환풍기 켜줄래",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on the cooling kitchen fan"
+  },
+  {
+    "utterance": "차고 환풍기 켜봐",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on study fan open side garage door and unlock"
+  },
+  {
+    "utterance": "복도 환기 켜줄래",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "please start the hallway fan"
+  },
+  {
+    "utterance": "환기시스템 켜",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "activate indoor gym fan and deactivate dining tabl"
+  },
+  {
+    "utterance": "주방 환풍기 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "activate kitchen fans and deactivate back courtyar"
+  },
+  {
+    "utterance": "화장실 환풍기 켜줄래",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on cooling kitchen fan and turn off bathroom "
+  },
+  {
+    "utterance": "주방 환풍기 켜",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "activate the kitchen fan"
+  },
+  {
+    "utterance": "아래층 환풍기 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "make certain the fan in downstairs bathroom is run"
+  },
+  {
+    "utterance": "아이방 환풍기 좀 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on kids' room fan close greenhouse door and k"
+  },
+  {
+    "utterance": "지하 환풍기 좀 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on garage fan and turn off basement fan"
+  },
+  {
+    "utterance": "거실 환풍기 켜",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "activate the center living room fan"
+  },
+  {
+    "utterance": "안방 환풍기 켜줄래",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "activate the master bedroom fan"
+  },
+  {
+    "utterance": "현관 환기 켜주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on porch ceiling fan close rv storage door an"
+  },
+  {
+    "utterance": "환기 좀 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "make sure the ceiling fans is on"
+  },
+  {
+    "utterance": "화장실 환풍기 켜",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "activate bathroom fan and deactivate back tv room "
+  },
+  {
+    "utterance": "환풍기 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "please switch on the dining area fan"
+  },
+  {
+    "utterance": "아래층 환풍기 좀 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "activate garage fan and deactivate downstairs util"
+  },
+  {
+    "utterance": "현관 환기시스템 켜줄래",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "activate the back porch fan"
+  },
+  {
+    "utterance": "안방 환기시스템 켜봐",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn on living room fan open guest garage door and"
+  },
+  {
+    "utterance": "아이방 환풍기 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "make certain the nursery fan is running"
+  },
+  {
+    "utterance": "다락 환기시스템 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "make certain the attic fans is running"
+  },
+  {
+    "utterance": "세탁실 환기 켜줄래",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "make sure the laundry room fan is on"
+  },
+  {
+    "utterance": "서재 환기 좀 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "could you enable the office fan"
+  },
+  {
+    "utterance": "환기 꺼",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "stop the indoor gym fan please"
+  },
+  {
+    "utterance": "안방 환풍기 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "ensure the bedroom fan is off"
+  },
+  {
+    "utterance": "차고 환풍기 꺼주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off dining area fan close main garage door an"
+  },
+  {
+    "utterance": "아래층 환풍기 좀 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off balcony fan close skylight blinds and tur"
+  },
+  {
+    "utterance": "환풍기 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "switch off the study fan"
+  },
+  {
+    "utterance": "안방 환풍기 좀 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "deactivate the bedroom fan"
+  },
+  {
+    "utterance": "안방 환풍기 꺼주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off the bedroom fan"
+  },
+  {
+    "utterance": "주방 환기 좀 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off the cooling kitchen fan"
+  },
+  {
+    "utterance": "거실 환기 좀 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off living room fan and open guest room blind"
+  },
+  {
+    "utterance": "거실 환풍기 꺼봐",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off living room fan and front washroom light "
+  },
+  {
+    "utterance": "환기 꺼봐",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "ensure the ceiling fans is off"
+  },
+  {
+    "utterance": "현관 환풍기 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "stop the front porch fan please"
+  },
+  {
+    "utterance": "환풍기 꺼봐",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off the dining area fan"
+  },
+  {
+    "utterance": "환기 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "deactivate the outdoor fan"
+  },
+  {
+    "utterance": "차고 환기 꺼주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off shed fan close motorcycle garage and lock"
+  },
+  {
+    "utterance": "다락 환풍기 꺼주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "deactivate the attic ventilation fan"
+  },
+  {
+    "utterance": "게스트룸 환기 꺼봐",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off guest room fan and open skylight blinds"
+  },
+  {
+    "utterance": "윗층 환풍기 좀 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off balcony fan and upstairs attic light and "
+  },
+  {
+    "utterance": "환기 좀 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "deactivate the patio fan"
+  },
+  {
+    "utterance": "차고 환기 꺼봐",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "switch off the garage fan"
+  },
+  {
+    "utterance": "거실 환기 꺼",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off center living room fan and front washroom"
+  },
+  {
+    "utterance": "차고 환풍기 꺼봐",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off shed fan close spare garage door and lock"
+  },
+  {
+    "utterance": "복도 환풍기 꺼주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off hallway fan close pet entry door and lock"
+  },
+  {
+    "utterance": "복도 환기 꺼주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off garage fan and open first hallway blinds"
+  },
+  {
+    "utterance": "게스트룸 환풍기 꺼",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "switch off the guest room fan"
+  },
+  {
+    "utterance": "세탁실 환기 좀 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "ensure the laundry room fan is off"
+  },
+  {
+    "utterance": "복도 환풍기 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off dyson pure fan and open second hallway bl"
+  },
+  {
+    "utterance": "주방 환풍기 꺼주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "deactivate the kitchen fans"
+  },
+  {
+    "utterance": "환풍기 꺼",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "stop the honeywell turbo fan please"
+  },
+  {
+    "utterance": "다락 환풍기 꺼",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "stop the attic fans please"
+  },
+  {
+    "utterance": "안방 환풍기 꺼봐",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "ensure the master bedroom fan is off"
+  },
+  {
+    "utterance": "게스트룸 환풍기 꺼봐",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "deactivate the guest room fan"
+  },
+  {
+    "utterance": "차고 환풍기 좀 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "stop the garage workshop fan please"
+  },
+  {
+    "utterance": "아래층 환기 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off the fan in downstairs bathroom"
+  },
+  {
+    "utterance": "환풍기 좀 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "ensure the patio fan is off"
+  },
+  {
+    "utterance": "주방 환기 꺼주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "stop the kitchen fan please"
+  },
+  {
+    "utterance": "주방 환풍기 좀 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "ensure the kitchen fans is off"
+  },
+  {
+    "utterance": "식당 환기 꺼봐",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off bathroom fan close dining room blinds and"
+  },
+  {
+    "utterance": "다락 환풍기 좀 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "stop the attic ventilation fan please"
+  },
+  {
+    "utterance": "윗층 환기 꺼봐",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off kitchen fans and upstairs attic light and"
+  },
+  {
+    "utterance": "아래층 환풍기 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off fan in downstairs bathroom close motorcyc"
+  },
+  {
+    "utterance": "현관 환기 꺼",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "ensure the front porch fan is off"
+  },
+  {
+    "utterance": "식당 환풍기 좀 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off dining room fan and open kitchen blinds"
+  },
+  {
+    "utterance": "거실 환기 꺼봐",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "ensure the center living room fan is off"
+  },
+  {
+    "utterance": "윗층 환풍기 꺼주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off outdoor patio fan and upstairs arcade lig"
+  },
+  {
+    "utterance": "아이방 환기 꺼봐",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "ensure the kids' room fan is off"
+  },
+  {
+    "utterance": "아래층 환풍기 꺼봐",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off honeywell turbo fan close patio blinds an"
+  },
+  {
+    "utterance": "다락 환기 꺼주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "deactivate the attic fans"
+  },
+  {
+    "utterance": "오른쪽 환기 꺼",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off right-side bedroom fan and upstairs study"
+  },
+  {
+    "utterance": "안방 환기 꺼봐",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "deactivate the master bedroom fan"
+  },
+  {
+    "utterance": "화장실 환풍기 꺼",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off hallway fan and open first bathroom blind"
+  },
+  {
+    "utterance": "다락 환풍기 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "deactivate the attic fan"
+  },
+  {
+    "utterance": "복도 환기 좀 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off office fan and hallway lights and close s"
+  },
+  {
+    "utterance": "발코니 환풍기 꺼",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off the balcony fan"
+  },
+  {
+    "utterance": "환풍기 꺼주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "stop the dining area fan please"
+  },
+  {
+    "utterance": "현관 환풍기 꺼봐",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "stop the back porch fan please"
+  },
+  {
+    "utterance": "아이방 환풍기 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off the nursery fan"
+  },
+  {
+    "utterance": "화장실 환풍기 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "ensure the master bathroom fan is off"
+  },
+  {
+    "utterance": "지하 환풍기 꺼주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off attic fans and front light and close base"
+  },
+  {
+    "utterance": "현관 환기 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off attic fans close front window blinds and "
+  },
+  {
+    "utterance": "서재 환풍기 꺼주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "deactivate the office fan"
+  },
+  {
+    "utterance": "현관 환풍기 꺼",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off the back porch fan"
+  },
+  {
+    "utterance": "발코니 환풍기 꺼주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "deactivate the balcony fan"
+  },
+  {
+    "utterance": "아래층 환풍기 꺼",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "stop the fan in downstairs bathroom please"
+  },
+  {
+    "utterance": "서재 환기 꺼주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "could you disable the office fan"
+  },
+  {
+    "utterance": "화장실 환기 꺼주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off front porch fan close kitchen blinds and "
+  },
+  {
+    "utterance": "주방 환풍기 꺼봐",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off the outdoor kitchen fan"
+  },
+  {
+    "utterance": "화장실 환풍기 좀 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off master bathroom fan close skylight blinds"
+  },
+  {
+    "utterance": "식당 환풍기 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off the dining room fan"
+  },
+  {
+    "utterance": "환기 꺼주세요",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "deactivate the shed fan"
+  },
+  {
+    "utterance": "거실 환기 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "stop the living room fan please"
+  },
+  {
+    "utterance": "다락 환기 좀 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off the attic fans"
+  },
+  {
+    "utterance": "지하 환기 꺼봐",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "stop the basement fan please"
+  },
+  {
+    "utterance": "차고 환기 좀 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off attic ventilation fan and open garage bli"
+  },
+  {
+    "utterance": "다락 환기 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "ensure the attic fans is off"
+  },
+  {
+    "utterance": "현관 환기 좀 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn off front porch fan and open front window bli"
+  },
+  {
+    "utterance": "안방 환기 바람 세게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "speed up back porch fan close spare garage door an"
+  },
+  {
+    "utterance": "다락 환풍기 높여줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "increase the attic fan speed"
+  },
+  {
+    "utterance": "지하 환기 바람 세게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "increase the basement fan speed"
+  },
+  {
+    "utterance": "현관 환기 높여줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "step up the speed of the porch ceiling fan"
+  },
+  {
+    "utterance": "세탁실 환기 높여줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "ramp up the laundry room fan speed"
+  },
+  {
+    "utterance": "거실 환기 올려줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "step up the speed of the center living room fan"
+  },
+  {
+    "utterance": "화장실 환기 바람 세게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "speed up ceiling fans and slow down bathroom fan"
+  },
+  {
+    "utterance": "주방 환풍기 높여줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "ramp up the kitchen fans speed"
+  },
+  {
+    "utterance": "아래층 환기 세게 해줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "speed up fan in downstairs bathroom and slow down "
+  },
+  {
+    "utterance": "다락 환기 바람 세게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "increase speed of attic fans and close second shed"
+  },
+  {
+    "utterance": "아이방 환기 올려줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "ramp up the nursery fan speed"
+  },
+  {
+    "utterance": "발코니 환풍기 올려",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "increase the balcony fan speed"
+  },
+  {
+    "utterance": "게스트룸 환풍기 올려줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "ramp up the guest room fan speed"
+  },
+  {
+    "utterance": "환기 바람 세게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "speed up the outdoor fan"
+  },
+  {
+    "utterance": "거실 환기 바람 세게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "increase the living room fan speed"
+  },
+  {
+    "utterance": "화장실 환풍기 강하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "speed up attic fans open bathroom blinds and upper"
+  },
+  {
+    "utterance": "차고 환기 바람 세게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "speed up the garage fan"
+  },
+  {
+    "utterance": "아이방 환기 강하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "speed up outdoor kitchen fan open kids' room blind"
+  },
+  {
+    "utterance": "다락 환기 강하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "ramp up the attic ventilation fan speed"
+  },
+  {
+    "utterance": "거실 환풍기 올려",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "increase the speed of the living room fan"
+  },
+  {
+    "utterance": "주방 환기 올려줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "speed up the outdoor kitchen fan"
+  },
+  {
+    "utterance": "주방 환기 바람 세게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "increase the cooling kitchen fan speed"
+  },
+  {
+    "utterance": "차고 환기 올려",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "ramp up the garage fan speed"
+  },
+  {
+    "utterance": "거실 환기 강하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "increase the center living room fan speed"
+  },
+  {
+    "utterance": "차고 환풍기 세게 해줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "speed up outdoor fan open craft room blinds and ca"
+  },
+  {
+    "utterance": "복도 환풍기 강하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "increase speed of hallway fan and close chamberlai"
+  },
+  {
+    "utterance": "게스트룸 환기 바람 세게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "speed up patio fan and slow down guest room fan"
+  },
+  {
+    "utterance": "현관 환풍기 강하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "ramp up the front porch fan speed"
+  },
+  {
+    "utterance": "게스트룸 환풍기 강하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "speed up guest room fan open first bathroom blinds"
+  },
+  {
+    "utterance": "다락 환기 올려",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "increase speed of the attic fan"
+  },
+  {
+    "utterance": "환풍기 올려줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "ramp up the ceiling fans speed"
+  },
+  {
+    "utterance": "거실 환기 올려",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "speed up attic fans close motorcycle garage and op"
+  },
+  {
+    "utterance": "오른쪽 환풍기 올려",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "ramp up the right-side bedroom fan speed"
+  },
+  {
+    "utterance": "아래층 환풍기 높여줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "speed up attic fan and slow down fan in downstairs"
+  },
+  {
+    "utterance": "복도 환기 올려",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "speed up hallway fan close boat storage door and o"
+  },
+  {
+    "utterance": "환기 올려줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "increase speed of outdoor fan and close chamberlai"
+  },
+  {
+    "utterance": "차고 환풍기 올려줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "increase speed of front porch fan and close carpor"
+  },
+  {
+    "utterance": "환기 세게 해줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "speed up the dyson pure fan"
+  },
+  {
+    "utterance": "복도 환기 강하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "speed up hallway fan open second hallway blinds an"
+  },
+  {
+    "utterance": "환풍기 강하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "ramp up the fan speed in the study"
+  },
+  {
+    "utterance": "오른쪽 환기 바람 세게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "step up the speed of the right-side bedroom fan"
+  },
+  {
+    "utterance": "다락 환풍기 세게 해줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "increase speed of attic fan and close rv storage d"
+  },
+  {
+    "utterance": "화장실 환풍기 올려",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "ramp up the bathroom fan speed"
+  },
+  {
+    "utterance": "식당 환기 바람 세게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "ramp up the dining room fan speed"
+  },
+  {
+    "utterance": "주방 환풍기 강하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "step up the speed of the cooling kitchen fan"
+  },
+  {
+    "utterance": "거실 환기 높여줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "ramp up the center living room fan speed"
+  },
+  {
+    "utterance": "현관 환기 올려",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "speed up the front porch fan"
+  },
+  {
+    "utterance": "서재 환기 바람 세게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "speed up the office fan"
+  },
+  {
+    "utterance": "식당 환기 강하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "speed up study fan close carport door and open din"
+  },
+  {
+    "utterance": "게스트룸 환풍기 올려",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "increase the fan speed in the guest room"
+  },
+  {
+    "utterance": "화장실 환기 강하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "ramp up the master bathroom fan speed"
+  },
+  {
+    "utterance": "식당 환풍기 강하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "speed up bedroom fan close left garage door and op"
+  },
+  {
+    "utterance": "차고 환기 세게 해줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "speed up the garage workshop fan"
+  },
+  {
+    "utterance": "복도 환기 바람 세게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "speed up balcony fan close main garage door and op"
+  },
+  {
+    "utterance": "다락 환기 높여줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "increase the attic ventilation fan speed"
+  },
+  {
+    "utterance": "아래층 환풍기 강하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "speed up the fan in downstairs bathroom"
+  },
+  {
+    "utterance": "화장실 환기 올려",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "speed up the bathroom fan"
+  },
+  {
+    "utterance": "지하 환풍기 높여줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "speed up kitchen fans open basement blinds and fir"
+  },
+  {
+    "utterance": "환풍기 세게 해줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "ramp up the dining area fan speed"
+  },
+  {
+    "utterance": "현관 환풍기 세게 해줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "step up the speed of the back porch fan"
+  },
+  {
+    "utterance": "게스트룸 환기 강하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "increase the guest room fan speed"
+  },
+  {
+    "utterance": "차고 환기 올려줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "increase speed of indoor gym fan and close rv gara"
+  },
+  {
+    "utterance": "거실 환풍기 높여줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "speed up the center living room fan"
+  },
+  {
+    "utterance": "창고 환풍기 올려",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "speed up guest room fan close wine cellar door and"
+  },
+  {
+    "utterance": "안방 환풍기 높여줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "increase the master bedroom fan speed"
+  },
+  {
+    "utterance": "게스트룸 환풍기 약하게 해줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down the guest room fan"
+  },
+  {
+    "utterance": "아래층 환기 바람 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down the fan in downstairs bathroom"
+  },
+  {
+    "utterance": "게스트룸 환풍기 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "lower the guest room fan speed"
+  },
+  {
+    "utterance": "현관 환기 약하게 해줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "decrease the porch ceiling fan speed"
+  },
+  {
+    "utterance": "주방 환기 바람 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down attic fans toggle kitchen coffee corner "
+  },
+  {
+    "utterance": "주방 환기 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "decrease the outdoor kitchen fan speed"
+  },
+  {
+    "utterance": "안방 환기 낮춰줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down the attic ventilation fan and unlock the"
+  },
+  {
+    "utterance": "아이방 환기 약하게 해줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down ceiling fans toggle back nursery warm li"
+  },
+  {
+    "utterance": "서재 환기 바람 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down the office fan"
+  },
+  {
+    "utterance": "거실 환기 낮춰줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "lower the living room fan speed"
+  },
+  {
+    "utterance": "거실 환풍기 낮춰",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down living room fan open back window blinds "
+  },
+  {
+    "utterance": "차고 환기 낮춰",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "lower the garage workshop fan speed"
+  },
+  {
+    "utterance": "환기 바람 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "decrease the shed fan speed"
+  },
+  {
+    "utterance": "거실 환풍기 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down the living room fan"
+  },
+  {
+    "utterance": "주방 환풍기 줄여줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down the outdoor kitchen fan"
+  },
+  {
+    "utterance": "아래층 환풍기 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down laundry room fan toggle downstairs arcad"
+  },
+  {
+    "utterance": "식당 환기 약하게 해줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down the dining room fan"
+  },
+  {
+    "utterance": "환풍기 낮춰",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "lower the patio fan speed"
+  },
+  {
+    "utterance": "아이방 환기 바람 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down the nursery fan"
+  },
+  {
+    "utterance": "현관 환기 바람 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "decrease the front porch fan speed"
+  },
+  {
+    "utterance": "다락 환기 바람 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down the attic fans"
+  },
+  {
+    "utterance": "안방 환기 바람 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "decrease the master bedroom fan speed"
+  },
+  {
+    "utterance": "화장실 환기 바람 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "lower the bathroom fan speed"
+  },
+  {
+    "utterance": "거실 환기 바람 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down living room fan open hallway blinds and "
+  },
+  {
+    "utterance": "게스트룸 환풍기 낮춰",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "decrease the fan speed in the guest room"
+  },
+  {
+    "utterance": "환기 약하게 해줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down the honeywell turbo fan and unlock the s"
+  },
+  {
+    "utterance": "아래층 환기 낮춰",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "decrease the fan in downstairs bathroom speed"
+  },
+  {
+    "utterance": "식당 환기 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "decrease the dining room fan speed"
+  },
+  {
+    "utterance": "오른쪽 환기 약하게 해줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down right-side bedroom fan toggle kitchen fr"
+  },
+  {
+    "utterance": "화장실 환기 약하게 해줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "decrease the master bathroom fan speed"
+  },
+  {
+    "utterance": "환풍기 낮춰줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "lower the indoor gym fan speed"
+  },
+  {
+    "utterance": "복도 환풍기 낮춰줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down the hallway fan"
+  },
+  {
+    "utterance": "아이방 환기 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "lower the kids' room fan speed"
+  },
+  {
+    "utterance": "주방 환기 줄여줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down the kitchen fan"
+  },
+  {
+    "utterance": "환기 낮춰줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down the shed fan"
+  },
+  {
+    "utterance": "복도 환풍기 줄여줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "decrease the hallway fan speed"
+  },
+  {
+    "utterance": "안방 환풍기 줄여줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "lower the bedroom fan speed"
+  },
+  {
+    "utterance": "환풍기 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down the dining area fan"
+  },
+  {
+    "utterance": "발코니 환풍기 낮춰",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "lower the balcony fan speed"
+  },
+  {
+    "utterance": "다락 환기 약하게 해줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn down the attic fan"
+  },
+  {
+    "utterance": "식당 환기 낮춰",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down honeywell turbo fan open back window bli"
+  },
+  {
+    "utterance": "게스트룸 환기 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down kitchen fans open garage blinds and turn"
+  },
+  {
+    "utterance": "세탁실 환풍기 약하게 해줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "decrease the laundry room fan speed"
+  },
+  {
+    "utterance": "오른쪽 환풍기 낮춰줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down the right-side bedroom fan and unlock th"
+  },
+  {
+    "utterance": "식당 환풍기 낮춰줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down the kitchen fan and unlock the dining ro"
+  },
+  {
+    "utterance": "윗층 환풍기 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down patio fan toggle upstairs tv room light "
+  },
+  {
+    "utterance": "세탁실 환기 바람 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down the laundry room fan"
+  },
+  {
+    "utterance": "거실 환기 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "decrease the speed of the living room fan"
+  },
+  {
+    "utterance": "거실 환풍기 낮춰줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "decrease the living room fan speed"
+  },
+  {
+    "utterance": "현관 환기 줄여줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down the back porch fan"
+  },
+  {
+    "utterance": "다락 환풍기 줄여줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "decrease the attic fans speed"
+  },
+  {
+    "utterance": "발코니 환기 바람 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down the balcony fan and unlock the attic doo"
+  },
+  {
+    "utterance": "환기 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "decrease the dining area fan speed"
+  },
+  {
+    "utterance": "식당 환기 바람 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "lower the dining room fan speed"
+  },
+  {
+    "utterance": "옆 환기 바람 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down the shed fan and unlock the side gate lo"
+  },
+  {
+    "utterance": "안방 환기 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down the bedroom fan"
+  },
+  {
+    "utterance": "거실 환기 약하게 해줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "turn down the living room fan"
+  },
+  {
+    "utterance": "복도 환풍기 약하게 해줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "lower the fan speed in the hallway"
+  },
+  {
+    "utterance": "거실 환풍기 약하게 해줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down the study fan and unlock the home theate"
+  },
+  {
+    "utterance": "아이방 환기 낮춰",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down the kids' room fan and unlock the garage"
+  },
+  {
+    "utterance": "지하 환기 바람 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down the laundry room fan and unlock the base"
+  },
+  {
+    "utterance": "주방 환기 약하게 해줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down shed fan open back window blinds and tur"
+  },
+  {
+    "utterance": "복도 환기 약하게",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "speed",
+      "judge": "none"
+    },
+    "source": "ha_translated_vent_control",
+    "en_original": "slow down the hallway fan and unlock the backyard "
+  },
+  {
+    "utterance": "예약해줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_schedule_manage",
+    "en_original": "start the general purpose timer timer for ten seco"
+  },
+  {
+    "utterance": "알람 맞춰줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_schedule_manage",
+    "en_original": "start the garden watering scheduler timer for thir"
+  },
+  {
+    "utterance": "타이머 설정해줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_schedule_manage",
+    "en_original": "set a one and a half hours garden watering schedul"
+  },
+  {
+    "utterance": "알람 취소",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_schedule_manage",
+    "en_original": "the upstairs hallway timer is no longer needed."
+  },
+  {
+    "utterance": "타이머 취소해줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_schedule_manage",
+    "en_original": "cancel the laundry cycle tracker timer."
+  },
+  {
+    "utterance": "예약 취소해줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "ha_translated_schedule_manage",
+    "en_original": "turn off the general purpose timer."
+  }
+]
