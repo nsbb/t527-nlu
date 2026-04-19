@@ -155,3 +155,9 @@
 | 앙상블 B | 균형 최적 | 추론 2배 비용 |
 | KD (v40) | 단일 모델로 KoELECTRA 97%+ | Test Suite 92.3% |
 | loss weight (v37) | 구현 간단 | 효과 없음 |
+
+## [2026-04-20] experiment | v41-agreement-filter-kd
+
+- v28과 v34가 fn 동의(26,034)하면 v28의 exec/dir 사용, 불일치(2,729)면 v34 원본 유지.
+- Test Suite 91.3%, KoELECTRA 97.3% — v40(92.3%/97.2%)보다 Test Suite 낮음.
+- agreement filter가 도움 안 됨 — 불일치 데이터도 학습에 필요.
