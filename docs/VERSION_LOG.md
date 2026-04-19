@@ -189,3 +189,10 @@
 - v34가 맞추는 335개: home_info(88), security_mode(64), light_control(45) 위주
 - v28이 틀리는 이유: "차량 출입 기록/비밀번호 변경/재택 설정" 등 어휘 미학습
 - **v34가 v28보다 일반화에서 42배 더 많이 맞춤** (335 vs 8)
+
+## [2026-04-20] experiment | v43-vocabulary-addition
+
+- 누락 어휘 69개 추가 (기록/내역/보여줘/카드/콘센트/재택/차단/세팅/오픈/잠깐/얼른).
+- **Test Suite 91.5%, KoELECTRA fn 97.3%** — 어휘 추가 후 KoELECTRA +0.5%p.
+- 추가 어휘 6/6 정확 확인 (기록 보여줘→vehicle, 카드→security, 콘센트→light 등).
+- Test Suite는 v34(93.6%)보다 하락 — 소량 추가가 기존 패턴을 밀어냄 (v28 경험과 동일).
