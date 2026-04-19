@@ -65,8 +65,8 @@ UNSUPPORTED = {
 }
 
 def predict(text):
-    text = ''.join(c if c.isprintable() or c == ' ' else ' ' for c in text)
-    text = re.sub(r'\s+', ' ', text).strip()
+    from preprocess import preprocess
+    text = preprocess(text)
     if not text:
         return None, None
 
