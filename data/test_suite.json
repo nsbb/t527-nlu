@@ -787,7 +787,7 @@
   },
   {
     "utterance": "전체 꺼",
-    "fn": "light_control",
+    "fn": "ac_control",
     "exec": "control_then_confirm",
     "dir": "off"
   },
