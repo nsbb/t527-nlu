@@ -30,7 +30,7 @@ for arg in sys.argv[1:]:
 CKPT = {
     'v7_clean': 'checkpoints/cnn_multihead_v7_clean.pt',
     'v9': 'checkpoints/cnn_multihead_v9.pt',
-    'v25': 'checkpoints/cnn_multihead_v25.pt',
+    'v25': 'checkpoints/cnn_multihead_v28.pt',
 }
 
 # 로드

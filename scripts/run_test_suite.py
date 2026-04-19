@@ -10,7 +10,7 @@ from model_cnn_multihead import *
 from transformers import AutoModel, AutoTokenizer
 
 # 모델 선택
-ckpt_path = 'checkpoints/cnn_multihead_v25.pt'
+ckpt_path = 'checkpoints/cnn_multihead_v28.pt'
 if len(sys.argv) > 1:
     arg = sys.argv[1]
     if os.path.exists(arg):
