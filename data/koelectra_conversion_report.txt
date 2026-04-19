@@ -1,0 +1,61 @@
+============================================================
+KoELECTRA → Multi-head 변환 리포트
+============================================================
+
+입력:
+  train: 13540개 → 변환 13540개, 스킵 0개
+  val:   1536개 → 변환 1536개, 스킵 0개
+
+--- train fn 분포 (20개 카테고리) ---
+  ac_control          :  2052
+  light_control       :  1574
+  heat_control        :  1180
+  home_info           :  1102
+  security_mode       :  1014
+  vent_control        :   936
+  weather_query       :   924
+  gas_control         :   782
+  curtain_control     :   623
+  door_control        :   598
+  vehicle_manage      :   565
+  system_meta         :   514
+  unknown             :   351
+  schedule_manage     :   271
+  market_query        :   270
+  energy_query        :   234
+  elevator_call       :   145
+  news_query          :   135
+  traffic_query       :   135
+  medical_query       :   135
+
+--- train exec_type 분포 ---
+  control_then_confirm     :  7833
+  query_then_respond       :  4715
+  direct_respond           :   529
+  query_then_judge         :   463
+
+--- param_type 분포 ---
+  none           : 10016
+  mode           :  1596
+  temperature    :  1247
+  speed          :   354
+  brightness     :   327
+
+--- judge 분포 ---
+  none                : 12998
+  air_quality         :   261
+  outdoor_activity    :   168
+  cost_trend          :    83
+  clothing            :    30
+
+--- 변환 샘플 (처음 5개) ---
+  [ac_control     ] 제발 에어컨 스케줄 알려줘
+    → exec=control_then_confirm, dir=set, pt=none, judge=none
+  [light_control  ] 잠깐 저녁 10시에 라이트 어둡게 해줘
+    → exec=control_then_confirm, dir=set, pt=brightness, judge=none
+  [gas_control    ] 제발 가스 밸브 확인
+    → exec=query_then_respond, dir=none, pt=none, judge=none
+  [gas_control    ] 빨리 자기 전에 가스 차단해줘
+    → exec=control_then_confirm, dir=close, pt=none, judge=none
+  [weather_query  ] 미세먼지 확인해줄래
+    → exec=query_then_judge, dir=none, pt=none, judge=air_quality
