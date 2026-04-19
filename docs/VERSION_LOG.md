@@ -301,3 +301,10 @@
 - Test Suite 91.5%, KoELECTRA fn 97.5% — v46(91.1%/97.8%)과 비슷.
 - Attention 추가로 Test Suite +0.4%, KoELECTRA -0.3% — 미미한 차이.
 - **결론: CNN only가 이 규모에서 충분. Attention 추가는 complexity 대비 효과 미미.**
+
+## [2026-04-20] experiment | v50-rdrop-collapsed
+
+- R-Drop (alpha=0.5) + Mixup 조합. val combo 60.9% — **학습 붕괴**.
+- KL divergence weight가 너무 높아서 CE loss를 압도.
+- alpha=0.1~0.2로 줄여야 하지만, 학습 시간이 2배 (forward 2회)라서 ROI 낮음.
+- **v46(mixup only)이 더 효율적.**
