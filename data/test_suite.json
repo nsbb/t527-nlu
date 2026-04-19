@@ -8398,5 +8398,1091 @@
     "fn": "unknown",
     "exec": "direct_respond",
     "dir": "none"
+  },
+  {
+    "utterance": "지금 교통 어때",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "출근 교통",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "퇴근 교통",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "교통 혼잡",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "길이 막혀",
+    "fn": "traffic_query",
+    "exec": "control_then_confirm",
+    "dir": "none"
+  },
+  {
+    "utterance": "도로 막히나",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "고속도로 어때",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "출퇴근 교통 어때",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "교통 체증",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "도로 정보",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "강남 교통",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "교통 확인",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "출근길 확인",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "퇴근길 확인",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "지금 도로 어때",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "교통 상황 어때",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "어떻게 사용해",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "뭐 해줄 수 있어",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "기능이 뭐야",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "뭘 할 수 있어",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "어떤 기능",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "기능 알려줘",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "할 줄 아는 거",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "뭐 할 줄 아는데",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "도와줄 수 있는 거",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "사용 설명",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "이용 방법",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "기능 소개해줘",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "월패드 사용법",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "약국 어디",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "근처 내과",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "근처 치과",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "소아과 어디",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "산부인과 찾아줘",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "안과 찾아",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "정형외과 어디",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "피부과 어디",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "가까운 의원",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "병원 검색",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "약국 검색",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "병원 추천",
+    "fn": "medical_query",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "주차 내역",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "차량 등록 확인",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "방문 차량 확인",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "충전 상태 확인",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "주차 등록해줘",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "set"
+  },
+  {
+    "utterance": "방문 주차",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "차 충전 됐어",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "충전 완료",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "주차 출입",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "차량 출입 내역",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "주차 기록",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "전기차 충전 현황",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "차 등록",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "전기 사용",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "가스 사용",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "에너지 확인",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "전기요금 얼마",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "가스비 얼마",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "에너지 현황",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "사용량 확인",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "전기 요금",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "에너지 요금",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "이번 달 에너지",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "전기 사용 현황",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "가스 사용 현황",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "에너지 절약",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "전기 절약",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "알람 설정해",
+    "fn": "schedule_manage",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "타이머 맞춰",
+    "fn": "schedule_manage",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "모닝콜 설정해",
+    "fn": "schedule_manage",
+    "exec": "query_then_respond",
+    "dir": "set"
+  },
+  {
+    "utterance": "알람 켜줘",
+    "fn": "schedule_manage",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "내일 알람",
+    "fn": "schedule_manage",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "오늘 알람",
+    "fn": "schedule_manage",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "알람 확인해",
+    "fn": "schedule_manage",
+    "exec": "query_then_respond",
+    "dir": "set"
+  },
+  {
+    "utterance": "예약 확인해",
+    "fn": "schedule_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "알람 삭제",
+    "fn": "schedule_manage",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "모닝콜 취소",
+    "fn": "schedule_manage",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "알람 시간",
+    "fn": "schedule_manage",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "타이머 확인",
+    "fn": "schedule_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "모닝콜 시간",
+    "fn": "schedule_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "집 상태 확인",
+    "fn": "home_info",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "소리 조절",
+    "fn": "home_info",
+    "exec": "control_then_confirm",
+    "dir": "none"
+  },
+  {
+    "utterance": "볼륨 확인",
+    "fn": "home_info",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "음량 확인",
+    "fn": "home_info",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "시간 확인",
+    "fn": "home_info",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "알림 확인",
+    "fn": "home_info",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "단지 정보 확인",
+    "fn": "home_info",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "관리사무소 연락처",
+    "fn": "home_info",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "집 정보",
+    "fn": "home_info",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "시스템 볼륨",
+    "fn": "home_info",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "월패드 볼륨",
+    "fn": "home_info",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "음량 설정",
+    "fn": "home_info",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "카메라 켜줘",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "프린터 작동",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "스캐너",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "팩스",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "복사기",
+    "fn": "unknown",
+    "exec": "control_then_confirm",
+    "dir": "none"
+  },
+  {
+    "utterance": "계산기",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "알약 시간",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "운동 기록",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "다이어트",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "수면 기록",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "요리 레시피",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "번역기",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "사전",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "맞춤법",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "영어 단어",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "날짜 계산",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "시차",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "환전소",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "로또",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "복권",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "거실 커튼 좀 열어",
+    "fn": "curtain_control",
+    "exec": "control_then_confirm",
+    "dir": "open"
+  },
+  {
+    "utterance": "안방 커튼 닫아줘",
+    "fn": "curtain_control",
+    "exec": "control_then_confirm",
+    "dir": "close"
+  },
+  {
+    "utterance": "주방 블라인드 올려",
+    "fn": "curtain_control",
+    "exec": "control_then_confirm",
+    "dir": "open"
+  },
+  {
+    "utterance": "전체 커튼 닫아",
+    "fn": "curtain_control",
+    "exec": "control_then_confirm",
+    "dir": "close"
+  },
+  {
+    "utterance": "전체 블라인드 내려",
+    "fn": "curtain_control",
+    "exec": "control_then_confirm",
+    "dir": "open"
+  },
+  {
+    "utterance": "커튼 좀 열어줘봐",
+    "fn": "curtain_control",
+    "exec": "control_then_confirm",
+    "dir": "open"
+  },
+  {
+    "utterance": "블라인드 좀 내려줘",
+    "fn": "curtain_control",
+    "exec": "control_then_confirm",
+    "dir": "open"
+  },
+  {
+    "utterance": "가스 밸브 상태 확인",
+    "fn": "gas_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "가스 열림 확인",
+    "fn": "gas_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "가스 밸브 닫아줘",
+    "fn": "gas_control",
+    "exec": "control_then_confirm",
+    "dir": "close"
+  },
+  {
+    "utterance": "까스 열려있나요",
+    "fn": "gas_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "가스 안전 상태",
+    "fn": "gas_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "가스 차단",
+    "fn": "gas_control",
+    "exec": "control_then_confirm",
+    "dir": "close"
+  },
+  {
+    "utterance": "가스 밸브 잠궈줘",
+    "fn": "gas_control",
+    "exec": "control_then_confirm",
+    "dir": "close"
+  },
+  {
+    "utterance": "가스 잠금 상태 확인",
+    "fn": "gas_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "현관 열어줘봐",
+    "fn": "door_control",
+    "exec": "control_then_confirm",
+    "dir": "open"
+  },
+  {
+    "utterance": "문 좀 열어봐",
+    "fn": "door_control",
+    "exec": "control_then_confirm",
+    "dir": "open"
+  },
+  {
+    "utterance": "도어락 잠금 확인",
+    "fn": "door_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "현관문 상태 어때",
+    "fn": "door_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "문 잠갔어",
+    "fn": "door_control",
+    "exec": "control_then_confirm",
+    "dir": "open"
+  },
+  {
+    "utterance": "도어 잠금",
+    "fn": "door_control",
+    "exec": "control_then_confirm",
+    "dir": "close"
+  },
+  {
+    "utterance": "현관 잠금해줘",
+    "fn": "door_control",
+    "exec": "control_then_confirm",
+    "dir": "close"
+  },
+  {
+    "utterance": "외출 설정해줘",
+    "fn": "security_mode",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "방범 해줘",
+    "fn": "security_mode",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "외출할 때",
+    "fn": "security_mode",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "나갈 때 설정",
+    "fn": "security_mode",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "집 나가는데",
+    "fn": "security_mode",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "퇴근했어",
+    "fn": "security_mode",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "집에 와",
+    "fn": "security_mode",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "방금 도착",
+    "fn": "security_mode",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "엘리베이터 와줘",
+    "fn": "elevator_call",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "승강기 보내줘",
+    "fn": "elevator_call",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "엘베 호출",
+    "fn": "elevator_call",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "엘리베이터 좀 와",
+    "fn": "elevator_call",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "엘베 올라와",
+    "fn": "elevator_call",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "엘리베이터 보내줘",
+    "fn": "elevator_call",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "엘베 와줘",
+    "fn": "elevator_call",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "뉴스 뭐야",
+    "fn": "news_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "오늘 기사",
+    "fn": "news_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "최근 소식",
+    "fn": "news_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "뉴스 봐줘",
+    "fn": "news_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "뉴스 읽어줘",
+    "fn": "news_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "뉴스 확인",
+    "fn": "news_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "오늘 소식 뭐야",
+    "fn": "news_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "기사 봐줘",
+    "fn": "news_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "삼성 주가 확인",
+    "fn": "market_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "코스피 확인",
+    "fn": "market_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "주식 현황",
+    "fn": "market_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "유가 확인",
+    "fn": "market_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "기름값 확인",
+    "fn": "market_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "주가 얼마",
+    "fn": "market_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "코스닥 얼마",
+    "fn": "market_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "유가 시세 확인",
+    "fn": "market_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "날씨 확인",
+    "fn": "weather_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "기온 확인",
+    "fn": "weather_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "비 확인",
+    "fn": "weather_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "미세먼지 확인",
+    "fn": "weather_query",
+    "exec": "query_then_judge",
+    "dir": "none"
+  },
+  {
+    "utterance": "자외선 확인",
+    "fn": "weather_query",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "오늘 비 와?",
+    "fn": "weather_query",
+    "exec": "query_then_judge",
+    "dir": "none"
+  },
+  {
+    "utterance": "내일 비 올까?",
+    "fn": "weather_query",
+    "exec": "query_then_judge",
+    "dir": "none"
+  },
+  {
+    "utterance": "주말 비",
+    "fn": "weather_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "세차 괜찮아?",
+    "fn": "weather_query",
+    "exec": "query_then_judge",
+    "dir": "none"
+  },
+  {
+    "utterance": "캠핑 가도 되나?",
+    "fn": "weather_query",
+    "exec": "query_then_judge",
+    "dir": "none"
+  },
+  {
+    "utterance": "등산 괜찮아",
+    "fn": "weather_query",
+    "exec": "query_then_judge",
+    "dir": "none"
+  },
+  {
+    "utterance": "빨래 말려도 돼?",
+    "fn": "weather_query",
+    "exec": "query_then_judge",
+    "dir": "none"
+  },
+  {
+    "utterance": "옷 어떻게 입어",
+    "fn": "weather_query",
+    "exec": "query_then_judge",
+    "dir": "none"
+  },
+  {
+    "utterance": "겉옷 필요한가",
+    "fn": "weather_query",
+    "exec": "query_then_judge",
+    "dir": "none"
+  },
+  {
+    "utterance": "우산 필요한가",
+    "fn": "weather_query",
+    "exec": "query_then_judge",
+    "dir": "none"
   }
 ]
