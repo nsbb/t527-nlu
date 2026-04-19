@@ -1,6 +1,30 @@
 # NLU Changelog — 버전별 업데이트 내역
 
-## v15 (현재)
+## v21 (현재)
+- 5-head combo 테스트 88.9% (8/9)
+- judge head: 반팔→clothing, 미세먼지→air_quality 수정
+- param_type: 난방→temperature, 세차/창문→none 수정
+- 데이터: ~20,600개 | val combo: 94.6%
+
+## v19
+- 구어체 수정: 조용히→볼륨, 들어왔어→귀가, 자려고→취침, 히팅→난방
+- val combo: **94.9%** (최고치)
+
+## v18
+- **STT 오류 내성 강화**: 띄어쓰기 없는 발화, 자음/모음 오류, 음절 탈락
+- 오늘날씨어때, 재습, 면시야, 뉴쓰, 근쳐 등 20개 패턴 100% 정확
+- val combo: 94.5%
+
+## v17
+- 불안꺼져→light query, 환기안되나→vent query, 냄새→vent on, 환하게→brightness up
+- val combo: 94.5%
+
+## v16
+- 실사용 92개 테스트 오류 18개 전수 수정
+- 은은하게/데워줘/블라인드/방범모드/집비울건데/외출하기좋아 등
+- val combo: 94.5%
+
+## v15
 - Hard edge case 수정: "어둡게 해줘"→light, "공기가 안 좋아"→vent, "그만"→off
 - "불 켤 수 있어?"→light, "난방 25도로 맞춰"→heat 수정
 - 수정 패턴 6/6 정확
