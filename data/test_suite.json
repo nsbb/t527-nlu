@@ -1,116 +1,812 @@
 [
-  {"utterance": "거실 불 켜줘", "fn": "light_control", "exec": "control_then_confirm", "dir": "on"},
-  {"utterance": "거실 불 꺼줘", "fn": "light_control", "exec": "control_then_confirm", "dir": "off"},
-  {"utterance": "안방 불 꺼", "fn": "light_control", "exec": "control_then_confirm", "dir": "off"},
-  {"utterance": "조명 밝기 올려줘", "fn": "light_control", "exec": "control_then_confirm", "dir": "up"},
-  {"utterance": "좀 어둡게 해줘", "fn": "light_control", "exec": "control_then_confirm", "dir": "down"},
-  {"utterance": "어두워", "fn": "light_control", "exec": "control_then_confirm", "dir": "on"},
-  {"utterance": "불 환하게", "fn": "light_control", "exec": "control_then_confirm", "dir": "up"},
-  {"utterance": "전체 불 꺼줘", "fn": "light_control", "exec": "control_then_confirm", "dir": "off"},
-  {"utterance": "불 켜져있어?", "fn": "light_control", "exec": "query_then_respond", "dir": "none"},
-  {"utterance": "불 왜 안 꺼져?", "fn": "light_control", "exec": "query_then_respond", "dir": "none"},
-  {"utterance": "난방 켜줘", "fn": "heat_control", "exec": "control_then_confirm", "dir": "on"},
-  {"utterance": "난방 꺼줘", "fn": "heat_control", "exec": "control_then_confirm", "dir": "off"},
-  {"utterance": "난방 올려줘", "fn": "heat_control", "exec": "control_then_confirm", "dir": "up"},
-  {"utterance": "난방 낮춰줘", "fn": "heat_control", "exec": "control_then_confirm", "dir": "down"},
-  {"utterance": "난방 25도로 맞춰줘", "fn": "heat_control", "exec": "control_then_confirm", "dir": "set"},
-  {"utterance": "좀 춥다", "fn": "heat_control", "exec": "control_then_confirm", "dir": "on"},
-  {"utterance": "시베리아야", "fn": "heat_control", "exec": "control_then_confirm", "dir": "on"},
-  {"utterance": "남방 커줘", "fn": "heat_control", "exec": "control_then_confirm", "dir": "on"},
-  {"utterance": "난방 그만", "fn": "heat_control", "exec": "control_then_confirm", "dir": "off"},
-  {"utterance": "에어컨 켜줘", "fn": "ac_control", "exec": "control_then_confirm", "dir": "on"},
-  {"utterance": "에어컨 꺼줘", "fn": "ac_control", "exec": "control_then_confirm", "dir": "off"},
-  {"utterance": "에어컨 23도", "fn": "ac_control", "exec": "control_then_confirm", "dir": "set"},
-  {"utterance": "에어컨 온도 올려", "fn": "ac_control", "exec": "control_then_confirm", "dir": "up"},
-  {"utterance": "에어컨 온도 내려", "fn": "ac_control", "exec": "control_then_confirm", "dir": "down"},
-  {"utterance": "제습 모드로 해줘", "fn": "ac_control", "exec": "control_then_confirm", "dir": "set"},
-  {"utterance": "송풍 해줘", "fn": "ac_control", "exec": "control_then_confirm", "dir": "set"},
-  {"utterance": "찜통이야", "fn": "ac_control", "exec": "control_then_confirm", "dir": "on"},
-  {"utterance": "더워", "fn": "ac_control", "exec": "control_then_confirm", "dir": "on"},
-  {"utterance": "에어콘 틀어", "fn": "ac_control", "exec": "control_then_confirm", "dir": "on"},
-  {"utterance": "환기 켜줘", "fn": "vent_control", "exec": "control_then_confirm", "dir": "on"},
-  {"utterance": "환기 꺼줘", "fn": "vent_control", "exec": "control_then_confirm", "dir": "off"},
-  {"utterance": "환기 세게", "fn": "vent_control", "exec": "control_then_confirm", "dir": "up"},
-  {"utterance": "공기가 탁해", "fn": "vent_control", "exec": "control_then_confirm", "dir": "on"},
-  {"utterance": "답답해", "fn": "vent_control", "exec": "control_then_confirm", "dir": "on"},
-  {"utterance": "시끄러워", "fn": "vent_control", "exec": "control_then_confirm", "dir": "off"},
-  {"utterance": "환기 안 되나?", "fn": "vent_control", "exec": "query_then_respond", "dir": "none"},
-  {"utterance": "가스 잠가줘", "fn": "gas_control", "exec": "control_then_confirm", "dir": "close"},
-  {"utterance": "까스 잠가", "fn": "gas_control", "exec": "control_then_confirm", "dir": "close"},
-  {"utterance": "가스 열려있어?", "fn": "gas_control", "exec": "query_then_respond", "dir": "none"},
-  {"utterance": "도어락 열어줘", "fn": "door_control", "exec": "control_then_confirm", "dir": "open"},
-  {"utterance": "문 열어줘", "fn": "door_control", "exec": "control_then_confirm", "dir": "open"},
-  {"utterance": "도얼락 열어", "fn": "door_control", "exec": "control_then_confirm", "dir": "open"},
-  {"utterance": "커튼 열어줘", "fn": "curtain_control", "exec": "control_then_confirm", "dir": "open"},
-  {"utterance": "커튼 닫아줘", "fn": "curtain_control", "exec": "control_then_confirm", "dir": "close"},
-  {"utterance": "커튼 멈춰", "fn": "curtain_control", "exec": "control_then_confirm", "dir": "stop"},
-  {"utterance": "블라인드 올려", "fn": "curtain_control", "exec": "control_then_confirm", "dir": "open"},
-  {"utterance": "엘리베이터 불러줘", "fn": "elevator_call", "exec": "control_then_confirm", "dir": "on"},
-  {"utterance": "엘베 좀", "fn": "elevator_call", "exec": "control_then_confirm", "dir": "on"},
-  {"utterance": "엘레베이터 호출", "fn": "elevator_call", "exec": "control_then_confirm", "dir": "on"},
-  {"utterance": "나 나간다", "fn": "security_mode", "exec": "control_then_confirm", "dir": "on"},
-  {"utterance": "외출할게", "fn": "security_mode", "exec": "control_then_confirm", "dir": "on"},
-  {"utterance": "외출모드 실행해줘", "fn": "security_mode", "exec": "control_then_confirm", "dir": "on"},
-  {"utterance": "방범 모드", "fn": "security_mode", "exec": "control_then_confirm", "dir": "on"},
-  {"utterance": "밖에서 방금 들어왔어", "fn": "security_mode", "exec": "control_then_confirm", "dir": "set"},
-  {"utterance": "모닝콜 설정해줘", "fn": "schedule_manage", "exec": "control_then_confirm", "dir": "set"},
-  {"utterance": "알람 취소해줘", "fn": "schedule_manage", "exec": "control_then_confirm", "dir": "off"},
-  {"utterance": "오늘 날씨 어때?", "fn": "weather_query", "exec": "query_then_respond", "dir": "none"},
-  {"utterance": "오늘 어때?", "fn": "weather_query", "exec": "query_then_respond", "dir": "none"},
-  {"utterance": "미세먼지 어때?", "fn": "weather_query", "exec": "query_then_judge", "dir": "none"},
-  {"utterance": "세차해도 돼?", "fn": "weather_query", "exec": "query_then_judge", "dir": "none"},
-  {"utterance": "뭐 입고 나가?", "fn": "weather_query", "exec": "query_then_judge", "dir": "none"},
-  {"utterance": "창문 열어도 괜찮아?", "fn": "weather_query", "exec": "query_then_judge", "dir": "none"},
-  {"utterance": "우산 가져가야 해?", "fn": "weather_query", "exec": "query_then_judge", "dir": "none"},
-  {"utterance": "밖에 더워?", "fn": "weather_query", "exec": "query_then_respond", "dir": "none"},
-  {"utterance": "밖에 추워?", "fn": "weather_query", "exec": "query_then_respond", "dir": "none"},
-  {"utterance": "뉴스 틀어줘", "fn": "news_query", "exec": "query_then_respond", "dir": "none"},
-  {"utterance": "헤드라인 뭐야", "fn": "news_query", "exec": "query_then_respond", "dir": "none"},
-  {"utterance": "강남역까지 걸려?", "fn": "traffic_query", "exec": "query_then_respond", "dir": "none"},
-  {"utterance": "도로 상황", "fn": "traffic_query", "exec": "query_then_respond", "dir": "none"},
-  {"utterance": "출근 시간 얼마나 걸려", "fn": "traffic_query", "exec": "query_then_respond", "dir": "none"},
-  {"utterance": "에너지 사용량", "fn": "energy_query", "exec": "query_then_respond", "dir": "none"},
-  {"utterance": "전기세 얼마야", "fn": "energy_query", "exec": "query_then_respond", "dir": "none"},
-  {"utterance": "몇 시야?", "fn": "home_info", "exec": "direct_respond", "dir": "none"},
-  {"utterance": "볼륨 올려줘", "fn": "home_info", "exec": "control_then_confirm", "dir": "up"},
-  {"utterance": "소리 줄여줘", "fn": "home_info", "exec": "control_then_confirm", "dir": "down"},
-  {"utterance": "시간 알려줘", "fn": "home_info", "exec": "direct_respond", "dir": "none"},
-  {"utterance": "뭐 할 수 있어?", "fn": "system_meta", "exec": "direct_respond", "dir": "none"},
-  {"utterance": "누가 만들었어?", "fn": "system_meta", "exec": "direct_respond", "dir": "none"},
-  {"utterance": "사용법 알려줘", "fn": "system_meta", "exec": "direct_respond", "dir": "none"},
-  {"utterance": "도움말", "fn": "system_meta", "exec": "direct_respond", "dir": "none"},
-  {"utterance": "주식 어때?", "fn": "market_query", "exec": "query_then_respond", "dir": "none"},
-  {"utterance": "코스피 얼마야", "fn": "market_query", "exec": "query_then_respond", "dir": "none"},
-  {"utterance": "유가 어때?", "fn": "market_query", "exec": "query_then_respond", "dir": "none"},
-  {"utterance": "환율 얼마야", "fn": "market_query", "exec": "query_then_respond", "dir": "none"},
-  {"utterance": "근처 병원", "fn": "medical_query", "exec": "query_then_respond", "dir": "none"},
-  {"utterance": "소아과 찾아줘", "fn": "medical_query", "exec": "query_then_respond", "dir": "none"},
-  {"utterance": "충전 상태", "fn": "vehicle_manage", "exec": "query_then_respond", "dir": "none"},
-  {"utterance": "주차 정보", "fn": "vehicle_manage", "exec": "query_then_respond", "dir": "none"},
-  {"utterance": "피자 주문해줘", "fn": "unknown", "exec": "direct_respond", "dir": "none"},
-  {"utterance": "세탁기 돌려줘", "fn": "unknown", "exec": "direct_respond", "dir": "none"},
-  {"utterance": "노래 틀어줘", "fn": "unknown", "exec": "direct_respond", "dir": "none"},
-  {"utterance": "ㅋㅋㅋ", "fn": "unknown", "exec": "direct_respond", "dir": "none"},
-  {"utterance": "밥 먹었어?", "fn": "unknown", "exec": "direct_respond", "dir": "none"},
-  {"utterance": "유튜브 켜줘", "fn": "unknown", "exec": "direct_respond", "dir": "none"},
-  {"utterance": "카카오톡 열어", "fn": "unknown", "exec": "direct_respond", "dir": "none"},
-  {"utterance": "에어프라이어 켜줘", "fn": "unknown", "exec": "direct_respond", "dir": "none"},
-  {"utterance": "거실 불 커줘", "fn": "light_control", "exec": "control_then_confirm", "dir": "on"},
-  {"utterance": "에어컨 꺼쥬", "fn": "ac_control", "exec": "control_then_confirm", "dir": "off"},
-  {"utterance": "남방 올려줘", "fn": "heat_control", "exec": "control_then_confirm", "dir": "up"},
-  {"utterance": "까스 잠가줘", "fn": "gas_control", "exec": "control_then_confirm", "dir": "close"},
-  {"utterance": "엘레베이터 불러줘", "fn": "elevator_call", "exec": "control_then_confirm", "dir": "on"},
-  {"utterance": "도어록 열어줘", "fn": "door_control", "exec": "control_then_confirm", "dir": "open"},
-  {"utterance": "커턴 열어줘", "fn": "curtain_control", "exec": "control_then_confirm", "dir": "open"},
-  {"utterance": "오늘날씨어때", "fn": "weather_query", "exec": "query_then_respond", "dir": "none"},
-  {"utterance": "재습 모드", "fn": "ac_control", "exec": "control_then_confirm", "dir": "set"},
-  {"utterance": "근쳐 병원", "fn": "medical_query", "exec": "query_then_respond", "dir": "none"},
-  {"utterance": "이제 자려고 하는데", "fn": "light_control", "exec": "control_then_confirm", "dir": "off"},
-  {"utterance": "아이고 추워라", "fn": "heat_control", "exec": "control_then_confirm", "dir": "on"},
-  {"utterance": "아 진짜 덥다", "fn": "ac_control", "exec": "control_then_confirm", "dir": "on"},
-  {"utterance": "거실 은은하게", "fn": "light_control", "exec": "control_then_confirm", "dir": "down"},
-  {"utterance": "조용히 해줘", "fn": "home_info", "exec": "control_then_confirm", "dir": "down"},
-  {"utterance": "집 비울건데", "fn": "security_mode", "exec": "control_then_confirm", "dir": "on"},
-  {"utterance": "히팅 올려", "fn": "heat_control", "exec": "control_then_confirm", "dir": "up"},
-  {"utterance": "외출하기 좋아?", "fn": "weather_query", "exec": "query_then_judge", "dir": "none"}
+  {
+    "utterance": "거실 불 켜줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "거실 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "안방 불 꺼",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "조명 밝기 올려줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "좀 어둡게 해줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "어두워",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "불 환하게",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "전체 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "불 켜져있어?",
+    "fn": "light_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "불 왜 안 꺼져?",
+    "fn": "light_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "난방 켜줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "난방 꺼줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "난방 올려줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "난방 낮춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "난방 25도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "좀 춥다",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "시베리아야",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "남방 커줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "난방 그만",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "에어컨 켜줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "에어컨 꺼줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "에어컨 23도",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "에어컨 온도 올려",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "에어컨 온도 내려",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "제습 모드로 해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "송풍 해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "찜통이야",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "더워",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "에어콘 틀어",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "환기 켜줘",
+    "fn": "vent_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "환기 꺼줘",
+    "fn": "vent_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "환기 세게",
+    "fn": "vent_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "공기가 탁해",
+    "fn": "vent_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "답답해",
+    "fn": "vent_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "시끄러워",
+    "fn": "vent_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "환기 안 되나?",
+    "fn": "vent_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "가스 잠가줘",
+    "fn": "gas_control",
+    "exec": "control_then_confirm",
+    "dir": "close"
+  },
+  {
+    "utterance": "까스 잠가",
+    "fn": "gas_control",
+    "exec": "control_then_confirm",
+    "dir": "close"
+  },
+  {
+    "utterance": "가스 열려있어?",
+    "fn": "gas_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "도어락 열어줘",
+    "fn": "door_control",
+    "exec": "control_then_confirm",
+    "dir": "open"
+  },
+  {
+    "utterance": "문 열어줘",
+    "fn": "door_control",
+    "exec": "control_then_confirm",
+    "dir": "open"
+  },
+  {
+    "utterance": "도얼락 열어",
+    "fn": "door_control",
+    "exec": "control_then_confirm",
+    "dir": "open"
+  },
+  {
+    "utterance": "커튼 열어줘",
+    "fn": "curtain_control",
+    "exec": "control_then_confirm",
+    "dir": "open"
+  },
+  {
+    "utterance": "커튼 닫아줘",
+    "fn": "curtain_control",
+    "exec": "control_then_confirm",
+    "dir": "close"
+  },
+  {
+    "utterance": "커튼 멈춰",
+    "fn": "curtain_control",
+    "exec": "control_then_confirm",
+    "dir": "stop"
+  },
+  {
+    "utterance": "블라인드 올려",
+    "fn": "curtain_control",
+    "exec": "control_then_confirm",
+    "dir": "open"
+  },
+  {
+    "utterance": "엘리베이터 불러줘",
+    "fn": "elevator_call",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "엘베 좀",
+    "fn": "elevator_call",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "엘레베이터 호출",
+    "fn": "elevator_call",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "나 나간다",
+    "fn": "security_mode",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "외출할게",
+    "fn": "security_mode",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "외출모드 실행해줘",
+    "fn": "security_mode",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "방범 모드",
+    "fn": "security_mode",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "밖에서 방금 들어왔어",
+    "fn": "security_mode",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "모닝콜 설정해줘",
+    "fn": "schedule_manage",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "알람 취소해줘",
+    "fn": "schedule_manage",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "오늘 날씨 어때?",
+    "fn": "weather_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "오늘 어때?",
+    "fn": "weather_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "미세먼지 어때?",
+    "fn": "weather_query",
+    "exec": "query_then_judge",
+    "dir": "none"
+  },
+  {
+    "utterance": "세차해도 돼?",
+    "fn": "weather_query",
+    "exec": "query_then_judge",
+    "dir": "none"
+  },
+  {
+    "utterance": "뭐 입고 나가?",
+    "fn": "weather_query",
+    "exec": "query_then_judge",
+    "dir": "none"
+  },
+  {
+    "utterance": "창문 열어도 괜찮아?",
+    "fn": "weather_query",
+    "exec": "query_then_judge",
+    "dir": "none"
+  },
+  {
+    "utterance": "우산 가져가야 해?",
+    "fn": "weather_query",
+    "exec": "query_then_judge",
+    "dir": "none"
+  },
+  {
+    "utterance": "밖에 더워?",
+    "fn": "weather_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "밖에 추워?",
+    "fn": "weather_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "뉴스 틀어줘",
+    "fn": "news_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "헤드라인 뭐야",
+    "fn": "news_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "강남역까지 걸려?",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "도로 상황",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "출근 시간 얼마나 걸려",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "에너지 사용량",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "전기세 얼마야",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "몇 시야?",
+    "fn": "home_info",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "볼륨 올려줘",
+    "fn": "home_info",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "소리 줄여줘",
+    "fn": "home_info",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "시간 알려줘",
+    "fn": "home_info",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "뭐 할 수 있어?",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "누가 만들었어?",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "사용법 알려줘",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "도움말",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "주식 어때?",
+    "fn": "market_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "코스피 얼마야",
+    "fn": "market_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "유가 어때?",
+    "fn": "market_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "환율 얼마야",
+    "fn": "market_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "근처 병원",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "소아과 찾아줘",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "충전 상태",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "주차 정보",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "피자 주문해줘",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "세탁기 돌려줘",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "노래 틀어줘",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "ㅋㅋㅋ",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "밥 먹었어?",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "유튜브 켜줘",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "카카오톡 열어",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "에어프라이어 켜줘",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "거실 불 커줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "에어컨 꺼쥬",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "남방 올려줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "까스 잠가줘",
+    "fn": "gas_control",
+    "exec": "control_then_confirm",
+    "dir": "close"
+  },
+  {
+    "utterance": "엘레베이터 불러줘",
+    "fn": "elevator_call",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "도어록 열어줘",
+    "fn": "door_control",
+    "exec": "control_then_confirm",
+    "dir": "open"
+  },
+  {
+    "utterance": "커턴 열어줘",
+    "fn": "curtain_control",
+    "exec": "control_then_confirm",
+    "dir": "open"
+  },
+  {
+    "utterance": "오늘날씨어때",
+    "fn": "weather_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "재습 모드",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "근쳐 병원",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "이제 자려고 하는데",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "아이고 추워라",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "아 진짜 덥다",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "거실 은은하게",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "조용히 해줘",
+    "fn": "home_info",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "집 비울건데",
+    "fn": "security_mode",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "히팅 올려",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "외출하기 좋아?",
+    "fn": "weather_query",
+    "exec": "query_then_judge",
+    "dir": "none"
+  },
+  {
+    "utterance": "좀 시원하게",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "좀 따뜻하게",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "좀 밝게",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "불 좀 켜주라",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "에어컨 좀 틀어줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "에어컨 켜주세요",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "난방 올려주세요",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "거실불꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "난방올려",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "오늘 뉴쓰",
+    "fn": "news_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "냉동실이야",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "북극이야",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "땀이 줄줄",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "냄새 나",
+    "fn": "vent_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "거실 에어컨 제습 23도",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "안방 난방 22도로 해줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "다 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "전체 꺼",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "넷플릭스 켜줘",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "전화해줘",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "로봇청소기 돌려",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  }
 ]
