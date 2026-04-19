@@ -15,7 +15,7 @@ from model_cnn_multihead import *
 from transformers import AutoModel, AutoTokenizer
 
 # 모델 선택
-version = 'v21'
+version = 'v25'
 single_text = None
 for arg in sys.argv[1:]:
     if arg in ('v7', 'v7_clean'):
@@ -23,14 +23,14 @@ for arg in sys.argv[1:]:
     elif arg == 'v9':
         version = 'v9'
     elif arg == 'v21':
-        version = 'v21'
+        version = 'v25'
     else:
         single_text = arg
 
 CKPT = {
     'v7_clean': 'checkpoints/cnn_multihead_v7_clean.pt',
     'v9': 'checkpoints/cnn_multihead_v9.pt',
-    'v21': 'checkpoints/cnn_multihead_v21.pt',
+    'v25': 'checkpoints/cnn_multihead_v21.pt',
 }
 
 # 로드
