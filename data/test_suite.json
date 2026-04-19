@@ -9484,5 +9484,623 @@
     "fn": "weather_query",
     "exec": "query_then_judge",
     "dir": "none"
+  },
+  {
+    "utterance": "거실 불 좀 켜줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "거실 불 좀 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "거실 불 좀 켜봐",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "거실 불 좀 꺼봐",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "거실 불 켜주세요",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "거실 불 꺼주세요",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "거실 불 좀 켜주세요",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "거실 불 좀 꺼주세요",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "안방 불 좀 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "안방 불 좀 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "안방 불 좀 꺼봐",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "안방 불 켜주세요",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "안방 불 꺼주세요",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "안방 불 좀 켜주세요",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "안방 불 좀 꺼주세요",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "주방 불 좀 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "주방 불 좀 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "주방 불 좀 켜봐",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "주방 불 좀 꺼봐",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "주방 불 켜주세요",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "주방 불 꺼주세요",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "주방 불 좀 켜주세요",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "주방 불 좀 꺼주세요",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "침실 불 좀 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "침실 불 좀 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "침실 불 좀 켜봐",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "침실 불 좀 꺼봐",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "침실 불 켜주세요",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "침실 불 꺼주세요",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "침실 불 좀 켜주세요",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "침실 불 좀 꺼주세요",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "작은방 불 좀 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "작은방 불 좀 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "작은방 불 좀 켜봐",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "작은방 불 좀 꺼봐",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "작은방 불 켜주세요",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "작은방 불 꺼주세요",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "작은방 불 좀 켜주세요",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "작은방 불 좀 꺼주세요",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "아이방 불 좀 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "아이방 불 좀 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "아이방 불 좀 켜봐",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "아이방 불 좀 꺼봐",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "아이방 불 켜주세요",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "아이방 불 꺼주세요",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "아이방 불 좀 켜주세요",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "아이방 불 좀 꺼주세요",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "에어컨 18도",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "에어컨 18도로 맞춰줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "에어컨 19도",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "에어컨 19도로 맞춰줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "에어컨 20도",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "에어컨 20도로 맞춰줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "에어컨 21도",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "에어컨 21도로 맞춰줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "에어컨 22도",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "에어컨 22도로 맞춰줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "에어컨 23도로 맞춰줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "에어컨 24도",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "에어컨 24도로 맞춰줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "에어컨 25도",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "에어컨 25도로 맞춰줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "에어컨 26도",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "에어컨 26도로 맞춰줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "에어컨 27도",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "에어컨 27도로 맞춰줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "에어컨 28도",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "에어컨 28도로 맞춰줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "난방 18도",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "난방 19도",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "난방 20도",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "난방 21도",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "난방 22도",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "난방 23도",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "난방 24도",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "난방 25도",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "난방 26도",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "난방 27도",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "난방 28도",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "음악",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "영화",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "농구",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "수영",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "요가",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "피아노",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "기타",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "노래방",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "만화",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "웹툰",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "쇼핑",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "신발",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "가방",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "시계",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "화장품",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "향수",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "안경",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "우유",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "빵",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "과일",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "채소",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "고기",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "생선",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "떡",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
   }
 ]
