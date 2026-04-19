@@ -27,11 +27,11 @@ class EnsemblePipeline:
         self.m28.eval()
 
         self.m34 = CNNMultiHead(pw, d_model=256, max_len=32, dropout=0.15)
-        self.m34.load_state_dict(torch.load('checkpoints/cnn_multihead_v34.pt', map_location='cpu', weights_only=False)['state'])
+        self.m34.load_state_dict(torch.load('checkpoints/cnn_multihead_v46.pt', map_location='cpu', weights_only=False)['state'])
         self.m34.eval()
 
         self.tok = AutoTokenizer.from_pretrained('tokenizer/')
-        print("로딩 완료 — 앙상블 전략 B (fn=v34, exec/dir=v28)")
+        print("로딩 완료 — 앙상블 전략 B (fn=v46, exec/dir=v28)")
 
     def predict(self, text):
         text = preprocess(text)
