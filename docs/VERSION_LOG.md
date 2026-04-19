@@ -344,3 +344,19 @@
 - CutMix (같은 fn 토큰 30% 교체). TS 90.4%, KE 97.5%.
 - v46(mixup)보다 낮음 — 텍스트에서 토큰 교체는 의미를 파괴해서 효과 떨어짐.
 - **Mixup(발화 교체) > CutMix(토큰 교체) for text.**
+
+## [2026-04-20] experiment | v52-v53-augmentation-techniques
+
+- **v52 (CutMix)**: TS 90.4%, KE 97.5% — 토큰 교체가 의미 파괴, mixup보다 나빠.
+- **v53 (Focal Loss γ=2 + Mixup)**: TS 90.5%, KE 97.7% — 어려운 샘플 집중으로 KE 근접하지만 TS 하락.
+- **결론: Mixup(v46)이 여전히 최적.** 추가 기법들은 복잡도만 올리고 효과 미미.
+
+## 실험 종합 (v28~v53, 26개 버전)
+
+**KoELECTRA fn 향상 경로:**
+- v28(75.5%) → v34 pseudo-labeling(96.8%, +21.3%p) → v46 mixup(97.8%, +1.0%p)
+- 핵심: pseudo-labeling이 21%p 기여, 나머지 기법은 1%p 이하
+
+**Test Suite 보존:**
+- v28(96.3%) → v46(93.3%) — 3%p 하락은 exec/dir 모호 케이스
+- 앙상블 v28+v46(94.3%) — 두 지표 균형 최적
