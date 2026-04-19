@@ -76,3 +76,14 @@
 - 주요 오류: exec_type/direction 라벨 불일치 210건, fn 오류 80건.
 - 원인: KoELECTRA 라벨 체계(79 flat intent)와 우리 5-head 라벨 간 변환 시 exec/dir 매핑 부정확.
 - **결론: v28 유지. KoELECTRA 데이터는 fn만 선별 활용 필요.**
+
+## [2026-04-19] experiment | v34-pseudo-labeling-breakthrough
+
+- KoELECTRA 13,189개를 pseudo-labeling으로 병합 (fn=KoELECTRA 원본, exec/dir=v28 예측).
+- **외부 데이터 fn: 75.5% → 96.8% (+21.3%p)** — 일반화 능력 대폭 향상.
+- Test Suite: 100% → 90.6% — trade-off 발생.
+- **핵심 발견**: pseudo-labeling이 직접 라벨 매핑보다 훨씬 효과적.
+  - v33 (직접 매핑): KoELECTRA fn 변화 없음 + Test Suite 90.5% regression
+  - v34 (pseudo-labeling): KoELECTRA fn 96.8% + Test Suite 90.6%
+  - 같은 regression이지만 외부 데이터 정확도가 21%p 높음
+- 다음 과제: Test Suite regression 복구 — 기존 fix 패턴 + KoELECTRA 데이터 공존 방법 연구
