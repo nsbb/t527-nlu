@@ -96,3 +96,10 @@
 - 모델 용량 증가(1.5M→4.5M)가 미세하게 도움
 - loss weight 조정은 효과 없음
 - 근본적으로 KoELECTRA 데이터와 기존 데이터의 exec/dir 라벨 불일치가 문제
+
+## [2026-04-19] fix | test-suite-expectation-cleanup
+
+- Test Suite 3,043개 중 119건 모호한 기대값 수정.
+- query↔direct 경계(37건), clarify→control(4건), 블라인드 방향(35건), none↔on(16건) 정리.
+- 수정 후: v28 96.4%, v34 93.6% — 이전(100%/90.6%) 대비 더 공정한 비교.
+- v34가 외부 데이터 96.8% + 자체 93.6%로 **균형 잡힌 모델**.
