@@ -16594,5 +16594,1667 @@
     "fn": "system_meta",
     "exec": "direct_respond",
     "dir": "none"
+  },
+  {
+    "utterance": "거실 에어컨 18도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "거실 에어컨 19도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "거실 에어컨 20도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "거실 에어컨 21도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "거실 에어컨 22도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "거실 에어컨 23도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "거실 에어컨 24도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "거실 에어컨 25도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "거실 에어컨 26도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "거실 에어컨 27도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "안방 에어컨 18도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "안방 에어컨 19도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "안방 에어컨 20도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "안방 에어컨 21도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "안방 에어컨 22도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "안방 에어컨 23도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "안방 에어컨 24도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "안방 에어컨 25도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "안방 에어컨 26도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "안방 에어컨 27도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "주방 에어컨 18도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "주방 에어컨 19도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "주방 에어컨 20도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "주방 에어컨 21도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "주방 에어컨 22도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "주방 에어컨 23도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "주방 에어컨 24도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "주방 에어컨 25도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "주방 에어컨 26도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "주방 에어컨 27도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "침실 에어컨 18도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "침실 에어컨 19도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "침실 에어컨 20도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "침실 에어컨 21도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "침실 에어컨 22도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "침실 에어컨 23도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "침실 에어컨 24도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "침실 에어컨 25도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "침실 에어컨 26도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "침실 에어컨 27도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "작은방 에어컨 18도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "작은방 에어컨 19도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "작은방 에어컨 20도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "작은방 에어컨 21도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "작은방 에어컨 22도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "작은방 에어컨 23도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "작은방 에어컨 24도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "작은방 에어컨 25도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "작은방 에어컨 26도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "작은방 에어컨 27도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "아이방 에어컨 18도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "아이방 에어컨 19도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "아이방 에어컨 20도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "아이방 에어컨 21도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "아이방 에어컨 22도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "아이방 에어컨 23도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "아이방 에어컨 24도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "아이방 에어컨 25도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "아이방 에어컨 26도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "아이방 에어컨 27도로 설정해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "거실 난방 18도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "거실 난방 19도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "거실 난방 20도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "거실 난방 21도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "거실 난방 22도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "거실 난방 23도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "거실 난방 24도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "거실 난방 25도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "거실 난방 26도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "거실 난방 27도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "안방 난방 18도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "안방 난방 19도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "안방 난방 20도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "안방 난방 21도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "안방 난방 22도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "안방 난방 23도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "안방 난방 24도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "안방 난방 25도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "안방 난방 26도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "안방 난방 27도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "주방 난방 18도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "주방 난방 19도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "주방 난방 20도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "주방 난방 21도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "주방 난방 22도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "주방 난방 23도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "주방 난방 24도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "주방 난방 25도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "주방 난방 26도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "주방 난방 27도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "침실 난방 18도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "침실 난방 19도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "침실 난방 20도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "침실 난방 21도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "침실 난방 22도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "침실 난방 23도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "침실 난방 24도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "침실 난방 25도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "침실 난방 26도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "침실 난방 27도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "작은방 난방 18도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "작은방 난방 19도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "작은방 난방 20도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "작은방 난방 21도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "작은방 난방 22도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "작은방 난방 23도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "작은방 난방 24도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "작은방 난방 25도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "작은방 난방 26도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "작은방 난방 27도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "아이방 난방 18도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "아이방 난방 19도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "아이방 난방 20도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "아이방 난방 21도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "아이방 난방 22도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "아이방 난방 23도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "아이방 난방 24도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "아이방 난방 25도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "아이방 난방 26도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "아이방 난방 27도로 맞춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "거실 에어컨 수면 모드로",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "거실 조명 올려줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "거실 조명 내려줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "거실 조명 최대로",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "거실 조명 최소로",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "안방 에어컨 수면 모드로",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "안방 조명 올려줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "안방 조명 내려줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "안방 조명 최대로",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "안방 조명 최소로",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "주방 에어컨 수면 모드로",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "주방 조명 올려줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "주방 조명 내려줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "주방 조명 최대로",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "주방 조명 최소로",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "침실 에어컨 수면 모드로",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "침실 조명 올려줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "침실 조명 내려줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "침실 조명 최대로",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "침실 조명 최소로",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "작은방 에어컨 수면 모드로",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "작은방 조명 올려줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "작은방 조명 내려줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "작은방 조명 최대로",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "작은방 조명 최소로",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "아이방 에어컨 수면 모드로",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "아이방 조명 올려줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "아이방 조명 내려줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "아이방 조명 최대로",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "아이방 조명 최소로",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "거실 커튼 예약",
+    "fn": "curtain_control",
+    "exec": "control_then_confirm",
+    "dir": "none"
+  },
+  {
+    "utterance": "안방 커튼 예약",
+    "fn": "curtain_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "주방 커튼 예약",
+    "fn": "curtain_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "침실 커튼 예약",
+    "fn": "curtain_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "작은방 커튼 예약",
+    "fn": "curtain_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "아이방 커튼 예약",
+    "fn": "curtain_control",
+    "exec": "control_then_confirm",
+    "dir": "none"
+  },
+  {
+    "utterance": "가까운 치과",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "근처 약국 찾아",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "동네 병원 어디야",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "약국 위치 알려줘",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "근처 신경외과",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "가까운 안과",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "지금 길 막히나",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "출근길 교통 어때",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "퇴근길 교통 어때",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "도로 정체 확인",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "고속도로 막히나",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "지금 차 많이 막혀?",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "도로 상황 알려줘",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "교통 상황 확인해줘",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "뭐 해줄 수 있는거야",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "사용 방법 알려줘",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "너 뭘 해줄 수 있어",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "어떤 명령이 있어",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "기능 뭐가 있어",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "도와줄 수 있는 기능",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "병원 어디 있어",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "가까운 소아과",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "약국 위치",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "병원 진료",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "도로 막혀?",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "출퇴근 도로 상황",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "지금 도로 막혀?",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "할 수 있는 기능",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "기능 뭐 있어",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "월패드 사용 방법",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "뭐 도와줄 수 있지",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "전기차 충전 얼마나 됐어",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "주차 위치 확인",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "차량 충전 확인해줘",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "방문 차량 등록해줘",
+    "fn": "vehicle_manage",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "주차 현황",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "차량 출입 확인",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "주차 자리 있어?",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "주차장 확인",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "차 충전 됐나",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "차량 정보 확인",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "주차 현황 확인",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "전기 얼마 나왔어",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "에너지 사용량 확인해줘",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "전기 많이 썼어?",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "가스비 얼마나 나왔어",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "이번 달 가스 사용량",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "전기 요금 확인해줘",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "전기 많이 썼나",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "가스 얼마야",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "에너지 얼마 썼어",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "이번 달 에너지 사용량",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "지금 몇 시야",
+    "fn": "home_info",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "소리 키워줘",
+    "fn": "home_info",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "볼륨 내려줘",
+    "fn": "home_info",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "단지 정보",
+    "fn": "home_info",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "아침 7시 알람 맞춰줘",
+    "fn": "schedule_manage",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "타이머 맞춰줘",
+    "fn": "schedule_manage",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "방범 모드 켜줘",
+    "fn": "security_mode",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "집 비울게",
+    "fn": "security_mode",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "알람 맞춰줘",
+    "fn": "schedule_manage",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "모닝콜 맞춰",
+    "fn": "schedule_manage",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "알람 있어?",
+    "fn": "schedule_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "외출할 때 켜줘",
+    "fn": "security_mode",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "나 나갈게",
+    "fn": "security_mode",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "방범 설정",
+    "fn": "security_mode",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "소리 크게 해줘",
+    "fn": "home_info",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "볼륨 좀 줄여줘",
+    "fn": "home_info",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "시간 확인해줘",
+    "fn": "home_info",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "관리사무소 전화",
+    "fn": "home_info",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "엘리베이터 좀 불러줘",
+    "fn": "elevator_call",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "엘베 불러줘",
+    "fn": "elevator_call",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "엘리베이터 호출 해줘",
+    "fn": "elevator_call",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "오늘 주가 어때",
+    "fn": "market_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "달러 환율 얼마야",
+    "fn": "market_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "코스닥 현황",
+    "fn": "market_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "코스피 어때",
+    "fn": "market_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "가스 잠겼는지 확인",
+    "fn": "gas_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "가스 밸브 확인해줘",
+    "fn": "gas_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "가스 잠가줘봐",
+    "fn": "gas_control",
+    "exec": "control_then_confirm",
+    "dir": "close"
+  },
+  {
+    "utterance": "가스 좀 잠가",
+    "fn": "gas_control",
+    "exec": "control_then_confirm",
+    "dir": "close"
+  },
+  {
+    "utterance": "가스 확인해",
+    "fn": "gas_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "가스 잠갔어",
+    "fn": "gas_control",
+    "exec": "control_then_confirm",
+    "dir": "close"
+  },
+  {
+    "utterance": "최신 뉴스 알려줘",
+    "fn": "news_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "경제 뉴스 알려줘",
+    "fn": "news_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "뉴스 보여줘",
+    "fn": "news_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "헤드라인 뉴스",
+    "fn": "news_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "현관문 열어줘",
+    "fn": "door_control",
+    "exec": "control_then_confirm",
+    "dir": "open"
+  },
+  {
+    "utterance": "문 열렸어?",
+    "fn": "door_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "커튼 다 닫아",
+    "fn": "curtain_control",
+    "exec": "control_then_confirm",
+    "dir": "close"
+  },
+  {
+    "utterance": "커튼 좀 열어줘",
+    "fn": "curtain_control",
+    "exec": "control_then_confirm",
+    "dir": "open"
+  },
+  {
+    "utterance": "블라인드 열어",
+    "fn": "curtain_control",
+    "exec": "control_then_confirm",
+    "dir": "open"
+  },
+  {
+    "utterance": "오늘 날씨 좋아?",
+    "fn": "weather_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "내일 날씨 알려줘",
+    "fn": "weather_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "이번 주 날씨 어때",
+    "fn": "weather_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "날씨 예보 알려줘",
+    "fn": "weather_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "환기 끄기",
+    "fn": "vent_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "공기 순환 시켜",
+    "fn": "vent_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "환기 세기 올려",
+    "fn": "vent_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "환기 세기 줄여줘",
+    "fn": "vent_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "음악 재생해줘",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "영화 추천해줘",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "심심한데",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "택시 불러줘",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "게임 하고 싶어",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "라디오 틀어",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "영상 재생",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "청소기 돌려줘",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "밥 해줘",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "커피 내려줘",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "난방 좀 올려줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "온도 좀 내려줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "난방 온도 25도로",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "난방 좀 줄여줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "서재 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "에어컨 좀 세게",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "냉방 약하게 해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "에어컨 바람 세게",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "에어컨 온도 올려줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "냉방 좀 줄여",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "에어컨 23도로 맞춰",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
   }
 ]
