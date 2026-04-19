@@ -237,3 +237,20 @@
 - val combo 85.4%로 낮지만, 외부 일반화가 최고 — train/val 분포 차이.
 - mixup이 모델의 결정 경계를 부드럽게 만들어 일반화 향상.
 - label smoothing(97.4%)보다도 +0.4%p 높음.
+
+## [2026-04-20] experiment | v47-mixup-plus-label-smoothing
+
+- Mixup + label_smoothing=0.05 조합. Test Suite 91.6%, KoELECTRA 97.3%.
+- mixup only(v46: 97.8%)보다 KoELECTRA 낮음 — label smoothing 중복 효과.
+- **v46(mixup only)이 KoELECTRA 일반화 최고 (97.8%)**
+- mixup이 label smoothing보다 일반화에 더 효과적.
+
+## 일반화 최고 모델 순위
+
+| 순위 | 모델 | KoELECTRA fn | Test Suite |
+|------|------|:---:|:---:|
+| 1 | **v46 (mixup)** | **97.8%** | 91.1% |
+| 2 | v45 (label smooth) | 97.4% | 90.5% |
+| 3 | v43 (어휘 추가) | 97.3% | 91.5% |
+| 4 | v34 (pseudo-label) | 96.8% | 93.6% |
+| 5 | v28 (기존) | 75.5% | 96.4% |
