@@ -1,6 +1,33 @@
 # NLU Changelog — 버전별 업데이트 내역
 
-## v10 (현재)
+## v14 (현재)
+- 78개 종합 테스트 fn **100%** (78/78), 219 GT **100%**, combo **94.7%**
+- v11~v14 반복 개선으로 오분류 패턴 전수 수정:
+  - 간접표현: "더워"→ac, "시끄러워"→vent off, "외출할게"→security
+  - STT오류: "커턴"→curtain, "남방"→heat
+  - 경계: "밖에 더워?"→weather vs "더워"→ac 구분
+  - direction: "환기 세게"→up, "에어컨 온도 내려"→down, "에어컨 23도"→set
+  - exec: "송풍 해줘"→control(not clarify), "뉴스 틀어줘"→query(not unknown)
+- 데이터: 20,247개
+
+## v13
+- 확장 테스트 55개 fn 98.2% (54/55)
+- "더워"→ac, "시끄러워"→vent, "외출할게"→security, "커턴"→curtain 수정
+- "오늘 어때?"→market 오분류 1건 남음
+- 219 GT fn: 100%
+
+## v12
+- v11 남은 오류 2개 수정 ("환기 세게"→dir:up, "뭐 할 수 있어?"→system_meta)
+- 핵심 33개 combo **100%** (33/33)
+- combo: 94.7%
+
+## v11
+- v10 종합 96개 테스트에서 발견된 9개 fn오류 + 7개 exec오류 + 7개 dir오류 전수 수정
+- 난방낮춰→heat, 에어컨온도→ac, 제습→ac, 미세먼지→weather, 우산→weather, 뉴스틀어→news, 볼륨→home, 사용법→system
+- 핵심 43개 combo 95.3% (41/43)
+- combo: 94.6%
+
+## v10
 - HA 영어 583개 한국어 번역 (Home-Assistant-Requests → 규칙 기반 번역)
   - door_control +97, curtain_control +127, vent_control +283 보강
 - "불 꺼줘" → light_control 패턴 수정 (light_off 44개 + light_on_room 24개 추가)
