@@ -124,3 +124,41 @@ KoELECTRA에는 있지만 우리 fn 20개에 없는 것:
 | dir: off | 2.7% | 8.6% | **-5.9%p** (끄기 발화 과소) |
 
 → 우리 모델은 "조회"에 편향, "제어+방향"에 약함. 실제 사용자는 제어 발화를 더 많이 하는데 모델은 조회 위주로 학습됨.
+
+---
+
+## 개선 실험 계획
+
+### 실험 A: KoELECTRA exec/dir 라벨 수정 후 재병합
+
+KoELECTRA 데이터의 fn은 대체로 맞음 (75.5%). 문제는 exec/dir 라벨.
+→ **KoELECTRA 발화를 v28 모델로 pseudo-labeling** (fn은 KoELECTRA 원본 유지, exec/dir는 v28 예측 사용)
+→ 이러면 KoELECTRA의 발화 다양성 + v28의 exec/dir 일관성을 동시 확보
+
+### 실험 B: 누락 어휘 집중 추가
+
+기록/내역/이력, 카드, 콘센트, 재택, 보여줘, 바꿔줘, 잠깐/얼른 등 24개 키워드를
+**각 fn에 맞게 50개씩 추가** → 24 × 50 = 1,200개
+
+### 실험 C: exec/dir 분포 리밸런싱
+
+현재 exec control 33% → 50%로, dir none 63% → 45%로 조정.
+방법: control+direction(on/off/set) 발화를 더 생성
+
+### 실험 D: unknown 비율 축소
+
+현재 unknown 17% → 10%로 줄여서 known→unknown 누출 방지.
+대신 confidence fallback threshold를 0.3으로 낮춰서 진짜 OOD만 거부.
+
+### 우선순위
+
+1. **실험 A** (가장 ROI 높음) — KoELECTRA 12,841개를 살림
+2. **실험 B** (필수) — 어휘 빈곤 해결
+3. **실험 C** (중요) — 분포 편향 교정
+4. **실험 D** (보완) — unknown 누출 방지
+
+### 성공 기준
+
+- KoELECTRA val fn **85%+** (현재 75.5%)
+- Test Suite 3,043개 **95%+** (regression 최소화)
+- 두 가지를 **동시에** 달성해야 함
