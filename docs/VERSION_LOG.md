@@ -87,3 +87,12 @@
   - v34 (pseudo-labeling): KoELECTRA fn 96.8% + Test Suite 90.6%
   - 같은 regression이지만 외부 데이터 정확도가 21%p 높음
 - 다음 과제: Test Suite regression 복구 — 기존 fix 패턴 + KoELECTRA 데이터 공존 방법 연구
+
+## [2026-04-19] experiment | v36-v38-test-suite-recovery
+
+- **v36** (방향 보충): Test Suite 90.9%, KoELECTRA 97.3%
+- **v37** (exec/dir weight 올림): Test Suite 90.8%, KoELECTRA 97.3%
+- **v38** (6L CNN d=384, 4.5M params): Test Suite **91.1%**, KoELECTRA **97.1%**
+- 모델 용량 증가(1.5M→4.5M)가 미세하게 도움
+- loss weight 조정은 효과 없음
+- 근본적으로 KoELECTRA 데이터와 기존 데이터의 exec/dir 라벨 불일치가 문제
