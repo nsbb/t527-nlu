@@ -1,0 +1,3445 @@
+[
+  {
+    "utterance": "알람 맞춰줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "거실 알람 맞춰줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "안방 알람 맞춰줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "알람 설정해줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "거실 알람 설정해줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "안방 알람 설정해줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "알람 켜줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "거실 알람 켜줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "안방 알람 켜줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "알람 꺼줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "거실 알람 꺼줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "안방 알람 꺼줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "알람 취소해줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "거실 알람 취소해줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "안방 알람 취소해줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "타이머 설정해줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "거실 타이머 설정해줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "안방 타이머 설정해줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "타이머 맞춰줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "거실 타이머 맞춰줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "안방 타이머 맞춰줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "타이머 해제해줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "거실 타이머 해제해줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "안방 타이머 해제해줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "모닝콜 맞춰줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "거실 모닝콜 맞춰줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "안방 모닝콜 맞춰줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "모닝콜 설정",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "거실 모닝콜 설정",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "안방 모닝콜 설정",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "난방 예약해줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "거실 난방 예약해줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "안방 난방 예약해줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "에어컨 예약 설정",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "거실 에어컨 예약 설정",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "안방 에어컨 예약 설정",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "조명 예약 켜줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "거실 조명 예약 켜줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "안방 조명 예약 켜줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "커튼 예약 해제",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "거실 커튼 예약 해제",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "안방 커튼 예약 해제",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "7시에 알람 맞춰줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "거실 7시에 알람 맞춰줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "안방 7시에 알람 맞춰줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "30분 후에 꺼줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "거실 30분 후에 꺼줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "안방 30분 후에 꺼줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "10분 타이머",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "거실 10분 타이머",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "안방 10분 타이머",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "1시간 뒤에 알람",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "거실 1시간 뒤에 알람",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "안방 1시간 뒤에 알람",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "control_then_confirm",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "알람 뭐 있어",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "거실 알람 뭐 있어",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "안방 알람 뭐 있어",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "예약 확인",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "거실 예약 확인",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "안방 예약 확인",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "타이머 남은 시간",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "거실 타이머 남은 시간",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "안방 타이머 남은 시간",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "예약 현황 알려줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "거실 예약 현황 알려줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "안방 예약 현황 알려줘",
+    "labels": {
+      "fn": "schedule_manage",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_schedule"
+  },
+  {
+    "utterance": "에어컨 작동 중이야",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "거실 에어컨 작동 중이야",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "안방 에어컨 작동 중이야",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "에어컨 켜져 있어",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "거실 에어컨 켜져 있어",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "안방 에어컨 켜져 있어",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "난방 지금 켜져 있나",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "거실 난방 지금 켜져 있나",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "안방 난방 지금 켜져 있나",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "조명 상태 확인",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "거실 조명 상태 확인",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "안방 조명 상태 확인",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "불 켜져 있어",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "거실 불 켜져 있어",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "안방 불 켜져 있어",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "현관문 열려 있어",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "거실 현관문 열려 있어",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "안방 현관문 열려 있어",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "문 잠겨 있나",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "거실 문 잠겨 있나",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "안방 문 잠겨 있나",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "가스 잠겨 있어",
+    "labels": {
+      "fn": "gas_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "거실 가스 잠겨 있어",
+    "labels": {
+      "fn": "gas_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "안방 가스 잠겨 있어",
+    "labels": {
+      "fn": "gas_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "환기 작동 중이야",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "거실 환기 작동 중이야",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "안방 환기 작동 중이야",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "커튼 열려 있나",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "거실 커튼 열려 있나",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "안방 커튼 열려 있나",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "지금 온도 몇 도야",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "거실 지금 온도 몇 도야",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "안방 지금 온도 몇 도야",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "실내 온도 알려줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "거실 실내 온도 알려줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "안방 실내 온도 알려줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "에어컨 몇 도로 설정되어 있어",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "거실 에어컨 몇 도로 설정되어 있어",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "안방 에어컨 몇 도로 설정되어 있어",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "에너지 사용량 얼마야",
+    "labels": {
+      "fn": "energy_query",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "거실 에너지 사용량 얼마야",
+    "labels": {
+      "fn": "energy_query",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "안방 에너지 사용량 얼마야",
+    "labels": {
+      "fn": "energy_query",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "이번 달 전기세",
+    "labels": {
+      "fn": "energy_query",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "거실 이번 달 전기세",
+    "labels": {
+      "fn": "energy_query",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "안방 이번 달 전기세",
+    "labels": {
+      "fn": "energy_query",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "교통 상황 어때",
+    "labels": {
+      "fn": "traffic_query",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "거실 교통 상황 어때",
+    "labels": {
+      "fn": "traffic_query",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "안방 교통 상황 어때",
+    "labels": {
+      "fn": "traffic_query",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "현관문 상태",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "거실 현관문 상태",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "안방 현관문 상태",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "엘리베이터 위치",
+    "labels": {
+      "fn": "elevator_call",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "거실 엘리베이터 위치",
+    "labels": {
+      "fn": "elevator_call",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "안방 엘리베이터 위치",
+    "labels": {
+      "fn": "elevator_call",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "온도 설정값",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "거실 온도 설정값",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "안방 온도 설정값",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_query"
+  },
+  {
+    "utterance": "에어컨",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "direct_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direct"
+  },
+  {
+    "utterance": "조명",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "direct_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direct"
+  },
+  {
+    "utterance": "난방",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "direct_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direct"
+  },
+  {
+    "utterance": "커튼",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "direct_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direct"
+  },
+  {
+    "utterance": "에어컨 뭐야",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "direct_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direct"
+  },
+  {
+    "utterance": "에어컨 풀가동",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "direct_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direct"
+  },
+  {
+    "utterance": "에어컨 바람",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "direct_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direct"
+  },
+  {
+    "utterance": "에어컨 리모컨",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "direct_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direct"
+  },
+  {
+    "utterance": "에너지 목표",
+    "labels": {
+      "fn": "energy_query",
+      "exec_type": "direct_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direct"
+  },
+  {
+    "utterance": "소리 줄여줘",
+    "labels": {
+      "fn": "home_info",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "소리 좀 줄여",
+    "labels": {
+      "fn": "home_info",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "볼륨 줄여줘",
+    "labels": {
+      "fn": "home_info",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "볼륨 낮춰줘",
+    "labels": {
+      "fn": "home_info",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "볼륨 내려줘",
+    "labels": {
+      "fn": "home_info",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "월패드 소리 줄여줘",
+    "labels": {
+      "fn": "home_info",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "월패드 소리 낮춰",
+    "labels": {
+      "fn": "home_info",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "화면 밝기 줄여",
+    "labels": {
+      "fn": "home_info",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "화면 밝기 낮춰줘",
+    "labels": {
+      "fn": "home_info",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "화면 어둡게",
+    "labels": {
+      "fn": "home_info",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "밝기 내려줘",
+    "labels": {
+      "fn": "home_info",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "온도 낮춰줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "온도 내려줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "조금만 낮춰",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "어둡게 해줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "조명 어둡게",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "거실 조명 최소로",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "안방 조명 최소로",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "바람 약하게",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "에어컨 바람 줄여",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "소리 올려줘",
+    "labels": {
+      "fn": "home_info",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "볼륨 올려줘",
+    "labels": {
+      "fn": "home_info",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "소리 좀 올려",
+    "labels": {
+      "fn": "home_info",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "월패드 소리 올려줘",
+    "labels": {
+      "fn": "home_info",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "화면 밝기 올려",
+    "labels": {
+      "fn": "home_info",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "밝기 올려줘",
+    "labels": {
+      "fn": "home_info",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "온도 올려줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "온도 높여줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "조금만 올려",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "밝게 해줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "조명 밝게",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "더 밝게",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "거실 등 좀 밝게",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "바람 강하게",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "에어컨 바람 올려",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "현관 잠가줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "현관 잠금",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "문 잠가",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "문 닫아줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "가스 잠가줘",
+    "labels": {
+      "fn": "gas_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "가스 밸브 잠가",
+    "labels": {
+      "fn": "gas_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "가스 잠그기",
+    "labels": {
+      "fn": "gas_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "close",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "현관문 열어줘",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "문 열어",
+    "labels": {
+      "fn": "door_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "커튼 열어줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "블라인드 열어",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "거실 불 켜줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "조명 켜줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "에어컨 켜줘",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "난방 켜줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "환기 켜줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "간접등 켜줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "취침등 켜줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "무드등 켜줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "형광등 켜줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "거실 불 꺼줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "조명 꺼줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "에어컨 꺼줘",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "난방 꺼줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "환기 꺼줘",
+    "labels": {
+      "fn": "vent_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "에어컨꺼",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "남방 꺼줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction"
+  },
+  {
+    "utterance": "거실 온도 낮춰줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 온도 낮춰줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 온도 낮춰줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 온도 내려줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 온도 내려줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 온도 내려줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 조금만 낮춰",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 조금만 낮춰",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 조금만 낮춰",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 어둡게 해줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 어둡게 해줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 어둡게 해줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 조명 어둡게",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 조명 어둡게",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 조명 어둡게",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 바람 약하게",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 바람 약하게",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 바람 약하게",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 에어컨 바람 줄여",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 에어컨 바람 줄여",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 에어컨 바람 줄여",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 온도 올려줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 온도 올려줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 온도 올려줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 온도 높여줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 온도 높여줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 온도 높여줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 조금만 올려",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 조금만 올려",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 조금만 올려",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 밝게 해줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 밝게 해줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 밝게 해줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 조명 밝게",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 조명 밝게",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 조명 밝게",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 더 밝게",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 더 밝게",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 더 밝게",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 바람 강하게",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 바람 강하게",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 바람 강하게",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 에어컨 바람 올려",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 에어컨 바람 올려",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 에어컨 바람 올려",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 커튼 열어줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 커튼 열어줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 커튼 열어줘",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 블라인드 열어",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 블라인드 열어",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 블라인드 열어",
+    "labels": {
+      "fn": "curtain_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "open",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 조명 켜줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 조명 켜줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 조명 켜줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 에어컨 켜줘",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 에어컨 켜줘",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 에어컨 켜줘",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 난방 켜줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 난방 켜줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 난방 켜줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 간접등 켜줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 간접등 켜줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 간접등 켜줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 취침등 켜줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 취침등 켜줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 취침등 켜줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 무드등 켜줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 무드등 켜줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 무드등 켜줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 형광등 켜줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 형광등 켜줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 형광등 켜줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 조명 꺼줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 조명 꺼줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 조명 꺼줘",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 에어컨 꺼줘",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 에어컨 꺼줘",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 에어컨 꺼줘",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 난방 꺼줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 난방 꺼줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 난방 꺼줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 에어컨꺼",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 에어컨꺼",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 에어컨꺼",
+    "labels": {
+      "fn": "ac_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "거실 남방 꺼줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "안방 남방 꺼줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "침실 남방 꺼줘",
+    "labels": {
+      "fn": "heat_control",
+      "exec_type": "control_then_confirm",
+      "param_direction": "off",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_direction_room"
+  },
+  {
+    "utterance": "서울 날씨",
+    "labels": {
+      "fn": "weather_query",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_weather_news"
+  },
+  {
+    "utterance": "오늘 날씨 어때",
+    "labels": {
+      "fn": "weather_query",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_weather_news"
+  },
+  {
+    "utterance": "오늘날씨어때",
+    "labels": {
+      "fn": "weather_query",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_weather_news"
+  },
+  {
+    "utterance": "내일 날씨",
+    "labels": {
+      "fn": "weather_query",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_weather_news"
+  },
+  {
+    "utterance": "부산 날씨",
+    "labels": {
+      "fn": "weather_query",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_weather_news"
+  },
+  {
+    "utterance": "날씨 알려줘",
+    "labels": {
+      "fn": "weather_query",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_weather_news"
+  },
+  {
+    "utterance": "비 오나",
+    "labels": {
+      "fn": "weather_query",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_weather_news"
+  },
+  {
+    "utterance": "오늘 기온",
+    "labels": {
+      "fn": "weather_query",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_weather_news"
+  },
+  {
+    "utterance": "주말 날씨",
+    "labels": {
+      "fn": "weather_query",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_weather_news"
+  },
+  {
+    "utterance": "국제 뉴스",
+    "labels": {
+      "fn": "news_query",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_weather_news"
+  },
+  {
+    "utterance": "뉴스 틀어줘",
+    "labels": {
+      "fn": "news_query",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_weather_news"
+  },
+  {
+    "utterance": "오늘 뉴스",
+    "labels": {
+      "fn": "news_query",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_weather_news"
+  },
+  {
+    "utterance": "뉴스 알려줘",
+    "labels": {
+      "fn": "news_query",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_weather_news"
+  },
+  {
+    "utterance": "주요 뉴스",
+    "labels": {
+      "fn": "news_query",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_weather_news"
+  },
+  {
+    "utterance": "스포츠 뉴스",
+    "labels": {
+      "fn": "news_query",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_weather_news"
+  },
+  {
+    "utterance": "경제 뉴스",
+    "labels": {
+      "fn": "news_query",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_weather_news"
+  },
+  {
+    "utterance": "화면 밝기",
+    "labels": {
+      "fn": "home_info",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_home_info"
+  },
+  {
+    "utterance": "월패드 밝기",
+    "labels": {
+      "fn": "home_info",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_home_info"
+  },
+  {
+    "utterance": "화면 밝기 줄여줘",
+    "labels": {
+      "fn": "home_info",
+      "exec_type": "control_then_confirm",
+      "param_direction": "down",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_home_info"
+  },
+  {
+    "utterance": "월패드 밝기 올려줘",
+    "labels": {
+      "fn": "home_info",
+      "exec_type": "control_then_confirm",
+      "param_direction": "up",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_home_info"
+  },
+  {
+    "utterance": "알림 뭐야",
+    "labels": {
+      "fn": "home_info",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_home_info"
+  },
+  {
+    "utterance": "알림 확인",
+    "labels": {
+      "fn": "home_info",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_home_info"
+  },
+  {
+    "utterance": "택배 왔어",
+    "labels": {
+      "fn": "home_info",
+      "exec_type": "query_then_respond",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_home_info"
+  },
+  {
+    "utterance": "승강기 불러줘",
+    "labels": {
+      "fn": "elevator_call",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_elevator"
+  },
+  {
+    "utterance": "엘리베이터 불러줘",
+    "labels": {
+      "fn": "elevator_call",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_elevator"
+  },
+  {
+    "utterance": "리프트 호출",
+    "labels": {
+      "fn": "elevator_call",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_elevator"
+  },
+  {
+    "utterance": "승강기 호출해줘",
+    "labels": {
+      "fn": "elevator_call",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_elevator"
+  },
+  {
+    "utterance": "엘베 불러줘",
+    "labels": {
+      "fn": "elevator_call",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_elevator"
+  },
+  {
+    "utterance": "승강기 호출",
+    "labels": {
+      "fn": "elevator_call",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_elevator"
+  },
+  {
+    "utterance": "엘리베이터 호출",
+    "labels": {
+      "fn": "elevator_call",
+      "exec_type": "control_then_confirm",
+      "param_direction": "on",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_elevator"
+  },
+  {
+    "utterance": "취침등",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "clarify",
+      "param_direction": "set",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_clarify"
+  },
+  {
+    "utterance": "무드등",
+    "labels": {
+      "fn": "light_control",
+      "exec_type": "clarify",
+      "param_direction": "none",
+      "param_type": "none",
+      "judge": "none"
+    },
+    "source": "fix_v58_clarify"
+  }
+]

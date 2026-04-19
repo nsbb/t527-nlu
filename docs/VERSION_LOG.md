@@ -1,5 +1,44 @@
 # NLU Version Log
 
+## [2026-04-21] experiment | v54-v61-single-model-optimization
+
+10개 실험을 통해 v46 단일 모델 성능 개선 시도. **결론: v46이 최적 단일 모델.**
+
+| 버전 | 기법 | TS combo | KE fn | 비고 |
+|------|------|:---:|:---:|------|
+| v46 (baseline) | mixup | **93.3%** | **97.8%** | 기존 최적 단일 모델 |
+| v54 | Self-training R2 (v46 pseudo) | — | — | v28↔v46 label 차이 2%뿐, ROI 없음 |
+| v55 | KD from ensemble (v28+v46) | 92.1% | 97.7% | soft label로 ensemble 재현 불가 |
+| v56 | Two-stage (freeze fn, tune exec/dir) | 91.2% | 96.9% | backbone 변경이 fn에도 영향 |
+| v57 | Wider model (d=384) | 90.2% | 97.2% | 24.5K 데이터로 3.3M param 과다 |
+| v58 | Targeted augmentation (313개) | 91.4% | 97.5% | 소규모 패치 데이터가 분포 왜곡 |
+| v59 | Head-specific masking | 83.0% | 97.2% | exec/dir 마스킹이 backbone 학습 저해 |
+| v60 | Model Soup (weight interpolation) | 93.3% | 97.8% | α=0에서 최적 (= 순수 v46) |
+| v61 | Warm-start from v28 | 92.4% | 97.3% | 초기화와 무관하게 같은 수렴점 |
+| v62 | Multi-seed (3×avg) | 92.0% | 97.6% | v46 seed 42가 lucky, 평균은 하락 |
+| v63 | Conformer 2L backbone | 79.6% | 94.8% | 24.5K에서 Attention < CNN |
+
+### 핵심 발견
+
+1. **TS↔KE 트레이드오프는 데이터 분포에 의한 구조적 한계**
+   - GT 데이터: 정확한 exec/dir 패턴 → 높은 TS
+   - KoELECTRA 데이터: 다양한 fn 표현 → 높은 KE
+   - 두 데이터의 exec/dir 레이블이 체계적으로 다름
+   
+2. **v28↔v46 weight space는 비볼록** (Model Soup 실패)
+   - α=0.3~0.6에서 성능 급락 → 모델 결합은 prediction-level(앙상블)만 가능
+
+3. **초기화(v28 warm-start)는 최종 성능에 무관** — 같은 데이터로 학습하면 같은 수렴점
+
+4. **소규모 패치 데이터는 항상 regression 유발** (v29-v33, v58 모두 동일)
+
+### 현재 최적 구성
+
+| 용도 | 구성 | TS combo | KE fn |
+|------|------|:---:|:---:|
+| 단일 모델 | v46 (mixup) | 93.3% | 97.8% |
+| 앙상블 | v28 + v46 전략B | 94.3% | 97.8% |
+
 ## [2026-04-19] update | v28-test-suite-3000-and-preprocessor
 
 - **Test Suite 3,043개 달성**, v28 combo 100%.
