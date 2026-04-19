@@ -177,3 +177,23 @@
 | v3 | clarify 라벨 버그 — room 추가해도 exec_type 안 바꿈 |
 | v1~v6 | "불 꺼줘" 학습 데이터 0개 — 기본 명령 오분류 |
 | v8 | 패턴 수정하다 false rejection 발생 — v7보다 나빠짐 |
+
+## 실험 기록
+
+### 실패한 시도
+| 버전 | 시도 | 결과 |
+|------|------|------|
+| v22 | param_type 데이터 수정 | 다른 head regression |
+| v26 | 감탄형 exec 수정 | 환기/뉴스 regression |
+| v27 | 왔어/에어컨필터 수정 | Test Suite 97.4% regression |
+| v29 | 전체꺼 → light 수정 | 시끄러워/환율 regression |
+| v30 | 22도/온풍기/이비인후과 수정 | 답답해/시끄러워 regression |
+| v31 | 알람꺼/장마감/유가전망 수정 | 미세먼지/남방/냄새 regression |
+| v32 | 통합 재증강 시도 | 전반적 하락 |
+| v33 | 미세문지/손풍 STT 수정 | 주식시세/달러시세 regression |
+
+### 교훈
+- 패치 데이터 추가 시 기존 패턴이 밀림 (data poisoning)
+- v28이 최적점 — 더 이상의 패치는 regression 유발
+- param_type은 모델보다 규칙 보정이 효과적
+- Test Suite로 regression 즉시 감지하는 것이 핵심
