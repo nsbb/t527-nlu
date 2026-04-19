@@ -200,6 +200,10 @@ class SAPv2Pipeline:
         self.model.eval()
 
         self.tokenizer = AutoTokenizer.from_pretrained('tokenizer/')
+
+        # DST 초기화
+        from dialogue_state_tracker import DialogueStateTracker
+        self.dst = DialogueStateTracker(timeout=10)
         params = sum(p.numel() for p in self.model.parameters())
         trainable = sum(p.numel() for p in self.model.parameters() if p.requires_grad)
         print(f"로딩 완료 — 5 heads, {params/1e6:.1f}M params ({trainable/1e6:.1f}M trainable)")
@@ -235,11 +239,20 @@ class SAPv2Pipeline:
 
     def run(self, text):
         preds, confidence = self.predict(text)
-        response = generate_response(preds, text)
 
         # Room/Value from rules
         room = extract_room(text)
         value = extract_value(text)
+
+        # DST (멀티턴 대화 상태 추적)
+        if hasattr(self, 'dst'):
+            resolved = self.dst.update(preds, room, text)
+            preds['fn'] = resolved['fn']
+            preds['exec_type'] = resolved['exec_type']
+            preds['param_direction'] = resolved['param_direction']
+            room = resolved['room']
+
+        response = generate_response(preds, text)
 
         # 요약
         parts = [f"fn={preds['fn']}", f"exec={preds['exec_type']}"]
