@@ -1,6 +1,22 @@
 # NLU Changelog — 버전별 업데이트 내역
 
-## v21 (현재)
+## v25 (현재)
+- **Test Suite 114개: fn 100%, dir 100%, combo 99.1%**
+- v22~v25 반복: "공기가 탁해"→control, "오늘 어때"→weather, 감탄형→control
+- param_type 규칙 보정 추가 (모델 대신 후처리로 해결)
+- Test Suite 자동화: `data/test_suite.json` + `scripts/run_test_suite.py`
+- 데이터: ~20,800개 | val combo: 94.4%
+
+## v24
+- **direction head 100%** 달성 (내려→down, 줄여→down, 커줘→on 수정)
+- exec 수정: 답답해/시끄러워→control, 에너지→query
+- Test Suite 114개 combo 98.2%
+
+## v23
+- 멈춰/중지→direction:stop 수정
+- combo: 94.6%
+
+## v21
 - 5-head combo 테스트 88.9% (8/9)
 - judge head: 반팔→clothing, 미세먼지→air_quality 수정
 - param_type: 난방→temperature, 세차/창문→none 수정
