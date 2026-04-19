@@ -254,3 +254,27 @@
 | 3 | v43 (어휘 추가) | 97.3% | 91.5% |
 | 4 | v34 (pseudo-label) | 96.8% | 93.6% |
 | 5 | v28 (기존) | 75.5% | 96.4% |
+
+## [2026-04-20] experiment | v48-vocab-plus-mixup
+
+- v43(어휘 추가) 데이터 + mixup. Test Suite 90.7%, KoELECTRA 97.4%.
+- v46(97.8%)보다 낮음 — 어휘 추가와 mixup의 시너지 없음.
+- **v46(mixup on v34)이 일반화 최종 최고 (KoELECTRA fn 97.8%).**
+
+## 세션 요약 (22:36 ~ 현재)
+
+### 한계 분석
+- KoELECTRA val 75.5% → 모델의 9가지 한계 문서화
+- High-confidence error 68%, 어휘 빈곤 24개, exec/dir 편향
+- 근본적 한계 41건 분석 (system↔home, ac↔heat 경계, 라벨 모호)
+
+### 실험 (v33~v48, 16개 버전)
+- **pseudo-labeling (v34)**: fn 75.5%→96.8% (+21.3%p) — 핵심 돌파구
+- **mixup (v46)**: fn 96.8%→97.8% (+1.0%p) — 일반화 최고치
+- 앙상블 B: Test Suite 94.3% + KoELECTRA 96.8% — 균형 최적
+- KD, 2-phase, agreement filter, 6L CNN 등 다양한 시도
+
+### 최종 모델 추천
+- **Production**: v34 (Test Suite 93.6%, KoELECTRA 96.8%)
+- **일반화 최고**: v46 (Test Suite 91.1%, KoELECTRA 97.8%)
+- **앙상블**: v28+v34 전략B (Test Suite 94.3%, KoELECTRA 96.8%)
