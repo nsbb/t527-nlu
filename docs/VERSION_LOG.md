@@ -127,3 +127,12 @@
 - **Test Suite 95.7% + KoELECTRA fn 91.6%** — 두 모델의 장점 결합.
 - 추론 비용 2배 (0.64ms) — 월패드 환경에서 여전히 충분.
 - 단일 모델 대비 **균형 있는 성능** — v28의 기존 패턴 보존 + v34의 일반화.
+
+## [2026-04-20] experiment | ensemble-strategy-comparison
+
+- 4가지 앙상블 전략 비교:
+  - A: fn=conf높은쪽, exec/dir=v28 → TS 95.7%, KE 91.6%
+  - **B: fn=v34, exec/dir=v28 → TS 94.3%, KE 96.8% (추천)**
+  - C: fn=v34, exec/dir=v34 → TS 93.6%, KE 96.8%
+  - D: 같으면v28, 다르면v34 → TS 94.3%, KE 96.8%
+- 전략 B가 최적 균형: 외부 일반화(96.8%) 유지 + 기존 패턴 exec/dir 보존(94.3%)
