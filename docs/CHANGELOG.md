@@ -1,6 +1,13 @@
 # NLU Changelog — 버전별 업데이트 내역
 
-## v25 (현재)
+## v28 (현재)
+- **Test Suite 135개: fn 100%, exec 100%, dir 100%, combo 100%**
+- 띄어쓰기 없는 발화 direction 수정 (거실불꺼줘→off, 난방올려→up)
+- 감탄형 exec 수정 (아 진짜 덥다→control)
+- 누적 fix 패턴 778개 → accumulated_fixes.json 보존
+- 데이터: ~20,815개 | val combo: 94.7%
+
+## v25
 - **Test Suite 114개: fn 100%, dir 100%, combo 99.1%**
 - v22~v25 반복: "공기가 탁해"→control, "오늘 어때"→weather, 감탄형→control
 - param_type 규칙 보정 추가 (모델 대신 후처리로 해결)
