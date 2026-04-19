@@ -886,5 +886,143 @@
     "fn": "light_control",
     "exec": "control_then_confirm",
     "dir": "on"
+  },
+  {
+    "utterance": "조명",
+    "fn": "light_control",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "난방",
+    "fn": "heat_control",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "에어컨",
+    "fn": "ac_control",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "불 켜!",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "에어컨 꺼!",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "에어컨 왜 안 돼",
+    "fn": "ac_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "난방 왜 안 나와",
+    "fn": "heat_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "거실 좀 어두운데",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "거실이 너무 환해",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "비 그치겠어?",
+    "fn": "weather_query",
+    "exec": "query_then_judge",
+    "dir": "none"
+  },
+  {
+    "utterance": "날 풀렸어?",
+    "fn": "weather_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "추위 언제 풀려",
+    "fn": "weather_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "응급실 어디",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "24시간 약국",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "지하철 몇 분 걸려",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "버스 정보",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "불 좀 꺼주시겠습니까",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "불 꺼 임마",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "에어컨 켜라 빨리",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "거실 난방 켜져있나",
+    "fn": "heat_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "안방 에어컨 작동 중이야?",
+    "fn": "ac_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "화면 밝기",
+    "fn": "home_info",
+    "exec": "control_then_confirm",
+    "dir": "none"
+  },
+  {
+    "utterance": "월패드 소리",
+    "fn": "home_info",
+    "exec": "control_then_confirm",
+    "dir": "down"
   }
 ]
