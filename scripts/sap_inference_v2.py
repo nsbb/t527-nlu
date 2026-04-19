@@ -153,8 +153,14 @@ def generate_response(preds, text):
         action = ACTION_MAP.get(direction, '설정했습니다')
         if value and value[0] == 'temperature':
             action = f'온도를 {value[1]}도로 설정합니다'
+        elif value and value[0] == 'time':
+            action = f'{value[1]}분 예약을 설정합니다'
+        elif value and value[0] == 'percent':
+            action = f'{value[1]}%로 설정합니다'
+        elif value and value[0] == 'level':
+            action = f'{value[1]}단계로 설정합니다'
         elif preds['param_type'] == 'mode':
-            for mode in ['제습','송풍','자동','냉방','외출','재택']:
+            for mode in ['제습','송풍','자동','냉방','외출','재택','취침','수면']:
                 if mode in text:
                     action = f'{mode} 모드로 설정합니다'
                     break
@@ -195,7 +201,7 @@ class SAPv2Pipeline:
         del sbert
 
         self.model = CNNMultiHead(pw, d_model=256, max_len=32, dropout=0.15)
-        ckpt = torch.load('checkpoints/cnn_multihead_v34.pt', map_location='cpu', weights_only=False)
+        ckpt = torch.load('checkpoints/cnn_multihead_v46.pt', map_location='cpu', weights_only=False)
         self.model.load_state_dict(ckpt['state'])
         self.model.eval()
 
