@@ -66,9 +66,10 @@ UNSUPPORTED = {
 
 def predict(text):
     from preprocess import preprocess
+    original = text
     text = preprocess(text)
     if not text:
-        return None, None
+        return None, None, None
 
     tk = tok(text, padding='max_length', truncation=True, max_length=32, return_tensors='pt')
     with torch.no_grad():
@@ -93,7 +94,8 @@ def predict(text):
     if preds['exec_type'] in ('query_then_respond', 'direct_respond', 'clarify', 'query_then_judge'):
         preds['param_type'] = 'none'
 
-    return preds, all_probs
+    preprocessed = text if text != original else None
+    return preds, all_probs, preprocessed
 
 
 def format_result(text, preds, all_probs):
@@ -151,11 +153,13 @@ def format_result(text, preds, all_probs):
 
 
 if single_text:
-    preds, all_probs = predict(single_text)
+    preds, all_probs, preprocessed = predict(single_text)
     print(f"입력: {single_text}")
+    if preprocessed:
+        print(f"전처리: {preprocessed}")
     print(format_result(single_text, preds, all_probs))
 else:
-    print("=== NLU 대화형 테스트 (5-Head Multi-Head) ===")
+    print("=== NLU 대화형 테스트 (5-Head Multi-Head + STT 전처리) ===")
     print(f"모델: {version}")
     print("종료: q / quit / 종료\n")
 
@@ -170,7 +174,9 @@ else:
         if not text:
             continue
 
-        preds, all_probs = predict(text)
+        preds, all_probs, preprocessed = predict(text)
+        if preprocessed:
+            print(f"  [전처리] {text} → {preprocessed}")
         if preds:
             print(format_result(text, preds, all_probs))
         print()
