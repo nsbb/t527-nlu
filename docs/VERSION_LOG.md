@@ -67,3 +67,12 @@
 - 부족 fn 대폭 보강: gas_control +725, door_control +564, ac_control +1,975 등.
 - 교차검증용 val 1,536개 별도 보존 (`data/koelectra_converted_val.json`).
 - 학습 + 평가 대기 중.
+
+## [2026-04-19] experiment | v33-koelectra-merge-regression
+
+- KoELECTRA v8 데이터 12,841개 병합 학습 (총 34,513개 → 실제 20,823개 로드).
+- val combo: 94.2% (v28 94.7% 대비 -0.5%p).
+- **Test Suite 3,043개: 90.5% (290개 오류)** — v28 100% 대비 심각한 regression.
+- 주요 오류: exec_type/direction 라벨 불일치 210건, fn 오류 80건.
+- 원인: KoELECTRA 라벨 체계(79 flat intent)와 우리 5-head 라벨 간 변환 시 exec/dir 매핑 부정확.
+- **결론: v28 유지. KoELECTRA 데이터는 fn만 선별 활용 필요.**
