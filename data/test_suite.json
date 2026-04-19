@@ -15034,5 +15034,941 @@
     "fn": "weather_query",
     "exec": "query_then_judge",
     "dir": "none"
+  },
+  {
+    "utterance": "거실 좀 불 켜줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "거실 좀 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "거실 지금 불 켜줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "거실 지금 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "거실 빨리 불 켜줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "거실 빨리 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "거실 혹시 불 켜줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "거실 혹시 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "거실 제발 불 켜줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "거실 제발 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "거실 야 불 켜줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "거실 야 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "안방 좀 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "안방 좀 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "안방 지금 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "on"
+  },
+  {
+    "utterance": "안방 지금 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "안방 빨리 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "안방 빨리 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "안방 혹시 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "안방 혹시 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "안방 제발 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "on"
+  },
+  {
+    "utterance": "안방 제발 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "안방 야 불 켜줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "안방 야 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "주방 좀 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "주방 좀 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "주방 지금 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "주방 지금 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "주방 빨리 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "주방 빨리 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "주방 혹시 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "주방 혹시 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "주방 제발 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "주방 제발 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "주방 야 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "on"
+  },
+  {
+    "utterance": "주방 야 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "침실 좀 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "침실 좀 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "침실 지금 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "침실 지금 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "침실 빨리 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "침실 빨리 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "침실 혹시 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "침실 혹시 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "침실 제발 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "침실 제발 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "침실 야 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "침실 야 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "작은방 좀 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "작은방 좀 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "작은방 지금 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "작은방 지금 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "작은방 빨리 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "작은방 빨리 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "작은방 혹시 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "작은방 혹시 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "작은방 제발 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "작은방 제발 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "작은방 야 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "작은방 야 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "아이방 좀 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "아이방 좀 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "아이방 지금 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "아이방 지금 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "아이방 빨리 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "아이방 빨리 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "아이방 혹시 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "아이방 혹시 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "아이방 제발 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "아이방 제발 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "아이방 야 불 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "아이방 야 불 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "좀 에어컨 켜줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "좀 에어컨 꺼줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "좀 에어컨 올려",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "지금 에어컨 켜줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "지금 에어컨 꺼줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "지금 에어컨 올려",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "빨리 에어컨 켜줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "빨리 에어컨 꺼줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "빨리 에어컨 올려",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "혹시 에어컨 켜줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "혹시 에어컨 꺼줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "혹시 에어컨 올려",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "제발 에어컨 켜줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "제발 에어컨 꺼줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "제발 에어컨 올려",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "야 에어컨 켜줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "야 에어컨 꺼줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "야 에어컨 올려",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "좀 난방 켜줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "좀 난방 꺼줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "좀 난방 올려줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "좀 난방 낮춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "지금 난방 켜줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "지금 난방 꺼줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "지금 난방 올려줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "지금 난방 낮춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "빨리 난방 켜줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "빨리 난방 꺼줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "빨리 난방 올려줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "빨리 난방 낮춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "혹시 난방 켜줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "혹시 난방 꺼줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "혹시 난방 올려줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "혹시 난방 낮춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "제발 난방 켜줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "제발 난방 꺼줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "제발 난방 올려줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "제발 난방 낮춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "야 난방 켜줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "야 난방 꺼줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "야 난방 올려줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "야 난방 낮춰줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "좀 환기 켜줘",
+    "fn": "vent_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "좀 환기 꺼줘",
+    "fn": "vent_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "지금 환기 켜줘",
+    "fn": "vent_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "지금 환기 꺼줘",
+    "fn": "vent_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "빨리 환기 켜줘",
+    "fn": "vent_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "빨리 환기 꺼줘",
+    "fn": "vent_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "혹시 환기 켜줘",
+    "fn": "vent_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "혹시 환기 꺼줘",
+    "fn": "vent_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "제발 환기 켜줘",
+    "fn": "vent_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "제발 환기 꺼줘",
+    "fn": "vent_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "야 환기 켜줘",
+    "fn": "vent_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "야 환기 꺼줘",
+    "fn": "vent_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "거실 불 켜져있어?",
+    "fn": "light_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "거실 불 상태",
+    "fn": "light_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "거실 에어컨 어때",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "거실 난방 어때",
+    "fn": "heat_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "거실 환기 어때",
+    "fn": "vent_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "안방 불 켜져있어?",
+    "fn": "light_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "안방 불 상태",
+    "fn": "light_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "안방 에어컨 어때",
+    "fn": "ac_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "안방 난방 어때",
+    "fn": "heat_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "안방 환기 어때",
+    "fn": "vent_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "주방 불 켜져있어?",
+    "fn": "light_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "주방 불 상태",
+    "fn": "light_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "주방 에어컨 어때",
+    "fn": "ac_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "주방 난방 어때",
+    "fn": "heat_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "주방 환기 어때",
+    "fn": "vent_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "침실 불 켜져있어?",
+    "fn": "light_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "침실 불 상태",
+    "fn": "light_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "침실 에어컨 어때",
+    "fn": "ac_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "침실 난방 어때",
+    "fn": "heat_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "침실 환기 어때",
+    "fn": "vent_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "작은방 불 켜져있어?",
+    "fn": "light_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "작은방 불 상태",
+    "fn": "light_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "작은방 에어컨 어때",
+    "fn": "ac_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "작은방 난방 어때",
+    "fn": "heat_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "작은방 환기 어때",
+    "fn": "vent_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "아이방 불 켜져있어?",
+    "fn": "light_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "아이방 불 상태",
+    "fn": "light_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "아이방 에어컨 어때",
+    "fn": "ac_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "아이방 난방 어때",
+    "fn": "heat_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "아이방 환기 어때",
+    "fn": "vent_control",
+    "exec": "query_then_respond",
+    "dir": "none"
   }
 ]
