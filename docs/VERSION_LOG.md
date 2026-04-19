@@ -222,3 +222,10 @@
 | **앙상블 B** | **fn=v34, exec=v28** | — | **94.3%** | **96.8%** |
 
 **최종 추천: v34 단일 모델 (production) + 앙상블 B (최고 균형)**
+
+## [2026-04-20] experiment | v45-label-smoothing
+
+- label_smoothing=0.1 적용. Test Suite 90.5%, **KoELECTRA fn 97.4% (최고치)**.
+- Label smoothing이 확신을 줄여서 외부 일반화에 도움 (+0.6%p).
+- 하지만 Test Suite는 v34(93.6%)보다 낮음 — 기존 패턴의 확신도가 떨어져서.
+- 결론: 일반화를 극대화하려면 label smoothing 도움. 기존 패턴 보존하려면 안 쓰는 게 나음.
