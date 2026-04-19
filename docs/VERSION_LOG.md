@@ -294,3 +294,10 @@
 | **균형 (추천)** | v34 | cnn_multihead_v34.pt | nlu_v34_production.onnx | 93.6% | 96.8% |
 | **일반화 최고** | v46 | cnn_multihead_v46.pt | nlu_v46_generalization.onnx | 91.1% | 97.8% |
 | **최적 앙상블** | v28+v46 | 두 체크포인트 | — | 94.3% | 97.8% |
+
+## [2026-04-20] experiment | v49-cnn-attention-hybrid
+
+- CNN 4L + 1-head Self-Attention + Mixup. 1.8M trainable params.
+- Test Suite 91.5%, KoELECTRA fn 97.5% — v46(91.1%/97.8%)과 비슷.
+- Attention 추가로 Test Suite +0.4%, KoELECTRA -0.3% — 미미한 차이.
+- **결론: CNN only가 이 규모에서 충분. Attention 추가는 complexity 대비 효과 미미.**
