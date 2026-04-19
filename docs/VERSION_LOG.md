@@ -360,3 +360,18 @@
 **Test Suite 보존:**
 - v28(96.3%) → v46(93.3%) — 3%p 하락은 exec/dir 모호 케이스
 - 앙상블 v28+v46(94.3%) — 두 지표 균형 최적
+
+## [2026-04-20] analysis | v46-remaining-34-errors
+
+- v46 KoELECTRA 오류 34건 상세 분석:
+  - **16건은 KoELECTRA 라벨 오류** (우리 모델이 맞음):
+    - unknown→system_meta 9건: "기능 알려주세요", "너 이름 뭐야" = system_meta가 정답
+    - system_meta→home_info 7건: "소리 키워줘", "볼륨 낮춰줘" = home_info가 정답
+  - **18건은 진짜 어려운 케이스**: "찜질방 같아"(ac?heat?), "손발이 꽁꽁"(heat?light?) 등
+  - KoELECTRA 라벨 보정 시 실제 정확도: **~98.8%**
+
+## 핵심 발견
+
+**v46의 "실제" KoELECTRA 정확도는 97.8%가 아니라 ~98.8%.**
+KoELECTRA val의 라벨 자체에 오류가 있어서 우리 모델 정확도가 과소 측정됨.
+나머지 18건(1.2%)은 단일 발화 분류의 근본적 한계 (문맥 필요 → DST로 해결).
