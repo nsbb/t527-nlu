@@ -229,3 +229,11 @@
 - Label smoothing이 확신을 줄여서 외부 일반화에 도움 (+0.6%p).
 - 하지만 Test Suite는 v34(93.6%)보다 낮음 — 기존 패턴의 확신도가 떨어져서.
 - 결론: 일반화를 극대화하려면 label smoothing 도움. 기존 패턴 보존하려면 안 쓰는 게 나음.
+
+## [2026-04-20] experiment | v46-mixup-augmentation
+
+- Mixup: 같은 fn의 두 발화를 30% 확률로 교체 학습.
+- Test Suite 91.1%, **KoELECTRA fn 97.8% (최고치!)**.
+- val combo 85.4%로 낮지만, 외부 일반화가 최고 — train/val 분포 차이.
+- mixup이 모델의 결정 경계를 부드럽게 만들어 일반화 향상.
+- label smoothing(97.4%)보다도 +0.4%p 높음.
