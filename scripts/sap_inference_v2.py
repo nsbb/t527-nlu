@@ -195,7 +195,7 @@ class SAPv2Pipeline:
         del sbert
 
         self.model = CNNMultiHead(pw, d_model=256, max_len=32, dropout=0.15)
-        ckpt = torch.load('checkpoints/cnn_multihead_v28.pt', map_location='cpu', weights_only=False)
+        ckpt = torch.load('checkpoints/cnn_multihead_v34.pt', map_location='cpu', weights_only=False)
         self.model.load_state_dict(ckpt['state'])
         self.model.eval()
 
