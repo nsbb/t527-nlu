@@ -278,3 +278,19 @@
 - **Production**: v34 (Test Suite 93.6%, KoELECTRA 96.8%)
 - **일반화 최고**: v46 (Test Suite 91.1%, KoELECTRA 97.8%)
 - **앙상블**: v28+v34 전략B (Test Suite 94.3%, KoELECTRA 96.8%)
+
+## [2026-04-20] milestone | v28-v46-ensemble-best
+
+- **앙상블 v28+v46 (전략B: fn=v46, exec/dir=v28)**
+- **Test Suite 94.3% + KoELECTRA fn 97.8%** — 두 지표 모두 최적 균형.
+- v46 ONNX export: `nlu_v46_generalization.onnx` (99.7MB)
+- 앙상블 추론 코드: `scripts/ensemble_inference.py` (v46으로 업데이트 필요)
+
+## 최종 모델 가이드 (2026-04-20)
+
+| 용도 | 모델 | 체크포인트 | ONNX | TS | KE fn |
+|------|------|-----------|------|:---:|:---:|
+| **기존 패턴 전용** | v28 | cnn_multihead_v28.pt | nlu_v28_final.onnx | 96.4% | 75.5% |
+| **균형 (추천)** | v34 | cnn_multihead_v34.pt | nlu_v34_production.onnx | 93.6% | 96.8% |
+| **일반화 최고** | v46 | cnn_multihead_v46.pt | nlu_v46_generalization.onnx | 91.1% | 97.8% |
+| **최적 앙상블** | v28+v46 | 두 체크포인트 | — | 94.3% | 97.8% |
