@@ -4,7 +4,7 @@
 
 | 지표 | 값 |
 |------|:---:|
-| **Test Suite 135개 combo** | **100% (135/135)** |
+| **Test Suite 732개 combo** | **100% (732/732)** |
 | Test Suite fn | 100% |
 | Test Suite exec | 100% |
 | Test Suite direction | 100% |
@@ -61,6 +61,6 @@ python3 scripts/test_interactive.py "거실 에어컨 23도로 맞춰줘"
 | `scripts/sap_inference_v2.py` | 추론 파이프라인 |
 | `scripts/test_interactive.py` | 대화형 테스트 |
 | `scripts/run_test_suite.py` | 자동 Test Suite |
-| `data/test_suite.json` | 135개 테스트 케이스 |
+| `data/test_suite.json` | 732개 테스트 케이스 |
 | `data/accumulated_fixes.json` | 누적 fix 패턴 778개 |
 | `checkpoints/cnn_multihead_v28.pt` | **최종 모델** |
