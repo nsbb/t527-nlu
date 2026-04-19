@@ -4,7 +4,7 @@
 
 | 지표 | 값 |
 |------|:---:|
-| **Test Suite 732개 combo** | **100% (732/732)** |
+| **Test Suite 2,000개 combo** | **100% (2000/2000)** |
 | Test Suite fn | 100% |
 | Test Suite exec | 100% |
 | Test Suite direction | 100% |
@@ -38,7 +38,7 @@ ko-sbert 768d frozen → Linear 768→256 → CNN 4L (k=3,5,7,3 residual) → Gl
 | v19 | - | 구어체 (조용히/들어왔어/자려고/히팅) |
 | v24 | 98.2% (114개) | direction 100%, 내려/줄여/커줘 수정 |
 | v25 | 99.1% (114개) | 공기탁해/오늘어때 수정 |
-| **v28** | **100% (135개)** | 띄어쓰기 없는 발화 + 감탄형 |
+| **v28** | **100% (2,000개)** | 띄어쓰기/감탄형/전처리/Room조합 |
 
 ## 테스트 방법
 
@@ -61,6 +61,7 @@ python3 scripts/test_interactive.py "거실 에어컨 23도로 맞춰줘"
 | `scripts/sap_inference_v2.py` | 추론 파이프라인 |
 | `scripts/test_interactive.py` | 대화형 테스트 |
 | `scripts/run_test_suite.py` | 자동 Test Suite |
-| `data/test_suite.json` | 732개 테스트 케이스 |
+| `data/test_suite.json` | 2,000개 테스트 케이스 |
+| `scripts/preprocess.py` | STT 전처리 (54개 교정 사전 + 한글숫자 변환) |
 | `data/accumulated_fixes.json` | 누적 fix 패턴 778개 |
 | `checkpoints/cnn_multihead_v28.pt` | **최종 모델** |
