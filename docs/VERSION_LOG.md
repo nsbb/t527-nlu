@@ -308,3 +308,25 @@
 - KL divergence weight가 너무 높아서 CE loss를 압도.
 - alpha=0.1~0.2로 줄여야 하지만, 학습 시간이 2배 (forward 2회)라서 ROI 낮음.
 - **v46(mixup only)이 더 효율적.**
+
+## [2026-04-20] experiment | v51-supervised-contrastive
+
+- Supervised Contrastive Loss (alpha=0.1) + Mixup.
+- Test Suite 91.4%, KoELECTRA 97.6% — v46(91.1%/97.8%)과 비슷.
+- SupCon이 feature 공간을 fn별로 클러스터링 → Test Suite +0.3%, KoELECTRA -0.2%.
+- **v46(mixup only)이 가장 심플하면서 일반화 최고.**
+
+## 기법별 일반화 효과 정리
+
+| 기법 | KoELECTRA fn | Test Suite | 비고 |
+|------|:---:|:---:|------|
+| Baseline (v34) | 96.8% | 93.6% | pseudo-labeling only |
+| **Mixup (v46)** | **97.8%** | 91.1% | **최고 일반화** |
+| Label Smoothing (v45) | 97.4% | 90.5% | 확신 감소 |
+| Mixup+LS (v47) | 97.3% | 91.6% | 중복 효과 |
+| SupCon+Mixup (v51) | 97.6% | 91.4% | 미미한 차이 |
+| CNN+Attn (v49) | 97.5% | 91.5% | 구조 변경 미미 |
+| 6L CNN (v38) | 97.1% | 91.1% | 모델 확장 미미 |
+| R-Drop (v50) | 74.9% | 46.9% | alpha 과다 → 붕괴 |
+
+**결론: Mixup이 가장 ROI 높은 일반화 기법. 다른 기법들은 복잡도 대비 효과 미미.**
