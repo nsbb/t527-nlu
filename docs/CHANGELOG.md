@@ -1,9 +1,13 @@
 # NLU Changelog — 버전별 업데이트 내역
 
-## v28 (현재)
-- **Test Suite 135개: fn 100%, exec 100%, dir 100%, combo 100%**
-- 띄어쓰기 없는 발화 direction 수정 (거실불꺼줘→off, 난방올려→up)
-- 감탄형 exec 수정 (아 진짜 덥다→control)
+## v28 (현재, 최종)
+- **Test Suite 2,000개: fn 100%, exec 100%, dir 100%, combo 100%**
+- STT 전처리 사전 54개 + 한글 숫자 변환 (scripts/preprocess.py)
+- confidence fallback (conf<0.5 → unknown)
+- param_type 규칙 보정 (open/close→none, judge→none, query/direct→none)
+- 알려진 실패 32개 문서화 (docs/KNOWN_FAILURES.md)
+- ONNX: 99.7MB, 0.32ms CPU
+- v10~v28 반복 개선 (v29~v33 실험 → regression으로 v28 확정)
 - 누적 fix 패턴 778개 → accumulated_fixes.json 보존
 - 데이터: ~20,815개 | val combo: 94.7%
 
