@@ -136,3 +136,22 @@
   - C: fn=v34, exec/dir=v34 → TS 93.6%, KE 96.8%
   - D: 같으면v28, 다르면v34 → TS 94.3%, KE 96.8%
 - 전략 B가 최적 균형: 외부 일반화(96.8%) 유지 + 기존 패턴 exec/dir 보존(94.3%)
+
+## [2026-04-20] experiment | v40-knowledge-distillation
+
+- v28을 teacher로 KD: v34 데이터의 exec/dir를 v28 예측으로 교체 후 학습.
+- **Test Suite 92.3%, KoELECTRA fn 97.2%** — 단일 모델로 KoELECTRA 97%+ 달성.
+- 앙상블 B(94.3%/96.8%)보다 Test Suite는 낮지만, 추론 비용 절반(단일 모델).
+- 단일 모델 최적: v34(93.6%/96.8%) vs v40(92.3%/97.2%) — KoELECTRA 우선 시 v40.
+
+## 실험 방법론 정리
+
+| 방법 | 장점 | 단점 |
+|------|------|------|
+| 단순 병합 (v33) | 데이터 많음 | exec/dir 라벨 불일치 → 성능 하락 |
+| Pseudo-labeling (v34) | fn 일반화 96.8% | Test Suite 93.6% |
+| Fix 추가 (v35,v39) | 특정 패턴 수정 | 전체 성능 regression |
+| 6L CNN (v38) | 모델 용량↑ | 미미한 개선 (+0.5%) |
+| 앙상블 B | 균형 최적 | 추론 2배 비용 |
+| KD (v40) | 단일 모델로 KoELECTRA 97%+ | Test Suite 92.3% |
+| loss weight (v37) | 구현 간단 | 효과 없음 |
