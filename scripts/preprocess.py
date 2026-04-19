@@ -113,6 +113,9 @@ def preprocess(text):
     # 4. 한글 숫자 변환
     text = kr_num_to_arabic(text)
 
+    # 5. 불필요 부사 제거 (STT 결과에 자주 나오는 구어 부사)
+    text = re.sub(r'^(잠깐|얼른)\s+', '', text)
+
     return text
 
 
