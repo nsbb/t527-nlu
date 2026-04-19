@@ -15970,5 +15970,629 @@
     "fn": "vent_control",
     "exec": "query_then_respond",
     "dir": "none"
+  },
+  {
+    "utterance": "거실 에어컨 바람 세게",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "거실 에어컨 바람 약하게",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "거실 에어컨 풍속 올려",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "거실 에어컨 풍속 내려",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "안방 에어컨 바람 세게",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "안방 에어컨 바람 약하게",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "안방 에어컨 풍속 올려",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "안방 에어컨 풍속 내려",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "주방 에어컨 바람 세게",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "주방 에어컨 바람 약하게",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "주방 에어컨 풍속 올려",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "주방 에어컨 풍속 내려",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "침실 에어컨 바람 세게",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "침실 에어컨 바람 약하게",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "침실 에어컨 풍속 올려",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "침실 에어컨 풍속 내려",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "작은방 에어컨 바람 세게",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "작은방 에어컨 바람 약하게",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "작은방 에어컨 풍속 올려",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "작은방 에어컨 풍속 내려",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "아이방 에어컨 바람 세게",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "아이방 에어컨 바람 약하게",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "아이방 에어컨 풍속 올려",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "아이방 에어컨 풍속 내려",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "가스 닫아줘",
+    "fn": "gas_control",
+    "exec": "control_then_confirm",
+    "dir": "close"
+  },
+  {
+    "utterance": "가스 확인해줘",
+    "fn": "gas_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "가스 안전 확인해줘",
+    "fn": "gas_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "가스 잠겼어?",
+    "fn": "gas_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "가스 밸브 어때",
+    "fn": "gas_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "까스 확인",
+    "fn": "gas_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "까스 잠궈",
+    "fn": "gas_control",
+    "exec": "control_then_confirm",
+    "dir": "close"
+  },
+  {
+    "utterance": "문 열어줘봐",
+    "fn": "door_control",
+    "exec": "control_then_confirm",
+    "dir": "open"
+  },
+  {
+    "utterance": "도어락 잠가줘봐",
+    "fn": "door_control",
+    "exec": "control_then_confirm",
+    "dir": "close"
+  },
+  {
+    "utterance": "현관 잠금 확인해줘",
+    "fn": "door_control",
+    "exec": "control_then_confirm",
+    "dir": "close"
+  },
+  {
+    "utterance": "도어락 열려있어?",
+    "fn": "door_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "현관문 잠겼어?",
+    "fn": "door_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "문 잠가줘봐",
+    "fn": "door_control",
+    "exec": "control_then_confirm",
+    "dir": "close"
+  },
+  {
+    "utterance": "도어락 상태 확인해줘",
+    "fn": "door_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "엘리베이터 와줘봐",
+    "fn": "elevator_call",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "엘베 좀 불러줘봐",
+    "fn": "elevator_call",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "승강기 호출해줘봐",
+    "fn": "elevator_call",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "엘리베이터 몇 층이야",
+    "fn": "elevator_call",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "엘베 상태 확인",
+    "fn": "elevator_call",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "외출 모드 켜줘봐",
+    "fn": "security_mode",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "방범 설정해줘봐",
+    "fn": "security_mode",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "나간다 설정해줘",
+    "fn": "security_mode",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "외출 설정 확인해줘",
+    "fn": "security_mode",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "방범 상태 확인",
+    "fn": "security_mode",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "외출 해제해줘",
+    "fn": "security_mode",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "알람 6시",
+    "fn": "schedule_manage",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "알람 7시",
+    "fn": "schedule_manage",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "알람 8시",
+    "fn": "schedule_manage",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "모닝콜 6시",
+    "fn": "schedule_manage",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "타이머 3분",
+    "fn": "schedule_manage",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "타이머 10분",
+    "fn": "schedule_manage",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "알람 확인해줘",
+    "fn": "schedule_manage",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "모닝콜 확인해줘",
+    "fn": "schedule_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "제주 날씨",
+    "fn": "weather_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "광주 날씨",
+    "fn": "weather_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "울산 날씨",
+    "fn": "weather_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "세종 날씨",
+    "fn": "weather_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "춘천 날씨",
+    "fn": "weather_query",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "전주 날씨",
+    "fn": "weather_query",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "목포 날씨",
+    "fn": "weather_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "여수 날씨",
+    "fn": "weather_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "포항 날씨",
+    "fn": "weather_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "경주 날씨",
+    "fn": "weather_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "부동산 뉴스",
+    "fn": "news_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "교육 뉴스",
+    "fn": "news_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "환경 뉴스",
+    "fn": "news_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "의료 뉴스",
+    "fn": "news_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "금융 뉴스",
+    "fn": "news_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "자동차 뉴스",
+    "fn": "news_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "반도체 뉴스",
+    "fn": "news_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "AI 뉴스",
+    "fn": "news_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "5G 뉴스",
+    "fn": "news_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "현대차 주가",
+    "fn": "market_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "기아 주가",
+    "fn": "market_query",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "삼성바이오 주가",
+    "fn": "market_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "NAVER 주가",
+    "fn": "market_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "카카오뱅크 주가",
+    "fn": "market_query",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "근처 재활의학과",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "근처 한의원",
+    "fn": "medical_query",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "소리 좀 올려",
+    "fn": "home_info",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "음량 좀 줄여",
+    "fn": "home_info",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "볼륨 좀 올려줘",
+    "fn": "home_info",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "음량 좀 올려줘",
+    "fn": "home_info",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "시간 좀 알려줘",
+    "fn": "home_info",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "알림 좀 확인해줘",
+    "fn": "home_info",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "가스 얼마나 썼어",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "에너지 사용 현황 봐줘",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "전기요금 확인해줘봐",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "가스비 확인해줘봐",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "에너지 목표 설정해줘",
+    "fn": "energy_query",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "차량 등록해줘",
+    "fn": "vehicle_manage",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "충전 상태 봐줘",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "주차 이력 확인",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "전기차 충전 확인해줘",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "방문 주차 등록해줘",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "set"
+  },
+  {
+    "utterance": "할 수 있는 거 알려줘",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "월패드 기능 알려줘",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "사용 가이드",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "이용 방법 알려줘",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "뭐 해줄 수 있는지",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
   }
 ]
