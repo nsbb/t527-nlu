@@ -195,7 +195,7 @@ class SAPv2Pipeline:
         del sbert
 
         self.model = CNNMultiHead(pw, d_model=256, max_len=32, dropout=0.15)
-        ckpt = torch.load('checkpoints/cnn_multihead_v6.pt', map_location='cpu', weights_only=False)
+        ckpt = torch.load('checkpoints/cnn_multihead_v21.pt', map_location='cpu', weights_only=False)
         self.model.load_state_dict(ckpt['state'])
         self.model.eval()
 
@@ -217,6 +217,15 @@ class SAPv2Pipeline:
 
         preds = {h: HEAD_I2L[h][logits[h].argmax(1).item()] for h in HEAD_NAMES}
         confidence = F.softmax(logits['fn'], dim=1).max().item()
+
+        # param_type 규칙 보정
+        if preds['param_direction'] in ('open', 'close', 'stop'):
+            preds['param_type'] = 'none'
+        if preds['judge'] != 'none':
+            preds['param_type'] = 'none'
+        if preds['exec_type'] in ('query_then_respond', 'direct_respond', 'clarify', 'query_then_judge'):
+            preds['param_type'] = 'none'
+
         return preds, confidence
 
     def run(self, text):

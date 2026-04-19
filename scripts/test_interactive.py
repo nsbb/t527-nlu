@@ -15,19 +15,22 @@ from model_cnn_multihead import *
 from transformers import AutoModel, AutoTokenizer
 
 # 모델 선택
-version = 'v7_clean'
+version = 'v21'
 single_text = None
 for arg in sys.argv[1:]:
     if arg in ('v7', 'v7_clean'):
         version = 'v7_clean'
     elif arg == 'v9':
         version = 'v9'
+    elif arg == 'v21':
+        version = 'v21'
     else:
         single_text = arg
 
 CKPT = {
     'v7_clean': 'checkpoints/cnn_multihead_v7_clean.pt',
     'v9': 'checkpoints/cnn_multihead_v9.pt',
+    'v21': 'checkpoints/cnn_multihead_v21.pt',
 }
 
 # 로드
@@ -81,6 +84,14 @@ def predict(text):
         top_k = min(3, len(probs))
         top_idx = probs.topk(top_k).indices.tolist()
         all_probs[h] = [(HEAD_I2L[h][i], probs[i].item()) for i in top_idx]
+
+    # param_type 규칙 보정
+    if preds['param_direction'] in ('open', 'close', 'stop'):
+        preds['param_type'] = 'none'
+    if preds['judge'] != 'none':
+        preds['param_type'] = 'none'
+    if preds['exec_type'] in ('query_then_respond', 'direct_respond', 'clarify', 'query_then_judge'):
+        preds['param_type'] = 'none'
 
     return preds, all_probs
 
