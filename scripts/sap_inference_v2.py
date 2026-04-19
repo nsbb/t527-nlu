@@ -206,8 +206,8 @@ class SAPv2Pipeline:
         print(f"  epoch {ckpt['epoch']}, combo {ckpt['combo']:.1f}%")
 
     def predict(self, text):
-        text = ''.join(c if c.isprintable() or c == ' ' else ' ' for c in text)
-        text = re.sub(r'\s+', ' ', text).strip()
+        from preprocess import preprocess
+        text = preprocess(text)
         if not text:
             return {h: 'none' for h in HEAD_NAMES}, 0.0
 
