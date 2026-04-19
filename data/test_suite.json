@@ -1330,5 +1330,173 @@
     "fn": "vehicle_manage",
     "exec": "query_then_respond",
     "dir": "none"
+  },
+  {
+    "utterance": "아이방 불 켜줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "아이방 난방 올려",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "아기 방 에어컨",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "모든 불 꺼",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "모든 에어컨 꺼줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "전체 난방 켜줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "에어컨 설정 온도",
+    "fn": "ac_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "바깥 온도 몇 도",
+    "fn": "weather_query",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "난방 예약 확인",
+    "fn": "heat_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "에어컨 타이머",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "조명 예약",
+    "fn": "light_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "작년보다 추워?",
+    "fn": "weather_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "지난달 전기세",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "오늘 우산 필요해?",
+    "fn": "weather_query",
+    "exec": "query_then_judge",
+    "dir": "none"
+  },
+  {
+    "utterance": "두꺼운 옷 입어야 해?",
+    "fn": "weather_query",
+    "exec": "query_then_judge",
+    "dir": "none"
+  },
+  {
+    "utterance": "에어컨 켜졌어?",
+    "fn": "ac_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "난방 올라갔어?",
+    "fn": "heat_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "불 꺼졌어?",
+    "fn": "light_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "환기 돌아가고 있어?",
+    "fn": "vent_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "쿠팡 주문해줘",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "영화 틀어줘",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "음악 추천해줘",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "스마트워치 연결",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "와이파이 비번 뭐야",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "짜증나 너무 더워",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "아 춥다 진짜",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "단지 세대수",
+    "fn": "home_info",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "관리사무소 번호",
+    "fn": "home_info",
+    "exec": "query_then_respond",
+    "dir": "none"
   }
 ]
