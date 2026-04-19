@@ -330,3 +330,11 @@
 | R-Drop (v50) | 74.9% | 46.9% | alpha 과다 → 붕괴 |
 
 **결론: Mixup이 가장 ROI 높은 일반화 기법. 다른 기법들은 복잡도 대비 효과 미미.**
+
+## [2026-04-20] feat | dialogue-state-tracker
+
+- 멀티턴 DST 기초 구현 (`scripts/dialogue_state_tracker.py`).
+- Follow-up 처리: "안방도" → 이전 fn/exec/dir 유지, room만 변경.
+- Correction 처리: "아니 꺼줘" → 이전 fn 유지, direction만 변경.
+- 10초 timeout 기반 세션 관리.
+- sap_inference_v2.py에 통합 예정.
