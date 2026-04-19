@@ -338,3 +338,9 @@
 - Correction 처리: "아니 꺼줘" → 이전 fn 유지, direction만 변경.
 - 10초 timeout 기반 세션 관리.
 - sap_inference_v2.py에 통합 예정.
+
+## [2026-04-20] experiment | v52-cutmix
+
+- CutMix (같은 fn 토큰 30% 교체). TS 90.4%, KE 97.5%.
+- v46(mixup)보다 낮음 — 텍스트에서 토큰 교체는 의미를 파괴해서 효과 떨어짐.
+- **Mixup(발화 교체) > CutMix(토큰 교체) for text.**
