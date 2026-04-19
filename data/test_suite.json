@@ -1798,5 +1798,167 @@
     "fn": "heat_control",
     "exec": "direct_respond",
     "dir": "none"
+  },
+  {
+    "utterance": "알람 설정해줘",
+    "fn": "schedule_manage",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "타이머 해줘",
+    "fn": "schedule_manage",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "모닝콜 확인",
+    "fn": "schedule_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "타이머 취소",
+    "fn": "schedule_manage",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "아침 7시 깨워줘",
+    "fn": "schedule_manage",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "너 뭐야",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "어떤 기능이 있어",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "뭐 도와줄 수 있어",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "가스 사용량",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "수도 사용량",
+    "fn": "energy_query",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "에너지 목표",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "전기 얼마나 썼어",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "에어컨 해줘",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "none"
+  },
+  {
+    "utterance": "난방 해줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "밝기 좀 내려",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "down"
+  },
+  {
+    "utterance": "난방 온도 좀 올려줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "거실 커튼 닫아줘",
+    "fn": "curtain_control",
+    "exec": "control_then_confirm",
+    "dir": "close"
+  },
+  {
+    "utterance": "안방 커튼 열어줘",
+    "fn": "curtain_control",
+    "exec": "control_then_confirm",
+    "dir": "open"
+  },
+  {
+    "utterance": "커튼 스톱",
+    "fn": "curtain_control",
+    "exec": "control_then_confirm",
+    "dir": "stop"
+  },
+  {
+    "utterance": "불 상태",
+    "fn": "light_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "에어컨 상태",
+    "fn": "ac_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "환기 상태",
+    "fn": "vent_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "커튼 상태",
+    "fn": "curtain_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "외출 설정 상태",
+    "fn": "security_mode",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "캠핑 가도 돼?",
+    "fn": "weather_query",
+    "exec": "query_then_judge",
+    "dir": "none"
+  },
+  {
+    "utterance": "등산 괜찮아?",
+    "fn": "weather_query",
+    "exec": "query_then_judge",
+    "dir": "none"
+  },
+  {
+    "utterance": "운동하기 좋아?",
+    "fn": "weather_query",
+    "exec": "direct_respond",
+    "dir": "none"
   }
 ]
