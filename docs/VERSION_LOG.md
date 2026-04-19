@@ -161,3 +161,20 @@
 - v28과 v34가 fn 동의(26,034)하면 v28의 exec/dir 사용, 불일치(2,729)면 v34 원본 유지.
 - Test Suite 91.3%, KoELECTRA 97.3% — v40(92.3%/97.2%)보다 Test Suite 낮음.
 - agreement filter가 도움 안 됨 — 불일치 데이터도 학습에 필요.
+
+## [2026-04-20] experiment | v42-two-phase-learning
+
+- Phase 1: v34 모델 로드 (fn 일반화). Phase 2: v28 데이터로 exec/dir fine-tune (fn/judge frozen).
+- Test Suite 91.8%, KoELECTRA 96.9% — v34(93.6%/96.8%)보다 나빠짐.
+- Phase 2에서 CNN encoder가 변하면서 fn 일반화 훼손.
+- **결론**: 2-phase보다 pseudo-labeling(v34)이 더 효과적.
+
+## 최종 추천 (2026-04-20)
+
+| 용도 | 모델 | Test Suite | KoELECTRA fn |
+|------|------|:---:|:---:|
+| **단일 모델 (추천)** | **v34** | 93.6% | **96.8%** |
+| 앙상블 (더 나은 균형) | v28+v34 전략B | 94.3% | 96.8% |
+| 기존 패턴 전용 | v28 | 96.4% | 75.5% |
+
+**v34를 production 모델로 추천.** 실제 유저 발화는 KoELECTRA 쪽에 가깝고, Test Suite 93.6%의 오류 대부분은 exec/dir 미세 차이.
