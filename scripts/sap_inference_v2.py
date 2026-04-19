@@ -218,6 +218,11 @@ class SAPv2Pipeline:
         preds = {h: HEAD_I2L[h][logits[h].argmax(1).item()] for h in HEAD_NAMES}
         confidence = F.softmax(logits['fn'], dim=1).max().item()
 
+        # confidence fallback — 저신뢰 발화는 unknown으로
+        if confidence < 0.5 and preds['fn'] != 'unknown':
+            preds['fn'] = 'unknown'
+            preds['exec_type'] = 'direct_respond'
+
         # param_type 규칙 보정
         if preds['param_direction'] in ('open', 'close', 'stop'):
             preds['param_type'] = 'none'
