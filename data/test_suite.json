@@ -2080,5 +2080,353 @@
     "fn": "heat_control",
     "exec": "control_then_confirm",
     "dir": "up"
+  },
+  {
+    "utterance": "거실 조명 좀 밝게",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "안방 조명 꺼",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "조명 끄다",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "전등 좀 켜줘",
+    "fn": "light_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "라이트 on",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "등 꺼줘",
+    "fn": "light_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "히팅 켜줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "거실 보일러",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "온도 설정",
+    "fn": "heat_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "바닥 난방 켜줘",
+    "fn": "heat_control",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "냉방기 꺼",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "에어컨 풍향",
+    "fn": "ac_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "에어컨 리모컨",
+    "fn": "ac_control",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "에어컨 필터",
+    "fn": "ac_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "환기 모드 바꿔",
+    "fn": "vent_control",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "환기 필터",
+    "fn": "vent_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "환풍기 꺼",
+    "fn": "vent_control",
+    "exec": "control_then_confirm",
+    "dir": "off"
+  },
+  {
+    "utterance": "까스 열려있나",
+    "fn": "gas_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "가스 안전",
+    "fn": "gas_control",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "현관 잠가줘",
+    "fn": "door_control",
+    "exec": "control_then_confirm",
+    "dir": "close"
+  },
+  {
+    "utterance": "현관문 상태",
+    "fn": "door_control",
+    "exec": "control_then_confirm",
+    "dir": "open"
+  },
+  {
+    "utterance": "전동커튼 열어줘",
+    "fn": "curtain_control",
+    "exec": "clarify",
+    "dir": "none"
+  },
+  {
+    "utterance": "전동커튼 닫아줘",
+    "fn": "curtain_control",
+    "exec": "control_then_confirm",
+    "dir": "close"
+  },
+  {
+    "utterance": "승강기 호출해줘",
+    "fn": "elevator_call",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "엘리베이터 내려와",
+    "fn": "elevator_call",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "외출 방범 설정",
+    "fn": "security_mode",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "나 외출",
+    "fn": "security_mode",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "집 나간다",
+    "fn": "security_mode",
+    "exec": "control_then_confirm",
+    "dir": "on"
+  },
+  {
+    "utterance": "알람 설정",
+    "fn": "schedule_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "모닝콜 7시",
+    "fn": "schedule_manage",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "타이머 5분",
+    "fn": "schedule_manage",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "오늘 춥나",
+    "fn": "weather_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "내일 날씨 좋아?",
+    "fn": "weather_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "기온 높아?",
+    "fn": "weather_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "날 좋다",
+    "fn": "weather_query",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "오늘 뉴스 요약",
+    "fn": "news_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "뉴스 브리핑",
+    "fn": "news_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "출근길 교통",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "퇴근길 어때",
+    "fn": "traffic_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "전기요금 확인",
+    "fn": "energy_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "사용량 목표 설정",
+    "fn": "energy_query",
+    "exec": "control_then_confirm",
+    "dir": "set"
+  },
+  {
+    "utterance": "소리 올려줘",
+    "fn": "home_info",
+    "exec": "control_then_confirm",
+    "dir": "up"
+  },
+  {
+    "utterance": "뭘 할 수 있지",
+    "fn": "system_meta",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "삼성 주가",
+    "fn": "market_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "기름값 어때",
+    "fn": "market_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "휘발유 얼마",
+    "fn": "market_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "약국 어디야",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "병원 어디야",
+    "fn": "medical_query",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "차 충전",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "주차 등록",
+    "fn": "vehicle_manage",
+    "exec": "query_then_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "넷플릭스",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "유튜브",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "인스타그램 열어",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "쿠팡",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "당근마켓",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "배민 주문",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "넷플릭스 추천",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
+  },
+  {
+    "utterance": "음악 추천",
+    "fn": "unknown",
+    "exec": "direct_respond",
+    "dir": "none"
   }
 ]
