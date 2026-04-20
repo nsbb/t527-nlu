@@ -12,32 +12,10 @@ os.chdir(ROOT); sys.path.insert(0, 'scripts')
 from model_cnn_multihead import HEAD_I2L, HEAD_NAMES
 from preprocess import preprocess
 from dialogue_state_tracker import DialogueStateTracker
+from sap_inference_v2 import generate_response as full_generate_response, extract_room, extract_value
 from transformers import AutoTokenizer
 
 import onnxruntime as ort
-
-
-# Room/value 추출 (sap_inference_v2.py에서 재사용)
-ROOMS = {
-    '거실': 'living', '주방': 'kitchen', '부엌': 'kitchen',
-    '안방': 'bedroom_main', '큰방': 'bedroom_main',
-    '작은방': 'bedroom_sub', '침실': 'bedroom_sub', '아이방': 'bedroom_sub',
-    '전체': 'all', '전부': 'all', '모든': 'all',
-}
-
-def extract_room(text):
-    for kw, room in ROOMS.items():
-        if kw in text: return room
-    return 'none'
-
-def extract_value(text):
-    m = re.search(r'(\d+)\s*도', text)
-    if m: return ('temperature', m.group(1))
-    m = re.search(r'(\d+)\s*분', text)
-    if m: return ('time', m.group(1))
-    m = re.search(r'(\d+)\s*%', text)
-    if m: return ('percent', m.group(1))
-    return None
 
 
 def run_dialog(title, turns):
@@ -104,8 +82,12 @@ def run_dialog(title, turns):
             print(f"│ [DST]   fn={resolved['fn']} exec={resolved['exec_type']} "
                   f"dir={resolved['param_direction']} room={resolved['room']}")
 
-        # 6. 응답 생성 (간단)
-        response = generate_simple_response(resolved, value)
+        # 6. 응답 생성 (sap_inference_v2의 generate_response 사용)
+        # resolved를 full preds 형태로 확장
+        full_preds = dict(resolved)
+        full_preds['judge'] = nlu['judge']
+        full_preds['param_type'] = nlu['param_type']
+        response = full_generate_response(full_preds, clean)
         print(f"│ 어시스턴트: \"{response}\"")
         print(f"└─ ({elapsed:.1f}ms)")
 
