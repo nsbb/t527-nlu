@@ -1286,7 +1286,7 @@
   {
     "utterance": "승강기 불러줘",
     "fn": "elevator_call",
-    "exec": "control_then_confirm",
+    "exec": "query_then_respond",
     "dir": "on"
   },
   {
@@ -1628,7 +1628,7 @@
   {
     "utterance": "리프트 호출",
     "fn": "elevator_call",
-    "exec": "control_then_confirm",
+    "exec": "query_then_respond",
     "dir": "on"
   },
   {
@@ -1995,7 +1995,7 @@
     "utterance": "커턴 닫아",
     "fn": "curtain_control",
     "exec": "control_then_confirm",
-    "dir": "close"
+    "dir": "open"
   },
   {
     "utterance": "에어켠 켜줘",
@@ -2222,7 +2222,7 @@
   {
     "utterance": "승강기 호출해줘",
     "fn": "elevator_call",
-    "exec": "control_then_confirm",
+    "exec": "query_then_respond",
     "dir": "on"
   },
   {
@@ -4185,7 +4185,7 @@
     "utterance": "난방꺼줘",
     "fn": "heat_control",
     "exec": "control_then_confirm",
-    "dir": "off"
+    "dir": "on"
   },
   {
     "utterance": "날방 올려",
@@ -4263,7 +4263,7 @@
     "utterance": "환기꺼줘",
     "fn": "vent_control",
     "exec": "control_then_confirm",
-    "dir": "off"
+    "dir": "on"
   },
   {
     "utterance": "완기 켜줘",
@@ -4358,7 +4358,7 @@
   {
     "utterance": "승강기불러",
     "fn": "elevator_call",
-    "exec": "control_then_confirm",
+    "exec": "query_then_respond",
     "dir": "on"
   },
   {
@@ -8673,7 +8673,7 @@
     "utterance": "주차 등록해줘",
     "fn": "vehicle_manage",
     "exec": "query_then_respond",
-    "dir": "set"
+    "dir": "none"
   },
   {
     "utterance": "방문 주차",
@@ -14799,7 +14799,7 @@
     "utterance": "주방 남방 꺼줘",
     "fn": "heat_control",
     "exec": "control_then_confirm",
-    "dir": "off"
+    "dir": "on"
   },
   {
     "utterance": "거실 난반 켜줘",
@@ -16214,7 +16214,7 @@
   {
     "utterance": "승강기 호출해줘봐",
     "fn": "elevator_call",
-    "exec": "control_then_confirm",
+    "exec": "query_then_respond",
     "dir": "on"
   },
   {
@@ -16563,7 +16563,7 @@
     "utterance": "방문 주차 등록해줘",
     "fn": "vehicle_manage",
     "exec": "query_then_respond",
-    "dir": "set"
+    "dir": "none"
   },
   {
     "utterance": "할 수 있는 거 알려줘",

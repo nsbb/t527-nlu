@@ -1,0 +1,98 @@
+[
+  {
+    "idx": 212,
+    "utterance": "잠금장치 열어",
+    "reason": "close keyword → dir=open",
+    "suggested_fix": {
+      "dir": "close"
+    }
+  },
+  {
+    "idx": 214,
+    "utterance": "승강기 불러줘",
+    "reason": "elevator call → exec=query",
+    "suggested_fix": {
+      "exec": "control_then_confirm"
+    }
+  },
+  {
+    "idx": 271,
+    "utterance": "리프트 호출",
+    "reason": "elevator call → exec=query",
+    "suggested_fix": {
+      "exec": "control_then_confirm"
+    }
+  },
+  {
+    "idx": 332,
+    "utterance": "커턴 닫아",
+    "reason": "close keyword → dir=open",
+    "suggested_fix": {
+      "dir": "close"
+    }
+  },
+  {
+    "idx": 370,
+    "utterance": "승강기 호출해줘",
+    "reason": "elevator call → exec=query",
+    "suggested_fix": {
+      "exec": "control_then_confirm"
+    }
+  },
+  {
+    "idx": 697,
+    "utterance": "난방꺼줘",
+    "reason": "off keyword → dir=on",
+    "suggested_fix": {
+      "dir": "off"
+    }
+  },
+  {
+    "idx": 710,
+    "utterance": "환기꺼줘",
+    "reason": "off keyword → dir=on",
+    "suggested_fix": {
+      "dir": "off"
+    }
+  },
+  {
+    "idx": 726,
+    "utterance": "승강기불러",
+    "reason": "elevator call → exec=query",
+    "suggested_fix": {
+      "exec": "control_then_confirm"
+    }
+  },
+  {
+    "idx": 1445,
+    "utterance": "주차 등록해줘",
+    "reason": "set keyword → dir=none",
+    "suggested_fix": {
+      "dir": "set"
+    }
+  },
+  {
+    "idx": 2466,
+    "utterance": "주방 남방 꺼줘",
+    "reason": "off keyword → dir=on",
+    "suggested_fix": {
+      "dir": "off"
+    }
+  },
+  {
+    "idx": 2702,
+    "utterance": "승강기 호출해줘봐",
+    "reason": "elevator call → exec=query",
+    "suggested_fix": {
+      "exec": "control_then_confirm"
+    }
+  },
+  {
+    "idx": 2760,
+    "utterance": "방문 주차 등록해줘",
+    "reason": "set keyword → dir=none",
+    "suggested_fix": {
+      "dir": "set"
+    }
+  }
+]
