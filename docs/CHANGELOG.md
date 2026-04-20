@@ -4,6 +4,8 @@
 
 | 버전 | 날짜 | 기법 | TS combo | KE fn | 결과 |
 |------|------|------|:---:|:---:|------|
+| v68 | 04-21 | 라벨 오류 수정 + 재학습 | 90.7% | 97.5% | 학습데이터 46건 수정 효과 제한적 |
+| v67 | 04-21 | 통합 파이프라인 검증 | 93.8% | 97.9% | STT 내성 100%, preprocess 120개 |
 | v66 | 04-21 | Ensemble ONNX 배포 | 94.3% | 97.8% | **배포용 단일 파일 ★** |
 | v65 | 04-21 | KLUE-RoBERTa emb | 89.8% | 97.3% | 실패 (ko-sbert가 우세) |
 | v64 | 04-21 | Unfreeze embeddings | 90.5% | 97.3% | 실패 (frozen이 더 나음) |
@@ -43,6 +45,29 @@
 4. 소규모 패치는 항상 regression 유발
 
 ---
+
+## v68 (2026-04-21) — 학습 데이터 라벨 오류 수정 + 재학습
+- **TS 90.7%, KE 97.5%** (수정된 test_suite 기준) — v46 대비 소폭 하락
+- 학습 데이터 `train_final_v43.json`의 46건 라벨 수정:
+  - "커턴 닫아" dir: open → close (2건)
+  - "난방꺼줘" dir: on → off
+  - 주차/카드 "등록해줘" dir: none → set (16건)
+  - 승강기/엘리베이터 "호출/불러" exec: query → control (26건)
+- 정규식 패턴 매칭으로 일관성 있는 수정 자동화
+- 결론: 수정된 케이스는 올바르게 학습하나, 소량 수정의 분포 변화로 다른 케이스 성능 영향
+- 체크포인트: `checkpoints/cnn_multihead_v68.pt`
+- 데이터: `data/train_final_v68.json`
+- 스크립트: `scripts/train_v68_fixed_labels.py`
+
+## v67 (2026-04-21) — 통합 파이프라인 검증 + Test Suite 확장
+- **Test Suite: TS 93.8%, KE 97.9%, STT 내성 100%**
+- preprocess.py STT 교정 사전 54→120개 확장
+  - 에어콘/뉴슈/씨원하게/몇시/도어렉 등 실사용 STT 패턴
+  - 오늘날씨어때/뭐입을까 등 띄어쓰기 없는 질문형
+- Test Suite 3043→3109 (+66개): 숫자/구어체/질의/엣지/방향 다양성
+- Error Analysis 자동화 도구 (`scripts/error_analysis.py`)
+- Test Suite 라벨 오류 11건 발견/수정
+- MODEL_CARD.md, DEPLOYMENT_GUIDE.md 작성
 
 ## v66 (2026-04-21) — Ensemble ONNX 배포용 단일 파일 ★
 - **배포 성공**: `nlu_v28_v46_ensemble.onnx` (104.9MB)
