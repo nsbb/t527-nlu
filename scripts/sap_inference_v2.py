@@ -66,12 +66,12 @@ def check_unsupported(fn, text):
 # ============================================================
 RESPONSE_TEMPLATES = {
     'control_then_confirm': {
-        'light_control': '네, {room}{action}.',
+        'light_control': '네, {room}조명을 {action}.',
         'heat_control': '네, {room}난방을 {action}.',
         'ac_control': '네, {room}에어컨을 {action}.',
         'vent_control': '네, 환기시스템을 {action}.',
         'gas_control': '네, 가스 밸브를 {action}.',
-        'door_control': '네, 도어락을 열었습니다.',
+        'door_control': '네, 도어락을 {action}.',
         'curtain_control': '네, {room}전동커튼을 {action}.',
         'elevator_call': '네, 엘리베이터를 호출합니다.',
         'security_mode': '네, 외출모드로 전환합니다.',
@@ -151,18 +151,19 @@ def generate_response(preds, text):
     if exec_t == 'control_then_confirm':
         template = RESPONSE_TEMPLATES['control_then_confirm'].get(fn, '네, 처리했습니다.')
         action = ACTION_MAP.get(direction, '설정했습니다')
+        # value가 있으면 "X도로/X분으로" 형식으로 간결하게 (중복 방지)
         if value and value[0] == 'temperature':
-            action = f'온도를 {value[1]}도로 설정합니다'
+            action = f'{value[1]}도로 설정했습니다'
         elif value and value[0] == 'time':
-            action = f'{value[1]}분 예약을 설정합니다'
+            action = f'{value[1]}분 예약을 설정했습니다'
         elif value and value[0] == 'percent':
-            action = f'{value[1]}%로 설정합니다'
+            action = f'{value[1]}%로 설정했습니다'
         elif value and value[0] == 'level':
-            action = f'{value[1]}단계로 설정합니다'
+            action = f'{value[1]}단계로 설정했습니다'
         elif preds['param_type'] == 'mode':
             for mode in ['제습','송풍','자동','냉방','외출','재택','취침','수면']:
                 if mode in text:
-                    action = f'{mode} 모드로 설정합니다'
+                    action = f'{mode} 모드로 설정했습니다'
                     break
         return template.format(room=room_kr, action=action)
 
