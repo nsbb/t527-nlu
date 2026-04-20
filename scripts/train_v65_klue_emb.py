@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""v65 — KoELECTRA embeddings 교체
-ko-sbert (유사도용) → KoELECTRA-base-discriminator (분류용) 임베딩
-KoELECTRA는 discriminative 학습으로 classification에 더 유리한 표현 가질 수 있음.
+"""v65 — KLUE-RoBERTa embeddings 교체 (KoELECTRA 대신, 네트워크 문제)
+ko-sbert (유사도용) → KLUE-RoBERTa-base (한국어 NLU benchmark 최적화) 임베딩
+KLUE RoBERTa는 NLU task에 특화 학습 → classification에 유리할 수 있음.
 
-주의: 토크나이저도 KoELECTRA용으로 교체 필요
+주의: 토크나이저도 KLUE용으로 교체 필요
 """
 import torch, torch.nn as nn, torch.nn.functional as F
 import json, os, sys, random, copy, re
@@ -126,8 +126,8 @@ def train():
 
     # Load KoELECTRA tokenizer & embeddings
     print("Loading KoELECTRA...")
-    ke_model = AutoModel.from_pretrained('monologg/koelectra-base-discriminator')
-    ke_tok = AutoTokenizer.from_pretrained('monologg/koelectra-base-discriminator')
+    ke_model = AutoModel.from_pretrained('klue/roberta-base')
+    ke_tok = AutoTokenizer.from_pretrained('klue/roberta-base')
     pw = ke_model.embeddings.word_embeddings.weight.detach()
     del ke_model
     print(f"KoELECTRA emb: {pw.shape}")

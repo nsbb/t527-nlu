@@ -1,78 +1,131 @@
-# v28 알려진 실패 패턴 (36개)
+# 알려진 실패 패턴 (v46 기준, 2026-04-21 업데이트)
 
-v28 모델이 틀리는 표현들. 학습 데이터에 없거나, 다른 fn과 혼동되는 패턴.
-패치 추가 시 기존 패턴이 regression되므로 v28에서는 수정하지 않음.
+v46 모델의 Test Suite 3,043개 중 204개 오류 (93.3%) 분석.
+Ensemble v28+v46 적용 시 172개 → 94.3% (일부 오류 해소).
 
-## 카테고리별
+## 오류 분류 (204건)
 
-### 학습 데이터 없음 (14개)
-| 발화 | 기대 | 실제 | 원인 |
-|------|------|------|------|
-| 22도 | ac_control | market_query | 숫자만으로는 의도 파악 불가 |
-| 온풍기 켜 | heat_control | ac_control | "온풍기" 학습 없음 |
-| 이비인후과 | medical_query | unknown | 과 이름 학습 부족 |
-| 에어컨 이십삼도 | ac_control | unknown | 한글 숫자 학습 없음 |
-| 미세문지 | weather_query | door_control | STT 오류 학습 없음 |
-| 손풍 해줘 | ac_control | weather_query | "손풍" STT 오류 학습 없음 |
-| 거시 볼 커줘 | light_control | unknown | 심한 STT 오류 |
-| 119 | unknown | traffic_query | 숫자만 |
-| 에어컨 필터 언제 바꿔야 해 | ac_control | unknown | 유지보수 질문 학습 없음 |
-| 비 올 확률 | weather_query | unknown | "확률" 학습 부족 |
-| 준공일 언제 | home_info | unknown | 단지정보 학습 부족 |
-| 하이 원더 | system_meta | market_query | 웨이크워드 학습 없음 |
-| 빨래 해줘 | unknown | weather_query | "빨래" 학습 없음 |
-| 30분 후에 꺼줘 | ac_control | energy_query | 시간조건 발화 학습 부족 |
+| 유형 | 건수 | 비율 |
+|------|:---:|:---:|
+| fn 오류 (분류 잘못) | 62 | 30.4% |
+| dir 오류만 (방향 잘못) | 82 | 40.2% |
+| exec 오류만 (실행 타입 잘못) | 46 | 22.5% |
+| exec + dir 동시 오류 | 14 | 6.9% |
 
-### fn 경계 혼동 (14개)
-| 발화 | 기대 | 실제 | 혼동 이유 |
-|------|------|------|----------|
-| 왔어 | security_mode | door_control | "왔어"=도착 → door 연상 |
-| 실내 온도 너무 높아 | ac_control | heat_control | "온도"=난방 연상 |
-| 안방이 좀 쌀쌀해 | heat_control | light_control | "안방이 좀"=light 연상 |
-| 주방이 좀 텁텁해 | vent_control | light_control | "주방이 좀"=light 연상 |
-| 폭염 주의보야 | weather_query | ac_control | "폭염"=에어컨 연상 |
-| 단지 소식 | home_info | news_query | "소식"=뉴스 연상 |
-| 오늘 장 어때 | market_query | weather_query | "어때"=날씨 연상 |
-| 실내 온도 몇 도 | heat_control | weather_query | "몇 도"=날씨 연상 |
-| 공기 좀 바꿔줘 | vent_control | weather_query | "공기"=미세먼지 연상 |
-| 교통 정보 알려줘 | traffic_query | vehicle_manage | "정보"=차량 연상 |
-| 기능 안내 | system_meta | home_info | "안내"=home_info 연상 |
-| 화면 밝기 올려 | home_info | light_control | "밝기"=조명 연상 |
-| 알람 꺼 | schedule_manage | energy_query | "꺼"=energy 연상 |
-| 에어컨이랑 선풍기 뭐가 좋아 | unknown | ac_control | "에어컨" 키워드 |
+## fn 혼동 Top 패턴 (v46)
 
-### 극한 표현 (8개)
-| 발화 | 기대 | 실제 | 원인 |
-|------|------|------|------|
-| 주식 장 마감했어? | market_query | unknown | 금융 용어 학습 부족 |
-| 유가 전망 | market_query | unknown | "전망" 학습 부족 |
-| 오늘 사건사고 | news_query | unknown | "사건사고" 학습 부족 |
-| 헬스장 언제 열어 | home_info | unknown | 시설 운영시간 학습 부족 |
-| 관리비 | energy_query | unknown | "관리비" 학습 없음 |
-| 에어컨 좀 켜주시면 감사 | ac_control | unknown | 극존칭 학습 부족 |
-| 불 왜 이래 | light_control | unknown | 불평형 학습 부족 |
-| 길 어때 | traffic_query | unknown | "길"만으로 교통 연상 부족 |
+| 기대 fn | 예측 fn | 빈도 | 발화 예시 |
+|---------|---------|:---:|----------|
+| schedule_manage | system_meta | 19x | "알람 맞춰줘", "타이머 설정" |
+| home_info | system_meta | 6x | "화면 밝기", "월패드 밝기" |
+| unknown | system_meta | 6x | "기능 알려줘" (라벨 모호) |
+| weather_query | unknown | 5x | "서울 날씨", "오늘날씨어때" |
+| medical_query | unknown | 3x | "근처 신경외과", "약국 위치" |
+| unknown | security_mode | 3x | - |
+| news_query | unknown | 2x | "국제 뉴스" |
 
-## 향후 개선 방향
+## exec 혼동 Top 패턴
 
-1. **학습 데이터 추가 시 regression 최소화**: 현재 v28 패치 접근법의 한계. 전체 데이터를 재설계해야 함.
-2. **경계 혼동**: fn 간 의미 경계가 모호한 발화들은 모델만으로 해결 어려움. 규칙 보정 또는 멀티턴 DST 필요.
-3. **STT 오류 내성**: "미세문지", "손풍" 같은 패턴은 STT 전처리 사전으로 해결 가능.
-4. **한글 숫자**: "이십삼도" 같은 한글 숫자는 전처리에서 아라비아 숫자로 변환하면 해결.
+| 기대 | 예측 | 빈도 | 원인 |
+|------|------|:---:|------|
+| query_then_respond | control_then_confirm | 27x | "~상태", "~확인" 구어체 |
+| direct_respond | control_then_confirm | 9x | 단일 단어 발화 ("조명") |
+| control_then_confirm | query_then_respond | 7x | 모호한 단축 발화 |
+| control_then_confirm | direct_respond | 5x | - |
+| clarify | control_then_confirm | 3x | "간접등 켜줘" |
 
-## 전처리로 해결된 패턴 (6개)
+## dir 혼동 Top 패턴
 
-STT 전처리 사전(`scripts/preprocess.py`)으로 해결:
+| 기대 | 예측 | 빈도 | 패턴 |
+|------|------|:---:|------|
+| none | set | 11x | 애매한 값 지정 |
+| down | on | 10x | "줄여줘"→on으로 예측 |
+| on | none | 10x | 짧은 발화 |
+| down | up | 8x | 반대 방향 혼동 |
+| on | up | 8x | - |
+| down | none | 7x | "줄여"만 있을 때 |
+| close | open | 5x | 반대 |
+| on | set | 5x | - |
+| on | off | 4x | 반대 |
 
-| 발화 | 전처리 후 | 결과 |
-|------|----------|------|
-| 미세문지 | 미세먼지 | ✓ weather_query |
-| 에어컨 이십삼도 | 에어컨 23도 | ✓ ac_control |
-| 손풍 해줘 | 송풍 해줘 | ✓ ac_control |
-| 온풍기 켜 | 난방 켜 | ✓ heat_control |
-| 블라인드 올려 | 커튼 올려 | ✓ curtain_control |
-| 승강기 불러줘 | 엘리베이터 불러줘 | ✓ elevator_call |
+## KoELECTRA val 34건 분석 (실제 정확도 ~98.8%)
 
-## 최종 미해결: 32개
+v46의 KoELECTRA fn 97.8%가 실제로는 더 높음:
 
-전처리 + 모델 v28로도 해결 안 되는 패턴. 데이터 추가 필요.
+### KoELECTRA 라벨 오류 (16건, 우리 모델이 맞음)
+- unknown→system_meta 9건: "기능 알려주세요", "너 이름 뭐야"는 system_meta가 정답
+- system_meta→home_info 7건: "소리 키워줘", "볼륨 낮춰줘"는 home_info가 정답
+
+### 진짜 어려운 케이스 (18건)
+- "찜질방 같아" → ac/heat 구분 모호
+- "손발이 꽁꽁" → heat/light 모호
+- 단일 발화로는 문맥 부족, **DST 필요**
+
+## v46/Ensemble이 여전히 틀리는 대표 패턴
+
+### 학습 데이터 경계 밖 (10+ 예시)
+| 발화 | 기대 | v46 예측 | 원인 |
+|------|------|---------|------|
+| 알람 취소해줘 | schedule_manage | system_meta dir:set | "취소"→system 매핑 학습됨 |
+| 전화해줘 | unknown | home_info | 전화 기능 학습 없음 |
+| 좀 시원하게 | ac_control | heat_control | "시원"이 heat 쪽 분포에 섞임 |
+| 전체 꺼 | ac_control | light_control | 전체 끄기 → light default |
+| 와이파이 비번 뭐야 | unknown | system_meta | system에 와이파이 연관 |
+| 작년보다 추워? | weather_query | energy_query | "작년" → 비교 분석으로 오해 |
+
+### 모호한 단일 표현
+| 발화 | 기대 | v46 | 왜 어려운가 |
+|------|------|-----|------------|
+| 조명 | light_control, direct | light, control | 짧은 발화는 control로 편향 |
+| 에어컨 | ac_control, direct | ac, control | 동일 |
+| 에어컨 바람 | ac, dir:up? | ac, dir:none | "바람"만으론 방향 불명 |
+
+### STT/구어체 변형
+| 발화 | 기대 | v46 | 해결 방법 |
+|------|------|-----|---------|
+| 남방 꺼쥬 | heat_control, off | heat, on | preprocess에서 "꺼쥬→꺼줘" 추가 필요 |
+| 에어컨꺼 | ac, off | ac, on | "에어컨꺼→에어컨 꺼" 분리 (v67 preprocess에 추가됨) |
+| 오늘날씨어때 | weather, query | unknown, direct | 띄어쓰기 없는 질의 어려움 |
+
+### DST 필요 (문맥 의존)
+| 발화 | 기대 | v46 단독 | 해결 |
+|------|------|---------|------|
+| 안방도 | (prev context) | light_control, clarify | DST로 이전 fn 상속 |
+| 아니 꺼줘 | (prev) | light, control, off | DST 교정 패턴 |
+| 응 | (prev) | unknown, direct | DST 확인 패턴 |
+
+## 우리가 해결한 패턴 (역사적)
+
+### v28 이전 (해결됨)
+- "거실 불 꺼줘" → v10에서 수정 (light_off 학습 데이터 0→44개)
+- "환기 세게" → v12에서 수정 (dir:up 누락)
+- 한글 숫자 "이십삼도" → v18 preprocess로 해결
+- STT "미세문지" → v18 preprocess로 해결
+
+### v29-v33에서 시도했으나 regression
+- 패치 형태 수정 → 분포 왜곡 → v28에서 안정화
+
+## 해결 가이드
+
+### 1. 예측 맞지만 지원 안 됨 (UNSUPPORTED_ACTIONS)
+`sap_inference_v2.py`에서 키워드 매칭하여 "죄송합니다" 응답
+
+### 2. 낮은 confidence
+conf < 0.5 → unknown으로 fallback → 서버 처리
+
+### 3. 문맥 의존 (DST)
+멀티턴 상태 추적 (10초 timeout)
+- room follow-up: "안방도"
+- device follow-up: "난방도"
+- correction: "아니 꺼줘"
+- confirm: "응"
+
+### 4. 실제 사용 로그 수집 필요
+현재 데이터는 증강 기반. 실 사용 로그 피드백 루프로 개선 가능.
+
+## 참고 문서
+
+- `docs/CHANGELOG.md` — 버전별 변화
+- `docs/VERSION_LOG.md` — 실험별 상세 결과
+- `docs/MODEL_LIMITATIONS.md` — 구조적 한계 9가지
+- `docs/DEPLOYMENT_GUIDE.md` — 배포/통합 가이드
