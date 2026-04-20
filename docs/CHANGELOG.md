@@ -1,12 +1,189 @@
 # NLU Changelog — 버전별 업데이트 내역
 
-## v28 (현재, 최종)
-- **Test Suite 2,000개: fn 100%, exec 100%, dir 100%, combo 100%**
+## 요약표 (최신 → 과거)
+
+| 버전 | 날짜 | 기법 | TS combo | KE fn | 결과 |
+|------|------|------|:---:|:---:|------|
+| v63 | 04-21 | Conformer 2L | 79.6% | 94.8% | 실패 (Attn < CNN at 24.5K) |
+| v62 | 04-21 | Multi-seed 3×avg | 92.0% | 97.6% | 실패 (v46 seed lucky) |
+| v61 | 04-21 | Warm-start v28 | 92.4% | 97.3% | 실패 (초기화 무관) |
+| v60 | 04-21 | Model Soup | 93.3% | 97.8% | 최적 α=0 (=v46 그대로) |
+| v59 | 04-21 | Head masking | 83.0% | 97.2% | 실패 (backbone 학습 저해) |
+| v58 | 04-21 | Targeted augment | 91.4% | 97.5% | 실패 (분포 왜곡) |
+| v57 | 04-21 | Wider d=384 | 90.2% | 97.2% | 실패 (데이터 대비 과다) |
+| v56 | 04-21 | Two-stage | 91.2% | 96.9% | 실패 (fn/judge freeze 효과 없음) |
+| v55 | 04-21 | KD from ensemble | 92.1% | 97.7% | 실패 (soft label 재현 불가) |
+| v54 | 04-21 | Self-training R2 | — | — | ROI 없음 (2% 차이) |
+| v53 | 04-20 | Focal+Mixup | 90.5% | 97.7% | 실패 |
+| v52 | 04-20 | CutMix | 90.4% | 97.5% | 실패 |
+| v51 | 04-20 | SupCon+Mixup | 91.4% | 97.6% | 미미 |
+| v50 | 04-20 | R-Drop | 46.9% | — | 붕괴 |
+| v49 | 04-20 | CNN+Attn | 91.5% | 97.5% | 미미 |
+| v47 | 04-20 | Mixup+LS | 91.6% | 97.3% | 중복 |
+| **v46** | **04-20** | **Mixup** | **93.3%** | **97.8%** | **단일 모델 최적 ★** |
+| v45 | 04-20 | Label Smoothing | 90.5% | 97.4% | - |
+| v38 | 04-19 | 6L CNN | 91.1% | 97.1% | 미미 |
+| v34 | 04-19 | Pseudo-labeling | 93.3% | 96.8% | 핵심 기여 +21.3%p |
+| v33 | 04-19 | KE 직접 병합 | 90.5% | - | 실패 |
+| v29-v32 | 04-19 | 패치 fix | - | - | regression |
+| **v28** | **04-19** | **Test Suite 3K 확정** | **96.3%** | **75.5%** | **GT 최적 ★** |
+
+### 최적 구성
+- **단일 모델**: v46 (TS 93.3%, KE 97.8%)
+- **앙상블**: v28+v46 Strategy B (TS 94.3%, KE 97.8%)
+- **Production**: `sap_inference_v2.py`가 v46 사용
+
+### 핵심 교훈
+1. TS↔KE 트레이드오프는 데이터 분포의 구조적 한계
+2. v28↔v46 weight space 비볼록 (Model Soup 실패)
+3. CNN 4L > Conformer 2L at 24.5K 샘플
+4. 소규모 패치는 항상 regression 유발
+
+---
+
+## v63 (2026-04-21) — Conformer backbone 실험
+- **Test Suite combo 79.6%, KoELECTRA fn 94.8%** — CNN 대비 대폭 하락
+- Conformer 2L (d=256, 4-head attention + depthwise conv 15) + 같은 5-head
+- 2.1M trainable params (vs CNN 1.5M)
+- 결론: 24.5K 데이터 규모에서 **Attention < CNN**
+- 체크포인트: `cnn_multihead_v63` (archived)
+
+## v62 (2026-04-21) — Multi-seed ensemble
+- **3-model avg: TS 92.0%, KE 97.6%** — 단일 v46(93.3%)보다 하락
+- v46(seed=42) + v62(seed=123) + v62(seed=999) logit averaging
+- seed 123: TS 90.6%, seed 999: TS 90.4% — v46보다 약함
+- 결론: v46 seed 42는 lucky, 약한 모델과 평균은 성능 하락
+- 체크포인트: `cnn_multihead_v62_s123`, `cnn_multihead_v62_s999` (archived)
+
+## v61 (2026-04-21) — Warm-start from v28
+- **TS 92.4%, KE 97.3%** — v46(93.3%, 97.8%) 미달
+- v28 가중치로 초기화 후 v43 데이터로 학습
+- 결론: 초기화는 최종 성능에 무관 (같은 수렴점)
+- 체크포인트: `cnn_multihead_v61` (archived)
+
+## v60 (2026-04-21) — Model Soup (weight interpolation)
+- **최적 α=0 (순수 v46, TS 93.3%)** — 돌파 실패
+- v28/v46 간 α=0.3~0.6에서 성능 급락 (loss landscape 비볼록)
+- head별 다른 α 시도도 실패 (TS 19.4%)
+- 결론: prediction-level 앙상블만 유효
+- 스크립트: `scripts/model_soup.py`
+
+## v59 (2026-04-21) — Head-specific masking
+- **TS 83.0%, KE 97.2%** — exec/dir 대폭 하락
+- KoELECTRA 샘플에서 exec/dir loss 마스킹
+- 결론: backbone이 전체 gradient 필요, masking 역효과
+- 체크포인트: `cnn_multihead_v59` (archived)
+
+## v58 (2026-04-21) — Targeted augmentation
+- **TS 91.4%, KE 97.5%** — 기대와 달리 하락
+- 313개 타겟 증강 (schedule/query/direction 패턴) × 3 oversample
+- v46 오류 204개 패턴 분석 → 맞춤 augment
+- 결론: 소규모 패치가 분포 왜곡, v29-v33과 동일 패턴
+- 체크포인트: `cnn_multihead_v58` (archived)
+
+## v57 (2026-04-21) — Wider model (d=384)
+- **TS 90.2%, KE 97.2%** — 작은 데이터로 큰 모델 비효율
+- d_model 256→384, 3.3M trainable
+- Sample-weighted: GT 2.0x, KoELECTRA 1.0x
+- 결론: 24.5K 샘플로는 d=256 이상 불필요
+- 체크포인트: `cnn_multihead_v57` (archived)
+
+## v56 (2026-04-21) — Two-stage fine-tuning
+- **TS 91.2%, KE 96.9%** — fn 보존 실패
+- Stage 1: v46 recipe, Stage 2: fn+judge head freeze + exec/dir 미세조정
+- 결론: backbone이 변하면 frozen head도 영향, 양쪽 다 하락
+- 체크포인트: `cnn_multihead_v56` (archived)
+
+## v55 (2026-04-21) — Knowledge Distillation from ensemble
+- **TS 92.1%, KE 97.7%** — ensemble 재현 실패
+- Teacher: v28+v46 (Strategy B, temperature=3.0)
+- Student: 같은 CNN 5-head, alpha 0.7→0.3 anneal
+- SWA 추가: v55_swa TS 92.1%, KE 97.7% (동일)
+- 결론: soft label만으로 v28의 exec/dir 전문성 재현 불가
+- 체크포인트: `cnn_multihead_v55`, `cnn_multihead_v55_swa` (archived)
+
+## v54 (2026-04-21) — Self-training Round 2
+- **ROI 없음** — v28↔v46 pseudo label 차이 2% 뿐
+- v46으로 KoELECTRA 재-pseudo-label 시도
+- exec 일치율 98%, dir 일치율 97.1%
+- 결론: 라벨 품질은 이미 수렴, 재라벨링 무의미
+- 체크포인트: `cnn_multihead_v54`, `cnn_multihead_v54_swa` (archived)
+
+## v53 (2026-04-20) — Focal Loss + Mixup
+- **TS 90.5%, KE 97.7%** — v46보다 약간 하락
+- Focal Loss (γ=2) + Mixup
+- 어려운 샘플에 집중하나 TS 손실
+- 결론: Mixup이 이미 일반화 효과, Focal 중복
+
+## v52 (2026-04-20) — CutMix
+- **TS 90.4%, KE 97.5%** — mixup보다 저조
+- 같은 fn 내 토큰 30% 교체
+- 결론: 텍스트에서 토큰 교체는 의미 파괴, Mixup(발화 교체) 우세
+
+## v51 (2026-04-20) — Supervised Contrastive Loss
+- **TS 91.4%, KE 97.6%** — v46 수준 미세 개선
+- SupCon (α=0.1) + Mixup
+- feature 공간에서 같은 fn 클러스터링
+- 결론: 효과 미미, 복잡도만 증가
+
+## v50 (2026-04-20) — R-Drop (실패)
+- **val combo 60.9%** — 학습 붕괴
+- α=0.5 + Mixup 조합 시 KL divergence가 CE 압도
+- 해결: α=0.1~0.2 필요하나 forward 2회로 2배 느림, ROI 낮음
+
+## v49 (2026-04-20) — CNN + Self-Attention hybrid
+- **TS 91.5%, KE 97.5%** — 순수 CNN 대비 미미
+- CNN 4L + 1-head Self-Attention
+- 1.8M trainable
+- 결론: 이 규모에서 Attention 추가 효과 없음
+- 체크포인트: `cnn_attn_v49` (archived)
+
+## v47 (2026-04-20) — Mixup + Label Smoothing
+- **TS 91.6%, KE 97.3%** — 중복 효과
+- Mixup + LS(0.1) 조합
+- 결론: 두 기법 모두 regularization, 중복
+
+## v46 (2026-04-20) — **단일 모델 최적점 (현재 권장)**
+- **Test Suite combo 93.3%, KoELECTRA fn 97.8%**
+- CNN 4L + Mixup (30% 확률, 같은 fn 내 발화 교체)
+- pseudo-labeling (v28이 KoELECTRA exec/dir 예측) + mixup
+- 일반화 최고: KoELECTRA fn 97.8% (실제 정확도 ~98.8%, 16건 KE 라벨 오류)
+- ONNX: `nlu_v46_generalization.onnx` (99.7MB)
+- 체크포인트: `cnn_multihead_v46.pt`
+
+## v45 (2026-04-20) — Label Smoothing
+- **TS 90.5%, KE 97.4%** — 확신 감소
+
+## v38 (2026-04-19) — 6L CNN (실패)
+- **TS 91.1%, KE 97.1%** — 4L과 유사
+- 층 확장 효과 미미
+- 체크포인트: `cnn_6L_v38` (archived)
+
+## v34 (2026-04-19) — Pseudo-labeling 도입 (핵심 기여 +21.3%p)
+- **TS 93.3%, KE 96.8%** — KoELECTRA fn 75.5%→96.8% 도약
+- v28으로 KoELECTRA 13,540개 exec/dir 재라벨링
+- 원본 fn 유지 + v28이 예측한 exec/dir
+- 28,763개 병합 학습
+- ONNX: `nlu_v34_production.onnx`
+- 체크포인트: `cnn_multihead_v34.pt`
+
+## v33 (2026-04-19) — KoELECTRA 직접 병합 (실패)
+- **TS 90.5%** — v28(96.3%)에서 regression
+- KoELECTRA 원본 exec/dir 그대로 병합 시 라벨 충돌
+- 해결: pseudo-labeling으로 전환 (v34)
+
+## v29~v32 (2026-04-19) — 패치 기반 fix (실패)
+- 작은 fix 데이터셋 추가 시 기존 패턴 regression
+- 교훈: 패치는 분포 왜곡, v28에서 안정화 확정
+
+## v28 (2026-04-19) — Test Suite 3,043개 달성, GT 최적
+- **Test Suite 3,043개: fn 100%, exec 98.2%, dir 97.8%, combo 96.3%**
+- **KoELECTRA fn 75.5%** (외부 데이터 일반화는 약함)
 - STT 전처리 사전 54개 + 한글 숫자 변환 (scripts/preprocess.py)
 - confidence fallback (conf<0.5 → unknown)
 - param_type 규칙 보정 (open/close→none, judge→none, query/direct→none)
 - 알려진 실패 32개 문서화 (docs/KNOWN_FAILURES.md)
-- ONNX: 99.7MB, 0.32ms CPU
+- ONNX: `nlu_v28_final.onnx` (99.7MB, 0.32ms CPU)
 - v10~v28 반복 개선 (v29~v33 실험 → regression으로 v28 확정)
 - 누적 fix 패턴 778개 → accumulated_fixes.json 보존
 - 데이터: ~20,815개 | val combo: 94.7%
