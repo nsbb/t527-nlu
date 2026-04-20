@@ -4,6 +4,9 @@
 
 | 버전 | 날짜 | 기법 | TS combo | KE fn | 결과 |
 |------|------|------|:---:|:---:|------|
+| v66 | 04-21 | Ensemble ONNX 배포 | 94.3% | 97.8% | **배포용 단일 파일 ★** |
+| v65 | 04-21 | KLUE-RoBERTa emb | 89.8% | 97.3% | 실패 (ko-sbert가 우세) |
+| v64 | 04-21 | Unfreeze embeddings | 90.5% | 97.3% | 실패 (frozen이 더 나음) |
 | v63 | 04-21 | Conformer 2L | 79.6% | 94.8% | 실패 (Attn < CNN at 24.5K) |
 | v62 | 04-21 | Multi-seed 3×avg | 92.0% | 97.6% | 실패 (v46 seed lucky) |
 | v61 | 04-21 | Warm-start v28 | 92.4% | 97.3% | 실패 (초기화 무관) |
@@ -40,6 +43,28 @@
 4. 소규모 패치는 항상 regression 유발
 
 ---
+
+## v66 (2026-04-21) — Ensemble ONNX 배포용 단일 파일 ★
+- **배포 성공**: `nlu_v28_v46_ensemble.onnx` (104.9MB)
+- Test Suite: fn 98.0%, exec 98.2%, dir 97.8%, **combo 94.3%**
+- KoELECTRA fn: **97.8%** (PyTorch 앙상블과 완전 동일)
+- **추론 지연: 0.48ms/sample (CPU)**
+- 내부 구조: Strategy B (fn=v46, exec/dir/param=v28, judge=v46)
+- 스크립트: `scripts/export_ensemble_onnx.py`, `scripts/verify_ensemble_onnx.py`
+
+## v65 (2026-04-21) — KLUE-RoBERTa embeddings 실험
+- **TS 89.8%, KE 97.3%** — ko-sbert 대비 -3.5%p
+- KoELECTRA 다운로드 실패 (네트워크)로 KLUE-RoBERTa로 대체
+- 한국어 NLU benchmark 특화 모델임에도 ko-sbert만 못함
+- 결론: ko-sbert-sts가 이 task에 이미 최적
+- 체크포인트: `cnn_multihead_v65` (archived)
+
+## v64 (2026-04-21) — Unfreeze embeddings (마지막 15 epochs)
+- **TS 90.5%, KE 97.3%** — v46(93.3%) 대비 -2.8%p
+- Phase 1 (1-25): frozen, lr=1e-3
+- Phase 2 (26-40): unfreeze, emb lr=1e-5, rest lr=5e-4
+- 결론: ko-sbert 임베딩이 이미 잘 정렬되어 있어 unfreeze가 노이즈 유발
+- 체크포인트: `cnn_multihead_v64` (archived)
 
 ## v63 (2026-04-21) — Conformer backbone 실험
 - **Test Suite combo 79.6%, KoELECTRA fn 94.8%** — CNN 대비 대폭 하락
