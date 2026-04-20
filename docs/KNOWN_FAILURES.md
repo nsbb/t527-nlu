@@ -123,6 +123,23 @@ conf < 0.5 → unknown으로 fallback → 서버 처리
 ### 4. 실제 사용 로그 수집 필요
 현재 데이터는 증강 기반. 실 사용 로그 피드백 루프로 개선 가능.
 
+## Test Suite 자체 라벨 오류 (v67 발견)
+
+Error Analysis로 발견한 **test_suite.json의 잘못된 라벨**:
+
+| 발화 | 현재 라벨 | 실제 정답 | 노트 |
+|------|----------|----------|------|
+| 커턴 닫아 | dir=open | dir=close | 닫으라는 지시인데 open 라벨 |
+| 승강기 호출해줘 | exec=query_then_respond | exec=control_then_confirm | 호출=제어 |
+| 엘베 올라와 | exec=query_then_respond | exec=control_then_confirm | 동일 |
+| 승강기 호출해줘봐 | exec=query_then_respond | exec=control_then_confirm | 동일 |
+| 엘리베이터 올라와 | dir=on | dir=on(OK) but exec 모호 | - |
+| 방문 주차 등록해줘 | dir=none | dir=set | "등록해줘"=설정 |
+| 도어록 열어쥬 | dir=none | dir=open | "열어"=open |
+
+이 라벨 오류를 수정하면 실제 모델 정확도는 93.3% → 약 94-95% 수준으로 올라감.
+하지만 데이터 수정은 regression 리스크 있으므로 신중히. `scripts/error_analysis.py`로 지속 모니터링.
+
 ## 참고 문서
 
 - `docs/CHANGELOG.md` — 버전별 변화
