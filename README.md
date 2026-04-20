@@ -1,244 +1,156 @@
-# T527 온디바이스 NLU — Sentence Embedding + Cosine Similarity
+# T527 온디바이스 NLU — CNN 5-Head + Ensemble (v68)
 
-월패드 STT 결과 텍스트 → **사용자 의도(intent) 파악** → 기기 제어.
-간접 표현("너무 추워" → 난방 켜기) 포함 처리.
+르엘 어퍼하우스 AI 월패드 (T527 NPU) STT 텍스트 → Structured Action → 기기 제어.
 
----
+## 핵심 지표 (권장 배포)
 
-## 방식
+| 지표 | 값 |
+|------|:---:|
+| Test Suite combo | **94.3%** (3,043 케이스) |
+| KoELECTRA fn | **97.8%** (외부 1,536 케이스, 실제 ~98.8%) |
+| STT 오류 내성 | **100%** (10/10) |
+| CPU 추론 지연 | **0.48ms** (단일 추론) |
+| 파일 크기 | 104.9MB (FP32 ONNX) |
 
-```
-사용자: "너무 추워"
-    ↓
-1. ko-sbert-sts로 문장 embedding (768차원 벡터)
-    ↓
-2. 미리 계산된 intent별 대표 문장 embedding과 cosine similarity 비교
-    ↓
-3. 가장 유사한 intent 선택 → heating_on (유사도 1.000)
-    ↓
-4. 기기 제어 명령 실행
-```
+→ **배포 모델**: `checkpoints/nlu_v28_v46_ensemble.onnx`
 
-기존 intent classification(KoELECTRA)과 달리, **의미적 유사도 기반**이라 간접 표현도 자연스럽게 처리.
-
----
-
-## 모델
-
-| 항목 | 값 |
-|------|-----|
-| 모델 | [jhgan/ko-sbert-sts](https://huggingface.co/jhgan/ko-sbert-sts) |
-| 기반 | KLUE-RoBERTa-base |
-| 파라미터 | 110.6M |
-| Embedding 차원 | 768 |
-| ONNX FP32 | 422MB |
-| **ONNX INT8** | **106MB** |
-| 추론 (WSL CPU) | **12ms/query** |
-| 한국어 | 최적 (34GB 한국어 사전학습 + STS fine-tune) |
-
----
-
-## 테스트 결과
-
-### 간접 표현 테스트 (23개)
-
-**정확도: 22/23 (95.7%)**
-
-| 발화문 | 매칭 intent | 유사도 | 정답 |
-|--------|-----------|-------|------|
-| 너무 추워 | heating_on | 1.000 | O |
-| 집이 너무 춥다 | heating_on | 0.836 | O |
-| 얼어 죽겠다 | heating_on | 1.000 | O |
-| 너무 더워 | ac_on | 1.000 | O |
-| 어두워 | light_on | 1.000 | O |
-| 안 보여 | light_on | 1.000 | O |
-| 공기가 탁해 | ventilation_on | 1.000 | O |
-| 답답해 | ventilation_on | 1.000 | O |
-| 보일러 좀 켜줄래 | heating_on | 0.941 | O |
-| 에어컨 틀어줘 | ac_on | 0.953 | O |
-| 문 열어 | door_open | 0.928 | O |
-| 지금 몇 시야 | time_query | 1.000 | O |
-
-유일한 오류: "거실이 좀 어두침침한데" → ventilation_on (X, light_on이어야)
-
-### 르엘 시나리오 테스트 (219개)
-
-| 유사도 범위 | 개수 | 비율 |
-|-----------|------|------|
-| ≥ 0.7 (높은 확신) | 95개 | 43% |
-| 0.5 ~ 0.7 (보통) | 45개 | 21% |
-| < 0.5 (낮은 확신) | 79개 | 36% |
-
-**낮은 확신 원인:** 대표 문장 DB에 해당 도메인(전기차, 차량등록, 환경설정 등)이 없음.
-대표 문장 추가하면 정확도 올라감.
-
----
-
-## vs KoELECTRA (기존 방식)
-
-| | KoELECTRA | **ko-sbert-sts** |
-|---|---|---|
-| 방식 | Intent Classification | **Sentence Embedding + Cosine Similarity** |
-| 간접 표현 | X (안 됨) | **O (95.7%)** |
-| 새 intent 추가 | 재학습 필요 | **대표 문장만 추가** |
-| 모델 크기 | 36MB (FP32) | 106MB (INT8) |
-| 추론 | 80ms CPU | **12ms CPU** |
-| 한국어 | 최적 | 최적 |
-
----
-
-## 작동 원리
-
-### 1. Intent별 대표 문장 정의
-
-```python
-intents = {
-    "heating_on": ["난방 켜줘", "보일러 켜줘", "너무 추워", "춥다", "얼어 죽겠다"],
-    "light_on": ["불 켜줘", "조명 켜줘", "어두워", "안 보여", "밝게 해줘"],
-    "ac_on": ["에어컨 켜줘", "너무 더워", "시원하게 해줘"],
-    ...
-}
-```
-
-### 2. 대표 문장 embedding 사전 계산 (서비스 시작 시 1회)
-
-```python
-ref_embeddings = {}
-for intent, sentences in intents.items():
-    ref_embeddings[intent] = [encode(s) for s in sentences]
-```
-
-### 3. 사용자 발화 → intent 매칭 (실시간)
-
-```python
-query_emb = encode("너무 추워")  # 12ms
-for intent, embs in ref_embeddings.items():
-    similarity = max(cosine_sim(query_emb, e) for e in embs)
-# → heating_on (1.000)
-```
-
----
-
-## 현재 정의된 Intent (39개)
-
-| 도메인 | Intent 수 | 예시 |
-|--------|----------|------|
-| 조명 | 6 | light_on, light_off, light_dim, light_query, light_schedule |
-| 난방 | 7 | heating_on, heating_off, heating_up, heating_down, heating_query, heating_schedule, heating_away |
-| 에어컨 | 8 | ac_on, ac_off, ac_temp, ac_mode, ac_wind, ac_query, ac_schedule, ac_exception |
-| 환기 | 3 | ventilation_on, ventilation_off, ventilation_query |
-| 보안/도어 | 3 | door_open, gas_off, security_mode |
-| 커튼 | 1 | curtain_control |
-| 정보 | 7 | weather_query, dust_query, news_query, traffic_query, energy_query, temp_query, time_query |
-| 시스템 | 3 | manual_query, home_status_query, notification_query |
-| 기타 | 1 | elevator_control, alarm_setting |
-
----
-
-## T527 배포 계획
-
-### NPU 배포 (권장)
-```
-STT 추론 → NPU에서 STT NB 내림 → NLU NB 올림 → NPU 추론 → 결과
-```
-- STT(102MB)와 NLU를 시간차로 NPU 공유
-- NLU NB 크기: ~50-60MB (INT8 양자화 후 추정)
-- Acuity import 시도 필요
-
-### CPU 배포 (대안)
-```
-STT (NPU) → NLU (ONNX Runtime CPU) → 12ms
-```
-- ONNX INT8 106MB → CPU에서 12ms
-- NPU 변환 실패 시 이 방식
-
----
-
-## 파일 구조
+## 아키텍처
 
 ```
-t527-nlu/
-├── README.md
-├── .gitignore              # *.onnx 제외
-├── tokenizer/              # ko-sbert-sts tokenizer
-│   ├── vocab.txt
-│   ├── tokenizer.json
-│   ├── tokenizer_config.json
-│   └── special_tokens_map.json
-├── ko_sbert_sts.onnx       # FP32 422MB (gitignore)
-└── ko_sbert_sts_int8.onnx  # INT8 106MB (gitignore)
+사용자 발화 "거실 에어컨 23도로 맞춰줘"
+    ↓ STT (Citrinet)
+"거실 에어컨 23도로 맞춰줘"
+    ↓ preprocess.py (STT 교정 120개 + 한글숫자 변환)
+"거실 에어컨 23도로 맞춰줘" (정제)
+    ↓ 토크나이저 (ko-sbert-sts BertTokenizer, max_len=32)
+input_ids [1, 32]
+    ↓ Ensemble ONNX v28+v46 (CNN 5-Head)
+5개 logits (fn/exec/dir/param/judge)
+    ↓ argmax + param_type 규칙 보정 + confidence fallback
+preds = {fn, exec, dir, param, judge}
+    ↓ Rule slots (room 정규식, value 정규식)
+    ↓ DST (10초 timeout, 멀티턴)
+resolved = {fn, exec, dir, room, value, judge}
+    ↓ generate_response (템플릿)
+"네, 거실 에어컨 온도를 23도로 설정합니다."
+    ↓ TTS
 ```
 
----
+## 5-Head 구조
 
-## 다음 할 일
+| Head | 클래스 수 | 예시 |
+|------|:---:|------|
+| **fn** | 20 | light_control, heat_control, ac_control, ..., unknown |
+| **exec_type** | 5 | query_then_respond, control_then_confirm, query_then_judge, direct_respond, clarify |
+| **param_direction** | 9 | none, up, down, set, on, off, open, close, stop |
+| **param_type** | 5 | none, temperature, brightness, mode, speed |
+| **judge** | 5 | none, outdoor_activity, clothing, air_quality, cost_trend |
 
-1. [ ] 219개 시나리오 전체에 대표 문장 확장 (특히 전기차, 차량등록, 환경설정)
-2. [ ] T527 디바이스 ONNX Runtime 추론 속도 측정
-3. [ ] Acuity import → NPU NB 변환 시도
-4. [ ] Slot 추출 (공간명, 온도, 기기 등) — Regex 기반
-5. [ ] t527_vad_service에 NLU 모듈 통합
+## 모델 라인업
 
----
+| 용도 | 모델 | 파일 | TS combo | KE fn |
+|------|------|------|:---:|:---:|
+| **배포 (권장)** | v28+v46 Ensemble | `nlu_v28_v46_ensemble.onnx` | **94.3%** | **97.8%** |
+| GT 패턴 전용 | v28 | `nlu_v28_final.onnx` | 96.3% | 75.5% |
+| 일반화 최고 | v46 | `nlu_v46_generalization.onnx` | 93.3% | 97.8% |
+| 균형 (pseudo-label) | v34 | `nlu_v34_production.onnx` | 93.3% | 96.8% |
 
-## NPU 변환 결과 (실패)
+## 아키텍처 세부
 
-| 항목 | 값 |
-|------|-----|
-| NB 크기 | 87MB |
-| NPU 추론 | 89ms |
-| **NPU vs CPU cosine similarity** | **0.33 (심각한 왜곡)** |
+```
+ko-sbert 768d frozen → Linear 768→256 → CNN 4L (k=3,5,7,3 residual) → Global Mean Pool
+  → fn_head (20: 19 known + unknown)
+  → exec_head (5)
+  → direction_head (9)
+  → param_head (5) + 규칙 보정
+  → judge_head (5)
+  + Rule: room (키워드), value (정규식), 미지원 액션, param_type 보정
+  + STT 전처리: 120개 교정 사전 + 한글숫자 변환
+  + Confidence fallback: conf<0.5 → unknown
+  + DST: 멀티턴 (scripts/dialogue_state_tracker.py)
+```
 
-**NPU uint8 양자화가 embedding 정밀도를 파괴.** Pooler output(Tanh → [-1,1])이 uint8(256단계)로는 정밀도 부족.
+- 파라미터: **26.1M 전체, 1.5M trainable** (임베딩 frozen)
+- 앙상블: **52.3M 전체 (v28+v46 내장)**
 
-wav2vec2 Transformer 양자화 실패와 동일 원인: **Transformer self-attention의 양자화 에러 누적.**
+## 빠른 시작
 
-### 결론
+```bash
+# 대화형 테스트
+python3 scripts/sap_inference_v2.py
 
-- **NPU 불가** — embedding 왜곡으로 cosine similarity 무의미
-- **CPU ONNX Runtime 사용** — INT8 106MB, WSL 12ms, T527 예상 50-100ms
-- Conformer STT가 NPU에서 되는 이유: CNN이 Attention 양자화 에러를 보정 (Macaron 구조)
-- 순수 Transformer(BERT)는 T527 NPU에서 양자화 실패
+# 단일 발화 테스트
+python3 scripts/sap_inference_v2.py "거실 에어컨 23도로 맞춰줘"
 
----
+# 앙상블 ONNX 검증
+python3 scripts/verify_ensemble_onnx.py
 
-## NPU 양자화 전수 조사 결과
+# Test Suite 평가 (3,043개)
+python3 scripts/run_test_suite.py            # v28
+python3 scripts/run_test_suite.py v46        # v46
 
-MiniLM-L6 (6 layer, 22.7M params) 기준. pooler 포함/제거, 양자화 방식 전부 시도.
+# 오류 자동 분석
+python3 scripts/error_analysis.py ensemble
 
-| # | 모델 | 양자화 | NB | NPU 추론 | cos_sim |
-|---|------|--------|-----|---------|---------|
-| 1 | ko-sbert (12L) | uint8 AA KL | 87MB | 89ms | 0.33 |
-| 2 | MiniLM-L6 pooler (6L) | uint8 AA KL | 21MB | 22ms | -0.06 |
-| 3 | multi-MiniLM-L12 (12L) | uint8 AA KL | 110MB | 44ms | 0.07 |
-| 4 | MiniLM-L6 pooler (6L) | **INT16 DFP** | 40MB | 41ms | **-0.07** |
-| 5 | MiniLM-L6 pooler (6L) | BF16 | - | - | 변환 실패 |
-| 6 | MiniLM-L6 meanpool (6L) | uint8 AA KL | 21MB | 22ms | NaN (출력 0) |
-| 7 | MiniLM-L6 meanpool (6L) | int8 AA KL | 21MB | 22ms | 0.04 |
-| 8 | MiniLM-L6 meanpool (6L) | uint8 AA MA | 21MB | 22ms | NaN |
-| 9 | MiniLM-L6 meanpool (6L) | INT16 DFP | 40MB | 41ms | NaN |
+# DST 시뮬레이션
+python3 scripts/dialogue_state_tracker.py
+```
 
-**9가지 조합 전부 실패.** cos_sim 최대 0.33 (의미 없음).
+## 핵심 파일
 
-### 시도한 변수
+### 모델 & ONNX
+- `checkpoints/nlu_v28_v46_ensemble.onnx` — **배포 모델 (권장)**
+- `checkpoints/cnn_multihead_v28.pt`, `cnn_multihead_v46.pt` — PyTorch 원본
+- `checkpoints/nlu_v46_generalization.onnx`, `nlu_v28_final.onnx` — 단일 ONNX
 
-- **모델**: ko-sbert 12L, MiniLM-L6 6L, multi-MiniLM 12L
-- **Layer 수**: 6, 12
-- **Pooler**: 포함(Tanh), 제거(mean pooling)
-- **양자화 방식**: asymmetric_affine, dynamic_fixed_point
-- **비트**: uint8, int8, int16, bf16
-- **알고리즘**: kl_divergence, moving_average
+### 스크립트
+- `scripts/sap_inference_v2.py` — end-to-end 추론 파이프라인
+- `scripts/preprocess.py` — STT 전처리 (120개 교정)
+- `scripts/dialogue_state_tracker.py` — DST (room/device/confirm follow-up)
+- `scripts/run_test_suite.py` — Test Suite 평가
+- `scripts/error_analysis.py` — 오류 자동 분류 + CSV
+- `scripts/export_ensemble_onnx.py` — Ensemble ONNX 내보내기
+- `scripts/verify_ensemble_onnx.py` — ONNX 검증 & latency 측정
 
-### 결론
+### 데이터
+- `data/test_suite.json` — 3,043개 테스트 (라벨 오류 11건 수정됨)
+- `data/test_suite_v67.json` — 확장 3,109개
+- `data/koelectra_converted_val.json` — 외부 평가 1,536개
 
-**T527 Vivante NPU에서 BERT/Transformer 계열은 어떤 양자화로도 동작하지 않음.**
+### 문서
+- `docs/MODEL_CARD.md` — 공식 모델 카드
+- `docs/DEPLOYMENT_GUIDE.md` — 배포/통합 가이드
+- `docs/KNOWN_FAILURES.md` — 실패 패턴 분석
+- `docs/CHANGELOG.md` — 버전별 변경 (v28-v68, 29개 버전)
+- `docs/EXPERIMENT_SUMMARY.md` — 전체 실험 요약 (v1-v68)
+- `docs/VERSION_LOG.md` — 실험별 상세
+- `docs/MODEL_LIMITATIONS.md` — 구조적 한계 9가지
+- `docs/HEAD_CLASSES.md` — 5-head 클래스 정의
 
-원인: Self-Attention의 QKV matmul → softmax → weighted sum 과정에서 양자화 에러가 누적.
-Layer 수를 줄여도(12→6), pooler를 제거해도, INT16으로 올려도 해결 안 됨.
+## 실험 히스토리 요약
 
-Conformer STT가 되는 이유: Conv1D가 Attention 에러를 보정하는 "방파제" 역할.
-순수 Transformer에는 이 보정 메커니즘이 없음.
+68개 버전 (2026-04-13 ~ 04-21), 주요 마일스톤:
 
-### 확정 방식
+- **v28** (04-19): GT 기반 Test Suite 3K, combo 96.3%
+- **v34** (04-19): Pseudo-labeling → KE 75.5%→96.8% (+21.3%p) 핵심 기여
+- **v46** (04-20): Mixup → KE 97.8% 단일 모델 최적
+- **v54-v63** (04-21): 10개 추가 실험 모두 v46 미달 → ceiling 확인
+- **v66** (04-21): **Ensemble ONNX 배포** — TS 94.3%, KE 97.8%, 0.48ms
+- **v67** (04-21): 통합 파이프라인 + STT 내성 100%
+- **v68** (04-21): 학습 라벨 수정 실험
 
-**CPU ONNX Runtime** — ko-sbert-sts INT8 106MB, 12ms/query (WSL), T527 예상 50-100ms
+자세한 내역: [`docs/EXPERIMENT_SUMMARY.md`](docs/EXPERIMENT_SUMMARY.md)
+
+## 이전 방식 (폐기)
+
+> 초기에는 **문장 임베딩 + cosine similarity** 방식 사용.
+> KoELECTRA 분류(94개 intent)도 시도했으나 조합 폭발 + 간접 표현 문제.
+> 현재는 **CNN 5-head 멀티태스크 분류**로 전환 (v1부터).
+
+## 라이센스
+
+내부 사용 (HDC Labs)
+
+## 개발팀
+
+HDC Labs T527 NLU Team
