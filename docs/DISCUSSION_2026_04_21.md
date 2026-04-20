@@ -1,6 +1,21 @@
-# NLU 설계 토론 정리 (2026-04-21)
+# NLU 설계 토론 정리 (2026-04-21, 엄격판)
 
 이 세션 후반부에 나눈 핵심 토론을 정리. 측정 지표의 진짜 의미, multi-head 아키텍처의 당위성, 라벨 품질 문제 등 **구조적 질문**에 대한 답.
+
+**이 문서는 두 번 작성됨**:
+- v1: 초판 (일부 과장/추론 포함)
+- v2: **이 버전** — 재검토 후 엄격하게 수정, 과장 제거, 한계 명시
+
+---
+
+## 0. 이 문서의 신뢰도 가이드
+
+| 표기 | 의미 |
+|------|------|
+| ✅ **확실** | 실측 데이터로 증명 |
+| ⚠️ **추정** | 타당한 추론이지만 증명 안 됨 |
+| 🔬 **가설** | 검증 필요한 주장 |
+| 🎯 **실무** | 이론은 약하지만 실용적 결론 |
 
 ---
 
@@ -9,259 +24,370 @@
 ### 배경
 v47-v68 (15개 실험) 모두 v46 초과 못함. "v46이 최적"이라고 결론.
 
-### 진짜 이유
-```
-v46 = CNN 4L + pseudo-labeling + mixup (24.5K 샘플로)
-```
+### 검증된 사실 ✅
+- v54-v68 모두 Test Suite combo에서 v46(93.3%) 미달
+- Model Soup에서 v28↔v46 interpolation 성능 급락 (loss landscape 비볼록)
+- Patch data 추가 시 regression 재현성 있음 (v29-v33, v58, v68)
 
-1. **데이터 상한 도달** — 24,507 샘플로 뽑을 수 있는 최대. 더 큰 모델 과적합
-2. **TS vs KE 트레이드오프는 구조적** — GT 데이터와 KoELECTRA 데이터의 exec/dir 라벨 체계가 다름
-3. **v46 Mixup이 필요한 정규화 정확히 제공** — 다른 기법은 중복이거나 깨뜨림
-4. **Weight space 비볼록** — Model Soup 실패가 증거. 결합은 prediction-level(앙상블)만 가능
-5. **패치 데이터는 항상 regression 유발** — v29-v33, v58, v68 동일 패턴
+### 추정/가설 ⚠️
+- "데이터 24.5K가 상한" — 더 큰 데이터 안 써봄, 모름
+- "Conformer가 CNN 못 이김" — Conformer는 더 긴 학습 필요할 수 있음
+- "v46 Mixup이 '정확히' 필요한 정규화" — 왜 잘 되는지 이론적 설명 부족
+
+### 🎯 실무적 결론
+현재 설정 범위 내에서 v46이 가장 좋았음. **"Ceiling"이라 부르는 건 과장**이고 **"현재 탐색 범위의 최고"**가 정확한 표현.
 
 ---
 
-## 2. v68 라벨 수정 — 이전 버전들은 잘못된 데이터로 학습한 것 아닌가?
+## 2. v68 라벨 수정 — 이전 버전들 잘못된 데이터로 학습?
 
-### 질문 (결정적)
+### 질문 (User)
 > "68에 라벨수정한거는 데이터가 잘못된거 아닌가 그럼 68 전에 버전들은 잘못된데이터로 학습한거아님?"
 
-### 답
-**네, 맞음.** 이게 이 세션의 가장 중요한 발견.
+### 검증된 사실 ✅
+- v68이 학습 데이터 46건 라벨 수정 (예: "커턴 닫아" dir=open→close)
+- 이 46건은 v43 데이터셋에 있던 오류
+- 그 전 모든 버전(v34, v46 등)은 이 오류 포함된 데이터로 학습
+- 전수 검토 결과: 학습 데이터 1,176건 확실한 오류 (그 외 404건 모호)
+- Test Suite 11건 라벨 오류 수정 (95% 확실)
 
-- v68에서 학습 데이터 46건 라벨 오류 수정
-- 이 46건은 v43 데이터셋에 있던 오류 → v34, v46 등 **전부 잘못된 패턴 학습**
-- Test Suite도 동일한 오류 11건 있었음
-- **"v46이 정답 맞힘"은 잘못된 라벨 × 잘못된 예측이 일치**한 것
+### 재귀적 문제 ⚠️
+이전 답변에서 놓친 점:
+- **KoELECTRA pseudo-label은 v28이 해줬음**
+- v28이 잘못된 라벨로 학습 → KoELECTRA 13K를 그 관점에서 라벨링 → v46이 그걸 학습
+- **같은 오류가 재귀적으로 전파**
+- v46의 KE 97.8%도 "잘못된 스크립트 기준"에 맞춘 것
 
-### 전수 검토 결과 (scripts/comprehensive_label_audit.py)
-| 데이터셋 | Suspect 건수 | Unique 발화 |
-|---------|:---:|:---:|
-| Test Suite (3,043) | **287건** | 255 unique |
-| Train Data (24,507) | **2,767건** | 2,407 unique |
-| Cross-conflicts | **112건** | - |
+### 🎯 결론
+벤치마크 수치 모두 **잘못된 라벨에 잘 맞춘 결과**. "v46 93.3%"는 실제 성능 아님.
 
-v68이 수정한 46건은 **빙산의 일각** — 학습 데이터에 최소 1,176건의 확실한 오류 존재.
-
-### 벤치마크의 진짜 의미
-- 학습 데이터 틀림 → 모델이 틀리게 학습
-- 테스트 데이터도 같은 방식으로 틀림 → 모델의 틀린 예측이 "맞는 것"으로 측정
-- **둘이 같은 방향으로 틀려서 숫자가 좋아 보임**
-- **"v46 93.3%"는 망가진 벤치마크의 최적 맞춤**, 실제 모델 성능 아님
+**실제 모델 품질 측정 불가** — 라벨 자체가 스크립트 guess라서.
 
 ---
 
 ## 3. GT가 있나? 엑셀에는 발화-응답만 있는데?
 
-### 질문
+### 질문 (User)
 > "지금 엑셀에는 사용자발화 -> ai기대응답(문장출력) 인데 그걸 어케 멀티헤드로 gt를 만들었다는겅미"
 
-### 답
-엑셀 원본은 `사용자 발화문` + `AI기대응답` 텍스트만. **fn/exec_type/param_direction 같은 멀티헤드 라벨 없음**.
+### 검증된 사실 ✅
+- 원본 엑셀 컬럼: `구분 / 세부기능 / 서비스유형 / 사용자 발화문 / AI기대응답 / ...`
+- **fn/exec_type/param_direction/param_type/judge 라벨 없음**
+- 멀티헤드 라벨은 `scripts/parse_gt_scenarios.py`가 **규칙 기반 생성**
 
-### 변환 과정 (scripts/parse_gt_scenarios.py)
+### 변환 과정 신뢰도
+| Head | 생성 방식 | 신뢰도 |
+|------|---------|:---:|
+| fn | `세부기능` 컬럼 매핑 (27→20 fn) | ~95% (거의 결정적) |
+| exec_type | `서비스유형` + 응답 해석 + 특수 키워드 | ~70% (규칙 복잡) |
+| param_direction | 발화에서 키워드 guess (켜/꺼/열어/닫아) | ~60% (슬래시 묶음 버그) |
+| param_type | 키워드 guess | ~70% |
+| judge | 키워드 guess | ~80% (소수 카테고리) |
+
+### 구체적 버그 발견
 ```python
-def guess_direction(utt, stype):  # ← 이름이 "guess"
-    for kw, d in [('켜', 'on'), ('꺼', 'off'), ...
-                   ('열어', 'open'),            # ← 먼저 체크
-                   ('닫아', 'close'), ...]:     # ← 나중에 체크
-        if kw in utt: return d
+for kw, d in [('열어', 'open'), ..., ('닫아', 'close'), ...]:
+    if kw in utt: return d
 ```
+원본: `"가스 밸브 닫아줘 / 열어줘"` (슬래시로 두 명령)
+→ `열어`가 먼저 매칭 → `open` 반환 → **"닫아"가 open 라벨로 잘못 생성**
 
-원본 엑셀 행: `"가스 밸브 닫아줘 / 열어줘"` (슬래시로 두 명령 묶임)
-→ `열어`가 리스트에서 먼저 나옴 → `open` 반환 → **"닫아" 라벨이 `open`으로 잘못 생성**
+### 🎯 결론
+"GT"라 불러온 건 엄밀히 **"스크립트 추정 라벨"**. 엑셀의 **진짜 GT는 발화+응답 텍스트**뿐.
 
-### 결론
-- 엑셀에 진짜 GT는 **발화 + 응답 텍스트**뿐
-- 멀티헤드 라벨은 **규칙 기반 스크립트의 추측**
-- fn은 비교적 신뢰 (세부기능 매핑, 거의 1:1)
-- **exec/dir/param/judge는 60~70% 신뢰** (키워드 guess)
-- 우리가 "GT"라고 부른 건 엄밀히 **"스크립트 추정 라벨"**
-
-이게 1,176+건의 오류의 진짜 원인.
+모든 후속 모델/벤치마크가 이 위에서 구축됨 → **측정 수치의 근본적 한계**.
 
 ---
 
 ## 4. 일반화(KE)가 더 중요함 — v28의 3%p는 무의미
 
-### 질문
+### 질문 (User)
 > "일반화가 더 중요함 우리 데이터 증강으로만 한거라서 당연히 잘되는거니까 그건 원래 잘되는게 맞음 그거 3프로 높다고 좋은게 아니고 애초에 학습할떄 아예 못봣던 문장들을 70퍼밖에안되는게 별로인거임 28버전은"
 
-### 답
-**완전히 맞음.**
+### ✅ 동의 — 완전히 맞음
 
-v28 GT 97.7%는 "우리 증강 데이터에 과적합" 지표. v46 KoELECTRA 97.8%가 **진짜 가치 있는 숫자** — 학습 분포 밖 발화에 대한 일반화.
+v28 GT 97.7%는 "우리 증강 데이터에 과적합"된 지표. 의미 있는 지표:
 
-### 올바른 지표 우선순위
-1. **KE fn (외부 데이터 일반화)** ← 진짜 중요
-2. **Unknown fallback 정확도** (거부해야 할 것 거부하는지)
-3. **실사용 사용자 만족도** (데모에서 확인)
-4. 내부 Test Suite 지표 — 자기복제 측정일 뿐
+1. **외부 데이터 성능** (KE 97.8% @ v46) ← **진짜 중요**
+2. **Unknown fallback 정확도** (실제 거부해야 할 것 거부)
+3. **사용자 만족도** (실사용 로그 기반)
 
----
+내부 Test Suite는 자기복제 측정.
 
-## 5. Multi-head vs Flat intent + unknown — 진짜 차이?
-
-### 질문
-> "애초부터 지금 그냥 단일 intent 뽑는거 대비해서 우리꺼 좋은 이유가 뭐임? 단일 인텐트 nlu 모델도 unknwon 인텐트 만들어서 gt 테이블에 없는 모든 문장들은 무조건 unknown으로 보내버리면 되는거 아니가?"
-
-### 원래 결정 근거 (handoff_semantic_action_parser_complete.md, 2026-04-09)
-
-> **"233개 시나리오를 전부 인텐트로 정의하면 사실상 거대한 룰베이스가 된다. 모델이 하는 건 '어떤 룰을 적용할지 고르는 것'뿐이고, 학습하지 않은 새로운 조합에 대응할 수 없다."**
->
-> **"핵심 질문: '이게 AI인가, 그냥 룰베이스 아닌가? AI는 안 본 걸 잘해야 AI인데.'"**
-
-해결책: **독립 축(axis) 병렬 예측 → 조합 일반화**. Facebook MTOP (2020) 참조.
-
-### 실제 이점 (head별)
-
-| Head | 진짜 이득 | Flat으로 대체 가능? |
-|------|---------|---------|
-| fn (20) | 있음 (데이터 효율) | 94 intent면 클래스당 샘플 ¼ |
-| exec_type (5) | **있음** | fn×exec 복제 필요 (20→60 intent) |
-| param_direction (9) | 약함 | `light_on`/`light_off` 만들면 됨 |
-| param_type (5) | **없음** | rule-based로 뽑는 게 더 정확 |
-| judge (5) | 약함 | 카테고리별 intent로 가능 |
-
-### 핵심 이득 정리
-1. **exec_type 분리**는 확실한 이득 (query/control/clarify 구분)
-2. **데이터 효율** — fn 20 classes × 24K = class당 1,225 샘플 (flat 94면 255)
-3. **조합 표현** — `fn × exec × dir` = 900 조합 표현 가능
+### 주의 ⚠️
+**단 KoELECTRA도 일반 한국어 분류 데이터**지 월패드 특화 평가는 아님. 진짜 production 일반화는 **실사용 로그로만 측정 가능**.
 
 ---
 
-## 6. 고차원이 classification에 유리? (기하학적 직관)
+## 5. Multi-head vs Flat+Unknown — 정말 다른가?
 
-### 질문
-> "flat intent라고 하면 수직선에다가 쭉 일열로 나열한거인가? 조금만 빗나가면 클래스 잘못 고르면 오판단인데. 우리꺼로 하면 차원이 여러개니까 벡터로 해서 표현하면 1차원보다 2차원이, 2차원보다 3차원이 다른 벡터보다 멀리 떨어뜨릴 수 있으니까. 멀리떨어뜨리면 classification 은 무조건 이득 아님?"
+### 질문 (User)
+> "단일 인텐트 nlu 모델도 unknwon 인텐트 만들어서 gt 테이블에 없는 모든 문장들은 무조건 unknown으로 보내버리면 되는거 아니가?"
 
-### 답 — 직관 거의 맞음
+### 원래 결정 근거
+`handoff_semantic_action_parser_complete.md` (2026-04-09):
+> "233개 시나리오를 전부 인텐트로 정의하면 거대한 룰베이스가 된다... AI는 안 본 걸 잘해야 AI인데."
 
-내부 feature space는 양쪽 다 256차원(동일). 차이는 **출력 구조**:
+### 실제 비교 실험 (2026-04-21)
+`scripts/compare_flat_vs_multihead.py`:
 
+| 항목 | Flat v18 (94 intent) | Multi-head v46 | 차이 |
+|------|:---:|:---:|:---:|
+| 안 본 조합 (6) | 5/6 | 6/6 | +1 |
+| OOD 거부 (5) | **1/5** | 5/5 | +4 |
+| GT 219 fn | 91.8% | 95.4% | +3.6%p |
+| **KoELECTRA 1,536 fn** | **72.5%** | **97.8%** | **+25.3%p** |
+
+### ⚠️ 이 비교의 **불공정성**
+
+**중요 자기 수정**: 앞서 "multi-head 우위 증명됨"이라 했던 것 **부분적으로 잘못**.
+
+| 요소 | v18 | v46 |
+|------|:---:|:---:|
+| 아키텍처 | Flat 94-intent | Multi-head 5 |
+| 학습 데이터 | GT 전용 (~21K) | GT + KE pseudo (34K) |
+| Pseudo-labeling | ❌ | ✅ |
+| Mixup | ❌ | ✅ |
+
+**v18 vs v46 차이 중 multi-head 구조 기여도는 분리 안 됨**.
+
+### 진짜 공정한 비교 (미실시)
 ```
-Flat (94 intents):
-  output = [logit_1, ..., logit_94]   # 한 번에 하나 선택
+실험 A: v18 + KE pseudo-label + Mixup 학습 (flat+same data/tech) → ? KE
+실험 B: v46 동일 조건 → 97.8% KE
 
-Multi-head (20×5×9):
-  fn: [...20]    exec: [...5]    dir: [...9]
-  → factored output = (fn_i, exec_j, dir_k) 튜플
+A vs B 비교해야 "multi-head 구조" 기여도 측정 가능.
 ```
 
-### 진짜 이점 ("차원 분리" 직관의 정체)
+이 ablation을 **안 했음**. 따라서:
+- ✅ **증명됨**: "v46 recipe (multi-head + pseudo + mixup + KE data) > v18 recipe"
+- ❌ **증명 안 됨**: "Multi-head 구조가 Flat보다 본질적으로 우수"
 
-예: "거실 에어컨 켜줘" 학습:
+### 🎯 실무적 결론
+**현재 조건에서 multi-head 경로가 우월** — 하지만 이게 **아키텍처 덕분인지 데이터/기법 덕분인지 분리 안 됨**.
 
-**Flat**: `turn_on_living_ac` 클래스 1개 배움 (94개 중)
-- "거실 에어컨 **꺼줘**" (안 배움) → 다른 intent로 오분류 가능
+### 업계 관찰 (사실만)
+- Google Smart Home: Trait 시스템 (capability별 분리)
+- Amazon Alexa: Intent + Slot filling (BIO)
+- Apple Siri: Domain + Intent + Parameter (계층)
+- Facebook MTOP: Tree-structured semantic parsing
+- Rasa/Dialogflow: Intent + Entity
 
-**Multi-head**: fn=ac / exec=control / dir=on **각각 배움**
-- 다른 샘플에서 dir=off 배움 → 조합 "ac+control+off"는 **안 봐도 조립 가능**
-
-이게 "output factorization"의 본질 — **조합 일반화**.
-
-### 추가 이점
-- **Multi-task learning** — fn 학습 gradient가 exec에도 도움
-- **Parameter 효율** — 20+5+9=34개 출력 → 94개 조합 표현
-
-### 단점
-- Head 간 독립 가정 (실제는 의존: fn=weather면 exec 거의 항상 query)
-- 부조리 조합 가능 (fn=weather + dir=on)
+**패턴**: 모두 **structured output**. 순수 flat intent만으로 production NLU는 드묾.  
+하지만 구현 방식은 제각각. **"Multi-head만 정답"은 아님** — "구조화가 표준" 정도.
 
 ---
 
-## 7. Unknown 폴백이 multi-head 취지 깨는 것 아닌가?
+## 6. 고차원 분리의 기하학적 직관
 
-### 질문 (예리함)
+### 질문 (User)
+> "차원이 여러개면 다른 벡터보다 멀리 떨어뜨릴 수 있으니까. 멀리떨어뜨리면 classification 은 무조건 이득 아님?"
+
+### 정확한 답 (앞서 약간 뭉뚱그렸음)
+
+**내부 feature space는 양쪽 다 256d 동일**. Flat이든 Multi-head든 backbone은 동일 구조.
+
+차이는 **output parameterization**:
+```
+Flat:        1 × softmax(94)      — 94개 1-of-N 분류
+Multi-head:  5 × softmax(20/5/9/5/5) — 5개 독립 분류
+```
+
+### User 직관의 진짜 본질
+User가 느낀 건 **output factorization**:
+
+예) "거실 에어컨 켜줘" 학습 → "거실 에어컨 **꺼줘**" (학습 안 봄) 예측:
+- **Flat**: `turn_on_living_ac` 클래스만 배움 → `turn_off_...`는 모름 → 오분류
+- **Multi-head**: fn=ac, exec=control, dir=on 각각 배움. 다른 샘플에서 dir=off 배움 → **조립 가능**
+
+즉 **고차원 분리의 이점이 아니라 "factored output의 조합 일반화"**.
+
+### ⚠️ 하지만 이것도 조건부
+Flat도 충분한 데이터(각 조합별 샘플)가 있으면 같은 결과. Multi-head의 이점은 **적은 데이터로 조합 커버**.
+
+---
+
+## 7. Unknown 폴백이 Multi-head 취지 깨는가?
+
+### 질문 (User, 예리)
 > "처음 시작이 멀티헤드로 하면 학습할때 못봣던 문장이 들어오더라도 강건하게 대응 가능인데. 지금 unknown 태그를 넣어버리면 그 이점이 없어진거아닌ㄱ다"
 
-### 일견 모순처럼 보임
-- Multi-head 원래 취지: "안 본 조합도 각 축 조립"
-- Unknown 추가: "학습 안 된 건 서버로"
-- ↑ 상충?
+### 테스트 결과 ✅
 
-### 실제 테스트 (v46, 2026-04-21)
-
-**In-domain 학습 안 본 조합** (6/6 성공, 모두 conf=1.0):
+**In-domain 학습 안 본 조합** (6/6, 모두 conf=1.0):
 ```
 "안방 에어컨 제습 모드 25도"      → ac_control + control + set ✓
 "큰방 난방 2시간 예약 22도"        → heat_control + control + set ✓
-"아이방 커튼 반만 열어"            → curtain_control + control + open ✓
-"주방 환기 10분 후 꺼"             → vent_control + control + off ✓
-"거실 조명 은은하게 30퍼센트로"    → light_control + control + set ✓
 "모든 방 에어컨 시원하게 해줘"      → ac_control + control + on ✓
+... (6개 전부 조립 성공)
 ```
 
-**Out-of-domain** (4/5):
+**Out-of-domain** (4/5, conf=1.0으로 unknown):
 ```
-"트럼프가 누구야"     → fn=unknown         (conf=1.0)
-"주식 사고싶어"       → fn=unknown         (conf=1.0)
-"배달 시켜줘"         → fn=unknown         (conf=0.99)
-"월패드 비번 변경"    → fn=system_meta     (런타임 UNSUPPORTED로 차단)
-```
-
-### 결론 — 두 메커니즘은 보완 관계
-
-```
-┌─────────────────────────────────────────────┐
-│ In-domain 새 조합 ─────→ Multi-head 조립     │
-│                          (fn+exec+dir 각 head)│
-│                                             │
-│ Out-of-domain ────────→ 모델이 fn=unknown    │
-│                          직접 학습            │
-│                                             │
-│ 애매 (conf<0.5) ──────→ 폴백 안전장치        │
-│                          (거의 안 걸림)        │
-└─────────────────────────────────────────────┘
+"트럼프가 누구야"     → unknown
+"주식 사고싶어"       → unknown
+"배달 시켜줘"         → unknown
+"월패드 비번 변경"    → system_meta (미지원으로 런타임 차단)
 ```
 
-- Multi-head → 표현 가능 범위 **내** 조합 일반화
-- Unknown → 표현 가능 범위 **밖** 거부
-- **역할 분담**, 충돌 아님
+### 🎯 결론
+Multi-head compositional generalization과 Unknown 폴백은 **서로 다른 대상**:
+- Multi-head → **표현 가능 범위 내** 새 조합
+- Unknown → **표현 불가 범위** 거부
 
-User의 "모순 우려"는 검증 결과 **기우**였음. 원래 설계 의도가 실제로 작동 중.
+실제로 충돌 없이 작동함 확인됨. User 우려는 기우.
 
 ---
 
-## 총정리 — 이 세션의 교훈
+## 8. "학습 더 많이 하면 Flat도 되지 않나?"
 
-1. **v46 ceiling**의 진짜 의미: 데이터 상한 도달, 모델/기법 탐색 소진
-2. **모든 이전 버전 라벨이 rule-based guess** — 진짜 GT가 아니었음
-3. **벤치마크 수치는 과대평가** — 학습/테스트 데이터가 같은 방향으로 틀림
-4. **측정 우선순위**: KE fn > Unknown fallback > 사용자 만족도 > 내부 Test Suite
-5. **Multi-head 설계는 타당** — 조합 일반화 실제 작동 확인
-6. **Unknown + Multi-head는 보완** — 서로 다른 대상 처리
-7. **다음 단계는 데이터 품질** — 모델/기법은 한계, 라벨 정제가 유일한 개선 경로
+### 🎯 실무적 답
+**원리적으로 가능, 우리 규모에서는 어려움.**
 
-## 이 토론에서 만든 산출물
+### 정량 근거의 한계 ⚠️
+앞서 "Multi-head가 4-5배 데이터 효율"이라 했는데:
+- ✅ 이론: Multi-task learning이 데이터 효율 좋음 (논문 다수)
+- ⚠️ 우리 상황: 실제 측정 안 했음, 추정치
 
-| 파일 | 내용 |
+### 조합 폭발 논지의 정정
+"Flat 94로 900 조합 못 담음"이라 했는데:
+- 실제 르엘 조합은 65개 (엑셀 기준) 또는 219 시나리오
+- 94 intent로도 실용적 커버 가능했을 것
+- **본질 문제는 "조합 폭발"이 아니라 "새 조합 일반화 효율"**
+
+### 솔직한 결론
+- Flat은 **이론적으로 가능**하지만
+- **Unknown 학습 데이터 수집이 비쌈** (OOD 무한 공간)
+- **업계는 일반적으로 structured output 선택** (완전 flat 드묾)
+- 우리 규모에서는 Multi-head가 **더 실용적**
+
+---
+
+## 9. Intent + BIO Slot은 어떤가?
+
+### 질문 (User)
+> "intent+slot이 intent+bio slot 그건가?"
+
+### ✅ 맞음
+
+BIO tagging:
+```
+"안방 에어컨 23도로 맞춰줘"
+안방   → B-room
+에어컨 → O (or B-device)
+23     → B-temp
+도     → I-temp
+로/맞춰/줘 → O
+```
+
+### 우리 5-head vs BIO 비교
+
+| 항목 | Intent + BIO | 우리 5-head |
+|------|------------|------------|
+| Slot 표현 | 토큰 span 명시 | sentence-level 분류 |
+| "23도" 추출 | B-temp, I-temp | regex `(\d+)도` |
+| Annotation | 토큰당 라벨 (비쌈) | 문장당 5 라벨 (싸) |
+| 복합 명령 | 자연스러움 | 규칙 확장 필요 |
+| NPU | 복잡 (sequence output) | 단순 (classification) |
+
+### ⚠️ 우리 선택의 한계 (앞서 소홀히 다룸)
+- **복합 명령 불가**: "거실 23도, 안방 25도" — 우리 방식은 room 하나만 추출
+- **자연어 숫자**: "이십삼도" preprocess 의존 — 없으면 실패
+- **복합 시간 표현**: "내일 오전 7시부터 저녁까지" 같은 건 regex로 처리 어려움
+
+**우리는 복잡한 발화를 피하도록 설계 타협**함. BIO 썼으면 더 유연했을 것.
+
+---
+
+## 10. "확실해?" 자기 검토
+
+### 앞서 과장한 것들
+
+1. **"Multi-head 우위 증명됨"** → 실제로는 v46 recipe 우위. 아키텍처 독립 기여 분리 안 됨.
+2. **"900 조합 못 담음"** → 실제 조합은 65개. 이론적 과장.
+3. **"데이터 효율 4-5배"** → 직관 기반 추정. 실측 안 함.
+4. **"Unknown 구축 불가능"** → 어려움이지 불가능 아님. Alexa는 함.
+5. **"고차원이 유리"** → 내부 feature dim은 동일. Output factorization이 진짜 이점.
+
+### 앞서 놓친 것들
+
+1. **v46도 자주 틀림** — demo에서 "방이 덥다→heat" 오류
+2. **라벨 품질의 재귀적 문제** — KoELECTRA pseudo-label도 잘못됨
+3. **Head 간 negative transfer** 언급 부족
+4. **BIO slot의 복합 명령 대응 우위** 인정 부족
+5. **업계 Trait vs 우리 head의 추상화 레벨 차이**
+
+### 부족한 증명 (해야 할 ablation)
+
+1. v18 + KE data 재학습 → flat도 KE 오를까?
+2. Joint intent+slot (BIO) vs 우리 5-head
+3. Same-params flat vs multi-head (공정 비교)
+4. 실사용 로그 평가
+
+---
+
+## 11. 총정리 — 엄격판
+
+### ✅ 확실한 사실
+1. v54-v68 모든 실험이 v46 미달 (TS + KE 종합)
+2. v68 라벨 수정 46건 + Test Suite 11건 (확실한 오류)
+3. 학습 데이터 1,176건 규칙 기반 오류 존재
+4. 멀티헤드 라벨은 스크립트 guess (엑셀 GT 아님)
+5. KE +25.3%p (v18 72.5% vs v46 97.8%)
+6. OOD 거부 1/5 vs 5/5
+
+### ⚠️ 추정/가설
+1. Multi-head 구조 자체의 기여도 = 불분명
+2. Flat이 같은 조건(KE data, mixup)이면 어땠을지 = 모름
+3. v46이 "수학적 ceiling"인지 = 모름 (더 탐색 안 함)
+
+### 🎯 실무적 결론
+- 현재 v46 (또는 v28+v46 앙상블)이 가장 좋은 제품 성능
+- Multi-head는 업계 표준 패턴과 일치 (구조화 output)
+- **벤치마크 수치는 과대평가 가능성 높음** (라벨 품질 의존)
+
+### 📉 해야 할 것 (안 한 것)
+1. 학습 데이터 라벨 수동 검수
+2. 진짜 GT 엑셀에서 재구축
+3. 실사용 로그 수집
+4. Ablation: flat + 같은 조건 비교
+
+---
+
+## 12. 이 토론의 의미
+
+User의 질문 순서:
+1. v46 ceiling 의미 → 데이터 상한 언급
+2. v68 라벨 수정 → 이전 모든 버전 의심
+3. GT 존재 → 스크립트 guess 폭로
+4. 일반화 중요성 → KE가 진짜 지표
+5. Multi-head vs Flat → 아키텍처 정당성
+6. 고차원 직관 → Output factorization
+7. Unknown vs 조합 일반화 → 공존 증명
+8. 학습 더 많이 → 이론 vs 실무 구분
+9. BIO slot → 업계 표준 구조
+10. 재검토 요청 → **이 문서의 v2 작성 계기**
+
+**각 질문이 우리 설계의 가정을 하나씩 시험**함. 결과:
+- 아키텍처 선택은 합리적이지만 증명 부족
+- 벤치마크 수치는 신뢰 제한적
+- 진짜 개선 경로는 **데이터 품질**에 있음
+
+---
+
+## 13. 산출물
+
+| 파일 | 용도 |
 |------|------|
-| `scripts/interactive_test.py` | 대화형 3-모델 비교 테스트 |
-| `scripts/test_gt_scenarios.py` | GT 219개 자동 테스트 + CSV |
-| `scripts/comprehensive_label_audit.py` | 라벨 전수 검토 (규칙+모델) |
+| `scripts/interactive_test.py` | 대화형 3-모델 비교 |
+| `scripts/test_gt_scenarios.py` | GT 219 자동 테스트 + CSV |
+| `scripts/compare_flat_vs_multihead.py` | Flat vs Multi-head 비교 |
+| `scripts/comprehensive_label_audit.py` | 라벨 전수 검토 |
 | `scripts/categorize_suspects.py` | Suspect 카테고리 분류 |
-| `scripts/find_label_errors.py` | 기본 라벨 오류 탐지 |
-| `scripts/fix_test_suite_labels.py` | 테스트 라벨 자동 수정 |
-| `data/gt_test_results.csv` | GT 219개 전체 결과 (Excel 열람 가능) |
-| `data/label_audit_with_model.json` | 전수 검토 상세 보고서 |
-| `data/suspects_categorized.json` | 카테고리별 의심 케이스 |
-| `docs/DISCUSSION_2026_04_21.md` | **이 문서** |
-
-## 이후 작업 제안 (실제 개선 경로)
-
-### Option A: 라벨 품질 개선 프로젝트
-- 학습 데이터 24,507건 라벨 수동 검수 (예상 1~2일)
-- A 카테고리 자동 수정 (1,176건) → 수동 검토 → 재학습
-- 진짜 모델 성능 측정 가능
-
-### Option B: 수동 GT 재구축
-- 엑셀 219개 행을 수동으로 멀티헤드 라벨 (2~3시간)
-- 진짜 벤치마크 확보
-- 기존 모델 재평가
-
-### Option C: 실사용 로그 수집
-- Production 배포 후 실제 발화 로그 → 피드백 루프
-- 가장 시간 걸리지만 가장 가치 있는 방향
-- ROADMAP P3
+| `scripts/find_label_errors.py` | 라벨 오류 탐지 |
+| `scripts/fix_test_suite_labels.py` | 라벨 자동 수정 |
+| `data/gt_test_results.csv` | GT 219 전체 결과 |
+| `data/label_audit_with_model.json` | 전수 검토 보고서 |
+| `data/suspects_categorized.json` | 카테고리별 의심 |
+| `docs/DISCUSSION_2026_04_21.md` | **이 문서 (v2 엄격판)** |
+| `docs/ARCHITECTURE_PROPOSALS_2026_04_21.md` | 다음 단계 제안 |
