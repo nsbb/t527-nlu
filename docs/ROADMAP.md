@@ -8,11 +8,12 @@
 
 ### 🟢 P1 — 즉시 가능 (코드/설정 변경만)
 
-#### 1. Majority Vote 3-model 앙상블 배포 검토
-- **현황**: v28+v46 Strategy B (TS 94.25%, KE 97.79%, bal 96.00)
-- **개선**: Majority Vote (TS 94.91% **+0.66%p**, KE 97.07%)
-- **트레이드오프**: 크기 ~150MB (3 models), latency ~0.7ms
-- **결정 필요**: TS 우선 vs balanced/크기
+#### 1. ~~Majority Vote 3-model 앙상블 배포 검토~~ ❌ 기각됨 (2026-04-21 검증)
+- **Hard majority vote (PyTorch)**: TS 94.91% (+0.66%p)
+- **Soft avg ONNX (실제 배포 가능 형태)**: TS 94.05% (-0.25%p), KE 97.07%
+- Hard voting은 ONNX export 어려움 (Counter 연산 기본 제공 없음)
+- Soft average는 2-model보다 모든 면에서 열세
+- **결론: 2-model Strategy B 유지**
 
 #### 2. "오늘날씨어때" 등 띄어쓰기 없는 패턴 preprocess 확장
 - **현황**: 120개 STT 교정 사전
