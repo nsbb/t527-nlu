@@ -319,6 +319,10 @@ class SAPv2Pipeline:
             if preds['param_direction'] in ('down', 'none'):
                 preds['param_direction'] = 'close'
 
+        # iter9: heat_control CTC + dir=none → on (기본 동작은 켜기)
+        if preds['fn'] == 'heat_control' and preds['exec_type'] == 'control_then_confirm' and preds['param_direction'] == 'none':
+            preds['param_direction'] = 'on'
+
         # 외부 쿼리 keyword → 해당 fn (iter8, v46 known_to_unknown 9건 완화)
         if preds['fn'] == 'unknown':
             if re.search(r'날씨|기온|비\s*와|더울까|추울까|맑|흐림', text):
