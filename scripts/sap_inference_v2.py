@@ -50,7 +50,7 @@ UNSUPPORTED_ACTIONS = {
     'home_info': ['골프장 예약', '수영장 예약', '헬스장 예약', '예약 취소', '자동 밝기', '자동 절전'],
     'vent_control': ['필터 주문', '고쳐', 'AS', '수리'],
     'ac_control': ['고장', 'AS', '수리'],
-    'weather_query': ['다음 달 날씨', '몇 mm', '강수량'],
+    'weather_query': ['다음 달 날씨', '다음달 날씨', '몇 mm', '강수량', '강수 확률', '장기 예보'],
 }
 
 def check_unsupported(fn, text):
