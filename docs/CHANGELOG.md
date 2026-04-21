@@ -4,6 +4,11 @@
 
 | 버전 | 날짜 | 기법 | TS combo | KE fn | 결과 |
 |------|------|------|:---:|:---:|------|
+| iter5 | 04-21 PM | ONNX FP16 최적화 + 배포 문서 | 93.59% | 97.79% | 크기 50%↓, CPU 속도 37x↓ (GPU 전용) |
+| v70 | 04-21 PM | 대규모 1,180 라벨 수정 후 retrain | 90.04% | 97.33% | 부분 수정으로 데이터 일관성 파괴 |
+| iter3 | 04-21 PM | v28b (patch retrain) + rules | 92.74% | 75.33% | 밝게만 교정, 전체 -3.6%p regression |
+| iter2 | 04-21 PM | 라벨 정제 v2 (24건) + 전략 재비교 | 93.59% | 97.79% | v28이 "밝게→down" 잘못 학습 확인 |
+| iter1 | 04-21 PM | Retrieval Hybrid (GT pool cosine) | 91.49% | 94.01% | 모든 threshold 실패 (pool sparse) |
 | v68 | 04-21 | 라벨 오류 수정 + 재학습 | 90.7% | 97.5% | 학습데이터 46건 수정 효과 제한적 |
 | v67 | 04-21 | 통합 파이프라인 검증 | 93.8% | 97.9% | STT 내성 100%, preprocess 120개 |
 | v66 | 04-21 | Ensemble ONNX 배포 | 94.3% | 97.8% | **배포용 단일 파일 ★** |
@@ -45,6 +50,42 @@
 4. 소규모 패치는 항상 regression 유발
 
 ---
+
+## iter5 (2026-04-21 PM) — ONNX FP16 최적화 + 배포 준비 문서
+- **크기**: 105MB → 52.5MB (50% 감소) ✓
+- **정확도**: 100% match (TS 93.59%, KE 97.79% 그대로)
+- **Latency**: 0.55ms → 20.4ms (CPU에서 37x 느림) ❌
+- **결론**: CPU 배포는 FP32 유지, FP16은 GPU/NPU 전용
+- Vocab 분석: 32000 중 12.2%만 실제 사용 (pruning 여지 탐색)
+- 문서: `DEPLOYMENT_CHECKLIST.md` (10섹션), `FEEDBACK_SYSTEM_DESIGN.md`
+
+## iter4 (2026-04-21 PM) — v70 대규모 라벨 수정 (1,180건)
+- Train v34 데이터에 suspects A category 전부 수정 후 v46 recipe retrain
+- 결과: TS 90.04%, KE 97.33%, balanced 93.62
+- Baseline Ensemble B (95.66) 대비 **-2.0p 하락**
+- 원인: 부분 수정이 pseudo-labeled 나머지와 충돌 → 데이터 일관성 파괴
+
+## iter3 (2026-04-21 PM) — v28b (patch retrain) + Ensemble rules
+- **v28b**: v28 warm-start + 189 추가 샘플 (밝게/어둡게/모드로) + 5ep
+  - TS combo 92.74% (-3.6%p regression) ❌
+  - "밝게" 교정은 성공
+- **Post-proc rules on Ensemble**:
+  - 밝게→up, 어둡게→down, 엘리베이터→control, 모드로→set
+  - TS 93.53% (-0.06%p) — 엘리베이터 rule 부작용으로 미세 손실
+
+## iter2 (2026-04-21 PM) — 라벨 정제 v2 + Ensemble 전략 재비교
+- test_suite 추가 24건 라벨 오류 발견 + 수정 (밝게→up 4건 포함)
+- v28은 "밝게→dir=down" 잘못 학습 확인 (v46은 정확)
+- **Ensemble 전략 5가지 비교** (수정된 라벨 기준):
+  - v28 alone: TS 95.53%, KE 75.59%
+  - Avg (logit avg): TS 94.45%, KE 87.76%
+  - **B (current): TS 93.59%, KE 97.79%** ← balanced 최고
+  - v46 alone: TS 93.36%, KE 97.79%
+
+## iter1 (2026-04-21 PM) — Retrieval Hybrid (ROADMAP Option B) 기각
+- GT pool + ko-sbert cosine similarity로 라벨 의존 감소 시도
+- 모든 threshold에서 v46 baseline 미달
+- 원인: GT 219 self-retrieval combo 49.8% (pool sparse)
 
 ## v68 (2026-04-21) — 학습 데이터 라벨 오류 수정 + 재학습
 - **TS 90.7%, KE 97.5%** (수정된 test_suite 기준) — v46 대비 소폭 하락
