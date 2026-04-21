@@ -305,6 +305,13 @@ class SAPv2Pipeline:
             preds['param_direction'] = 'none'
             preds['param_type'] = 'none'
 
+        # iter9: "{room} {device} 좀 {verb}" 어순은 CTC (clarify는 "{room} 좀 {device} {verb}" 어순)
+        if preds['exec_type'] == 'clarify' and preds['fn'] == 'light_control':
+            if re.search(r'(거실|안방|침실|주방|부엌|작은방|아이방|서재|현관)\s+(불|조명|등|라이트)\s+좀\s+(켜|꺼|끄)', text):
+                preds['exec_type'] = 'control_then_confirm'
+                if preds['param_direction'] == 'none':
+                    preds['param_direction'] = 'on' if re.search(r'켜', text) else 'off'
+
         # 외부 쿼리 keyword → 해당 fn (iter8, v46 known_to_unknown 9건 완화)
         if preds['fn'] == 'unknown':
             if re.search(r'날씨|기온|비\s*와|더울까|추울까|맑|흐림', text):
