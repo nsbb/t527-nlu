@@ -65,12 +65,18 @@ def predict_onnx(sess, tok, text):
     return p, float(fn_probs.max())
 
 
-def apply_post(p):
+def apply_post(p, text=None):
     if p['param_direction'] in ('open', 'close', 'stop'): p['param_type'] = 'none'
     if p['judge'] != 'none': p['param_type'] = 'none'
     if p['exec_type'] in ('query_then_respond', 'direct_respond', 'clarify', 'query_then_judge'):
         p['param_type'] = 'none'
     return p
+
+
+def apply_full_post(p, text):
+    """iter8 rule 포함 후처리 (ensemble 전용)."""
+    from ensemble_inference_with_rules import apply_post_rules
+    return apply_post_rules(p, text)
 
 
 def compare(pred, gt):
@@ -100,7 +106,7 @@ def main():
     print(f"\n총 시나리오: {len(all_gt)}개 (known {len(gt_known)} + unknown {len(gt_unk)})")
 
     # 각 모델별 결과
-    results = {'v28': [], 'v46': [], 'ens': []}
+    results = {'v28': [], 'v46': [], 'ens': [], 'ens+rules': []}
     detail_rows = []
 
     for gt in all_gt:
@@ -123,12 +129,15 @@ def main():
         }
 
         # 각 모델
-        for name, model in [('v28', models['v28']), ('v46', models['v46']), ('ens', models['ens'])]:
-            if name == 'ens':
+        for name, model in [('v28', models['v28']), ('v46', models['v46']), ('ens', models['ens']), ('ens+rules', models['ens'])]:
+            if name.startswith('ens'):
                 p, conf = predict_onnx(model, tok, text)
             else:
                 p, conf = predict_torch(model, tok, text)
-            p = apply_post(p)
+            if name == 'ens+rules':
+                p = apply_full_post(p, text)
+            else:
+                p = apply_post(p)
             fn_ok, exec_ok, dir_ok, all_ok = compare(p, exp_labels)
             results[name].append({
                 'gt': gt, 'pred': p, 'conf': conf,
@@ -144,7 +153,9 @@ def main():
 
     # 요약
     print(f"\n=== 모델별 GT 정확도 ===")
-    for name, desc in [('v28', 'v28 (GT 전용)'), ('v46', 'v46 (일반화)'), ('ens', 'Ensemble v28+v46')]:
+    for name, desc in [('v28', 'v28 (GT 전용)'), ('v46', 'v46 (일반화)'),
+                        ('ens', 'Ensemble v28+v46'),
+                        ('ens+rules', 'Ensemble + iter8 rules')]:
         rs = results[name]
         n = len(rs)
         fn_ok = sum(r['fn_ok'] for r in rs)
