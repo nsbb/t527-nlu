@@ -105,6 +105,16 @@ def apply_post_rules(preds, text):
     if preds['fn'] == 'heat_control' and preds['exec_type'] == 'control_then_confirm' and preds['param_direction'] == 'none':
         preds['param_direction'] = 'on'
 
+    # iter9: 화면/월패드/알림/음량 → home_info (system_meta 오분류 교정)
+    # 주의: "에너지 사용량 알림", "긴급 알림" 등 (다른 fn) 및
+    #      "어떻게 할 수 있어" 같은 capability query (system_meta 맞음) 제외
+    capability_q = re.search(r'어떻게|할\s*수\s*있', text)
+    if preds['fn'] == 'system_meta' and not capability_q:
+        if re.search(r'화면\s*밝기|월패드\s*밝기|음량', text):
+            preds['fn'] = 'home_info'
+        elif re.search(r'알림', text) and not re.search(r'사용량|긴급|에너지', text):
+            preds['fn'] = 'home_info'
+
     return preds
 
 
