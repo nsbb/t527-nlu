@@ -78,11 +78,13 @@ def generate_simple_response(preds, room, value=None):
                 action = f'{vnum}%로 설정했습니다'
 
         room_kr = ROOM_KR.get(room, '')
-        fn_kr = {'light_control': '조명', 'heat_control': '난방', 'ac_control': '에어컨',
-                  'vent_control': '환기', 'gas_control': '가스 밸브', 'door_control': '도어락',
-                  'curtain_control': '전동커튼', 'elevator_call': '엘리베이터',
-                  'security_mode': '외출모드', 'schedule_manage': '예약'}.get(fn, '기기')
-        return f'네, {room_kr}{fn_kr}를 {action}.'
+        # 종성 있는 단어는 '을', 없으면 '를'
+        fn_kr = {'light_control': ('조명', '을'), 'heat_control': ('난방', '을'),
+                  'ac_control': ('에어컨', '을'), 'vent_control': ('환기 시스템', '을'),
+                  'gas_control': ('가스 밸브', '를'), 'door_control': ('도어락', '을'),
+                  'curtain_control': ('전동커튼', '을'), 'elevator_call': ('엘리베이터', '를'),
+                  'security_mode': ('외출모드', '를'), 'schedule_manage': ('예약', '을')}.get(fn, ('기기', '를'))
+        return f'네, {room_kr}{fn_kr[0]}{fn_kr[1]} {action}.'
 
     if exec_t == 'query_then_respond':
         responses = {
