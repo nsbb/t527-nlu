@@ -443,3 +443,51 @@ docs/FEEDBACK_SYSTEM_DESIGN.md 에 상세 설계됨.
    - 모델 튜닝에 3주 쓰는 대신 infra 구축에 1주 썼어야.
 
 위 3가지는 모두 "사후 인지"(hindsight bias) 이지만, 다음 프로젝트에는 적용 가능한 교훈.
+
+---
+
+## 부록 G: 실제 TS 밖 Wild Input 테스트 (Brutally Honest)
+
+vanilla 스트레스 테스트 결과:
+
+| 입력 | 실제 출력 | 문제 |
+|------|----------|------|
+| "지금 방 안이 너무 덥네" | heat_control/on | ❌ **AC on이 맞음** (덥다 → 시원하게) |
+| "Alexa 난방" | energy_query/query | ❌ wake word 혼란 |
+| "잘 모르겠네" | query_then_judge | ❌ 엉뚱한 judge 발동 |
+| "니 이름이 뭐니" | unknown | ❌ system_meta/name 이 맞음 |
+| "거실 불 끄고 안방 불 켜" | light_on (first drop) | ⚠️ 복합 명령 처리 못함 |
+| "에어컨 끄고 난방 켜" | ac_off (second drop) | ⚠️ 복합 명령 처리 못함 |
+| "추운데 난방 좀 해주라" | heat_up | ✅ 거의 맞음 (on도 OK) |
+| "우리 집 거실 조명이 너무 밝아" | light/query/down | 🟡 query+down은 의미 있음 |
+
+### 이 실패들이 시사하는 것
+
+**벤치마크는 수치 97% 찍는데 실 유저는 실망한다.** 왜?
+
+1. **"덥네" → heat on 오류**: 훈련 데이터에 "춥다/덥다" → 난방/에어컨 implicit mapping이 **비대칭** 학습됨. 춥다→heat 쪽은 많이, 덥다→ac 쪽은 적게.
+2. **복합 명령**: 전체 데이터에 "A 하고 B 해" 형태 거의 없음 → 모델이 학습 기회 없음.
+3. **Wake word**: "OK Google", "Alexa" 같은 외부 wake word가 훈련에 없음 (Hi Wonder만).
+
+### 지금이라도 고칠 수 있는가?
+
+**"덥네" → AC 매핑**: preprocess rule 가능
+```python
+'덥다': '에어컨 켜',
+'더워': '에어컨 켜',
+```
+하지만 "오늘 덥네" 같은 observation은 control이 아님 → over-aggressive.
+
+**복합 명령**: 문법 파서 필요 (복잡). 실제로는 "한 번에 하나" UX 강제가 현실적.
+
+**Wake word**: preprocess에 추가 가능 (iter9에 "Hi wonder" 이미 추가). 확장 쉬움.
+
+### 결론: Wild 성능은 benchmark보다 낮다
+
+TS 95.76% 수치 뒤에 숨어 있는 진실:
+- TS는 훈련 데이터와 비슷한 분포에서 측정
+- 실 유저 발화는 분포가 다름 (특히 구어체, 감정 표현, 복합 명령)
+- 실 user data 없이는 이 gap을 메울 수 없음
+- **95.76% → 실 유저 85~90% 체감** 예상 (empirical guess)
+
+→ **역시 실사용 로그 수집이 진짜 다음 단계**.
