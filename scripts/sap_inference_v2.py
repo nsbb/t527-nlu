@@ -242,6 +242,16 @@ class SAPv2Pipeline:
         if preds['exec_type'] in ('query_then_respond', 'direct_respond', 'clarify', 'query_then_judge'):
             preds['param_type'] = 'none'
 
+        # dir 규칙 보정 (v28 학습 오류 교정, 2026-04-21 발견)
+        # "밝게" → up (v28이 down으로 잘못 학습한 케이스 다수)
+        if re.search(r'밝게', text) and preds['param_direction'] == 'down':
+            preds['param_direction'] = 'up'
+            preds['param_type'] = 'brightness'
+        # "어둡게" → down (교차 검증용)
+        if re.search(r'어둡게', text) and preds['param_direction'] in ('up', 'on'):
+            preds['param_direction'] = 'down'
+            preds['param_type'] = 'brightness'
+
         return preds, confidence
 
     def run(self, text):

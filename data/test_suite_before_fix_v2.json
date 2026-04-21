@@ -273,7 +273,7 @@
     "utterance": "블라인드 올려",
     "fn": "curtain_control",
     "exec": "control_then_confirm",
-    "dir": "up"
+    "dir": "stop"
   },
   {
     "utterance": "엘리베이터 불러줘",
@@ -434,7 +434,7 @@
   {
     "utterance": "몇 시야?",
     "fn": "home_info",
-    "exec": "query_then_respond",
+    "exec": "direct_respond",
     "dir": "none"
   },
   {
@@ -500,7 +500,7 @@
   {
     "utterance": "환율 얼마야",
     "fn": "market_query",
-    "exec": "query_then_respond",
+    "exec": "direct_respond",
     "dir": "none"
   },
   {
@@ -1154,7 +1154,7 @@
   {
     "utterance": "택시비 얼마야",
     "fn": "unknown",
-    "exec": "query_then_respond",
+    "exec": "direct_respond",
     "dir": "none"
   },
   {
@@ -1376,7 +1376,7 @@
   {
     "utterance": "바깥 온도 몇 도",
     "fn": "weather_query",
-    "exec": "query_then_respond",
+    "exec": "direct_respond",
     "dir": "none"
   },
   {
@@ -1503,7 +1503,7 @@
     "utterance": "거실 등 좀 밝게",
     "fn": "light_control",
     "exec": "control_then_confirm",
-    "dir": "up"
+    "dir": "down"
   },
   {
     "utterance": "안방 등 어둡게",
@@ -1623,7 +1623,7 @@
     "utterance": "커튼 올려",
     "fn": "curtain_control",
     "exec": "control_then_confirm",
-    "dir": "up"
+    "dir": "stop"
   },
   {
     "utterance": "리프트 호출",
@@ -1646,7 +1646,7 @@
   {
     "utterance": "기온이 몇 도야",
     "fn": "weather_query",
-    "exec": "query_then_respond",
+    "exec": "direct_respond",
     "dir": "none"
   },
   {
@@ -1796,7 +1796,7 @@
   {
     "utterance": "난방 온도 몇 도야",
     "fn": "heat_control",
-    "exec": "query_then_respond",
+    "exec": "direct_respond",
     "dir": "none"
   },
   {
@@ -1977,7 +1977,7 @@
     "utterance": "남방 꺼쥬",
     "fn": "heat_control",
     "exec": "control_then_confirm",
-    "dir": "off"
+    "dir": "on"
   },
   {
     "utterance": "한기 커줘",
@@ -2037,7 +2037,7 @@
     "utterance": "에어컨꺼",
     "fn": "ac_control",
     "exec": "control_then_confirm",
-    "dir": "off"
+    "dir": "on"
   },
   {
     "utterance": "난방올려줘",
@@ -2121,7 +2121,7 @@
     "utterance": "히팅 켜줘",
     "fn": "heat_control",
     "exec": "control_then_confirm",
-    "dir": "on"
+    "dir": "up"
   },
   {
     "utterance": "거실 보일러",
@@ -2457,7 +2457,7 @@
     "utterance": "안방 등 밝게",
     "fn": "light_control",
     "exec": "control_then_confirm",
-    "dir": "up"
+    "dir": "down"
   },
   {
     "utterance": "거실 조명 어둡게",
@@ -2829,13 +2829,13 @@
     "utterance": "커튼 올려줘",
     "fn": "curtain_control",
     "exec": "control_then_confirm",
-    "dir": "up"
+    "dir": "stop"
   },
   {
     "utterance": "블라인드 올려줘",
     "fn": "curtain_control",
     "exec": "control_then_confirm",
-    "dir": "up"
+    "dir": "stop"
   },
   {
     "utterance": "블라인드 닫아줘",
@@ -3165,7 +3165,7 @@
     "utterance": "주방 불 좀 밝게",
     "fn": "light_control",
     "exec": "control_then_confirm",
-    "dir": "up"
+    "dir": "down"
   },
   {
     "utterance": "거실 전등 좀 꺼",
@@ -3837,7 +3837,7 @@
     "utterance": "커튼 내려줘",
     "fn": "curtain_control",
     "exec": "control_then_confirm",
-    "dir": "down"
+    "dir": "stop"
   },
   {
     "utterance": "엘리베이터 호출해줘",
@@ -4167,7 +4167,7 @@
     "utterance": "남방 올려쥬",
     "fn": "heat_control",
     "exec": "control_then_confirm",
-    "dir": "up"
+    "dir": "on"
   },
   {
     "utterance": "남방 거줘",
@@ -4191,7 +4191,7 @@
     "utterance": "날방 올려",
     "fn": "heat_control",
     "exec": "control_then_confirm",
-    "dir": "up"
+    "dir": "on"
   },
   {
     "utterance": "난반 커줘",
@@ -4203,7 +4203,7 @@
     "utterance": "남방 올려",
     "fn": "heat_control",
     "exec": "control_then_confirm",
-    "dir": "up"
+    "dir": "on"
   },
   {
     "utterance": "보일러켜줘",
@@ -4305,7 +4305,7 @@
     "utterance": "도어록 열어쥬",
     "fn": "door_control",
     "exec": "control_then_confirm",
-    "dir": "open"
+    "dir": "none"
   },
   {
     "utterance": "도어락열어",
@@ -14361,7 +14361,7 @@
     "utterance": "작은방 좀 밝게",
     "fn": "light_control",
     "exec": "control_then_confirm",
-    "dir": "up"
+    "dir": "down"
   },
   {
     "utterance": "작은방 좀 어둡게",
@@ -14793,7 +14793,7 @@
     "utterance": "안방 남방 올려줘",
     "fn": "heat_control",
     "exec": "control_then_confirm",
-    "dir": "up"
+    "dir": "on"
   },
   {
     "utterance": "주방 남방 꺼줘",
@@ -14811,7 +14811,7 @@
     "utterance": "안방 난반 올려",
     "fn": "heat_control",
     "exec": "control_then_confirm",
-    "dir": "up"
+    "dir": "on"
   },
   {
     "utterance": "주방 에어콘 올려",
