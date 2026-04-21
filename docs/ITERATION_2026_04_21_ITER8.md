@@ -114,6 +114,12 @@ Known 204개 중 **3개만 변경** (1.4%):
    - TS 94.15% → 93.82% (-0.33%p)
    - 원인: 학습된 'elevator_call + none' 케이스 (query/상태) 과다 override
    - → **revert**, 규칙 기반 접근은 세밀한 context awareness 필요
+8. ✅ Out-of-domain keyword rule (unknown_to_known 완화)
+   - 초안: ['전화','와이파이','네비게이션','길 안내','선풍기','비행기','크루즈','녹화','수면 기록','카드'] → unknown
+   - 결과: TS +0.26%p / KE -1.43%p (너무 aggressive, "전화/카드"가 in-domain 중복)
+   - 정제: 명확히 OOD만 ['네비게이션','비행기','크루즈','수면 기록','길 안내']
+   - **sap**: TS 94.15% → **94.28% (+0.13%p)**, KE 97.33% 유지
+   - **ensemble**: TS 94.05% → **94.18% (+0.13%p)**, KE 97.27% 유지
 
 ### 결론
 
@@ -132,14 +138,19 @@ Known 204개 중 **3개만 변경** (1.4%):
 
 ### iter8 최종 metric
 
-| 평가 경로 | Before | After | Δ |
+| 평가 경로 | Before iter8 | After iter8 | Δ |
 |----------|:---:|:---:|:---:|
-| sap_inference_v2 (v46+rules) TS | 93.76% | **94.15%** | **+0.39%p** |
+| sap_inference_v2 (v46+rules) TS | 93.76% | **94.28%** | **+0.52%p** |
 | sap_inference_v2 KE fn | 97.33% | 97.33% | 0 |
-| Ensemble B no rules TS | 93.59% | 93.59% | 0 |
-| Ensemble B + rules TS | 93.53% | **94.05%** | **+0.52%p** |
-| Ensemble B + rules KE fn | 97.79% | 97.27% | -0.52%p (label 불일치) |
+| Ensemble B no rules TS | 93.59% | 93.59% | 0 (모델 고정) |
+| Ensemble B + rules TS | 93.53% | **94.18%** | **+0.65%p** |
+| Ensemble B + rules KE fn | 97.79% | 97.27% | -0.52%p (label 불일치, 알람) |
 | Ensemble B (preprocess 개선 반영) TS | 93.95% | 94.08% | +0.13%p |
+
+**핵심 gain 포인트**:
+- Preprocess 개선 (+40 entries + 3 bug fix): +0.13%p
+- 알람/모닝콜 → schedule_manage rule: +0.39 ~ +0.52%p
+- OOD keyword rule: +0.13%p
 
 **배포 권장**:
 - 저장 ONNX: `nlu_v28_v46_ensemble.onnx` (변경 없음)
