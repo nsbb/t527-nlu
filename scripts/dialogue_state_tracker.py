@@ -142,7 +142,7 @@ class DialogueStateTracker:
         }
 
     def _extract_value(self, text):
-        """텍스트에서 value 추출 (temperature/time/percent)"""
+        """텍스트에서 value 추출 (temperature/time/percent/level/enum)"""
         if not text:
             return None
         m = re.search(r'(\d+)\s*도', text)
@@ -158,6 +158,17 @@ class DialogueStateTracker:
         m = re.search(r'(\d+)\s*단계', text)
         if m:
             return ('level', int(m.group(1)))
+        # iter9: 자연어 레벨 (강/중/약/최대/최소)
+        for kw, lvl in [('최대', 'max'), ('최소', 'min'), ('풀가동', 'max'),
+                         ('강하게', 'strong'), ('세게', 'strong'),
+                         ('중간', 'medium'), ('보통', 'medium'),
+                         ('약하게', 'weak'), ('살짝', 'weak'), ('은은', 'weak')]:
+            if kw in text:
+                return ('enum', lvl)
+        # iter9: 음량/밝기 등 bare number (음량 50)
+        m = re.search(r'(음량|볼륨|밝기)\s+(\d+)', text)
+        if m:
+            return ('percent', int(m.group(2)))
         return None
 
     def _get_followup_type(self, text, fn):
