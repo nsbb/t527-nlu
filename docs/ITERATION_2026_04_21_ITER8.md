@@ -62,11 +62,36 @@ Known 204개 중 **3개만 변경** (1.4%):
 
 **결론**: TS/KE trade-off의 해는 존재하지 않음. 현 B가 **balanced ceiling**.
 
+## Step 3: Preprocess 사전 확장 (ROADMAP P1 #2)
+
+`scripts/preprocess.py` 개선:
+- **버그 fix**:
+  - 엘레베이터 이중 변환 (엘레베이터 → 엘리베이터 → 엘리베이터이터) 해결 — 중복 엔트리 제거
+  - "스물다섯도" regex 파서 버그 (char class에 multi-char) → group alternation
+  - 사전 적용 순서 bug (prefix 먼저 매치) → 긴 패턴 먼저 sort
+- **신규 엔트리 (~40개 추가)**:
+  - 띄어쓰기 없는 패턴: "지금몇시야", "오늘날씨어때", "알람꺼"
+  - 방+디바이스 조합: "거실에어컨", "침실조명", "서재조명" 등
+  - 구어체: "따뜻하게해", "밝게해", "은은하게해"
+  - 종결 오류: "꺼쥬", "켜쥬", "잠가쥬" 등
+
+### 효과
+| 측정 | Before | After | Δ |
+|------|:---:|:---:|:---:|
+| Strategy B TS combo | 93.95% | 94.08% | +0.13%p |
+| fn head | 98.03% | 98.03% | - |
+| exec head | 97.50% | 97.63% | +0.13%p |
+| dir head | 97.73% | 97.93% | +0.20%p |
+| KE fn | 97.79% | 97.79% | - |
+
+작지만 실제 STT 오류 패턴을 직접 다룸 — 로그 수집 후 추가 확장 예상됨.
+
 ## 총평
 
 ### 시도한 것
 1. ✅ Parse v2 (slash/밝게/query marker 개선) — 3 labels 수정
 2. ✅ Strategy 9개 변형 TS + 전체 KE 평가 — B 최고 확인
+3. ✅ Preprocess 사전 +40개 + 버그 3개 수정 → TS +0.13%p
 
 ### 결론
 
@@ -79,6 +104,7 @@ Known 204개 중 **3개만 변경** (1.4%):
 ### 산출물
 - `scripts/parse_gt_scenarios_v2.py` (slash 로직 개선)
 - `scripts/eval_strategies_variants.py` (9개 전략 전수 비교)
+- `scripts/preprocess.py` (사전 +40개, 3개 버그 fix)
 - `data/gt_known_scenarios_v2.json` / `gt_unknown_scenarios_v2.json`
 - `data/strategy_variants_results.json`
 
