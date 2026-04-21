@@ -312,12 +312,16 @@ class SAPv2Pipeline:
                 if preds['param_direction'] == 'none':
                     preds['param_direction'] = 'on' if re.search(r'켜', text) else 'off'
 
-        # iter9: curtain_control 올려 → up, 블라인드 내려 → close
-        if preds['fn'] == 'curtain_control' and '올려' in text and preds['param_direction'] in ('stop', 'none'):
+        # iter9: curtain_control 올려 → up (pred=open 포함), 블라인드 내려 → close
+        if preds['fn'] == 'curtain_control' and '올려' in text and preds['param_direction'] in ('stop', 'none', 'open'):
             preds['param_direction'] = 'up'
         if preds['fn'] == 'curtain_control' and '블라인드' in text and '내려' in text:
-            if preds['param_direction'] in ('down', 'none'):
+            if preds['param_direction'] in ('down', 'none', 'open'):
                 preds['param_direction'] = 'close'
+        # 블라인드만 있고 action 없음 → stop
+        if preds['fn'] == 'curtain_control' and '블라인드' in text and not re.search(r'올려|내려|열어|닫아|멈춰|스톱', text):
+            if preds['param_direction'] == 'open':
+                preds['param_direction'] = 'stop'
 
         # iter9: heat_control CTC + dir=none → on (기본 동작은 켜기)
         if preds['fn'] == 'heat_control' and preds['exec_type'] == 'control_then_confirm' and preds['param_direction'] == 'none':

@@ -93,13 +93,20 @@ def apply_post_rules(preds, text):
                 preds['param_direction'] = 'on' if re.search(r'켜', text) else 'off'
 
     # iter9: curtain_control "올려" → up (TS 10/11 라벨 일치)
-    if preds['fn'] == 'curtain_control' and '올려' in text and preds['param_direction'] in ('stop', 'none'):
+    # pred=open도 포함 (모델이 open으로 예측하는 케이스 8건 추가 커버)
+    if preds['fn'] == 'curtain_control' and '올려' in text and preds['param_direction'] in ('stop', 'none', 'open'):
         preds['param_direction'] = 'up'
 
     # iter9: 블라인드 내려 → close (TS 9/10 라벨 일치; 커튼은 down 유지)
+    # pred=open도 포함 (10건 추가 커버)
     if preds['fn'] == 'curtain_control' and '블라인드' in text and '내려' in text:
-        if preds['param_direction'] in ('down', 'none'):
+        if preds['param_direction'] in ('down', 'none', 'open'):
             preds['param_direction'] = 'close'
+
+    # iter9: 블라인드만 있고 action verb 없음 → stop (예: "안방 블라인드")
+    if preds['fn'] == 'curtain_control' and '블라인드' in text and not re.search(r'올려|내려|열어|닫아|멈춰|스톱|stop', text):
+        if preds['param_direction'] == 'open':
+            preds['param_direction'] = 'stop'
 
     # iter9: heat_control CTC + dir=none → on (4 cases: 바닥 난방, 보일러 작동, 실내 난방, 거실 보일러)
     if preds['fn'] == 'heat_control' and preds['exec_type'] == 'control_then_confirm' and preds['param_direction'] == 'none':
