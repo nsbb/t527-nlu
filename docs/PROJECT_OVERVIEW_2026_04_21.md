@@ -19,7 +19,7 @@
     ├── preprocess.py (120개 STT 교정 + 한글숫자 변환)
     │
     ▼
-[NLU] Ensemble v28+v46 (105MB ONNX, TS 93.59% + KE 97.79%)
+[NLU] Ensemble v28+v46 (105MB ONNX, TS 95.76% + KE 97.20% (iter9 rules 포함))
     │  0.55ms CPU 추론
     │  fn(20) + exec(5) + dir(9) + param(5) + judge(5) 5-head 분류
     ▼
@@ -68,7 +68,7 @@ TTS (외부) → 사용자 응답
 
 **레포**: [Bitbucket hdclabs/t527-stt](https://bitbucket.org/hdclabs/t527-stt)
 
-### 2. NLU: Ensemble v28+v46 (TS 93.59% + KE 97.79%)
+### 2. NLU: Ensemble v28+v46 (TS 95.76% + KE 97.20% (iter9 rules 포함))
 
 | 항목 | 값 |
 |------|------|
@@ -77,11 +77,11 @@ TTS (외부) → 사용자 응답
 | 앙상블 전략 | Strategy B (fn=v46, exec/dir/param=v28, judge=v46) |
 | 훈련 데이터 | 24.5K (GT 219 × 25배 증강 + KoELECTRA 13K pseudo-labeled) |
 | ONNX 크기 | **105MB** (FP32, embedding 공유) |
-| CPU 추론 | **0.55ms** |
-| **TS combo** | **93.59%** (수정 라벨 3,043 케이스) |
-| **KoELECTRA fn** | **97.79%** (외부 1,536 케이스) |
+| CPU 추론 | **0.67ms** (iter9, rules 포함) |
+| **TS combo** | **95.76%** (iter9 rules 적용, 3,043 케이스) |
+| **KoELECTRA fn** | **97.20%** (외부 1,536 케이스) |
 | STT 오류 내성 | **100%** (10/10) |
-| 배포 | `checkpoints/nlu_v28_v46_ensemble.onnx` |
+| 배포 | `checkpoints/nlu_v28_v46_ensemble.onnx` + `deployment_pipeline.py` |
 
 **레포**: [Bitbucket hdclabs/t527-nlu](https://bitbucket.org/hdclabs/t527-nlu), [GitHub nsbb/t527-nlu](https://github.com/nsbb/t527-nlu)
 
@@ -238,4 +238,4 @@ docs/
 
 ## 한 줄 결론
 
-> **"STT CER 8.86% + NLU TS 94%/KE 98% 달성. 모델 실험 소진 — 남은 개선 경로는 실사용자와 함께 배우는 것뿐."**
+> **"STT CER 8.86% + NLU TS 95.76%/KE 97.20% 달성 (iter9 후처리 rule 포함). 모델 실험 소진 — 남은 개선 경로는 실사용자와 함께 배우는 것뿐."**
