@@ -323,6 +323,14 @@ class SAPv2Pipeline:
         if preds['fn'] == 'heat_control' and preds['exec_type'] == 'control_then_confirm' and preds['param_direction'] == 'none':
             preds['param_direction'] = 'on'
 
+        # iter9: 화면/월패드/알림/음량 → home_info (capability query 제외)
+        capability_q = re.search(r'어떻게|할\s*수\s*있', text)
+        if preds['fn'] == 'system_meta' and not capability_q:
+            if re.search(r'화면\s*밝기|월패드\s*밝기|음량', text):
+                preds['fn'] = 'home_info'
+            elif re.search(r'알림', text) and not re.search(r'사용량|긴급|에너지', text):
+                preds['fn'] = 'home_info'
+
         # 외부 쿼리 keyword → 해당 fn (iter8, v46 known_to_unknown 9건 완화)
         if preds['fn'] == 'unknown':
             if re.search(r'날씨|기온|비\s*와|더울까|추울까|맑|흐림', text):
