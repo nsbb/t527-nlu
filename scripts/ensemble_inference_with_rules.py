@@ -93,9 +93,9 @@ def apply_post_rules(preds, text):
 
     # iter9: "{room} {device} 좀 {verb}" 어순 패턴은 CTC
     # (clarify 라벨은 "{room} 좀 {device} {verb}" 어순 — adverb가 device 앞)
-    # → 좀이 device 뒤에 오면 명시적 제어
+    # → 좀이 device 뒤에 오면 명시적 제어 (조사 에/은/의 허용)
     if preds['exec_type'] == 'clarify' and preds['fn'] == 'light_control':
-        if re.search(r'(거실|안방|침실|주방|부엌|작은방|아이방|서재|현관)\s+(불|조명|등|라이트)\s+좀\s+(켜|꺼|끄)', text):
+        if re.search(r'(거실|안방|침실|주방|부엌|작은방|아이방|서재|현관)(?:에|은|의)?\s+(불|조명|등|라이트)\s+좀\s+(켜|꺼|끄)', text):
             preds['exec_type'] = 'control_then_confirm'
             if preds['param_direction'] == 'none':
                 preds['param_direction'] = 'on' if re.search(r'켜', text) else 'off'
