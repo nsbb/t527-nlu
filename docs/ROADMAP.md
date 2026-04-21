@@ -1,26 +1,25 @@
 # NLU Roadmap — 향후 개선 방향
 
-## 현재 상태 (2026-04-21 PM 업데이트, iter8)
+## 현재 상태 (2026-04-22 업데이트, iter9 완료)
 
 ✅ **달성**:
-- Ensemble ONNX 배포: TS 93.59% (수정 라벨), KE 97.79%, 0.55ms CPU
+- Ensemble ONNX 배포: `nlu_v28_v46_ensemble.onnx` (변경 없음)
 - 14개 모델/레시피 실험 전부 실패 확인 → **현 데이터로 수학적 ceiling**
 - ONNX FP16 변환 가능 (GPU/NPU용, CPU는 비효율)
 - 배포 체크리스트 + 피드백 시스템 설계 완료
+- **iter9 후처리 rule 14개 + DST 고도화 + 배포 인프라 완성**
 
 🔴 **핵심 결론**:
 모델 레벨 실험 완전 소진. **진짜 개선 경로는 실사용 데이터뿐** (P3 #9).
 
-**iter 8 추가 확인 (2026-04-21 18:27-19:20)**:
-- GT v2 재파싱: 219개 중 3개만 변경 → 영향 없음
-- Strategy 9가지 변형 전수: **B가 balanced 최고** (Avg만 TS +1%p지만 KE -6%p)
-- → **Strategy B는 수학적 balanced ceiling** 확정
-- **후처리 rule 개선으로 +0.85%p 획득** (모델 변경 없이):
-  - 알람/모닝콜 → schedule_manage: +0.52%p
-  - unknown → 날씨/뉴스/의료 복구: +0.20%p
-  - OOD keyword → unknown: +0.13%p
-  - preprocess 40개 신규 + 3 bug fix: +0.13%p
-  - **Ensemble + rules TS: 93.53% → 94.38%**
+**iter 9 성과 (2026-04-21 22:18 ~ 2026-04-22 06:45, ~8.5시간)**:
+- 후처리 rule 14개 적용 → **Ensemble + rules TS: 93.53% → 95.76% (+2.23%p)**
+- DST 고도화: slot filling, 5-turn history, correction 확장
+- DeploymentPipeline 클래스 완성 (end-to-end 통합)
+- Preprocess 210+ entries (2-pass, 사투리/존댓말/영어 포함)
+- 규제 test 26개, GT 95.0%, Latency 0.67ms
+- 문서 9개 업데이트 + 3개 신규 (ARCHITECTURE, API_USAGE, SCRIPTS_INDEX)
+- **38+ commits GitHub main 푸시 완료**
 
 ## 우선순위별 개선 항목
 
