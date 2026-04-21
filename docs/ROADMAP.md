@@ -38,10 +38,11 @@
 - **예**: "네, 거실 에어컨을 켰습니다" → "네, 거실 에어컨 가동할게요"
 - **구현**: RESPONSE_TEMPLATES를 리스트로 바꾸고 random.choice
 
-#### 4. Confidence 기반 세밀한 fallback
+#### 4. ~~Confidence 기반 세밀한 fallback~~ ⚠️ iter8 검증 — 유보
 - **현황**: conf<0.5 → unknown
-- **개선**: conf 0.3-0.5 → clarify (재질의), conf<0.3 → unknown
-- **효과**: 모호한 발화에 대한 UX 개선
+- **시도**: conf 0.3-0.5 → clarify (재질의), conf<0.3 → unknown
+- **결과**: TS -0.04%p (측정 손실), UX 이득은 실사용 없이 불확실
+- **결정**: 실사용 로그 수집 후 실제 low-conf 분포 확인 뒤 재검토
 
 ### 🟡 P2 — 중간 작업 (1~3일)
 

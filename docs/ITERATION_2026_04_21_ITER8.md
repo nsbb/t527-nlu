@@ -92,6 +92,10 @@ Known 204개 중 **3개만 변경** (1.4%):
 1. ✅ Parse v2 (slash/밝게/query marker 개선) — 3 labels 수정
 2. ✅ Strategy 9개 변형 TS + 전체 KE 평가 — B 최고 확인
 3. ✅ Preprocess 사전 +40개 + 버그 3개 수정 → TS +0.13%p
+4. ❌ 3-tier conf fallback (conf<0.3 → unknown, 0.3~0.5 → clarify)
+   - TS -0.04%p, UX 이득은 실제 배포해야 검증 가능
+   - 측정되는 손실 vs 불확실한 UX 이득 → **2-tier 유지**
+   - ROADMAP P1 #4 결론 문서화됨
 
 ### 결론
 
