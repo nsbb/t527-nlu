@@ -79,14 +79,25 @@ def generate_simple_response(preds, room, value=None):
 
     if exec_t == 'control_then_confirm':
         action = ACTION_MAP.get(direction, '설정했습니다')
-        if value:
+        # value 기반 응답 — dir이 명확한 action (on/off/open/close)일 땐 dir 우선
+        if value and direction in ('set', 'up', 'down', 'none'):
             vtype, vnum = value
             if vtype == 'temperature':
                 action = f'{vnum}도로 설정했습니다'
             elif vtype == 'minute':
-                action = f'{vnum}분 예약을 설정했습니다'
+                action = f'{vnum}분으로 설정했습니다'
+            elif vtype == 'hour':
+                action = f'{vnum}시간으로 설정했습니다'
             elif vtype == 'percent':
                 action = f'{vnum}%로 설정했습니다'
+            elif vtype == 'level':
+                action = f'{vnum}단계로 설정했습니다'
+        elif value and direction in ('on', 'off'):
+            # 타이머 설정: "30분 후 난방 꺼줘" → "30분 뒤에 난방을 끕니다"
+            vtype, vnum = value
+            if vtype in ('minute', 'hour', 'second'):
+                unit_kr = {'minute': '분', 'hour': '시간', 'second': '초'}[vtype]
+                action = f'{vnum}{unit_kr} 뒤에 ' + ACTION_MAP.get(direction, '설정합니다')
 
         room_kr = ROOM_KR.get(room, '')
         # 종성 있는 단어는 '을', 없으면 '를'
