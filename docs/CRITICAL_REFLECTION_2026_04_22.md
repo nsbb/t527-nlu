@@ -304,3 +304,142 @@ docs/FEEDBACK_SYSTEM_DESIGN.md 에 상세 설계됨.
 - Latency: 0.55ms → 0.67ms (0.12ms rule 오버헤드)
 - Commit: 42개 (이번 세션)
 - 문서 변경: 17개 파일
+
+---
+
+## 부록 C: 미래 팀을 위한 의사결정 매트릭스
+
+### "새 스마트홈 NLU 시스템을 만든다면 무엇을 선택할까?"
+
+| 조건 | 추천 접근 | 근거 |
+|------|----------|------|
+| 서버 배포 가능 | LLM API (Claude/GPT) + function calling | Zero-shot, compositional 완벽 |
+| 온디바이스 + 데이터 풍부 (>100K) | Transformer + MH heads | 성능 최고, 유지보수 쉬움 |
+| **온디바이스 + 데이터 부족 (<50K)** | **MH CNN + Rules + DST (현재 우리 방식)** | **이 프로젝트 상황** |
+| 온디바이스 + 데이터 거의 없음 (<1K) | Pure rules + 키워드 매칭 | ML 불가능, 수동이 최선 |
+| 완전 off-the-shelf | Rasa NLU / Mycroft Adapt | 무료, 빠른 시작 |
+
+### 단계별 의사결정 순서
+
+1. **Flat vs Multi-head?**
+   - 클래스 수 < 30: Flat OK
+   - 클래스 수 > 50 & 조합 공간 큼: **Multi-head 강력 추천**
+   - 중간 (30-50): 하이브리드 고민
+
+2. **Ensemble 할 것인가?**
+   - 작은 도메인 + 데이터 불균형: YES (우리 경우)
+   - 충분한 데이터: 단일 좋은 모델이 더 나을 수 있음
+   - NPU 크기 제한: 크기 초과 시 NO
+
+3. **후처리 rule 추가?**
+   - 오류 패턴 있고 재학습 regression 걸리면: YES
+   - Rule 수 < 20: 건강함
+   - Rule 수 > 50: **모델/데이터 근본 수정 필요** 신호
+
+4. **DST 필요?**
+   - 멀티턴 UX 원함: YES
+   - 단순 명령만: 스킵 가능
+
+---
+
+## 부록 D: 놓친 실험 (미구현)
+
+시간/비용 문제로 못 한 것들:
+
+### 1. Self-distillation with rule-consistent labels
+**아이디어**: iter9 rules를 KoELECTRA 13K pseudo에 적용 → 새 학습  
+**위험**: v70처럼 regression (이미 경험)  
+**실험 비용**: 2시간 (train + eval)  
+**예상 결과**: TS +0.3%p / -0.3%p 사이 (not significant)  
+
+### 2. Two-stage: fn router + sub-intent expert
+**아이디어**: fn=20 classifier → 각 fn마다 작은 sub-intent  
+**위험**: 2-stage latency 증가, cascade error  
+**실험 비용**: 3일 (20 expert 학습 + 통합)  
+**예상 결과**: TS +0.5~1%p, latency 2x ↑  
+
+### 3. LLM Knowledge distillation
+**아이디어**: Claude로 GT 219 확장 → 100K synthetic labels → MH 학습  
+**위험**: Claude의 bias가 모델에 전이  
+**실험 비용**: $50 API + 1일 학습  
+**예상 결과**: TS +2%p 가능성 있음, 하지만 실 user data 더 가치 있음  
+
+### 4. Char-level CNN (not subword)
+**아이디어**: STT 오류가 subword 단위에서 왜곡 → char 단위가 robust  
+**위험**: 학습 더 오래 걸림, 모델 커짐  
+**실험 비용**: 1주  
+**예상 결과**: STT 내성 +5%p 가능성 (100% → 105% ?), TS 비슷  
+
+### 5. Conditional classification (fn dependent heads)
+**아이디어**: fn 예측 → 그에 맞춰 exec/dir heads를 조건화  
+**위험**: 복잡성 증가  
+**실험 비용**: 3일  
+**예상 결과**: TS +0.3%p  
+
+---
+
+## 부록 E: 진짜로 내가 뭘 배웠는가 (Meta-learning)
+
+### 기술적 교훈 (이 프로젝트에서 배운 것)
+
+1. **Pseudo-labeling은 양날의 검**
+   - v28 → KoELECTRA pseudo → v46. 성능은 올랐지만 v28의 편향이 v46에 각인됨.
+   - iter9에서 해결할 수 없는 알람 labels 불일치가 이 때 심어짐.
+   - **교훈**: Pseudo label은 별도 held-out 검증 필수.
+
+2. **부분 데이터 수정 = 재앙**
+   - v70 (1180건 수정): TS -3.16%p regression.
+   - 원인: 부분 수정이 학습 전체 분포를 깨뜨림.
+   - **교훈**: 전체 재라벨링 외엔 데이터 수정 금물.
+
+3. **Rule은 부끄럽지 않다**
+   - 초보 ML은 "pure model" 선호. 하지만 현실은 model + rule.
+   - Siri/Alexa/Google도 수많은 rule 사용.
+   - **교훈**: Rule이 측정 가능한 개선 주면 쓰라.
+
+4. **Benchmark 수치에 과도한 믿음 금지**
+   - TS 95.76% 뒤에 132개 오류 중 상당수가 "TS 라벨 자체 오류".
+   - **교훈**: 라벨 품질 먼저 검증 후 metric 측정.
+
+### 프로세스 교훈
+
+5. **빨리 배포해서 실 user data를 얻는 것이 모든 모델 실험보다 가치 있다**
+   - 3개월 모델 튜닝보다 1주 배포 후 10000건 실 로그가 백만 배 가치.
+   - **교훈**: "MVP → feedback loop" 우선.
+
+6. **문서화는 성능만큼 중요**
+   - Iter9의 절반은 문서 작성. 하지만 이것이 Android팀에 전달 가능한 결과를 만들었다.
+   - **교훈**: 코드 완성도 = 동작 + 문서 + 테스트.
+
+### 철학적 교훈
+
+7. **"최선"의 기준은 문맥에 달렸다**
+   - Staff ML engineer: "Transformer 써야지"
+   - Embedded eng: "NPU 120MB인데?"
+   - PM: "언제 배포하나?"
+   - 각자 다른 최선을 본다. 제약이 명확할수록 답은 좁아진다.
+
+8. **Multi-head vs Single Intent 논쟁의 진짜 교훈**
+   - 중요한 건 "구조화된 출력을 원하는가" 문제.
+   - 예/아니오 답이 있으면 그에 맞는 아키텍처 고름.
+   - **교훈**: 먼저 요구사항, 그 다음 아키텍처.
+
+---
+
+## 부록 F: 무엇을 (더) 했어야 했나?
+
+후회되는 것 3가지:
+
+1. **v28 → v46 pseudo-labeling 전에 v28의 KoELECTRA 정확도 확인했어야**
+   - 75% 정확도로 13K 라벨 만들면 3000건 잘못. v46이 이걸 믿고 배움.
+   - 대안: GT만으로 작게 시작 → 외부 라벨 수동 검수 → 점진 확대
+
+2. **GT 219 재라벨링을 iter1~3 시점에 했어야**
+   - 지금 알려진 라벨 불일치를 그때 고쳤으면 rule 14개 중 절반 불필요.
+   - 비용: 전문가 하루. 가치: 2%p.
+
+3. **실사용 로그 수집 인프라를 v50 시점에 설계 완료했어야**
+   - v50 → v68 사이 실 user data 있었으면 진짜 bottleneck 찾았을 것.
+   - 모델 튜닝에 3주 쓰는 대신 infra 구축에 1주 썼어야.
+
+위 3가지는 모두 "사후 인지"(hindsight bias) 이지만, 다음 프로젝트에는 적용 가능한 교훈.
