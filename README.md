@@ -1,18 +1,20 @@
-# T527 온디바이스 NLU — CNN 5-Head + Ensemble (v68)
+# T527 온디바이스 NLU — CNN 5-Head + Ensemble + 후처리 rules (iter9)
 
 르엘 어퍼하우스 AI 월패드 (T527 NPU) STT 텍스트 → Structured Action → 기기 제어.
 
-## 핵심 지표 (권장 배포)
+## 핵심 지표 (iter9 최종, 2026-04-22)
 
 | 지표 | 값 |
 |------|:---:|
-| Test Suite combo | **94.3%** (3,043 케이스) |
-| KoELECTRA fn | **97.8%** (외부 1,536 케이스, 실제 ~98.8%) |
-| STT 오류 내성 | **100%** (10/10) |
-| CPU 추론 지연 | **0.48ms** (단일 추론) |
-| 파일 크기 | 104.9MB (FP32 ONNX) |
+| **Test Suite combo** | **95.76%** (3,043 케이스, +2.23%p iter8→9) |
+| **KoELECTRA fn** | **97.20%** (외부 1,536 케이스) |
+| GT 219 combo | 95.0% (ensemble + rules) |
+| STT 오류 내성 | 100% (10/10) |
+| CPU 추론 지연 | 0.67ms (preprocess+ensemble+rules) |
+| 파일 크기 | 104.9MB (FP32 ONNX, 변경 없음) |
 
-→ **배포 모델**: `checkpoints/nlu_v28_v46_ensemble.onnx`
+→ **배포 모델**: `checkpoints/nlu_v28_v46_ensemble.onnx`  
+→ **배포 스크립트**: `scripts/deployment_pipeline.py` (end-to-end 통합)
 
 ## 아키텍처
 
