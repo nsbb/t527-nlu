@@ -100,6 +100,16 @@ Known 204개 중 **3개만 변경** (1.4%):
    - 각 fn별 1→2~3개 variation, `random.choice` 선택
    - 예시: "거실 불 켜줘" → {"네, 거실 조명을 켰습니다" | "거실 조명 켰습니다" | "알겠습니다, 거실 조명을 켰습니다"}
    - TS 93.76% 유지 (라벨 영향 없음), 같은 발화에 반복되는 응답 회피 → UX 개선
+6. ✅ Alarm/Morning-call post-proc rule
+   - v46 오류 19건 패턴: "알람 X" → system_meta (잘못 예측)
+   - 규칙: device keyword 없는 `알람|모닝콜` → fn=schedule_manage
+   - device-bound ("조명 타이머", "에어컨 타이머") 제외 safeguard
+   - TS: **93.76% → 94.15% (+0.39%p)**, KE 영향 없음
+7. ❌ Elevator default dir=on rule (dir:missing 완화 시도)
+   - 단순 규칙: fn=elevator_call + dir=none → on
+   - TS 94.15% → 93.82% (-0.33%p)
+   - 원인: 학습된 'elevator_call + none' 케이스 (query/상태) 과다 override
+   - → **revert**, 규칙 기반 접근은 세밀한 context awareness 필요
 
 ### 결론
 
@@ -116,6 +126,16 @@ Known 204개 중 **3개만 변경** (1.4%):
 - `data/gt_known_scenarios_v2.json` / `gt_unknown_scenarios_v2.json`
 - `data/strategy_variants_results.json`
 
+### iter8 최종 metric
+
+```
+TS combo (sap_inference_v2, v46 + 후처리): 93.76% → 94.15% (+0.39%p)
+KE fn: 97.79% 유지
+Strategy B 앙상블 TS: 93.95% → 94.08% (+0.13%p, preprocess 덕)
+```
+
 ## 한 줄 결론
 
 > **"GT 라벨 파싱은 거의 맞고, Strategy B는 balanced ceiling이다. 이제 진짜로 모델 레벨 실험 완전 종료."**
+> 
+> **"단, 도메인별 post-proc rule은 아직 +0.5%p 여지가 있다 (알람 rule 성공 예시)"**
