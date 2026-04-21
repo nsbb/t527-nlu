@@ -1,0 +1,208 @@
+utterance,preprocessed,fn_exp,fn_pred,exec_exp,exec_pred,dir_exp,dir_pred,conf,categories
+엘베 좀,엘리베이터이터 좀,elevator_call,elevator_call,control_then_confirm,query_then_respond,on,none,1.000,exec:control_then_confirm→query_then_respond;dir:missing;length:very_short
+알람 취소해줘,알람 취소해줘,schedule_manage,system_meta,control_then_confirm,control_then_confirm,off,set,0.999,fn:schedule_manage→system_meta;pattern:schedule_vs_system;dir:off→set;length:very_short
+소리 줄여줘,소리 줄여줘,home_info,home_info,control_then_confirm,control_then_confirm,down,up,0.998,dir:opposite_direction;length:very_short
+좀 시원하게,좀 시원하게,ac_control,heat_control,control_then_confirm,control_then_confirm,on,on,0.981,fn:ac_control→heat_control;length:very_short
+전체 꺼,전체 꺼,ac_control,light_control,control_then_confirm,control_then_confirm,off,off,0.349,fn:ac_control→light_control;length:very_short
+전화해줘,전화해줘,unknown,home_info,direct_respond,direct_respond,none,none,0.969,fn:unknown_to_known;length:very_short
+에어컨 풀가동,에어컨 풀가동,ac_control,ac_control,direct_respond,control_then_confirm,none,none,0.998,exec:direct_as_control;length:very_short
+조명,조명,light_control,light_control,direct_respond,control_then_confirm,none,none,1.000,exec:direct_as_control;length:very_short
+에어컨,에어컨,ac_control,ac_control,direct_respond,control_then_confirm,none,none,0.999,exec:direct_as_control;length:very_short
+난방 왜 안 나와,난방 왜 안 나와,heat_control,light_control,query_then_respond,query_then_respond,none,none,0.682,fn:heat_control→light_control;length:short
+거실 좀 어두운데,거실 좀 어두운데,light_control,light_control,control_then_confirm,control_then_confirm,down,on,1.000,dir:down→on;length:short
+거실이 너무 환해,거실이 너무 환해,light_control,vent_control,control_then_confirm,control_then_confirm,on,on,0.993,fn:light_control→vent_control;length:short
+안방 에어컨 작동 중이야?,안방 에어컨 작동 중이야?,ac_control,ac_control,query_then_respond,control_then_confirm,none,none,1.000,exec:query_as_control;length:short
+화면 밝기,화면 밝기,home_info,system_meta,control_then_confirm,control_then_confirm,none,down,0.765,fn:home_info→system_meta;pattern:home_vs_system;dir:spurious;length:very_short
+월패드 소리,월패드 소리,home_info,home_info,control_then_confirm,control_then_confirm,down,up,0.985,dir:opposite_direction;length:very_short
+서울 날씨,서울 날씨,weather_query,unknown,direct_respond,direct_respond,none,none,0.980,fn:known_to_unknown;length:very_short
+국제 뉴스,국제 뉴스,news_query,unknown,query_then_respond,direct_respond,none,none,0.988,fn:known_to_unknown;exec:query_then_respond→direct_respond;length:very_short
+간접등 켜줘,조명 켜줘,light_control,light_control,clarify,control_then_confirm,on,on,1.000,exec:clarify→control_then_confirm;length:very_short
+다운라이트 켜,다운조명 켜,light_control,light_control,control_then_confirm,direct_respond,none,none,0.984,exec:control_then_confirm→direct_respond;length:very_short
+취침등,조명,light_control,light_control,control_then_confirm,control_then_confirm,set,none,1.000,dir:missing;length:very_short
+타이머 설정,타이머 설정,schedule_manage,schedule_manage,query_then_respond,control_then_confirm,none,set,0.999,exec:query_as_control;dir:spurious;length:very_short
+알림 뭐야,알림 뭐야,home_info,system_meta,direct_respond,direct_respond,none,none,0.996,fn:home_info→system_meta;pattern:home_vs_system;length:very_short
+작년보다 추워?,작년보다 추워?,weather_query,energy_query,query_then_respond,query_then_respond,none,none,0.893,fn:weather_query→energy_query;length:very_short
+와이파이 비번 뭐야,와이파이 비번 뭐야,unknown,system_meta,direct_respond,direct_respond,none,none,0.673,fn:unknown_to_known;length:short
+거실 등 좀 밝게,거실 등 좀 밝게,light_control,light_control,control_then_confirm,control_then_confirm,down,up,1.000,dir:opposite_direction;length:short
+에어컨 바람,에어컨 바람,ac_control,ac_control,control_then_confirm,control_then_confirm,down,none,1.000,dir:missing;length:very_short
+현관 잠금,현관 잠금,door_control,door_control,control_then_confirm,control_then_confirm,close,open,1.000,dir:opposite_openclose;length:very_short
+월패드 밝기,월패드 밝기,home_info,system_meta,control_then_confirm,control_then_confirm,down,none,0.781,fn:home_info→system_meta;pattern:home_vs_system;dir:missing;length:very_short
+알람 설정해줘,알람 설정해줘,schedule_manage,system_meta,control_then_confirm,control_then_confirm,set,set,1.000,fn:schedule_manage→system_meta;pattern:schedule_vs_system;length:very_short
+에너지 목표,에너지 목표,energy_query,energy_query,direct_respond,control_then_confirm,none,none,1.000,exec:direct_as_control;length:very_short
+운동하기 좋아?,운동하기 좋아?,weather_query,weather_query,direct_respond,query_then_judge,none,none,0.987,exec:direct_respond→query_then_judge;length:very_short
+남방 꺼쥬,난방 꺼쥬,heat_control,heat_control,control_then_confirm,control_then_confirm,on,off,1.000,dir:opposite_onoff;length:very_short;style:colloquial
+난방 스물다섯도,난방 스물다섯도,heat_control,heat_control,control_then_confirm,direct_respond,set,none,0.990,exec:control_then_confirm→direct_respond;dir:missing;length:very_short;has_korean_number
+에어컨꺼,에어컨 꺼,ac_control,ac_control,control_then_confirm,control_then_confirm,on,off,1.000,dir:opposite_onoff;length:very_short
+히팅 켜줘,난방 켜줘,heat_control,heat_control,control_then_confirm,control_then_confirm,up,on,1.000,dir:up→on;length:very_short
+온도 설정,온도 설정,heat_control,heat_control,query_then_respond,control_then_confirm,none,set,0.997,exec:query_as_control;dir:spurious;length:very_short
+에어컨 리모컨,에어컨 리모컨,ac_control,ac_control,direct_respond,control_then_confirm,on,on,0.998,exec:direct_as_control;length:very_short
+현관문 상태,현관문 상태,door_control,door_control,control_then_confirm,query_then_respond,open,none,1.000,exec:control_then_confirm→query_then_respond;dir:missing;length:very_short
+엘리베이터 내려와,엘리베이터이터 내려와,elevator_call,elevator_call,control_then_confirm,query_then_respond,on,none,1.000,exec:control_then_confirm→query_then_respond;dir:missing;length:very_short
+알람 설정,알람 설정,schedule_manage,system_meta,query_then_respond,control_then_confirm,none,set,0.778,fn:schedule_manage→system_meta;pattern:schedule_vs_system;exec:query_as_control;dir:spurious;length:very_short
+안방 등 밝게,안방 등 밝게,light_control,light_control,control_then_confirm,control_then_confirm,down,up,1.000,dir:opposite_direction;length:short
+안방 난방,안방 난방,heat_control,heat_control,query_then_respond,control_then_confirm,on,on,1.000,exec:query_as_control;length:very_short
+거실 냉방,거실 냉방,ac_control,ac_control,control_then_confirm,control_then_confirm,down,on,1.000,dir:down→on;length:very_short
+거실 에어컨 온도,거실 에어컨 온도,ac_control,ac_control,control_then_confirm,control_then_confirm,set,none,1.000,dir:missing;length:short
+환기 세기,환기 세기,vent_control,vent_control,direct_respond,control_then_confirm,none,none,1.000,exec:direct_as_control;length:very_short
+환기 모드,환기 모드,vent_control,vent_control,direct_respond,control_then_confirm,none,set,1.000,exec:direct_as_control;dir:spurious;length:very_short
+공기 순환,공기 순환,vent_control,vent_control,query_then_respond,control_then_confirm,on,on,0.991,exec:query_as_control;length:very_short
+환기 풍량,환기 풍량,vent_control,vent_control,control_then_confirm,control_then_confirm,off,on,1.000,dir:opposite_onoff;length:very_short
+환기 시스템,환기 시스템,vent_control,vent_control,query_then_respond,control_then_confirm,on,on,1.000,exec:query_as_control;length:very_short
+도어락 잠갔어?,도어락 잠갔어?,door_control,door_control,control_then_confirm,control_then_confirm,close,open,1.000,dir:opposite_openclose;length:very_short
+엘리베이터 불러,엘리베이터이터 불러,elevator_call,elevator_call,control_then_confirm,control_then_confirm,on,none,1.000,dir:missing;length:very_short
+엘리베이터 올라와,엘리베이터이터 올라와,elevator_call,elevator_call,control_then_confirm,query_then_respond,on,none,1.000,exec:control_then_confirm→query_then_respond;dir:missing;length:very_short
+오늘 맑아?,오늘 맑아?,weather_query,weather_query,query_then_respond,query_then_judge,none,none,1.000,exec:query_then_respond→query_then_judge;length:very_short
+오후 비 올까,오후 비 올까,weather_query,weather_query,control_then_confirm,query_then_judge,none,none,1.000,exec:control_then_confirm→query_then_judge;length:short
+영어로 뭐야,영어로 뭐야,unknown,system_meta,direct_respond,direct_respond,none,none,0.649,fn:unknown_to_known;length:very_short
+길 안내,길 안내,unknown,system_meta,query_then_respond,query_then_respond,none,none,0.782,fn:unknown_to_known;length:very_short
+주방 불 좀 밝게,주방 불 좀 밝게,light_control,light_control,control_then_confirm,control_then_confirm,down,up,1.000,dir:opposite_direction;length:short
+현관 잠겨있어?,현관 잠겨있어?,door_control,door_control,query_then_respond,control_then_confirm,none,open,1.000,exec:query_as_control;dir:spurious;length:very_short
+엘베 내려와,엘리베이터이터 내려와,elevator_call,elevator_call,query_then_respond,query_then_respond,on,none,1.000,dir:missing;length:very_short
+음량 최소,음량 최소,home_info,home_info,control_then_confirm,control_then_confirm,down,up,0.998,dir:opposite_direction;length:very_short
+네비게이션,네비게이션,unknown,system_meta,direct_respond,direct_respond,none,none,0.995,fn:unknown_to_known;length:very_short
+거실 조명 최대,거실 조명 최대,light_control,light_control,control_then_confirm,control_then_confirm,down,on,1.000,dir:down→on;length:short
+난방 시스템,난방 시스템,heat_control,heat_control,query_then_respond,control_then_confirm,on,on,1.000,exec:query_as_control;length:very_short
+환풍 모드,환기 모드,vent_control,vent_control,query_then_respond,control_then_confirm,none,set,1.000,exec:query_as_control;dir:spurious;length:very_short
+커튼 내려줘,커튼 내려줘,curtain_control,curtain_control,control_then_confirm,control_then_confirm,stop,close,1.000,dir:stop→close;length:very_short
+승강기 와,엘리베이터이터 와,elevator_call,elevator_call,query_then_respond,query_then_respond,on,none,1.000,dir:missing;length:very_short
+내일 추울까,내일 추울까,weather_query,weather_query,control_then_confirm,query_then_respond,on,on,0.992,exec:control_then_confirm→query_then_respond;length:very_short
+화면 올려,화면 올려,home_info,home_info,control_then_confirm,control_then_confirm,down,up,0.998,dir:opposite_direction;length:very_short
+통행 시간,통행 시간,traffic_query,unknown,direct_respond,direct_respond,none,none,0.555,fn:known_to_unknown;length:very_short
+알람 해제,알람 해제,schedule_manage,system_meta,control_then_confirm,control_then_confirm,set,set,0.999,fn:schedule_manage→system_meta;pattern:schedule_vs_system;length:very_short
+불좀켜,불좀켜,light_control,light_control,direct_respond,control_then_confirm,none,none,1.000,exec:direct_as_control;length:very_short
+불좀꺼,불좀꺼,light_control,light_control,control_then_confirm,control_then_confirm,none,off,1.000,dir:spurious;length:very_short
+남방 올려쥬,난방 올려쥬,heat_control,heat_control,control_then_confirm,control_then_confirm,on,up,1.000,dir:on→up;length:very_short;style:colloquial
+날방 올려,난방 올려,heat_control,heat_control,control_then_confirm,control_then_confirm,on,up,1.000,dir:on→up;length:very_short
+남방 올려,난방 올려,heat_control,heat_control,control_then_confirm,control_then_confirm,on,up,1.000,dir:on→up;length:very_short
+냉방커줘,냉방커줘,ac_control,ac_control,control_then_confirm,control_then_confirm,off,on,1.000,dir:opposite_onoff;length:very_short
+환풍기커줘,환기기커줘,vent_control,vent_control,control_then_confirm,control_then_confirm,up,on,0.999,dir:up→on;length:very_short
+까스 닫아쥬,가스 닫아쥬,gas_control,gas_control,query_then_respond,control_then_confirm,none,close,1.000,exec:query_as_control;dir:spurious;length:very_short;style:colloquial
+도어록 열어쥬,도어락 열어쥬,door_control,door_control,control_then_confirm,control_then_confirm,none,open,1.000,dir:spurious;length:very_short;style:colloquial
+엘베불러,엘리베이터이터불러,elevator_call,elevator_call,control_then_confirm,query_then_respond,on,none,1.000,exec:control_then_confirm→query_then_respond;dir:missing;length:very_short
+승강기불러,엘리베이터이터불러,elevator_call,elevator_call,control_then_confirm,query_then_respond,on,none,1.000,exec:control_then_confirm→query_then_respond;dir:missing;length:very_short
+엘레베이터와,엘리베이터이터와,elevator_call,elevator_call,query_then_respond,query_then_respond,on,none,1.000,dir:missing;length:very_short
+전등 켜줘,전등 켜줘,light_control,light_control,clarify,control_then_confirm,none,none,1.000,exec:clarify→control_then_confirm;length:very_short
+라이트 켜,조명 켜,light_control,light_control,clarify,control_then_confirm,on,on,1.000,exec:clarify→control_then_confirm;length:very_short
+전화,전화,unknown,home_info,direct_respond,direct_respond,none,none,0.543,fn:unknown_to_known;length:very_short
+선풍기,선풍기,unknown,ac_control,direct_respond,direct_respond,none,none,0.977,fn:unknown_to_known;length:very_short
+길이 막혀,길이 막혀,traffic_query,traffic_query,control_then_confirm,direct_respond,none,none,0.999,exec:control_then_confirm→direct_respond;length:very_short
+병원 추천,병원 추천,medical_query,unknown,direct_respond,query_then_respond,none,none,0.541,fn:known_to_unknown;exec:direct_respond→query_then_respond;length:very_short
+주차 등록해줘,주차 등록해줘,vehicle_manage,vehicle_manage,query_then_respond,query_then_respond,set,none,1.000,dir:missing;length:very_short
+알람 설정해,알람 설정해,schedule_manage,system_meta,control_then_confirm,control_then_confirm,set,set,0.999,fn:schedule_manage→system_meta;pattern:schedule_vs_system;length:very_short
+모닝콜 설정해,모닝콜 설정해,schedule_manage,schedule_manage,query_then_respond,control_then_confirm,set,set,1.000,exec:query_as_control;length:very_short
+알람 켜줘,알람 켜줘,schedule_manage,system_meta,control_then_confirm,control_then_confirm,on,set,0.986,fn:schedule_manage→system_meta;pattern:schedule_vs_system;dir:on→set;length:very_short
+내일 알람,내일 알람,schedule_manage,system_meta,control_then_confirm,control_then_confirm,on,none,0.996,fn:schedule_manage→system_meta;pattern:schedule_vs_system;dir:missing;length:very_short
+오늘 알람,오늘 알람,schedule_manage,schedule_manage,control_then_confirm,control_then_confirm,off,set,0.720,dir:off→set;length:very_short
+알람 확인해,알람 확인해,schedule_manage,system_meta,query_then_respond,control_then_confirm,set,set,0.999,fn:schedule_manage→system_meta;pattern:schedule_vs_system;exec:query_as_control;length:very_short
+예약 확인해,예약 확인해,schedule_manage,home_info,query_then_respond,query_then_respond,none,none,0.593,fn:schedule_manage→home_info;length:very_short
+알람 삭제,알람 삭제,schedule_manage,system_meta,control_then_confirm,control_then_confirm,set,set,0.997,fn:schedule_manage→system_meta;pattern:schedule_vs_system;length:very_short
+모닝콜 취소,모닝콜 취소,schedule_manage,schedule_manage,control_then_confirm,query_then_respond,set,none,1.000,exec:control_then_confirm→query_then_respond;dir:missing;length:very_short
+알람 시간,알람 시간,schedule_manage,system_meta,direct_respond,direct_respond,none,none,0.946,fn:schedule_manage→system_meta;pattern:schedule_vs_system;length:very_short
+소리 조절,소리 조절,home_info,home_info,control_then_confirm,direct_respond,none,none,0.986,exec:control_then_confirm→direct_respond;length:very_short
+음량 확인,음량 확인,home_info,system_meta,direct_respond,direct_respond,none,none,0.625,fn:home_info→system_meta;pattern:home_vs_system;length:very_short
+월패드 볼륨,월패드 볼륨,home_info,home_info,control_then_confirm,direct_respond,up,none,0.939,exec:control_then_confirm→direct_respond;dir:missing;length:very_short
+음량 설정,음량 설정,home_info,system_meta,direct_respond,control_then_confirm,none,none,0.578,fn:home_info→system_meta;pattern:home_vs_system;exec:direct_as_control;length:very_short
+복사기,복사기,unknown,unknown,control_then_confirm,direct_respond,none,none,0.724,exec:control_then_confirm→direct_respond;length:very_short
+수면 기록,수면 기록,unknown,light_control,direct_respond,direct_respond,none,none,0.964,fn:unknown_to_known;length:very_short
+도어 잠금,도어 잠금,door_control,door_control,control_then_confirm,control_then_confirm,close,open,1.000,dir:opposite_openclose;length:very_short
+현관 잠금해줘,현관 잠금해줘,door_control,door_control,control_then_confirm,control_then_confirm,close,open,1.000,dir:opposite_openclose;length:very_short
+외출 설정해줘,외출 설정해줘,security_mode,security_mode,control_then_confirm,control_then_confirm,on,set,1.000,dir:on→set;length:very_short
+나갈 때 설정,나갈 때 설정,security_mode,security_mode,query_then_respond,control_then_confirm,on,on,1.000,exec:query_as_control;length:short
+엘리베이터 와줘,엘리베이터이터 와줘,elevator_call,elevator_call,control_then_confirm,query_then_respond,on,none,1.000,exec:control_then_confirm→query_then_respond;dir:missing;length:very_short
+승강기 보내줘,엘리베이터이터 보내줘,elevator_call,elevator_call,query_then_respond,query_then_respond,on,none,1.000,dir:missing;length:very_short
+엘베 올라와,엘리베이터이터 올라와,elevator_call,elevator_call,query_then_respond,query_then_respond,on,none,1.000,dir:missing;length:very_short
+엘리베이터 보내줘,엘리베이터이터 보내줘,elevator_call,elevator_call,control_then_confirm,query_then_respond,on,none,1.000,exec:control_then_confirm→query_then_respond;dir:missing;length:very_short
+엘베 와줘,엘리베이터이터 와줘,elevator_call,elevator_call,control_then_confirm,query_then_respond,on,none,1.000,exec:control_then_confirm→query_then_respond;dir:missing;length:very_short
+자외선 확인,자외선 확인,weather_query,weather_query,direct_respond,query_then_judge,none,none,0.999,exec:direct_respond→query_then_judge;length:very_short
+등산 괜찮아,등산 괜찮아,weather_query,unknown,query_then_judge,direct_respond,none,none,0.975,fn:known_to_unknown;exec:query_then_judge→direct_respond;length:very_short
+비 그쳐?,비 그쳐?,weather_query,weather_query,query_then_respond,query_then_judge,none,none,1.000,exec:query_then_respond→query_then_judge;length:very_short
+세계 뉴스,세계 뉴스,news_query,unknown,direct_respond,direct_respond,none,none,0.877,fn:known_to_unknown;length:very_short
+안방 환기 세게,안방 환기 세게,vent_control,vent_control,control_then_confirm,control_then_confirm,on,up,1.000,dir:on→up;length:short
+작은방 환기 세게,작은방 환기 세게,vent_control,vent_control,control_then_confirm,control_then_confirm,on,up,1.000,dir:on→up;length:short
+아이방 환기 세게,아이방 환기 세게,vent_control,vent_control,control_then_confirm,control_then_confirm,on,up,1.000,dir:on→up;length:short
+주방 깜깜해,주방 깜깜해,light_control,light_control,control_then_confirm,query_then_respond,on,on,1.000,exec:control_then_confirm→query_then_respond;length:very_short
+주방 답답해,주방 답답해,vent_control,vent_control,control_then_confirm,query_then_respond,on,on,1.000,exec:control_then_confirm→query_then_respond;length:very_short
+현관 닫아,현관 닫아,door_control,curtain_control,control_then_confirm,control_then_confirm,close,open,0.988,fn:door_control→curtain_control;dir:opposite_openclose;length:very_short
+현관 확인,현관 확인,door_control,home_info,query_then_respond,control_then_confirm,none,open,0.728,fn:door_control→home_info;exec:query_as_control;dir:spurious;length:very_short
+엘리베이터 와,엘리베이터이터 와,elevator_call,elevator_call,query_then_respond,query_then_respond,on,none,1.000,dir:missing;length:very_short
+승강기 와줘,엘리베이터이터 와줘,elevator_call,elevator_call,query_then_respond,query_then_respond,on,none,1.000,dir:missing;length:very_short
+알람 취소,알람 취소,schedule_manage,system_meta,control_then_confirm,control_then_confirm,off,set,0.975,fn:schedule_manage→system_meta;pattern:schedule_vs_system;dir:off→set;length:very_short
+알람 확인,알람 확인,schedule_manage,system_meta,query_then_respond,query_then_respond,none,none,0.995,fn:schedule_manage→system_meta;pattern:schedule_vs_system;length:very_short
+알람 어때,알람 어때,schedule_manage,system_meta,query_then_respond,query_then_respond,none,none,0.939,fn:schedule_manage→system_meta;pattern:schedule_vs_system;length:very_short;style:colloquial
+알람 켜,알람 켜,schedule_manage,system_meta,control_then_confirm,control_then_confirm,on,set,0.972,fn:schedule_manage→system_meta;pattern:schedule_vs_system;dir:on→set;length:very_short
+음량 확인해,음량 확인해,home_info,system_meta,direct_respond,direct_respond,none,none,0.636,fn:home_info→system_meta;pattern:home_vs_system;length:very_short
+전화번호,전화번호,unknown,home_info,direct_respond,direct_respond,none,none,0.808,fn:unknown_to_known;length:very_short
+카드,카드,unknown,security_mode,query_then_respond,query_then_respond,none,none,1.000,fn:unknown_to_known;length:very_short
+업데이트,업데이트,unknown,system_meta,direct_respond,direct_respond,none,none,0.943,fn:unknown_to_known;length:very_short
+녹화,녹화,unknown,security_mode,direct_respond,direct_respond,none,none,0.832,fn:unknown_to_known;length:very_short
+일정,일정,unknown,system_meta,query_then_respond,query_then_respond,none,none,0.708,fn:unknown_to_known;length:very_short
+크루즈,크루즈,unknown,security_mode,direct_respond,direct_respond,none,none,0.570,fn:unknown_to_known;length:very_short
+비행기,비행기,unknown,traffic_query,direct_respond,query_then_respond,none,none,0.990,fn:unknown_to_known;exec:direct_respond→query_then_respond;length:very_short
+거실 에어컨 냉방모드로,거실 에어컨 냉방모드로,ac_control,ac_control,control_then_confirm,control_then_confirm,on,set,1.000,dir:on→set;length:short
+거실 에어컨 냉방모드,거실 에어컨 냉방모드,ac_control,ac_control,control_then_confirm,control_then_confirm,down,none,1.000,dir:missing;length:short
+거실 에어컨 수면으로 해줘,거실 에어컨 수면으로 해줘,ac_control,ac_control,control_then_confirm,control_then_confirm,down,on,1.000,dir:down→on;length:short
+거실 에어컨 수면모드로,거실 에어컨 수면모드로,ac_control,ac_control,control_then_confirm,control_then_confirm,down,set,0.999,dir:down→set;length:short
+거실 에어컨 수면으로,거실 에어컨 수면으로,ac_control,ac_control,control_then_confirm,control_then_confirm,down,on,1.000,dir:down→on;length:short
+거실 에어컨 수면모드,거실 에어컨 수면모드,ac_control,ac_control,control_then_confirm,control_then_confirm,down,none,0.995,dir:missing;length:short
+안방 에어컨 냉방모드로,안방 에어컨 냉방모드로,ac_control,ac_control,control_then_confirm,control_then_confirm,on,set,1.000,dir:on→set;length:short
+안방 에어컨 수면으로 해줘,안방 에어컨 수면으로 해줘,ac_control,ac_control,control_then_confirm,control_then_confirm,down,on,1.000,dir:down→on;length:short
+안방 에어컨 수면모드로,안방 에어컨 수면모드로,ac_control,ac_control,control_then_confirm,control_then_confirm,none,set,0.995,dir:spurious;length:short
+안방 에어컨 수면으로,안방 에어컨 수면으로,ac_control,ac_control,control_then_confirm,control_then_confirm,down,on,0.999,dir:down→on;length:short
+안방 에어컨 수면모드,안방 에어컨 수면모드,ac_control,ac_control,query_then_respond,control_then_confirm,none,none,0.977,exec:query_as_control;length:short
+주방 에어컨 냉방모드로,주방 에어컨 냉방모드로,ac_control,ac_control,control_then_confirm,control_then_confirm,none,set,1.000,dir:spurious;length:short
+주방 에어컨 냉방으로,주방 에어컨 냉방으로,ac_control,ac_control,control_then_confirm,control_then_confirm,down,none,1.000,dir:missing;length:short
+주방 에어컨 냉방모드,주방 에어컨 냉방모드,ac_control,ac_control,query_then_respond,control_then_confirm,none,none,1.000,exec:query_as_control;length:short
+주방 에어컨 수면으로 해줘,주방 에어컨 수면으로 해줘,ac_control,ac_control,control_then_confirm,control_then_confirm,off,on,0.999,dir:opposite_onoff;length:short
+주방 에어컨 수면모드로,주방 에어컨 수면모드로,ac_control,ac_control,query_then_respond,control_then_confirm,none,set,0.990,exec:query_as_control;dir:spurious;length:short
+주방 에어컨 수면모드,주방 에어컨 수면모드,ac_control,ac_control,query_then_respond,control_then_confirm,none,none,0.964,exec:query_as_control;length:short
+침실 에어컨 냉방모드로,침실 에어컨 냉방모드로,ac_control,ac_control,control_then_confirm,control_then_confirm,none,set,1.000,dir:spurious;length:short
+침실 에어컨 냉방으로,침실 에어컨 냉방으로,ac_control,ac_control,control_then_confirm,control_then_confirm,down,none,1.000,dir:missing;length:short
+침실 에어컨 수면모드로,침실 에어컨 수면모드로,ac_control,ac_control,control_then_confirm,control_then_confirm,none,set,0.994,dir:spurious;length:short
+침실 에어컨 수면으로,침실 에어컨 수면으로,ac_control,ac_control,control_then_confirm,control_then_confirm,down,on,0.999,dir:down→on;length:short
+침실 에어컨 수면모드,침실 에어컨 수면모드,ac_control,ac_control,query_then_respond,control_then_confirm,none,none,0.974,exec:query_as_control;length:short
+작은방 에어컨 냉방모드로,작은방 에어컨 냉방모드로,ac_control,ac_control,control_then_confirm,control_then_confirm,on,set,1.000,dir:on→set;length:short
+작은방 에어컨 냉방으로,작은방 에어컨 냉방으로,ac_control,ac_control,control_then_confirm,control_then_confirm,down,none,1.000,dir:missing;length:short
+작은방 에어컨 수면모드로,작은방 에어컨 수면모드로,ac_control,ac_control,control_then_confirm,control_then_confirm,none,set,0.998,dir:spurious;length:short
+작은방 에어컨 수면으로,작은방 에어컨 수면으로,ac_control,ac_control,control_then_confirm,control_then_confirm,down,on,1.000,dir:down→on;length:short
+작은방 에어컨 수면모드,작은방 에어컨 수면모드,ac_control,ac_control,query_then_respond,control_then_confirm,none,none,0.986,exec:query_as_control;length:short
+아이방 에어컨 냉방모드로,아이방 에어컨 냉방모드로,ac_control,ac_control,control_then_confirm,control_then_confirm,on,set,1.000,dir:on→set;length:short
+아이방 에어컨 수면모드로,아이방 에어컨 수면모드로,ac_control,ac_control,control_then_confirm,control_then_confirm,none,set,0.995,dir:spurious;length:short
+아이방 에어컨 수면으로,아이방 에어컨 수면으로,ac_control,ac_control,control_then_confirm,control_then_confirm,down,on,0.999,dir:down→on;length:short
+운동 괜찮아?,운동 괜찮아?,weather_query,weather_query,direct_respond,query_then_judge,none,none,0.975,exec:direct_respond→query_then_judge;length:very_short
+자전거 타도 돼?,자전거 타도 돼?,weather_query,market_query,query_then_judge,query_then_judge,none,none,0.450,fn:weather_query→market_query;length:short
+작은방 좀 밝게,작은방 좀 밝게,light_control,light_control,control_then_confirm,control_then_confirm,down,up,1.000,dir:opposite_direction;length:short
+거실 환기 좀 해줘,거실 환기 좀 해줘,vent_control,vent_control,control_then_confirm,control_then_confirm,set,on,1.000,dir:set→on;length:short
+침실 환기 좀 해줘,침실 환기 좀 해줘,vent_control,vent_control,control_then_confirm,control_then_confirm,set,on,1.000,dir:set→on;length:short
+침실 불 거쥬,침실 불 거쥬,light_control,light_control,direct_respond,control_then_confirm,none,none,1.000,exec:direct_as_control;length:short;style:colloquial
+안방 남방 올려줘,안방 난방 올려줘,heat_control,heat_control,control_then_confirm,control_then_confirm,on,up,1.000,dir:on→up;length:short
+안방 난반 올려,안방 난방 올려,heat_control,heat_control,control_then_confirm,control_then_confirm,on,up,1.000,dir:on→up;length:short
+경마 결과,경마 결과,unknown,news_query,direct_respond,query_then_respond,none,none,0.988,fn:unknown_to_known;exec:direct_respond→query_then_respond;length:very_short
+토토 결과,토토 결과,unknown,news_query,direct_respond,query_then_respond,none,none,0.924,fn:unknown_to_known;exec:direct_respond→query_then_respond;length:very_short
+침실 지금 불 켜줘,침실 지금 불 켜줘,light_control,light_control,control_then_confirm,clarify,none,none,1.000,exec:control_then_confirm→clarify;length:short
+작은방 지금 불 켜줘,작은방 지금 불 켜줘,light_control,light_control,control_then_confirm,clarify,none,none,1.000,exec:control_then_confirm→clarify;length:short
+아이방 지금 불 켜줘,아이방 지금 불 켜줘,light_control,light_control,control_then_confirm,clarify,none,none,1.000,exec:control_then_confirm→clarify;length:short
+거실 에어컨 어때,거실 에어컨 어때,ac_control,ac_control,control_then_confirm,query_then_respond,down,none,1.000,exec:control_then_confirm→query_then_respond;dir:missing;length:short;style:colloquial
+현관 잠금 확인해줘,현관 잠금 확인해줘,door_control,door_control,control_then_confirm,control_then_confirm,close,open,1.000,dir:opposite_openclose;length:short
+엘리베이터 와줘봐,엘리베이터이터 와줘봐,elevator_call,elevator_call,control_then_confirm,query_then_respond,on,none,1.000,exec:control_then_confirm→query_then_respond;dir:missing;length:very_short
+엘베 좀 불러줘봐,엘리베이터이터 좀 불러줘봐,elevator_call,elevator_call,control_then_confirm,control_then_confirm,on,none,1.000,dir:missing;length:short
+외출 설정 확인해줘,외출 설정 확인해줘,security_mode,security_mode,query_then_respond,control_then_confirm,none,none,1.000,exec:query_as_control;length:short
+알람 6시,알람 6시,schedule_manage,system_meta,control_then_confirm,control_then_confirm,set,set,1.000,fn:schedule_manage→system_meta;pattern:schedule_vs_system;length:very_short;has_number
+알람 7시,알람 7시,schedule_manage,system_meta,control_then_confirm,control_then_confirm,set,set,1.000,fn:schedule_manage→system_meta;pattern:schedule_vs_system;length:very_short;has_number
+알람 8시,알람 8시,schedule_manage,system_meta,control_then_confirm,control_then_confirm,set,set,1.000,fn:schedule_manage→system_meta;pattern:schedule_vs_system;length:very_short;has_number
+알람 확인해줘,알람 확인해줘,schedule_manage,system_meta,control_then_confirm,control_then_confirm,set,set,1.000,fn:schedule_manage→system_meta;pattern:schedule_vs_system;length:very_short
+세종 날씨,세종 날씨,weather_query,unknown,query_then_respond,direct_respond,none,none,0.938,fn:known_to_unknown;exec:query_then_respond→direct_respond;length:very_short
+방문 주차 등록해줘,방문 주차 등록해줘,vehicle_manage,vehicle_manage,query_then_respond,query_then_respond,set,none,1.000,dir:missing;length:short
+거실 조명 최소로,거실 조명 최소로,light_control,light_control,control_then_confirm,control_then_confirm,down,set,1.000,dir:down→set;length:short
+안방 조명 최소로,안방 조명 최소로,light_control,light_control,control_then_confirm,control_then_confirm,down,set,1.000,dir:down→set;length:short
+주방 조명 최소로,주방 조명 최소로,light_control,light_control,control_then_confirm,control_then_confirm,off,set,1.000,dir:off→set;length:short
+침실 조명 최소로,침실 조명 최소로,light_control,light_control,control_then_confirm,control_then_confirm,down,set,1.000,dir:down→set;length:short
+작은방 조명 최소로,작은방 조명 최소로,light_control,light_control,control_then_confirm,control_then_confirm,down,set,1.000,dir:down→set;length:short
+아이방 조명 최소로,아이방 조명 최소로,light_control,light_control,control_then_confirm,control_then_confirm,off,set,1.000,dir:off→set;length:short
+안방 커튼 예약,안방 커튼 예약,curtain_control,curtain_control,query_then_respond,control_then_confirm,none,none,1.000,exec:query_as_control;length:short
+침실 커튼 예약,침실 커튼 예약,curtain_control,curtain_control,query_then_respond,control_then_confirm,none,none,1.000,exec:query_as_control;length:short
+작은방 커튼 예약,작은방 커튼 예약,curtain_control,curtain_control,query_then_respond,control_then_confirm,none,none,1.000,exec:query_as_control;length:short
+근처 신경외과,근처 신경외과,medical_query,unknown,query_then_respond,direct_respond,none,none,0.804,fn:known_to_unknown;exec:query_then_respond→direct_respond;length:very_short
+약국 위치,약국 위치,medical_query,unknown,query_then_respond,direct_respond,none,none,0.576,fn:known_to_unknown;exec:query_then_respond→direct_respond;length:very_short
+알람 맞춰줘,알람 맞춰줘,schedule_manage,system_meta,control_then_confirm,control_then_confirm,set,set,0.989,fn:schedule_manage→system_meta;pattern:schedule_vs_system;length:very_short
+엘리베이터 좀 불러줘,엘리베이터이터 좀 불러줘,elevator_call,elevator_call,control_then_confirm,control_then_confirm,on,none,1.000,dir:missing;length:short
+문 열렸어?,문 열렸어?,door_control,door_control,query_then_respond,control_then_confirm,none,open,1.000,exec:query_as_control;dir:spurious;length:very_short

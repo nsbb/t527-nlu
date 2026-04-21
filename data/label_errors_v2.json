@@ -1,0 +1,830 @@
+{
+  "cat_a_high_confidence": [
+    {
+      "idx": 694,
+      "utterance": "남방 올려쥬",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "up",
+      "reason": "올려=up",
+      "model_conf": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 698,
+      "utterance": "날방 올려",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "up",
+      "reason": "올려=up",
+      "model_conf": "모델 앙상블 conf=0.99 일치"
+    },
+    {
+      "idx": 700,
+      "utterance": "남방 올려",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "up",
+      "reason": "올려=up",
+      "model_conf": "모델 앙상블 conf=0.99 일치"
+    },
+    {
+      "idx": 717,
+      "utterance": "도어록 열어쥬",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "open",
+      "reason": "열어=open",
+      "model_conf": "모델 앙상블 conf=0.97 일치"
+    },
+    {
+      "idx": 2465,
+      "utterance": "안방 남방 올려줘",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "up",
+      "reason": "올려=up",
+      "model_conf": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 2468,
+      "utterance": "안방 난반 올려",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "up",
+      "reason": "올려=up",
+      "model_conf": "모델 앙상블 conf=0.98 일치"
+    }
+  ],
+  "cat_b_rule_only": [
+    {
+      "idx": 45,
+      "utterance": "블라인드 올려",
+      "field": "param_direction",
+      "actual": "stop",
+      "expected": "up",
+      "reason": "올려=up"
+    },
+    {
+      "idx": 61,
+      "utterance": "창문 열어도 괜찮아?",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "open",
+      "reason": "열어=open"
+    },
+    {
+      "idx": 72,
+      "utterance": "몇 시야?",
+      "field": "exec_type",
+      "actual": "direct_respond",
+      "expected": "query_then_respond",
+      "reason": "수치 질의=query"
+    },
+    {
+      "idx": 83,
+      "utterance": "환율 얼마야",
+      "field": "exec_type",
+      "actual": "direct_respond",
+      "expected": "query_then_respond",
+      "reason": "수치 질의=query"
+    },
+    {
+      "idx": 94,
+      "utterance": "카카오톡 열어",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "open",
+      "reason": "열어=open"
+    },
+    {
+      "idx": 192,
+      "utterance": "택시비 얼마야",
+      "field": "exec_type",
+      "actual": "direct_respond",
+      "expected": "query_then_respond",
+      "reason": "수치 질의=query"
+    },
+    {
+      "idx": 212,
+      "utterance": "잠금장치 열어",
+      "field": "param_direction",
+      "actual": "open",
+      "expected": "close",
+      "reason": "닫아=close"
+    },
+    {
+      "idx": 229,
+      "utterance": "바깥 온도 몇 도",
+      "field": "exec_type",
+      "actual": "direct_respond",
+      "expected": "query_then_respond",
+      "reason": "수치 질의=query"
+    },
+    {
+      "idx": 250,
+      "utterance": "거실 등 좀 밝게",
+      "field": "param_direction",
+      "actual": "down",
+      "expected": "up",
+      "reason": "밝게=up"
+    },
+    {
+      "idx": 270,
+      "utterance": "커튼 올려",
+      "field": "param_direction",
+      "actual": "stop",
+      "expected": "up",
+      "reason": "올려=up"
+    },
+    {
+      "idx": 274,
+      "utterance": "기온이 몇 도야",
+      "field": "exec_type",
+      "actual": "direct_respond",
+      "expected": "query_then_respond",
+      "reason": "수치 질의=query"
+    },
+    {
+      "idx": 299,
+      "utterance": "난방 온도 몇 도야",
+      "field": "exec_type",
+      "actual": "direct_respond",
+      "expected": "query_then_respond",
+      "reason": "수치 질의=query"
+    },
+    {
+      "idx": 368,
+      "utterance": "전동커튼 열어줘",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "open",
+      "reason": "열어=open"
+    },
+    {
+      "idx": 399,
+      "utterance": "인스타그램 열어",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "open",
+      "reason": "열어=open"
+    },
+    {
+      "idx": 409,
+      "utterance": "안방 등 밝게",
+      "field": "param_direction",
+      "actual": "down",
+      "expected": "up",
+      "reason": "밝게=up"
+    },
+    {
+      "idx": 464,
+      "utterance": "현관 잠금 확인",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "close",
+      "reason": "닫아=close"
+    },
+    {
+      "idx": 471,
+      "utterance": "커튼 올려줘",
+      "field": "param_direction",
+      "actual": "stop",
+      "expected": "up",
+      "reason": "올려=up"
+    },
+    {
+      "idx": 472,
+      "utterance": "블라인드 올려줘",
+      "field": "param_direction",
+      "actual": "stop",
+      "expected": "up",
+      "reason": "올려=up"
+    },
+    {
+      "idx": 486,
+      "utterance": "방범 설정해줘",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "set",
+      "reason": "등록/설정=set"
+    },
+    {
+      "idx": 527,
+      "utterance": "주방 불 좀 밝게",
+      "field": "param_direction",
+      "actual": "down",
+      "expected": "up",
+      "reason": "밝게=up"
+    },
+    {
+      "idx": 559,
+      "utterance": "까스 잠금 확인",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "close",
+      "reason": "닫아=close"
+    },
+    {
+      "idx": 562,
+      "utterance": "도어락 잠금 상태",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "close",
+      "reason": "닫아=close"
+    },
+    {
+      "idx": 569,
+      "utterance": "엘베 내려와",
+      "field": "exec_type",
+      "actual": "query_then_respond",
+      "expected": "control_then_confirm",
+      "reason": "승강기 호출=control"
+    },
+    {
+      "idx": 672,
+      "utterance": "화면 올려",
+      "field": "param_direction",
+      "actual": "down",
+      "expected": "up",
+      "reason": "올려=up"
+    },
+    {
+      "idx": 714,
+      "utterance": "까스 닫아쥬",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "close",
+      "reason": "닫아=close"
+    },
+    {
+      "idx": 1515,
+      "utterance": "주방 블라인드 올려",
+      "field": "param_direction",
+      "actual": "stop",
+      "expected": "up",
+      "reason": "올려=up"
+    },
+    {
+      "idx": 1527,
+      "utterance": "가스 잠금 상태 확인",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "close",
+      "reason": "닫아=close"
+    },
+    {
+      "idx": 1530,
+      "utterance": "도어락 잠금 확인",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "close",
+      "reason": "닫아=close"
+    },
+    {
+      "idx": 1535,
+      "utterance": "외출 설정해줘",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "set",
+      "reason": "등록/설정=set"
+    },
+    {
+      "idx": 1547,
+      "utterance": "엘베 올라와",
+      "field": "exec_type",
+      "actual": "query_then_respond",
+      "expected": "control_then_confirm",
+      "reason": "승강기 호출=control"
+    },
+    {
+      "idx": 1730,
+      "utterance": "여의도까지 얼마나 걸려",
+      "field": "exec_type",
+      "actual": "direct_respond",
+      "expected": "query_then_respond",
+      "reason": "수치 질의=query"
+    },
+    {
+      "idx": 1835,
+      "utterance": "가스 잠금 확인",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "close",
+      "reason": "닫아=close"
+    },
+    {
+      "idx": 1847,
+      "utterance": "엘리베이터 올려보내",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "up",
+      "reason": "올려=up"
+    },
+    {
+      "idx": 2009,
+      "utterance": "거실 에어컨 냉방모드로",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "set",
+      "reason": "N모드로=set"
+    },
+    {
+      "idx": 2017,
+      "utterance": "거실 에어컨 수면모드로",
+      "field": "param_direction",
+      "actual": "down",
+      "expected": "set",
+      "reason": "N모드로=set"
+    },
+    {
+      "idx": 2029,
+      "utterance": "안방 에어컨 냉방모드로",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "set",
+      "reason": "N모드로=set"
+    },
+    {
+      "idx": 2037,
+      "utterance": "안방 에어컨 수면모드로",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "set",
+      "reason": "N모드로=set"
+    },
+    {
+      "idx": 2049,
+      "utterance": "주방 에어컨 냉방모드로",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "set",
+      "reason": "N모드로=set"
+    },
+    {
+      "idx": 2057,
+      "utterance": "주방 에어컨 수면모드로",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "set",
+      "reason": "N모드로=set"
+    },
+    {
+      "idx": 2069,
+      "utterance": "침실 에어컨 냉방모드로",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "set",
+      "reason": "N모드로=set"
+    },
+    {
+      "idx": 2077,
+      "utterance": "침실 에어컨 수면모드로",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "set",
+      "reason": "N모드로=set"
+    },
+    {
+      "idx": 2089,
+      "utterance": "작은방 에어컨 냉방모드로",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "set",
+      "reason": "N모드로=set"
+    },
+    {
+      "idx": 2097,
+      "utterance": "작은방 에어컨 수면모드로",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "set",
+      "reason": "N모드로=set"
+    },
+    {
+      "idx": 2109,
+      "utterance": "아이방 에어컨 냉방모드로",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "set",
+      "reason": "N모드로=set"
+    },
+    {
+      "idx": 2117,
+      "utterance": "아이방 에어컨 수면모드로",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "set",
+      "reason": "N모드로=set"
+    },
+    {
+      "idx": 2185,
+      "utterance": "네이버 지도 열어",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "open",
+      "reason": "열어=open"
+    },
+    {
+      "idx": 2187,
+      "utterance": "카카오맵 열어",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "open",
+      "reason": "열어=open"
+    },
+    {
+      "idx": 2192,
+      "utterance": "당근마켓 열어",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "open",
+      "reason": "열어=open"
+    },
+    {
+      "idx": 2193,
+      "utterance": "인스타그램 올려줘",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "up",
+      "reason": "올려=up"
+    },
+    {
+      "idx": 2194,
+      "utterance": "페이스북 열어",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "open",
+      "reason": "열어=open"
+    },
+    {
+      "idx": 2195,
+      "utterance": "트위터 열어",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "open",
+      "reason": "열어=open"
+    },
+    {
+      "idx": 2197,
+      "utterance": "디즈니플러스 열어",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "open",
+      "reason": "열어=open"
+    },
+    {
+      "idx": 2201,
+      "utterance": "카카오뱅크 열어",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "open",
+      "reason": "열어=open"
+    },
+    {
+      "idx": 2202,
+      "utterance": "토스 열어",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "open",
+      "reason": "열어=open"
+    },
+    {
+      "idx": 2393,
+      "utterance": "작은방 좀 밝게",
+      "field": "param_direction",
+      "actual": "down",
+      "expected": "up",
+      "reason": "밝게=up"
+    },
+    {
+      "idx": 2502,
+      "utterance": "지도 열어줘",
+      "field": "param_direction",
+      "actual": "none",
+      "expected": "open",
+      "reason": "열어=open"
+    },
+    {
+      "idx": 2706,
+      "utterance": "방범 설정해줘봐",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "set",
+      "reason": "등록/설정=set"
+    },
+    {
+      "idx": 2707,
+      "utterance": "나간다 설정해줘",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "set",
+      "reason": "등록/설정=set"
+    },
+    {
+      "idx": 2900,
+      "utterance": "주방 조명 최소로",
+      "field": "param_direction",
+      "actual": "off",
+      "expected": "down",
+      "reason": "낮춰=down"
+    },
+    {
+      "idx": 2915,
+      "utterance": "아이방 조명 최소로",
+      "field": "param_direction",
+      "actual": "off",
+      "expected": "down",
+      "reason": "낮춰=down"
+    },
+    {
+      "idx": 2974,
+      "utterance": "지금 몇 시야",
+      "field": "exec_type",
+      "actual": "direct_respond",
+      "expected": "query_then_respond",
+      "reason": "수치 질의=query"
+    }
+  ],
+  "cat_c_model_only": [
+    {
+      "idx": 47,
+      "utterance": "엘베 좀",
+      "field": "exec_type",
+      "actual": "control_then_confirm",
+      "expected": "query_then_respond",
+      "reason": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 47,
+      "utterance": "엘베 좀",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "none",
+      "reason": "모델 앙상블 conf=0.99 일치"
+    },
+    {
+      "idx": 200,
+      "utterance": "간접등 켜줘",
+      "field": "exec_type",
+      "actual": "clarify",
+      "expected": "control_then_confirm",
+      "reason": "모델 앙상블 conf=0.99 일치"
+    },
+    {
+      "idx": 201,
+      "utterance": "다운라이트 켜",
+      "field": "exec_type",
+      "actual": "control_then_confirm",
+      "expected": "direct_respond",
+      "reason": "모델 앙상블 conf=0.96 일치"
+    },
+    {
+      "idx": 202,
+      "utterance": "취침등",
+      "field": "param_direction",
+      "actual": "set",
+      "expected": "none",
+      "reason": "모델 앙상블 conf=0.99 일치"
+    },
+    {
+      "idx": 329,
+      "utterance": "남방 꺼쥬",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "off",
+      "reason": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 339,
+      "utterance": "에어컨꺼",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "off",
+      "reason": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 353,
+      "utterance": "히팅 켜줘",
+      "field": "param_direction",
+      "actual": "up",
+      "expected": "on",
+      "reason": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 371,
+      "utterance": "엘리베이터 내려와",
+      "field": "exec_type",
+      "actual": "control_then_confirm",
+      "expected": "query_then_respond",
+      "reason": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 371,
+      "utterance": "엘리베이터 내려와",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "none",
+      "reason": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 481,
+      "utterance": "엘리베이터 올라와",
+      "field": "exec_type",
+      "actual": "control_then_confirm",
+      "expected": "query_then_respond",
+      "reason": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 481,
+      "utterance": "엘리베이터 올라와",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "none",
+      "reason": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 569,
+      "utterance": "엘베 내려와",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "none",
+      "reason": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 641,
+      "utterance": "승강기 와",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "none",
+      "reason": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 725,
+      "utterance": "엘베불러",
+      "field": "exec_type",
+      "actual": "control_then_confirm",
+      "expected": "query_then_respond",
+      "reason": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 725,
+      "utterance": "엘베불러",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "none",
+      "reason": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 726,
+      "utterance": "승강기불러",
+      "field": "exec_type",
+      "actual": "control_then_confirm",
+      "expected": "query_then_respond",
+      "reason": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 726,
+      "utterance": "승강기불러",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "none",
+      "reason": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 727,
+      "utterance": "엘레베이터와",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "none",
+      "reason": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 925,
+      "utterance": "라이트 켜",
+      "field": "exec_type",
+      "actual": "clarify",
+      "expected": "control_then_confirm",
+      "reason": "모델 앙상블 conf=0.96 일치"
+    },
+    {
+      "idx": 1543,
+      "utterance": "엘리베이터 와줘",
+      "field": "exec_type",
+      "actual": "control_then_confirm",
+      "expected": "query_then_respond",
+      "reason": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 1543,
+      "utterance": "엘리베이터 와줘",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "none",
+      "reason": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 1544,
+      "utterance": "승강기 보내줘",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "none",
+      "reason": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 1547,
+      "utterance": "엘베 올라와",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "none",
+      "reason": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 1548,
+      "utterance": "엘리베이터 보내줘",
+      "field": "exec_type",
+      "actual": "control_then_confirm",
+      "expected": "query_then_respond",
+      "reason": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 1548,
+      "utterance": "엘리베이터 보내줘",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "none",
+      "reason": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 1549,
+      "utterance": "엘베 와줘",
+      "field": "exec_type",
+      "actual": "control_then_confirm",
+      "expected": "query_then_respond",
+      "reason": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 1549,
+      "utterance": "엘베 와줘",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "none",
+      "reason": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 1845,
+      "utterance": "엘리베이터 와",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "none",
+      "reason": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 1851,
+      "utterance": "승강기 와줘",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "none",
+      "reason": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 2493,
+      "utterance": "토토 결과",
+      "field": "exec_type",
+      "actual": "direct_respond",
+      "expected": "query_then_respond",
+      "reason": "모델 앙상블 conf=0.98 일치"
+    },
+    {
+      "idx": 2556,
+      "utterance": "작은방 지금 불 켜줘",
+      "field": "exec_type",
+      "actual": "control_then_confirm",
+      "expected": "clarify",
+      "reason": "모델 앙상블 conf=0.98 일치"
+    },
+    {
+      "idx": 2568,
+      "utterance": "아이방 지금 불 켜줘",
+      "field": "exec_type",
+      "actual": "control_then_confirm",
+      "expected": "clarify",
+      "reason": "모델 앙상블 conf=0.98 일치"
+    },
+    {
+      "idx": 2700,
+      "utterance": "엘리베이터 와줘봐",
+      "field": "exec_type",
+      "actual": "control_then_confirm",
+      "expected": "query_then_respond",
+      "reason": "모델 앙상블 conf=1.00 일치"
+    },
+    {
+      "idx": 2700,
+      "utterance": "엘리베이터 와줘봐",
+      "field": "param_direction",
+      "actual": "on",
+      "expected": "none",
+      "reason": "모델 앙상블 conf=1.00 일치"
+    }
+  ]
+}
