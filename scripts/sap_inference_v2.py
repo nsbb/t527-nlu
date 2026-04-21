@@ -285,6 +285,17 @@ class SAPv2Pipeline:
             preds['param_direction'] = 'down'
             preds['param_type'] = 'brightness'
 
+        # 알람/모닝콜 → schedule_manage (iter8 post-proc rule, v46 오류 19건)
+        # 주의: "타이머"는 "조명 타이머", "에어컨 타이머"처럼 device-bound 일 수 있어 제외
+        # 주의: device keyword 있으면 schedule_manage가 아니라 해당 device
+        has_device = re.search(r'조명|불|램프|난방|에어컨|환기|가스|도어|커튼|공기청정|블라인드', text)
+        if not has_device and re.search(r'알람|모닝콜', text) and preds['fn'] in ('system_meta', 'home_info', 'unknown'):
+            preds['fn'] = 'schedule_manage'
+            if re.search(r'취소|해제|삭제|끄', text):
+                preds['param_direction'] = 'off'
+            elif re.search(r'설정|맞춰|예약|등록', text):
+                preds['param_direction'] = 'set'
+
         return preds, confidence
 
     def run(self, text):
