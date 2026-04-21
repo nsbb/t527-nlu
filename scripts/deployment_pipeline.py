@@ -48,6 +48,17 @@ def extract_room(text):
     return 'none'
 
 
+def extract_rooms(text):
+    """여러 room 감지 — 'X와/이랑/하고/과 Y' 같은 패턴"""
+    rooms = []
+    seen = set()
+    for kr, en in ROOM_MAP.items():
+        if kr in text and en not in seen:
+            rooms.append(en)
+            seen.add(en)
+    return rooms if rooms else ['none']
+
+
 # Response templates (간소화 — 실제는 sap_inference_v2.py의 RESPONSE_TEMPLATES 사용 권장)
 ROOM_KR = {'living': '거실 ', 'kitchen': '주방 ', 'bedroom_main': '안방 ',
            'bedroom_sub': '침실 ', 'all': '전체 ', 'none': '', 'external': ''}
@@ -137,8 +148,9 @@ class DeploymentPipeline:
         # 2. NLU inference (ensemble + rules)
         nlu = predict_with_rules(pp, self.sess, self.tok)
 
-        # 3. Room extract
-        room = extract_room(pp)
+        # 3. Room extract (primary + multi)
+        rooms = extract_rooms(pp)
+        room = rooms[0]  # primary for DST/response
 
         # 4. DST
         if use_dst:
@@ -165,6 +177,7 @@ class DeploymentPipeline:
             'exec_type': final['exec_type'],
             'param_direction': final['param_direction'],
             'room': final.get('room', 'none'),
+            'rooms': rooms,          # 다중 room 리스트 (iter9)
             'value': final.get('value'),
             'dst_applied': dst_applied,
             'response': response,

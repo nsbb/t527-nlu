@@ -64,6 +64,9 @@ TESTS = [
     ("미세문지 어때", "fn", "weather_query", "preprocess 미세먼지"),
     ("남방 올려쥬", "fn", "heat_control", "preprocess 남방→난방"),
     ("에어컨 이십삼도", "fn", "ac_control", "preprocess 한글숫자"),
+    ("스물다섯도로 맞춰줘", "fn", "heat_control", "preprocess 한글숫자 스물다섯"),
+    ("거실에 불 좀 켜줘", "exec_type", "control_then_confirm", "iter9 조사 허용"),
+    ("불 좀 키줘", "fn", "light_control", "iter9 키줘→켜줘 preprocess"),
 ]
 
 
