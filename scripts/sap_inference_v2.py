@@ -333,6 +333,18 @@ class SAPv2Pipeline:
         if preds['fn'] == 'heat_control' and preds['exec_type'] == 'control_then_confirm' and preds['param_direction'] == 'none':
             preds['param_direction'] = 'on'
 
+        # iter9: 공기청정/공기 정화 → vent_control
+        if re.search(r'공기청정|공기\s*정화|공기\s*청정', text):
+            if preds['fn'] in ('weather_query', 'unknown', 'home_info'):
+                preds['fn'] = 'vent_control'
+                if preds['exec_type'] == 'direct_respond':
+                    preds['exec_type'] = 'control_then_confirm'
+            if preds['fn'] == 'vent_control' and preds['param_direction'] == 'none':
+                if '켜' in text or '가동' in text or '작동' in text:
+                    preds['param_direction'] = 'on'
+                elif '꺼' in text or '끄' in text:
+                    preds['param_direction'] = 'off'
+
         # iter9: 화면/월패드/알림/음량 → home_info (capability query 제외)
         capability_q = re.search(r'어떻게|할\s*수\s*있', text)
         if preds['fn'] == 'system_meta' and not capability_q:
