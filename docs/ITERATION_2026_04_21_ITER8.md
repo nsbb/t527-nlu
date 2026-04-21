@@ -188,9 +188,10 @@ Top patterns after all rules:
 **총 ensemble gain**: **93.53% → 94.38% (+0.85%p)**
 
 **배포 권장**:
-- 저장 ONNX: `nlu_v28_v46_ensemble.onnx` (변경 없음)
-- 변경: `scripts/ensemble_inference_with_rules.py` 후처리 rule (+알람 rule)
+- 저장 ONNX: `nlu_v28_v46_ensemble.onnx` (변경 없음, 105MB)
+- 변경: `scripts/ensemble_inference_with_rules.py` 후처리 rule 4개 신규/확장
 - 변경: `scripts/preprocess.py` (+40 entries, 3 bug fix)
+- **end-to-end latency: 0.85ms/query CPU** (preprocess + ensemble + post-proc + tokenize 100 샘플 평균)
 
 ### 시도했으나 유지 안 된 것
 | 시도 | Δ TS | 이유 |
