@@ -79,6 +79,8 @@ Rasa NLU: flat + slot filling hybrid (우리와 유사).
 ✅ **옳았다**:
 - KE 97.2% 달성 (Flat로는 70% 수준 한계)
 - DST 가능 (Flat은 follow-up 불가)
+  - **정량 검증 (reflection 단계 추가 테스트)**: DST on 7/7 (100%), DST off 1/7 (14%). **DST 가치 = +85.7%p on multi-turn**
+  - scripts/test_multiturn.py 참고
 - OOD 100% 처리
 - NPU 호환 유지
 
