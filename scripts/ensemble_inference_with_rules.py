@@ -122,6 +122,19 @@ def apply_post_rules(preds, text):
     if preds['fn'] == 'heat_control' and preds['exec_type'] == 'control_then_confirm' and preds['param_direction'] == 'none':
         preds['param_direction'] = 'on'
 
+    # iter9: 공기청정/공기 정화 → vent_control (TS에 없지만 실사용 보강)
+    if re.search(r'공기청정|공기\s*정화|공기\s*청정', text):
+        if preds['fn'] in ('weather_query', 'unknown', 'home_info'):
+            preds['fn'] = 'vent_control'
+            if preds['exec_type'] == 'direct_respond':
+                preds['exec_type'] = 'control_then_confirm'
+        # fn이 이미 vent_control이어도 dir 보강
+        if preds['fn'] == 'vent_control' and preds['param_direction'] == 'none':
+            if '켜' in text or '가동' in text or '작동' in text:
+                preds['param_direction'] = 'on'
+            elif '꺼' in text or '끄' in text:
+                preds['param_direction'] = 'off'
+
     # iter9: 화면/월패드/알림/음량 → home_info (system_meta 오분류 교정)
     # 주의: "에너지 사용량 알림", "긴급 알림" 등 (다른 fn) 및
     #      "어떻게 할 수 있어" 같은 capability query (system_meta 맞음) 제외
