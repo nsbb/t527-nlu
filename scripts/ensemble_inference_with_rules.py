@@ -122,6 +122,21 @@ def apply_post_rules(preds, text):
     if preds['fn'] == 'heat_control' and preds['exec_type'] == 'control_then_confirm' and preds['param_direction'] == 'none':
         preds['param_direction'] = 'on'
 
+    # iter9 (reflection): "덥다/더워/덥네" → ac_control (heat 오예측 교정)
+    if preds['fn'] == 'heat_control' and re.search(r'덥다|더워|덥네|더운', text):
+        # 온도 올림 맥락이면 heat 유지 ("난방 올려")
+        if not re.search(r'난방|보일러|온돌', text):
+            preds['fn'] = 'ac_control'
+            if preds['param_direction'] in ('none', 'up'):
+                preds['param_direction'] = 'on'
+
+    # "춥다/추워" → heat_control 확정 (반대 보강)
+    if preds['fn'] == 'ac_control' and re.search(r'춥다|추워|추운', text):
+        if not re.search(r'에어컨|냉방', text):
+            preds['fn'] = 'heat_control'
+            if preds['param_direction'] in ('none',):
+                preds['param_direction'] = 'on'
+
     # iter9: 공기청정/공기 정화 → vent_control (TS에 없지만 실사용 보강)
     if re.search(r'공기청정|공기\s*정화|공기\s*청정', text):
         if preds['fn'] in ('weather_query', 'unknown', 'home_info'):
