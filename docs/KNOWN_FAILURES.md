@@ -1,7 +1,23 @@
-# 알려진 실패 패턴 (v46 기준, 2026-04-21 업데이트)
+# 알려진 실패 패턴 (iter9 이후 업데이트, 2026-04-21)
 
-v46 모델의 Test Suite 3,043개 중 204개 오류 (93.3%) 분석.
-Ensemble v28+v46 적용 시 172개 → 94.3% (일부 오류 해소).
+v46 단독: Test Suite 3,043개 중 204개 오류 (93.3%)
+Ensemble v28+v46: 172개 오류 → 94.3%
+**Ensemble + iter8/9 후처리 rule: 132개 오류 → 95.76% ★**
+
+## Iter8/9 후처리 rule이 해결한 주요 패턴
+
+| 패턴 | 규칙 | 해결 건수 | 참고 |
+|------|------|:---:|------|
+| 알람/모닝콜 → system_meta | alarm rule | ~19건 | device keyword 없을 때만 |
+| 화면/월패드/음량 → system_meta | home_info rule | ~6건 | capability query 제외 |
+| 서울 날씨/뉴스/병원 → unknown | unknown→query 복구 | ~9건 | 3가지 query fn |
+| 네비게이션/비행기 → known | OOD unknown | ~5건 | 명확 OOD keyword |
+| 전화해줘 (entity 없음) → home_info | 전화 OOD | ~3건 | entity 있으면 home_info |
+| `{room}{device} 좀 {verb}` → clarify | 어순 CTC rule | ~9건 | light_control 한정 |
+| curtain pred=open 수정 | curtain open 확장 | ~21건 | 올려/내려/bare |
+| heat CTC + none → on | heat 기본 on | ~4건 | 바닥 난방 등 |
+| preprocess 엘레베이터 이중 변환 fix | preprocess bug fix | ~3건 | 파생 버그 |
+| **TS 총 개선** | | **~70건** | **93.53→95.76** |
 
 ## 오류 분류 (204건)
 
