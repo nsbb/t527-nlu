@@ -104,7 +104,11 @@ Known 204개 중 **3개만 변경** (1.4%):
    - v46 오류 19건 패턴: "알람 X" → system_meta (잘못 예측)
    - 규칙: device keyword 없는 `알람|모닝콜` → fn=schedule_manage
    - device-bound ("조명 타이머", "에어컨 타이머") 제외 safeguard
-   - TS: **93.76% → 94.15% (+0.39%p)**, KE 영향 없음
+   - **sap_inference_v2**: TS 93.76% → **94.15% (+0.39%p)**, KE 97.33% 유지
+   - **ensemble + rules**: TS 93.53% → **94.05% (+0.52%p)**, KE 97.79% → 97.27% (-0.52%p)
+   - 라벨 불일치 발견: TS는 알람 = schedule_manage, KE는 알람 = system_meta
+   - 판단: schedule_manage가 **의미론적으로 정확** (alarm = scheduling), KE 라벨이 오류
+   - → 규칙 유지. 실 사용자 로그로 최종 검증 예정 (P3 #9)
 7. ❌ Elevator default dir=on rule (dir:missing 완화 시도)
    - 단순 규칙: fn=elevator_call + dir=none → on
    - TS 94.15% → 93.82% (-0.33%p)
