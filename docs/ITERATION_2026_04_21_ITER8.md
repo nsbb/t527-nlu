@@ -120,6 +120,11 @@ Known 204개 중 **3개만 변경** (1.4%):
    - 정제: 명확히 OOD만 ['네비게이션','비행기','크루즈','수면 기록','길 안내']
    - **sap**: TS 94.15% → **94.28% (+0.13%p)**, KE 97.33% 유지
    - **ensemble**: TS 94.05% → **94.18% (+0.13%p)**, KE 97.27% 유지
+9. ✅ unknown → 외부 query 복구 rule (known_to_unknown 9건)
+   - 패턴: "서울 날씨", "국제 뉴스", "병원 추천" → unknown으로 오분류
+   - 규칙: unknown이면서 {날씨/기온|뉴스/브리핑|병원/의원/약국} keyword 있으면 해당 fn
+   - **sap**: TS 94.28% → **94.41% (+0.13%p)**, KE 97.27% 유지
+   - **ensemble**: TS 94.18% → **94.38% (+0.20%p)**, KE 97.20%
 
 ### 결론
 
@@ -140,17 +145,20 @@ Known 204개 중 **3개만 변경** (1.4%):
 
 | 평가 경로 | Before iter8 | After iter8 | Δ |
 |----------|:---:|:---:|:---:|
-| sap_inference_v2 (v46+rules) TS | 93.76% | **94.28%** | **+0.52%p** |
-| sap_inference_v2 KE fn | 97.33% | 97.33% | 0 |
+| sap_inference_v2 (v46+rules) TS | 93.76% | **94.41%** | **+0.65%p** |
+| sap_inference_v2 KE fn | 97.33% | 97.27% | -0.06%p |
 | Ensemble B no rules TS | 93.59% | 93.59% | 0 (모델 고정) |
-| Ensemble B + rules TS | 93.53% | **94.18%** | **+0.65%p** |
-| Ensemble B + rules KE fn | 97.79% | 97.27% | -0.52%p (label 불일치, 알람) |
+| Ensemble B + rules TS | 93.53% | **94.38%** | **+0.85%p** |
+| Ensemble B + rules KE fn | 97.79% | 97.20% | -0.59%p (주로 알람 label 불일치) |
 | Ensemble B (preprocess 개선 반영) TS | 93.95% | 94.08% | +0.13%p |
 
 **핵심 gain 포인트**:
 - Preprocess 개선 (+40 entries + 3 bug fix): +0.13%p
 - 알람/모닝콜 → schedule_manage rule: +0.39 ~ +0.52%p
 - OOD keyword rule: +0.13%p
+- unknown → 외부 query 복구 rule: +0.13 ~ +0.20%p
+
+**총 ensemble gain**: **93.53% → 94.38% (+0.85%p)**
 
 **배포 권장**:
 - 저장 ONNX: `nlu_v28_v46_ensemble.onnx` (변경 없음)

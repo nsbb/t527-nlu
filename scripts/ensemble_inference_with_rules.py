@@ -71,6 +71,18 @@ def apply_post_rules(preds, text):
         preds['param_direction'] = 'none'
         preds['param_type'] = 'none'
 
+    # unknown → 외부 query keyword (iter8, known_to_unknown 오류 완화)
+    if preds['fn'] == 'unknown':
+        if re.search(r'날씨|기온|비\s*와|더울까|추울까|맑|흐림', text):
+            preds['fn'] = 'weather_query'
+            preds['exec_type'] = 'query_then_respond'
+        elif re.search(r'뉴스|브리핑|속보', text):
+            preds['fn'] = 'news_query'
+            preds['exec_type'] = 'query_then_respond'
+        elif re.search(r'병원|의원|약국|신경외과|내과|외과|안과|치과|한의원', text):
+            preds['fn'] = 'medical_query'
+            preds['exec_type'] = 'query_then_respond'
+
     return preds
 
 
