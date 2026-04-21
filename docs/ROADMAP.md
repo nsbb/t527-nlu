@@ -15,6 +15,12 @@
 - GT v2 재파싱: 219개 중 3개만 변경 → 영향 없음
 - Strategy 9가지 변형 전수: **B가 balanced 최고** (Avg만 TS +1%p지만 KE -6%p)
 - → **Strategy B는 수학적 balanced ceiling** 확정
+- **후처리 rule 개선으로 +0.85%p 획득** (모델 변경 없이):
+  - 알람/모닝콜 → schedule_manage: +0.52%p
+  - unknown → 날씨/뉴스/의료 복구: +0.20%p
+  - OOD keyword → unknown: +0.13%p
+  - preprocess 40개 신규 + 3 bug fix: +0.13%p
+  - **Ensemble + rules TS: 93.53% → 94.38%**
 
 ## 우선순위별 개선 항목
 
