@@ -35,3 +35,7 @@ checkpoints/sap_best.pt
 checkpoints/multihead_*.pt
 checkpoints/cnn_multihead_*.pt
 checkpoints/cnn_sbert_v7_best.pt
+checkpoints/archive/
+checkpoints/cnn_6L_*.pt
+checkpoints/cnn_attn_*.pt
+checkpoints/conformer_multihead_*.pt
