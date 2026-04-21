@@ -46,25 +46,26 @@
 | param_logits | [batch, 5] | 5 |
 | judge_logits | [batch, 5] | 5 |
 
-## 성능 지표
+## 성능 지표 (iter9 업데이트, 2026-04-22)
 
 ### 벤치마크
 
-| 지표 | 값 | 비고 |
-|------|:---:|------|
-| Test Suite combo | 94.3% | 3,043 케이스 |
-| KoELECTRA fn | 97.8% | 외부 1,536 케이스 (실제 ~98.8%) |
-| STT 오류 내성 | 100% | 10/10 STT 오류 케이스 |
-| CPU latency | 0.48ms | 단일 추론 (CPU) |
-| 크기 | 104.9MB | FP32 |
+| 지표 | Base Ensemble | + iter8/9 rules | 비고 |
+|------|:---:|:---:|------|
+| Test Suite combo | 93.59% | **95.76%** | +2.17%p (rule로만) |
+| KoELECTRA fn | 97.79% | 97.20% | -0.59%p (알람 라벨 불일치) |
+| GT 219 combo | 94.5% | **95.0%** | +0.5%p |
+| STT 오류 내성 | 100% | 100% | 10/10 유지 |
+| CPU latency | 0.55ms | 0.67ms | rule 오버헤드 미미 |
+| 크기 | 104.9MB | 동일 | ONNX 변경 없음 |
 
-### 헤드별 정확도
+### 헤드별 정확도 (Ensemble + rules)
 
 | 헤드 | Test Suite | KoELECTRA |
 |------|:---:|:---:|
-| fn | 98.0% | 97.8% |
-| exec_type | 98.2% | - |
-| param_direction | 97.8% | - |
+| fn | 99.34% | 97.20% |
+| exec_type | 98.39% | - |
+| param_direction | 97.90% | - |
 | param_type | 99.5% | - |
 | judge | 99.7% | - |
 
