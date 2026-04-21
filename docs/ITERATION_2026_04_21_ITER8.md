@@ -135,11 +135,32 @@ Known 204개 중 **3개만 변경** (1.4%):
 - 남은 경로: 이전 세션 결론과 동일 → **실사용 로그 기반 재학습** (P3 #9)
 
 ### 산출물
+**Scripts**
 - `scripts/parse_gt_scenarios_v2.py` (slash 로직 개선)
 - `scripts/eval_strategies_variants.py` (9개 전략 전수 비교)
 - `scripts/preprocess.py` (사전 +40개, 3개 버그 fix)
+- `scripts/ensemble_inference_with_rules.py` (+알람/OOD/query 복구 rule)
+- `scripts/sap_inference_v2.py` (+동일 rule + 템플릿 다양화)
+
+**Data**
 - `data/gt_known_scenarios_v2.json` / `gt_unknown_scenarios_v2.json`
 - `data/strategy_variants_results.json`
+
+**Docs**
+- `docs/ITERATION_2026_04_21_ITER8.md` (이 문서)
+- `docs/ROADMAP.md` (P1 #2,3,4 업데이트, P2 #5 확인)
+- `docs/CHANGELOG.md` (iter8 entry 추가)
+
+### 남은 오류 분석 (162/3043 = 5.32%)
+Top patterns after all rules:
+- 26 exec: control→clarify (모델이 clarify로 과다 예측)
+- 19 exec: direct→query (라벨 불일치)
+- 18 dir: on→none (dir 정보 누락)
+- 17 exec: query→direct
+- 15 dir: none→set (spurious set)
+- 11 dir: none→on (spurious on)
+
+→ 대부분 **TS 라벨 자체의 비일관성**. 추가 post-proc rule은 label vs model 어느 쪽이 맞는지 case-by-case 필요.
 
 ### iter8 최종 metric
 
