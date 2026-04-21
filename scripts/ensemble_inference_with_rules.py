@@ -92,6 +92,15 @@ def apply_post_rules(preds, text):
             if preds['param_direction'] == 'none':
                 preds['param_direction'] = 'on' if re.search(r'켜', text) else 'off'
 
+    # iter9: curtain_control "올려" → up (TS 10/11 라벨 일치)
+    if preds['fn'] == 'curtain_control' and '올려' in text and preds['param_direction'] in ('stop', 'none'):
+        preds['param_direction'] = 'up'
+
+    # iter9: 블라인드 내려 → close (TS 9/10 라벨 일치; 커튼은 down 유지)
+    if preds['fn'] == 'curtain_control' and '블라인드' in text and '내려' in text:
+        if preds['param_direction'] in ('down', 'none'):
+            preds['param_direction'] = 'close'
+
     return preds
 
 
