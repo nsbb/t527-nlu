@@ -63,6 +63,14 @@ def apply_post_rules(preds, text):
             elif re.search(r'설정|맞춰|예약|등록', text):
                 preds['param_direction'] = 'set'
 
+    # Out-of-domain keywords → unknown (iter8, 명확히 지원 안 되는 기능만)
+    # 주의: "전화", "카드", "와이파이"는 in-domain 일 수 있어 제외
+    if any(kw in text for kw in ['네비게이션', '비행기', '크루즈', '수면 기록', '길 안내']):
+        preds['fn'] = 'unknown'
+        preds['exec_type'] = 'direct_respond'
+        preds['param_direction'] = 'none'
+        preds['param_type'] = 'none'
+
     return preds
 
 
