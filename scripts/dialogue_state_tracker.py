@@ -105,8 +105,17 @@ class DialogueStateTracker:
         inferred_value = None
 
         # "더 올려/내려/줄여" 같은 relative 발화 → 이전 value + 1/2 씩 조정
+        # 이때 fn도 이전 턴에서 상속 (짧은 relative 발화에서 모델이 fn 헷갈릴 수 있음)
         if self.is_active() and self.prev_value and current_value is None:
-            if re.search(r'더|조금|살짝', text) and direction in ('up', 'down'):
+            if re.search(r'^\s*(더|조금|살짝)\s+(올려|내려|낮춰|줄여|높여|키워)', text):
+                # 짧고 명확한 relative 발화 — fn 이전 값 승계
+                if self.prev_fn:
+                    fn = self.prev_fn
+                    exec_t = self.prev_exec or exec_t
+                if re.search(r'올려|높여|키워', text):
+                    direction = 'up'
+                elif re.search(r'내려|낮춰|줄여', text):
+                    direction = 'down'
                 vtype, vnum = self.prev_value
                 step = 1 if vtype == 'temperature' else 10
                 delta = step if direction == 'up' else -step
