@@ -1,8 +1,8 @@
 # Iter 9 Final Report — 후처리 rule + DST + 배포 인프라 통합
 
 **작성일**: 2026-04-22  
-**작업 시간**: 2026-04-21 22:18 ~ 진행 중 (overnight session)  
-**커밋 수**: 18+ (GitHub nsbb/t527-nlu main 전부 푸시)
+**작업 시간**: 2026-04-21 22:18 ~ 2026-04-22 05:56 (overnight session, ~7.5h)  
+**커밋 수**: **35+** (GitHub nsbb/t527-nlu main 전부 푸시)
 
 ## TL;DR
 
@@ -67,10 +67,13 @@
 |--------|------|
 | `scripts/deployment_pipeline.py` | End-to-end `DeploymentPipeline` 클래스 (preprocess+ensemble+rules+DST+response) |
 | `scripts/demo_comprehensive.py` | 5카테고리 시연 (기본/STT/rule/DST/성능) |
-| `scripts/regression_test_iter9.py` | 23 assertion rule 동작 검증 |
+| `scripts/regression_test_iter9.py` | 26 assertion rule 동작 검증 |
 | `docs/DEPLOYMENT_CHECKLIST.md` | 배포 체크리스트 업데이트 |
 | `docs/KNOWN_FAILURES.md` | 해결된 ~70건 정리 |
 | `docs/ROADMAP.md` | P1 #2,3,4 + P2 #5 #7 완료 반영 |
+| `docs/ARCHITECTURE.md` | ★ Android JNI 포팅 상세 가이드 (신규) |
+| `docs/API_USAGE.md` | ★ DeploymentPipeline 사용법 + head 값 레퍼런스 (신규) |
+| `docs/SCRIPTS_INDEX.md` | ★ 80+ scripts 카테고리 분류 (신규) |
 
 ## 배포 권장 구성
 
@@ -146,3 +149,26 @@ Ensemble + rules: 95.0% (208/219)
 ## 한 줄 결론
 
 > **"모델은 고정. 규칙과 인프라로 +2.23%p 획득. 95.76%는 후처리 ceiling — 다음은 실사용 데이터 수집."**
+
+## 세션 작업 시간 분배 (7.5시간)
+
+| 범주 | 시간 | 비중 |
+|------|:---:|:---:|
+| 후처리 rule 탐색 + 테스트 | ~2h | 27% |
+| DST 고도화 | ~1h | 13% |
+| Preprocess 확장 | ~1h | 13% |
+| 문서 작성 | ~1.5h | 20% |
+| 배포 인프라 (DeploymentPipeline, demo) | ~1h | 13% |
+| Regression/validation | ~0.5h | 7% |
+| 휴식 (cache 보존) | ~0.5h | 7% |
+
+## Commit Highlights
+
+세션 주요 커밋 (35개 전체 중):
+- `iter9: curtain open→up/close/stop 확장 → TS +0.62%p` (최대 단일 개선)
+- `iter9: 알람/모닝콜 → schedule_manage` (+0.52%p, iter8에서 계속)
+- `iter9: unknown → 외부 query 복구` (+0.20%p)
+- `iter9: {room}{device} 좀 {verb} 어순` (+0.20%p)
+- `iter9: DST slot filling + history + correction`
+- `iter9: DeploymentPipeline 클래스 생성`
+- `iter9: ARCHITECTURE.md, API_USAGE.md` (Android 포팅 문서)
