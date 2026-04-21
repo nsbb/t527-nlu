@@ -132,11 +132,26 @@ Known 204개 중 **3개만 변경** (1.4%):
 
 ### iter8 최종 metric
 
-```
-TS combo (sap_inference_v2, v46 + 후처리): 93.76% → 94.15% (+0.39%p)
-KE fn: 97.79% 유지
-Strategy B 앙상블 TS: 93.95% → 94.08% (+0.13%p, preprocess 덕)
-```
+| 평가 경로 | Before | After | Δ |
+|----------|:---:|:---:|:---:|
+| sap_inference_v2 (v46+rules) TS | 93.76% | **94.15%** | **+0.39%p** |
+| sap_inference_v2 KE fn | 97.33% | 97.33% | 0 |
+| Ensemble B no rules TS | 93.59% | 93.59% | 0 |
+| Ensemble B + rules TS | 93.53% | **94.05%** | **+0.52%p** |
+| Ensemble B + rules KE fn | 97.79% | 97.27% | -0.52%p (label 불일치) |
+| Ensemble B (preprocess 개선 반영) TS | 93.95% | 94.08% | +0.13%p |
+
+**배포 권장**:
+- 저장 ONNX: `nlu_v28_v46_ensemble.onnx` (변경 없음)
+- 변경: `scripts/ensemble_inference_with_rules.py` 후처리 rule (+알람 rule)
+- 변경: `scripts/preprocess.py` (+40 entries, 3 bug fix)
+
+### 시도했으나 유지 안 된 것
+| 시도 | Δ TS | 이유 |
+|------|:---:|------|
+| 3-tier conf fallback | -0.04% | 측정 손실, UX 이득 불확실 |
+| Elevator dir=none→on | -0.33% | 학습된 query 케이스 과다 override |
+| Elevator exec→control | -0.07% | 규칙 정교화 했지만 여전히 regression |
 
 ## 한 줄 결론
 
