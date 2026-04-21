@@ -92,6 +92,17 @@ STT_CORRECTION = {
     '주방불': '주방 불',
     '에어컨켜': '에어컨 켜',
     '에어컨꺼': '에어컨 꺼',
+    '조명켜': '조명 켜',
+    '조명꺼': '조명 꺼',
+    '불꺼': '불 꺼',
+    '불켜': '불 켜',
+    '가스잠': '가스 잠',
+    '도어락열': '도어락 열',
+    '도어락잠': '도어락 잠',
+    '커튼열': '커튼 열',
+    '커튼닫': '커튼 닫',
+    '블라인드올': '블라인드 올',
+    '블라인드내': '블라인드 내',
     '난방켜': '난방 켜',
     '난방꺼': '난방 꺼',
     '난방올려': '난방 올려',
@@ -309,9 +320,12 @@ def preprocess(text):
     # 2. 공백 정리
     text = re.sub(r'\s+', ' ', text).strip()
 
-    # 3. STT 오류 사전 교정 — 긴 패턴 먼저 적용 (prefix 겹침 방지)
-    for wrong, correct in sorted(STT_CORRECTION.items(), key=lambda kv: -len(kv[0])):
-        text = text.replace(wrong, correct)
+    # 3. STT 오류 사전 교정 — 두 번 pass
+    #    첫 pass: 긴 패턴 (prefix 겹침 방지, "지금몇시야" > "지금몇시")
+    #    둘째 pass: 첫 pass 후 활성화된 composite 매칭 ("까스잠가" → "가스잠가" → "가스 잠가")
+    for _ in range(2):
+        for wrong, correct in sorted(STT_CORRECTION.items(), key=lambda kv: -len(kv[0])):
+            text = text.replace(wrong, correct)
 
     # 4. 한글 숫자 변환
     text = kr_num_to_arabic(text)
