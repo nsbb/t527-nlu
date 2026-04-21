@@ -22,6 +22,8 @@ import onnxruntime as ort
 
 def apply_post_rules(preds, text):
     """후처리 rule 적용 (ensemble 출력 → 교정된 preds)"""
+    # iter9 참고: 한글 0개 text → unknown 강제 rule 시도 → TS "AC off" 케이스 regression
+    # → 채택 안 함 (preprocess의 영어 혼용 rule로 대부분 처리)
     # param_type 기본 규칙
     if preds['param_direction'] in ('open', 'close', 'stop'):
         preds['param_type'] = 'none'
