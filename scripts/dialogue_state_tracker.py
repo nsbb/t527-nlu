@@ -67,16 +67,35 @@ class DialogueStateTracker:
                 direction = self.prev_dir or direction
 
             elif followup_type == 'device':
-                # "난방도", "에어컨도" — fn은 NLU 예측 유지, exec/dir만 이전 것 상속
+                # "난방도", "에어컨도" — fn은 NLU 예측 유지, exec/dir 이전 턴 우선
                 exec_t = self.prev_exec or exec_t
-                if direction == 'none':
+                # prev_dir이 명확한 action이면 (on/off/open/close) 우선
+                if self.prev_dir in ('on', 'off', 'open', 'close'):
+                    direction = self.prev_dir
+                elif direction == 'none':
                     direction = self.prev_dir or direction
 
             elif followup_type == 'confirm':
-                # "응", "해줘" — 이전 턴 전체 반복
+                # "응", "해줘" — 이전 턴 전체 반복, 단 확인 질문(query)이었으면 control로 승격
                 fn = self.prev_fn or fn
-                exec_t = self.prev_exec or exec_t
-                direction = self.prev_dir or direction
+                # "~할까요?" 같은 확인 질문 → confirm으로 바뀌면 실행
+                if self.prev_exec == 'query_then_respond' and self.prev_text and re.search(r'까요\?|할까|낼까|될까', self.prev_text or ''):
+                    exec_t = 'control_then_confirm'
+                    # dir이 none이면 prev_text에서 action verb로 추론
+                    if direction == 'none' and (self.prev_dir is None or self.prev_dir == 'none'):
+                        if re.search(r'켤|켜|틀', self.prev_text):
+                            direction = 'on'
+                        elif re.search(r'끌|꺼|끄', self.prev_text):
+                            direction = 'off'
+                        elif re.search(r'열', self.prev_text):
+                            direction = 'open'
+                        elif re.search(r'닫|잠', self.prev_text):
+                            direction = 'close'
+                    else:
+                        direction = self.prev_dir or direction
+                else:
+                    exec_t = self.prev_exec or exec_t
+                    direction = self.prev_dir or direction
 
             elif self._is_correction(text):
                 # "아니 꺼줘" — device는 이전 것, action만 변경
