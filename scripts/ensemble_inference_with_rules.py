@@ -71,6 +71,17 @@ def apply_post_rules(preds, text):
         preds['param_direction'] = 'none'
         preds['param_type'] = 'none'
 
+    # iter9: "전화" in-domain(관리실) vs OOD(일반) 구분
+    # - home_info로 분류된 케이스 중 entity 없는 "전화" → unknown
+    if '전화' in text and preds['fn'] == 'home_info':
+        entity_markers = ['관리사무소', '관리실', '경비', '이웃', '주민', '같은 동',
+                           '다른 집', '분리수거', '공동', '놓친']
+        if not any(kw in text for kw in entity_markers):
+            preds['fn'] = 'unknown'
+            preds['exec_type'] = 'direct_respond'
+            preds['param_direction'] = 'none'
+            preds['param_type'] = 'none'
+
     # unknown → 외부 query keyword (iter8, known_to_unknown 오류 완화)
     if preds['fn'] == 'unknown':
         if re.search(r'날씨|기온|비\s*와|더울까|추울까|맑|흐림', text):

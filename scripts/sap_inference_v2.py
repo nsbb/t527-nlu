@@ -305,6 +305,16 @@ class SAPv2Pipeline:
             preds['param_direction'] = 'none'
             preds['param_type'] = 'none'
 
+        # iter9: "전화" entity 없으면 OOD (관리사무소/경비/이웃/놓친 제외)
+        if '전화' in text and preds['fn'] == 'home_info':
+            entity_markers = ['관리사무소', '관리실', '경비', '이웃', '주민', '같은 동',
+                               '다른 집', '분리수거', '공동', '놓친']
+            if not any(kw in text for kw in entity_markers):
+                preds['fn'] = 'unknown'
+                preds['exec_type'] = 'direct_respond'
+                preds['param_direction'] = 'none'
+                preds['param_type'] = 'none'
+
         # iter9: "{room} {device} 좀 {verb}" 어순은 CTC (clarify는 "{room} 좀 {device} {verb}" 어순)
         if preds['exec_type'] == 'clarify' and preds['fn'] == 'light_control':
             if re.search(r'(거실|안방|침실|주방|부엌|작은방|아이방|서재|현관)\s+(불|조명|등|라이트)\s+좀\s+(켜|꺼|끄)', text):
