@@ -230,6 +230,7 @@ class SAPv2Pipeline:
         confidence = F.softmax(logits['fn'], dim=1).max().item()
 
         # confidence fallback — 저신뢰 발화는 unknown으로
+        # iter8 참고: 3-tier (0.3/0.5) 실험 → TS -0.04%p, UX 이득 불확실 → 2-tier 유지
         if confidence < 0.5 and preds['fn'] != 'unknown':
             preds['fn'] = 'unknown'
             preds['exec_type'] = 'direct_respond'
