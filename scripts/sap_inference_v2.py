@@ -312,6 +312,13 @@ class SAPv2Pipeline:
                 if preds['param_direction'] == 'none':
                     preds['param_direction'] = 'on' if re.search(r'켜', text) else 'off'
 
+        # iter9: curtain_control 올려 → up, 블라인드 내려 → close
+        if preds['fn'] == 'curtain_control' and '올려' in text and preds['param_direction'] in ('stop', 'none'):
+            preds['param_direction'] = 'up'
+        if preds['fn'] == 'curtain_control' and '블라인드' in text and '내려' in text:
+            if preds['param_direction'] in ('down', 'none'):
+                preds['param_direction'] = 'close'
+
         # 외부 쿼리 keyword → 해당 fn (iter8, v46 known_to_unknown 9건 완화)
         if preds['fn'] == 'unknown':
             if re.search(r'날씨|기온|비\s*와|더울까|추울까|맑|흐림', text):
