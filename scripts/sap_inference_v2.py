@@ -305,6 +305,18 @@ class SAPv2Pipeline:
             preds['param_direction'] = 'none'
             preds['param_type'] = 'none'
 
+        # 외부 쿼리 keyword → 해당 fn (iter8, v46 known_to_unknown 9건 완화)
+        if preds['fn'] == 'unknown':
+            if re.search(r'날씨|기온|비\s*와|더울까|추울까|맑|흐림', text):
+                preds['fn'] = 'weather_query'
+                preds['exec_type'] = 'query_then_respond'
+            elif re.search(r'뉴스|브리핑|속보', text):
+                preds['fn'] = 'news_query'
+                preds['exec_type'] = 'query_then_respond'
+            elif re.search(r'병원|의원|약국|신경외과|내과|외과|안과|치과|한의원|한방|약\s*처', text):
+                preds['fn'] = 'medical_query'
+                preds['exec_type'] = 'query_then_respond'
+
         return preds, confidence
 
     def run(self, text):
