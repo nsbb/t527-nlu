@@ -101,6 +101,10 @@ def apply_post_rules(preds, text):
         if preds['param_direction'] in ('down', 'none'):
             preds['param_direction'] = 'close'
 
+    # iter9: heat_control CTC + dir=none → on (4 cases: 바닥 난방, 보일러 작동, 실내 난방, 거실 보일러)
+    if preds['fn'] == 'heat_control' and preds['exec_type'] == 'control_then_confirm' and preds['param_direction'] == 'none':
+        preds['param_direction'] = 'on'
+
     return preds
 
 
