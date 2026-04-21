@@ -29,10 +29,11 @@ class DialogueStateTracker:
         self.prev_exec = None
         self.prev_dir = None
         self.prev_room = None
-        self.prev_value = None
+        self.prev_value = None           # (type, number) 예: ('temperature', 25)
         self.prev_text = None
         self.prev_time = 0
         self.turn_count = 0
+        self.history = []                # recent turns: last 5 (iter9 extension)
 
     def is_active(self):
         """이전 턴이 timeout 내인지"""
@@ -99,21 +100,65 @@ class DialogueStateTracker:
         if resolved_room == 'none' and self.prev_room:
             resolved_room = self.prev_room
 
+        # Value 추출 (iter9: slot filling)
+        current_value = self._extract_value(text)
+        inferred_value = None
+
+        # "더 올려/내려/줄여" 같은 relative 발화 → 이전 value + 1/2 씩 조정
+        if self.is_active() and self.prev_value and current_value is None:
+            if re.search(r'더|조금|살짝', text) and direction in ('up', 'down'):
+                vtype, vnum = self.prev_value
+                step = 1 if vtype == 'temperature' else 10
+                delta = step if direction == 'up' else -step
+                inferred_value = (vtype, vnum + delta)
+
+        final_value = current_value or inferred_value or self.prev_value
+
         # 상태 저장
         self.prev_fn = fn
         self.prev_exec = exec_t
         self.prev_dir = direction
         self.prev_room = resolved_room if resolved_room != 'none' else self.prev_room
+        self.prev_value = final_value if direction != 'off' else None
         self.prev_text = text
         self.prev_time = time.time()
         self.turn_count += 1
+
+        # History 저장 (최근 5턴)
+        self.history.append({
+            'fn': fn, 'exec_type': exec_t, 'param_direction': direction,
+            'room': resolved_room, 'text': text, 'value': final_value,
+            'time': self.prev_time,
+        })
+        if len(self.history) > 5:
+            self.history.pop(0)
 
         return {
             'fn': fn,
             'exec_type': exec_t,
             'param_direction': direction,
             'room': resolved_room if resolved_room != 'none' else (self.prev_room or 'none'),
+            'value': final_value,
         }
+
+    def _extract_value(self, text):
+        """텍스트에서 value 추출 (temperature/time/percent)"""
+        if not text:
+            return None
+        m = re.search(r'(\d+)\s*도', text)
+        if m:
+            return ('temperature', int(m.group(1)))
+        m = re.search(r'(\d+)\s*(분|초|시)', text)
+        if m:
+            unit = {'분': 'minute', '초': 'second', '시': 'hour'}[m.group(2)]
+            return (unit, int(m.group(1)))
+        m = re.search(r'(\d+)\s*%', text)
+        if m:
+            return ('percent', int(m.group(1)))
+        m = re.search(r'(\d+)\s*단계', text)
+        if m:
+            return ('level', int(m.group(1)))
+        return None
 
     def _get_followup_type(self, text, fn):
         """follow-up 발화 유형 판별
@@ -149,12 +194,16 @@ class DialogueStateTracker:
         return None
 
     def _is_correction(self, text):
-        """교정 발화인지 ("아니 ~", "아니야 ~")"""
+        """교정/재설정 발화인지 ("아니 ~", "아니야 ~", "아 역시 ~", "다시 ~")"""
         if not text:
             return False
 
         text_clean = text.strip()
-        return text_clean.startswith('아니') or text_clean.startswith('아냐')
+        return (text_clean.startswith('아니') or
+                text_clean.startswith('아냐') or
+                text_clean.startswith('아 역시') or
+                text_clean.startswith('다시') or
+                text_clean.startswith('아님'))
 
     def _is_there_too(self, text):
         """'거기도', '여기도' 패턴"""
