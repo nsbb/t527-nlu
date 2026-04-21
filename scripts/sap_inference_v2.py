@@ -65,40 +65,61 @@ def check_unsupported(fn, text):
 # Response Templates
 # ============================================================
 RESPONSE_TEMPLATES = {
+    # 각 fn별 1~3개 variation — random.choice로 선택됨
     'control_then_confirm': {
-        'light_control': '네, {room}조명을 {action}.',
-        'heat_control': '네, {room}난방을 {action}.',
-        'ac_control': '네, {room}에어컨을 {action}.',
-        'vent_control': '네, 환기시스템을 {action}.',
-        'gas_control': '네, 가스 밸브를 {action}.',
-        'door_control': '네, 도어락을 {action}.',
-        'curtain_control': '네, {room}전동커튼을 {action}.',
-        'elevator_call': '네, 엘리베이터를 호출합니다.',
-        'security_mode': '네, 외출모드로 전환합니다.',
-        'schedule_manage': '네, 예약이 설정되었습니다.',
-        'energy_query': '네, 에너지 설정이 변경되었습니다.',
-        'home_info': '네, 설정을 변경했습니다.',
+        'light_control': ['네, {room}조명을 {action}.',
+                           '{room}조명 {action}.',
+                           '알겠습니다, {room}조명을 {action}.'],
+        'heat_control': ['네, {room}난방을 {action}.',
+                          '{room}난방 {action}.',
+                          '{room}난방을 {action}.'],
+        'ac_control': ['네, {room}에어컨을 {action}.',
+                        '{room}에어컨 {action}.',
+                        '알겠습니다, {room}에어컨 {action}.'],
+        'vent_control': ['네, 환기시스템을 {action}.',
+                          '환기 {action}.',
+                          '환기 시스템 {action}.'],
+        'gas_control': ['네, 가스 밸브를 {action}.',
+                         '가스 밸브 {action}.'],
+        'door_control': ['네, 도어락을 {action}.',
+                          '도어락 {action}.'],
+        'curtain_control': ['네, {room}전동커튼을 {action}.',
+                             '{room}커튼 {action}.'],
+        'elevator_call': ['네, 엘리베이터를 호출합니다.',
+                           '엘리베이터 호출할게요.',
+                           '엘리베이터 호출했습니다.'],
+        'security_mode': ['네, 외출모드로 전환합니다.',
+                           '외출모드로 설정했습니다.'],
+        'schedule_manage': ['네, 예약이 설정되었습니다.',
+                             '예약 완료되었습니다.'],
+        'energy_query': ['네, 에너지 설정이 변경되었습니다.',
+                          '에너지 설정을 바꿨습니다.'],
+        'home_info': ['네, 설정을 변경했습니다.',
+                       '설정이 완료되었습니다.'],
     },
     'query_then_respond': {
-        'light_control': '현재 조명 상태를 확인합니다.',
-        'heat_control': '현재 실내 온도는 23도이며 난방 설정은 25도입니다.',
-        'ac_control': '현재 에어컨은 자동 모드로 작동 중입니다.',
-        'vent_control': '현재 환기 장치 상태를 확인합니다.',
-        'gas_control': '현재 가스 밸브는 잠겨있습니다.',
-        'door_control': '현재 도어락 상태를 확인합니다.',
-        'curtain_control': '현재 전동커튼 상태를 확인합니다.',
-        'elevator_call': '엘리베이터 위치를 확인합니다.',
-        'security_mode': '외출모드 설정을 확인합니다.',
-        'schedule_manage': '현재 예약 설정을 확인합니다.',
-        'weather_query': '오늘 서울 날씨는 맑고 최고 22도입니다.',
-        'news_query': '오늘 주요 뉴스를 브리핑합니다.',
-        'traffic_query': '현재 교통상황을 확인합니다.',
-        'energy_query': '에너지 사용량을 확인합니다.',
-        'home_info': '정보를 확인합니다.',
-        'market_query': '시세 정보를 확인합니다.',
-        'medical_query': '근처 병원 정보를 안내합니다.',
-        'vehicle_manage': '차량 정보를 확인합니다.',
-        'system_meta': '시스템 정보를 확인합니다.',
+        'light_control': ['현재 조명 상태를 확인합니다.', '조명 상태를 조회합니다.'],
+        'heat_control': ['현재 실내 온도는 23도이며 난방 설정은 25도입니다.',
+                          '실내 23도, 난방 설정 25도입니다.'],
+        'ac_control': ['현재 에어컨은 자동 모드로 작동 중입니다.',
+                        '에어컨은 자동 모드입니다.'],
+        'vent_control': ['현재 환기 장치 상태를 확인합니다.', '환기 상태를 조회합니다.'],
+        'gas_control': ['현재 가스 밸브는 잠겨있습니다.', '가스 밸브는 잠김 상태입니다.'],
+        'door_control': ['현재 도어락 상태를 확인합니다.', '도어락 상태를 조회합니다.'],
+        'curtain_control': ['현재 전동커튼 상태를 확인합니다.', '커튼 상태를 조회합니다.'],
+        'elevator_call': ['엘리베이터 위치를 확인합니다.', '엘리베이터가 어디 있는지 보겠습니다.'],
+        'security_mode': ['외출모드 설정을 확인합니다.', '외출모드 상태를 조회합니다.'],
+        'schedule_manage': ['현재 예약 설정을 확인합니다.', '예약 상태를 조회합니다.'],
+        'weather_query': ['오늘 서울 날씨는 맑고 최고 22도입니다.',
+                           '서울 날씨는 맑고 기온은 22도예요.'],
+        'news_query': ['오늘 주요 뉴스를 브리핑합니다.', '오늘 뉴스 들려드릴게요.'],
+        'traffic_query': ['현재 교통상황을 확인합니다.', '교통 상황을 조회합니다.'],
+        'energy_query': ['에너지 사용량을 확인합니다.', '에너지 사용량을 보겠습니다.'],
+        'home_info': ['정보를 확인합니다.', '정보를 조회합니다.'],
+        'market_query': ['시세 정보를 확인합니다.', '시세를 조회합니다.'],
+        'medical_query': ['근처 병원 정보를 안내합니다.', '근처 병원을 찾아드립니다.'],
+        'vehicle_manage': ['차량 정보를 확인합니다.', '차량 정보를 조회합니다.'],
+        'system_meta': ['시스템 정보를 확인합니다.', '시스템 정보를 조회합니다.'],
     },
     'query_then_judge': {
         'outdoor_activity': '기온과 대기질 모두 양호합니다. 외출하기에 무리가 없습니다.',
@@ -118,7 +139,9 @@ RESPONSE_TEMPLATES = {
             'default': '정보를 확인합니다.',
         },
     },
-    'clarify': '어떤 공간의 기기를 제어할지 말씀해주세요.',
+    'clarify': ['어떤 공간의 기기를 제어할지 말씀해주세요.',
+                 '어느 방의 기기를 말하시는 건가요?',
+                 '공간명을 포함해서 다시 말씀해주세요.'],
 }
 
 ROOM_KR = {'living':'거실 ','kitchen':'주방 ','bedroom_main':'안방 ','bedroom_sub':'침실 ',
@@ -148,8 +171,17 @@ def generate_response(preds, text):
     if is_unsupported:
         return unsupported_msg
 
+    import random
+
+    def pick(v, default=''):
+        """list면 random, 문자열이면 그대로."""
+        if isinstance(v, list):
+            return random.choice(v) if v else default
+        return v if v else default
+
     if exec_t == 'control_then_confirm':
-        template = RESPONSE_TEMPLATES['control_then_confirm'].get(fn, '네, 처리했습니다.')
+        tmpl_raw = RESPONSE_TEMPLATES['control_then_confirm'].get(fn, ['네, 처리했습니다.'])
+        template = pick(tmpl_raw, '네, 처리했습니다.')
         action = ACTION_MAP.get(direction, '설정했습니다')
         # value가 있으면 "X도로/X분으로" 형식으로 간결하게 (중복 방지)
         if value and value[0] == 'temperature':
@@ -168,10 +200,10 @@ def generate_response(preds, text):
         return template.format(room=room_kr, action=action)
 
     elif exec_t == 'query_then_respond':
-        return RESPONSE_TEMPLATES['query_then_respond'].get(fn, '정보를 확인합니다.')
+        return pick(RESPONSE_TEMPLATES['query_then_respond'].get(fn), '정보를 확인합니다.')
 
     elif exec_t == 'query_then_judge':
-        return RESPONSE_TEMPLATES['query_then_judge'].get(judge, '판단 결과를 확인합니다.')
+        return pick(RESPONSE_TEMPLATES['query_then_judge'].get(judge), '판단 결과를 확인합니다.')
 
     elif exec_t == 'direct_respond':
         templates = RESPONSE_TEMPLATES['direct_respond'].get(fn, {})
@@ -186,7 +218,7 @@ def generate_response(preds, text):
         return str(templates)
 
     elif exec_t == 'clarify':
-        return RESPONSE_TEMPLATES['clarify']
+        return pick(RESPONSE_TEMPLATES['clarify'], '다시 말씀해주세요.')
 
     return '처리합니다.'
 
