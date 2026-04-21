@@ -317,6 +317,7 @@ class SAPv2Pipeline:
                 preds['fn'] = 'medical_query'
                 preds['exec_type'] = 'query_then_respond'
 
+
         return preds, confidence
 
     def run(self, text):

@@ -125,6 +125,12 @@ Known 204개 중 **3개만 변경** (1.4%):
    - 규칙: unknown이면서 {날씨/기온|뉴스/브리핑|병원/의원/약국} keyword 있으면 해당 fn
    - **sap**: TS 94.28% → **94.41% (+0.13%p)**, KE 97.27% 유지
    - **ensemble**: TS 94.18% → **94.38% (+0.20%p)**, KE 97.20%
+10. ❌ Clarify → control 복구 rule (control_then_confirm→clarify 26건 완화 시도)
+    - 가설: "{room} 불 좀 켜주세요" 같은 명확한 case에서 모델이 clarify 오예측
+    - 규칙: fn=device_control + clarify + has_action + has_room → control_then_confirm
+    - 결과: TS 94.41% → 93.82% (-0.59%p regression)
+    - 원인: 학습된 clarify 케이스 중에도 room+action 있는 ambiguous 케이스 다수
+    - → revert. 후처리로 해결 어려움, label cleanup 필요
 
 ### 결론
 
