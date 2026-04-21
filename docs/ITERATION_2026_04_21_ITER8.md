@@ -178,6 +178,7 @@ Top patterns after all rules:
 | Ensemble B + rules TS | 93.53% | **94.38%** | **+0.85%p** |
 | Ensemble B + rules KE fn | 97.79% | 97.20% | -0.59%p (주로 알람 label 불일치) |
 | Ensemble B (preprocess 개선 반영) TS | 93.95% | 94.08% | +0.13%p |
+| Ensemble B + rules GT 219 | 207/219 = 94.5% | **208/219 = 95.0%** | **+0.5%p** |
 
 **핵심 gain 포인트**:
 - Preprocess 개선 (+40 entries + 3 bug fix): +0.13%p
