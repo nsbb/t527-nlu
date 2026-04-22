@@ -157,10 +157,19 @@ class DialogueStateTracker:
                     delta = step if direction == 'up' else -step
                     inferred_value = (vtype, vnum + delta)
 
+        # continuous: "조금/더/많이 올려/내려" fn 상속 (prev_value 없어도 fn만이라도 승계)
+        if self.is_active() and self.prev_fn:
+            m = re.search(r'^\s*(더|조금|조금만|살짝|많이)\s+(올려|내려|낮춰|줄여|높여|키워)', text)
+            if m and fn in ('system_meta', 'home_info', 'unknown'):
+                fn = self.prev_fn
+                exec_t = self.prev_exec or exec_t
+                if direction == 'none':
+                    direction = 'up' if m.group(2) in ('올려', '높여', '키워') else 'down'
+
         # "더 올려/내려/줄여" 같은 relative 발화 → 이전 value + 1/2 씩 조정
         # 이때 fn도 이전 턴에서 상속 (짧은 relative 발화에서 모델이 fn 헷갈릴 수 있음)
         if self.is_active() and self.prev_value and current_value is None:
-            if re.search(r'^\s*(더|조금|살짝)\s+(올려|내려|낮춰|줄여|높여|키워)', text):
+            if re.search(r'^\s*(더|조금|조금만|살짝)\s+(올려|내려|낮춰|줄여|높여|키워)', text):
                 # 짧고 명확한 relative 발화 — fn 이전 값 승계
                 if self.prev_fn:
                     fn = self.prev_fn
