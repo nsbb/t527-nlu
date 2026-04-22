@@ -75,7 +75,7 @@ def generate_simple_response(preds, room, value=None, raw_text=''):
     direction = preds['param_direction']
 
     # Emergency 응답 (우선순위 최상)
-    if re.search(r'가스\s*냄새|연기\s*(?:나|난|올)|불\s*(?:났|붙)|침입|도둑|^비상', raw_text):
+    if re.search(r'가스\s*냄새|타는\s*냄새|연기\s*(?:나|난|올)|불\s*(?:났|붙)|침입|도둑|^비상', raw_text):
         return '⚠️ 비상 상황 감지. 119/112에 연락하세요. 외출 모드로 전환합니다.'
 
     if fn == 'unknown':
