@@ -211,6 +211,13 @@ def apply_post_rules(preds, text):
     if preds['fn'] == 'vent_control' and re.search(r'환해|환하|밝다|밝아', text):
         preds['fn'] = 'light_control'
 
+    # continuous: "어둡지/어둡네" (complaint — 어둡게 ≠) → dir=up (현재 밝기 높임)
+    # "어둡게"는 make-dim 명령이므로 제외
+    # 주의: "어두운데"는 TS에서 down 라벨 — 제외
+    if preds['fn'] == 'light_control' and preds['param_direction'] == 'down':
+        if re.search(r'어둡지|어둡네', text) and '어둡게' not in text:
+            preds['param_direction'] = 'up'
+
     # continuous: 현관 + 확인 → door_control 시도 → KE 3건 regression → revert
     # (TS: door_control, KE: home_info로 annotator 간 불일치)
 
