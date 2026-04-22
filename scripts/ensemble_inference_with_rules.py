@@ -154,6 +154,13 @@ def apply_post_rules(preds, text):
             if preds['param_direction'] == 'none':
                 preds['param_direction'] = 'on' if re.search(r'켜', text) else 'off'
 
+    # continuous: "{전체|모든|다} {불|조명} {켜|꺼}" → CTC + dir (TS 일관됨)
+    if preds['fn'] == 'light_control' and preds['exec_type'] == 'clarify':
+        if re.search(r'(전체|모든|전부|다)\s*(?:불|조명|등|라이트)\s*(?:좀)?\s*(켜|꺼|끄)', text):
+            preds['exec_type'] = 'control_then_confirm'
+            if preds['param_direction'] == 'none':
+                preds['param_direction'] = 'on' if '켜' in text else 'off'
+
     # continuous: "{room} 지금/야 불 {verb}" → CTC (모든 room 100% CTC)
     # 혹시는 room별 TS 불일치 (거실/안방=CTC, 주방/침실/작은방/아이방=clarify)
     if preds['exec_type'] == 'clarify' and preds['fn'] == 'light_control':
