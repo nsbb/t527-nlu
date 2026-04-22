@@ -69,10 +69,14 @@ ACTION_MAP = {
 }
 
 
-def generate_simple_response(preds, room, value=None):
+def generate_simple_response(preds, room, value=None, raw_text=''):
     fn = preds['fn']
     exec_t = preds['exec_type']
     direction = preds['param_direction']
+
+    # Emergency 응답 (우선순위 최상)
+    if re.search(r'가스\s*냄새|연기\s*(?:나|난|올)|불\s*(?:났|붙)|침입|도둑', raw_text):
+        return '⚠️ 비상 상황 감지. 119/112에 연락하세요. 외출 모드로 전환합니다.'
 
     if fn == 'unknown':
         return '해당 요청은 서버에서 처리합니다.'
@@ -209,7 +213,8 @@ class DeploymentPipeline:
             {'fn': final['fn'], 'exec_type': final['exec_type'],
              'param_direction': final['param_direction']},
             final.get('room', 'none'),
-            final.get('value'))
+            final.get('value'),
+            raw_text=pp)
 
         return {
             'raw': text,
