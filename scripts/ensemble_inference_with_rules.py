@@ -261,6 +261,11 @@ def apply_post_rules(preds, text):
         if len(words) == 1 and words[0] in ('난방', '에어컨', '환기', '보일러', '환풍'):
             preds['exec_type'] = 'query_then_respond'
 
+    # continuous: light_control bare type (취침등/무드등 등) direct → CTC
+    if preds['fn'] == 'light_control' and preds['exec_type'] == 'direct_respond':
+        if text.strip() in ('취침등', '무드등', '다운라이트', '간접등', '스탠드', '복도등', '식탁등'):
+            preds['exec_type'] = 'control_then_confirm'
+
     # continuous: vent_control "환풍 모드" / "환기 시스템" / "공기 순환" direct → query (좁게)
     if preds['fn'] == 'vent_control' and preds['exec_type'] == 'direct_respond':
         if re.search(r'^환풍\s*모드$|환기\s*시스템|공기\s*순환', text):
