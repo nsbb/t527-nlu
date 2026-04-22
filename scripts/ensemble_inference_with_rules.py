@@ -256,8 +256,8 @@ def apply_post_rules(preds, text):
 
     # "춥다/추워" → heat_control 확정 (반대 보강)
     # 주의: "차가워"는 "바닥이 차갑다" 같은 heat_control 맥락 — 제외
-    if preds['fn'] == 'ac_control' and re.search(r'춥다|추워|추운', text):
-        if not re.search(r'에어컨|냉방', text):
+    if preds['fn'] in ('ac_control', 'vent_control') and re.search(r'춥다|추워|추운', text):
+        if not re.search(r'에어컨|냉방|환기|환풍', text):
             preds['fn'] = 'heat_control'
             if preds['param_direction'] in ('none',):
                 preds['param_direction'] = 'on'
