@@ -458,6 +458,19 @@ class SAPv2Pipeline:
             if re.search(r'(거실|안방|침실|주방|부엌|작은방|아이방)\s+(?:지금|혹시|야)\s+(불|조명|등)\s+(켜|꺼)', text):
                 preds['exec_type'] = 'control_then_confirm'
 
+        # continuous: N모드 narrowed rule
+        if re.search(r'(냉방|제습|송풍|자동|취침|외출)\s*모드', text):
+            has_room = re.search(r'(거실|안방|침실|주방|부엌|작은방|아이방)\s+에어컨', text)
+            if preds['fn'] in ('ac_control', 'heat_control', 'vent_control') and not has_room:
+                preds['param_direction'] = 'set'
+                preds['param_type'] = 'mode'
+
+        # continuous: 비상 상황 확장
+        if re.search(r'가스\s*냄새|연기\s*(?:나|난|올)|불\s*(?:났|붙)|침입|도둑', text):
+            preds['fn'] = 'security_mode'
+            preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'on'
+
         # iter9: 화면/월패드/알림/음량 → home_info (capability query 제외)
         capability_q = re.search(r'어떻게|할\s*수\s*있', text)
         if preds['fn'] == 'system_meta' and not capability_q:
