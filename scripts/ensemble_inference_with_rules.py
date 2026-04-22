@@ -137,6 +137,18 @@ def apply_post_rules(preds, text):
             if preds['param_direction'] in ('none',):
                 preds['param_direction'] = 'on'
 
+    # "시원하게" → ac_control (heat 오예측 교정, catastrophic fix)
+    if preds['fn'] == 'heat_control' and re.search(r'시원', text):
+        if not re.search(r'난방|보일러', text):
+            preds['fn'] = 'ac_control'
+            if preds['param_direction'] == 'none':
+                preds['param_direction'] = 'on'
+
+    # "블라인드 닫아" → close (open 오예측 교정)
+    if preds['fn'] == 'curtain_control' and re.search(r'닫아|닫기', text):
+        if preds['param_direction'] == 'open':
+            preds['param_direction'] = 'close'
+
     # Query fn + exec=query + spurious dir → none (실제 조회는 dir 없어야)
     # 주의: exec=CTC인 경우는 설정 명령 (예: "에너지 목표 설정") → 유지
     if preds['fn'] in ('weather_query', 'news_query', 'traffic_query',
