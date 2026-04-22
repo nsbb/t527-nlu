@@ -221,11 +221,18 @@ def apply_post_rules(preds, text):
         if preds['param_direction'] == 'open':
             preds['param_direction'] = 'close'
 
-    # Query fn + exec=query + spurious dir → none (실제 조회는 dir 없어야)
+    # Query fn + exec=query/judge + spurious dir → none
     # 주의: exec=CTC인 경우는 설정 명령 (예: "에너지 목표 설정") → 유지
     if preds['fn'] in ('weather_query', 'news_query', 'traffic_query',
-                        'market_query', 'medical_query') and preds['exec_type'] == 'query_then_respond':
-        if preds['param_direction'] != 'none':
+                        'market_query', 'medical_query'):
+        if preds['exec_type'] in ('query_then_respond', 'query_then_judge', 'direct_respond'):
+            if preds['param_direction'] != 'none':
+                preds['param_direction'] = 'none'
+    # weather_query + CTC + dir=on → 특수 (비 올까 같은 misprediction)
+    if preds['fn'] == 'weather_query' and preds['exec_type'] == 'control_then_confirm':
+        # "비/눈/더울까/추울까" 판단형이면 query로 수정
+        if re.search(r'비\s*올|눈\s*올|더울까|추울까|올까', text):
+            preds['exec_type'] = 'query_then_judge'
             preds['param_direction'] = 'none'
 
     # iter9: 공기청정/공기 정화 → vent_control (TS에 없지만 실사용 보강)
