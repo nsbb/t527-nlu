@@ -112,7 +112,8 @@ def apply_post_rules(preds, text):
             preds['fn'] = 'traffic_query'
             preds['exec_type'] = 'query_then_respond'
         # continuous: 등산/타도 돼?/나가도 돼? → weather_query judgment
-        elif re.search(r'등산|타도\s*돼|나가도\s*돼|운동\s*괜찮|외출\s*해도', text):
+        # 단, "등산" 단독은 애매하므로 제외 (TS=unknown)
+        elif re.search(r'타도\s*돼|나가도\s*돼|운동\s*괜찮|외출\s*해도|등산\s+(?:괜찮|좋|해도)', text):
             preds['fn'] = 'weather_query'
             preds['exec_type'] = 'query_then_judge'
 
