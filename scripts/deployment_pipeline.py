@@ -171,6 +171,12 @@ def generate_simple_response(preds, room, value=None, raw_text=''):
         direct_responses = {
             'system_meta': '네, 도움이 필요하시면 말씀해주세요.',
             'home_info': '네, 말씀해주세요.',
+            'weather_query': '날씨 정보를 확인합니다.',
+            'news_query': '뉴스 정보를 확인합니다.',
+            'traffic_query': '교통 정보를 확인합니다.',
+            'market_query': '시세 정보를 확인합니다.',
+            'medical_query': '의료 정보를 안내합니다.',
+            'energy_query': '에너지 정보를 확인합니다.',
         }
         return direct_responses.get(fn, '네, 말씀해주세요.')
 
