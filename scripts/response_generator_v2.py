@@ -81,10 +81,13 @@ SPECIFIC_PATTERNS = [
      '네, 월패드 메인 화면의 가이드에서 기기 제어 및 조회 방법을 확인하실 수 있습니다.'),
     (r'누가\s*만들|제작사|만든\s*회사|어디서\s*만',
      '저는 HDC랩스에서 개발한 AI모델입니다.'),
-    (r'이름이?\s*뭐|뭐라고\s*불|호출\s*(?:어떻게|이름)|뭐라\s*불러|뭐라고\s*부',
+    (r'이름이?\s*뭐|뭐라?고?\s*불|호출\s*(?:어떻게|이름)|뭐라?\s*부|뭐\s*불러',
      "제가 필요할 때 '하이 원더'라고 호출한 뒤 필요한 걸 말씀해주세요."),
-    (r'이름\s*바꾸|이름\s*변경',
+    (r'이름\s*바꾸|이름\s*변경|이름.*바꾸고\s*싶',
      '죄송합니다. 해당 기능은 지원하지 않는 기능입니다.'),
+    # AS 문의
+    (r'^AS\??$|AS\s*센터|A/S|고장\s*접수',
+     '월패드 환경설정 메뉴에서 A/S센터 전화번호를 확인 후 유선 접수하시면 됩니다.'),
     # 메인 상태/시간/알림
     (r'^\s*(?:지금\s*)?몇\s*시\s*야?\s*\??$|지금\s*시간|현재\s*시간',
      '네, 지금은 00시 00분 입니다.'),
@@ -196,9 +199,9 @@ SPECIFIC_PATTERNS = [
      '월패드 화면 밝기는 1~4단계로 조절 가능합니다.'),
     (r'절전\s*모드\s*작동',
      '절전모드 작동시간은 60초, 120초, 180초 3가지 중 선택 가능합니다.'),
-    (r'통화\s*알림음\s*(?:변경|바꾸)',
+    (r'통화\s*알림음.{0,3}(?:변경|바꾸|바꿀)',
      '통화 알림음은 변경할 수 없습니다. 통화 알림음은 켜고 끄기만 가능합니다.'),
-    (r'알림음\s*(?:변경|바꾸)',
+    (r'알림음.{0,3}(?:변경|바꾸|바꿀)',
      '알림음은 변경할 수 없습니다. 이벤트 발생 시 알림음 켜고 끄기만 가능합니다.'),
     (r'설정\s*가능\s*한\s*게|설정\s*뭐\s*있',
      '설정 가능한 항목은 볼륨, 화면 밝기, 절전모드 작동시간, 알림음, 통화 알림음이 있습니다.'),
@@ -469,11 +472,15 @@ def query_response(fn, room, raw_text):
 
     # Weather (세부 > 일반)
     if fn == 'weather_query':
+        if re.search(r'한강|야외\s*활동|외출', raw_text) and re.search(r'괜찮|되나|돼|좋', raw_text):
+            return '오늘 서울 지역 기온은 쾌적하나 미세먼지가 나쁨 수준입니다. 장시간 야외활동은 권장하지 않습니다.'
         if re.search(r'밖\s*에?\s*(?:덥|추|더워|추워)|체감\s*온도', raw_text):
             return '현재 OO구 OO동은 00도이며 체감온도는 00도 입니다.'
         if re.search(r'저녁.*춥|밤.*춥|최저', raw_text):
             return '오늘 OO구 OO동은 오후 0시 기준 최저 00도까지 내려갑니다. 두꺼운 외투를 챙기세요.'
-        if re.search(r'주말|내일|모레', raw_text):
+        if re.search(r'내일\s*날씨|내일\s*(?:춥|덥|어때)', raw_text):
+            return '내일 OO구 OO동 날씨는 최고 00도, 흐림이며 비 예보는 없습니다.'
+        if re.search(r'주말|모레', raw_text):
             return '이번주 주말 OO 날씨는 최고 00도, 맑은 날씨가 예상됩니다.'
         if re.search(r'바람\s*(?:많이|불|세)', raw_text):
             return '오늘 OO 지역에 다소 강한 바람이 예상됩니다.'
@@ -481,6 +488,8 @@ def query_response(fn, room, raw_text):
             return '오늘 OO 지역 강수 확률은 00%입니다.'
         if re.search(r'어제\s*보다|어제\s*대비', raw_text):
             return '어제보다 00도 높습니다.'
+        if re.search(r'지역명|시.도.구|정확히\s*인식', raw_text):
+            return '해당 지역명을 정확히 인식하지 못했습니다. 시, 도, 구 단위로 다시 한번 말씀해주세요.'
         if re.search(r'추울|춥|더울|덥|기온', raw_text):
             return '오늘 OO구 OO동은 최고 00도, 최저 00도 입니다.'
         return '오늘 OO구 OO동 날씨는 맑고 최고 22도, 최저 12도이며 미세먼지는 보통 수준입니다.'
@@ -513,6 +522,17 @@ def query_response(fn, room, raw_text):
 
     # Market
     if fn == 'market_query':
+        # 개별 종목
+        m = re.search(r'(삼성전자|하이닉스|LG|현대|카카오|네이버|SK|포스코|기아)\s*(?:주가|얼마|몇|올랐|떨|내려|상승|하락|종가)?', raw_text)
+        if m:
+            stock = m.group(1)
+            if re.search(r'올랐|상승', raw_text):
+                return f'오늘 {stock}는 1.2% 상승 중입니다.'
+            if re.search(r'떨|내려|하락', raw_text):
+                return f'오늘 {stock}는 0.8% 하락 중입니다.'
+            if re.search(r'종가', raw_text):
+                return f'오늘 {stock} 종가는 00000원입니다.'
+            return f'오늘 기준 {stock} 주가는 000000원입니다.'
         if re.search(r'코스피\s*(?:떨|내려|상승|오|하락|마감)|코스피\s*(?:얼마|몇)', raw_text):
             return '현재 코스피는 2,615포인트입니다.'
         if re.search(r'코스닥\s*(?:떨어|내려|하락)', raw_text):
@@ -531,6 +551,18 @@ def query_response(fn, room, raw_text):
 
     # Medical
     if fn == 'medical_query':
+        if re.search(r'소아과|소아청소년', raw_text):
+            if re.search(r'이름|2군데|알려', raw_text):
+                return '반경 0Km 내 소아청소년과 병원명은 OOOO, OOOOOO 입니다.'
+            return '반경 0Km 내 소아청소년과 2곳이 있습니다.'
+        if re.search(r'내과', raw_text):
+            return '반경 0Km 내 내과 2곳이 있습니다.'
+        if re.search(r'치과', raw_text):
+            return '반경 0Km 내 치과 2곳이 있습니다.'
+        if re.search(r'진료해|진료\s*중|오늘\s*진료', raw_text):
+            return '해당 병원은 오늘 정상 진료중입니다.'
+        if re.search(r'의원\s*어디|의원\s*찾', raw_text):
+            return '근처 의원 정보를 안내합니다.'
         return '근처 병원 정보를 안내합니다.'
 
     # Energy
