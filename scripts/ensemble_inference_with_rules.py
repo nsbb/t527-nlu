@@ -63,10 +63,19 @@ def apply_post_rules(preds, text):
 
     # 알람/모닝콜 → schedule_manage (iter8, device keyword 없을 때만)
     # iter9 refinement: TS의 dir 라벨이 불일치하므로 dir은 모델 예측 유지
-    has_device = re.search(r'조명|불|램프|난방|에어컨|환기|가스|도어|커튼|공기청정|블라인드', text)
+    has_device = re.search(r'조명|불|램프|전등|스탠드|취침등|복도등|무드등|다운라이트|간접등|'
+                            r'난방|보일러|에어컨|환기|환풍|공기청정|가스|도어|도어락|커튼|블라인드|월패드', text)
     if not has_device and re.search(r'알람|모닝콜', text):
         if preds['fn'] in ('system_meta', 'home_info', 'unknown'):
             preds['fn'] = 'schedule_manage'
+
+    # continuous: "예약 {삭제/취소/모두}" → schedule_manage (device keyword 없을 때)
+    if not has_device and re.search(r'예약\s*(?:삭제|취소|전부|모두|다\s*지워|지워)', text):
+        if preds['fn'] != 'schedule_manage':
+            preds['fn'] = 'schedule_manage'
+            preds['exec_type'] = 'control_then_confirm'
+            if preds['param_direction'] not in ('off', 'none'):
+                preds['param_direction'] = 'off'
 
     # Out-of-domain keywords → unknown (iter8, 명확히 지원 안 되는 기능만)
     # 주의: "전화", "카드", "와이파이"는 in-domain 일 수 있어 제외
@@ -392,15 +401,17 @@ def main():
     print(f"  dir:   {dir_ok/n*100:.2f}%")
     print(f"  combo: {all_ok/n*100:.2f}%")
 
-    # KE
-    print(f"\n=== KoELECTRA ===")
+    # KE (preprocessed, 배포 파이프라인과 동일)
+    from preprocess import preprocess
+    print(f"\n=== KoELECTRA (preprocessed) ===")
     for name, func in [('NO rules', lambda t: {
         'fn': HEAD_I2L['fn'][sess.run(None, {'input_ids': tok(t, padding='max_length', truncation=True,
             max_length=32, return_tensors='np')['input_ids'].astype(np.int64)})[0][0].argmax()]
     }), ('With rules', lambda t: predict_with_rules(t, sess, tok))]:
         ok = 0
         for d in ke:
-            p = func(d['utterance'])
+            pp = preprocess(d['utterance'])
+            p = func(pp)
             if p['fn'] == d['labels']['fn']: ok += 1
         print(f"  {name}: fn {ok/len(ke)*100:.2f}%")
 
