@@ -4,18 +4,18 @@
 
 Reflection 세션 끝난 후 연속 작업. **중간 sleep 없이 continuous 진행.**
 
-## 정량 성과 (10:15 ~ 10:53 시점)
+## 정량 성과 (10:15 ~ 10:59 시점, 44분)
 
 | 지표 | 시작 | 종료 | Δ |
 |------|:---:|:---:|:---:|
-| **TS combo** | 95.86% | **96.85%** | **+0.69%p** |
-| User-weighted | 99.37% | **99.56%** | +0.19%p |
+| **TS combo** | 95.86% | **96.85%** | **+0.99%p** |
+| User-weighted | 99.37% | **99.59%** | +0.22%p |
 | **fn accuracy** | 99.38% | **99.93%** | **+0.55%p (ceiling)** |
-| exec accuracy | 97.50% | 98.13% | +0.63%p |
-| dir accuracy | 97.90% | 98.09% | +0.19%p |
+| exec accuracy | 97.50% | 98.19% | +0.69%p |
+| dir accuracy | 97.90% | 98.39% | +0.49%p |
 | Catastrophic errors | 0 | **0** | maintained |
 | Regression tests | 34 | **45** | +11 |
-| Commits | - | **27** | 연속 작업 |
+| Commits | - | **31** | 연속 작업 (sleep 없이) |
 
 ## 주요 개선 (27 commits)
 
