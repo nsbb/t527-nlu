@@ -84,7 +84,7 @@ def generate_simple_response(preds, room, value=None, raw_text=''):
     if exec_t == 'control_then_confirm':
         action = ACTION_MAP.get(direction, '설정했습니다')
         # value 기반 응답 — dir이 명확한 action (on/off/open/close)일 땐 dir 우선
-        if value and direction in ('set', 'up', 'down', 'none'):
+        if value and direction in ('set', 'none'):
             vtype, vnum = value
             if vtype == 'temperature':
                 action = f'{vnum}도로 설정했습니다'
@@ -96,6 +96,16 @@ def generate_simple_response(preds, room, value=None, raw_text=''):
                 action = f'{vnum}%로 설정했습니다'
             elif vtype == 'level':
                 action = f'{vnum}단계로 설정했습니다'
+        elif value and direction in ('up', 'down'):
+            # 상대 조정: "26도로 올렸습니다" / "24도로 내렸습니다"
+            vtype, vnum = value
+            verb = '올렸습니다' if direction == 'up' else '내렸습니다'
+            if vtype == 'temperature':
+                action = f'{vnum}도로 {verb}'
+            elif vtype == 'percent':
+                action = f'{vnum}%로 {verb}'
+            elif vtype == 'level':
+                action = f'{vnum}단계로 {verb}'
         timer_prefix = ''
         if value and direction in ('on', 'off'):
             # 타이머 설정: "30분 후 난방 꺼줘" → "30분 뒤에 난방을 끕니다"
