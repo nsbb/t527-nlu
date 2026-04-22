@@ -377,6 +377,43 @@ class SAPv2Pipeline:
             if preds['param_direction'] != 'none':
                 preds['param_direction'] = 'none'
 
+        # continuous: 커튼 내려 → down (블라인드는 close)
+        if preds['fn'] == 'curtain_control' and '커튼' in text and '내려' in text and '블라인드' not in text:
+            if preds['param_direction'] in ('stop', 'none', 'open'):
+                preds['param_direction'] = 'down'
+
+        # continuous: 현관 → door_control (curtain 오예측)
+        if preds['fn'] == 'curtain_control' and '현관' in text:
+            preds['fn'] = 'door_control'
+            if preds['param_direction'] == 'stop':
+                if '닫' in text or '잠' in text:
+                    preds['param_direction'] = 'close'
+                elif '열' in text:
+                    preds['param_direction'] = 'open'
+
+        # continuous: 예약 확인 → schedule_manage
+        if preds['fn'] == 'home_info' and re.search(r'예약\s*확인|예약\s*정보', text):
+            preds['fn'] = 'schedule_manage'
+
+        # continuous: energy_query + 추워/더워 weather 문맥
+        if preds['fn'] == 'energy_query' and re.search(r'추워|더워|덥|춥', text):
+            if re.search(r'작년|올해|이번 해|지난 해|과거', text) or '?' in text:
+                preds['fn'] = 'weather_query'
+                preds['exec_type'] = 'query_then_respond'
+                preds['param_direction'] = 'none'
+
+        # continuous: system_meta OOD 예외
+        if preds['fn'] == 'system_meta':
+            if re.search(r'와이파이\s*비번|영어로\s*뭐|업데이트$|^일정$', text):
+                preds['fn'] = 'unknown'
+                preds['exec_type'] = 'direct_respond'
+                preds['param_direction'] = 'none'
+
+        # continuous: ac/vent + 해줘 → on
+        if preds['fn'] in ('ac_control', 'vent_control') and preds['exec_type'] == 'control_then_confirm' and preds['param_direction'] == 'none':
+            if re.search(r'해줘|해\s*줘|틀어|가동|작동', text):
+                preds['param_direction'] = 'on'
+
         # iter9: 화면/월패드/알림/음량 → home_info (capability query 제외)
         capability_q = re.search(r'어떻게|할\s*수\s*있', text)
         if preds['fn'] == 'system_meta' and not capability_q:
