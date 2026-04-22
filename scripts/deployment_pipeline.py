@@ -121,7 +121,9 @@ def generate_simple_response(preds, room, value=None, raw_text=''):
         # Special cases: elevator uses 호출
         if fn == 'elevator_call' and direction == 'on':
             return '네, 엘리베이터를 호출했습니다.'
-        # Schedule: "7시" 같은 시간은 별도 처리
+        # Schedule: "7시" 같은 시간은 별도 처리 (but off/cancel 우선)
+        if fn == 'schedule_manage' and direction in ('off',):
+            return '네, 예약을 취소했습니다.'
         if fn == 'schedule_manage' and value and value[0] == 'hour':
             return f'네, {value[1]}시 예약을 설정했습니다.'
 

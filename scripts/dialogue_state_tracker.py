@@ -157,12 +157,14 @@ class DialogueStateTracker:
                     delta = step if direction == 'up' else -step
                     inferred_value = (vtype, vnum + delta)
 
-        # continuous: 짧은 bare 동사 (꺼/켜/끄/열어/닫아) → fn 상속
+        # continuous: 짧은 bare 동사 (꺼/켜/끄/열어/닫아/취소) → fn 상속
         bare_verb_map = {
             '꺼': 'off', '꺼줘': 'off', '끄': 'off', '끄자': 'off',
             '켜': 'on', '켜줘': 'on',
             '열어': 'open', '열어줘': 'open',
             '닫아': 'close', '닫아줘': 'close', '잠가': 'close',
+            '취소': 'off', '취소해': 'off', '취소해줘': 'off',
+            '삭제': 'off', '삭제해': 'off',
         }
         if self.is_active() and self.prev_fn and text.strip() in bare_verb_map:
             fn = self.prev_fn
