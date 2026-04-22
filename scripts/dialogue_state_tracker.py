@@ -126,6 +126,23 @@ class DialogueStateTracker:
         current_value = self._extract_value(text)
         inferred_value = None
 
+        # 짧은 bare 발화 (더/덜/조금/많이) → fn 상속 + direction 추론
+        if self.is_active() and self.prev_fn and len(text.strip()) <= 4:
+            bare_direction_map = {
+                '더': 'up', '더 더': 'up', '많이': 'up',
+                '덜': 'down', '조금': 'down', '조금만': 'down', '살짝': 'down',
+            }
+            if text.strip() in bare_direction_map:
+                fn = self.prev_fn
+                exec_t = self.prev_exec or exec_t
+                direction = bare_direction_map[text.strip()]
+                # slot fill value
+                if self.prev_value:
+                    vtype, vnum = self.prev_value
+                    step = 1 if vtype == 'temperature' else 10
+                    delta = step if direction == 'up' else -step
+                    inferred_value = (vtype, vnum + delta)
+
         # "더 올려/내려/줄여" 같은 relative 발화 → 이전 value + 1/2 씩 조정
         # 이때 fn도 이전 턴에서 상속 (짧은 relative 발화에서 모델이 fn 헷갈릴 수 있음)
         if self.is_active() and self.prev_value and current_value is None:
