@@ -140,7 +140,7 @@ python3 scripts/dialogue_state_tracker.py
 - **v66** (04-21): **Ensemble ONNX 배포** — TS 94.3%, KE 97.8%, 0.48ms
 - **v67** (04-21): 통합 파이프라인 + STT 내성 100%
 - **v68** (04-21): 학습 라벨 수정 실험
-- **iter9** (04-21~22): **후처리 rule 10개 + DST 고도화** — **TS 97.21%, KE 97.20%, 0.67ms** ★
+- **iter9** (04-21~22): **후처리 rule 10개 + DST 고도화** — **TS 97.21% (preprocess) / 97.14% (raw), KE 97.20%, 0.67ms** ★
 
 자세한 내역: [`docs/EXPERIMENT_SUMMARY.md`](docs/EXPERIMENT_SUMMARY.md)
 

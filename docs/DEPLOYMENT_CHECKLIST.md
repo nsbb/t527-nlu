@@ -2,7 +2,7 @@
 
 작성: 2026-04-21 (iter9 update)
 대상 모델: **Ensemble Strategy B (v28+v46) + 후처리 rule**
-**TS 97.21% / KE 97.20% (이전 배포 93.53% → +2.23%p 개선)**
+**TS 97.21% (preprocess) / 97.14% (raw) / KE 97.20% (이전 배포 93.53% → +2.23%p 개선)**
 
 ## 0. 배포 모델 선정
 
@@ -11,7 +11,7 @@
 파일:     checkpoints/nlu_v28_v46_ensemble.onnx  (105MB FP32, 변경 없음)
 후처리:   scripts/ensemble_inference_with_rules.py  (★ 10개 rule 적용)
 Preprocess: scripts/preprocess.py  (★ 190+ entries, iter9 확장)
-성능:     TS 97.21%, KE 97.20%, balanced 96.48
+성능:     TS 97.21% (preprocess) / 97.14% (raw), KE 97.20%, balanced 96.48
 Latency:  0.67ms/query CPU (preprocess + inference + rules)
 ```
 

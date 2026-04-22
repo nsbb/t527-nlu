@@ -145,7 +145,7 @@ python3 scripts/deployment_pipeline.py
 1. **Multi-head가 Single intent보다 본질적으로 우수** — KE 72.5% vs 97.8% (+25%p) 수치 근거
 2. **모델 architecture 선택은 올바름** — 온디바이스 + 데이터 부족 환경에서 최적
 3. **14 rules는 band-aid지만 measurably justified** — GT +0.5%p (generalization 확인)
-4. **벤치마크 TS 97.21%는 wild input에서 85~90% 수준** 예상 — 정량된 gap은 실 user data로만 메울 수 있음
+4. **벤치마크 TS 97.21% (preprocess) / 97.14% (raw)는 wild input에서 85~90% 수준** 예상 — 정량된 gap은 실 user data로만 메울 수 있음
 5. **진짜 Next step은 명확**: 모델 실험 소진 → 실사용 로그 수집
 
 ## 최종 metric (reflection 수정 포함)
