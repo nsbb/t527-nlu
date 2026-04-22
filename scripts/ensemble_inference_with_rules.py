@@ -100,6 +100,15 @@ def apply_post_rules(preds, text):
         preds['param_direction'] = 'none'
         preds['param_type'] = 'none'
 
+    # continuous: 인체 상태 표현 (목말라/피곤해 등) → unknown (오분류 방지, catastrophic fix)
+    # 주의: 덥/춥/어두워/환해 같은 환경 상태는 제외 (각기 ac/heat/light에서 처리)
+    if text.strip() in ('목말라', '목말라요', '피곤해', '피곤해요', '배고파', '배고파요',
+                         '졸려', '졸려요', '힘들어', '힘들어요', '우울해'):
+        preds['fn'] = 'unknown'
+        preds['exec_type'] = 'direct_respond'
+        preds['param_direction'] = 'none'
+        preds['param_type'] = 'none'
+
     # continuous: 비상 상황 키워드 (가스 냄새 등) → security_mode emergency
     if re.search(r'가스\s*냄새|연기\s*(?:나|난|올)|불\s*(?:났|붙)|침입|도둑', text):
         preds['fn'] = 'security_mode'
