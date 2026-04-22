@@ -102,6 +102,9 @@ def apply_post_rules(preds, text):
             if preds['param_direction'] == 'none':
                 preds['param_direction'] = 'on' if re.search(r'켜', text) else 'off'
 
+    # reflection attempt: "{room} 지금/혹시/야 불 {verb}" — TS 95.86→95.73 regression → revert
+    # 이유: dir 덮어쓰기가 일부 TS dir label과 충돌 (TS 라벨 자체가 inconsistent)
+
     # iter9: curtain_control "올려" → up (TS 10/11 라벨 일치)
     # pred=open도 포함 (모델이 open으로 예측하는 케이스 8건 추가 커버)
     if preds['fn'] == 'curtain_control' and '올려' in text and preds['param_direction'] in ('stop', 'none', 'open'):
