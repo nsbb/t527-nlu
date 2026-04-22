@@ -322,6 +322,14 @@ def apply_post_rules(preds, text):
                 elif '꺼' in text or '끄' in text:
                     preds['param_direction'] = 'off'
 
+    # continuous: "N도 올려/내려/낮춰/높여" → dir=up/down (상대값, not set)
+    m = re.search(r'(\d+)\s*도\s*(?:만)?\s*(?:더)?\s*(올려|내려|낮춰|높여|올리|내리)', text)
+    if m and preds['param_direction'] == 'set':
+        if m.group(2) in ('올려', '높여', '올리'):
+            preds['param_direction'] = 'up'
+        else:
+            preds['param_direction'] = 'down'
+
     # continuous: 음량/볼륨/소리 → home_info (energy_query 오예측 교정)
     if re.search(r'음량|볼륨|소리', text) and preds['fn'] == 'energy_query':
         preds['fn'] = 'home_info'
