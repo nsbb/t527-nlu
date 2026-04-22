@@ -248,9 +248,9 @@ def apply_post_rules(preds, text):
             if preds['param_direction'] != 'none':
                 preds['param_direction'] = 'none'
 
-    # continuous: "온도 몇 도" 류 query_then_respond 복구 (heat/ac)
-    if preds['fn'] in ('heat_control', 'ac_control', 'home_info'):
-        if re.search(r'몇\s*도|온도\s*얼마|온도\s*어때|온도\s*상태', text):
+    # continuous: "온도 몇 도" 류 query_then_respond 복구 (heat/ac/home/weather)
+    if preds['fn'] in ('heat_control', 'ac_control', 'home_info', 'weather_query'):
+        if re.search(r'몇\s*도|온도\s*얼마|온도\s*어때|온도\s*상태|기온\s*몇', text):
             if preds['exec_type'] == 'direct_respond':
                 preds['exec_type'] = 'query_then_respond'
 
