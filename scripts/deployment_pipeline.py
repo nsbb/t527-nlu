@@ -141,6 +141,36 @@ class DeploymentPipeline:
         """DST 세션 초기화"""
         self.dst.reset()
 
+    def process_compound(self, text, use_dst=True):
+        """복합 명령 처리 — "A 하고 B" 분할 후 각각 process.
+
+        Returns:
+            dict with 'actions': list of process() results, 'is_compound': bool
+        """
+        # 연결어로 분할 시도
+        parts = re.split(r'\s+(?:하고|그리고|그러고|이랑)\s+', text)
+        # "동사고 B" 패턴 (동사 + 고 + 공백 + 다음 명령)
+        if len(parts) == 1:
+            # 동사 어미 + "고 " 찾기 (끄고/꺼고/켜고/닫고/잠그고/열고/올리고/내리고)
+            m = re.search(r'^(.+?(?:꺼|끄|켜|닫|잠그|잠가|열|올리|내리))고\s+(.+)$', text)
+            if m:
+                parts = [m.group(1), m.group(2)]
+
+        if len(parts) < 2:
+            # 단일 명령
+            r = self.process(text, use_dst=use_dst)
+            return {'actions': [r], 'is_compound': False}
+
+        # 복합 명령 — 각 부분 처리
+        actions = []
+        for p in parts:
+            p = p.strip()
+            if not p:
+                continue
+            r = self.process(p, use_dst=use_dst)
+            actions.append(r)
+        return {'actions': actions, 'is_compound': True}
+
     def process(self, text, use_dst=True):
         """단일 발화 처리 → 구조화된 결과 반환.
 
