@@ -124,8 +124,12 @@ def apply_post_rules(preds, text):
             if preds['param_direction'] == 'none':
                 preds['param_direction'] = 'on' if re.search(r'켜', text) else 'off'
 
-    # reflection attempt: "{room} 지금/혹시/야 불 {verb}" — TS 95.86→95.73 regression → revert
-    # 이유: dir 덮어쓰기가 일부 TS dir label과 충돌 (TS 라벨 자체가 inconsistent)
+    # continuous: "{room} 지금/혹시/야 불 {verb}" → CTC (dir 안 건드림)
+    # 재시도: dir override 없이 exec만 변경 → regression 방지
+    if preds['exec_type'] == 'clarify' and preds['fn'] == 'light_control':
+        if re.search(r'(거실|안방|침실|주방|부엌|작은방|아이방)\s+(?:지금|혹시|야)\s+(불|조명|등)\s+(켜|꺼)', text):
+            preds['exec_type'] = 'control_then_confirm'
+            # dir은 변경하지 않음 — model이 이미 예측한 값 유지
 
     # iter9: curtain_control "올려" → up (TS 10/11 라벨 일치)
     # pred=open도 포함 (모델이 open으로 예측하는 케이스 8건 추가 커버)
