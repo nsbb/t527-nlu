@@ -290,8 +290,14 @@ SPECIFIC_PATTERNS = [
      '고급휘발유는 평균 0000원입니다.'),
     (r'경유\s*(?:얼마|어때|가격)',
      '전국 평균 경유는 0000원입니다.'),
-    (r'(?:싼|저렴한)\s*주유소|최저가\s*주유소|가까운\s*주유소',
+    (r'우리\s*동네\s*(?:기름값|유가|휘발유)|(?:동네)\s*(?:기름값|휘발유)',
+     'OO구 평균 휘발유 가격은 0000원입니다.'),
+    (r'저가\s*주유소|싼\s*주유소|최저가\s*주유소|가까운\s*저가',
+     '2km 거리 OO주유소가 최저가입니다.'),
+    (r'가까운\s*주유소|주유소\s*추천',
      '반경 3km 내 최저가는 OO주유소, 1,698원입니다.'),
+    (r'주유해도\s*되|주유\s*해도\s*돼',
+     '최근 상승 추세입니다. 참고하시기 바랍니다.'),
     (r'기름값|유가|휘발유',
      '전국 평균 휘발유는 0000원, 경유는 0000원입니다.'),
 
@@ -308,8 +314,8 @@ SPECIFIC_PATTERNS = [
      '현재 위치 기준 1km 내 병원 3곳이 있습니다. OO내과, OO이비인후과, OO가정의학과입니다.'),
     (r'응급실|응급\s*(?:상황|진료)',
      '근처 응급실은 OO병원 응급센터입니다.'),
-    (r'병원\s*추천|(?:내과|외과|소아과|이비인후과|안과|치과|피부과|산부인과|정형외과)',
-     '근처 해당 진료과 병원 정보를 안내합니다.'),
+    (r'병원\s*추천(?!.*(?:내과|외과|소아|이비인후|안과|치과|피부과|산부인과|정형외과))',
+     '근처 병원 정보를 안내합니다.'),
     (r'24시간\s*약국|밤.*약국|야간\s*약국',
      '가까운 24시간 운영 약국은 OO약국입니다.'),
     (r'약국\s*어디|약국\s*찾',
@@ -472,11 +478,15 @@ def query_response(fn, room, raw_text):
 
     # Weather (세부 > 일반)
     if fn == 'weather_query':
-        if re.search(r'한강|야외\s*활동|외출', raw_text) and re.search(r'괜찮|되나|돼|좋', raw_text):
+        if re.search(r'한강|야외\s*활동', raw_text) and re.search(r'괜찮|되나|돼|좋', raw_text):
             return '오늘 서울 지역 기온은 쾌적하나 미세먼지가 나쁨 수준입니다. 장시간 야외활동은 권장하지 않습니다.'
+        if re.search(r'이번\s*주\s*날씨|이번주\s*날씨', raw_text):
+            return '이번 주 OO구 OO동 날씨는 대체로 맑고 주말에 비 예보가 있습니다.'
+        if re.search(r'오늘\s*밤|오늘밤|밤\s*날씨|밤\s*기온', raw_text):
+            return '오늘 OO구 OO동 날씨는 밤 10시 기온은 00도까지 내려가며 신선하겠습니다.'
         if re.search(r'밖\s*에?\s*(?:덥|추|더워|추워)|체감\s*온도', raw_text):
             return '현재 OO구 OO동은 00도이며 체감온도는 00도 입니다.'
-        if re.search(r'저녁.*춥|밤.*춥|최저', raw_text):
+        if re.search(r'저녁.*춥|최저\s*기온|최저\s*00|오늘\s*저녁', raw_text):
             return '오늘 OO구 OO동은 오후 0시 기준 최저 00도까지 내려갑니다. 두꺼운 외투를 챙기세요.'
         if re.search(r'내일\s*날씨|내일\s*(?:춥|덥|어때)', raw_text):
             return '내일 OO구 OO동 날씨는 최고 00도, 흐림이며 비 예보는 없습니다.'
@@ -510,10 +520,14 @@ def query_response(fn, room, raw_text):
             return '목적지까지 약 45분 소요됩니다.'
         if re.search(r'회사\s*까지|회사\s*몇', raw_text):
             return '현재 교통상황을 반영하여 자가용 이용 시 약 33분 소요됩니다.'
+        if re.search(r'버스\s*언제|버스.*도착|버스\s*와', raw_text):
+            return '000번 버스가 0분 후 도착 예정입니다.'
+        if re.search(r'지하철\s*(?:언제|와|도착)', raw_text):
+            return '지하철 000번 열차가 0분 후 도착 예정입니다.'
+        if re.search(r'강남|잠실|홍대|여의도|시청|서울역.*얼마', raw_text):
+            return '대중교통 기준 버스 탑승 시 약 00분, 자가용 기준 약 00분 소요됩니다.'
         if re.search(r'서울역|역\s*까지|역\s*가면', raw_text):
             return '현재 교통상황을 반영하여 자가용 00분, 지하철로 00분 예상됩니다.'
-        if re.search(r'강남|강북|잠실|홍대|여의도', raw_text):
-            return '대중교통 기준 버스 탑승 시 약 00분, 자가용 기준 약 00분 소요됩니다.'
         if re.search(r'몇\s*분|얼마나', raw_text):
             return '현재 교통상황을 반영하여 자가용 00분, 지하철로 00분 예상됩니다.'
         if re.search(r'막혀|정체', raw_text):
@@ -551,7 +565,7 @@ def query_response(fn, room, raw_text):
 
     # Medical
     if fn == 'medical_query':
-        if re.search(r'소아과|소아청소년', raw_text):
+        if re.search(r'소아(?:과|청소년)', raw_text):
             if re.search(r'이름|2군데|알려', raw_text):
                 return '반경 0Km 내 소아청소년과 병원명은 OOOO, OOOOOO 입니다.'
             return '반경 0Km 내 소아청소년과 2곳이 있습니다.'
