@@ -73,6 +73,12 @@ TESTS = [
     ("너무 덥다", "fn", "ac_control", "reflection: 덥→ac"),
     ("방 안이 춥다", "fn", "heat_control", "reflection: 춥→heat 확정"),
     ("서울 날씨", "param_direction", "none", "reflection: query dir=none 강제"),
+
+    # Continuous (2026-04-22) 추가
+    ("좀 시원하게", "fn", "ac_control", "continuous: 시원→ac"),
+    ("블라인드 닫아", "param_direction", "close", "continuous: 블라인드 닫아 open→close"),
+    ("공기청정 켜", "fn", "vent_control", "continuous: 공기청정→vent"),
+    ("가 스 잠 가", "fn", "gas_control", "continuous: extra-space collapse"),
 ]
 
 
