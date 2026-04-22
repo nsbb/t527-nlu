@@ -103,6 +103,20 @@ class DialogueStateTracker:
                 new_device = re.search(r'에어컨|난방|조명|불|환기|가스|도어락|커튼|블라인드', text)
                 if not new_device:
                     fn = self.prev_fn or fn
+                # direction 추론 — 발화 내 verb 우선
+                if direction == 'none':
+                    if re.search(r'켜', text):
+                        direction = 'on'
+                        exec_t = 'control_then_confirm'
+                    elif re.search(r'꺼|끄', text):
+                        direction = 'off'
+                        exec_t = 'control_then_confirm'
+                    elif re.search(r'열어', text):
+                        direction = 'open'
+                        exec_t = 'control_then_confirm'
+                    elif re.search(r'닫아|잠가|잠궈', text):
+                        direction = 'close'
+                        exec_t = 'control_then_confirm'
 
             elif self._is_there_too(text):
                 # "거기도" — 이전 room 재사용 + 이전 fn/exec/dir 유지
@@ -175,6 +189,23 @@ class DialogueStateTracker:
                         exec_t = self.prev_exec or exec_t
                     direction = 'up' if is_up else 'down'
                     current_value = None  # override explicit extraction
+
+        # continuous: "N도 더" / "N도 덜" / "N도 낮춰" without explicit verb (바로 temperature delta)
+        if self.is_active() and self.prev_value and inferred_value is None:
+            # "1도 더" / "2도 낮춰" 같은 상대값 (위 규칙이 매치 안 될 때)
+            m = re.search(r'^\s*(\d+)\s*도\s*(더|덜|낮춰|높여)?\s*$', text)
+            if m:
+                delta = int(m.group(1))
+                modifier = m.group(2) or '더'
+                is_up = modifier in ('더', '높여')
+                vtype, vnum = self.prev_value
+                if vtype == 'temperature':
+                    inferred_value = (vtype, vnum + (delta if is_up else -delta))
+                    if self.prev_fn:
+                        fn = self.prev_fn
+                        exec_t = self.prev_exec or exec_t
+                    direction = 'up' if is_up else 'down'
+                    current_value = None
 
         final_value = current_value or inferred_value or self.prev_value
 
