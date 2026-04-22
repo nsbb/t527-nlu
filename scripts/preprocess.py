@@ -325,6 +325,8 @@ STT_CORRECTION = {
     # 중복 표현 수정
     '다시 다시': '다시',
     '좀 좀': '좀',
+    '쫌': '좀',          # STT/dialect 변형
+    '쪼끔': '조금',
     # 기타 장치명 variation
     '수도': '물',     # "수도꼭지" 같은 경우
     '밸류': '밸브',
@@ -342,11 +344,13 @@ def preprocess(text):
     text = re.sub(r'\s+', ' ', text).strip()
 
     # 2-2. iter10: 글자 사이 단일 공백 collapse ("가 스 잠 가" → "가스잠가")
-    # 전체 text에서 단일글자 + 공백 패턴이 4개 이상 연속이면 collapse
+    # continuous: 긴 multi-char 토큰 (2글자 이상)이 있으면 collapse 안 함
+    # (예: "켜 줘 거실 불 좀" — 거실이 2글자이므로 유지)
     tokens = text.split(' ')
     single_char_count = sum(1 for t in tokens if len(t) == 1 and '가' <= t <= '힣')
-    if single_char_count >= 4 and single_char_count / max(len(tokens), 1) >= 0.7:
-        # 대부분 단일 글자 — 공백 제거
+    long_token_count = sum(1 for t in tokens if len(t) >= 2 and all('가' <= c <= '힣' for c in t))
+    if single_char_count >= 4 and long_token_count == 0 and single_char_count / max(len(tokens), 1) >= 0.9:
+        # 모든 토큰이 단일 글자 — 공백 제거
         text = ''.join(tokens)
 
     # 3. STT 오류 사전 교정 — 두 번 pass
