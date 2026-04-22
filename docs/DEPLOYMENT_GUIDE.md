@@ -4,7 +4,7 @@
 
 | 시나리오 | 모델 | 파일 | TS | KE | 크기 |
 |---------|------|------|:---:|:---:|:---:|
-| 배포 기본 | v28+v46 앙상블 | `nlu_v28_v46_ensemble.onnx` | **95.76%** | **97.20%** | 105MB |
+| 배포 기본 | v28+v46 앙상블 | `nlu_v28_v46_ensemble.onnx` | **96.32%** | **97.20%** | 105MB |
 | 단일 모델 | v46 | `nlu_v46_generalization.onnx` | 93.3% | 97.8% | 100MB |
 | 기존 패턴 전용 | v28 | `nlu_v28_final.onnx` | 96.3% | 75.5% | 100MB |
 
@@ -140,7 +140,7 @@ UNSUPPORTED_ACTIONS = {
 ```bash
 # ONNX 검증
 python3 scripts/verify_ensemble_onnx.py
-# Expected: TS 95.76%, KE 97.20%, 0.67ms (iter9)
+# Expected: TS 96.32%, KE 97.20%, 0.67ms (iter9)
 
 # 대화형 테스트
 python3 scripts/sap_inference_v2.py
