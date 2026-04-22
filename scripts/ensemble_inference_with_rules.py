@@ -70,6 +70,13 @@ def apply_post_rules(preds, text):
         preds['param_direction'] = 'none'
         preds['param_type'] = 'none'
 
+    # continuous: system_meta → unknown (특정 OOD 키워드)
+    if preds['fn'] == 'system_meta':
+        if re.search(r'와이파이\s*비번|영어로\s*뭐|업데이트$|^일정$', text):
+            preds['fn'] = 'unknown'
+            preds['exec_type'] = 'direct_respond'
+            preds['param_direction'] = 'none'
+
     # iter9: "전화" in-domain(관리실) vs OOD(일반) 구분
     # - home_info로 분류된 케이스 중 entity 없는 "전화" → unknown
     if '전화' in text and preds['fn'] == 'home_info':
