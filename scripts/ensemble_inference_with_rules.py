@@ -306,6 +306,15 @@ def apply_post_rules(preds, text):
                 elif '꺼' in text or '끄' in text:
                     preds['param_direction'] = 'off'
 
+    # continuous: "밝기 최대/최소" → up/down (out-of-distribution 보강)
+    # TS에 "밝기 최대/최소" 케이스 없어 regression 없음
+    if re.search(r'밝기\s*최대', text):
+        if preds['fn'] == 'light_control' and preds['param_direction'] in ('down', 'set', 'none'):
+            preds['param_direction'] = 'up'
+    elif re.search(r'밝기\s*최소', text):
+        if preds['fn'] == 'light_control' and preds['param_direction'] in ('up', 'set', 'none'):
+            preds['param_direction'] = 'down'
+
     # iter9: 화면/월패드/알림/음량 → home_info (system_meta 오분류 교정)
     # 주의: "에너지 사용량 알림", "긴급 알림" 등 (다른 fn) 및
     #      "어떻게 할 수 있어" 같은 capability query (system_meta 맞음) 제외
