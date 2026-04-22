@@ -145,6 +145,13 @@ def apply_post_rules(preds, text):
             if preds['param_direction'] in ('none',):
                 preds['param_direction'] = 'on'
 
+    # continuous: energy_query + 추워/더워 = weather query (작년/올해 비교 문맥)
+    if preds['fn'] == 'energy_query' and re.search(r'추워|더워|덥|춥', text):
+        if re.search(r'작년|올해|이번 해|지난 해|과거', text) or '?' in text:
+            preds['fn'] = 'weather_query'
+            preds['exec_type'] = 'query_then_respond'
+            preds['param_direction'] = 'none'
+
     # "시원하게" → ac_control (heat 오예측 교정, catastrophic fix)
     if preds['fn'] == 'heat_control' and re.search(r'시원', text):
         if not re.search(r'난방|보일러', text):
