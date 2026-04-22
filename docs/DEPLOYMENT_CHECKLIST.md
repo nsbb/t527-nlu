@@ -2,7 +2,7 @@
 
 작성: 2026-04-21 (iter9 update)
 대상 모델: **Ensemble Strategy B (v28+v46) + 후처리 rule**
-**TS 96.55% / KE 97.20% (이전 배포 93.53% → +2.23%p 개선)**
+**TS 96.85% / KE 97.20% (이전 배포 93.53% → +2.23%p 개선)**
 
 ## 0. 배포 모델 선정
 
@@ -11,7 +11,7 @@
 파일:     checkpoints/nlu_v28_v46_ensemble.onnx  (105MB FP32, 변경 없음)
 후처리:   scripts/ensemble_inference_with_rules.py  (★ 10개 rule 적용)
 Preprocess: scripts/preprocess.py  (★ 190+ entries, iter9 확장)
-성능:     TS 96.55%, KE 97.20%, balanced 96.48
+성능:     TS 96.85%, KE 97.20%, balanced 96.48
 Latency:  0.67ms/query CPU (preprocess + inference + rules)
 ```
 
@@ -19,7 +19,7 @@ Latency:  0.67ms/query CPU (preprocess + inference + rules)
 
 | 옵션 | 크기 | TS | KE | Latency | 용도 |
 |------|:---:|:---:|:---:|:---:|------|
-| **Ensemble FP32 + iter9 rules** | 105MB | **96.55%** | **97.20%** | **0.67ms** | ★ 현재 배포 |
+| **Ensemble FP32 + iter9 rules** | 105MB | **96.85%** | **97.20%** | **0.67ms** | ★ 현재 배포 |
 | Ensemble FP32 (no rules) | 105MB | 93.59% | 97.79% | 0.55ms | 참고 (rule 제외) |
 | Ensemble FP16 | 52.5MB | 93.59% | 97.79% | 20.4ms | GPU/NPU 전용 |
 | v46 단독 + rules | 100MB | 94.68% | 97.27% | 0.50ms | 더 가벼운 배포 |
