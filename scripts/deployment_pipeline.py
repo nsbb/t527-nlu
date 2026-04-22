@@ -134,8 +134,35 @@ def generate_simple_response(preds, room, value=None, raw_text=''):
             'energy_query': '에너지 사용량을 확인합니다.',
             'market_query': '시세 정보를 확인합니다.',
             'medical_query': '근처 병원 정보를 안내합니다.',
+            'home_info': '현재 상태를 확인합니다.',
+            'heat_control': '현재 난방 상태를 확인합니다.',
+            'ac_control': '현재 에어컨 상태를 확인합니다.',
+            'vent_control': '현재 환기 상태를 확인합니다.',
+            'light_control': '현재 조명 상태를 확인합니다.',
+            'curtain_control': '현재 커튼 상태를 확인합니다.',
+            'gas_control': '현재 가스 상태를 확인합니다.',
+            'door_control': '현재 도어 상태를 확인합니다.',
+            'schedule_manage': '예약 내역을 확인합니다.',
+            'security_mode': '보안 모드 상태를 확인합니다.',
+            'elevator_call': '엘리베이터 상태를 확인합니다.',
+            'system_meta': '시스템 상태를 확인합니다.',
         }
         return responses.get(fn, '상태를 확인합니다.')
+
+    if exec_t == 'query_then_judge':
+        judge_responses = {
+            'weather_query': '오늘 날씨상 외출하기 괜찮아 보입니다.',
+            'heat_control': '현재 난방 상태로 충분해 보입니다.',
+            'ac_control': '현재 에어컨 상태로 충분해 보입니다.',
+        }
+        return judge_responses.get(fn, '상황을 판단합니다.')
+
+    if exec_t == 'direct_respond':
+        direct_responses = {
+            'system_meta': '네, 도움이 필요하시면 말씀해주세요.',
+            'home_info': '네, 말씀해주세요.',
+        }
+        return direct_responses.get(fn, '네, 말씀해주세요.')
 
     if exec_t == 'clarify':
         return '어떤 공간의 기기를 제어할지 말씀해주세요.'
@@ -159,30 +186,36 @@ class DeploymentPipeline:
         """DST 세션 초기화"""
         self.dst.reset()
 
+    def _split_compound(self, text):
+        """재귀적 복합 명령 분할. 3개 이상 연결도 처리."""
+        # 연결어로 분할 시도
+        parts = re.split(r'\s+(?:하고|그리고|그러고|이랑)\s+', text)
+        if len(parts) > 1:
+            result = []
+            for p in parts:
+                result.extend(self._split_compound(p.strip()))
+            return result
+        # "동사고 B" 패턴
+        m = re.search(r'^(.+?(?:꺼|끄|켜|닫|잠그|잠가|열|올리|내리))고\s+(.+)$', text)
+        if m:
+            return [m.group(1).strip()] + self._split_compound(m.group(2).strip())
+        return [text.strip()] if text.strip() else []
+
     def process_compound(self, text, use_dst=True):
-        """복합 명령 처리 — "A 하고 B" 분할 후 각각 process.
+        """복합 명령 처리 — "A 하고 B 고 C" 재귀 분할 후 각각 process.
 
         Returns:
             dict with 'actions': list of process() results, 'is_compound': bool
         """
-        # 연결어로 분할 시도
-        parts = re.split(r'\s+(?:하고|그리고|그러고|이랑)\s+', text)
-        # "동사고 B" 패턴 (동사 + 고 + 공백 + 다음 명령)
-        if len(parts) == 1:
-            # 동사 어미 + "고 " 찾기 (끄고/꺼고/켜고/닫고/잠그고/열고/올리고/내리고)
-            m = re.search(r'^(.+?(?:꺼|끄|켜|닫|잠그|잠가|열|올리|내리))고\s+(.+)$', text)
-            if m:
-                parts = [m.group(1), m.group(2)]
+        parts = self._split_compound(text)
 
         if len(parts) < 2:
-            # 단일 명령
             r = self.process(text, use_dst=use_dst)
             return {'actions': [r], 'is_compound': False}
 
         # 복합 명령 — 각 부분 처리
         actions = []
         for p in parts:
-            p = p.strip()
             if not p:
                 continue
             r = self.process(p, use_dst=use_dst)
