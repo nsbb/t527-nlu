@@ -163,6 +163,17 @@ def apply_post_rules(preds, text):
     if preds['fn'] == 'home_info' and re.search(r'예약\s*확인|예약\s*정보', text):
         preds['fn'] = 'schedule_manage'
 
+    # continuous: 난방 keyword 확실 → heat_control 확정
+    if '난방' in text and preds['fn'] == 'light_control':
+        preds['fn'] = 'heat_control'
+
+    # continuous: 환해/밝다 → light_control (vent 오예측 교정)
+    if preds['fn'] == 'vent_control' and re.search(r'환해|환하|밝다|밝아', text):
+        preds['fn'] = 'light_control'
+
+    # continuous: 현관 + 확인 → door_control 시도 → KE 3건 regression → revert
+    # (TS: door_control, KE: home_info로 annotator 간 불일치)
+
     # continuous: 커튼 내려 → down (TS 라벨 매칭)
     if preds['fn'] == 'curtain_control' and '커튼' in text and '내려' in text and '블라인드' not in text:
         if preds['param_direction'] in ('stop', 'none', 'open'):
