@@ -362,6 +362,14 @@ SPECIFIC_PATTERNS = [
     (r'이번\s*주\s*비\s*(?:와|오|예보)',
      '이번 주 OO구 OO동 수요일부터 강수 확률 30% 예상됩니다.'),
 
+    # 시간별 강수량 (정확히 몇 mm)
+    (r'시간별\s*강수량|\d+시간\s*뒤.*비.*몇\s*mm|강수량.*정확',
+     '시간에 따른 예상 강수량은 제공이 어렵습니다.'),
+
+    # 장기 예보 (다음주 / 다음달)
+    (r'다음\s*주\s*날씨|다음\s*달\s*날씨|다음주\s*날씨',
+     '다음 주 날씨 정보는 제공이 어렵습니다. 단기 예보만 안내 가능합니다.'),
+
     # 커뮤니티
     (r'커뮤니티|주민\s*소통',
      '커뮤니티 기능은 월패드 더보기 메뉴에서 이용할 수 있습니다.'),
@@ -569,6 +577,8 @@ def query_response(fn, room, raw_text):
             return '이번 주 OO구 OO동 날씨는 대체로 맑고 주말에 비 예보가 있습니다.'
         if re.search(r'오늘\s*밤|오늘밤|밤\s*날씨|밤\s*기온', raw_text):
             return '오늘 OO구 OO동 날씨는 밤 10시 기온은 00도까지 내려가며 신선하겠습니다.'
+        if re.search(r'밖에\s*어때|현재\s*밖|지금\s*밖(?!\s*에?\s*(?:덥|추))', raw_text):
+            return '현재 OO구 OO동은 00도이며 맑습니다.'
         if re.search(r'밖\s*에?\s*(?:덥|추|더워|추워)|체감\s*온도', raw_text):
             return '현재 OO구 OO동은 00도이며 체감온도는 00도 입니다.'
         if re.search(r'저녁.*춥|최저\s*기온|최저\s*00|오늘\s*저녁', raw_text):
@@ -839,13 +849,25 @@ def control_response(fn, direction, room, value, raw_text):
 # ─────────────────────────────────────────────────────────────
 
 def judge_response(fn, raw_text):
+    # 옷차림
+    if re.search(r'뭐\s*입고|옷\s*어떻|옷차림|입고\s*나', raw_text):
+        return '오늘 OO구 OO동 날씨는 최고 27도로 따뜻합니다. 얇은 긴팔 또는 반팔이 적당합니다.'
+    if re.search(r'겉옷|외투\s*필요|자켓|코트', raw_text):
+        return '오늘 OO구 OO동 아침 기온이 12도입니다. 얇은 겉옷을 준비하세요.'
+    if re.search(r'아이\s*옷|애\s*옷', raw_text):
+        return '오늘 OO구 OO동 날씨는 일교차가 커서 가벼운 겉옷을 함께 준비하는 것이 좋겠습니다.'
+    # 활동 적합성
     if re.search(r'세차|차\s*씻', raw_text):
-        return '오늘 강수 확률이 낮아 세차하기에 적합합니다.'
+        return '오늘 OO구 OO동 내일 비 예보가 있어 오늘 세차는 권장하지 않습니다.'
     if re.search(r'빨래|널어도', raw_text):
         return '오늘 날씨상 빨래 널기에 적합합니다.'
+    if re.search(r'캠핑|등산|피크닉', raw_text):
+        return '이번주 강풍 예보가 있습니다. 안전에 유의하세요.'
     if re.search(r'창문|환기해도', raw_text):
         return '현재 미세먼지 수준이 보통이므로 환기하기 적절합니다.'
-    if re.search(r'외출|나가도|산책|운동|한강|바람쐬', raw_text):
+    if re.search(r'나가도\s*돼|외출\s*해도', raw_text):
+        return '오늘 OO구 OO동 기온과 대기질 모두 양호합니다. 외출하기에 무리가 없습니다.'
+    if re.search(r'외출|산책|운동|한강|바람쐬', raw_text):
         return '오늘 날씨상 외출하기 괜찮아 보입니다.'
     if re.search(r'우산', raw_text):
         return '오늘 강수 확률이 낮아 우산은 필요 없을 것으로 예상됩니다.'
