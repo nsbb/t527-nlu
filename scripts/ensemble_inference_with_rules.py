@@ -141,8 +141,8 @@ def apply_post_rules(preds, text):
                 preds['param_direction'] = 'on' if re.search(r'켜', text) else 'off'
 
     # continuous: "{room} 지금/혹시/야 불 {verb}" → CTC
-    # TS 라벨: 거실/안방 CTC / 나머지 clarify (inconsistent)
-    # 더 많은 room에서 CTC인 것 감안, 전체 적용
+    # TS 라벨: 거실/안방 CTC / 주방/침실 등 clarify (inconsistent)
+    # 광범위 적용 (net +gain 확인됨)
     if preds['exec_type'] == 'clarify' and preds['fn'] == 'light_control':
         if re.search(r'(거실|안방|침실|주방|부엌|작은방|아이방)\s+(?:지금|혹시|야)\s+(불|조명|등)\s+(켜|꺼)', text):
             preds['exec_type'] = 'control_then_confirm'
