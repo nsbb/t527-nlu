@@ -334,6 +334,14 @@ def preprocess(text):
     # 2. 공백 정리
     text = re.sub(r'\s+', ' ', text).strip()
 
+    # 2-2. iter10: 글자 사이 단일 공백 collapse ("가 스 잠 가" → "가스잠가")
+    # 전체 text에서 단일글자 + 공백 패턴이 4개 이상 연속이면 collapse
+    tokens = text.split(' ')
+    single_char_count = sum(1 for t in tokens if len(t) == 1 and '가' <= t <= '힣')
+    if single_char_count >= 4 and single_char_count / max(len(tokens), 1) >= 0.7:
+        # 대부분 단일 글자 — 공백 제거
+        text = ''.join(tokens)
+
     # 3. STT 오류 사전 교정 — 두 번 pass
     #    첫 pass: 긴 패턴 (prefix 겹침 방지, "지금몇시야" > "지금몇시")
     #    둘째 pass: 첫 pass 후 활성화된 composite 매칭 ("까스잠가" → "가스잠가" → "가스 잠가")
