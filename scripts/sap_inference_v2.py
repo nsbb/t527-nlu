@@ -414,6 +414,50 @@ class SAPv2Pipeline:
             if re.search(r'해줘|해\s*줘|틀어|가동|작동', text):
                 preds['param_direction'] = 'on'
 
+        # continuous: 통행/교통 → traffic_query
+        if preds['fn'] == 'unknown':
+            if re.search(r'통행|교통|소요\s*시간|얼마나\s*걸려|몇\s*분\s*걸려', text):
+                preds['fn'] = 'traffic_query'
+                preds['exec_type'] = 'query_then_respond'
+
+        # continuous: judgment (타도 돼/나가도 돼 등) → weather_query
+        if re.search(r'타도\s*돼\?|나가도\s*돼|세차해도|운동해도|소풍', text):
+            if preds['fn'] in ('market_query', 'traffic_query', 'unknown'):
+                preds['fn'] = 'weather_query'
+                preds['exec_type'] = 'query_then_judge'
+                preds['judge'] = 'outdoor_activity'
+
+        # continuous: 난방 keyword → heat force
+        if '난방' in text and preds['fn'] == 'light_control':
+            preds['fn'] = 'heat_control'
+
+        # continuous: 환해/밝 → light (vent 오예측)
+        if preds['fn'] == 'vent_control' and re.search(r'환해|환하|밝다|밝아', text):
+            preds['fn'] = 'light_control'
+
+        # continuous: 현관→door, 예약 확인→schedule
+        if preds['fn'] == 'curtain_control' and '현관' in text:
+            preds['fn'] = 'door_control'
+        if preds['fn'] == 'home_info' and re.search(r'예약\s*확인|예약\s*정보', text):
+            preds['fn'] = 'schedule_manage'
+
+        # continuous: OOD single words
+        if text.strip() in ('등산', '카드', '녹화', '토토', '경마', '선풍기', '음식 주문', '택배 조회'):
+            preds['fn'] = 'unknown'
+            preds['exec_type'] = 'direct_respond'
+            preds['param_direction'] = 'none'
+
+        # continuous: 비상 상황 → security_mode
+        if re.search(r'가스\s*냄새|연기\s*나|불\s*났|침입', text):
+            preds['fn'] = 'security_mode'
+            preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'on'
+
+        # continuous: clarify→CTC (room + adverb + 불)
+        if preds['exec_type'] == 'clarify' and preds['fn'] == 'light_control':
+            if re.search(r'(거실|안방|침실|주방|부엌|작은방|아이방)\s+(?:지금|혹시|야)\s+(불|조명|등)\s+(켜|꺼)', text):
+                preds['exec_type'] = 'control_then_confirm'
+
         # iter9: 화면/월패드/알림/음량 → home_info (capability query 제외)
         capability_q = re.search(r'어떻게|할\s*수\s*있', text)
         if preds['fn'] == 'system_meta' and not capability_q:
