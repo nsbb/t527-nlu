@@ -229,8 +229,8 @@ class DialogueStateTracker:
 
         text_clean = text.strip()
 
-        # "안방도", "주방도", "거실도" — room follow-up
-        if re.search(r'(거실|안방|주방|침실|작은방|아이방|부엌|큰방)도$', text_clean):
+        # "안방도", "주방도", "거실도", "안방도 해줘", "안방에도" — room follow-up
+        if re.search(r'^(거실|안방|주방|침실|작은방|아이방|부엌|큰방)(?:도|에도)(?:\s*해?줘)?$', text_clean):
             return 'room'
 
         # "에어컨도", "난방도" — device follow-up (fn은 유지, exec/dir만 상속)
