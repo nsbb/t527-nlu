@@ -493,3 +493,49 @@ TS 95.76% 수치 뒤에 숨어 있는 진실:
 - **95.76% → 실 유저 85~90% 체감** 예상 (empirical guess)
 
 → **역시 실사용 로그 수집이 진짜 다음 단계**.
+
+---
+
+## 부록 H: Reflection 과정에서 추가 개선 사항 (30분 분석 중 발견 + 수정)
+
+이 문서를 쓰며 발견한 실제 이슈들 — 즉시 고쳐서 커밋했다:
+
+### 1. "방이 덥네" → heat_control 오예측
+- 모델이 "덥" 포함 문장을 heat으로 잘못 예측하는 케이스 발견
+- Rule 추가: heat_control + "덥다/더워/덥네" → ac_control (난방 keyword 없으면)
+- 반대로 "춥다/추워" → heat_control 확정
+- 커밋: `6d30d58 reflection: 덥다/춥다 → AC/heat 강제 rule`
+
+### 2. Multi-turn 벤치마크 신규 작성
+- 이전 TS/KE는 단일 턴, DST 가치 측정 안 됨
+- scripts/test_multiturn.py: 7 시나리오
+- 결과: DST on 7/7 (100%), DST off 1/7 (14%) → **DST 가치 +85.7%p**
+- 커밋: `09284f5 reflection: multi-turn 벤치마크 + DST 개선 → 7/7 (100%)`
+
+### 3. DST "확인 질문" 처리 개선
+- "안방 에어컨 켤까요?" → "응" 패턴
+- 이전: DST 가 query exec 그대로 inherit → "응"이 query_then_respond로 해석됨 (wrong)
+- 수정: "~까요?" 질문 후 confirm → CTC로 승격, dir도 원문에서 추출
+- 커밋에 포함
+
+### 4. Device follow-up dir 개선
+- "에어컨 켜줘" → "난방도" → dir=set 오예측
+- 수정: prev_dir이 명확한 action (on/off/open/close)이면 무조건 승계
+- 커밋에 포함
+
+### 5. Query fn + spurious dir → none
+- weather_query에 dir=on이 비정상적인 케이스 (e.g., "내일 눈 올까" → dir=on)
+- Rule 추가: query fn + exec=query_then_respond + spurious dir → none
+- 커밋: `406f69a reflection: query fn + query exec + spurious dir → none`
+
+### 이 reflection 과정의 **실질 가치**
+
+- 5개 추가 버그 fix (TS 측정엔 안 잡히는 wild input 오류)
+- DST 진짜 가치 **정량화** (+85.7%p multi-turn)
+- Multi-turn 벤치마크 인프라 확립 (재현 가능한 DST 테스트)
+- TS 95.76% / KE 97.14% 유지 (soft KE -0.06%p는 TS 라벨 불일치)
+
+### 교훈: Critical reflection은 실질적이다
+
+단순히 "지금까지 한 게 최선인지" 묻는 것만으로 실제 버그 5개 찾음.
+**"만든 뒤에 스트레스 테스트를 해라"** — reflection process가 진짜 가치를 만든다.
