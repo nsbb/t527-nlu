@@ -85,6 +85,12 @@ def apply_post_rules(preds, text):
         preds['param_direction'] = 'none'
         preds['param_type'] = 'none'
 
+    # continuous: 비상 상황 키워드 (가스 냄새 등) → security_mode emergency
+    if re.search(r'가스\s*냄새|연기\s*나|불\s*났|침입', text):
+        preds['fn'] = 'security_mode'
+        preds['exec_type'] = 'control_then_confirm'
+        preds['param_direction'] = 'on'
+
     # iter9: "전화" in-domain(관리실) vs OOD(일반) 구분
     # - home_info로 분류된 케이스 중 entity 없는 "전화" → unknown
     if '전화' in text and preds['fn'] == 'home_info':
