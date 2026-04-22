@@ -24,7 +24,7 @@ DST:        scripts/dialogue_state_tracker.py (slot filling, 5-turn history)
 
 | 지표 | 값 |
 |------|:---:|
-| TS combo | **96.85%** (3,043 케이스) |
+| TS combo | **96.88%** (3,043 케이스) |
 | KE fn | 97.20% (1,536 케이스) |
 | GT 219 combo | 95.0% |
 | Latency | 0.67ms/query CPU |
@@ -145,14 +145,14 @@ python3 scripts/deployment_pipeline.py
 1. **Multi-head가 Single intent보다 본질적으로 우수** — KE 72.5% vs 97.8% (+25%p) 수치 근거
 2. **모델 architecture 선택은 올바름** — 온디바이스 + 데이터 부족 환경에서 최적
 3. **14 rules는 band-aid지만 measurably justified** — GT +0.5%p (generalization 확인)
-4. **벤치마크 TS 96.85%는 wild input에서 85~90% 수준** 예상 — 정량된 gap은 실 user data로만 메울 수 있음
+4. **벤치마크 TS 96.88%는 wild input에서 85~90% 수준** 예상 — 정량된 gap은 실 user data로만 메울 수 있음
 5. **진짜 Next step은 명확**: 모델 실험 소진 → 실사용 로그 수집
 
 ## 최종 metric (reflection 수정 포함)
 
 | 지표 | 값 |
 |------|:---:|
-| TS combo | **96.85%** (수정 안 됨) |
+| TS combo | **96.88%** (수정 안 됨) |
 | KE fn | 97.14% (-0.06%p 알람 label 불일치) |
 | GT 219 | 95.0% |
 | **Multi-turn (DST on)** | **7/7 (100%)** |
