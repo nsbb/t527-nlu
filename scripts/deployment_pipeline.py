@@ -103,6 +103,13 @@ def generate_simple_response(preds, room, value=None, raw_text=''):
                 unit_kr = {'minute': '분', 'hour': '시간', 'second': '초'}[vtype]
                 action = f'{vnum}{unit_kr} 뒤에 ' + ACTION_MAP.get(direction, '설정합니다')
 
+        # Special cases: elevator uses 호출
+        if fn == 'elevator_call' and direction == 'on':
+            return '네, 엘리베이터를 호출했습니다.'
+        # Schedule: "7시" 같은 시간은 별도 처리
+        if fn == 'schedule_manage' and value and value[0] == 'hour':
+            return f'네, {value[1]}시 예약을 설정했습니다.'
+
         room_kr = ROOM_KR.get(room, '')
         # 종성 있는 단어는 '을', 없으면 '를'
         fn_kr = {'light_control': ('조명', '을'), 'heat_control': ('난방', '을'),
