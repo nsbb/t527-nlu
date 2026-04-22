@@ -293,12 +293,16 @@ def apply_post_rules(preds, text):
             preds['fn'] = 'vent_control'
             if preds['exec_type'] == 'direct_respond':
                 preds['exec_type'] = 'control_then_confirm'
-        # fn이 이미 vent_control이어도 dir 보강
-        if preds['fn'] == 'vent_control' and preds['param_direction'] == 'none':
-            if '켜' in text or '가동' in text or '작동' in text:
-                preds['param_direction'] = 'on'
-            elif '꺼' in text or '끄' in text:
-                preds['param_direction'] = 'off'
+        # fn이 이미 vent_control이어도 exec/dir 보강
+        if preds['fn'] == 'vent_control':
+            # 동작 동사가 있으면 direct_respond → CTC
+            if preds['exec_type'] == 'direct_respond' and re.search(r'켜|꺼|가동|작동|틀어|돌려', text):
+                preds['exec_type'] = 'control_then_confirm'
+            if preds['param_direction'] == 'none':
+                if '켜' in text or '가동' in text or '작동' in text or '돌려' in text:
+                    preds['param_direction'] = 'on'
+                elif '꺼' in text or '끄' in text:
+                    preds['param_direction'] = 'off'
 
     # iter9: 화면/월패드/알림/음량 → home_info (system_meta 오분류 교정)
     # 주의: "에너지 사용량 알림", "긴급 알림" 등 (다른 fn) 및
