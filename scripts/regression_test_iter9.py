@@ -110,6 +110,9 @@ TESTS = [
     ("조명 밝기 최대", "param_direction", "up", "continuous: 밝기 최대 → up"),
     ("음량 얼마야", "fn", "home_info", "continuous: 음량 → home_info"),
     ("안방 난방 올라쥬", "param_direction", "up", "continuous: STT 올라쥬 → 올려줘"),
+    ("거실 조명 50%", "exec_type", "control_then_confirm", "continuous: N% → CTC"),
+    ("난방 3단계", "param_direction", "set", "continuous: N단계 → set"),
+    ("1도 올려", "param_direction", "up", "continuous: 1도 올려 → up (not set)"),
 ]
 
 

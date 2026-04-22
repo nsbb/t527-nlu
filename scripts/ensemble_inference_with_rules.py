@@ -322,6 +322,15 @@ def apply_post_rules(preds, text):
                 elif '꺼' in text or '끄' in text:
                     preds['param_direction'] = 'off'
 
+    # continuous: "N%"/"N단계" + device → CTC/set (OOD 보강)
+    if re.search(r'\d+\s*(?:%|퍼센트|프로|단계)', text):
+        if preds['fn'] in ('light_control', 'heat_control', 'ac_control', 'vent_control',
+                           'curtain_control'):
+            if preds['exec_type'] in ('query_then_respond', 'direct_respond'):
+                preds['exec_type'] = 'control_then_confirm'
+                if preds['param_direction'] == 'none':
+                    preds['param_direction'] = 'set'
+
     # continuous: "N도 올려/내려/낮춰/높여" → dir=up/down (상대값, not set)
     m = re.search(r'(\d+)\s*도\s*(?:만)?\s*(?:더)?\s*(올려|내려|낮춰|높여|올리|내리)', text)
     if m and preds['param_direction'] == 'set':
