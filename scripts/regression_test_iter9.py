@@ -67,6 +67,12 @@ TESTS = [
     ("스물다섯도로 맞춰줘", "fn", "heat_control", "preprocess 한글숫자 스물다섯"),
     ("거실에 불 좀 켜줘", "exec_type", "control_then_confirm", "iter9 조사 허용"),
     ("불 좀 키줘", "fn", "light_control", "iter9 키줘→켜줘 preprocess"),
+
+    # Reflection (2026-04-22) 추가 개선
+    ("방이 덥네", "fn", "ac_control", "reflection: 덥→ac 교정"),
+    ("너무 덥다", "fn", "ac_control", "reflection: 덥→ac"),
+    ("방 안이 춥다", "fn", "heat_control", "reflection: 춥→heat 확정"),
+    ("서울 날씨", "param_direction", "none", "reflection: query dir=none 강제"),
 ]
 
 
