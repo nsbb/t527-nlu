@@ -92,6 +92,21 @@ def apply_post_rules(preds, text):
         elif re.search(r'병원|의원|약국|신경외과|내과|외과|안과|치과|한의원', text):
             preds['fn'] = 'medical_query'
             preds['exec_type'] = 'query_then_respond'
+        # continuous: 통행/교통/소요시간 → traffic_query
+        elif re.search(r'통행|교통|소요\s*시간|얼마나\s*걸려|몇\s*분\s*걸려', text):
+            preds['fn'] = 'traffic_query'
+            preds['exec_type'] = 'query_then_respond'
+        # continuous: 등산/타도 돼?/나가도 돼? → weather_query judgment
+        elif re.search(r'등산|타도\s*돼|나가도\s*돼|운동\s*괜찮|외출\s*해도', text):
+            preds['fn'] = 'weather_query'
+            preds['exec_type'] = 'query_then_judge'
+
+    # continuous: judgment 질문 (X해도 돼/괜찮아?) → weather_query (fn 상관없이)
+    if re.search(r'타도\s*돼\?|괜찮아\??$|나가도\s*돼|세차해도|운동해도|소풍', text):
+        if preds['fn'] in ('market_query', 'traffic_query', 'unknown'):
+            preds['fn'] = 'weather_query'
+            preds['exec_type'] = 'query_then_judge'
+            preds['judge'] = 'outdoor_activity'
 
     # iter9: "{room} {device} 좀 {verb}" 어순 패턴은 CTC
     # (clarify 라벨은 "{room} 좀 {device} {verb}" 어순 — adverb가 device 앞)
