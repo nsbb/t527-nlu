@@ -355,6 +355,11 @@ def preprocess(text):
     # 5. 불필요 부사 제거 (STT 결과에 자주 나오는 구어 부사)
     text = re.sub(r'^(잠깐|얼른)\s+', '', text)
 
+    # 5-2. iter10: filler words 제거 (음/아/어/그/저 + ...)
+    text = re.sub(r'^(?:음|아|어|그|저|그|그래서)\.{0,3}\s+', '', text)
+    text = re.sub(r'\.{2,}', ' ', text)  # "..." → space
+    text = re.sub(r'\s+', ' ', text).strip()
+
     return text
 
 
