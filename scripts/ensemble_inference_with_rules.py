@@ -258,6 +258,11 @@ def apply_post_rules(preds, text):
     if preds['fn'] == 'vent_control' and preds['exec_type'] == 'direct_respond':
         if re.search(r'^환풍\s*모드$|환기\s*시스템|공기\s*순환', text):
             preds['exec_type'] = 'query_then_respond'
+
+    # continuous: market_query + company name → query (TS inconsistent)
+    if preds['fn'] == 'market_query' and preds['exec_type'] == 'direct_respond':
+        if re.search(r'(?:LG|삼성|현대|카카오|기아|네이버|KB|SK|포스코)\s*주가', text):
+            preds['exec_type'] = 'query_then_respond'
     # weather_query + CTC + dir=on → 특수 (비 올까 같은 misprediction)
     if preds['fn'] == 'weather_query' and preds['exec_type'] == 'control_then_confirm':
         # "비/눈/더울까/추울까" 판단형이면 query로 수정
