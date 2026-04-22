@@ -122,3 +122,45 @@ python3 scripts/deployment_pipeline.py
 ## 한 줄 결론
 
 > **모델은 고정. 후처리 + 인프라로 +2.23%p 획득. 배포 준비 완료. 다음은 실사용 데이터.**
+
+---
+
+## 추가 (2026-04-22 08:48 ~ critical reflection 30분 세션)
+
+사용자 요청: "30분 고민해봐 — 이게 최선인지, single intent와 비교 어떤지"
+
+결과:
+- **CRITICAL_REFLECTION_2026_04_22.md** 작성 (8개 부록, 논리 전개)
+- **실제 버그 5개 발견 + 수정**:
+  1. "방이 덥네" → heat 오예측 → ac 교정 rule
+  2. DST "까요?" confirm → control 승격
+  3. DST device follow-up dir 우선순위 수정
+  4. Query fn spurious dir → none 강제
+  5. (참고) 덥/춥 양방향 보강
+- **Multi-turn 벤치마크 신설** (test_multiturn.py) — **DST 가치 +85.7%p 정량화**
+- Regression test 30개로 확장 (26 → 30)
+
+### 핵심 발견 (reflection)
+
+1. **Multi-head가 Single intent보다 본질적으로 우수** — KE 72.5% vs 97.8% (+25%p) 수치 근거
+2. **모델 architecture 선택은 올바름** — 온디바이스 + 데이터 부족 환경에서 최적
+3. **14 rules는 band-aid지만 measurably justified** — GT +0.5%p (generalization 확인)
+4. **벤치마크 TS 95.76%는 wild input에서 85~90% 수준** 예상 — 정량된 gap은 실 user data로만 메울 수 있음
+5. **진짜 Next step은 명확**: 모델 실험 소진 → 실사용 로그 수집
+
+## 최종 metric (reflection 수정 포함)
+
+| 지표 | 값 |
+|------|:---:|
+| TS combo | **95.76%** (수정 안 됨) |
+| KE fn | 97.14% (-0.06%p 알람 label 불일치) |
+| GT 219 | 95.0% |
+| **Multi-turn (DST on)** | **7/7 (100%)** |
+| **Multi-turn (DST off)** | 1/7 (14%) |
+| **DST 정량 가치** | **+85.7%p** |
+| Regression tests | 30/30 pass |
+| Latency | 0.67ms/query CPU |
+
+## 최종 commit 수 (reflection 포함)
+
+50+ commits since iter7 (iter8 + iter9 + reflection).
