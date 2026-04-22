@@ -176,6 +176,21 @@ class DialogueStateTracker:
             exec_t = 'control_then_confirm'
             direction = bare_verb_map[text.strip()]
 
+        # continuous: "{room}(조사)? {verb}" 패턴 — device 없으면 prev_fn 상속
+        # 예: "주방은 꺼줘" (light 이전 턴) → light_control 상속 (ac_control 오예측 교정)
+        if self.is_active() and self.prev_fn:
+            has_device_kw = re.search(
+                r'조명|불|램프|전등|스탠드|난방|보일러|에어컨|냉방|환기|환풍|공기청정|'
+                r'가스|도어|커튼|블라인드|월패드', text)
+            room_verb_match = re.search(
+                r'(거실|안방|침실|주방|부엌|작은방|아이방|서재|현관|전체|모든)'
+                r'(?:은|는|이|가|도|을|를|에|의)?\s*'
+                r'(?:좀\s*)?(켜|꺼|끄|열어|닫아|잠가)', text)
+            if not has_device_kw and room_verb_match and fn != self.prev_fn:
+                # model이 device 없는데 다른 fn을 예측 → prev_fn으로 강제 상속
+                fn = self.prev_fn
+                exec_t = 'control_then_confirm'
+
         # continuous: "조금/더/많이 올려/내려" fn 상속 (prev_value 없어도 fn만이라도 승계)
         if self.is_active() and self.prev_fn:
             m = re.search(r'^\s*(더|조금|조금만|살짝|많이)\s+(올려|내려|낮춰|줄여|높여|키워)', text)
