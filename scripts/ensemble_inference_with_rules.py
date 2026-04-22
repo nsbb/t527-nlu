@@ -145,10 +145,13 @@ def apply_post_rules(preds, text):
             if preds['param_direction'] == 'none':
                 preds['param_direction'] = 'on' if re.search(r'켜', text) else 'off'
 
-    # continuous: "{room} 지금/야/혹시 불 {verb}" → CTC
-    # 지금/야 100% CTC, 혹시 majority CTC (나머지 adverbs는 복잡해서 skip)
+    # continuous: "{room} 지금/야 불 {verb}" → CTC (모든 room 100% CTC)
+    # 혹시는 room별 TS 불일치 (거실/안방=CTC, 주방/침실/작은방/아이방=clarify)
     if preds['exec_type'] == 'clarify' and preds['fn'] == 'light_control':
-        if re.search(r'(거실|안방|침실|주방|부엌|작은방|아이방)\s+(?:지금|혹시|야)\s+(불|조명|등)\s+(켜|꺼)', text):
+        if re.search(r'(거실|안방|침실|주방|부엌|작은방|아이방)\s+(?:지금|야)\s+(불|조명|등)\s+(켜|꺼)', text):
+            preds['exec_type'] = 'control_then_confirm'
+        # 혹시는 거실/안방만 CTC (TS 라벨 일치)
+        elif re.search(r'(거실|안방)\s+혹시\s+(불|조명|등)\s+(켜|꺼)', text):
             preds['exec_type'] = 'control_then_confirm'
 
     # iter9: curtain_control "올려" → up (TS 10/11 라벨 일치)
