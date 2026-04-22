@@ -131,6 +131,19 @@ def apply_post_rules(preds, text):
         if preds['param_direction'] in ('down', 'none', 'open'):
             preds['param_direction'] = 'close'
 
+    # continuous: 현관 → door_control (curtain 오예측 교정)
+    if preds['fn'] == 'curtain_control' and '현관' in text:
+        preds['fn'] = 'door_control'
+        if preds['param_direction'] == 'stop':
+            if '닫' in text or '잠' in text:
+                preds['param_direction'] = 'close'
+            elif '열' in text:
+                preds['param_direction'] = 'open'
+
+    # continuous: 예약 확인 → schedule_manage
+    if preds['fn'] == 'home_info' and re.search(r'예약\s*확인|예약\s*정보', text):
+        preds['fn'] = 'schedule_manage'
+
     # continuous: 커튼 내려 → down (TS 라벨 매칭)
     if preds['fn'] == 'curtain_control' and '커튼' in text and '내려' in text and '블라인드' not in text:
         if preds['param_direction'] in ('stop', 'none', 'open'):
