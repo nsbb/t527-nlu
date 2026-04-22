@@ -79,6 +79,19 @@ TESTS = [
     ("블라인드 닫아", "param_direction", "close", "continuous: 블라인드 닫아 open→close"),
     ("공기청정 켜", "fn", "vent_control", "continuous: 공기청정→vent"),
     ("가 스 잠 가", "fn", "gas_control", "continuous: extra-space collapse"),
+
+    # Continuous 2 (10:40+) — more rules
+    ("음... 난방", "fn", "heat_control", "continuous: filler 제거"),
+    ("통행 시간", "fn", "traffic_query", "continuous: 통행→traffic"),
+    ("등산", "fn", "unknown", "continuous: 등산 단독은 unknown"),
+    ("등산 괜찮아", "fn", "weather_query", "continuous: 등산 괜찮→weather judge"),
+    ("작년보다 추워?", "fn", "weather_query", "continuous: 작년+추워→weather"),
+    ("예약 확인해", "fn", "schedule_manage", "continuous: 예약 확인→schedule"),
+    ("영어로 뭐야", "fn", "unknown", "continuous: 영어로 OOD"),
+    ("커튼 내려줘", "param_direction", "down", "continuous: 커튼 내려→down"),
+    ("난방 왜 안 나와", "fn", "heat_control", "continuous: 난방→heat 확정"),
+    ("거실이 너무 환해", "fn", "light_control", "continuous: 환해→light"),
+    ("에어컨 해줘", "param_direction", "on", "continuous: 해줘→on default"),
 ]
 
 
