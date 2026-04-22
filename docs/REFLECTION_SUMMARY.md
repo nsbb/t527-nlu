@@ -112,3 +112,35 @@ python3 scripts/test_multiturn.py
 python3 scripts/regression_test_iter9.py
 # → 30/30 pass
 ```
+
+---
+
+## 스켑티컬 자기검토
+
+### Claim 1: "Multi-head > Single Intent"
+- **증거**: KE 72.5% vs 97.8%
+- **약점**: v18/v46이 학습 데이터 다름 (v46은 KE pseudo 포함)
+- **반박**: 그럼에도 OOD 1/5 vs 5/5 차이는 데이터 아닌 구조 덕
+- **판정**: Multi-head 선호는 정당, 단 "절대적 우월" 아닌 "pragmatic 우세"
+
+### Claim 2: "iter9 rules이 효과적"
+- **증거**: TS +2.23%p, GT +0.5%p
+- **약점**: TS에 overfit 가능 (rule이 TS 특정 패턴 매칭)
+- **반박**: GT는 TS와 다른 distribution. GT +0.5%p는 generalization.
+- **판정**: Rules 효과 있음, 하지만 실 user data에서 effect 재측정 필요
+
+### Claim 3: "모델 실험 소진"
+- **증거**: v54-v70 14개 실험 모두 regression
+- **약점**: 우리가 모든 가능한 실험을 한 건 아님
+- **반박**: 체계적으로 다양한 방향 시도 (KD/Multi-seed/Soup/Warm-start/...)
+- **판정**: "현 데이터 + 현 architecture family"에서 소진. 새 architecture + 새 데이터는 미탐색.
+
+### Claim 4: "DST 가치 +85.7%p"
+- **증거**: test_multiturn.py 7/7 vs 1/7
+- **약점**: 7개 시나리오는 우리가 만든 거 → DST-friendly 설계됐을 수 있음
+- **반박**: 모두 사용자 관점에서 자연스러운 시나리오
+- **판정**: DST 가치 실재, 단 정확한 크기는 실사용에서 재측정
+
+### 모든 주장은 "현 증거 기준"이다.
+
+실 user data 없으면 모든 것이 추정. 이것이 **이 프로젝트의 진짜 한계**.
