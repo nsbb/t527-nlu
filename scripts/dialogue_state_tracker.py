@@ -249,7 +249,7 @@ class DialogueStateTracker:
         return None
 
     def _is_correction(self, text):
-        """교정/재설정 발화인지 ("아니 ~", "아니야 ~", "아 역시 ~", "다시 ~")"""
+        """교정/재설정 발화인지 ("아니 ~", "아니야 ~", "아 역시 ~", "다시 ~", "이제 ~")"""
         if not text:
             return False
 
@@ -258,7 +258,8 @@ class DialogueStateTracker:
                 text_clean.startswith('아냐') or
                 text_clean.startswith('아 역시') or
                 text_clean.startswith('다시') or
-                text_clean.startswith('아님'))
+                text_clean.startswith('아님') or
+                text_clean.startswith('이제'))
 
     def _is_there_too(self, text):
         """'거기도', '여기도' 패턴"""
