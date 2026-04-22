@@ -116,6 +116,11 @@ def apply_post_rules(preds, text):
         if preds['param_direction'] in ('down', 'none', 'open'):
             preds['param_direction'] = 'close'
 
+    # continuous: 커튼 내려 → down (TS 라벨 매칭)
+    if preds['fn'] == 'curtain_control' and '커튼' in text and '내려' in text and '블라인드' not in text:
+        if preds['param_direction'] in ('stop', 'none', 'open'):
+            preds['param_direction'] = 'down'
+
     # iter9: 블라인드만 있고 action verb 없음 → stop (예: "안방 블라인드")
     if preds['fn'] == 'curtain_control' and '블라인드' in text and not re.search(r'올려|내려|열어|닫아|멈춰|스톱|stop', text):
         if preds['param_direction'] == 'open':
