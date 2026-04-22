@@ -1,24 +1,41 @@
-# Continuous Session Report — 2026-04-22 (10:15 ~)
+# Continuous Session Report — 2026-04-22 (10:15 ~ 13:55)
 
-사용자 요청: "11:30am 까지 계속 작업" → 이어서 "한시간 동안 더 해줘"
+사용자 요청: "11:30am 까지 계속 작업" → "한시간 동안 더 해줘" → "한시간 동안 더 해줘" (repeat)
 
-Reflection 세션 끝난 후 연속 작업. **중간 sleep 없이 continuous 진행.**
+Reflection 세션 끝난 후 연속 작업. **중간 sleep 없이 continuous 진행, 누적 ~3h45min.**
 
-## 정량 성과 (10:15 ~ 13:09, 약 3시간 continuous)
+## 정량 성과 (10:15 ~ 13:55, 약 3h45min continuous)
 
 | 지표 | 시작 | 종료 | Δ |
 |------|:---:|:---:|:---:|
-| **TS combo (preprocessed)** | 95.86% | **97.21%** | **+1.35%p** |
+| **TS combo (preprocessed)** | 95.86% | **97.27%** | **+1.41%p** |
 | **TS combo (raw main)** | 95.86% | **97.14%** | **+1.28%p** |
+| **KoELECTRA (preprocessed)** | - | **97.07%** | 안정 |
 | User-weighted | 99.37% | **99.63%** | +0.26%p |
 | fn accuracy | 99.38% | **99.93%** | +0.55%p |
-| exec accuracy | 97.50% | 98.39% | +0.89%p |
-| dir accuracy | 97.90% | 98.49% | +0.59%p |
+| exec accuracy | 97.50% | **98.82%** | +1.32%p |
+| dir accuracy | 97.90% | **98.49%** | +0.59%p |
 | Catastrophic errors | 0 | **0** | maintained |
-| Regression tests | 34 | **51** | +17 |
-| Commits | - | **60+** | 연속 작업 (sleep 없이) |
+| Regression tests | 34 | **62** | +28 |
+| Commits | - | **70+** | 연속 작업 (sleep 없이) |
 
 ## 주요 개선 (60+ commits)
+
+### Extended work (13:30 ~ 13:55, +10 commits)
+- **TS 97.14% → 97.27% (+0.13%p)**: 혹시 adverb 거실/안방만 CTC (TS 일치)
+- Timer 응답 미래형: "30분 뒤에 난방을 끌게요"
+- 3개 이상 복합 명령 재귀 분할
+- query/direct/judge 응답 템플릿 확장 (fn별)
+- 예약 삭제/취소 → schedule_manage
+- has_device 리스트 확장 (전등/스탠드/보일러/... 20+ 항목)
+- STT "올라쥬/내려쥬/내라쥬" → "올려줘/내려줘"
+- DST "N도 더/덜" (verb 없는 explicit delta)
+- DST correction direction 추론 ("다시 켜/꺼")
+- "전체/모든 불 켜/꺼" → CTC/dir
+- "N%/N단계" → CTC/set (OOD)
+- "1도 올려" → up (set이 아닌 up/down)
+- 응답 "X도로 올렸/내렸습니다" 형식 개선
+- KE eval preprocess 일치 (실배포와 동일 파이프라인)
 
 ### 새로 추가된 Post-Processing Rules
 1. 커튼 내려 → down (블라인드 내려는 close 유지)
