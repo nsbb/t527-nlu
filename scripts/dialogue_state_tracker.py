@@ -117,6 +117,11 @@ class DialogueStateTracker:
                     elif re.search(r'닫아|잠가|잠궈', text):
                         direction = 'close'
                         exec_t = 'control_then_confirm'
+                    elif new_device and self.prev_dir:
+                        # 새 device + verb 없음 → 이전 direction 상속
+                        # ("난방 켜" → "아니 에어컨" = 에어컨 켜)
+                        direction = self.prev_dir
+                        exec_t = 'control_then_confirm'
 
             elif self._is_there_too(text):
                 # "거기도" — 이전 room 재사용 + 이전 fn/exec/dir 유지
