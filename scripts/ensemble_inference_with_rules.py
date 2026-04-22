@@ -254,6 +254,13 @@ def apply_post_rules(preds, text):
             if preds['exec_type'] == 'direct_respond':
                 preds['exec_type'] = 'query_then_respond'
 
+    # continuous: 장치명만 (난방/에어컨/환기 등) direct → query
+    if preds['exec_type'] == 'direct_respond' and preds['fn'] in ('heat_control', 'ac_control', 'vent_control'):
+        # 단일 단어 (bare device name)만
+        words = text.strip().split()
+        if len(words) == 1 and words[0] in ('난방', '에어컨', '환기', '보일러', '환풍'):
+            preds['exec_type'] = 'query_then_respond'
+
     # continuous: vent_control "환풍 모드" / "환기 시스템" / "공기 순환" direct → query (좁게)
     if preds['fn'] == 'vent_control' and preds['exec_type'] == 'direct_respond':
         if re.search(r'^환풍\s*모드$|환기\s*시스템|공기\s*순환', text):
