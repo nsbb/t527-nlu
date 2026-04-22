@@ -140,9 +140,9 @@ class DialogueStateTracker:
                 delta = step if direction == 'up' else -step
                 inferred_value = (vtype, vnum + delta)
 
-        # iter10: "N도만 더 올려" / "N도 올려/내려" relative + explicit number
+        # iter10: "N도 더 올려" / "N도만 더 올려" / "N도 올려" relative + explicit number
         if self.is_active() and self.prev_value:
-            m = re.search(r'(\d+)\s*도(?:만\s+더|씩)?\s*(올려|내려|높여|낮춰)', text)
+            m = re.search(r'(\d+)\s*도\s*(?:만)?\s*(?:더)?\s*(올려|내려|높여|낮춰|올리|내리)', text)
             if m:
                 delta = int(m.group(1))
                 is_up = '올려' in m.group(2) or '높여' in m.group(2)
