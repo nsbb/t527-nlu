@@ -306,6 +306,10 @@ def apply_post_rules(preds, text):
                 elif '꺼' in text or '끄' in text:
                     preds['param_direction'] = 'off'
 
+    # continuous: 음량/볼륨/소리 → home_info (energy_query 오예측 교정)
+    if re.search(r'음량|볼륨|소리', text) and preds['fn'] == 'energy_query':
+        preds['fn'] = 'home_info'
+
     # continuous: "밝기 최대/최소" → up/down (out-of-distribution 보강)
     # TS에 "밝기 최대/최소" 케이스 없어 regression 없음
     if re.search(r'밝기\s*최대', text):
