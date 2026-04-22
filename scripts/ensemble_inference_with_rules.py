@@ -77,6 +77,14 @@ def apply_post_rules(preds, text):
             preds['exec_type'] = 'direct_respond'
             preds['param_direction'] = 'none'
 
+    # continuous: OOD bare keywords (single word) → unknown
+    if text.strip() in ('등산', '카드', '녹화', '토토', '경마', '경마 결과', '토토 결과',
+                        '선풍기', '음식 주문', '택배 조회'):
+        preds['fn'] = 'unknown'
+        preds['exec_type'] = 'direct_respond'
+        preds['param_direction'] = 'none'
+        preds['param_type'] = 'none'
+
     # iter9: "전화" in-domain(관리실) vs OOD(일반) 구분
     # - home_info로 분류된 케이스 중 entity 없는 "전화" → unknown
     if '전화' in text and preds['fn'] == 'home_info':
