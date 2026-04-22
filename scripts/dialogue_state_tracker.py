@@ -157,6 +157,18 @@ class DialogueStateTracker:
                     delta = step if direction == 'up' else -step
                     inferred_value = (vtype, vnum + delta)
 
+        # continuous: 짧은 bare 동사 (꺼/켜/끄/열어/닫아) → fn 상속
+        bare_verb_map = {
+            '꺼': 'off', '꺼줘': 'off', '끄': 'off', '끄자': 'off',
+            '켜': 'on', '켜줘': 'on',
+            '열어': 'open', '열어줘': 'open',
+            '닫아': 'close', '닫아줘': 'close', '잠가': 'close',
+        }
+        if self.is_active() and self.prev_fn and text.strip() in bare_verb_map:
+            fn = self.prev_fn
+            exec_t = 'control_then_confirm'
+            direction = bare_verb_map[text.strip()]
+
         # continuous: "조금/더/많이 올려/내려" fn 상속 (prev_value 없어도 fn만이라도 승계)
         if self.is_active() and self.prev_fn:
             m = re.search(r'^\s*(더|조금|조금만|살짝|많이)\s+(올려|내려|낮춰|줄여|높여|키워)', text)
