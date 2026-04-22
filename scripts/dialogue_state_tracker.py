@@ -98,8 +98,11 @@ class DialogueStateTracker:
                     direction = self.prev_dir or direction
 
             elif self._is_correction(text):
-                # "아니 꺼줘" — device는 이전 것, action만 변경
-                fn = self.prev_fn or fn
+                # "아니 꺼줘" — device 이전 것, action만 변경
+                # 단 새 device keyword 명시되면 그쪽 우선 ("아니 에어컨 꺼")
+                new_device = re.search(r'에어컨|난방|조명|불|환기|가스|도어락|커튼|블라인드', text)
+                if not new_device:
+                    fn = self.prev_fn or fn
 
             elif self._is_there_too(text):
                 # "거기도" — 이전 room 재사용 + 이전 fn/exec/dir 유지
