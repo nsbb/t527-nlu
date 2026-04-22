@@ -87,7 +87,7 @@ def apply_post_rules(preds, text):
         preds['param_type'] = 'none'
 
     # continuous: 비상 상황 키워드 (가스 냄새 등) → security_mode emergency
-    if re.search(r'가스\s*냄새|연기\s*나|불\s*났|침입', text):
+    if re.search(r'가스\s*냄새|연기\s*(?:나|난|올)|불\s*(?:났|붙)|침입|도둑', text):
         preds['fn'] = 'security_mode'
         preds['exec_type'] = 'control_then_confirm'
         preds['param_direction'] = 'on'
