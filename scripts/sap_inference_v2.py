@@ -454,8 +454,11 @@ class SAPv2Pipeline:
             preds['param_direction'] = 'on'
 
         # continuous: clarify→CTC (room + adverb + 불)
+        # 지금/야 모든 room 100% CTC, 혹시는 거실/안방만 (TS 라벨 일치)
         if preds['exec_type'] == 'clarify' and preds['fn'] == 'light_control':
-            if re.search(r'(거실|안방|침실|주방|부엌|작은방|아이방)\s+(?:지금|혹시|야)\s+(불|조명|등)\s+(켜|꺼)', text):
+            if re.search(r'(거실|안방|침실|주방|부엌|작은방|아이방)\s+(?:지금|야)\s+(불|조명|등)\s+(켜|꺼)', text):
+                preds['exec_type'] = 'control_then_confirm'
+            elif re.search(r'(거실|안방)\s+혹시\s+(불|조명|등)\s+(켜|꺼)', text):
                 preds['exec_type'] = 'control_then_confirm'
 
         # continuous: N모드 narrowed rule
