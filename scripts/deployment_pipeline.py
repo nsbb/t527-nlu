@@ -96,12 +96,17 @@ def generate_simple_response(preds, room, value=None, raw_text=''):
                 action = f'{vnum}%로 설정했습니다'
             elif vtype == 'level':
                 action = f'{vnum}단계로 설정했습니다'
-        elif value and direction in ('on', 'off'):
+        timer_prefix = ''
+        if value and direction in ('on', 'off'):
             # 타이머 설정: "30분 후 난방 꺼줘" → "30분 뒤에 난방을 끕니다"
             vtype, vnum = value
             if vtype in ('minute', 'hour', 'second'):
                 unit_kr = {'minute': '분', 'hour': '시간', 'second': '초'}[vtype]
-                action = f'{vnum}{unit_kr} 뒤에 ' + ACTION_MAP.get(direction, '설정합니다')
+                timer_prefix = f'{vnum}{unit_kr} 뒤에 '
+                # 미래형 동사
+                future_action = {'on': '켤게요', 'off': '끌게요',
+                                  'open': '열게요', 'close': '닫을게요'}.get(direction, '설정할게요')
+                action = future_action
 
         # Special cases: elevator uses 호출
         if fn == 'elevator_call' and direction == 'on':
@@ -117,6 +122,8 @@ def generate_simple_response(preds, room, value=None, raw_text=''):
                   'gas_control': ('가스 밸브', '를'), 'door_control': ('도어락', '을'),
                   'curtain_control': ('전동커튼', '을'), 'elevator_call': ('엘리베이터', '를'),
                   'security_mode': ('외출모드', '를'), 'schedule_manage': ('예약', '을')}.get(fn, ('기기', '를'))
+        if timer_prefix:
+            return f'네, {timer_prefix}{room_kr}{fn_kr[0]}{fn_kr[1]} {action}.'
         return f'네, {room_kr}{fn_kr[0]}{fn_kr[1]} {action}.'
 
     if exec_t == 'query_then_respond':
