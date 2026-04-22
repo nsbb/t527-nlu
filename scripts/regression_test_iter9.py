@@ -92,6 +92,14 @@ TESTS = [
     ("난방 왜 안 나와", "fn", "heat_control", "continuous: 난방→heat 확정"),
     ("거실이 너무 환해", "fn", "light_control", "continuous: 환해→light"),
     ("에어컨 해줘", "param_direction", "on", "continuous: 해줘→on default"),
+
+    # Continuous 3 (12:40+) 추가
+    ("난방 몇 도야", "exec_type", "query_then_respond", "continuous: 몇 도 → query"),
+    ("바깥 온도 몇 도", "exec_type", "query_then_respond", "continuous: weather 몇 도"),
+    ("LG 주가", "exec_type", "query_then_respond", "continuous: 회사 주가 query"),
+    ("환기 시스템", "exec_type", "query_then_respond", "continuous: vent 시스템 query"),
+    ("가스 냄새 나", "fn", "security_mode", "continuous: 비상 상황"),
+    ("연기 난다", "fn", "security_mode", "continuous: 비상 상황 확장"),
 ]
 
 
