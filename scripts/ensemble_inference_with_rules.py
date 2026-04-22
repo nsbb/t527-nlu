@@ -109,8 +109,8 @@ def apply_post_rules(preds, text):
         preds['param_direction'] = 'none'
         preds['param_type'] = 'none'
 
-    # continuous: 비상 상황 키워드 (가스 냄새 등) → security_mode emergency
-    if re.search(r'가스\s*냄새|연기\s*(?:나|난|올)|불\s*(?:났|붙)|침입|도둑', text):
+    # continuous: 비상 상황 키워드 (가스 냄새/타는 냄새 등) → security_mode emergency
+    if re.search(r'가스\s*냄새|타는\s*냄새|연기\s*(?:나|난|올)|불\s*(?:났|붙)|침입|도둑', text):
         preds['fn'] = 'security_mode'
         preds['exec_type'] = 'control_then_confirm'
         preds['param_direction'] = 'on'
@@ -239,6 +239,7 @@ def apply_post_rules(preds, text):
             preds['param_direction'] = 'on'
 
     # iter9 (reflection): "덥다/더워/덥네" → ac_control (heat 오예측 교정)
+    # 주의: "뜨거워/뜨겁다"는 KE에서 heat_control 라벨 ("바닥이 뜨겁다" = 바닥 난방 조절) — 제외
     if preds['fn'] == 'heat_control' and re.search(r'덥다|더워|덥네|더운', text):
         # 온도 올림 맥락이면 heat 유지 ("난방 올려")
         if not re.search(r'난방|보일러|온돌', text):
@@ -247,6 +248,7 @@ def apply_post_rules(preds, text):
                 preds['param_direction'] = 'on'
 
     # "춥다/추워" → heat_control 확정 (반대 보강)
+    # 주의: "차가워"는 "바닥이 차갑다" 같은 heat_control 맥락 — 제외
     if preds['fn'] == 'ac_control' and re.search(r'춥다|추워|추운', text):
         if not re.search(r'에어컨|냉방', text):
             preds['fn'] = 'heat_control'
