@@ -50,7 +50,6 @@ def apply_post_rules(preds, text):
                 preds['param_direction'] = 'on'
 
     # N모드로 → set (단, room없을 때만 — room 있으면 TS는 불일치)
-    # Room별 라벨 random 해서 "{room} 에어컨 냉방모드" 에는 적용하지 않음
     has_room_for_mode = re.search(r'(거실|안방|침실|주방|부엌|작은방|아이방)\s+에어컨', text)
     if re.search(r'(냉방|제습|송풍|자동|취침|외출)\s*모드', text):
         if preds['fn'] in ('ac_control', 'heat_control', 'vent_control') and not has_room_for_mode:
