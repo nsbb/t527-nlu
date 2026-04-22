@@ -345,6 +345,38 @@ class SAPv2Pipeline:
                 elif '꺼' in text or '끄' in text:
                     preds['param_direction'] = 'off'
 
+        # reflection: 덥다/더워/덥네 → ac_control
+        if preds['fn'] == 'heat_control' and re.search(r'덥다|더워|덥네|더운', text):
+            if not re.search(r'난방|보일러|온돌', text):
+                preds['fn'] = 'ac_control'
+                if preds['param_direction'] in ('none', 'up'):
+                    preds['param_direction'] = 'on'
+
+        # reflection: 춥다/추워 → heat_control
+        if preds['fn'] == 'ac_control' and re.search(r'춥다|추워|추운', text):
+            if not re.search(r'에어컨|냉방', text):
+                preds['fn'] = 'heat_control'
+                if preds['param_direction'] == 'none':
+                    preds['param_direction'] = 'on'
+
+        # reflection: 시원하게 → ac_control
+        if preds['fn'] == 'heat_control' and re.search(r'시원', text):
+            if not re.search(r'난방|보일러', text):
+                preds['fn'] = 'ac_control'
+                if preds['param_direction'] == 'none':
+                    preds['param_direction'] = 'on'
+
+        # reflection: 블라인드 닫아 → close
+        if preds['fn'] == 'curtain_control' and re.search(r'닫아|닫기', text):
+            if preds['param_direction'] == 'open':
+                preds['param_direction'] = 'close'
+
+        # reflection: query fn + query exec + spurious dir → none
+        if preds['fn'] in ('weather_query', 'news_query', 'traffic_query',
+                            'market_query', 'medical_query') and preds['exec_type'] == 'query_then_respond':
+            if preds['param_direction'] != 'none':
+                preds['param_direction'] = 'none'
+
         # iter9: 화면/월패드/알림/음량 → home_info (capability query 제외)
         capability_q = re.search(r'어떻게|할\s*수\s*있', text)
         if preds['fn'] == 'system_meta' and not capability_q:
