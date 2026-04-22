@@ -84,11 +84,7 @@ STT_CORRECTION = {
     '하이 원더': '',
     '하이원더': '',
     '형광등': '조명',
-    # iter10: 구체 light type 보존 (모델이 직접 구분 학습)
-    # '다운라이트': '조명',
-    # '간접등': '조명',
-    # '취침등': '조명',
-    # '무드등': '조명',
+    # iter10: 구체 light type 보존 (preprocess placeholder로 보호됨)
     '보일러': '난방',
     '온돌': '난방',
     '환풍': '환기',
@@ -346,9 +342,21 @@ def preprocess(text):
     # 3. STT 오류 사전 교정 — 두 번 pass
     #    첫 pass: 긴 패턴 (prefix 겹침 방지, "지금몇시야" > "지금몇시")
     #    둘째 pass: 첫 pass 후 활성화된 composite 매칭 ("까스잠가" → "가스잠가" → "가스 잠가")
+    # iter10: '라이트' 같은 substring 겹침 문제 해결 — placeholder 사용
+    placeholders = {}
+    for special in ('다운라이트', '간접등', '취침등', '무드등'):
+        if special in text:
+            ph = f'__PH{len(placeholders)}__'
+            text = text.replace(special, ph)
+            placeholders[ph] = special
+
     for _ in range(2):
         for wrong, correct in sorted(STT_CORRECTION.items(), key=lambda kv: -len(kv[0])):
             text = text.replace(wrong, correct)
+
+    # Restore placeholders
+    for ph, original in placeholders.items():
+        text = text.replace(ph, original)
 
     # 4. 한글 숫자 변환
     text = kr_num_to_arabic(text)
