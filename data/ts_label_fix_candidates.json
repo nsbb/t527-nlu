@@ -1,0 +1,674 @@
+[
+  {
+    "utterance": "광주 날씨",
+    "current": {
+      "fn": "weather_query",
+      "exec": "query_then_respond",
+      "dir": "none"
+    },
+    "majority": {
+      "fn": "weather_query",
+      "exec": "direct_respond",
+      "dir": "none"
+    },
+    "pattern": "[CITY] 날씨",
+    "majority_count": 3,
+    "minority_count": 2
+  },
+  {
+    "utterance": "울산 날씨",
+    "current": {
+      "fn": "weather_query",
+      "exec": "query_then_respond",
+      "dir": "none"
+    },
+    "majority": {
+      "fn": "weather_query",
+      "exec": "direct_respond",
+      "dir": "none"
+    },
+    "pattern": "[CITY] 날씨",
+    "majority_count": 3,
+    "minority_count": 2
+  },
+  {
+    "utterance": "침실 불 좀 켜봐",
+    "current": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "none"
+    },
+    "majority": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "on"
+    },
+    "pattern": "[ROOM] 불 좀 켜봐",
+    "majority_count": 3,
+    "minority_count": 3
+  },
+  {
+    "utterance": "작은방 불 좀 켜봐",
+    "current": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "none"
+    },
+    "majority": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "on"
+    },
+    "pattern": "[ROOM] 불 좀 켜봐",
+    "majority_count": 3,
+    "minority_count": 3
+  },
+  {
+    "utterance": "아이방 불 좀 켜봐",
+    "current": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "none"
+    },
+    "majority": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "on"
+    },
+    "pattern": "[ROOM] 불 좀 켜봐",
+    "majority_count": 3,
+    "minority_count": 3
+  },
+  {
+    "utterance": "침실 불 좀 켜줘",
+    "current": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "none"
+    },
+    "majority": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "on"
+    },
+    "pattern": "[ROOM] 불 좀 켜줘",
+    "majority_count": 3,
+    "minority_count": 3
+  },
+  {
+    "utterance": "작은방 불 좀 켜줘",
+    "current": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "none"
+    },
+    "majority": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "on"
+    },
+    "pattern": "[ROOM] 불 좀 켜줘",
+    "majority_count": 3,
+    "minority_count": 3
+  },
+  {
+    "utterance": "아이방 불 좀 켜줘",
+    "current": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "none"
+    },
+    "majority": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "on"
+    },
+    "pattern": "[ROOM] 불 좀 켜줘",
+    "majority_count": 3,
+    "minority_count": 3
+  },
+  {
+    "utterance": "침실 불 좀 켜주세요",
+    "current": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "none"
+    },
+    "majority": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "on"
+    },
+    "pattern": "[ROOM] 불 좀 켜주세요",
+    "majority_count": 3,
+    "minority_count": 3
+  },
+  {
+    "utterance": "작은방 불 좀 켜주세요",
+    "current": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "none"
+    },
+    "majority": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "on"
+    },
+    "pattern": "[ROOM] 불 좀 켜주세요",
+    "majority_count": 3,
+    "minority_count": 3
+  },
+  {
+    "utterance": "아이방 불 좀 켜주세요",
+    "current": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "none"
+    },
+    "majority": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "on"
+    },
+    "pattern": "[ROOM] 불 좀 켜주세요",
+    "majority_count": 3,
+    "minority_count": 3
+  },
+  {
+    "utterance": "안방 환기 세게",
+    "current": {
+      "fn": "vent_control",
+      "exec": "control_then_confirm",
+      "dir": "on"
+    },
+    "majority": {
+      "fn": "vent_control",
+      "exec": "control_then_confirm",
+      "dir": "up"
+    },
+    "pattern": "[ROOM] 환기 세게",
+    "majority_count": 3,
+    "minority_count": 3
+  },
+  {
+    "utterance": "작은방 환기 세게",
+    "current": {
+      "fn": "vent_control",
+      "exec": "control_then_confirm",
+      "dir": "on"
+    },
+    "majority": {
+      "fn": "vent_control",
+      "exec": "control_then_confirm",
+      "dir": "up"
+    },
+    "pattern": "[ROOM] 환기 세게",
+    "majority_count": 3,
+    "minority_count": 3
+  },
+  {
+    "utterance": "아이방 환기 세게",
+    "current": {
+      "fn": "vent_control",
+      "exec": "control_then_confirm",
+      "dir": "on"
+    },
+    "majority": {
+      "fn": "vent_control",
+      "exec": "control_then_confirm",
+      "dir": "up"
+    },
+    "pattern": "[ROOM] 환기 세게",
+    "majority_count": 3,
+    "minority_count": 3
+  },
+  {
+    "utterance": "거실 답답해",
+    "current": {
+      "fn": "vent_control",
+      "exec": "query_then_respond",
+      "dir": "on"
+    },
+    "majority": {
+      "fn": "vent_control",
+      "exec": "control_then_confirm",
+      "dir": "on"
+    },
+    "pattern": "[ROOM] 답답해",
+    "majority_count": 5,
+    "minority_count": 1
+  },
+  {
+    "utterance": "주방 에어컨 냉방모드로",
+    "current": {
+      "fn": "ac_control",
+      "exec": "control_then_confirm",
+      "dir": "none"
+    },
+    "majority": {
+      "fn": "ac_control",
+      "exec": "control_then_confirm",
+      "dir": "on"
+    },
+    "pattern": "[ROOM] 에어컨 냉방모드로",
+    "majority_count": 4,
+    "minority_count": 2
+  },
+  {
+    "utterance": "침실 에어컨 냉방모드로",
+    "current": {
+      "fn": "ac_control",
+      "exec": "control_then_confirm",
+      "dir": "none"
+    },
+    "majority": {
+      "fn": "ac_control",
+      "exec": "control_then_confirm",
+      "dir": "on"
+    },
+    "pattern": "[ROOM] 에어컨 냉방모드로",
+    "majority_count": 4,
+    "minority_count": 2
+  },
+  {
+    "utterance": "거실 에어컨 냉방모드",
+    "current": {
+      "fn": "ac_control",
+      "exec": "control_then_confirm",
+      "dir": "down"
+    },
+    "majority": {
+      "fn": "ac_control",
+      "exec": "control_then_confirm",
+      "dir": "none"
+    },
+    "pattern": "[ROOM] 에어컨 냉방모드",
+    "majority_count": 4,
+    "minority_count": 2
+  },
+  {
+    "utterance": "주방 에어컨 냉방모드",
+    "current": {
+      "fn": "ac_control",
+      "exec": "query_then_respond",
+      "dir": "none"
+    },
+    "majority": {
+      "fn": "ac_control",
+      "exec": "control_then_confirm",
+      "dir": "none"
+    },
+    "pattern": "[ROOM] 에어컨 냉방모드",
+    "majority_count": 4,
+    "minority_count": 2
+  },
+  {
+    "utterance": "거실 에어컨 수면으로 해줘",
+    "current": {
+      "fn": "ac_control",
+      "exec": "control_then_confirm",
+      "dir": "down"
+    },
+    "majority": {
+      "fn": "ac_control",
+      "exec": "control_then_confirm",
+      "dir": "off"
+    },
+    "pattern": "[ROOM] 에어컨 수면으로 해줘",
+    "majority_count": 4,
+    "minority_count": 2
+  },
+  {
+    "utterance": "안방 에어컨 수면으로 해줘",
+    "current": {
+      "fn": "ac_control",
+      "exec": "control_then_confirm",
+      "dir": "down"
+    },
+    "majority": {
+      "fn": "ac_control",
+      "exec": "control_then_confirm",
+      "dir": "off"
+    },
+    "pattern": "[ROOM] 에어컨 수면으로 해줘",
+    "majority_count": 4,
+    "minority_count": 2
+  },
+  {
+    "utterance": "거실 에어컨 수면모드로",
+    "current": {
+      "fn": "ac_control",
+      "exec": "control_then_confirm",
+      "dir": "down"
+    },
+    "majority": {
+      "fn": "ac_control",
+      "exec": "control_then_confirm",
+      "dir": "none"
+    },
+    "pattern": "[ROOM] 에어컨 수면모드로",
+    "majority_count": 4,
+    "minority_count": 2
+  },
+  {
+    "utterance": "주방 에어컨 수면모드로",
+    "current": {
+      "fn": "ac_control",
+      "exec": "query_then_respond",
+      "dir": "none"
+    },
+    "majority": {
+      "fn": "ac_control",
+      "exec": "control_then_confirm",
+      "dir": "none"
+    },
+    "pattern": "[ROOM] 에어컨 수면모드로",
+    "majority_count": 4,
+    "minority_count": 2
+  },
+  {
+    "utterance": "주방 에어컨 수면으로",
+    "current": {
+      "fn": "ac_control",
+      "exec": "control_then_confirm",
+      "dir": "none"
+    },
+    "majority": {
+      "fn": "ac_control",
+      "exec": "control_then_confirm",
+      "dir": "down"
+    },
+    "pattern": "[ROOM] 에어컨 수면으로",
+    "majority_count": 5,
+    "minority_count": 1
+  },
+  {
+    "utterance": "거실 에어컨 수면모드",
+    "current": {
+      "fn": "ac_control",
+      "exec": "control_then_confirm",
+      "dir": "down"
+    },
+    "majority": {
+      "fn": "ac_control",
+      "exec": "query_then_respond",
+      "dir": "none"
+    },
+    "pattern": "[ROOM] 에어컨 수면모드",
+    "majority_count": 4,
+    "minority_count": 2
+  },
+  {
+    "utterance": "아이방 에어컨 수면모드",
+    "current": {
+      "fn": "ac_control",
+      "exec": "control_then_confirm",
+      "dir": "none"
+    },
+    "majority": {
+      "fn": "ac_control",
+      "exec": "query_then_respond",
+      "dir": "none"
+    },
+    "pattern": "[ROOM] 에어컨 수면모드",
+    "majority_count": 4,
+    "minority_count": 2
+  },
+  {
+    "utterance": "거실 환기 좀 해줘",
+    "current": {
+      "fn": "vent_control",
+      "exec": "control_then_confirm",
+      "dir": "set"
+    },
+    "majority": {
+      "fn": "vent_control",
+      "exec": "control_then_confirm",
+      "dir": "on"
+    },
+    "pattern": "[ROOM] 환기 좀 해줘",
+    "majority_count": 4,
+    "minority_count": 2
+  },
+  {
+    "utterance": "침실 환기 좀 해줘",
+    "current": {
+      "fn": "vent_control",
+      "exec": "control_then_confirm",
+      "dir": "set"
+    },
+    "majority": {
+      "fn": "vent_control",
+      "exec": "control_then_confirm",
+      "dir": "on"
+    },
+    "pattern": "[ROOM] 환기 좀 해줘",
+    "majority_count": 4,
+    "minority_count": 2
+  },
+  {
+    "utterance": "거실 좀 불 켜줘",
+    "current": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "on"
+    },
+    "majority": {
+      "fn": "light_control",
+      "exec": "clarify",
+      "dir": "none"
+    },
+    "pattern": "[ROOM] 좀 불 켜줘",
+    "majority_count": 4,
+    "minority_count": 2
+  },
+  {
+    "utterance": "주방 좀 불 켜줘",
+    "current": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "none"
+    },
+    "majority": {
+      "fn": "light_control",
+      "exec": "clarify",
+      "dir": "none"
+    },
+    "pattern": "[ROOM] 좀 불 켜줘",
+    "majority_count": 4,
+    "minority_count": 2
+  },
+  {
+    "utterance": "거실 지금 불 켜줘",
+    "current": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "on"
+    },
+    "majority": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "none"
+    },
+    "pattern": "[ROOM] 지금 불 켜줘",
+    "majority_count": 5,
+    "minority_count": 1
+  },
+  {
+    "utterance": "거실 빨리 불 켜줘",
+    "current": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "none"
+    },
+    "majority": {
+      "fn": "light_control",
+      "exec": "clarify",
+      "dir": "none"
+    },
+    "pattern": "[ROOM] 빨리 불 켜줘",
+    "majority_count": 5,
+    "minority_count": 1
+  },
+  {
+    "utterance": "거실 혹시 불 켜줘",
+    "current": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "none"
+    },
+    "majority": {
+      "fn": "light_control",
+      "exec": "clarify",
+      "dir": "none"
+    },
+    "pattern": "[ROOM] 혹시 불 켜줘",
+    "majority_count": 4,
+    "minority_count": 2
+  },
+  {
+    "utterance": "안방 혹시 불 켜줘",
+    "current": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "none"
+    },
+    "majority": {
+      "fn": "light_control",
+      "exec": "clarify",
+      "dir": "none"
+    },
+    "pattern": "[ROOM] 혹시 불 켜줘",
+    "majority_count": 4,
+    "minority_count": 2
+  },
+  {
+    "utterance": "거실 제발 불 켜줘",
+    "current": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "none"
+    },
+    "majority": {
+      "fn": "light_control",
+      "exec": "clarify",
+      "dir": "none"
+    },
+    "pattern": "[ROOM] 제발 불 켜줘",
+    "majority_count": 5,
+    "minority_count": 1
+  },
+  {
+    "utterance": "거실 야 불 켜줘",
+    "current": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "on"
+    },
+    "majority": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "none"
+    },
+    "pattern": "[ROOM] 야 불 켜줘",
+    "majority_count": 4,
+    "minority_count": 2
+  },
+  {
+    "utterance": "안방 야 불 켜줘",
+    "current": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "on"
+    },
+    "majority": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "none"
+    },
+    "pattern": "[ROOM] 야 불 켜줘",
+    "majority_count": 4,
+    "minority_count": 2
+  },
+  {
+    "utterance": "거실 에어컨 어때",
+    "current": {
+      "fn": "ac_control",
+      "exec": "control_then_confirm",
+      "dir": "down"
+    },
+    "majority": {
+      "fn": "ac_control",
+      "exec": "query_then_respond",
+      "dir": "none"
+    },
+    "pattern": "[ROOM] 에어컨 어때",
+    "majority_count": 5,
+    "minority_count": 1
+  },
+  {
+    "utterance": "주방 조명 최소로",
+    "current": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "off"
+    },
+    "majority": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "down"
+    },
+    "pattern": "[ROOM] 조명 최소로",
+    "majority_count": 4,
+    "minority_count": 2
+  },
+  {
+    "utterance": "아이방 조명 최소로",
+    "current": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "off"
+    },
+    "majority": {
+      "fn": "light_control",
+      "exec": "control_then_confirm",
+      "dir": "down"
+    },
+    "pattern": "[ROOM] 조명 최소로",
+    "majority_count": 4,
+    "minority_count": 2
+  },
+  {
+    "utterance": "거실 커튼 예약",
+    "current": {
+      "fn": "curtain_control",
+      "exec": "control_then_confirm",
+      "dir": "none"
+    },
+    "majority": {
+      "fn": "curtain_control",
+      "exec": "query_then_respond",
+      "dir": "none"
+    },
+    "pattern": "[ROOM] 커튼 예약",
+    "majority_count": 4,
+    "minority_count": 2
+  },
+  {
+    "utterance": "아이방 커튼 예약",
+    "current": {
+      "fn": "curtain_control",
+      "exec": "control_then_confirm",
+      "dir": "none"
+    },
+    "majority": {
+      "fn": "curtain_control",
+      "exec": "query_then_respond",
+      "dir": "none"
+    },
+    "pattern": "[ROOM] 커튼 예약",
+    "majority_count": 4,
+    "minority_count": 2
+  }
+]
