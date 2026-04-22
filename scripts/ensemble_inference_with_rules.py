@@ -165,6 +165,16 @@ def apply_post_rules(preds, text):
     if preds['fn'] == 'heat_control' and preds['exec_type'] == 'control_then_confirm' and preds['param_direction'] == 'none':
         preds['param_direction'] = 'on'
 
+    # continuous: ac_control CTC + "해줘"/동작 없음 → on
+    if preds['fn'] == 'ac_control' and preds['exec_type'] == 'control_then_confirm' and preds['param_direction'] == 'none':
+        if re.search(r'해줘|해\s*줘|틀어|가동|작동', text):
+            preds['param_direction'] = 'on'
+
+    # vent_control CTC + 해줘/틀어 → on
+    if preds['fn'] == 'vent_control' and preds['exec_type'] == 'control_then_confirm' and preds['param_direction'] == 'none':
+        if re.search(r'해줘|해\s*줘|틀어|가동', text):
+            preds['param_direction'] = 'on'
+
     # iter9 (reflection): "덥다/더워/덥네" → ac_control (heat 오예측 교정)
     if preds['fn'] == 'heat_control' and re.search(r'덥다|더워|덥네|더운', text):
         # 온도 올림 맥락이면 heat 유지 ("난방 올려")
