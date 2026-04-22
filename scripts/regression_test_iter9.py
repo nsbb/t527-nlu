@@ -100,6 +100,16 @@ TESTS = [
     ("환기 시스템", "exec_type", "query_then_respond", "continuous: vent 시스템 query"),
     ("가스 냄새 나", "fn", "security_mode", "continuous: 비상 상황"),
     ("연기 난다", "fn", "security_mode", "continuous: 비상 상황 확장"),
+
+    # Continuous 4 (13:30+) 추가 — 혹시/전체/예약/음량
+    ("거실 혹시 불 켜줘", "exec_type", "control_then_confirm", "continuous: 거실/안방 혹시 → CTC"),
+    ("주방 혹시 불 켜줘", "exec_type", "clarify", "continuous: 주방 혹시 → clarify (TS 일치)"),
+    ("전체 불 켜", "exec_type", "control_then_confirm", "continuous: 전체 불 → CTC"),
+    ("모든 불 꺼", "param_direction", "off", "continuous: 모든 불 꺼 → off"),
+    ("예약 모두 삭제", "fn", "schedule_manage", "continuous: 예약 삭제 → schedule"),
+    ("조명 밝기 최대", "param_direction", "up", "continuous: 밝기 최대 → up"),
+    ("음량 얼마야", "fn", "home_info", "continuous: 음량 → home_info"),
+    ("안방 난방 올라쥬", "param_direction", "up", "continuous: STT 올라쥬 → 올려줘"),
 ]
 
 
