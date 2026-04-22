@@ -352,6 +352,13 @@ def apply_post_rules(preds, text):
     if re.search(r'음량|볼륨|소리', text) and preds['fn'] == 'energy_query':
         preds['fn'] = 'home_info'
 
+    # continuous: "몇 도로" 류 (temperature 설정값 질문) → heat_control/query
+    # (traffic_query "도로" 오분류 교정)
+    if re.search(r'몇\s*도로', text) and preds['fn'] == 'traffic_query':
+        preds['fn'] = 'heat_control'
+        preds['exec_type'] = 'query_then_respond'
+        preds['param_direction'] = 'none'
+
     # continuous: "밝기 최대/최소" → up/down (out-of-distribution 보강)
     # TS에 "밝기 최대/최소" 케이스 없어 regression 없음
     if re.search(r'밝기\s*최대', text):
