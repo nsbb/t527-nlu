@@ -52,9 +52,14 @@ def apply_post_rules(preds, text):
     # N모드로 → set (단, room없을 때만 — room 있으면 TS는 불일치)
     has_room_for_mode = re.search(r'(거실|안방|침실|주방|부엌|작은방|아이방)\s+에어컨', text)
     if re.search(r'(냉방|제습|송풍|자동|취침|외출)\s*모드', text):
-        if preds['fn'] in ('ac_control', 'heat_control', 'vent_control') and not has_room_for_mode:
-            preds['param_direction'] = 'set'
-            preds['param_type'] = 'mode'
+        if preds['fn'] in ('ac_control', 'heat_control', 'vent_control'):
+            if not has_room_for_mode:
+                preds['param_direction'] = 'set'
+                preds['param_type'] = 'mode'
+            else:
+                # room 있고 '로' 없음 + model=on → none (TS 다수는 none)
+                if '모드로' not in text and preds['param_direction'] == 'on':
+                    preds['param_direction'] = 'none'
 
     # 알람/모닝콜 → schedule_manage (iter8, device keyword 없을 때만)
     # iter9 refinement: TS의 dir 라벨이 불일치하므로 dir은 모델 예측 유지
