@@ -247,6 +247,12 @@ def apply_post_rules(preds, text):
         if preds['exec_type'] in ('query_then_respond', 'query_then_judge', 'direct_respond'):
             if preds['param_direction'] != 'none':
                 preds['param_direction'] = 'none'
+
+    # continuous: "온도 몇 도" 류 query_then_respond 복구 (heat/ac)
+    if preds['fn'] in ('heat_control', 'ac_control', 'home_info'):
+        if re.search(r'몇\s*도|온도\s*얼마|온도\s*어때|온도\s*상태', text):
+            if preds['exec_type'] == 'direct_respond':
+                preds['exec_type'] = 'query_then_respond'
     # weather_query + CTC + dir=on → 특수 (비 올까 같은 misprediction)
     if preds['fn'] == 'weather_query' and preds['exec_type'] == 'control_then_confirm':
         # "비/눈/더울까/추울까" 판단형이면 query로 수정
