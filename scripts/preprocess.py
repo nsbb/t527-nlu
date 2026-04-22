@@ -83,6 +83,9 @@ STT_CORRECTION = {
     'HI WONDER': '',
     '하이 원더': '',
     '하이원더': '',
+    'Wonder': '',  # partial wake
+    'wonder': '',
+    '원더': '',
     '형광등': '조명',
     # iter10: 구체 light type 보존 (preprocess placeholder로 보호됨)
     '보일러': '난방',
