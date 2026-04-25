@@ -144,6 +144,7 @@ class DialogueStateTracker:
         # Value 추출 (iter9: slot filling)
         current_value = self._extract_value(text)
         inferred_value = None
+        old_value = None  # 조정 전 값 (응답 "N도에서 M도로" 용)
 
         # 짧은 bare 발화 (더/덜/조금/많이) → fn 상속 + direction 추론
         if self.is_active() and self.prev_fn and len(text.strip()) <= 4:
@@ -160,6 +161,7 @@ class DialogueStateTracker:
                     vtype, vnum = self.prev_value
                     step = 1 if vtype == 'temperature' else 10
                     delta = step if direction == 'up' else -step
+                    old_value = self.prev_value
                     inferred_value = (vtype, vnum + delta)
 
         # continuous: 짧은 bare 동사 (꺼/켜/끄/열어/닫아/취소) → fn 상속
@@ -181,7 +183,7 @@ class DialogueStateTracker:
         if self.is_active() and self.prev_fn:
             has_device_kw = re.search(
                 r'조명|불|램프|전등|스탠드|난방|보일러|에어컨|냉방|환기|환풍|공기청정|'
-                r'가스|도어|커튼|블라인드|월패드', text)
+                r'가스|도어|커튼|블라인드|월패드|잠가|잠금|잠그|도어락|열쇠', text)
             room_verb_match = re.search(
                 r'(거실|안방|침실|주방|부엌|작은방|아이방|서재|현관|전체|모든)'
                 r'(?:은|는|이|가|도|을|를|에|의)?\s*'
@@ -190,6 +192,12 @@ class DialogueStateTracker:
                 # model이 device 없는데 다른 fn을 예측 → prev_fn으로 강제 상속
                 fn = self.prev_fn
                 exec_t = 'control_then_confirm'
+                # 매칭된 동사에서 direction도 재설정 (NLU가 틀린 direction 줄 수 있음)
+                _vdir = {'켜': 'on', '꺼': 'off', '끄': 'off', '열어': 'open',
+                         '닫아': 'close', '잠가': 'close'}
+                _matched_verb = room_verb_match.group(2)
+                if _matched_verb in _vdir:
+                    direction = _vdir[_matched_verb]
 
         # continuous: "조금/더/많이 올려/내려" fn 상속 (prev_value 없어도 fn만이라도 승계)
         if self.is_active() and self.prev_fn:
@@ -215,6 +223,7 @@ class DialogueStateTracker:
                 vtype, vnum = self.prev_value
                 step = 1 if vtype == 'temperature' else 10
                 delta = step if direction == 'up' else -step
+                old_value = self.prev_value
                 inferred_value = (vtype, vnum + delta)
 
         # iter10: "N도 더 올려" / "N도만 더 올려" / "N도 올려" relative + explicit number
@@ -225,6 +234,7 @@ class DialogueStateTracker:
                 is_up = '올려' in m.group(2) or '높여' in m.group(2)
                 vtype, vnum = self.prev_value
                 if vtype == 'temperature':
+                    old_value = self.prev_value
                     inferred_value = (vtype, vnum + (delta if is_up else -delta))
                     # fn 상속
                     if self.prev_fn:
@@ -243,6 +253,7 @@ class DialogueStateTracker:
                 is_up = modifier in ('더', '높여')
                 vtype, vnum = self.prev_value
                 if vtype == 'temperature':
+                    old_value = self.prev_value
                     inferred_value = (vtype, vnum + (delta if is_up else -delta))
                     if self.prev_fn:
                         fn = self.prev_fn
@@ -277,6 +288,7 @@ class DialogueStateTracker:
             'param_direction': direction,
             'room': resolved_room if resolved_room != 'none' else (self.prev_room or 'none'),
             'value': final_value,
+            'old_value': old_value,  # 조정 전 값 (응답 "N도에서 M도로" 용)
         }
 
     def _extract_value(self, text):

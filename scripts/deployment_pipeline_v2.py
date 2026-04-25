@@ -130,6 +130,7 @@ class DeploymentPipelineV2:
             'judge': final.get('judge', 'none'),
             'room': final.get('room', 'none'),
             'value': final.get('value'),
+            'old_value': final.get('old_value'),
         }
         response = generate_response_v2(multihead, raw_text=pp)
 
