@@ -26,6 +26,38 @@ def jaccard(a, b):
     return len(a & b) / len(a | b)
 
 
+def parse_utt(raw):
+    """CSV 발화문에서 첫 번째 대표 발화 추출.
+    "/" 는 대안 발화 구분자지만, 인용부호 내부나 장치명 사이에 있으면 구분자가 아님.
+    """
+    # 공백-슬래시-공백은 항상 구분자
+    if ' / ' in raw:
+        return raw.split(' / ')[0].strip()
+
+    parts = raw.split('/')
+    if len(parts) == 1:
+        return raw.strip()
+
+    first = parts[0].strip()
+
+    # 열린 인용부호가 닫히지 않은 경우 → "/" 가 인용부호 내부
+    if first.count("'") % 2 == 1:
+        rest = '/'.join(parts[1:])
+        close_idx = rest.find("'")
+        if close_idx >= 0:
+            return (first + "'" + rest[close_idx + 1:]).strip()
+        return (first + "'" + rest).strip()
+
+    # 첫 번째 부분이 매우 짧으면 방/기기명 앞에 붙는 경우 → 뒤 부분에서 공백 이후 가져옴
+    if len(first) <= 4 and len(parts) > 1:
+        rest = '/'.join(parts[1:])
+        space_idx = rest.find(' ')
+        if space_idx >= 0:
+            return (first + rest[space_idx:]).strip()
+
+    return first
+
+
 def main():
     print("Loading v2 pipeline...")
     p = DeploymentPipelineV2()
@@ -45,7 +77,7 @@ def main():
     medium_sim_examples = []
 
     for row in rows:
-        utt = row['사용자발화문'].split('/')[0].strip()
+        utt = parse_utt(row['사용자발화문'])
         expected = row['AI기대응답'].strip()
         # 괄호 안 주석 제거 (예: "(현재 거실 조명 밝기는 60%...)")
         expected_clean = re.sub(r'\([^)]*\)', '', expected).strip()

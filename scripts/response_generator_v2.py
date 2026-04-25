@@ -773,6 +773,10 @@ def control_response(fn, direction, room, value, raw_text):
     room_pref = f'{room_kr} ' if room_kr else ''
     device = DEVICE_KR.get(fn)
 
+    # 모닝콜 — DST가 '6시'를 (hour,6)으로 추출해도 타이머 분기 전에 처리
+    if re.search(r'모닝콜', raw_text):
+        return '네, 모닝콜이 설정되었습니다.'
+
     # Timer (value + 시간)
     if value and direction in ('on', 'off', 'open', 'close') and value[0] in ('minute', 'hour', 'second'):
         unit_kr = {'minute': '분', 'hour': '시간', 'second': '초'}[value[0]]
