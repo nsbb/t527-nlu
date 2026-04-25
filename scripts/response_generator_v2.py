@@ -795,7 +795,7 @@ def query_response(fn, room, raw_text):
 # Control
 # ─────────────────────────────────────────────────────────────
 
-def control_response(fn, direction, room, value, raw_text):
+def control_response(fn, direction, room, value, raw_text, old_value=None):
     room_kr = ROOM_KR.get(room, '')
     room_pref = f'{room_kr} ' if room_kr else ''
     device = DEVICE_KR.get(fn)
@@ -936,8 +936,9 @@ def control_response(fn, direction, room, value, raw_text):
     if direction in ('up', 'down') and device:
         if value and value[0] == 'temperature':
             vnum = value[1]
+            from_temp = old_value[1] if old_value and old_value[0] == 'temperature' else 22
             verb = '올리겠습니다' if direction == 'up' else '내리겠습니다'
-            return f'네, {room_pref}{device[0]} 설정 온도를 22도에서 {vnum}도로 {verb}.'
+            return f'네, {room_pref}{device[0]} 설정 온도를 {from_temp}도에서 {vnum}도로 {verb}.'
         # 온도 타입 기기는 "N도에서 M도로" 기본 템플릿 (기준 22도)
         if fn in ('heat_control', 'ac_control'):
             # 에어컨 풍량: "줄여/세게/강하게" 는 풍량, "낮춰/올려"는 온도 (TS 관례)
@@ -1095,6 +1096,7 @@ def generate_response_v2(multihead, raw_text=''):
     direction = multihead.get('param_direction', 'none')
     room = multihead.get('room', 'none')
     value = multihead.get('value')
+    old_value = multihead.get('old_value')
 
     # 1. Emergency
     if EMERGENCY_PATTERN.search(raw_text):
@@ -1133,7 +1135,7 @@ def generate_response_v2(multihead, raw_text=''):
 
     # 3. exec_type별 분기
     if exec_t == 'control_then_confirm':
-        return control_response(fn, direction, room, value, raw_text)
+        return control_response(fn, direction, room, value, raw_text, old_value=old_value)
 
     if exec_t == 'query_then_respond':
         return query_response(fn, room, raw_text)

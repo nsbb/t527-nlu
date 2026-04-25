@@ -54,6 +54,26 @@
 
 ---
 
+## v2-dst-fix-r1~r3 (2026-04-26) — DST 버그 3건 수정 (CSV 점수 영향 없음)
+
+**프로덕션 품질 개선** — 멀티턴/복합 명령 정확도 향상.
+CSV 점수는 단일 턴 독립 테스트여서 변화 없음 (exact 212/219, usable 213/219 유지).
+
+### 수정 내용
+| 버그 | 원인 | 수정 |
+|------|------|------|
+| 복합 명령 "전체 조명 끄고 현관 잠가줘" → 현관 fn=light_control (WRONG) | DST room_verb_match 규칙이 "잠가"를 device keyword로 인식 못 해 이전 fn(light_control) 강제 상속 | `has_device_kw` regex에 `잠가\|잠금\|잠그\|도어락\|열쇠` 추가 |
+| 복합/멀티턴 "안방도 꺼줘" → dir=set (WRONG) | NLU가 "안방도 꺼줘"에서 dir=set 예측, room_verb_match fn 오버라이드 시 direction은 그대로 방치 | fn 오버라이드 시 매칭된 동사(꺼→off, 켜→on 등)로 direction도 재설정 |
+| 멀티턴 온도 조정 "2도 낮춰줘" after "24도로" → "22도에서 22도로" (WRONG) | 조정 전 온도(24도) 정보가 response generator에 전달되지 않고, hardcoded 22도 사용 | DST → Pipeline → ResponseGen 전체에 `old_value` 전달 체인 추가 |
+
+### 검증
+- 멀티턴: "거실 난방 24도로" → "2도 낮춰줘" → "24도에서 22도로 내리겠습니다" ✓
+- 복합: "전체 조명 끄고 현관 잠가줘" → light_control + door_control ✓
+- 복합: "거실 불 끄고 안방도 꺼줘" → light off (both) ✓
+- 단일: "현관 잠가줘" 독립 실행 여전히 door_control ✓
+
+---
+
 ## v2-response-r57~r59 (2026-04-26) — exact 210→212, usable 211→213/219 (97.3%)
 
 **최종 도달점**: exact 212/219 (96.8%), usable 213/219 (97.3%)
