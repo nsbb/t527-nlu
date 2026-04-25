@@ -1114,6 +1114,10 @@ def generate_response_v2(multihead, raw_text=''):
     if EMERGENCY_PATTERN.search(raw_text):
         return emergency_response()
 
+    # 1.1 부정 명령 — "끄지 마", "켜면 안" → 현재 상태 유지 (clarify/control 분기 전에 처리)
+    if re.search(r'(?:끄|꺼|켜|열|닫|잠그)(?:지\s*말|지\s*마|면\s*안|지\s*않아)', raw_text):
+        return '네, 현재 상태를 유지하겠습니다.'
+
     # 1.5. "예약" 관련 재분류 — "난방 예약 취소" → schedule 논리
     # OOO(커뮤니티 시설)는 제외 → match_specific의 앱 안내 패턴으로 처리
     if re.search(r'예약.{0,8}(?:취소|해제|삭제|지워)', raw_text) and 'OOO' not in raw_text:
