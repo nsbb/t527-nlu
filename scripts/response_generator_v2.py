@@ -108,6 +108,8 @@ SPECIFIC_PATTERNS = [
     # 조명 예약 (조명 > 예약)
     (r'조명\s*예약|조명\s*스케줄|취침\s*모드\s*설정.*어떻|예약\s*어떻',
      '전체 조명이 매일 밤 10시 취침모드로 설정되어 있습니다.'),
+    # "밤 N시에 조명 꺼줘" → timer logic (None = fall-through)
+    (r'밤\s*\d+\s*시\s*(?:에\s*)?(?:조명|불)\s*(?:꺼|끄)', None),
     (r'취침\s*모드|밤\s*\d+\s*시\s*(?:에\s*)?(?:조명|밝기)',
      '매일 밤 10시 [1단계 밝기] 로 켜지도록 설정되어 있습니다.'),
     # 조명 구체 유형
@@ -806,8 +808,18 @@ def control_response(fn, direction, room, value, raw_text, old_value=None):
 
     # Timer (value + 시간)
     if value and direction in ('on', 'off', 'open', 'close') and value[0] in ('minute', 'hour', 'second'):
-        unit_kr = {'minute': '분', 'hour': '시간', 'second': '초'}[value[0]]
         vb = DIR_VERB_FUTURE.get(direction, '설정하겠습니다')
+        # 밤/오전/오후/아침/저녁/새벽 + N시 → time-of-day, not duration ("N시간 뒤에" 오해 방지)
+        if value[0] == 'hour' and re.search(r'(?:밤|오전|오후|아침|저녁|새벽)\s*\d+\s*시', raw_text):
+            hr = value[1]
+            if re.search(r'오전|아침', raw_text): period = '오전'
+            elif re.search(r'오후|저녁', raw_text): period = '오후'
+            elif re.search(r'새벽', raw_text): period = '새벽'
+            else: period = '밤'
+            if device:
+                return f'네, {period} {hr}시에 {room_pref}{device[0]}{device[1]} {vb}.'
+            return f'네, {period} {hr}시에 {vb}.'
+        unit_kr = {'minute': '분', 'hour': '시간', 'second': '초'}[value[0]]
         if device:
             return f'네, {value[1]}{unit_kr} 뒤에 {room_pref}{device[0]}{device[1]} {vb}.'
         return f'네, {value[1]}{unit_kr} 뒤에 {vb}.'
@@ -1120,6 +1132,16 @@ def generate_response_v2(multihead, raw_text=''):
         return '현재 예약된 환기 운전 계획은 없습니다.'
     if re.search(r'조명\s*예약\s*(?:있|되|뭐)', raw_text):
         return '전체 조명이 매일 밤 10시 취침모드로 설정되어 있습니다.'
+
+    # 시간 예약 명령 전처리 — "밤/오전/오후/아침 N시에 기기 켜/꺼" (dir=up 오예측 교정)
+    if value and value[0] == 'hour' and re.search(r'(?:밤|오전|오후|아침|저녁|새벽)\s*\d+\s*시', raw_text):
+        if direction not in ('on', 'off', 'open', 'close'):
+            if re.search(r'꺼|끄|닫|잠', raw_text):
+                direction = 'off'
+            elif re.search(r'열어', raw_text):
+                direction = 'open'
+            else:
+                direction = 'on'
 
     # "공간명 없음" 판정 — 우리 모델이 CTC/up 예측하지만 실제로 공간 없으면 clarify
     # "난방 올려줘" / "에어컨 낮춰줘" (room=none이고 '전체'/'모든' 없음)
