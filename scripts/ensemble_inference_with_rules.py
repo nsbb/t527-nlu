@@ -387,6 +387,13 @@ def apply_post_rules(preds, text):
         elif re.search(r'알림', text) and not re.search(r'사용량|긴급|에너지', text):
             preds['fn'] = 'home_info'
 
+    # "에어컨" 명시 + query → ac_control (light_control 오예측 교정)
+    if re.search(r'에어컨', text) and preds['fn'] == 'light_control':
+        preds['fn'] = 'ac_control'
+        if preds['exec_type'] not in ('query_then_respond',):
+            preds['exec_type'] = 'query_then_respond'
+        preds['param_direction'] = 'none'
+
     return preds
 
 

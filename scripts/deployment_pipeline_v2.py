@@ -31,8 +31,9 @@ from response_generator_v2 import generate_response_v2
 # Room extraction (v1과 동일)
 ROOM_MAP = {
     '거실': 'living', '리빙': 'living',
-    '안방': 'bedroom_main', '주침실': 'bedroom_main',
+    '안방': 'bedroom_main', '주침실': 'bedroom_main', '우리 방': 'bedroom_main',
     '침실': 'bedroom_sub', '작은방': 'bedroom_sub', '아이방': 'bedroom_sub',
+    '작은 방': 'bedroom_sub', '아이 방': 'bedroom_sub',
     '서재': 'bedroom_sub',
     '주방': 'kitchen', '부엌': 'kitchen',
     '현관': 'external', '외부': 'external',
