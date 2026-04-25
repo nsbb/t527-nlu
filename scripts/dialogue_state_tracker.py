@@ -79,7 +79,7 @@ class DialogueStateTracker:
                 # "응", "해줘" — 이전 턴 전체 반복, 단 확인 질문(query)이었으면 control로 승격
                 fn = self.prev_fn or fn
                 # "~할까요?" 같은 확인 질문 → confirm으로 바뀌면 실행
-                if self.prev_exec == 'query_then_respond' and self.prev_text and re.search(r'까요\?|할까|낼까|될까', self.prev_text or ''):
+                if self.prev_exec == 'query_then_respond' and self.prev_text and re.search(r'까요\?|할까|낼까|될까|켤까|꺼볼까|열까|닫을까|올릴까|내릴까', self.prev_text or ''):
                     exec_t = 'control_then_confirm'
                     # dir이 none이면 prev_text에서 action verb로 추론
                     if direction == 'none' and (self.prev_dir is None or self.prev_dir == 'none'):
