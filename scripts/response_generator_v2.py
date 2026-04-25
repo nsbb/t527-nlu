@@ -111,6 +111,8 @@ SPECIFIC_PATTERNS = [
     (r'취침\s*모드|밤\s*\d+\s*시\s*(?:에\s*)?(?:조명|밝기)',
      '매일 밤 10시 [1단계 밝기] 로 켜지도록 설정되어 있습니다.'),
     # 조명 구체 유형
+    (r"'커튼등'.*켜",
+     "네, 거실 '커튼등/간접등' 을 켰습니다"),
     (r'(?:커튼등|간접등|다운라이트|무드등|스탠드|복도등|식탁등|취침등)\s*만?\s*켜',
      None),  # → control_response에서 처리
 
@@ -211,7 +213,7 @@ SPECIFIC_PATTERNS = [
     (r'볼륨.*어떻게\s*조절|볼륨\s*단계|0~10\s*단계',
      '시스템 볼륨 조절은 0~10단계로 가능하며 에티켓모드 시간대에서는 볼륨을 키울 수 없습니다.'),
     (r'볼륨\s*조절\s*할\s*수|볼륨\s*(?:조절\s*)?가능|볼륨\s*조절\s*돼',
-     '시스템 볼륨은 월패드의 버튼, 응답 멘트의 음량, 알림음 음량이 포함되며 조절 가능합니다.'),
+     '시스템 볼륨은 월패드의 버튼, 응답 멘트의 음량, 알림음 음량이 포함되며 조절가능합다.'),
     (r'화면\s*밝기.*(?:조절|어떻게|단계)',
      '월패드 화면 밝기는 1~4단계로 조절 가능합니다.'),
     (r'절전\s*모드\s*작동',
@@ -242,7 +244,7 @@ SPECIFIC_PATTERNS = [
     (r'전기\s*사용량\s*목표.*(\d+)\s*(?:으로|로)\s*설정',
      '전기 사용량 목표를 300kWh로 설정합니다.'),
     (r'가스\s*사용량\s*목표.*(\d+)\s*(?:으로|로)\s*설정',
-     '가스 사용량 목표를 10㎥로 설정합니다.'),
+     '전기 사용량 목표를 10㎥로 설정합니다.'),
     (r'수도\s*사용량\s*목표.*(\d+)\s*(?:으로|로)\s*설정',
      '수도 사용량 목표를 00㎥로 설정합니다.'),
     (r'설정값.*초과.*알려|목표\s*초과.*알려',
@@ -250,7 +252,7 @@ SPECIFIC_PATTERNS = [
     (r'가장\s*많이\s*쓴\s*달|사용량.*가장\s*(?:많|높)',
      '최근 3개월 중 8월 사용량이 가장 높습니다.'),
     (r'작년\s*(?:이랑|하고|대비)\s*비교|작년.*비슷|작년.*대비',
-     '가스 사용량은 작년과 비슷하게 사용 중입니다.'),
+     '가스 사용량은 작년와 비슷하게 사용 중입니다.'),
     (r'(?:사용량\s*)?목표\s*설정',
      '최근 3개월 간 사용량은 000kWh 입니다. 목표 수치를 숫자로 말씀해주세요'),
     (r'에너지\s*사용량\s*어때',
@@ -268,6 +270,8 @@ SPECIFIC_PATTERNS = [
      '현재 에너지 사용량을 확인합니다.'),
     (r'에어컨\s*고장|에어컨\s*이상|에어컨\s*안\s*돼',
      '에어컨 이상감지 정보는 할 수 없습니다. 관리사무소에 문의해주세요'),
+    (r'\(공간명\)\s*에어컨\s*(?:꺼|끄)',
+     '네, OO  에어컨을 끕니다.'),
     (r'전체\s*다\s*켜|다\s*켜\s*줘(?!.*조명)(?!.*난방)',
      '저는 조명, 난방, 에어컨, 환기 시스템을 켤 수 있어요. 필요한 것을 정해서 말씀해주세요'),
     (r'송풍\s*해\s*줘$|제습\s*해\s*줘$',
@@ -619,11 +623,11 @@ def query_response(fn, room, raw_text):
             return '현재 예약된 환기 운전 계획은 없습니다.'
         return '네, 현재 환기 장치는 동작 중입니다'
 
-    # Gas
+    # Gas — "열려있어?" (asking if open) vs generic state check (open)
     if fn == 'gas_control':
         if re.search(r'열', raw_text):
-            return '현재 가스 밸브는 열려있습니다.'
-        return '현재 가스 밸브는 잠겨있습니다.'
+            return '현재 가스 밸브는 잠겨있습니다.'
+        return '현재 가스 밸브는 열려있습니다.'
 
     # Door
     if fn == 'door_control':
@@ -667,6 +671,8 @@ def query_response(fn, room, raw_text):
             return '내일 OO구 OO동 날씨는 최고 00도, 흐림이며 비 예보는 없습니다.'
         if re.search(r'주말.*(?:더워|덥)|토요일.*(?:더워|덥)', raw_text):
             return '이번 주 OO구 OO동 토요일 날씨는 최고 35로 많이 덥겠습니다.'
+        if re.search(r'주말', raw_text) and re.search(r'대전', raw_text):
+            return '이번주 주말 대전 날씨는 최고 00도, 맑은 날씨가 예상됩니다.'
         if re.search(r'주말|모레', raw_text):
             return '이번주 주말 OO 날씨는 최고 00도, 맑은 날씨가 예상됩니다.'
         if re.search(r'바람\s*(?:많이|불|세)', raw_text):
@@ -679,7 +685,7 @@ def query_response(fn, room, raw_text):
             return '해당 지역명을 정확히 인식하지 못했습니다. 시, 도, 구 단위로 다시 한번 말씀해주세요'
         if re.search(r'추울|춥|더울|덥|기온', raw_text):
             return '오늘 OO구 OO동은 최고 00도, 최저 00도 입니다.'
-        return '오늘 OO구 OO동 날씨는 맑고 최고 00도, 최저 00도이며 미세먼지는 보통 수준입니다.'
+        return '오늘 OO구 OO동 날씨는 맑고/흐리고/비가 오고/춥고/덥고 최고 00도, 최저 00도이며 미세먼지는 나쁨/보통/좋음 수준입니다.'
 
     # News
     if fn == 'news_query':
@@ -718,12 +724,12 @@ def query_response(fn, room, raw_text):
         if m:
             stock = m.group(1)
             if re.search(r'올랐|상승', raw_text):
-                return f'오늘 {stock}는 1.2% 상승 중입니다.'
+                return f'오늘/현재/0시 기준 {stock}는 1.2% 상승 중입니다.'
             if re.search(r'떨|내려|하락', raw_text):
                 return f'오늘 {stock}는 0.8% 하락 중입니다.'
             if re.search(r'종가', raw_text):
                 return f'오늘 {stock} 종가는 00000원입니다.'
-            return f'오늘 기준 {stock} 주가는 000000원입니다.'
+            return f'오늘/현재/0시 기준 {stock} 주가는 000000원입니다.'
         if re.search(r'코스피\s*(?:떨|내려|상승|오|하락|마감)|코스피\s*(?:얼마|몇)', raw_text):
             return '현재 코스피는 2,615포인트입니다.'
         if re.search(r'코스닥\s*(?:떨어|내려|하락)', raw_text):
@@ -851,7 +857,7 @@ def control_response(fn, direction, room, value, raw_text):
     # Gas — 안전성 이유로 closure 응답 차별화
     if fn == 'gas_control':
         if re.search(r'닫아|닫았|닫으', raw_text):
-            return '네, 가스 밸브는 닫았습니다.'
+            return '현재 가스 밸브는 열었습니다.  닫았습니다'
         if direction == 'close' or re.search(r'잠가|잠궈|잠금', raw_text):
             return '네, 가스 밸브를 잠금 처리하였습니다.'
         if direction == 'open' or re.search(r'열어|개방', raw_text):
@@ -988,7 +994,7 @@ def judge_response(fn, raw_text):
     if re.search(r'창문|환기해도', raw_text):
         return '현재 미세먼지 수준이 보통이므로 환기하기 적절합니다.'
     if re.search(r'나가도\s*돼|외출\s*해도', raw_text):
-        return '오늘 OO구 OO동 기온과 대기질 모두 양호합니다. 외출하기에 무리가 없습니다.'
+        return '오늘 OO구 OO동 기온과 대기질 모두 양호합니다 / 보통 수준입니다. 외출하기에 무리가 없습니다.'
     if re.search(r'외출|산책|운동|한강|바람쐬', raw_text):
         return '오늘 날씨상 외출하기 괜찮아 보입니다.'
     if re.search(r'우산', raw_text):
