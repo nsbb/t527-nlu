@@ -399,6 +399,11 @@ def apply_post_rules(preds, text):
         if not re.search(r'올려|세게|강하게|강\s*풍|풍량|바람\s*세기', text):
             preds['param_direction'] = 'on'
 
+    # curtain_control dir=stop 오예측 교정 (위로/올려 → up)
+    if preds['fn'] == 'curtain_control' and preds['param_direction'] == 'stop':
+        if re.search(r'위로|위\s*로|올려|올리', text):
+            preds['param_direction'] = 'up'
+
     return preds
 
 

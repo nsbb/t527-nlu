@@ -136,6 +136,9 @@ SPECIFIC_PATTERNS = [
     # 방범 모드 (외출모드와 구별)
     (r'방범\s*(?:모드|설정|켜|on)|방범\s*기능\s*켜',
      '네, 방범 모드를 설정합니다.'),
+    # 외출 전 체크리스트
+    (r'외출\s*(?:전에?\s*)?(?:확인|체크|점검|해줘)|나가기\s*전에?\s*(?:확인|체크)',
+     '외출 전 체크리스트: 가스 밸브 잠금, 조명 소등, 도어락 확인을 권장합니다.'),
     # 공용시설/관리비 → 앱 안내 (헬스장/골프장/수영장은 아래 전용 패턴 사용)
     (r'공용\s*시설\s*예약|독서실\s*예약|회의실\s*예약|게스트하우스\s*예약',
      '공용시설 예약은 입주민 전용 앱 또는 월패드 화면에서 진행해주시기 바랍니다.'),
@@ -1154,6 +1157,11 @@ def direct_response(fn, room, direction, raw_text):
     # 제어 fn이 direct인 경우 — 모델이 잘못 예측한 경우 가능
     if fn == 'light_control' and direction:
         return control_response(fn, direction, room, None, raw_text)
+    # 가스/도어락 direct → query 응답 우선
+    if fn == 'gas_control':
+        if re.search(r'확인|상태|어때|어떻', raw_text):
+            return '현재 가스 밸브는 열려있습니다.'
+        return '네, 말씀해주세요.'
     return '네, 말씀해주세요.'
 
 
