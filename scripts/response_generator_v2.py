@@ -897,6 +897,14 @@ def control_response(fn, direction, room, value, raw_text, old_value=None):
     if re.search(r'모닝콜', raw_text):
         return '네, 모닝콜이 설정되었습니다.'
 
+    # Timer 보완: value가 추출 안 됐지만 raw_text에 "N분/시간 후에" 있는 경우
+    if not value or value[0] not in ('minute', 'hour', 'second'):
+        _m = re.search(r'(\d+)\s*(분|시간|초)\s*(?:후에?|뒤에?)', raw_text)
+        if _m:
+            _num = int(_m.group(1))
+            _umap = {'분': 'minute', '시간': 'hour', '초': 'second'}
+            value = (_umap[_m.group(2)], _num)
+
     # Timer (value + 시간)
     if value and direction in ('on', 'off', 'open', 'close') and value[0] in ('minute', 'hour', 'second'):
         vb = DIR_VERB_FUTURE.get(direction, '설정하겠습니다')
