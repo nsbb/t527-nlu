@@ -199,6 +199,13 @@ class DialogueStateTracker:
                 if _matched_verb in _vdir:
                     direction = _vdir[_matched_verb]
 
+        # multi-turn 온도 설정: prev=ac_control이면 heat_control 예측이어도 ac_control 유지
+        # "에어컨 켜줘" → "온도 23도로 설정해줘" should use ac_control not heat_control
+        if (self.is_active() and self.prev_fn == 'ac_control' and fn == 'heat_control'
+                and re.search(r'\d+\s*도', text)
+                and not re.search(r'난방|보일러|온돌|히터', text)):
+            fn = 'ac_control'
+
         # continuous: "조금/더/많이 올려/내려" fn 상속 (prev_value 없어도 fn만이라도 승계)
         if self.is_active() and self.prev_fn:
             m = re.search(r'^\s*(더|조금|조금만|살짝|많이)\s+(올려|내려|낮춰|줄여|높여|키워)', text)
