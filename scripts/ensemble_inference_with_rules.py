@@ -394,6 +394,11 @@ def apply_post_rules(preds, text):
             preds['exec_type'] = 'query_then_respond'
         preds['param_direction'] = 'none'
 
+    # vent_control dir=up (방향 조절 아닌 켜기 명령) → on 교정
+    if preds['fn'] == 'vent_control' and preds['param_direction'] == 'up':
+        if not re.search(r'올려|세게|강하게|강\s*풍|풍량|바람\s*세기', text):
+            preds['param_direction'] = 'on'
+
     return preds
 
 
