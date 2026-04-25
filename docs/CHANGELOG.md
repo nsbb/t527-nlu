@@ -54,6 +54,39 @@
 
 ---
 
+## v2-prod-r25~r36 (2026-04-26) — 안전/생활발화/지원불가기기/감사/작별 (CSV 무변화)
+
+**프로덕션 품질 추가 개선** — CSV 점수 변화 없음 (exact 212/219, usable 213/219 유지).
+
+### 수정 내용
+| 버그/위험 | 원인 | 수정 |
+|---------|------|------|
+| "화재 감지기 테스트" → 비상 경보 발동 (CRITICAL) | EMERGENCY_PATTERN에 "화재" 포함, SPECIFIC_PATTERNS보다 먼저 실행 | emergency check 직전에 테스트/점검 맥락 제외 조건 추가 |
+| "스프링클러 켜줘" → 외출 모드 응답 (WRONG) | security_mode on 분기 | 스프링클러 SPECIFIC_PATTERNS → 지원 불가 안내 |
+| "택배 왔어" → "도어락을 열었습니다" (DANGEROUS) | door_control open 분기 → 자동 개방 | "택배 도착 + 확인" 응답으로 변경 |
+| "방문자 있어" → 방범 모드 응답 (WRONG) | security_mode query 분기 | 방문자 SPECIFIC_PATTERNS → 로비 화면 안내 |
+| "목 말라" → "뉴스를 내립니다" (CRITICAL) | news_query + down 분기 | 목마름 SPECIFIC_PATTERNS → 음료 불가 안내 |
+| "배고파" → 편히 쉬세요 (약한 응답) | unknown 분기 fallback | 배고픔 SPECIFIC_PATTERNS → 음식 불가 안내 |
+| "자야겠다" → "조명을 켭니다" (WRONG) | 자→sleep→light_control on | 자야겠다 SPECIFIC_PATTERNS → 취침 응답 |
+| "조용히 해" → "집 상태를 내립니다" (WRONG) | home_info + down 분기 | 조용히 SPECIFIC_PATTERNS → 소음제어 불가 안내 |
+| "냉장고 온도" → 에어컨 설정 응답 (WRONG) | ac_control query 분기 | 냉장고 SPECIFIC_PATTERNS → 지원 불가 안내 |
+| "세탁기 돌려줘" → fallback 응답 (개선) | unknown | 세탁기/드라이어 SPECIFIC_PATTERNS → 지원 불가 안내 |
+| "와이파이 안 돼" → "조명 상태를 확인합니다" (WRONG) | light_control query 분기 | 와이파이/인터넷 SPECIFIC_PATTERNS → 네트워크 안내 |
+| "수고해/잘 있어" → fallback 응답 | unknown fallback | 작별 인사 SPECIFIC_PATTERNS 추가 |
+| "고마워/감사해요" → 소개 응답 (어색) | unknown greeting분기 | 감사 SPECIFIC_PATTERNS → "천만에요" |
+| "피곤해/졸려" → 편히 쉬세요 (기존 OK → 명시화) | unknown + 인체 fallback | SPECIFIC_PATTERNS로 이동 |
+
+### 검증
+- "화재 감지기 테스트" → "화재 감지기 테스트는 직접 기기에서 수행해주세요." ✓ (비상경보 미발동)
+- "화재 났어" → "⚠️ 비상 경보를 울렸습니다." ✓ (실제 화재 여전히 경보)
+- "택배 왔어" → "택배가 도착했군요. 공동현관 문을 열어드릴까요?" ✓
+- "목 말라" → "저는 음료 주문은 지원하지 않습니다." ✓
+- "자야겠다" → "편안한 밤 되세요." ✓
+- "냉장고 온도" → "냉장고 제어는 지원하지 않는 기능입니다." ✓
+- "와이파이 안 돼" → "네트워크 문제는 지원하지 않습니다." ✓
+
+---
+
 ## v2-prod-r19~r24 (2026-04-26) — 인사/굿나잇/차단기/방범/환기방향 (CSV 무변화)
 
 **프로덕션 품질 추가 개선** — CSV 점수 변화 없음 (exact 212/219, usable 213/219 유지).
