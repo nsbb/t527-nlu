@@ -54,6 +54,26 @@
 
 ---
 
+## v2-prod-r7~r12 (2026-04-26) — 부정명령 + AC query 오분류 + 방이름 (CSV 무변화)
+
+**프로덕션 품질 추가 개선** — CSV 점수 변화 없음 (exact 212/219, usable 213/219 유지).
+
+### 수정 내용
+| 버그 | 원인 | 수정 |
+|------|------|------|
+| "불 끄지 마" → "조명을 끕니다" (WRONG) | 부정 패턴 미처리 | generate_response_v2 최상단에 부정명령 감지 추가 |
+| "에어컨 끄지 마세요" → clarify (WRONG) | clarify guard가 SPECIFIC_PATTERNS보다 먼저 실행 | 부정 감지를 clarify guard 이전으로 이동 |
+| "에어컨 안 켜져 있어?" → light_control (WRONG) | NLU 오분류 | 에어컨 명시 + light_control → ac_control 규칙 추가 |
+| "아이 방/작은 방/우리 방" → room=none | ROOM_MAP에 공백 변형 미포함 | ROOM_MAP에 공백 변형 및 "우리 방" 추가 |
+
+### 검증
+- "불 끄지 마" → "네, 현재 상태를 유지하겠습니다." ✓
+- "에어컨 끄지 마세요" → "네, 현재 상태를 유지하겠습니다." ✓
+- "에어컨 안 켜져 있어?" → ac_control query ✓
+- "아이 방 난방 켜줘" → room=bedroom_sub ✓
+
+---
+
 ## v2-prod-r1~r6 (2026-04-26) — 프로덕션 품질 개선 (CSV 점수 영향 없음)
 
 **프로덕션 품질 추가 개선** — CSV 점수 변화 없음 (exact 212/219, usable 213/219 유지).
