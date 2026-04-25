@@ -349,7 +349,10 @@ class DialogueStateTracker:
             return 'room'
 
         # 짧은 확인/동의
-        if text_clean in ('응', '그래', '맞아', '네', '예', '좋아', '해줘', '그거'):
+        if text_clean in ('응', '그래', '맞아', '네', '예', '좋아', '해줘', '그거',
+                          '알겠어', '알겠습니다', '오케이', 'OK', 'ok', '그렇게', '그렇게 해줘',
+                          '그렇게 해', '부탁해', '부탁드려요', '그렇게 해주세요',
+                          '부탁', '부탁드려'):  # preprocess가 어미 제거하는 경우
             return 'confirm'
 
         return None
