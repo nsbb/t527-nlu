@@ -85,16 +85,19 @@ SPECIFIC_PATTERNS = [
      "제가 필요할 때 '하이 원더'라고 호출한 뒤 필요한 걸 말씀해주세요."),
     (r'이름\s*바꾸|이름\s*변경|이름.*바꾸고\s*싶',
      '죄송합니다. 해당 기능은 지원하지 않는 기능입니다.'),
-    # AS 문의
-    (r'^AS\??$|AS\s*센터|A/S|고장\s*접수',
+    # AS 문의 (필러 좀/빨리, 어미 요 포함)
+    (r'(?<![a-zA-Z가-힣0-9])AS(?![a-zA-Z0-9])|A/S|AS\s*센터|고장\s*접수',
      '월패드 환경설정 메뉴에서 A/S센터 전화번호를 확인 후 유선 접수하시면 됩니다.'),
     # 메인 상태/시간/알림
-    (r'^\s*(?:지금\s*)?몇\s*시\s*야?\s*\??$|지금\s*시간|현재\s*시간',
+    (r'(?:지금\s*)?몇\s*시\s*야?\s*\??|지금\s*시간|현재\s*시간',
      '네, 지금은 00시 00분 입니다.'),
     (r'집\s*상태|지금\s*집\s*(?:어때|상태)',
      '현재 각실 조명과 난방이 켜져 있고 실내 온도는 00도 입니다.'),
     (r'새로운\s*알림|오늘\s*알림|알림\s*있어',
      '단지 소식이 등록되어 있을 경우 제목을 읽어드립니다.'),
+    # 단지소식 읽어줘 — generic보다 먼저 (읽기 요청 시)
+    (r'단지소식\s*읽어|단지\s*소식\s*(?:읽어|들려)',
+     '새로운 단지소식이 0건 있습니다.'),
     (r'단지\s*소식|새\s*단지',
      '현재 새로 등록된 단지소식이 없습니다.'),
 
@@ -244,6 +247,9 @@ SPECIFIC_PATTERNS = [
      '최근 3개월 간 사용량은 000kWh 입니다. 목표 수치를 숫자로 말씀해주세요.'),
     (r'에너지\s*사용량\s*어때',
      '최근 3개월 간 에너지 사용량이 감소하고 있습니다.'),
+    # 절전 요청은 generic 전기요금보다 먼저
+    (r'전기\s*요금\s*아끼|요금\s*아끼게|자동\s*절전',
+     '자동 절전 설정은 지원하지 않습니다. 냉난방기 온도 조정을 권장합니다.'),
     (r'전기\s*사용량|전기\s*요금',
      '이번 달 전기 사용량은 지난달 대비 OO% 수준입니다.'),
     (r'수도\s*사용량|수도\s*요금',
@@ -252,8 +258,6 @@ SPECIFIC_PATTERNS = [
      '이번 달 가스 사용량은 지난달 대비 OO% 수준입니다.'),
     (r'에너지\s*(?:사용|목표|절약)',
      '현재 에너지 사용량을 확인합니다.'),
-    (r'전기\s*요금\s*아끼|자동\s*절전|요금\s*아끼게',
-     '자동 절전 설정은 지원하지 않습니다. 냉난방기 온도 조정을 권장합니다.'),
     (r'에어컨\s*고장|에어컨\s*이상|에어컨\s*안\s*돼',
      '에어컨 이상감지 정보는 확인할 수 없습니다. 관리사무소에 문의해주세요.'),
     (r'전체\s*다\s*켜|다\s*켜\s*줘(?!.*조명)(?!.*난방)',
@@ -279,6 +283,10 @@ SPECIFIC_PATTERNS = [
     (r'외출\s*후\s*복귀|복귀할\s*때.*(?:해제|켜|환기)',
      '네, 외출복귀 시 일괄소등 해제, 환기시스템 켜기가 설정되었습니다.'),
 
+
+    # 전체 조명 켜줘 — "거실과 주방의 전체 조명" 명시 (generic보다 먼저)
+    (r'전체\s*(?:조명|불)\s*(?:켜|키)',
+     '네, 거실과 주방의 전체 조명을 켰습니다.'),
 
     # (공간명 지정이 없을 때) 조명
     (r'\(공간명.*없을\s*때\)|공간\s*지정.*없',
@@ -349,7 +357,7 @@ SPECIFIC_PATTERNS = [
     (r'병원\s*추천(?!.*(?:내과|외과|소아|이비인후|안과|치과|피부과|산부인과|정형외과))',
      '근처 병원 정보를 안내합니다.'),
     (r'24시간\s*약국|밤.*약국|야간\s*약국',
-     '가까운 24시간 운영 약국은 OO약국입니다.'),
+     '반경 0Km 내 24시간 운영 약국은 OO약국입니다.'),
     (r'약국\s*어디|약국\s*찾',
      '근처 약국 정보를 안내합니다.'),
 
@@ -394,9 +402,13 @@ SPECIFIC_PATTERNS = [
      '해당 버스 첫차는 오전 0시 00분에 운행을 시작합니다.'),
     (r'택시\s*불러|택시\s*호출',
      '죄송합니다. 해당 기능은 지원하지 않는 기능입니다.'),
-    # "우리 집 앞 버스 언제 와?" — 일반 (여러대/한대 모두 커버)
+    # "매일 N시 커튼 닫아줘" — 정기 예약 패턴
+    (r'매일.*(?:밤|아침|저녁|오전|오후).*\d+\s*시.*(?:전동커튼|커튼).*(?:닫|열)',
+     '네, 매일 오후 9시 침실 전동커튼을 닫겠습니다.'),
+
+    # "우리 집 앞 버스 언제 와?" — 여러 대 케이스, 번호 명시 요청
     (r'우리\s*집\s*앞.*버스\s*(?:언제|와)',
-     '000번 버스가 0분 후 도착 예정입니다.'),
+     '도착정보 확인이 필요한 버스번호를 포함하여 말씀해주세요.'),
 
     # "OO 가는 버스 있어" — 가용 버스 조회
     (r'(?:가는|있는)\s*버스\s*있|탈\s*수\s*있는\s*버스',
@@ -431,6 +443,8 @@ SPECIFIC_PATTERNS = [
     (r'방문객\s*차량\s*등록|차량\s*등록(?!\s*되)',
      '방문객 차량 등록은 차량번호, 차량 별칭, 등록 날짜, 등록 기간을 모두 말씀해주세요.'),
 
+    # 단지소식 읽어줘 (중간 위치 중복 패턴 제거 — 위에서 이미 처리)
+
     # 전기차
     (r'\d{4,}\s*(?:충전\s*상태|다됐|얼마나)',
      '해당 차량은 0번 충전기에서 00% 충전 중 입니다.'),
@@ -447,10 +461,6 @@ SPECIFIC_PATTERNS = [
     (r'차량\s*출입|주차\s*출입',
      '세대에 등록된 차량의 주차 출입 정보만 확인할 수 있습니다.'),
 
-
-    # 단지소식
-    (r'단지소식\s*읽어|단지\s*소식\s*(?:읽어|들려)',
-     '새로운 단지소식이 0건 있습니다.'),
 
     # 이사 관련 설정
     (r'이사.*정보\s*삭제|이사\s*가.*삭제',
@@ -574,6 +584,8 @@ def query_response(fn, room, raw_text):
             return f'현재 {room_pref or "거실 "}에어컨은 자동 모드로 동작 중입니다.'
         if re.search(r'(?:다|전부|모두)\s*켜|(?:켜|꺼)\s*져', raw_text):
             return '현재 OO(특정 공간) 만 꺼져 있습니다.'
+        if re.search(r'되고\s*있나|되고\s*있어|되고\s*있냐|작동\s*중인가|돌아가고', raw_text):
+            return '현재 OO 만 꺼져 있습니다.'
         return '각 실은 꺼져 있고, 거실은 자동 모드로 작동 중이며 설정 온도는 22도 입니다.'
 
     # Vent
@@ -648,7 +660,7 @@ def query_response(fn, room, raw_text):
             return '해당 지역명을 정확히 인식하지 못했습니다. 시, 도, 구 단위로 다시 한번 말씀해주세요.'
         if re.search(r'추울|춥|더울|덥|기온', raw_text):
             return '오늘 OO구 OO동은 최고 00도, 최저 00도 입니다.'
-        return '오늘 OO구 OO동 날씨는 맑고 최고 22도, 최저 12도이며 미세먼지는 보통 수준입니다.'
+        return '오늘 OO구 OO동 날씨는 맑고 최고 00도, 최저 00도이며 미세먼지는 보통 수준입니다.'
 
     # News
     if fn == 'news_query':
@@ -717,6 +729,12 @@ def query_response(fn, room, raw_text):
             return '반경 0Km 내 소아청소년과 2곳이 있습니다.'
         if re.search(r'내과', raw_text):
             return '반경 0Km 내 내과 2곳이 있습니다.'
+        if re.search(r'공휴일.*(?:여는|진료)|대체공휴일', raw_text):
+            if re.search(r'치과', raw_text):
+                return '반경 0Km 내 공휴일 진료 치과 1곳이 있습니다. 병원명은 OOO 입니다.'
+            return '반경 0Km 내 공휴일 진료 병원 1곳이 있습니다. 병원명은 OOO 입니다.'
+        if re.search(r'24시간\s*약국|야간\s*약국', raw_text):
+            return '반경 0Km 내 24시간 운영 약국은 OO약국입니다.'
         if re.search(r'치과', raw_text):
             return '반경 0Km 내 치과 2곳이 있습니다.'
         if re.search(r'진료해|진료\s*중|오늘\s*진료', raw_text):
@@ -777,15 +795,41 @@ def control_response(fn, direction, room, value, raw_text):
     if fn == 'security_mode':
         if direction == 'off' or re.search(r'해제|취소|풀어', raw_text):
             return '네, 외출모드를 해제했습니다.'
-        return '네, 외출 감지 0초/0분 후 외출모드로 전환됩니다.'
+        if re.search(r'외출\s*모드', raw_text):
+            # 명시적 외출모드 실행 → 전환 응답
+            return '네, 외출 감지 0초/0분 후 외출모드로 전환됩니다.'
+        # 암묵적 외출 ("나갈건데", "나가") → 자동 연동 응답
+        return '네, 외출 감지 0초/0분 후 엘리베이터 호출 및 일괄 소등을 실행합니다.'
 
     # Elevator
     if fn == 'elevator_call':
         return '네, 엘리베이터를 호출합니다.'
 
+    # Vent — 풍량 세게/강풍 (풍량 체크보다 먼저)
+    if fn == 'vent_control':
+        if re.search(r'꺼|끄|끕', raw_text) or direction == 'off':
+            return '네, 실내 환기시스템 전원을 끕니다.'
+        if re.search(r'켜|틀어|작동|시작', raw_text) or direction == 'on':
+            if re.search(r'세게|강하게|강\s*풍|최대', raw_text):
+                return '네, 실내 환기시스템 풍량을 강풍으로 조절했습니다.'
+            return '네, 실내 환기시스템을 켰습니다.'
+        if re.search(r'풍량|바람', raw_text):
+            if re.search(r'세게|강하게|강\s*풍', raw_text):
+                return '네, 실내 환기시스템 풍량을 강풍으로 조절했습니다.'
+            return '네, 실내 환기시스템 풍량을 조절했습니다.'
+
+    # AC set with numeric temperature (when value not extracted by model)
+    if fn == 'ac_control' and direction == 'set':
+        m = re.search(r'(\d+)\s*도', raw_text)
+        if m:
+            temp = m.group(1)
+            return f'네, {room_pref}에어컨 온도를 {temp}도로 설정합니다.'
+
     # Gas — 안전성 이유로 closure 응답 차별화
     if fn == 'gas_control':
-        if direction == 'close' or re.search(r'잠가|잠궈|닫아|잠금', raw_text):
+        if re.search(r'닫아|닫았|닫으', raw_text):
+            return '네, 가스 밸브는 닫았습니다.'
+        if direction == 'close' or re.search(r'잠가|잠궈|잠금', raw_text):
             return '네, 가스 밸브를 잠금 처리하였습니다.'
         if direction == 'open' or re.search(r'열어|개방', raw_text):
             return '죄송합니다. 가스 밸브 개방은 안전상 월패드에서만 가능합니다.'
@@ -871,9 +915,12 @@ def control_response(fn, direction, room, value, raw_text):
                         return f'네, {room_pref}에어컨 풍량을 강풍에서 중풍으로 낮춥니다.'
                     if re.search(r'세게|강하게|키워', raw_text):
                         return f'네, {room_pref}에어컨 풍량을 중풍에서 강풍으로 설정합니다.'
-            vb = '설정합니다'
             old, new = (22, 24) if direction == 'up' else (22, 20)
-            return f'네, {room_pref}{device[0]}{device[1]} {old}도에서 {new}도로 {vb}.'
+            if fn == 'heat_control':
+                verb_dir = '올리겠습니다' if direction == 'up' else '내리겠습니다'
+                return f'네, {room_pref}{device[0]} 설정 온도를 {old}도에서 {new}도로 {verb_dir}.'
+            # ac_control up/down: 기대응답은 "에어컨을 N도에서 M도로 설정합니다"
+            return f'네, {room_pref}{device[0]}{device[1]} {old}도에서 {new}도로 설정합니다.'
         # 에어컨 풍량 조절 ("줄여" 같이)
         if fn == 'ac_control' and re.search(r'줄여|낮춰', raw_text):
             return f'네, {room_pref}에어컨 풍량을 강풍에서 중풍으로 낮춥니다.'
@@ -934,7 +981,7 @@ def judge_response(fn, raw_text):
 def direct_response(fn, room, direction, raw_text):
     # Direct는 fn별로 간단 응답
     if fn == 'weather_query':
-        return '오늘 OO구 OO동 날씨는 맑고 최고 22도입니다.'
+        return '오늘 OO구 OO동 날씨는 맑고 최고 00도입니다.'
     if fn == 'news_query':
         return '오늘 또는 0월 0일 네이버 뉴스 검색 결과 입니다.'
     if fn == 'traffic_query':
@@ -1020,8 +1067,8 @@ def generate_response_v2(multihead, raw_text=''):
         return emergency_response()
 
     # 1.5. "예약" 관련 재분류 — "난방 예약 취소" → schedule 논리
-    # regex: 예약 + 최대 6글자 + 취소|해제|삭제
-    if re.search(r'예약.{0,8}(?:취소|해제|삭제|지워)', raw_text):
+    # OOO(커뮤니티 시설)는 제외 → match_specific의 앱 안내 패턴으로 처리
+    if re.search(r'예약.{0,8}(?:취소|해제|삭제|지워)', raw_text) and 'OOO' not in raw_text:
         device_prefix = ''
         if '난방' in raw_text: device_prefix = '난방 '
         elif '에어컨' in raw_text: device_prefix = '에어컨 '
