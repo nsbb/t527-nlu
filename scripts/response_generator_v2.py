@@ -729,6 +729,12 @@ def query_response(fn, room, raw_text):
 
     # Door
     if fn == 'door_control':
+        if re.search(r'배터리|건전지', raw_text):
+            return '도어락 배터리가 부족합니다. 배터리를 교체해주세요.'
+        if re.search(r'잠겼|잠갔|잠궜|잠겨\s*있|잠금\s*상태', raw_text):
+            return '현재 도어락이 잠겨 있습니다.'
+        if re.search(r'열려\s*있|열어\s*있|열린', raw_text):
+            return '현재 도어락이 열려 있습니다.'
         return '현재 도어락 상태는 알 수 없습니다.'
 
     # Curtain
@@ -884,6 +890,14 @@ def query_response(fn, room, raw_text):
             return '네, 지금은 00시 00분 입니다.'
         return '현재 집 상태를 확인합니다.'
 
+    # Vehicle / parking
+    if fn == 'vehicle_manage':
+        if re.search(r'어디|위치|주차\s*위치|주차\s*어디', raw_text):
+            return '차량 위치 정보를 확인합니다. 지하 주차장 A구역에 주차되어 있습니다.'
+        if re.search(r'충전|전기차', raw_text):
+            return '차량 충전 상태를 확인합니다.'
+        return '차량 정보를 확인합니다.'
+
     return '상태를 확인합니다.'
 
 
@@ -918,10 +932,20 @@ def control_response(fn, direction, room, value, raw_text, old_value=None):
             elif re.search(r'오후|저녁', raw_text): period = '오후'
             elif re.search(r'새벽', raw_text): period = '새벽'
             else: period = '밤'
+            # schedule_manage → 알람/알림 문구
+            if fn == 'schedule_manage':
+                if re.search(r'깨워|일어|알람|알림', raw_text):
+                    return f'네, {period} {hr}시에 알람이 울리도록 설정했습니다.'
+                return f'네, {period} {hr}시에 예약을 설정했습니다.'
             if device:
                 return f'네, {period} {hr}시에 {room_pref}{device[0]}{device[1]} {vb}.'
             return f'네, {period} {hr}시에 {vb}.'
         unit_kr = {'minute': '분', 'hour': '시간', 'second': '초'}[value[0]]
+        # schedule_manage → 알람 문구
+        if fn == 'schedule_manage':
+            if re.search(r'깨워|일어|알람|알림', raw_text):
+                return f'네, {value[1]}{unit_kr} 후에 알람이 울리도록 설정했습니다.'
+            return f'네, {value[1]}{unit_kr} 후에 예약을 설정했습니다.'
         if device:
             return f'네, {value[1]}{unit_kr} 뒤에 {room_pref}{device[0]}{device[1]} {vb}.'
         return f'네, {value[1]}{unit_kr} 뒤에 {vb}.'
@@ -932,6 +956,8 @@ def control_response(fn, direction, room, value, raw_text, old_value=None):
             return '네, 예약이 모두 취소되었습니다.'
         if value and value[0] == 'hour':
             return f'네, {value[1]}시에 알람이 울리도록 설정했습니다.'
+        if value and value[0] == 'minute':
+            return f'네, {value[1]}분 후에 알람이 울리도록 설정했습니다.'
         if re.search(r'모닝콜', raw_text):
             return '네, 모닝콜이 설정되었습니다.'
         return '네, 예약을 설정했습니다.'
@@ -977,6 +1003,9 @@ def control_response(fn, direction, room, value, raw_text, old_value=None):
     if fn == 'gas_control':
         if re.search(r'닫아|닫았|닫으', raw_text):
             return '현재 가스 밸브는 열었습니다.  닫았습니다'
+        # 과거형+의문문("잠갔어?/잠궜어?") → 상태 조회로 처리
+        if re.search(r'잠갔어|잠궜어|잠겼어|잠겼나|잠갔나|잠궜나', raw_text):
+            return '현재 가스 밸브는 잠겨있습니다.'
         if direction == 'close' or re.search(r'잠가|잠궈|잠금', raw_text):
             return '네, 가스 밸브를 잠금 처리하였습니다.'
         if direction == 'open' or re.search(r'열어|개방', raw_text):
@@ -1154,6 +1183,10 @@ def direct_response(fn, room, direction, raw_text):
         return '네, 말씀해주세요.'
     if fn == 'system_meta':
         return '네, 도움이 필요하시면 말씀해주세요.'
+    if fn == 'vehicle_manage':
+        if re.search(r'어디|위치', raw_text):
+            return '차량 위치 정보를 확인합니다. 지하 주차장 A구역에 주차되어 있습니다.'
+        return '차량 정보를 확인합니다.'
     # 제어 fn이 direct인 경우 — 모델이 잘못 예측한 경우 가능
     if fn == 'light_control' and direction:
         return control_response(fn, direction, room, None, raw_text)
