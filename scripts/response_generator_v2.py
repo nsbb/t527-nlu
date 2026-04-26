@@ -914,6 +914,14 @@ def query_response(fn, room, raw_text):
             return '차량 충전 상태를 확인합니다.'
         return '차량 정보를 확인합니다.'
 
+    # System meta queries (service, AS, settings)
+    if fn == 'system_meta':
+        if re.search(r'서비스\s*신청|A/S|AS|접수|신청', raw_text):
+            return '월패드 환경설정 메뉴에서 A/S센터 전화번호를 확인 후 유선 접수하시면 됩니다.'
+        if re.search(r'사용법|가이드|도움말', raw_text):
+            return '네, 월패드 메인 화면의 가이드에서 기기 제어 및 조회 방법을 확인하실 수 있습니다.'
+        return '필요한 도움말이나 설정은 월패드 환경설정 메뉴에서 확인하실 수 있습니다.'
+
     return '상태를 확인합니다.'
 
 
@@ -1144,6 +1152,9 @@ def control_response(fn, direction, room, value, raw_text, old_value=None):
 # ─────────────────────────────────────────────────────────────
 
 def judge_response(fn, raw_text):
+    # 외출 판단 + security_mode 연동
+    if fn == 'security_mode':
+        return '현재 기상 및 대기질 정보를 고려할 때 외출하기 좋습니다. 외출 모드로 전환할까요?'
     # 옷차림 (아이 옷 우선)
     if re.search(r'아이\s*옷|애\s*옷|어린이\s*옷', raw_text):
         return '오늘 OO구 OO동 날씨는 일교차가 커서 가벼운 겉옷을 함께 준비하는 것이 좋겠습니다.'
