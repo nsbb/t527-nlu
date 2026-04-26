@@ -548,6 +548,10 @@ SPECIFIC_PATTERNS = [
      '죄송합니다. 현재 병원 예약 기능은 지원하지 않습니다.'),
 
     # 커뮤니티 — 시설별 구체 응답
+    (r'(?:스크린\s*)?골프\s*(?:예약|치고\s*싶|하고\s*싶|하려)',
+     '골프장 예약은 입주민 전용 앱 또는 월패드 화면에서 진행해주시기 바랍니다.'),
+    (r'헬스장\s*(?:예약|가고\s*싶|하고\s*싶|이용)',
+     '헬스장 예약은 입주민 전용 앱 또는 월패드 화면에서 진행해주시기 바랍니다.'),
     (r'골프장\s*예약(?!\s*(?:취소|변경))',
      '골프장 예약은 입주민 전용 앱 또는 월패드 화면에서 진행해주시기 바랍니다.'),
     (r'수영장\s*예약(?!\s*(?:취소|변경))',
@@ -1091,6 +1095,9 @@ def control_response(fn, direction, room, value, raw_text, old_value=None):
         if '회전' in raw_text:
             return f'네, {room_pref}에어컨 풍향을 고정에서 회전으로 변경합니다.'
 
+    # 소등 (direction=none이지만 "소등" 키워드 → 끄기)
+    if fn == 'light_control' and re.search(r'소등', raw_text):
+        return f'네, {room_pref}조명을 끕니다.'
     # 조명 밝기 모드 (은은하게/아늑하게)
     if fn == 'light_control' and re.search(r'은은|아늑|분위기|영화\s*보기|간접|무드', raw_text):
         return f'네, {room_pref}조명을 조절했습니다'
@@ -1111,6 +1118,11 @@ def control_response(fn, direction, room, value, raw_text, old_value=None):
         if value and value[0] == 'temperature':
             vnum = value[1]
             from_temp = old_value[1] if old_value and old_value[0] == 'temperature' else 22
+            # 작은 값(≤5도)은 delta로 해석 — "1도 올려줘" = 22→23
+            if vnum <= 5:
+                new_temp = from_temp + vnum if direction == 'up' else from_temp - vnum
+                verb = '올리겠습니다' if direction == 'up' else '내리겠습니다'
+                return f'네, {room_pref}{device[0]} 설정 온도를 {from_temp}도에서 {new_temp}도로 {verb}.'
             verb = '올리겠습니다' if direction == 'up' else '내리겠습니다'
             return f'네, {room_pref}{device[0]} 설정 온도를 {from_temp}도에서 {vnum}도로 {verb}.'
         # 온도 타입 기기는 "N도에서 M도로" 기본 템플릿 (기준 22도)
@@ -1222,6 +1234,11 @@ def direct_response(fn, room, direction, raw_text):
         return '차량 정보를 확인합니다.'
     if fn == 'vent_control':
         return '네, 실내 환기시스템을 켰습니다.'
+    # 소등 → 조명 끄기
+    if fn == 'light_control' and re.search(r'소등', raw_text):
+        room_kr = ROOM_KR.get(room, '')
+        room_p = f'{room_kr} ' if room_kr else ''
+        return f'네, {room_p}조명을 끕니다.'
     # 제어 fn이 direct인 경우 — 모델이 잘못 예측한 경우 가능
     if fn == 'light_control' and direction:
         return control_response(fn, direction, room, None, raw_text)
