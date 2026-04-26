@@ -1418,9 +1418,11 @@ def control_response(fn, direction, room, value, raw_text, old_value=None):
     if fn in ('ac_control', 'heat_control', 'vent_control') and direction == 'close':
         direction = 'off'
 
-    # Timer 보완: value가 추출 안 됐지만 raw_text에 "N분/시간 후에" 있는 경우
+    # Timer 보완: value가 추출 안 됐지만 raw_text에 "N분/시간 후에" 또는 "타이머 N시간/분" 있는 경우
     if not value or value[0] not in ('minute', 'hour', 'second'):
         _m = re.search(r'(\d+)\s*(분|시간|초)\s*(?:후에?|뒤에?)', raw_text)
+        if not _m:
+            _m = re.search(r'타이머\s*(\d+)\s*(분|시간|초)', raw_text)
         if _m:
             _num = int(_m.group(1))
             _umap = {'분': 'minute', '시간': 'hour', '초': 'second'}
@@ -1525,6 +1527,12 @@ def control_response(fn, direction, room, value, raw_text, old_value=None):
 
     # Curtain (진행형) — "멈춰" 있으면 stop 우선
     if fn == 'curtain_control':
+        # 퍼센트 지정 (블라인드/커튼 N%)
+        _cm = re.search(r'(\d+)\s*(?:%|퍼센트)', raw_text)
+        if _cm:
+            return f'네, {room_pref}전동커튼을 {_cm.group(1)}% 개방합니다.'
+        if re.search(r'절반|반쯤', raw_text):
+            return f'네, {room_pref}전동커튼을 50% 개방합니다.'
         if re.search(r'멈춰|멈춰줘|중단|stop', raw_text):
             return f'네 {room_pref}전동커튼 열림을 중단시켰습니다'
         vm = {'open': '열고 있습니다', 'close': '닫고 있습니다',
@@ -1552,11 +1560,11 @@ def control_response(fn, direction, room, value, raw_text, old_value=None):
                 suffix = '으로' if kr == '송풍' else ' 모드로'
                 return f'네, {room_pref}{device[0] if device else "에어컨"}을 {kr}{suffix} 설정합니다.'
 
-    # 풍량 조절 (param_type='speed')
-    if re.search(r'풍량|바람\s*세|세게|강\s*풍|약\s*풍', raw_text):
-        if '강' in raw_text or '세게' in raw_text:
+    # 풍량/풍속 조절 (param_type='speed')
+    if re.search(r'풍량|풍속|바람\s*세|세게|강\s*풍|약\s*풍', raw_text):
+        if re.search(r'강|세게|세게\s*해', raw_text):
             return f'네, {room_pref}에어컨 풍량을 강풍으로 설정합니다.'
-        if '약' in raw_text or '줄여' in raw_text:
+        if re.search(r'약|중|줄여|낮춰', raw_text):
             return f'네, {room_pref}에어컨 풍량을 약풍으로 조절했습니다.'
         return f'네, {room_pref}에어컨 풍량을 조절했습니다.'
 
@@ -1576,8 +1584,14 @@ def control_response(fn, direction, room, value, raw_text, old_value=None):
     # 소등 (direction=none이지만 "소등" 키워드 → 끄기)
     if fn == 'light_control' and re.search(r'소등', raw_text):
         return f'네, {room_pref}조명을 끕니다.'
-    # 조명 밝기 모드 (은은하게/아늑하게)
+    # 조명 밝기 모드 (은은하게/아늑하게/분위기)
     if fn == 'light_control' and re.search(r'은은|아늑|분위기|영화\s*보기|간접|무드', raw_text):
+        if re.search(r'분위기', raw_text):
+            return f'네, {room_pref}조명을 분위기 모드로 설정합니다.'
+        if re.search(r'무드', raw_text):
+            return f'네, {room_pref}무드 조명을 켭니다.'
+        if re.search(r'영화', raw_text):
+            return f'네, {room_pref}조명을 시네마 모드로 설정합니다.'
         return f'네, {room_pref}조명을 조절했습니다'
     # 조명 최대/최소
     if fn == 'light_control' and re.search(r'최대|최대로|환하게', raw_text):
