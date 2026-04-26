@@ -207,6 +207,8 @@ SPECIFIC_PATTERNS = [
      '환기 장치에서 소리가 나면 전원을 끄고 A/S를 신청해주세요.'),
     (r'난방\s*(?:물\s*소리|꼴꼴|탁탁|이상한\s*소리)',
      '난방 배관 소리가 발생할 수 있습니다. 지속되면 관리사무소에 점검을 요청해주세요.'),
+    (r'(?:보일러|난방)\s*(?:에서|에)\s*(?:소리|이상한\s*소리|뚝뚝|덜덜)',
+     '난방 배관 소리가 발생할 수 있습니다. 지속되면 관리사무소에 점검을 요청해주세요.'),
     # 조명 점멸 이상 — light_control dir=off 오분류 방지 (꺼졌다/깜빡임 → 고장 안내)
     (r'(?:조명|불|전등|전구)\s*(?:이?\s*)?(?:자꾸|계속|갑자기|저절로)?\s*(?:깜빡|깜빡여|깜빡이|점멸)',
      '조명 점멸 현상은 전구 수명이 다 됐거나 배선 문제일 수 있습니다. 관리사무소에 점검을 요청해주세요.'),
@@ -233,6 +235,8 @@ SPECIFIC_PATTERNS = [
      '꽃샘추위 기간에는 갑작스러운 기온 변화가 있을 수 있습니다. 오늘 최저 00도까지 내려갈 수 있으니 외투를 준비하세요.'),
     (r'장마철|장마\s*(?:시즌|왔어|시작)',
      '장마철에는 습도가 높아집니다. 제습 모드 또는 에어컨 제습 기능을 활용해보세요.'),
+    (r'환절기',
+     '환절기에는 낮과 밤의 기온 차이가 크니 건강 관리에 유의하세요. 실내 온도를 적절히 유지해드릴까요?'),
     # 실내 적정 온도 (현재 온도 쿼리 "몇 도야/몇 도야?" 는 제외 — 실내온도 패턴이 처리)
     (r'적정\s*온도|권장\s*온도',
      '여름 냉방 적정 온도는 26도, 겨울 난방 적정 온도는 20도를 권장합니다. 설정해드릴까요?'),
@@ -1793,7 +1797,7 @@ def control_response(fn, direction, room, value, raw_text, old_value=None):
 
     # Timer 보완: value가 추출 안 됐지만 raw_text에 "N분/시간 후에" 또는 "타이머 N시간/분" 있는 경우
     if not value or value[0] not in ('minute', 'hour', 'second'):
-        _m = re.search(r'(\d+)\s*(분|시간|초)\s*(?:후에?|뒤에?)', raw_text)
+        _m = re.search(r'(\d+)\s*(분|시간|초)\s*(?:후에?|뒤에?|있다가?)', raw_text)
         if not _m:
             _m = re.search(r'타이머\s*(\d+)\s*(분|시간|초)', raw_text)
         if _m:
@@ -1802,7 +1806,7 @@ def control_response(fn, direction, room, value, raw_text, old_value=None):
             value = (_umap[_m.group(2)], _num)
 
     # Timer (value + 시간) — dir=none + 타이머 키워드 포함 시도 ("에어컨 타이머 2시간 설정" dir=none 포함)
-    _has_timer_kw = re.search(r'타이머|후에?|뒤에?', raw_text)
+    _has_timer_kw = re.search(r'타이머|후에?|뒤에?|있다가?', raw_text)
     if value and (direction in ('on', 'off', 'open', 'close', 'set') or (direction == 'none' and _has_timer_kw)) and value[0] in ('minute', 'hour', 'second'):
         vb = DIR_VERB_FUTURE.get(direction, '설정하겠습니다')
         # 밤/오전/오후/아침/저녁/새벽 + N시 → time-of-day, not duration ("N시간 뒤에" 오해 방지)
