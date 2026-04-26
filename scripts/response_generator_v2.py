@@ -703,6 +703,15 @@ SPECIFIC_PATTERNS = [
      '거실 에어컨은 현재 약풍으로 동작하고 있습니다.'),
     (r'(?:바람\s*방향|풍향)\s*(?:뭐|어때|알려)',
      '현재 에어컨 풍향은 회전 모드로 동작하고 있습니다.'),
+    # 에어컨 루버 제어
+    (r'에어컨\s*루버\s*(?:위|상|상향|올려)',
+     '네, 에어컨 루버를 위쪽으로 조절합니다.'),
+    (r'에어컨\s*루버\s*(?:아래|하|하향|내려)',
+     '네, 에어컨 루버를 아래쪽으로 조절합니다.'),
+    (r'에어컨\s*루버\s*(?:좌우|수평|자동|회전|스윙)',
+     '네, 에어컨 루버를 자동 회전으로 설정합니다.'),
+    (r'에어컨\s*(?:바람\s*방향|풍향)\s*(?:바꿔|변경|조절)',
+     '네, 에어컨 바람 방향을 조절합니다.'),
 
     # 환기 세부
     # 에어컨 필터 먼저 (더 구체적)
@@ -1620,12 +1629,34 @@ def control_response(fn, direction, room, value, raw_text, old_value=None):
 
     # Vent — 풍량 세게/강풍 (풍량 체크보다 먼저)
     if fn == 'vent_control':
+        if re.search(r'공기청정기', raw_text):
+            if re.search(r'꺼|끄|끕', raw_text) or direction == 'off':
+                return '네, 공기청정기를 끕니다.'
+            if re.search(r'최대|강풍|세게', raw_text):
+                return '네, 공기청정기 풍량을 최대로 설정합니다.'
+            if re.search(r'풍량|바람|속도', raw_text):
+                return '네, 공기청정기 풍량을 조절했습니다.'
+            return '네, 공기청정기를 켰습니다.'
         if re.search(r'꺼|끄|끕', raw_text) or direction == 'off':
             return '네, 실내 환기시스템 전원을 끕니다.'
         if re.search(r'켜|틀어|작동|시작', raw_text) or direction == 'on':
             if re.search(r'세게|강하게|강\s*풍|최대', raw_text):
                 return '네, 실내 환기시스템 풍량을 강풍으로 조절했습니다.'
             return '네, 실내 환기시스템을 켰습니다.'
+        if re.search(r'공기청정기', raw_text):
+            if re.search(r'꺼|끄', raw_text) or direction == 'off':
+                return '네, 공기청정기를 끕니다.'
+            if re.search(r'최대|강풍|세게', raw_text):
+                return '네, 공기청정기 풍량을 최대로 설정합니다.'
+            if re.search(r'풍량|바람|속도', raw_text):
+                return '네, 공기청정기 풍량을 조절했습니다.'
+            return '네, 공기청정기를 켰습니다.'
+        if re.search(r'강\s*풍|최강|최대', raw_text):
+            return '네, 실내 환기시스템 풍량을 강풍으로 조절했습니다.'
+        if re.search(r'약\s*풍|약하게|약하게', raw_text):
+            return '네, 실내 환기시스템 풍량을 약풍으로 조절했습니다.'
+        if re.search(r'중\s*풍|중간', raw_text):
+            return '네, 실내 환기시스템 풍량을 중풍으로 조절했습니다.'
         if re.search(r'풍량|바람', raw_text):
             if re.search(r'세게|강하게|강\s*풍', raw_text):
                 return '네, 실내 환기시스템 풍량을 강풍으로 조절했습니다.'
@@ -1983,7 +2014,7 @@ def generate_response_v2(multihead, raw_text=''):
     # 단, "팬 속도" / "풍속" 명령은 SPECIFIC_PATTERNS에서 처리하므로 제외
     if room == 'none' and exec_t == 'control_then_confirm' and direction in ('up', 'down'):
         if fn in ('heat_control', 'ac_control') and not re.search(r'전체|모든|다|전부', raw_text):
-            if not re.search(r'팬|풍속|풍량|바람\s*세|바람\s*속|속도', raw_text):
+            if not re.search(r'팬|풍속|풍량|바람\s*세|바람\s*속|속도|루버|방향', raw_text):
                 return clarify_response(fn, raw_text)
 
     # 2. 특수 패턴 매칭 (NO_MATCH이면 일반 처리)
