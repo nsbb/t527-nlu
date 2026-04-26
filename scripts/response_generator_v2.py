@@ -201,7 +201,7 @@ SPECIFIC_PATTERNS = [
     (r'넘어졌|넘어졌어|다쳤|부상\s*당|다리\s*(?:다쳐|부러|아파)',
      '괜찮으신가요? 부상이 심하면 119에 연락하세요. 경비실 연결이 필요하시면 "경비실 연결"이라고 말씀해주세요.'),
     # 기기 냄새/소리 이상 → A/S 안내 (기기 제어 오분류 방지)
-    (r'에어컨\s*(?:냄새|이상한\s*냄새)',
+    (r'에어컨\s*(?:에서\s*)?(?:냄새|이상한\s*냄새)',
      '에어컨에서 냄새가 나면 필터 청소 또는 A/S를 신청해주세요. 연락처는 월패드 환경설정에서 확인하실 수 있습니다.'),
     (r'(?:환기|환풍기)\s*(?:소리|이상한\s*소리|덜덜|삐걱)',
      '환기 장치에서 소리가 나면 전원을 끄고 A/S를 신청해주세요.'),
@@ -1898,12 +1898,17 @@ def control_response(fn, direction, room, value, raw_text, old_value=None):
                 return '네, 실내 환기시스템 풍량을 강풍으로 조절했습니다.'
             return '네, 실내 환기시스템 풍량을 조절했습니다.'
 
-    # AC set with numeric temperature (when value not extracted by model)
+    # AC/heat set with numeric temperature (when value not extracted by model)
     if fn == 'ac_control' and direction == 'set':
         m = re.search(r'(\d+)\s*도', raw_text)
         if m:
             temp = m.group(1)
             return f'네, {room_pref}에어컨 온도를 {temp}도로 설정합니다.'
+    if fn == 'heat_control' and direction == 'set':
+        m = re.search(r'(\d+)\s*도', raw_text)
+        if m:
+            temp = m.group(1)
+            return f'네, {room_pref}난방을 {temp}도로 설정합니다.'
 
     # Gas — 안전성 이유로 closure 응답 차별화
     if fn == 'gas_control':
