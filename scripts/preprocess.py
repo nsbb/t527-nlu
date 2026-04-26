@@ -34,6 +34,14 @@ def kr_num_to_arabic(text):
         num = tens.get(m.group(1), 20) + ones.get(m.group(2), 0)
         text = text[:m.start()] + f'{num}도' + text[m.end():]
 
+    # "이팔도 / 이구도" 등 한자식 2자리 온도 표기 (이팔=28, 이구=29 등)
+    m = re.search(r'(일|이|삼)(일|이|삼|사|오|육|칠|팔|구)\s*도', text)
+    if m:
+        digit_map = {'일': 1, '이': 2, '삼': 3, '사': 4, '오': 5, '육': 6, '칠': 7, '팔': 8, '구': 9}
+        num = digit_map.get(m.group(1), 0) * 10 + digit_map.get(m.group(2), 0)
+        if 10 <= num <= 39:  # 합리적 온도 범위만 변환
+            text = text[:m.start()] + f'{num}도' + text[m.end():]
+
     return text
 
 
