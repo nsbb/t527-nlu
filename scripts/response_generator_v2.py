@@ -468,8 +468,16 @@ SPECIFIC_PATTERNS = [
      '오늘 OO구 OO동 천둥·번개 예보는 없습니다.'),
     (r'황사\s*(?:어때|심해|있어|수준)|황사\s*정보',
      '오늘 OO구 OO동 황사 농도는 보통 수준입니다.'),
-    (r'전기\s*절약\s*(?:방법|팁|어떻게|어떻)',
+    (r'전기\s*절약\s*(?:방법|팁|어떻게|어떻)|에너지\s*절약\s*(?:방법|팁|알려)',
      '에너지 절약을 위해 사용하지 않는 조명과 난방을 꺼주세요. 에너지 모니터링은 월패드 에너지 메뉴에서 확인하실 수 있습니다.'),
+    # 에어컨 에너지 절약 모드 (energy_query 오분류 방지)
+    (r'에어컨\s*(?:에너지\s*절약|절전|에코)\s*모드',
+     '네, 에어컨을 절전 모드로 설정합니다.'),
+    # 에어컨 팬/바람 속도 조절 (dir=up 오분류 방지)
+    (r'에어컨\s*(?:팬|바람|풍속|풍량)\s*(?:속도\s*)?(?:낮춰|줄여|약하게|낮게)',
+     '네, 에어컨 팬 속도를 낮추겠습니다.'),
+    (r'에어컨\s*(?:팬|바람|풍속|풍량)\s*(?:속도\s*)?(?:높여|올려|세게|강하게)',
+     '네, 에어컨 팬 속도를 높이겠습니다.'),
 
     # 기기 고장 의심 (단, 기기명+고장은 별도 전용 패턴에서 처리 — "것 같아" 어미만 잡음)
     (r'고장\s*난\s*것\s*(?:같아|같은\s*것\s*같)|뭔가\s*고장\s*난',
@@ -668,6 +676,13 @@ SPECIFIC_PATTERNS = [
     # 난방 예약
     (r'난방\s*예약\s*(?:있|취소|해제)',
      None),  # → 아래에서 처리
+    (r'(?:난방|보일러)\s*예약.{0,10}(?:\d+시|\d+분|\d+:\d+|아침|저녁|밤|낮)',
+     '네, 말씀하신 시간에 난방이 시작되도록 예약하겠습니다.'),
+    # 보일러 온수 특화
+    (r'(?:보일러|난방)\s*온수\s*(?:만\s*)?(?:켜|틀|on)',
+     '네, 보일러 온수를 켭니다.'),
+    (r'(?:보일러|난방)\s*온수\s*(?:꺼|off)',
+     '네, 보일러 온수를 끕니다.'),
     (r'난방\s*외출\s*모드',
      '네, 전체 난방 외출모드 운영시간이 저장되었습니다.'),
 
@@ -936,7 +951,7 @@ SPECIFIC_PATTERNS = [
     (r'에너지\s*사용량\s*어때',
      '최근 3개월 간 에너지 사용량이 감소하고 있습니다.'),
     # 태양광/에너지 리포트
-    (r'태양광\s*(?:발전량|얼마|현황|어때)',
+    (r'태양광\s*(?:발전|발전량|얼마|현황|어때)',
      '이번 달 태양광 발전량은 OOkWh이며 OOO원 절약되었습니다.'),
     (r'에너지\s*(?:리포트|보고서|분석|현황)\s*(?:보여|알려)',
      '이번 달 전기 OOOkWh, 가스 OO㎥, 수도 OO㎥ 사용하였습니다. 월패드 에너지 메뉴에서 상세 리포트를 확인하세요.'),
@@ -1546,8 +1561,8 @@ def control_response(fn, direction, room, value, raw_text, old_value=None):
             _umap = {'분': 'minute', '시간': 'hour', '초': 'second'}
             value = (_umap[_m.group(2)], _num)
 
-    # Timer (value + 시간)
-    if value and direction in ('on', 'off', 'open', 'close') and value[0] in ('minute', 'hour', 'second'):
+    # Timer (value + 시간) — dir=set도 포함 ("에어컨 타이머 30분" → 타이머 설정 응답)
+    if value and direction in ('on', 'off', 'open', 'close', 'set') and value[0] in ('minute', 'hour', 'second'):
         vb = DIR_VERB_FUTURE.get(direction, '설정하겠습니다')
         # 밤/오전/오후/아침/저녁/새벽 + N시 → time-of-day, not duration ("N시간 뒤에" 오해 방지)
         if value[0] == 'hour' and re.search(r'(?:밤|오전|오후|아침|저녁|새벽)\s*\d+\s*시', raw_text):
@@ -1965,9 +1980,11 @@ def generate_response_v2(multihead, raw_text=''):
 
     # "공간명 없음" 판정 — 우리 모델이 CTC/up 예측하지만 실제로 공간 없으면 clarify
     # "난방 올려줘" / "에어컨 낮춰줘" (room=none이고 '전체'/'모든' 없음)
+    # 단, "팬 속도" / "풍속" 명령은 SPECIFIC_PATTERNS에서 처리하므로 제외
     if room == 'none' and exec_t == 'control_then_confirm' and direction in ('up', 'down'):
         if fn in ('heat_control', 'ac_control') and not re.search(r'전체|모든|다|전부', raw_text):
-            return clarify_response(fn, raw_text)
+            if not re.search(r'팬|풍속|풍량|바람\s*세|바람\s*속|속도', raw_text):
+                return clarify_response(fn, raw_text)
 
     # 2. 특수 패턴 매칭 (NO_MATCH이면 일반 처리)
     specific = match_specific(raw_text)
