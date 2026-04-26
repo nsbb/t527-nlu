@@ -86,7 +86,7 @@ SPECIFIC_PATTERNS = [
     (r'다음에\s*(?:말할게|할게|부를게|얘기할게)|나중에\s*(?:말할게|할게|부를게)?|잠시\s*후에',
      '알겠습니다. 언제든지 불러주세요.'),
     # 잘 못 들었어 / 다시 요청
-    (r'잘\s*못\s*들었|못\s*들었|다시\s*말해|뭐라고',
+    (r'잘\s*못\s*들었|못\s*들었|다시\s*말해|뭐라고|방금\s*뭐|방금\s*말|뭐\s*했\s*어',
      '죄송합니다, 잘 듣지 못했어요. 다시 말씀해 주세요.'),
     # 에너지 절약 모드 활성화 (질문/설정 방법 조회는 제외)
     (r'(?:절전|전기\s*절약|에너지\s*절약)\s*모드\s*(?:켜|끄|실행|설정|on|활성|적용)',
@@ -701,6 +701,8 @@ def query_response(fn, room, raw_text):
             return '현재 등록된 난방 예약은 없습니다.'
         if re.search(r'몇\s*도|온도|설정', raw_text):
             return '현재 실내 온도는 23도이며 난방 설정은 25도로 되어 있습니다.'
+        if re.search(r'따뜻|시원|춥|덥|온도\s*어때', raw_text):
+            return '현재 실내 온도는 23도입니다.'
         return f'현재 {room_pref}난방 상태를 확인합니다.'
 
     # AC
@@ -1164,6 +1166,8 @@ def judge_response(fn, raw_text):
         return '오늘 OO구 OO동 날씨는 맑고/흐리고/비가 오고/춥고/덥고 최고 00도, 최저 00도이며 미세먼지는 나쁨/보통/좋음 수준입니다.'
     if re.search(r'우산', raw_text):
         return '오늘 강수 확률이 낮아 우산은 필요 없을 것으로 예상됩니다.'
+    if re.search(r'공기질|대기질|공기\s*(?:어때|좋|나쁘|상태)', raw_text):
+        return '현재 OO구 OO동 미세먼지는 보통 수준이며 초미세먼지는 좋음입니다.'
     if re.search(r'마스크|미세\s*먼지', raw_text):
         return '현재 초미세먼지 수준이 나쁨이므로 마스크 착용을 권장합니다.'
     if re.search(r'두꺼운|외투', raw_text):
@@ -1199,6 +1203,8 @@ def direct_response(fn, room, direction, raw_text):
         if re.search(r'어디|위치', raw_text):
             return '차량 위치 정보를 확인합니다. 지하 주차장 A구역에 주차되어 있습니다.'
         return '차량 정보를 확인합니다.'
+    if fn == 'vent_control':
+        return '네, 실내 환기시스템을 켰습니다.'
     # 제어 fn이 direct인 경우 — 모델이 잘못 예측한 경우 가능
     if fn == 'light_control' and direction:
         return control_response(fn, direction, room, None, raw_text)
@@ -1320,6 +1326,16 @@ def generate_response_v2(multihead, raw_text=''):
     # specific이 None인 경우 — 명시적으로 delegation (아래 처리 계속)
 
     # 3. exec_type별 분기
+
+    # clarify이지만 "전체/다/모두/전부" 있으면 → 전체 제어 명령으로 재처리
+    if exec_t == 'clarify' and fn in ('light_control', 'ac_control', 'heat_control', 'vent_control') \
+            and re.search(r'전체|모든|전부|다\s*(?:꺼|켜|끄|킬|켤)', raw_text):
+        if re.search(r'꺼|끄', raw_text):
+            direction = 'off'
+        elif re.search(r'켜|틀|킬', raw_text):
+            direction = 'on'
+        return control_response(fn, direction, 'all', value, raw_text, old_value=old_value)
+
     if exec_t == 'control_then_confirm':
         return control_response(fn, direction, room, value, raw_text, old_value=old_value)
 
