@@ -426,6 +426,11 @@ SPECIFIC_PATTERNS = [
     # 방문객 출입 기록 조회
     (r'(?:방문객|방문자|출입|입주민)\s*(?:기록|이력|로그|출입\s*기록)',
      '출입 기록은 월패드 보안 메뉴에서 확인하실 수 있습니다.'),
+    # 도어락 자동 잠금 타이머 (curtain_control 오분류 방지)
+    (r'(?:\d+\s*(?:분|초|시간)\s*(?:후에?|뒤에?)\s*(?:자동으로\s*)?잠가|자동으로\s*\d+\s*(?:분|초)\s*(?:후에?\s*)?잠가)',
+     '네, 설정한 시간 후 도어락 자동 잠금을 설정했습니다.'),
+    (r'도어락\s*자동\s*잠금\s*(?:설정|켜|활성)',
+     '네, 도어락 자동 잠금을 활성화했습니다. 문이 닫힌 후 자동으로 잠깁니다.'),
     # 도어락 오류/잠김 (비번 잘못)
     (r'도어락\s*(?:비밀번호|비번)\s*(?:잘못|틀렸|오류|실패)',
      '비밀번호가 여러 번 틀리면 도어락이 잠길 수 있습니다. 관리사무소에 문의해주세요.'),
@@ -611,6 +616,9 @@ SPECIFIC_PATTERNS = [
     # 에어컨 에너지 절약 모드 (energy_query 오분류 방지)
     (r'에어컨\s*(?:에너지\s*절약|절전|에코)\s*모드',
      '네, 에어컨을 절전 모드로 설정합니다.'),
+    # 에어컨 타이머 (query_then_respond 오분류 방지)
+    (r'에어컨\s*타이머\s*(\d+)\s*(분|시간)|타이머\s*(\d+)\s*(분|시간).*에어컨',
+     '네, 에어컨 타이머를 설정했습니다. 설정 시간 후 자동으로 종료됩니다.'),
     # 에어컨 팬/바람 속도 조절 (dir=up 오분류 방지)
     (r'에어컨\s*(?:팬|바람|풍속|풍량)\s*(?:속도\s*)?(?:낮춰|줄여|약하게|낮게)',
      '네, 에어컨 팬 속도를 낮추겠습니다.'),
@@ -976,6 +984,9 @@ SPECIFIC_PATTERNS = [
     # 현관문 열림 상태 쿼리 — "현관문 열려 있어?" door_control dir=open 오분류 방지
     (r'현관문?\s*(?:열려\s*있|열어\s*있|열렸|열린\s*거)(?:어|나|나요)?',
      '현재 현관 도어락이 잠겨 있습니다.'),
+    # 창문 개폐 명령 → 지원 불가 (door_control 오분류 방지) — 잠금 확인보다 먼저
+    (r'창문\s*(?:열어줘|열어주세요|열어|닫아줘|닫아주세요|닫아)',
+     '창문 직접 제어는 지원하지 않습니다. 전동커튼이나 블라인드 제어를 원하시면 "커튼 열어줘"라고 말씀해주세요.'),
     # 창문 잠금 상태 확인 (gas_control 잠 키워드 오매칭 방지)
     (r'창문\s*(?:잠겼|잠가|잠그|닫혔|잠금)\s*(?:어|있나|있어|있나\?|있어\?|확인)',
      '현재 모든 창문이 잠겨 있습니다.'),
@@ -1749,8 +1760,9 @@ def control_response(fn, direction, room, value, raw_text, old_value=None):
             _umap = {'분': 'minute', '시간': 'hour', '초': 'second'}
             value = (_umap[_m.group(2)], _num)
 
-    # Timer (value + 시간) — dir=set도 포함 ("에어컨 타이머 30분" → 타이머 설정 응답)
-    if value and direction in ('on', 'off', 'open', 'close', 'set') and value[0] in ('minute', 'hour', 'second'):
+    # Timer (value + 시간) — dir=none + 타이머 키워드 포함 시도 ("에어컨 타이머 2시간 설정" dir=none 포함)
+    _has_timer_kw = re.search(r'타이머|후에?|뒤에?', raw_text)
+    if value and (direction in ('on', 'off', 'open', 'close', 'set') or (direction == 'none' and _has_timer_kw)) and value[0] in ('minute', 'hour', 'second'):
         vb = DIR_VERB_FUTURE.get(direction, '설정하겠습니다')
         # 밤/오전/오후/아침/저녁/새벽 + N시 → time-of-day, not duration ("N시간 뒤에" 오해 방지)
         if value[0] == 'hour' and re.search(r'(?:밤|오전|오후|아침|저녁|새벽)\s*\d+\s*시', raw_text):
