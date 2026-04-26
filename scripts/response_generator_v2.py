@@ -63,7 +63,7 @@ DIR_VERB_PAST = {
 # ─────────────────────────────────────────────────────────────
 EMERGENCY_PATTERN = re.compile(
     r'가스\s*냄새|타는\s*냄새|연기\s*(?:나|난|올)|불\s*(?:났|붙|이야)|'
-    r'침입|도둑|^비상|화재|긴급\s*상황|경보\s*울려|긴급\s*상황|침입자|'
+    r'침입|도둑|^비상\s*(?:이야|상황|경계령)|화재(?!\s*(?:대피로|훈련|경보기|감지기|탈출|예방|연습|시뮬))|긴급\s*상황|경보\s*울려|침입자|'
     r'응급\s*상황|화재\s*야|(?:^|[^이])불이야'
 )
 
@@ -202,6 +202,15 @@ SPECIFIC_PATTERNS = [
     # 전기 나갔어 (정전 — security_mode 오분류 방지)
     (r'전기\s*(?:가\s*)?(?:나갔|꺼졌|끊겼|안\s*들어|정전)',
      '정전이 발생했나요? 한전 고객센터(123)에 연락하거나 관리사무소에 신고해주세요.'),
+    # 비상구/화재 대피로 — EMERGENCY_PATTERN "비상/화재" 오매칭 방지
+    (r'비상구\s*(?:어디|위치|안내|몇\s*층)|화재\s*대피로|대피\s*경로|비상\s*대피',
+     '비상구는 각 층 계단 쪽에 위치합니다. 화재 시 엘리베이터는 사용하지 마시고 계단으로 대피하세요.'),
+    # 집에 혼자 있어서 무서워 (security_mode 오분류 방지)
+    (r'혼자\s*있(?:어서?|으니|으면)?\s*(?:무서|불안|무섭|두렵)',
+     '걱정이 되시면 경비실(월패드 → 연락처)에 연락하거나 방범 모드를 켜드릴까요?'),
+    # 밖에 이상한 사람 (weather_query 오분류 방지)
+    (r'밖에?\s*(?:이상한|수상한|모르는)\s*(?:사람|남자|여자)',
+     '수상한 사람이 발견되면 경비실에 연락하거나 방범 모드를 켜드릴까요?'),
     # 낙상/부상 보고
     (r'넘어졌|넘어졌어|다쳤|부상\s*당|다리\s*(?:다쳐|부러|아파)',
      '괜찮으신가요? 부상이 심하면 119에 연락하세요. 경비실 연결이 필요하시면 "경비실 연결"이라고 말씀해주세요.'),
@@ -1940,12 +1949,12 @@ def control_response(fn, direction, room, value, raw_text, old_value=None):
 
     # AC/heat set with numeric temperature (when value not extracted by model)
     if fn == 'ac_control' and direction == 'set':
-        m = re.search(r'(\d+)\s*도', raw_text)
+        m = re.search(r'(\d+(?:\.\d+)?)\s*도', raw_text)
         if m:
             temp = m.group(1)
             return f'네, {room_pref}에어컨 온도를 {temp}도로 설정합니다.'
     if fn == 'heat_control' and direction == 'set':
-        m = re.search(r'(\d+)\s*도', raw_text)
+        m = re.search(r'(\d+(?:\.\d+)?)\s*도', raw_text)
         if m:
             temp = m.group(1)
             return f'네, {room_pref}난방을 {temp}도로 설정합니다.'
