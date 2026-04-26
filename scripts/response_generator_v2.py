@@ -366,6 +366,8 @@ SPECIFIC_PATTERNS = [
     # 절전 요청은 generic 전기요금보다 먼저
     (r'전기\s*요금\s*아끼|요금\s*아끼게|자동\s*절전',
      '자동 절전 설정은 지원하지 않습니다. 냉난방기 온도 조정을 권장합니다.'),
+    (r'전기\s*요금\s*(?:얼마|청구|납부|알려)|이번\s*달\s*전기\s*요금',
+     '이번 달 전기 요금은 00000원 수준입니다. 자세한 내용은 관리비 메뉴에서 확인하세요.'),
     (r'전기\s*사용량|전기\s*요금',
      '이번 달 전기 사용량은 지난달 대비 OO% 수준입니다.'),
     (r'수도\s*사용량|수도\s*요금',
@@ -763,8 +765,10 @@ def query_response(fn, room, raw_text):
 
     # Elevator
     if fn == 'elevator_call':
-        if re.search(r'몇\s*층|위치', raw_text):
+        if re.search(r'몇\s*층|위치|어디', raw_text):
             return '실시간 엘리베이터 층수는 호출 시 월패드 화면에 표시됩니다.'
+        if re.search(r'내려가|올라가|내려와|올라와|타러|내려|올라', raw_text):
+            return '네, 엘리베이터를 호출합니다.'
         return '엘리베이터 상태를 확인합니다.'
 
     # Weather (세부 > 일반)
@@ -884,6 +888,8 @@ def query_response(fn, room, raw_text):
 
     # Energy
     if fn == 'energy_query':
+        if re.search(r'요금|비용|청구|납부|얼마', raw_text):
+            return '이번 달 전기 요금은 00000원 수준입니다. 자세한 내용은 관리비 메뉴에서 확인하세요.'
         if re.search(r'전기', raw_text):
             return '이번 달 전기 사용량은 지난달 대비 00% 수준입니다.'
         if re.search(r'수도', raw_text):
