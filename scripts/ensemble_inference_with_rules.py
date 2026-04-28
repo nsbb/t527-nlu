@@ -165,7 +165,8 @@ def apply_post_rules(preds, text):
 
     # v83: 신체 감각 온도 표현 → 기기 제어
     # "쌀쌀해/서늘해" = feeling cold → heat_control/on (ac_control 오분류 교정)
-    if re.search(r'쌀쌀(?:해|하다|하네|하지|해요)|서늘(?:해|하다|하네|하죠)|으슬으슬|추들추들', text):
+    # v84: "서늘해지게 해줘" (소원형 = 시원해지고 싶어) 제외 — ac_control이 맞음
+    if re.search(r'쌀쌀(?:해|하다|하네|하지|해요)|서늘(?:해(?!지게|져|지도록)|하다|하네|하죠)|으슬으슬|추들추들', text):
         if preds['fn'] in ('ac_control', 'weather_query', 'unknown', 'home_info', 'heat_control'):
             preds['fn'] = 'heat_control'
             preds['exec_type'] = 'control_then_confirm'
@@ -608,9 +609,26 @@ def apply_post_rules(preds, text):
 
     # 만족/완료 표현 → unknown (디바이스 제어 없음, 상태 설명)
     # "이제 쾌적해졌어", "방이 따뜻해", "시원해졌어" 등 → cancel/acknowledge
-    if re.search(r'(?:이제|좀|많이|꽤)?\s*(?:쾌적해졌|시원해졌|따뜻해졌|밝아졌|어두워졌|환해졌)', text):
+    # v84: "으면" 이하 소원형(따뜻해졌으면 해/시원해졌으면 좋겠) 제외 — 이건 요청임
+    if re.search(r'(?:이제|좀|많이|꽤)?\s*(?:쾌적해졌|시원해졌|따뜻해졌|밝아졌|어두워졌|환해졌)(?!으면)', text):
         preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
         preds['param_direction'] = 'none'; preds['param_type'] = 'none'
+
+    # v84: 소원형 "시원했으면/따뜻해졌으면 좋겠어" → 디바이스 dir=on
+    if re.search(r'시원(?:했으면|해졌으면|해지면\s*좋겠)', text):
+        if preds['fn'] == 'ac_control' and preds['param_direction'] == 'none':
+            preds['param_direction'] = 'on'
+    if re.search(r'따뜻(?:했으면|해졌으면|해지면\s*좋겠)', text):
+        if preds['fn'] in ('heat_control', 'ac_control'):
+            preds['fn'] = 'heat_control'
+            preds['exec_type'] = 'control_then_confirm'
+            if preds['param_direction'] == 'none':
+                preds['param_direction'] = 'on'
+
+    # v84: "어둡게 하지 말아줘/두지 마" → light/on (부정 어둡게 = 밝게)
+    if re.search(r'어둡게\s*(?:하지|두지)\s*(?:마|말아줘?|말고)', text):
+        if preds['fn'] == 'light_control':
+            preds['param_direction'] = 'on'
 
     # 에어컨은 끄고 + 다른기기 → ac_control/off (복합 명령 첫 동작 추출)
     if re.search(r'에어컨\s*(?:은|를)?\s*끄고', text) and preds['fn'] == 'ac_control':
