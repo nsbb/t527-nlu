@@ -443,7 +443,7 @@ def apply_post_rules(preds, text):
     if preds['fn'] == 'heat_control' and re.search(r'시원', text):
         if not re.search(r'난방|보일러', text):
             preds['fn'] = 'ac_control'
-            if preds['param_direction'] == 'none':
+            if preds['param_direction'] in ('none', 'open'):  # v97: open도 on으로
                 preds['param_direction'] = 'on'
 
     # "블라인드 닫아" → close (open 오예측 교정)
@@ -671,6 +671,10 @@ def apply_post_rules(preds, text):
             preds['exec_type'] = 'control_then_confirm'
             if preds['param_direction'] == 'none':
                 preds['param_direction'] = 'on'
+    # v97: 밝았으면/환했으면 (소원형 밝기) → light/on
+    if re.search(r'(?:좀|더|훨씬)?\s*(?:밝았으면|환했으면|밝아졌으면|환해졌으면)', text):
+        if preds['fn'] == 'light_control' and preds['param_direction'] == 'none':
+            preds['param_direction'] = 'on'
 
     # v84: "어둡게 하지 말아줘/두지 마" → light/on (부정 어둡게 = 밝게)
     if re.search(r'어둡게\s*(?:하지|두지)\s*(?:마|말아줘?|말고)', text):
@@ -1028,6 +1032,51 @@ def apply_post_rules(preds, text):
         if preds['fn'] == 'schedule_manage':
             preds['exec_type'] = 'direct_respond'
             preds['param_direction'] = 'none'
+
+    # v97: 가스 + 잠가줘/잠그다 → dir=close (조건부 문장에서도 close 복구)
+    if re.search(r'가스', text) and re.search(r'잠가\s*(?:줘|주세요|야|야겠|놔)', text):
+        if preds['fn'] == 'gas_control' and preds['param_direction'] in ('set', 'none', 'on'):
+            preds['param_direction'] = 'close'
+
+    # v97: 더워한대/추워한대/더워한다고 → 신체감각 간접 요청 (hearsay)
+    if re.search(r'더워\s*(?:한대|한다고|해|하는데|하셔|하시는데)', text):
+        if preds['fn'] in ('unknown', 'home_info'):
+            if not re.search(r'난방|보일러', text):
+                preds['fn'] = 'ac_control'; preds['exec_type'] = 'control_then_confirm'
+                preds['param_direction'] = 'on'
+    if re.search(r'추워\s*(?:한대|한다고|해|하는데|하셔|하시는데)', text):
+        if preds['fn'] in ('unknown', 'home_info'):
+            preds['fn'] = 'heat_control'; preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'on'
+
+    # v97: 조건부 문장 뒤 "켜줘/꺼줘" dir 복구 (일어나면/먹고 나서/나가고 나면 등)
+    _cond_then = re.search(r'(?:면|고\s*나서|고\s*나면|뒤에?|다음에?)\s+', text)
+    if _cond_then:
+        if preds['fn'] in ('light_control', 'ac_control', 'heat_control', 'vent_control'):
+            if preds['param_direction'] == 'none':
+                if re.search(r'켜\s*줘|켜\s*주세요|켜\s*봐', text):
+                    preds['param_direction'] = 'on'
+                elif re.search(r'꺼\s*줘|꺼\s*주세요|꺼\s*봐|끄\s*줘', text):
+                    preds['param_direction'] = 'off'
+
+    # v97: 조건부 + 기기 + 꺼 → fn 복구 (밥 먹고 나서 에어컨 꺼 → ac/off)
+    if _cond_then and preds['fn'] == 'unknown':
+        if re.search(r'에어컨|냉방기', text) and re.search(r'꺼\b', text):
+            preds['fn'] = 'ac_control'; preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'off'
+        elif re.search(r'불|조명|전등', text) and re.search(r'꺼\b', text):
+            preds['fn'] = 'light_control'; preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'off'
+        elif re.search(r'난방|보일러', text) and re.search(r'꺼\b', text):
+            preds['fn'] = 'heat_control'; preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'off'
+
+    # v97: 창문 + 바람 관찰 → unknown (vent 오예측 방지)
+    if re.search(r'창문\s*(?:쪽|에서)?\s*바람', text):
+        if preds['fn'] == 'vent_control':
+            if not re.search(r'켜|꺼|열어|닫아|틀어', text):
+                preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
+                preds['param_direction'] = 'none'
 
     return preds
 
