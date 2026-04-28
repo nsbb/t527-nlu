@@ -1195,6 +1195,26 @@ def apply_post_rules(preds, text):
                 if not re.search(r'왜\s*(?:켜|꺼|않|안|못)', text):  # "왜 안꺼져?" 제외
                     preds['exec_type'] = 'query_then_judge'; preds['param_direction'] = 'off'
 
+    # v105: "탁해/답답해" → vent_control/on (탁한 공기 = 환기 필요)
+    if re.search(r'탁해|탁하네|탁한\s*것\s*같|답답해|답답하네', text):
+        if preds['fn'] in ('unknown', 'ac_control', 'home_info'):
+            if not re.search(r'에어컨|냉방|시원|온도', text):
+                preds['fn'] = 'vent_control'; preds['exec_type'] = 'control_then_confirm'
+                preds['param_direction'] = 'on'
+
+    # v105: "기기가 너무 세다/강하다" → dir=down, "너무 약하다" → dir=up
+    if preds['fn'] in _device_fns and preds['param_direction'] in ('on', 'none'):
+        if re.search(r'너무\s*(?:세다|강하다|강해|세네|강하네|센\s*것\s*같)', text):
+            preds['param_direction'] = 'down'
+    if preds['fn'] in _device_fns and preds['param_direction'] in ('off', 'none', 'down'):
+        if re.search(r'너무\s*(?:약해|약하다|약하네|약한\s*것\s*같)', text):
+            preds['param_direction'] = 'up'
+
+    # v105: "꺼도 되지/꺼도 돼/꺼도 되나요" → dir=off (허락 형식 꺼줘)
+    if re.search(r'꺼\s*도\s*(?:되지|되나|돼|될까)', text):
+        if preds['fn'] in _device_fns and preds['param_direction'] == 'none':
+            preds['param_direction'] = 'off'
+
     return preds
 
 
