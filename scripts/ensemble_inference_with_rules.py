@@ -33,8 +33,8 @@ def apply_post_rules(preds, text):
         preds['param_type'] = 'none'
 
     # dir 패턴 교정 (v28 학습 오류 보정)
-    # 밝게 → up (on도 포함: "거실 좀 밝게 해줘" → dir=on 오예측 교정)
-    if re.search(r'밝게', text) and preds['fn'] == 'light_control':
+    # 밝게/환하게 → up (on도 포함: "거실 좀 밝게 해줘" / "더 환하게 해줘" → dir=on 오예측 교정)
+    if re.search(r'밝게|환하게|환해지게|환히\s*해줘', text) and preds['fn'] == 'light_control':
         if preds['param_direction'] in ('down', 'on'):
             preds['param_direction'] = 'up'
             preds['param_type'] = 'brightness'
