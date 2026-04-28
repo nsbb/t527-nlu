@@ -157,6 +157,15 @@ SINGLE_TESTS = [
     ("불 켜볼까요",            "light_control",  "on",   None,           "v86_켜볼까요"),
     ("난방 한번 켜볼까",       "heat_control",   "on",   None,           "v86_난방한번켜볼까"),
     ("창문 외풍이 심해",       "unknown",        None,   None,           "v86_창문외풍"),
+
+    # ── v87: 영어혼용/청유형/STT변형/OOD ────────────────────────
+    ("에어컨 off 해줘",        "ac_control",     "off",  None,           "v87_영어off"),
+    ("불 off",                 "light_control",  "off",  None,           "v87_불off"),
+    ("불 좀 켜자",             "light_control",  "on",   None,           "v87_켜자청유형"),
+    ("에어컨 꺼도 될까",       "ac_control",     "off",  None,           "v87_꺼도될까"),
+    ("불 켜도 될까요",         "light_control",  "on",   None,           "v87_켜도될까요"),
+    ("아이가 자는데 조용히 해줘","unknown",       None,   None,           "v87_조용히OOD"),
+    ("보일라 켜줘",            "heat_control",   "on",   None,           "v87_보일라STT"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────
@@ -231,6 +240,23 @@ MULTITURN_SCENARIOS = [
             ("세게 틀어줘",        "ac_control",    "on",  None,           "2_세게"),
             ("이제 시원해졌어",    "unknown",       None,  None,           "3_만족표현"),
             ("이제 꺼줘",          "ac_control",    "off", None,           "4_꺼_컨텍스트복원"),
+        ]
+    },
+    {
+        "name": "v87: 그것도 꺼줘 (대명사 아나포라)",
+        "turns": [
+            ("거실 에어컨 켜줘",   "ac_control",    "on",  "living",       "1_AC켜기"),
+            ("온도 조금 낮춰줘",   "ac_control",    "down","living",        "2_온도낮춰_regex수정"),
+            ("그것도 꺼줘",        "ac_control",    "off", "living",       "3_그것도꺼_아나포라"),
+        ]
+    },
+    {
+        "name": "v87: 저녁 귀가 — 이제 그만 됐어",
+        "turns": [
+            ("다 왔어 불 켜줘",    "light_control", "on",  None,           "1_귀가_불켜"),
+            ("에어컨도 틀어줘",    "ac_control",    "on",  None,           "2_에어컨켜"),
+            ("온도 조금 낮춰줘",   "ac_control",    "down",None,           "3_온도낮춰"),
+            ("이제 그만 됐어",     "ac_control",    "off", None,           "4_그만됐어_AC꺼"),
         ]
     },
 ]
