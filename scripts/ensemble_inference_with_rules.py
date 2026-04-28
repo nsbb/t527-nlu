@@ -42,10 +42,18 @@ def apply_post_rules(preds, text):
     if re.search(r'어둡게', text) and preds['param_direction'] in ('up', 'on'):
         preds['param_direction'] = 'down'
         preds['param_type'] = 'brightness'
-    # 눈부심 비유 (눈이 멀겠어 등) → light_control dir=down (dir=none 교정)
+    # 눈이 뻑뻑해/건조해 → vent_control (dry eye from dry indoor air)
+    if re.search(r'눈이\s*(?:뻑뻑|건조해|뻑뻑해|건조하)', text):
+        if preds['fn'] in ('light_control', 'unknown', 'home_info', 'weather_query'):
+            preds['fn'] = 'vent_control'; preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'on'; preds['param_type'] = 'none'
+    # 눈부심 비유 (눈이 멀겠어/아파 등) → light_control dir=down (dir=none/off 교정)
+    # "거실이 너무 밝아서 눈이 아파" → down, not off
     if re.search(r'눈이\s*(?:부셔|따가워|아파|멀겠|피로해)|눈을\s*못\s*뜨', text):
-        if preds['fn'] == 'light_control' and preds['param_direction'] == 'none':
-            preds['param_direction'] = 'down'
+        if preds['fn'] == 'light_control' and preds['param_direction'] in ('none', 'off'):
+            _has_explicit_off_cmd = re.search(r'(?:꺼|끄)\s*줘', text)
+            if not _has_explicit_off_cmd:
+                preds['param_direction'] = 'down'
     # 한기가 → heat_control/on (preprocess에서 한기→환기 제거했지만 모델이 미학습)
     if re.search(r'한기가\s*(?:도네|느껴|돌아|나|왔|든)', text):
         preds['fn'] = 'heat_control'
@@ -766,6 +774,34 @@ def apply_post_rules(preds, text):
             preds['param_direction'] = 'off'
         elif re.search(r'(?:꺼져|꺼져있|꺼있|있다면|있으면)\s*켜줘?', text):
             preds['param_direction'] = 'on'
+
+    # v89: 기기 상태 조회 "켜져 있어?/꺼져 있어?" → home_info (관찰/조회이지 명령 아님)
+    if re.search(r'(?:켜져|꺼져|잠겨|열려|닫혀|돌아가고|작동\s*중이야|켜져\s*있|꺼져\s*있)\s*'
+                 r'(?:있어|있나|있어요|있나요|있죠|있지)\??', text):
+        _ctl_fns = ('ac_control', 'heat_control', 'light_control', 'vent_control',
+                    'gas_control', 'door_control', 'curtain_control', 'security_mode')
+        if preds['fn'] in _ctl_fns:
+            preds['fn'] = 'home_info'; preds['exec_type'] = 'query_then_respond'
+            preds['param_direction'] = 'none'
+
+    # v89: 날씨 관찰 발화 "날씨 쌀쌀하네/오늘 날씨 추워" → weather_query (실내 기기 명령 아님)
+    if re.search(r'(?:오늘|내일|요즘|지금)\s*날씨\s*(?:가\s*)?(?:좀\s*|조금\s*|많이\s*)?'
+                 r'(?:쌀쌀|춥|추워|더워|덥|따뜻|서늘|맑|흐리|나쁘|좋)', text):
+        if preds['fn'] in ('heat_control', 'ac_control'):
+            preds['fn'] = 'weather_query'; preds['exec_type'] = 'query_then_respond'
+            preds['param_direction'] = 'none'
+
+    # v89: "필요 없겠다/필요 없어" — 불필요 표현 → unknown
+    if re.search(r'필요\s*(?:없겠|없어|없을\s*것\s*같아|없다)', text):
+        if preds['fn'] in ('heat_control', 'ac_control', 'vent_control', 'light_control'):
+            if not re.search(r'켜줘|꺼줘|틀어줘|올려|낮춰', text):
+                preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
+                preds['param_direction'] = 'none'; preds['param_type'] = 'none'
+
+    # v89: 가습기/제습기 → unknown (미지원 기기)
+    if re.search(r'가습기|제습기', text):
+        preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
+        preds['param_direction'] = 'none'; preds['param_type'] = 'none'
 
     return preds
 

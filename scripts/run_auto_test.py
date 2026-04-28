@@ -97,9 +97,9 @@ SINGLE_TESTS = [
     ("안 끄지 않아도 돼",      "unknown",        None,   None,           "v77_이중부정"),
     ("이거 켜도 돼?",          "unknown",        None,   None,           "v77_켜도돼허락"),
     # 상태 확인 (fn=디바이스, dir=none)
-    ("에어컨 켜져 있나요",     "ac_control",     "none", None,           "v77_상태_에어컨켜져"),
-    ("불 꺼져 있어요",         "light_control",  "none", None,           "v77_상태_불꺼져"),
-    ("난방이 켜져 있나요",     "heat_control",   "none", None,           "v77_상태_난방켜져"),
+    ("에어컨 켜져 있나요",     "home_info",      "none", None,           "v89_상태_에어컨켜져"),
+    ("불 꺼져 있어요",         "home_info",      "none", None,           "v89_상태_불꺼져"),
+    ("난방이 켜져 있나요",     "home_info",      "none", None,           "v89_상태_난방켜져"),
     # 더위/추위 비유 보강
     ("이 방 왜 이렇게 후텁지근해", "ac_control", "on",   None,           "v77_후텁지근"),
     ("한기가 싸하네",          "heat_control",   "on",   None,           "v77_한기싸하네"),
@@ -166,6 +166,17 @@ SINGLE_TESTS = [
     ("불 켜도 될까요",         "light_control",  "on",   None,           "v87_켜도될까요"),
     ("아이가 자는데 조용히 해줘","unknown",       None,   None,           "v87_조용히OOD"),
     ("보일라 켜줘",            "heat_control",   "on",   None,           "v87_보일라STT"),
+
+    # ── v89: 기기상태조회/날씨관찰/필요없음 ─────────────────────
+    ("에어컨 켜져 있어?",      "home_info",      None,   None,           "v89_상태조회_AC"),
+    ("난방 지금 켜져 있어?",   "home_info",      None,   None,           "v89_상태조회_난방"),
+    ("가스 잠겨 있어?",        "home_info",      None,   None,           "v89_상태조회_가스"),
+    ("오늘 날씨 좀 쌀쌀하네",  "weather_query",  None,   None,           "v89_날씨관찰_쌀쌀"),
+    ("요즘 날씨 많이 더워",    "weather_query",  None,   None,           "v89_날씨관찰_더워"),
+    ("요즘 건조해서 가습기 틀어야지","unknown",  None,   None,           "v89_가습기OOD"),
+    ("바람이 불어서 환기 필요 없겠다","unknown", None,   None,           "v89_필요없겠다"),
+    ("거실이 너무 밝아서 눈이 아파","light_control","down",None,         "v89_눈아파light_down"),
+    ("눈이 뻑뻑해",            "vent_control",   "on",   None,           "v89_눈뻑뻑_vent"),
 
     # ── v88: 부정감각/완곡/조건부 OOD ────────────────────────────
     ("전혀 안 추워",           "unknown",        None,   None,           "v88_전혀안추워"),
