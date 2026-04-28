@@ -1122,6 +1122,21 @@ def apply_post_rules(preds, text):
             preds['fn'] = 'vent_control'; preds['exec_type'] = 'control_then_confirm'
             preds['param_direction'] = 'on'
 
+    # v104: 요리 중(볶음/고기/생선 굽기) → vent_control/on (조리 연기 환기 필요)
+    _cooking_food = re.search(r'볶음|고기|생선|전(?:이|을|좀)?$|부침|삼겹|치킨|전골|찌개', text)
+    _cooking_action = re.search(r'굽|요리|조리|끓이|볶|튀기|중이야|하고\s*있어', text)
+    if _cooking_food and _cooking_action:
+        if preds['fn'] in ('unknown', 'home_info'):
+            preds['fn'] = 'vent_control'; preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'on'
+
+    # v104: "밖이/바깥이 + 추운/더운/것 같다" → weather_query (실내 기기 제어 오예측 방지)
+    if re.search(r'밖이|바깥이|바깥에', text):
+        if re.search(r'추운\s*것\s*같|더운\s*것\s*같|차가운\s*것\s*같', text):
+            if preds['fn'] in ('heat_control', 'ac_control'):
+                preds['fn'] = 'weather_query'; preds['exec_type'] = 'query_then_respond'
+                preds['param_direction'] = 'none'
+
     # v103: 냉장고 + 열어/닫아 → door_control 오예측 방지 (냉장고는 미지원)
     if re.search(r'냉장고', text) and preds['fn'] == 'door_control':
         preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
