@@ -1122,6 +1122,25 @@ def apply_post_rules(preds, text):
             preds['fn'] = 'vent_control'; preds['exec_type'] = 'control_then_confirm'
             preds['param_direction'] = 'on'
 
+    # v103: 냉장고 + 열어/닫아 → door_control 오예측 방지 (냉장고는 미지원)
+    if re.search(r'냉장고', text) and preds['fn'] == 'door_control':
+        preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
+        preds['param_direction'] = 'none'
+
+    # v103: 긴급 가스 감지 표현 → gas_control/close
+    if re.search(r'가스\s*(?:냄새|새는|새다|누출|샌다|빠져)', text):
+        if preds['fn'] in ('unknown', 'home_info'):
+            preds['fn'] = 'gas_control'; preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'close'
+
+    # v103: 빨리/얼른 + 기기 + dir=none → dir 복구 (긴급 부사가 모델 혼선)
+    if re.search(r'^(?:빨리|얼른|어서|빨랑)\s*', text):
+        if preds['fn'] in _device_fns and preds['param_direction'] == 'none':
+            if re.search(r'켜\s*줘|켜\s*봐|켜\s*주', text):
+                preds['param_direction'] = 'on'
+            elif re.search(r'꺼\s*줘|꺼\s*봐|끄\s*줘', text):
+                preds['param_direction'] = 'off'
+
     # v102: 완곡 제안형 "끄는 게 어때/켜는 게 어때" → dir 복구
     # "난방 끄는 게 어때?" = 난방 끄자는 제안 → heat/off
     if re.search(r'끄\s*(?:는\s*게?|면\s*어때|면\s*어떨까)', text):
