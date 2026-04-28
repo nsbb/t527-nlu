@@ -665,6 +665,38 @@ def apply_post_rules(preds, text):
     if re.search(r'에어컨\s*(?:은|를)?\s*끄고', text) and preds['fn'] == 'ac_control':
         preds['param_direction'] = 'off'
 
+    # v86: 이중부정 "끄지 않게/끄지 말아줘/끄지 마" → dir=on (keep device ON)
+    # "에어컨 끄지 마" = "don't turn off AC" = AC should stay ON
+    _device_fns = ('light_control', 'ac_control', 'heat_control', 'vent_control', 'gas_control')
+    if preds['fn'] in _device_fns:
+        if re.search(r'끄지\s*(?:않게|않도록|말아줘?|말아요?|마(?:\s*세요)?|마(?:\s*요)?$|말고)', text):
+            preds['param_direction'] = 'on'
+        elif re.search(r'꺼지지\s*(?:않게|말아줘?|마)', text):
+            preds['param_direction'] = 'on'
+
+    # v86: "켜볼까요/켜볼까/해볼까" → dir=on when device fn but dir=none
+    if re.search(r'켜볼까|틀어볼까|켜볼게', text):
+        if preds['fn'] in _device_fns and preds['param_direction'] == 'none':
+            preds['param_direction'] = 'on'
+
+    # v86: 기기 키워드 + "켜볼까/한번 켜" + fn=unknown → 기기 fn 복원
+    if preds['fn'] == 'unknown' and re.search(r'(?:켜볼까|한번\s*켜|켜봐요)', text):
+        if re.search(r'난방|보일러', text):
+            preds['fn'] = 'heat_control'; preds['param_direction'] = 'on'
+        elif re.search(r'에어컨|냉방기', text):
+            preds['fn'] = 'ac_control'; preds['param_direction'] = 'on'
+        elif re.search(r'환기|환풍', text):
+            preds['fn'] = 'vent_control'; preds['param_direction'] = 'on'
+        elif re.search(r'불|조명|램프', text):
+            preds['fn'] = 'light_control'; preds['param_direction'] = 'on'
+        if preds['fn'] != 'unknown':
+            preds['exec_type'] = 'control_then_confirm'
+
+    # v86: 창문 + 외풍/새다 → unknown (창문 제어 불가)
+    if re.search(r'창문|창호', text) and re.search(r'외풍|바람이\s*들어|외기|새는', text):
+        preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
+        preds['param_direction'] = 'none'; preds['param_type'] = 'none'
+
     return preds
 
 
