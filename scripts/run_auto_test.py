@@ -39,7 +39,7 @@ SINGLE_TESTS = [
     ("불끄고자",               "light_control",  "off",  None,           "STT_불끄고자"),
     ("도어록 열어",            "door_control",   "open", None,           "STT_도어록"),
     ("엘베 불러줘",            "elevator_call",  "on",   None,           "STT_엘베"),
-    ("볼름 높여줘",            "unknown",        None,   None,           "STT_볼름_unknown"),
+    ("볼름 높여줘",            "home_info",      "up",   None,           "STT_볼름_preprocess_home_info"),
     ("에어컨은 꺼줘",          "ac_control",     "off",  None,           "STT_에어컨은조사"),
     ("난벙 켜줘",              "heat_control",   "on",   None,           "STT_난벙"),
     ("주방불 꺼",              "light_control",  "off",  "kitchen",      "STT_주방불붙임"),
@@ -208,6 +208,11 @@ SINGLE_TESTS = [
     ("바깥 공기 좀 마시고 싶어",  "unknown",       None,   None,           "v92_바깥공기OOD"),
     ("집이 너무 어두워서 눈이 침침해","light_control","up", None,          "v92_눈침침_up"),
     ("이제 자야할 것 같아",       "light_control", "off",  None,           "v92_자야할_off"),
+    # ── v93: 끄기의무/청유/환기청유/어둡불만 ─────────────────────
+    ("불 꺼야 할 것 같아",        "light_control", "off",  None,           "v93_꺼야할_off"),
+    ("불 끌까요",                 "light_control", "off",  None,           "v93_끌까요"),
+    ("환기 시킬까요",             "vent_control",  "on",   None,           "v93_환기시킬까요"),
+    ("여기 꽤 어둡네",            "light_control", "on",   None,           "v93_어둡네_light"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────
