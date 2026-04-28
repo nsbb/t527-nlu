@@ -163,6 +163,28 @@ def apply_post_rules(preds, text):
         if re.search(r'얼어\s*죽|냉동실|냉장고\s*같|시베리아|이글루|덜덜\s*떨|이가\s*딱딱|한기|몸이\s*꽁', text):
             preds['param_direction'] = 'on'
 
+    # v83: 신체 감각 온도 표현 → 기기 제어
+    # "쌀쌀해/서늘해" = feeling cold → heat_control/on (ac_control 오분류 교정)
+    if re.search(r'쌀쌀(?:해|하다|하네|하지|해요)|서늘(?:해|하다|하네|하죠)|으슬으슬|추들추들', text):
+        if preds['fn'] in ('ac_control', 'weather_query', 'unknown', 'home_info', 'heat_control'):
+            preds['fn'] = 'heat_control'
+            preds['exec_type'] = 'control_then_confirm'
+            if preds['param_direction'] in ('none',):
+                preds['param_direction'] = 'on'
+    # "끈적끈적/끈끈해/축축해/땀이 나" = sticky/sweaty hot → ac_control/on
+    if re.search(r'끈적끈적|끈끈(?:해|하다|하네)|축축(?:해|하다)|땀이\s*(?:나|났어|나네)', text):
+        if preds['fn'] in ('heat_control', 'unknown', 'home_info', 'weather_query', 'ac_control'):
+            preds['fn'] = 'ac_control'
+            preds['exec_type'] = 'control_then_confirm'
+            if preds['param_direction'] in ('none', 'off'):
+                preds['param_direction'] = 'on'
+
+    # v83: "잠가야겠다/잠가야지/잠그자" → door_control/close
+    if re.search(r'(?:문|도어락?)\s*(?:이나|을|은)?\s*(?:잠가야겠|잠가야지|잠그자|잠가야|잠가볼)', text):
+        preds['fn'] = 'door_control'
+        preds['exec_type'] = 'control_then_confirm'
+        preds['param_direction'] = 'close'
+
     # 취소/무시 표현 → unknown (home_info/system_meta 오분류 방지)
     if re.search(r'^(?:다\s*)?(?:괜찮아|괜찮아요|됐어|됐어요|그냥\s*(?:둬|놔둬|둘게|놔)|필요\s*없어|안\s*해도\s*돼|취소|아니\s*괜찮|아냐\s*괜찮)(?:\s*요)?$', text.strip()) \
        or re.search(r'^괜찮아\s+그냥|^그냥\s+(?:둬|놔|됐|놔)|^다\s*됐어', text.strip()):
