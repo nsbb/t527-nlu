@@ -40,10 +40,12 @@ def apply_post_rules(preds, text):
             preds['param_direction'] = 'up'
             preds['param_type'] = 'brightness'
     # v90: 밝혀줄/밝혀줘 (밝히다 = to brighten) → up
-    if re.search(r'밝혀\s*(?:줄|줘|줄\s*수|주)', text) and preds['fn'] == 'light_control':
-        if preds['param_direction'] in ('on', 'none'):
-            preds['param_direction'] = 'up'
-            preds['param_type'] = 'brightness'
+    if re.search(r'밝혀\s*(?:줄|줘|줄\s*수|주)', text):
+        if preds['fn'] in ('light_control', 'unknown'):
+            if preds['param_direction'] in ('on', 'none'):
+                preds['fn'] = 'light_control'; preds['exec_type'] = 'control_then_confirm'
+                preds['param_direction'] = 'up'
+                preds['param_type'] = 'brightness'
     # 어둡게 → down (v93: none 포함 — 복합문 앞부분이 있어도 dir=down 적용)
     if re.search(r'어둡게', text) and preds['param_direction'] in ('up', 'on', 'none'):
         if preds['fn'] == 'light_control':
