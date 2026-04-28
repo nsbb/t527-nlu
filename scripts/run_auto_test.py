@@ -213,6 +213,21 @@ SINGLE_TESTS = [
     ("불 끌까요",                 "light_control", "off",  None,           "v93_끌까요"),
     ("환기 시킬까요",             "vent_control",  "on",   None,           "v93_환기시킬까요"),
     ("여기 꽤 어둡네",            "light_control", "on",   None,           "v93_어둡네_light"),
+    # ── v94: 볼륨/귀가/습도/현관 + preprocess 버그 수정 ──────────────────
+    ("볼륨 올려줘",               "home_info",     "up",   None,           "v94_볼륨up"),
+    ("볼륨 낮춰줘",               "home_info",     "down", None,           "v94_볼륨down"),
+    ("조용히 해줘",               "home_info",     "down", None,           "v94_조용히_home"),
+    ("귀가",                     "security_mode",  "on",   None,           "v94_귀가"),
+    ("습도 어때",                 "weather_query",  None,   None,           "v94_습도날씨"),
+    ("간접등 켜줘",               "light_control",  "on",   None,           "v94_간접등_on"),
+    ("불 끄지 마",               "light_control",  "on",   None,           "v94_끄지마_on"),
+    # ── v95: 극존칭/능력부정/허락요청/환기 ──────────────────────────────
+    ("불 켜 주시겠어요?",          "light_control",  "on",   None,           "v95_켜주시겠어요"),
+    ("조명 낮춰 주실 수 있을까요?", "light_control",  "down", None,           "v95_낮춰주실수있"),
+    ("조명을 못 켜겠어요",         "unknown",        None,   None,           "v95_못켜겠어"),
+    ("난방 꺼도 될까요?",         "heat_control",   "off",  None,           "v95_꺼도될까요"),
+    ("환기 해봐",                 "vent_control",   "on",   None,           "v95_환기해봐"),
+    ("불 끄면 안 될까요?",        "unknown",         None,   None,           "v95_끄면안될까"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────

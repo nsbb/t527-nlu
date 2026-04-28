@@ -979,6 +979,56 @@ def apply_post_rules(preds, text):
             preds['fn'] = 'door_control'; preds['exec_type'] = 'query_then_respond'
             preds['param_direction'] = 'none'
 
+    # v95: 극존칭 요청 + 방향 동사 → 방향 복구 (주시겠어요/주실 수 있을까요)
+    _polite_sfx = r'주시겠어|주실\s*수\s*있|주시면\s*돼|주세요|주셨으면'
+    if re.search(_polite_sfx, text):
+        if preds['fn'] in ('light_control', 'ac_control', 'heat_control', 'vent_control', 'curtain_control', 'door_control', 'gas_control'):
+            if preds['param_direction'] == 'none':
+                # direction verb가 있으면 복구
+                if re.search(r'켜\s*(?:줘|주)', text) or re.search(r'(?<!\w)켜\s*주', text):
+                    preds['param_direction'] = 'on'
+                elif re.search(r'꺼\s*(?:줘|주)|끄\s*(?:줘|주)', text):
+                    preds['param_direction'] = 'off'
+                elif re.search(r'낮춰|내려|줄여|축소', text):
+                    preds['param_direction'] = 'down'
+                elif re.search(r'올려|높여|키워|증가', text):
+                    preds['param_direction'] = 'up'
+                elif re.search(r'열어|열\s*주', text):
+                    preds['param_direction'] = 'open'
+                elif re.search(r'닫아|잠가|잠궈\s*주|닫\s*주', text):
+                    preds['param_direction'] = 'close'
+
+    # v95: 못 켜겠어요/못 꺼겠어요 → unknown (능력 부정, 기기 이상 표현)
+    if re.search(r'못\s*(?:켜|꺼|열|닫|올려|낮춰|내려|잠)\s*겠', text):
+        if preds['fn'] in ('light_control', 'ac_control', 'heat_control', 'vent_control', 'door_control', 'gas_control'):
+            preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
+            preds['param_direction'] = 'none'
+
+    # v95: 꺼도 될까요/끄면 될까요 → dir=off (허락 요청도 실질적 의도는 off)
+    # v95b: 'on'도 포함 — v72 모델이 on으로 출력하는 경우 대응
+    if re.search(r'꺼\s*도\s*될까|끄\s*면\s*될까|끄\s*도\s*될까', text):
+        if preds['fn'] in ('light_control', 'ac_control', 'heat_control', 'vent_control'):
+            if preds['param_direction'] in ('none', 'set', 'on'):
+                preds['param_direction'] = 'off'
+
+    # v95: 끄면 안 될까요 → unknown (끄지 말라고 하는 반어 표현)
+    if re.search(r'(?:끄|꺼)\s*(?:면|서)\s*안\s*될까', text):
+        if preds['fn'] in ('light_control', 'ac_control', 'heat_control', 'vent_control'):
+            preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
+            preds['param_direction'] = 'none'
+
+    # v95: 환기 해봐/해봐라 → vent_control/on
+    if re.search(r'환기\s*(?:해봐|해봐라|해봐요|해볼까)', text):
+        if preds['fn'] in ('vent_control', 'unknown'):
+            preds['fn'] = 'vent_control'; preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'on'
+
+    # v96: 삭제/취소 명령 → schedule_manage direct_respond, dir=none
+    if re.search(r'삭제|제거|없애', text):
+        if preds['fn'] == 'schedule_manage':
+            preds['exec_type'] = 'direct_respond'
+            preds['param_direction'] = 'none'
+
     return preds
 
 
