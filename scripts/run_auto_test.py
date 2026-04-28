@@ -89,6 +89,33 @@ SINGLE_TESTS = [
     ("유튜브 틀어줘",          "unknown",        None,   None,           "OOD_유튜브"),
     ("오늘 주식 어때",         "market_query",   None,   None,           "OOD_주식"),
     ("아파트 시세",            "home_info",      None,   None,           "OOD_아파트시세"),
+
+    # ── v77: 한국어 NLU 한계 기반 신규 케이스 ─────────────────
+    # 취소/허락 표현
+    ("안 꺼도 돼",             "unknown",        None,   None,           "v77_안꺼도돼"),
+    ("안 켜도 돼",             "unknown",        None,   None,           "v77_안켜도돼"),
+    ("안 끄지 않아도 돼",      "unknown",        None,   None,           "v77_이중부정"),
+    ("이거 켜도 돼?",          "unknown",        None,   None,           "v77_켜도돼허락"),
+    # 상태 확인 (fn=디바이스, dir=none)
+    ("에어컨 켜져 있나요",     "ac_control",     "none", None,           "v77_상태_에어컨켜져"),
+    ("불 꺼져 있어요",         "light_control",  "none", None,           "v77_상태_불꺼져"),
+    ("난방이 켜져 있나요",     "heat_control",   "none", None,           "v77_상태_난방켜져"),
+    # 더위/추위 비유 보강
+    ("이 방 왜 이렇게 후텁지근해", "ac_control", "on",   None,           "v77_후텁지근"),
+    ("한기가 싸하네",          "heat_control",   "on",   None,           "v77_한기싸하네"),
+    # 조도 비유 보강
+    ("어둑어둑하게 해줘",      "light_control",  "down", None,           "v77_어둑어둑"),
+    # 쾌적/바람 → 환기
+    ("쾌적하게 해줘",          "vent_control",   "on",   None,           "v77_쾌적하게"),
+    ("잠깐 바람 좀",           "vent_control",   "on",   None,           "v77_바람좀"),
+    # OOD 기기 보강
+    ("TV 꺼줘",                "unknown",        None,   None,           "v77_TV꺼"),
+    ("전기장판 켜줘",          "unknown",        None,   None,           "v77_전기장판"),
+    ("창문 열어주시겠어요",    "unknown",        None,   None,           "v77_창문열어"),
+    ("잠금 걸어줘",            "door_control",   "close",None,           "v77_잠금걸어"),
+    # 혼잣말/자연발화
+    ("불 끄고 자야지",         "light_control",  "off",  None,           "v77_자야지"),
+    ("에어컨은 끄고 선풍기 켜줘","ac_control",   "off",  None,           "v77_에어컨끄고복합"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────
