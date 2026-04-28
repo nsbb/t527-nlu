@@ -116,6 +116,13 @@ SINGLE_TESTS = [
     # 혼잣말/자연발화
     ("불 끄고 자야지",         "light_control",  "off",  None,           "v77_자야지"),
     ("에어컨은 끄고 선풍기 켜줘","ac_control",   "off",  None,           "v77_에어컨끄고복합"),
+
+    # ── v80: 시간 표현 + 기기 → schedule_manage 오예측 교정 ────
+    ("5분 후에 불 꺼줘",       "light_control",  "off",  None,           "v80_5분후불"),
+    ("30분 있다가 에어컨 꺼줘","ac_control",     "off",  None,           "v80_30분있다가에어컨"),
+    ("잠시 후에 불 꺼줘",      "light_control",  "off",  None,           "v80_잠시후불"),
+    ("1시간 후에 난방 꺼줘",   "heat_control",   "off",  None,           "v80_1시간후난방"),
+    ("10분 뒤에 환기 꺼줘",    "vent_control",   "off",  None,           "v80_10분뒤환기"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────
