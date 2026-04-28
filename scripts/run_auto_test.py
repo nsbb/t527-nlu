@@ -56,7 +56,7 @@ SINGLE_TESTS = [
     ("쪄 죽겠어",              "ac_control",     "on",   None,           "비유_쪄죽겠어"),
     ("냉장고 같아",            "heat_control",   "on",   None,           "비유_냉장고같아"),
     ("사우나야",               "ac_control",     "on",   None,           "비유_사우나"),
-    ("눈이 침침해",            "light_control",  "on",   None,           "비유_눈침침"),
+    ("눈이 침침해",            "light_control",  "up",   None,           "v92_눈침침_up"),
     ("머리가 띵해",            "vent_control",   "on",   None,           "비유_머리띵"),
     ("한기가 도네",            "heat_control",   "on",   None,           "비유_한기"),
     ("더위 먹겠다",            "ac_control",     "on",   None,           "비유_더위먹겠다"),
@@ -96,10 +96,10 @@ SINGLE_TESTS = [
     ("안 켜도 돼",             "unknown",        None,   None,           "v77_안켜도돼"),
     ("안 끄지 않아도 돼",      "unknown",        None,   None,           "v77_이중부정"),
     ("이거 켜도 돼?",          "unknown",        None,   None,           "v77_켜도돼허락"),
-    # 상태 확인 (fn=디바이스, dir=none)
-    ("에어컨 켜져 있나요",     "home_info",      "none", None,           "v89_상태_에어컨켜져"),
-    ("불 꺼져 있어요",         "home_info",      "none", None,           "v89_상태_불꺼져"),
-    ("난방이 켜져 있나요",     "home_info",      "none", None,           "v89_상태_난방켜져"),
+    # 상태 확인 → fn=디바이스 유지, exec=query, dir=none (v77 rule)
+    ("에어컨 켜져 있나요",     "ac_control",     None,   None,           "v90_상태_에어컨켜져"),
+    ("불 꺼져 있어요",         "light_control",  None,   None,           "v90_상태_불꺼져"),
+    ("난방이 켜져 있나요",     "heat_control",   None,   None,           "v90_상태_난방켜져"),
     # 더위/추위 비유 보강
     ("이 방 왜 이렇게 후텁지근해", "ac_control", "on",   None,           "v77_후텁지근"),
     ("한기가 싸하네",          "heat_control",   "on",   None,           "v77_한기싸하네"),
@@ -168,9 +168,10 @@ SINGLE_TESTS = [
     ("보일라 켜줘",            "heat_control",   "on",   None,           "v87_보일라STT"),
 
     # ── v89: 기기상태조회/날씨관찰/필요없음 ─────────────────────
-    ("에어컨 켜져 있어?",      "home_info",      None,   None,           "v89_상태조회_AC"),
-    ("난방 지금 켜져 있어?",   "home_info",      None,   None,           "v89_상태조회_난방"),
-    ("가스 잠겨 있어?",        "home_info",      None,   None,           "v89_상태조회_가스"),
+    # 상태조회: fn=device 유지 (v77 rule), exec=query_then_respond, dir=none
+    ("에어컨 켜져 있어?",      "ac_control",     None,   None,           "v89_상태조회_AC"),
+    ("난방 지금 켜져 있어?",   "heat_control",   None,   None,           "v89_상태조회_난방"),
+    ("가스 잠겨 있어?",        "gas_control",    None,   None,           "v89_상태조회_가스"),
     ("오늘 날씨 좀 쌀쌀하네",  "weather_query",  None,   None,           "v89_날씨관찰_쌀쌀"),
     ("요즘 날씨 많이 더워",    "weather_query",  None,   None,           "v89_날씨관찰_더워"),
     ("요즘 건조해서 가습기 틀어야지","unknown",  None,   None,           "v89_가습기OOD"),
@@ -187,6 +188,26 @@ SINGLE_TESTS = [
     ("좀 덥긴 한데 에어컨까진","unknown",        None,   None,           "v88_에어컨까진"),
     ("에어컨 켜면 좀 시원해질까","unknown",      None,   None,           "v88_수사적조건"),
     ("에어컨이 켜져 있다면 꺼줘","ac_control",   "off",  None,           "v88_조건부명령꺼줘"),
+
+    # ── v90: 찜질방비유/방문객귀가/감탄OOD/실외관찰 ──────────────
+    ("방이 찜질방 같아",          "ac_control",   "on",   None,           "v90_찜질방비유"),
+    ("조명 좀 밝혀줄 수 있을까요","light_control","up",   None,           "v90_밝혀줄_up"),
+    ("취소해줘",                  "unknown",       None,   None,           "v90_취소해줘"),
+    ("밖이 더 시원한 것 같은데",  "unknown",       None,   None,           "v90_실외관찰"),
+
+    # ── v91: 더워졌어/기기고장/더위민감도 ────────────────────────
+    ("청소하다 보니 더워졌어",    "ac_control",   "on",   None,           "v91_더워졌어"),
+    ("에어컨에서 냄새 나는 것 같아","unknown",    None,   None,           "v91_에어컨냄새"),
+    ("할아버지 더위 많이 타시는데","ac_control",  "on",   None,           "v91_더위타시는데"),
+    ("낭방 켜줘",                  "heat_control", "on",   None,           "v91_낭방STT"),
+
+    # ── v92: 일정/관리/실외/취침 확장 ────────────────────────────
+    ("난방이 이상한 것 같아",     "unknown",       None,   None,           "v92_난방이상"),
+    ("아침에 일어났어 불 켜줘",   "light_control", "on",   None,           "v92_일어났어불켜"),
+    ("관리비 나왔어",             "unknown",       None,   None,           "v92_관리비OOD"),
+    ("바깥 공기 좀 마시고 싶어",  "unknown",       None,   None,           "v92_바깥공기OOD"),
+    ("집이 너무 어두워서 눈이 침침해","light_control","up", None,          "v92_눈침침_up"),
+    ("이제 자야할 것 같아",       "light_control", "off",  None,           "v92_자야할_off"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────
