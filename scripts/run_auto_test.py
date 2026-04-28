@@ -185,6 +185,25 @@ MULTITURN_SCENARIOS = [
             ("에어컨 쎄게 틀어줘", "ac_control",    "on",  "living",   "3턴_쎄게"),
         ]
     },
+    {
+        "name": "v82: 방 순차 전환 + AC 온도 낮춰줘",
+        "turns": [
+            ("거실 불 켜줘",       "light_control", "on",  "living",       "1_거실"),
+            ("꺼줘",               "light_control", "off", "living",       "2_거실상속"),
+            ("안방 에어컨 켜줘",   "ac_control",    "on",  "bedroom_main", "3_안방AC"),
+            ("온도 낮춰줘",        "ac_control",    "down","bedroom_main", "4_온도낮춰"),
+            ("꺼줘",               "ac_control",    "off", "bedroom_main", "5_AC꺼"),
+        ]
+    },
+    {
+        "name": "v82: unknown 후 기기 컨텍스트 복원",
+        "turns": [
+            ("방이 너무 더워",     "ac_control",    "on",  None,           "1_더워"),
+            ("세게 틀어줘",        "ac_control",    "on",  None,           "2_세게"),
+            ("이제 시원해졌어",    "unknown",       None,  None,           "3_만족표현"),
+            ("이제 꺼줘",          "ac_control",    "off", None,           "4_꺼_컨텍스트복원"),
+        ]
+    },
 ]
 
 

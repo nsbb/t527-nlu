@@ -229,6 +229,12 @@ class DialogueStateTracker:
                 and re.search(r'\d+\s*도', text)
                 and not re.search(r'난방|보일러|온돌|히터', text)):
             fn = 'ac_control'
+        # v82: "온도 낮춰줘/내려줘" after AC context → ac_control/down (숫자 없어도 적용)
+        if (self.is_active() and self.prev_fn == 'ac_control' and fn == 'heat_control'
+                and re.search(r'온도\s*(?:낮춰|내려|줄여)', text)
+                and not re.search(r'난방|보일러|온돌|히터', text)):
+            fn = 'ac_control'
+            direction = 'down'
 
         # continuous: "조금/더/많이 올려/내려" fn 상속 (prev_value 없어도 fn만이라도 승계)
         if self.is_active() and self.prev_fn:
@@ -297,7 +303,10 @@ class DialogueStateTracker:
         final_value = current_value or inferred_value or (self.prev_value if fn_same else None)
 
         # 상태 저장
-        self.prev_fn = fn
+        # v82: unknown 결과는 prev_fn을 덮어쓰지 않음 — 기기 컨텍스트 보존
+        # "이제 시원해졌어(unknown)" 후 "이제 꺼줘" → ac_control 상속 가능
+        if fn != 'unknown':
+            self.prev_fn = fn
         self.prev_exec = exec_t
         self.prev_dir = direction
         self.prev_room = resolved_room if resolved_room != 'none' else self.prev_room
