@@ -545,10 +545,22 @@ def apply_post_rules(preds, text):
         preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
         preds['param_direction'] = 'none'; preds['param_type'] = 'none'
 
-    # TV 기기 제어 → unknown (TV 켜/꺼/볼륨은 미지원)
-    if re.search(r'(?:TV|티비)\s*(?:켜|꺼|끄|볼륨|소리|채널|전원|줄여|키워)', text):
+    # TV 기기 제어 → unknown (TV 켜/꺼/볼륨/틀어는 미지원)
+    if re.search(r'(?:TV|티비)\s*(?:켜|꺼|끄|볼륨|소리|채널|전원|줄여|키워|틀어)', text):
         preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
         preds['param_direction'] = 'none'; preds['param_type'] = 'none'
+
+    # v81: 선풍기 → unknown (미지원 기기, 월패드에서 선풍기 제어 안 됨)
+    # 단, 다른 지원 기기와 함께 쓰인 복합문은 제외 ("에어컨은 끄고 선풍기 켜줘" → ac_control)
+    if re.search(r'선풍기', text) and not has_device:
+        preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
+        preds['param_direction'] = 'none'; preds['param_type'] = 'none'
+
+    # v81: 조건부 표현 + 날씨 → unknown (조건부 지원 안 됨)
+    if re.search(r'비\s*(?:오면|내리면|올때|올 때)', text):
+        if preds['fn'] == 'weather_query':
+            preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
+            preds['param_direction'] = 'none'; preds['param_type'] = 'none'
 
     # 전기장판/전기요(=전기요금 아님) → unknown (미지원 기기)
     if re.search(r'전기장판|전기요(?!금|량|절약)|장판\s*히터|전기\s*히터', text):
