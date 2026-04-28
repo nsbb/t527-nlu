@@ -1078,6 +1078,37 @@ def apply_post_rules(preds, text):
                 preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
                 preds['param_direction'] = 'none'
 
+    # v98: 꿉꿉/텁텁/탁한 공기 → vent_control/on (공기질 불쾌감 = 환기 필요)
+    # 후텁지근(더위+습도 → ac) 은 제외, 꿉꿉/눅눅/뭉글(습기/탁함 → 환기) 만 처리
+    if re.search(r'꿉꿉|텁텁|뭉글|눅눅|퀴퀴', text):
+        if preds['fn'] in ('unknown', 'security_mode', 'home_info'):
+            preds['fn'] = 'vent_control'; preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'on'
+
+    # v98: security_mode + "환기" 키워드 → vent 우선 (귀가 표현 후 환기 요청)
+    if preds['fn'] == 'security_mode' and re.search(r'환기|시켜|시원하게|공기', text):
+        if re.search(r'환기\s*(?:시켜|해줘|켜|좀)', text):
+            preds['fn'] = 'vent_control'; preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'on'
+
+    # v98: 끄고 자자/끄고 자려고 → light/off (취침 전 소등 청유형)
+    if re.search(r'끄고\s*(?:자자|자려|자야|자볼까|잘게)', text):
+        if preds['fn'] in ('light_control', 'unknown'):
+            preds['fn'] = 'light_control'; preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'off'
+
+    # v98: 창문 + 잠겼어/잠겨있어 → door_control/query (가스 오예측 방지, unknown도 포함)
+    if re.search(r'창문', text) and re.search(r'잠겼|잠겨\s*있', text):
+        if preds['fn'] in ('gas_control', 'unknown'):
+            preds['fn'] = 'door_control'; preds['exec_type'] = 'query_then_respond'
+            preds['param_direction'] = 'none'
+
+    # v99: 꿉꿉/눅눅/뭉글 + ac_control 오예측 → vent_control (습도 불쾌감 = 환기)
+    if re.search(r'꿉꿉|텁텁|뭉글|눅눅|퀴퀴', text):
+        if preds['fn'] == 'ac_control' and not re.search(r'에어컨|냉방|시원|온도|도로\s*맞춰', text):
+            preds['fn'] = 'vent_control'; preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'on'
+
     return preds
 
 
