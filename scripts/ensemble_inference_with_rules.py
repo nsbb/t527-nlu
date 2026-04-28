@@ -201,9 +201,22 @@ def apply_post_rules(preds, text):
 
     # 더위 비유 → dir=none 교정 (SPECIFIC_PATTERNS 응답은 맞지만 디바이스 제어 dir 누락)
     # "사우나야/찜통/쪄 죽겠어" 등 → ac_control dir=on
+    _hot_metaphors = r'사우나|찜통|찜질방|쪄\s*죽|땀이\s*(?:뻘뻘|나|줄줄)|기력이\s*다|더위\s*먹|불가마|가마솥|사막|용광로|불지옥'
     if preds['fn'] == 'ac_control' and preds['param_direction'] == 'none':
-        if re.search(r'사우나|찜통|찜질방|쪄\s*죽|땀이\s*(?:뻘뻘|나|줄줄)|기력이\s*다|더위\s*먹|불가마', text):
+        if re.search(_hot_metaphors, text):
             preds['param_direction'] = 'on'
+    # v101: 더위 비유 + fn=unknown/heat_control 오예측 → ac_control/on 교정
+    # "집이 가마솥 같아", "방이 사우나가 따로 없어" 등
+    if re.search(_hot_metaphors, text):
+        if preds['fn'] in ('unknown', 'heat_control', 'home_info'):
+            if not re.search(r'난방|보일러|따뜻하게|따뜻해\s*줘', text):
+                preds['fn'] = 'ac_control'; preds['exec_type'] = 'control_then_confirm'
+                preds['param_direction'] = 'on'
+    # v101: 온실/포근 + 따뜻하네/따뜻해 = 만족 관찰 → unknown (heat/on 오예측 방지)
+    if re.search(r'온실|포근', text) and re.search(r'따뜻하네|따뜻해요|따뜻하군|따뜻하지요', text):
+        if preds['fn'] == 'heat_control' and preds['param_direction'] == 'on':
+            preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
+            preds['param_direction'] = 'none'
     # 추위 비유 → dir=none 교정
     if preds['fn'] == 'heat_control' and preds['param_direction'] == 'none':
         if re.search(r'얼어\s*죽|냉동실|냉장고\s*같|시베리아|이글루|덜덜\s*떨|이가\s*딱딱|한기|몸이\s*꽁', text):
