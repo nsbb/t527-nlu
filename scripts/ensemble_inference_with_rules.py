@@ -148,9 +148,9 @@ def apply_post_rules(preds, text):
         preds['param_direction'] = 'none'
         preds['param_type'] = 'none'
 
-    # 미지원 기기 (볼륨/TV/선풍기 등) → unknown
-    if re.search(r'볼륨|볼름|볼음|TV|티비|선풍기|음악|노래|유튜브', text):
-        if preds['fn'] in ('home_info', 'system_meta', 'unknown', 'energy_query'):
+    # 미지원 기기 (볼륨/선풍기 등) → unknown
+    if re.search(r'볼륨|볼름|볼음|선풍기|음악|노래|유튜브', text):
+        if preds['fn'] in ('home_info', 'system_meta', 'unknown', 'energy_query', 'news_query'):
             preds['fn'] = 'unknown'
             preds['exec_type'] = 'direct_respond'
             preds['param_direction'] = 'none'
@@ -480,6 +480,78 @@ def apply_post_rules(preds, text):
     if preds['fn'] == 'curtain_control' and preds['param_direction'] == 'stop':
         if re.search(r'위로|위\s*로|올려|올리', text):
             preds['param_direction'] = 'up'
+
+    # ── v77: 구어체/화용 한계 보완 ──────────────────────────────────────
+
+    # 취소/허락 표현 확장: "안 꺼도 돼" / "안 켜도 돼" / "이거 켜도 돼?" → unknown
+    if re.search(r'^안\s+\S+(?:도|지\s+않아도)\s*돼(?:\s*요)?$', text.strip()):
+        preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
+        preds['param_direction'] = 'none'; preds['param_type'] = 'none'
+    if re.search(r'^이\s*(?:거|것)\s+\S+도\s*(?:돼|될까|되나요|괜찮)\??$', text.strip()):
+        preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
+        preds['param_direction'] = 'none'; preds['param_type'] = 'none'
+
+    # 상태 확인 질문 (켜져있어요?/꺼져있나요) → dir=none, exec=query (fn은 디바이스 유지)
+    # TS: "불 켜져있어?" = light_control/none, "가스 잠겨있어?" = gas_control/none
+    if re.search(r'(?:켜져|꺼져|잠겨|열려|닫혀)\s*(?:있어|있나요|있어요|있죠|있습니까|있는지|있나)', text):
+        if preds['fn'] in ('light_control', 'ac_control', 'heat_control', 'vent_control',
+                           'door_control', 'gas_control', 'curtain_control'):
+            preds['exec_type'] = 'query_then_respond'
+            preds['param_direction'] = 'none'; preds['param_type'] = 'none'
+
+    # 후텁지근/무더워 → ac_control (heat_control 오예측: 덥고 습함 = 에어컨)
+    if re.search(r'후텁지근|후덥지근|무더워|무덥네|무더운', text):
+        if preds['fn'] == 'heat_control':
+            preds['fn'] = 'ac_control'
+        if preds['fn'] == 'ac_control' and preds['param_direction'] == 'none':
+            preds['param_direction'] = 'on'
+
+    # 한기가 싸하네/싸하다 → heat_control (기존 rule: 한기가 도네만 처리)
+    if re.search(r'한기가?\s*(?:싸하|스미|찌릿|째려)', text):
+        preds['fn'] = 'heat_control'; preds['exec_type'] = 'control_then_confirm'
+        preds['param_direction'] = 'on'
+
+    # 잠금 걸어줘 → door_control/close (security_mode 오예측)
+    if re.search(r'잠금\s*(?:걸어|해줘|잠가|걸어줘)', text):
+        if preds['fn'] == 'security_mode':
+            preds['fn'] = 'door_control'; preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'close'
+
+    # 창문 → unknown (창문 제어 기능 미지원, door_control 오예측)
+    if re.search(r'창문|창호', text) and preds['fn'] == 'door_control':
+        preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
+        preds['param_direction'] = 'none'; preds['param_type'] = 'none'
+
+    # TV 기기 제어 → unknown (TV 켜/꺼/볼륨은 미지원)
+    if re.search(r'(?:TV|티비)\s*(?:켜|꺼|끄|볼륨|소리|채널|전원|줄여|키워)', text):
+        preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
+        preds['param_direction'] = 'none'; preds['param_type'] = 'none'
+
+    # 전기장판/전기요(=전기요금 아님) → unknown (미지원 기기)
+    if re.search(r'전기장판|전기요(?!금|량|절약)|장판\s*히터|전기\s*히터', text):
+        preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
+        preds['param_direction'] = 'none'; preds['param_type'] = 'none'
+
+    # 어둑어둑/은은하게 → light_control/down (dim 요청)
+    if re.search(r'어둑어둑|어스름하게|은은하게|아늑하게', text):
+        if preds['fn'] == 'light_control' and preds['param_direction'] in ('on', 'none'):
+            preds['param_direction'] = 'down'
+
+    # 쾌적하게/바람 좀 → vent_control (ac_control 오예측)
+    if re.search(r'쾌적하게|쾌적하|바람\s*좀|잠깐\s*바람', text):
+        if preds['fn'] == 'ac_control':
+            preds['fn'] = 'vent_control'
+            if preds['param_direction'] == 'none':
+                preds['param_direction'] = 'on'
+
+    # "자야지/잘게/자려고" + light_control → off (숙면 전 소등 혼잣말)
+    if re.search(r'자야지|잘게|자려고|잘\s*거야|자기\s*전에', text):
+        if preds['fn'] == 'light_control' and preds['param_direction'] in ('none',):
+            preds['param_direction'] = 'off'
+
+    # 에어컨은 끄고 + 다른기기 → ac_control/off (복합 명령 첫 동작 추출)
+    if re.search(r'에어컨\s*(?:은|를)?\s*끄고', text) and preds['fn'] == 'ac_control':
+        preds['param_direction'] = 'off'
 
     return preds
 
