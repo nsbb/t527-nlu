@@ -33,10 +33,11 @@ def apply_post_rules(preds, text):
         preds['param_type'] = 'none'
 
     # dir 패턴 교정 (v28 학습 오류 보정)
-    # 밝게 → up
-    if re.search(r'밝게', text) and preds['param_direction'] == 'down':
-        preds['param_direction'] = 'up'
-        preds['param_type'] = 'brightness'
+    # 밝게 → up (on도 포함: "거실 좀 밝게 해줘" → dir=on 오예측 교정)
+    if re.search(r'밝게', text) and preds['fn'] == 'light_control':
+        if preds['param_direction'] in ('down', 'on'):
+            preds['param_direction'] = 'up'
+            preds['param_type'] = 'brightness'
     # 어둡게 → down
     if re.search(r'어둡게', text) and preds['param_direction'] in ('up', 'on'):
         preds['param_direction'] = 'down'
@@ -548,6 +549,12 @@ def apply_post_rules(preds, text):
     if re.search(r'자야지|잘게|자려고|잘\s*거야|자기\s*전에', text):
         if preds['fn'] == 'light_control' and preds['param_direction'] in ('none',):
             preds['param_direction'] = 'off'
+
+    # 만족/완료 표현 → unknown (디바이스 제어 없음, 상태 설명)
+    # "이제 쾌적해졌어", "방이 따뜻해", "시원해졌어" 등 → cancel/acknowledge
+    if re.search(r'(?:이제|좀|많이|꽤)?\s*(?:쾌적해졌|시원해졌|따뜻해졌|밝아졌|어두워졌|환해졌)', text):
+        preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
+        preds['param_direction'] = 'none'; preds['param_type'] = 'none'
 
     # 에어컨은 끄고 + 다른기기 → ac_control/off (복합 명령 첫 동작 추출)
     if re.search(r'에어컨\s*(?:은|를)?\s*끄고', text) and preds['fn'] == 'ac_control':
