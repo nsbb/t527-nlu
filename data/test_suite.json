@@ -434,7 +434,7 @@
   {
     "utterance": "몇 시야?",
     "fn": "home_info",
-    "exec": "query_then_respond",
+    "exec": "direct_respond",
     "dir": "none"
   },
   {
@@ -787,7 +787,7 @@
   },
   {
     "utterance": "전체 꺼",
-    "fn": "ac_control",
+    "fn": "light_control",
     "exec": "control_then_confirm",
     "dir": "off"
   },
@@ -825,13 +825,13 @@
     "utterance": "불 끄지 마",
     "fn": "light_control",
     "exec": "control_then_confirm",
-    "dir": "off"
+    "dir": "on"
   },
   {
     "utterance": "에어컨 끄지 마",
     "fn": "ac_control",
     "exec": "control_then_confirm",
-    "dir": "off"
+    "dir": "on"
   },
   {
     "utterance": "야 거실 불 켜줘",
@@ -902,7 +902,7 @@
   {
     "utterance": "에어컨",
     "fn": "ac_control",
-    "exec": "direct_respond",
+    "exec": "query_then_respond",
     "dir": "none"
   },
   {
@@ -1046,8 +1046,8 @@
   {
     "utterance": "커튼 열려있어",
     "fn": "curtain_control",
-    "exec": "control_then_confirm",
-    "dir": "open"
+    "exec": "query_then_respond",
+    "dir": "none"
   },
   {
     "utterance": "가스 괜찮아",
@@ -1064,7 +1064,7 @@
   {
     "utterance": "서울 날씨",
     "fn": "weather_query",
-    "exec": "direct_respond",
+    "exec": "query_then_respond",
     "dir": "none"
   },
   {
@@ -1154,7 +1154,7 @@
   {
     "utterance": "택시비 얼마야",
     "fn": "unknown",
-    "exec": "query_then_respond",
+    "exec": "direct_respond",
     "dir": "none"
   },
   {
@@ -1209,7 +1209,7 @@
     "utterance": "다운라이트 켜",
     "fn": "light_control",
     "exec": "control_then_confirm",
-    "dir": "none"
+    "dir": "on"
   },
   {
     "utterance": "취침등",
@@ -1221,7 +1221,7 @@
     "utterance": "무드등",
     "fn": "light_control",
     "exec": "control_then_confirm",
-    "dir": "none"
+    "dir": "on"
   },
   {
     "utterance": "복도등 켜줘",
@@ -1256,8 +1256,8 @@
   {
     "utterance": "환풍기 작동",
     "fn": "vent_control",
-    "exec": "control_then_confirm",
-    "dir": "on"
+    "exec": "direct_respond",
+    "dir": "none"
   },
   {
     "utterance": "가스 안전한가",
@@ -1760,7 +1760,7 @@
   {
     "utterance": "와이파이",
     "fn": "unknown",
-    "exec": "query_then_respond",
+    "exec": "direct_respond",
     "dir": "none"
   },
   {
@@ -1862,7 +1862,7 @@
   {
     "utterance": "에너지 목표",
     "fn": "energy_query",
-    "exec": "direct_respond",
+    "exec": "query_then_respond",
     "dir": "none"
   },
   {
@@ -2055,7 +2055,7 @@
     "utterance": "AC off",
     "fn": "ac_control",
     "exec": "direct_respond",
-    "dir": "none"
+    "dir": "off"
   },
   {
     "utterance": "heating 올려",
@@ -2157,7 +2157,7 @@
     "utterance": "에어컨 리모컨",
     "fn": "ac_control",
     "exec": "direct_respond",
-    "dir": "on"
+    "dir": "none"
   },
   {
     "utterance": "에어컨 필터",
@@ -2300,7 +2300,7 @@
   {
     "utterance": "뉴스 브리핑",
     "fn": "news_query",
-    "exec": "direct_respond",
+    "exec": "query_then_respond",
     "dir": "none"
   },
   {
@@ -2493,7 +2493,7 @@
     "utterance": "안방 난방",
     "fn": "heat_control",
     "exec": "query_then_respond",
-    "dir": "on"
+    "dir": "none"
   },
   {
     "utterance": "거실 보일러 켜",
@@ -2643,7 +2643,7 @@
     "utterance": "공기 순환",
     "fn": "vent_control",
     "exec": "query_then_respond",
-    "dir": "on"
+    "dir": "none"
   },
   {
     "utterance": "환기 풍량",
@@ -2661,7 +2661,7 @@
     "utterance": "환기 시스템",
     "fn": "vent_control",
     "exec": "query_then_respond",
-    "dir": "on"
+    "dir": "none"
   },
   {
     "utterance": "환기 약하게 해줘",
@@ -3056,13 +3056,13 @@
   {
     "utterance": "뉴스 요약해줘",
     "fn": "news_query",
-    "exec": "direct_respond",
+    "exec": "query_then_respond",
     "dir": "none"
   },
   {
     "utterance": "주식 시세",
     "fn": "market_query",
-    "exec": "direct_respond",
+    "exec": "query_then_respond",
     "dir": "none"
   },
   {
@@ -3152,7 +3152,7 @@
   {
     "utterance": "길 안내",
     "fn": "unknown",
-    "exec": "query_then_respond",
+    "exec": "direct_respond",
     "dir": "none"
   },
   {
@@ -3297,7 +3297,7 @@
     "utterance": "에어컨 냉방 모드",
     "fn": "ac_control",
     "exec": "query_then_respond",
-    "dir": "none"
+    "dir": "set"
   },
   {
     "utterance": "에어컨 풍속 올려",
@@ -3416,7 +3416,7 @@
   {
     "utterance": "엘베 내려와",
     "fn": "elevator_call",
-    "exec": "query_then_respond",
+    "exec": "control_then_confirm",
     "dir": "on"
   },
   {
@@ -3704,14 +3704,14 @@
   {
     "utterance": "안방 라이트 off",
     "fn": "light_control",
-    "exec": "query_then_respond",
-    "dir": "none"
+    "exec": "direct_respond",
+    "dir": "off"
   },
   {
     "utterance": "전체 등 off",
     "fn": "light_control",
     "exec": "direct_respond",
-    "dir": "none"
+    "dir": "off"
   },
   {
     "utterance": "난방 좀 세게",
@@ -3741,7 +3741,7 @@
     "utterance": "난방 시스템",
     "fn": "heat_control",
     "exec": "query_then_respond",
-    "dir": "on"
+    "dir": "none"
   },
   {
     "utterance": "히터 작동시켜",
@@ -3788,7 +3788,7 @@
   {
     "utterance": "환풍 모드",
     "fn": "vent_control",
-    "exec": "query_then_respond",
+    "exec": "direct_respond",
     "dir": "none"
   },
   {
@@ -3908,7 +3908,7 @@
   {
     "utterance": "뉴스 요약해",
     "fn": "news_query",
-    "exec": "direct_respond",
+    "exec": "query_then_respond",
     "dir": "none"
   },
   {
@@ -3926,7 +3926,7 @@
   {
     "utterance": "사회면",
     "fn": "news_query",
-    "exec": "direct_respond",
+    "exec": "query_then_respond",
     "dir": "none"
   },
   {
@@ -4076,7 +4076,7 @@
   {
     "utterance": "통행 시간",
     "fn": "traffic_query",
-    "exec": "direct_respond",
+    "exec": "query_then_respond",
     "dir": "none"
   },
   {
@@ -4088,7 +4088,7 @@
   {
     "utterance": "모닝콜 삭제",
     "fn": "schedule_manage",
-    "exec": "query_then_respond",
+    "exec": "direct_respond",
     "dir": "none"
   },
   {
@@ -4154,14 +4154,14 @@
   {
     "utterance": "불좀켜",
     "fn": "light_control",
-    "exec": "direct_respond",
+    "exec": "clarify",
     "dir": "none"
   },
   {
     "utterance": "불좀꺼",
     "fn": "light_control",
     "exec": "control_then_confirm",
-    "dir": "none"
+    "dir": "off"
   },
   {
     "utterance": "남방 올려쥬",
@@ -4275,7 +4275,7 @@
     "utterance": "환풍기커줘",
     "fn": "vent_control",
     "exec": "control_then_confirm",
-    "dir": "up"
+    "dir": "none"
   },
   {
     "utterance": "까스 잠가쥬",
@@ -4286,8 +4286,8 @@
   {
     "utterance": "까스 닫아쥬",
     "fn": "gas_control",
-    "exec": "query_then_respond",
-    "dir": "none"
+    "exec": "control_then_confirm",
+    "dir": "close"
   },
   {
     "utterance": "가쓰 잠가",
@@ -4364,7 +4364,7 @@
   {
     "utterance": "엘레베이터와",
     "fn": "elevator_call",
-    "exec": "query_then_respond",
+    "exec": "control_then_confirm",
     "dir": "on"
   },
   {
@@ -5067,7 +5067,7 @@
     "utterance": "전등 켜봐",
     "fn": "light_control",
     "exec": "control_then_confirm",
-    "dir": "none"
+    "dir": "on"
   },
   {
     "utterance": "전등 켜",
@@ -5552,7 +5552,7 @@
   {
     "utterance": "라이트 켜",
     "fn": "light_control",
-    "exec": "clarify",
+    "exec": "control_then_confirm",
     "dir": "on"
   },
   {
@@ -8642,7 +8642,7 @@
   {
     "utterance": "병원 추천",
     "fn": "medical_query",
-    "exec": "direct_respond",
+    "exec": "query_then_respond",
     "dir": "none"
   },
   {
@@ -8858,8 +8858,8 @@
   {
     "utterance": "알람 삭제",
     "fn": "schedule_manage",
-    "exec": "control_then_confirm",
-    "dir": "set"
+    "exec": "direct_respond",
+    "dir": "none"
   },
   {
     "utterance": "모닝콜 취소",
@@ -8882,7 +8882,7 @@
   {
     "utterance": "모닝콜 시간",
     "fn": "schedule_manage",
-    "exec": "direct_respond",
+    "exec": "query_then_respond",
     "dir": "none"
   },
   {
@@ -8948,8 +8948,8 @@
   {
     "utterance": "월패드 볼륨",
     "fn": "home_info",
-    "exec": "control_then_confirm",
-    "dir": "up"
+    "exec": "direct_respond",
+    "dir": "none"
   },
   {
     "utterance": "음량 설정",
@@ -9093,7 +9093,7 @@
     "utterance": "주방 블라인드 올려",
     "fn": "curtain_control",
     "exec": "control_then_confirm",
-    "dir": "stop"
+    "dir": "up"
   },
   {
     "utterance": "전체 커튼 닫아",
@@ -9231,7 +9231,7 @@
     "utterance": "나갈 때 설정",
     "fn": "security_mode",
     "exec": "query_then_respond",
-    "dir": "on"
+    "dir": "none"
   },
   {
     "utterance": "집 나가는데",
@@ -9266,7 +9266,7 @@
   {
     "utterance": "승강기 보내줘",
     "fn": "elevator_call",
-    "exec": "query_then_respond",
+    "exec": "control_then_confirm",
     "dir": "on"
   },
   {
@@ -9284,7 +9284,7 @@
   {
     "utterance": "엘베 올라와",
     "fn": "elevator_call",
-    "exec": "query_then_respond",
+    "exec": "control_then_confirm",
     "dir": "on"
   },
   {
@@ -9362,7 +9362,7 @@
   {
     "utterance": "주식 현황",
     "fn": "market_query",
-    "exec": "direct_respond",
+    "exec": "query_then_respond",
     "dir": "none"
   },
   {
@@ -9627,7 +9627,7 @@
     "utterance": "침실 불 좀 켜줘",
     "fn": "light_control",
     "exec": "control_then_confirm",
-    "dir": "none"
+    "dir": "on"
   },
   {
     "utterance": "침실 불 좀 꺼줘",
@@ -9639,7 +9639,7 @@
     "utterance": "침실 불 좀 켜봐",
     "fn": "light_control",
     "exec": "control_then_confirm",
-    "dir": "none"
+    "dir": "on"
   },
   {
     "utterance": "침실 불 좀 꺼봐",
@@ -9663,7 +9663,7 @@
     "utterance": "침실 불 좀 켜주세요",
     "fn": "light_control",
     "exec": "control_then_confirm",
-    "dir": "none"
+    "dir": "on"
   },
   {
     "utterance": "침실 불 좀 꺼주세요",
@@ -9675,7 +9675,7 @@
     "utterance": "작은방 불 좀 켜줘",
     "fn": "light_control",
     "exec": "control_then_confirm",
-    "dir": "none"
+    "dir": "on"
   },
   {
     "utterance": "작은방 불 좀 꺼줘",
@@ -9687,7 +9687,7 @@
     "utterance": "작은방 불 좀 켜봐",
     "fn": "light_control",
     "exec": "control_then_confirm",
-    "dir": "none"
+    "dir": "on"
   },
   {
     "utterance": "작은방 불 좀 꺼봐",
@@ -9711,7 +9711,7 @@
     "utterance": "작은방 불 좀 켜주세요",
     "fn": "light_control",
     "exec": "control_then_confirm",
-    "dir": "none"
+    "dir": "on"
   },
   {
     "utterance": "작은방 불 좀 꺼주세요",
@@ -9723,7 +9723,7 @@
     "utterance": "아이방 불 좀 켜줘",
     "fn": "light_control",
     "exec": "control_then_confirm",
-    "dir": "none"
+    "dir": "on"
   },
   {
     "utterance": "아이방 불 좀 꺼줘",
@@ -9735,7 +9735,7 @@
     "utterance": "아이방 불 좀 켜봐",
     "fn": "light_control",
     "exec": "control_then_confirm",
-    "dir": "none"
+    "dir": "on"
   },
   {
     "utterance": "아이방 불 좀 꺼봐",
@@ -9759,7 +9759,7 @@
     "utterance": "아이방 불 좀 켜주세요",
     "fn": "light_control",
     "exec": "control_then_confirm",
-    "dir": "none"
+    "dir": "on"
   },
   {
     "utterance": "아이방 불 좀 꺼주세요",
@@ -10076,7 +10076,7 @@
   {
     "utterance": "과일",
     "fn": "unknown",
-    "exec": "query_then_respond",
+    "exec": "direct_respond",
     "dir": "none"
   },
   {
@@ -10232,7 +10232,7 @@
   {
     "utterance": "날 좋나",
     "fn": "weather_query",
-    "exec": "direct_respond",
+    "exec": "query_then_respond",
     "dir": "none"
   },
   {
@@ -10262,7 +10262,7 @@
   {
     "utterance": "세계 뉴스",
     "fn": "news_query",
-    "exec": "direct_respond",
+    "exec": "query_then_respond",
     "dir": "none"
   },
   {
@@ -10382,7 +10382,7 @@
   {
     "utterance": "여의도까지 얼마나 걸려",
     "fn": "traffic_query",
-    "exec": "direct_respond",
+    "exec": "query_then_respond",
     "dir": "none"
   },
   {
@@ -11085,7 +11085,7 @@
     "utterance": "엘리베이터 올려보내",
     "fn": "elevator_call",
     "exec": "control_then_confirm",
-    "dir": "none"
+    "dir": "on"
   },
   {
     "utterance": "엘리베이터 내려보내",
@@ -11108,7 +11108,7 @@
   {
     "utterance": "승강기 와줘",
     "fn": "elevator_call",
-    "exec": "query_then_respond",
+    "exec": "control_then_confirm",
     "dir": "on"
   },
   {
@@ -11414,7 +11414,7 @@
   {
     "utterance": "카드",
     "fn": "unknown",
-    "exec": "query_then_respond",
+    "exec": "direct_respond",
     "dir": "none"
   },
   {
@@ -11432,7 +11432,7 @@
   {
     "utterance": "교환",
     "fn": "unknown",
-    "exec": "direct_respond",
+    "exec": "query_then_respond",
     "dir": "none"
   },
   {
@@ -11570,7 +11570,7 @@
   {
     "utterance": "일정",
     "fn": "unknown",
-    "exec": "query_then_respond",
+    "exec": "direct_respond",
     "dir": "none"
   },
   {
@@ -11672,13 +11672,13 @@
   {
     "utterance": "테니스",
     "fn": "unknown",
-    "exec": "direct_respond",
+    "exec": "query_then_respond",
     "dir": "none"
   },
   {
     "utterance": "배드민턴",
     "fn": "unknown",
-    "exec": "direct_respond",
+    "exec": "query_then_respond",
     "dir": "none"
   },
   {
@@ -11876,7 +11876,7 @@
   {
     "utterance": "동전 던져",
     "fn": "unknown",
-    "exec": "query_then_respond",
+    "exec": "direct_respond",
     "dir": "none"
   },
   {
@@ -11924,7 +11924,7 @@
   {
     "utterance": "혈액형 궁합",
     "fn": "unknown",
-    "exec": "query_then_respond",
+    "exec": "direct_respond",
     "dir": "none"
   },
   {
@@ -12105,7 +12105,7 @@
     "utterance": "거실 에어컨 수면모드로",
     "fn": "ac_control",
     "exec": "control_then_confirm",
-    "dir": "down"
+    "dir": "set"
   },
   {
     "utterance": "거실 에어컨 수면으로",
@@ -12116,8 +12116,8 @@
   {
     "utterance": "거실 에어컨 수면모드",
     "fn": "ac_control",
-    "exec": "control_then_confirm",
-    "dir": "down"
+    "exec": "query_then_respond",
+    "dir": "none"
   },
   {
     "utterance": "안방 에어컨 제습으로 해줘",
@@ -12225,7 +12225,7 @@
     "utterance": "안방 에어컨 수면모드로",
     "fn": "ac_control",
     "exec": "control_then_confirm",
-    "dir": "none"
+    "dir": "set"
   },
   {
     "utterance": "안방 에어컨 수면으로",
@@ -12344,8 +12344,8 @@
   {
     "utterance": "주방 에어컨 수면모드로",
     "fn": "ac_control",
-    "exec": "query_then_respond",
-    "dir": "none"
+    "exec": "control_then_confirm",
+    "dir": "set"
   },
   {
     "utterance": "주방 에어컨 수면으로",
@@ -12465,7 +12465,7 @@
     "utterance": "침실 에어컨 수면모드로",
     "fn": "ac_control",
     "exec": "control_then_confirm",
-    "dir": "none"
+    "dir": "set"
   },
   {
     "utterance": "침실 에어컨 수면으로",
@@ -12585,7 +12585,7 @@
     "utterance": "작은방 에어컨 수면모드로",
     "fn": "ac_control",
     "exec": "control_then_confirm",
-    "dir": "none"
+    "dir": "set"
   },
   {
     "utterance": "작은방 에어컨 수면으로",
@@ -12705,7 +12705,7 @@
     "utterance": "아이방 에어컨 수면모드로",
     "fn": "ac_control",
     "exec": "control_then_confirm",
-    "dir": "none"
+    "dir": "set"
   },
   {
     "utterance": "아이방 에어컨 수면으로",
@@ -12716,7 +12716,7 @@
   {
     "utterance": "아이방 에어컨 수면모드",
     "fn": "ac_control",
-    "exec": "control_then_confirm",
+    "exec": "query_then_respond",
     "dir": "none"
   },
   {
@@ -15063,7 +15063,7 @@
     "utterance": "거실 빨리 불 켜줘",
     "fn": "light_control",
     "exec": "control_then_confirm",
-    "dir": "none"
+    "dir": "on"
   },
   {
     "utterance": "거실 빨리 불 꺼줘",
@@ -15075,7 +15075,7 @@
     "utterance": "거실 혹시 불 켜줘",
     "fn": "light_control",
     "exec": "control_then_confirm",
-    "dir": "none"
+    "dir": "on"
   },
   {
     "utterance": "거실 혹시 불 꺼줘",
@@ -15087,7 +15087,7 @@
     "utterance": "거실 제발 불 켜줘",
     "fn": "light_control",
     "exec": "control_then_confirm",
-    "dir": "none"
+    "dir": "on"
   },
   {
     "utterance": "거실 제발 불 꺼줘",
@@ -15123,7 +15123,7 @@
     "utterance": "안방 지금 불 켜줘",
     "fn": "light_control",
     "exec": "control_then_confirm",
-    "dir": "none"
+    "dir": "on"
   },
   {
     "utterance": "안방 지금 불 꺼줘",
@@ -15159,7 +15159,7 @@
     "utterance": "안방 제발 불 켜줘",
     "fn": "light_control",
     "exec": "clarify",
-    "dir": "none"
+    "dir": "on"
   },
   {
     "utterance": "안방 제발 불 꺼줘",
@@ -15182,7 +15182,7 @@
   {
     "utterance": "주방 좀 불 켜줘",
     "fn": "light_control",
-    "exec": "control_then_confirm",
+    "exec": "clarify",
     "dir": "none"
   },
   {
@@ -15243,7 +15243,7 @@
     "utterance": "주방 야 불 켜줘",
     "fn": "light_control",
     "exec": "control_then_confirm",
-    "dir": "none"
+    "dir": "on"
   },
   {
     "utterance": "주방 야 불 꺼줘",
@@ -16346,7 +16346,7 @@
   {
     "utterance": "전주 날씨",
     "fn": "weather_query",
-    "exec": "query_then_respond",
+    "exec": "direct_respond",
     "dir": "none"
   },
   {
