@@ -128,6 +128,14 @@ SINGLE_TESTS = [
     ("TV 틀어줘",              "unknown",        None,   None,           "v81_TV틀어"),
     ("선풍기 틀어줘",          "unknown",        None,   None,           "v81_선풍기틀어"),
     ("비 오면 창문 닫아줘",    "unknown",        None,   None,           "v81_비오면창문"),
+
+    # ── v83: 신체감각 온도/습도 표현 + 잠가야겠다 ──────────────────
+    ("쌀쌀하다",               "heat_control",   "on",   None,           "v83_쌀쌀"),
+    ("서늘해",                 "heat_control",   "on",   None,           "v83_서늘"),
+    ("으슬으슬",               "heat_control",   "on",   None,           "v83_으슬으슬"),
+    ("끈적끈적",               "ac_control",     "on",   None,           "v83_끈적끈적"),
+    ("땀이 나",                "ac_control",     "on",   None,           "v83_땀이나"),
+    ("문이나 잠가야겠다",      "door_control",   "close",None,           "v83_잠가야겠다"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────
