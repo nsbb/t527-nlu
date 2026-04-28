@@ -1109,6 +1109,30 @@ def apply_post_rules(preds, text):
             preds['fn'] = 'vent_control'; preds['exec_type'] = 'control_then_confirm'
             preds['param_direction'] = 'on'
 
+    # v100: 꺼줘요/꺼주세요 + dir=none (부탁이에요 등 후속절 때문에 모델 혼선) → dir=off
+    _device_fns = ('light_control', 'ac_control', 'heat_control', 'vent_control',
+                   'door_control', 'gas_control', 'curtain_control')
+    if preds['fn'] in _device_fns and preds['param_direction'] == 'none':
+        if preds['exec_type'] == 'control_then_confirm':
+            if re.search(r'꺼\s*줘\s*요|꺼\s*주\s*세\s*요', text):
+                preds['param_direction'] = 'off'
+            elif re.search(r'켜\s*줘\s*요|켜\s*주\s*세\s*요', text):
+                preds['param_direction'] = 'on'
+
+    # v100: "잖아" 불만 표현 + 기기 켜져있음 = 꺼달라는 의도 → query_then_judge/off
+    # "에어컨 계속 켜져있잖아" = 에어컨 꺼줘(가?)의 수사적 불만
+    if re.search(r'켜져\s*있잖아|켜\s*있잖아|계속\s*켜져\s*있어|아직도\s*켜져\s*있어', text):
+        if preds['fn'] in _device_fns and preds['param_direction'] == 'none':
+            preds['exec_type'] = 'query_then_judge'; preds['param_direction'] = 'off'
+
+    # v100: "왜/어째서" + 기기 + 켜져있어/돌아가 수사적 질문 → query_then_judge/off
+    # "에어컨이 왜 아직도 켜져 있어?" = 끄고 싶다는 의미
+    if re.search(r'왜\s*(?:아직|계속|이렇게|그렇게|아직도)?', text):
+        if re.search(r'켜져\s*있어|켜\s*있어|돌아\s*가|작동\s*(?:하고|되고|중이)', text):
+            if preds['fn'] in _device_fns and preds['param_direction'] == 'none':
+                if not re.search(r'왜\s*(?:켜|꺼|않|안|못)', text):  # "왜 안꺼져?" 제외
+                    preds['exec_type'] = 'query_then_judge'; preds['param_direction'] = 'off'
+
     return preds
 
 
