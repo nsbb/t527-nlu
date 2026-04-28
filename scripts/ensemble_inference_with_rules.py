@@ -16,6 +16,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT); sys.path.insert(0, 'scripts')
 
 from model_cnn_multihead import HEAD_I2L, HEAD_NAMES
+from preprocess import preprocess
 from transformers import AutoTokenizer
 import onnxruntime as ort
 
@@ -43,10 +44,11 @@ def apply_post_rules(preds, text):
         if preds['param_direction'] in ('on', 'none'):
             preds['param_direction'] = 'up'
             preds['param_type'] = 'brightness'
-    # 어둡게 → down
-    if re.search(r'어둡게', text) and preds['param_direction'] in ('up', 'on'):
-        preds['param_direction'] = 'down'
-        preds['param_type'] = 'brightness'
+    # 어둡게 → down (v93: none 포함 — 복합문 앞부분이 있어도 dir=down 적용)
+    if re.search(r'어둡게', text) and preds['param_direction'] in ('up', 'on', 'none'):
+        if preds['fn'] == 'light_control':
+            preds['param_direction'] = 'down'
+            preds['param_type'] = 'brightness'
     # 눈이 뻑뻑해/건조해 → vent_control (dry eye from dry indoor air)
     if re.search(r'눈이\s*(?:뻑뻑|건조해|뻑뻑해|건조하)', text):
         if preds['fn'] in ('light_control', 'unknown', 'home_info', 'weather_query'):
@@ -484,11 +486,10 @@ def apply_post_rules(preds, text):
     if preds['fn'] == 'market_query' and preds['exec_type'] == 'direct_respond':
         if re.search(r'(?:LG|삼성|현대|카카오|기아|네이버|KB|SK|포스코)\s*주가', text):
             preds['exec_type'] = 'query_then_respond'
-    # weather_query + CTC + dir=on → 특수 (비 올까 같은 misprediction)
+    # weather_query + CTC + dir=on → 비/눈 올까 는 dir=none (단, exec/dir 수정은 최소화)
+    # v94: TS는 "비 올까/내일 추울까" 모두 exec=CTC를 정답으로 봄 → exec 수정 제거
     if preds['fn'] == 'weather_query' and preds['exec_type'] == 'control_then_confirm':
-        # "비/눈/더울까/추울까" 판단형이면 query로 수정
-        if re.search(r'비\s*올|눈\s*올|더울까|추울까|올까', text):
-            preds['exec_type'] = 'query_then_judge'
+        if re.search(r'비\s*올|눈\s*올', text) and preds['param_direction'] == 'on':
             preds['param_direction'] = 'none'
 
     # iter9: 공기청정/공기 정화 → vent_control (TS에 없지만 실사용 보강)
@@ -910,11 +911,80 @@ def apply_post_rules(preds, text):
             preds['fn'] = 'light_control'; preds['exec_type'] = 'control_then_confirm'
             preds['param_direction'] = 'off'
 
+    # v93: "꺼야겠어/꺼야지/꺼야 할 것 같아" — 끄기 의무 표현 → dir=off
+    _off_oblig = re.search(r'꺼\s*야\s*(?:겠|지|할\s*것\s*같|되|돼)|끄\s*야\s*(?:겠|지)', text)
+    if _off_oblig and preds['fn'] in ('light_control', 'ac_control', 'heat_control', 'vent_control', 'gas_control'):
+        if not re.search(r'끄지\s*말|꺼지\s*말', text):
+            preds['param_direction'] = 'off'
+
+    # v93: "끌까요/끌게요/꺼볼까요" — 끄기 청유/제안 → dir=off
+    if re.search(r'(?:끌까요?|끌게요?|꺼볼까요?|꺼드릴까요?)', text):
+        if preds['fn'] in ('light_control', 'ac_control', 'heat_control', 'vent_control'):
+            preds['param_direction'] = 'off'
+
+    # v93: "환기 시킬까요/시켜볼까/시켜줄까" — vent 청유 → vent_control/on
+    if re.search(r'환기\s*(?:시킬까|시켜볼까|시켜줄|시킬게|시켜줘?)', text):
+        if preds['fn'] in ('unknown', 'home_info', 'vent_control'):
+            preds['fn'] = 'vent_control'; preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'on'
+
+    # v93: "어둡네/어두운데" — 밝기 불만 관찰 → light_control/on (fn 교정)
+    if re.search(r'(?:꽤|좀|많이|너무|정말)?\s*어둡(?:네|다|군요|구나|지만)', text):
+        if preds['fn'] in ('heat_control', 'unknown', 'vent_control', 'home_info'):
+            if not re.search(r'어둡게|어둡지\s*않|안\s*어둡', text):
+                preds['fn'] = 'light_control'; preds['exec_type'] = 'control_then_confirm'
+                preds['param_direction'] = 'on'
+
+    # v94: 특수 조명 + 켜줘/켜봐 → dir=on (간접등/무드등/다운라이트 등 uncommon 단어)
+    if re.search(r'간접등|무드등|다운라이트|스탠드|풋라이트|씨링등|밸런스등', text):
+        if preds['fn'] == 'light_control' and preds['param_direction'] == 'none':
+            if re.search(r'켜\s*(?:줘|봐|주세요|줄게)', text):
+                preds['param_direction'] = 'on'
+
+    # v94: 끄지 마 → dir=on (부정+끄다 = 켜놔야 함, TS dir=off는 오류)
+    if re.search(r'끄지\s*(?:마|말|말아줘|마세요)', text):
+        if preds['fn'] in ('light_control', 'ac_control', 'heat_control', 'vent_control'):
+            preds['param_direction'] = 'on'
+
+    # v94: 볼륨/음량 → home_info (월패드 시스템 볼륨 컨트롤)
+    if re.search(r'볼륨|음량|(?:소리|음)\s*(?:크기|수준)', text):
+        if preds['fn'] == 'unknown':
+            preds['fn'] = 'home_info'
+            if re.search(r'올려|높여|최대|크게', text):
+                preds['exec_type'] = 'control_then_confirm'; preds['param_direction'] = 'up'
+            elif re.search(r'내려|줄여|낮춰|작게|조용', text):
+                preds['exec_type'] = 'control_then_confirm'; preds['param_direction'] = 'down'
+    # 조용히 해줘 → home_info/down (단, 사람/아이 등 사회적 맥락이 있으면 OOD)
+    if re.search(r'조용\s*히\s*(?:해|좀)\s*(?:줘|주세요)?', text):
+        if preds['fn'] == 'unknown':
+            if not re.search(r'아이|아기|아기가|아이가|사람|누가|언니|오빠|형|동생|자는데|주무시는', text):
+                preds['fn'] = 'home_info'; preds['exec_type'] = 'control_then_confirm'
+                preds['param_direction'] = 'down'
+
+    # v94: 귀가 → security_mode/on
+    if text.strip() in ('귀가', '귀가했어', '귀가 했어', '귀가요', '귀가했습니다'):
+        if preds['fn'] in ('unknown', 'home_info', 'security_mode'):
+            preds['fn'] = 'security_mode'; preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'on'
+
+    # v94: "습도 어때/괜찮아/좋아/나빠" → weather_query (not home_info) — 단, "얼마야/몇이야" 등 수치조회는 home_info
+    if re.search(r'습도\s*(?:어때|괜찮|좋아|나빠|어떻게)', text):
+        if preds['fn'] in ('home_info', 'unknown') and not re.search(r'얼마|몇|수치|레벨', text):
+            preds['fn'] = 'weather_query'; preds['exec_type'] = 'query_then_respond'
+            preds['param_direction'] = 'none'
+
+    # v94: 현관 확인 → door_control (query)
+    if re.search(r'현관\s*(?:확인|상태|어때|열려있|잠겨있)', text):
+        if preds['fn'] == 'home_info':
+            preds['fn'] = 'door_control'; preds['exec_type'] = 'query_then_respond'
+            preds['param_direction'] = 'none'
+
     return preds
 
 
 def predict_with_rules(text, sess, tok):
-    tk = tok(text, padding='max_length', truncation=True, max_length=32, return_tensors='np')
+    clean = preprocess(text)
+    tk = tok(clean, padding='max_length', truncation=True, max_length=32, return_tensors='np')
     outs = sess.run(None, {'input_ids': tk['input_ids'].astype(np.int64)})
     preds = {
         'fn': HEAD_I2L['fn'][outs[0][0].argmax()],
@@ -923,7 +993,7 @@ def predict_with_rules(text, sess, tok):
         'param_type': HEAD_I2L['param_type'][outs[3][0].argmax()],
         'judge': HEAD_I2L['judge'][outs[4][0].argmax()],
     }
-    return apply_post_rules(preds, text)
+    return apply_post_rules(preds, clean)
 
 
 def main():
