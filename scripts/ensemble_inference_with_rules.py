@@ -130,6 +130,32 @@ def apply_post_rules(preds, text):
             preds['exec_type'] = 'control_then_confirm'
             preds['param_direction'] = 'on'
 
+    # 더위 비유 → dir=none 교정 (SPECIFIC_PATTERNS 응답은 맞지만 디바이스 제어 dir 누락)
+    # "사우나야/찜통/쪄 죽겠어" 등 → ac_control dir=on
+    if preds['fn'] == 'ac_control' and preds['param_direction'] == 'none':
+        if re.search(r'사우나|찜통|쪄\s*죽|땀이\s*(?:뻘뻘|나|줄줄)|기력이\s*다|더위\s*먹|불가마', text):
+            preds['param_direction'] = 'on'
+    # 추위 비유 → dir=none 교정
+    if preds['fn'] == 'heat_control' and preds['param_direction'] == 'none':
+        if re.search(r'얼어\s*죽|냉동실|냉장고\s*같|시베리아|이글루|덜덜\s*떨|이가\s*딱딱|한기|몸이\s*꽁', text):
+            preds['param_direction'] = 'on'
+
+    # 취소/무시 표현 → unknown (home_info/system_meta 오분류 방지)
+    if re.search(r'^(?:괜찮아|괜찮아요|됐어|됐어요|그냥\s*(?:둬|놔둬|둘게|놔)|필요\s*없어|안\s*해도\s*돼|취소|아니\s*괜찮|아냐\s*괜찮)(?:\s*요)?$', text.strip()) \
+       or re.search(r'^괜찮아\s+그냥|^그냥\s+(?:둬|놔|됐|놔)', text.strip()):
+        preds['fn'] = 'unknown'
+        preds['exec_type'] = 'direct_respond'
+        preds['param_direction'] = 'none'
+        preds['param_type'] = 'none'
+
+    # 미지원 기기 (볼륨/TV/선풍기 등) → unknown
+    if re.search(r'볼륨|볼름|볼음|TV|티비|선풍기|음악|노래|유튜브', text):
+        if preds['fn'] in ('home_info', 'system_meta', 'unknown', 'energy_query'):
+            preds['fn'] = 'unknown'
+            preds['exec_type'] = 'direct_respond'
+            preds['param_direction'] = 'none'
+            preds['param_type'] = 'none'
+
     # continuous: 비상 상황 키워드 (가스 냄새/타는 냄새 등) → security_mode emergency
     if re.search(r'가스\s*냄새|타는\s*냄새|연기\s*(?:나|난|올)|불\s*(?:났|붙)|침입|도둑', text):
         preds['fn'] = 'security_mode'
