@@ -101,7 +101,8 @@ class DialogueStateTracker:
                 # "아니 꺼줘" — device 이전 것, action만 변경
                 # 단 새 device keyword 명시되면 그쪽 우선 ("아니 에어컨 꺼")
                 new_device = re.search(r'에어컨|난방|조명|불|환기|가스|도어락|커튼|블라인드', text)
-                if not new_device:
+                # apply_post_rules가 unknown으로 이미 설정한 경우(취소/만족표현) 보호
+                if fn != 'unknown' and not new_device:
                     fn = self.prev_fn or fn
                 # direction 추론 — 발화 내 verb 우선
                 if direction == 'none':
@@ -181,6 +182,25 @@ class DialogueStateTracker:
             fn = self.prev_fn
             exec_t = 'control_then_confirm'
             direction = bare_verb_map[text.strip()]
+
+        # continuous: 강도 표현만 있는 follow-up → prev_fn 상속 (device 키워드 없을 때)
+        # "세게 틀어줘" (after 에어컨) → ac_control, "약하게 해줘" (after 환기) → vent_control
+        _has_device = re.search(
+            r'에어컨|냉방|난방|보일러|환기|환풍|공기청정|조명|불|램프|가스|커튼|도어', text)
+        _intensity_only = re.match(
+            r'^(?:좀\s*|조금\s*)?(?:더\s*)?(?:세게|강하게|약하게|천천히|살짝\s*만?|조금만?|더\s*세게|쎄게|쎄게)'
+            r'(?:\s*(?:틀어|해|돌려|켜)(?:줘|봐|요)?)?$',
+            text.strip()
+        )
+        if self.is_active() and self.prev_fn and _intensity_only and not _has_device:
+            fn = self.prev_fn
+            exec_t = 'control_then_confirm'
+            # HVAC는 강도 표현(세게/약하게)이 dir=up/down으로 오예측됨 → 'on'으로 교정
+            if self.prev_fn in ('ac_control', 'heat_control', 'vent_control'):
+                if direction in ('none', 'up', 'down'):
+                    direction = self.prev_dir or 'on'
+            elif direction in ('none',):
+                direction = self.prev_dir or 'on'
 
         # continuous: "{room}(조사)? {verb}" 패턴 — device 없으면 prev_fn 상속
         # 예: "주방은 꺼줘" (light 이전 턴) → light_control 상속 (ac_control 오예측 교정)
