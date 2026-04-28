@@ -1122,6 +1122,19 @@ def apply_post_rules(preds, text):
             preds['fn'] = 'vent_control'; preds['exec_type'] = 'control_then_confirm'
             preds['param_direction'] = 'on'
 
+    # v102: 완곡 제안형 "끄는 게 어때/켜는 게 어때" → dir 복구
+    # "난방 끄는 게 어때?" = 난방 끄자는 제안 → heat/off
+    if re.search(r'끄\s*(?:는\s*게?|면\s*어때|면\s*어떨까)', text):
+        if preds['fn'] in _device_fns and preds['param_direction'] == 'none':
+            preds['param_direction'] = 'off'
+    if re.search(r'켜\s*(?:는\s*게?|면\s*어때|면\s*어떨까)', text):
+        if preds['fn'] in _device_fns and preds['param_direction'] == 'none':
+            preds['param_direction'] = 'on'
+    # "시원하면 어때요?" → ac/on (냉방 제안 완곡형)
+    if re.search(r'시원하면\s*어때|좀\s*시원하면\s*어때', text):
+        if preds['fn'] == 'ac_control' and preds['param_direction'] == 'none':
+            preds['param_direction'] = 'on'
+
     # v100: 꺼줘요/꺼주세요 + dir=none (부탁이에요 등 후속절 때문에 모델 혼선) → dir=off
     _device_fns = ('light_control', 'ac_control', 'heat_control', 'vent_control',
                    'door_control', 'gas_control', 'curtain_control')
