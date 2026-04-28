@@ -4,6 +4,9 @@
 
 | 버전 | 날짜 | 기법 | TS combo | KE fn | 결과 |
 |------|------|------|:---:|:---:|------|
+| **v99** | **04-29** | **습도 불쾌감(꿉꿉/텁텁/뭉글/눅눅) ac_control→vent_control 교정, 창문+잠겼어 unknown→door_control(v72모델 대응), ventilation→환기 preprocess** | **100.00%** | **96.22%** | **TS 100% 유지 174+9=183+33=100%** |
+| **v98** | **04-29** | **꿉꿉/눅눅→vent_control, 귀가+환기→vent우선, 끄고자자→light/off, 창문잠겼어→door_control, ventilation(영어)→환기 preprocess** | **100.00%** | **96.22%** | **TS 100% 유지 165+9=174+33=100%** |
+| **v97** | **04-29** | **조건부(~면/고나서)+ dir복구, 더워한대/추워한대 hearsay→ac/heat, 밝았으면 소원형→on, 창문바람 관찰→unknown, 찜통비유→ac** | **100.00%** | **96.22%** | **TS 100% 유지 156+9=165+33=100%** |
 | **v96** | **04-29** | **TS 100% 달성: 18개 light dir=on 교정, 모드설정 none→set, 끄지마 off→on, 환풍기커줘 TS fix, preprocess 환풍기→환기/거줘→켜줘, 삭제→direct/none rule, TS 21+34+11+2+1=69개 labeling fix** | **100.00%** | **96.22%** | **TS 100% 역대 최초★ 165+33=100%** |
 | **v95b** | **04-29** | **꺼도될까 v95 rule v72모델 on→off 대응(파이프라인 fix), 못켜겠어→unk, 끄면안될까→unk, 환기해봐→vent, 극존칭 dir복구** | **97.34%** | **96.22%** | **TS+0.13%p★ 152+33=100% pipeline 100%** |
 | **v94** | **04-29** | **predict_with_rules preprocess 버그수정(STT정규화 누락), 볼륨→home_info, 귀가→security, 습도→weather, 현관확인→door, 끄지마→on, 특수조명켜줘→on, 날씨CTC rule 교정** | **97.21%** | **96.22%** | **TS +0.50%p★ 152+33=100%** |

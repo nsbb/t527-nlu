@@ -239,6 +239,16 @@ SINGLE_TESTS = [
     ("손님 오시는데 집이 좀 밝았으면", "light_control","on", None,           "v97_밝았으면소원"),
     ("방이 찜통 같아",                  "ac_control", "on",  None,           "v97_찜통비유"),
     ("자기 전에 난방 꺼",               "heat_control","off",None,           "v97_자기전난방꺼"),
+    # ── v98: 귀가/취침/코드스위칭/잠금확인 ──────────────────────────────
+    ("ventilation 켜줘",               "vent_control", "on",  None,          "v98_영어ventilation"),
+    ("여행 다녀왔어 집이 꿉꿉해",       "vent_control", "on",  None,          "v98_꿉꿉"),
+    ("오랜만에 집에 왔어 좀 환기시켜",  "vent_control", "on",  None,          "v98_귀가환기"),
+    ("불 다 끄고 자자",                 "light_control","off", None,          "v98_끄고자자"),
+    ("창문 잠겼어?",                    "door_control", None,  None,          "v98_창문잠겼어"),
+    # ── v99: 습도불쾌/영어코드스위칭 확장 ───────────────────────────────
+    ("집이 좀 텁텁한 것 같아",          "vent_control", "on",  None,          "v99_텁텁"),
+    ("방이 눅눅해",                     "vent_control", "on",  None,          "v99_눅눅"),
+    ("거실이 좀 뭉글뭉글해",            "vent_control", "on",  None,          "v99_뭉글"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────
