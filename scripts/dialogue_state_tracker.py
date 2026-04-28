@@ -183,6 +183,19 @@ class DialogueStateTracker:
             exec_t = 'control_then_confirm'
             direction = bare_verb_map[text.strip()]
 
+        # v87: 대명사 아나포라 "그것도/그거 꺼줘/켜줘" → prev_fn 상속 + verb direction
+        _anaphora_m = re.search(
+            r'(?:그것|그거|그게|그것도|그거도|이것|이거)(?:도|은|는|이|가|을|를)?\s*'
+            r'(?:좀\s*)?(켜줘|꺼줘|켜|꺼|끄|열어줘|닫아줘)',
+            text.strip()
+        )
+        if self.is_active() and self.prev_fn and _anaphora_m and fn == 'unknown':
+            fn = self.prev_fn
+            exec_t = 'control_then_confirm'
+            _vdir_map = {'켜': 'on', '켜줘': 'on', '꺼': 'off', '꺼줘': 'off',
+                         '끄': 'off', '열어줘': 'open', '닫아줘': 'close'}
+            direction = _vdir_map.get(_anaphora_m.group(1), direction)
+
         # continuous: 강도 표현만 있는 follow-up → prev_fn 상속 (device 키워드 없을 때)
         # "세게 틀어줘" (after 에어컨) → ac_control, "약하게 해줘" (after 환기) → vent_control
         _has_device = re.search(
@@ -230,8 +243,9 @@ class DialogueStateTracker:
                 and not re.search(r'난방|보일러|온돌|히터', text)):
             fn = 'ac_control'
         # v82: "온도 낮춰줘/내려줘" after AC context → ac_control/down (숫자 없어도 적용)
+        # v87: 온도와 낮춰 사이 "조금/좀/약간/더" 허용
         if (self.is_active() and self.prev_fn == 'ac_control' and fn == 'heat_control'
-                and re.search(r'온도\s*(?:낮춰|내려|줄여)', text)
+                and re.search(r'온도\s*(?:조금|좀|약간|더)?\s*(?:낮춰|내려|줄여)', text)
                 and not re.search(r'난방|보일러|온돌|히터', text)):
             fn = 'ac_control'
             direction = 'down'

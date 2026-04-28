@@ -110,6 +110,7 @@ STT_CORRECTION = {
     '형광등': '조명',
     # iter10: 구체 light type 보존 (preprocess placeholder로 보호됨)
     '보일러': '난방',
+    '보일라': '난방',  # STT 발음 변형 (보일러 → 보일라)
     '온돌': '난방',
     '환풍': '환기',
     # '블라인드': '커튼',  # iter9: 유지 — 라벨 구분 (blind는 close, curtain은 down 경향)

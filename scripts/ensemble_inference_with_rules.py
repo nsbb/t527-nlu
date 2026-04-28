@@ -697,6 +697,36 @@ def apply_post_rules(preds, text):
         preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
         preds['param_direction'] = 'none'; preds['param_type'] = 'none'
 
+    # v87: 영어 off/on 혼용 → direction 보완
+    _device_fns_87 = ('light_control', 'ac_control', 'heat_control', 'vent_control', 'gas_control',
+                      'door_control', 'curtain_control', 'elevator_control')
+    if preds['fn'] in _device_fns_87 and preds['param_direction'] == 'none':
+        if re.search(r'\boff\b', text, re.IGNORECASE):
+            preds['param_direction'] = 'off'
+        elif re.search(r'\bon\b', text, re.IGNORECASE):
+            preds['param_direction'] = 'on'
+
+    # v87: 켜자/꺼자 (청유형) → dir=on/off 보완
+    if preds['fn'] in _device_fns_87 and preds['param_direction'] == 'none':
+        if re.search(r'켜\s*자(?:\s|$)|켜\s*지자', text):
+            preds['param_direction'] = 'on'
+        elif re.search(r'꺼\s*자(?:\s|$)|끄\s*자(?:\s|$)', text):
+            preds['param_direction'] = 'off'
+
+    # v87: 꺼도 될까/켜도 될까 (허용 의문형) → dir 보완
+    if preds['fn'] in _device_fns_87 and preds['param_direction'] == 'none':
+        if re.search(r'꺼도\s*될까|끄고\s*싶은데\s*될까|꺼도\s*괜찮', text):
+            preds['param_direction'] = 'off'
+        elif re.search(r'켜도\s*될까|켜도\s*괜찮|틀어도\s*될까', text):
+            preds['param_direction'] = 'on'
+
+    # v87: "조용히 해줘" — 소음 제어 OOD → unknown (스피커 같은 장치 없음)
+    if re.search(r'조용히\s*(?:해줘|해|좀)', text):
+        _has_volume_device = re.search(r'스피커|볼륨|음량|TV|티비|라디오', text)
+        if not _has_volume_device:
+            preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
+            preds['param_direction'] = 'none'; preds['param_type'] = 'none'
+
     return preds
 
 
