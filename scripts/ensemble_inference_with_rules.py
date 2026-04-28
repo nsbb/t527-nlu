@@ -141,8 +141,8 @@ def apply_post_rules(preds, text):
             preds['param_direction'] = 'on'
 
     # 취소/무시 표현 → unknown (home_info/system_meta 오분류 방지)
-    if re.search(r'^(?:괜찮아|괜찮아요|됐어|됐어요|그냥\s*(?:둬|놔둬|둘게|놔)|필요\s*없어|안\s*해도\s*돼|취소|아니\s*괜찮|아냐\s*괜찮)(?:\s*요)?$', text.strip()) \
-       or re.search(r'^괜찮아\s+그냥|^그냥\s+(?:둬|놔|됐|놔)', text.strip()):
+    if re.search(r'^(?:다\s*)?(?:괜찮아|괜찮아요|됐어|됐어요|그냥\s*(?:둬|놔둬|둘게|놔)|필요\s*없어|안\s*해도\s*돼|취소|아니\s*괜찮|아냐\s*괜찮)(?:\s*요)?$', text.strip()) \
+       or re.search(r'^괜찮아\s+그냥|^그냥\s+(?:둬|놔|됐|놔)|^다\s*됐어', text.strip()):
         preds['fn'] = 'unknown'
         preds['exec_type'] = 'direct_respond'
         preds['param_direction'] = 'none'

@@ -132,7 +132,11 @@ class DialogueStateTracker:
 
             elif exec_t == 'clarify' and self.prev_fn:
                 # exec_type이 clarify이고 이전 상태가 있으면 보완
-                fn = self.prev_fn
+                # 단, 현재 fn이 이미 명확한 device fn이면 상속 안 함
+                # ("그리고 주방 불도 켜줘" → light_control clarify이지만 news_query 상속 방지)
+                _ambiguous_fns = {'unknown', 'home_info', 'system_meta', 'energy_query'}
+                if fn in _ambiguous_fns:
+                    fn = self.prev_fn
                 exec_t = self.prev_exec or exec_t
                 if direction == 'none':
                     direction = self.prev_dir or direction
