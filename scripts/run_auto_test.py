@@ -228,6 +228,17 @@ SINGLE_TESTS = [
     ("난방 꺼도 될까요?",         "heat_control",   "off",  None,           "v95_꺼도될까요"),
     ("환기 해봐",                 "vent_control",   "on",   None,           "v95_환기해봐"),
     ("불 끄면 안 될까요?",        "unknown",         None,   None,           "v95_끄면안될까"),
+
+    # ── v97: 조건부/hearsay/비유/가스잠금 ──────────────────────────
+    ("손님 오기 전에 좀 시원하게 해줘", "ac_control", "on",  None,           "v97_조건부시원하게"),
+    ("밥 먹고 나서 에어컨 꺼",          "ac_control", "off", None,           "v97_조건부에어컨꺼"),
+    ("출근하고 나면 가스 잠가줘",       "gas_control","close",None,          "v97_조건부가스잠금"),
+    ("우리 남편이 더워한대",            "ac_control", "on",  None,           "v97_더워한대"),
+    ("일어나면 불 켜줘",                "light_control","on", None,          "v97_일어나면불켜"),
+    ("창문 쪽 바람이 세네",             "unknown",    None,  None,           "v97_창문바람관찰"),
+    ("손님 오시는데 집이 좀 밝았으면", "light_control","on", None,           "v97_밝았으면소원"),
+    ("방이 찜통 같아",                  "ac_control", "on",  None,           "v97_찜통비유"),
+    ("자기 전에 난방 꺼",               "heat_control","off",None,           "v97_자기전난방꺼"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────
