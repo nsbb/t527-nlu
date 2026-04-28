@@ -141,6 +141,37 @@ def apply_post_rules(preds, text):
         preds['param_direction'] = 'none'
         preds['param_type'] = 'none'
 
+    # v85: 온도/습도 현재 상태 질의 → home_info (heat_control 오분류 교정)
+    # "지금 몇 도야/현재 온도 알려줘/실내 온도" (제어 동사 없음) → home_info
+    _temp_query = re.search(r'(?:지금|현재|실내|지금\s*몇)\s*(?:온도|기온|몇\s*도)', text)
+    _control_verb = re.search(r'켜|꺼|올려|내려|낮춰|높여|설정|맞춰|틀어', text)
+    if _temp_query and not _control_verb:
+        if preds['fn'] == 'heat_control':
+            preds['fn'] = 'home_info'
+            preds['exec_type'] = 'query_then_respond'
+            preds['param_direction'] = 'none'
+    # 실내 습도 질의 → home_info (weather_query 오분류)
+    if re.search(r'(?:실내|지금|현재|집)?\s*습도\s*(?:얼마|몇|어때|확인|알려)', text):
+        if preds['fn'] == 'weather_query':
+            preds['fn'] = 'home_info'
+            preds['exec_type'] = 'query_then_respond'
+            preds['param_direction'] = 'none'
+
+    # v85: 가스 누출 의심 표현 → gas_control/close
+    if re.search(r'가스\s*(?:새|새는|새고|냄새|누출|샌다|샌)', text):
+        preds['fn'] = 'gas_control'
+        preds['exec_type'] = 'control_then_confirm'
+        preds['param_direction'] = 'close'
+
+    # v85: 기기 상태 감탄/평가 → unknown ("에어컨 잘 작동하네", "난방이 빨리 드네")
+    # 한국어 주격 조사(이/가/은/는) 포함 처리
+    if re.search(r'(?:에어컨|난방|조명|불|환기)(?:이|가|은|는)?\s*(?:잘|빨리|금방|느리게)\s*'
+                 r'(?:작동|드네|되네|작동하네|켜지네|꺼지네|올라오네|내려오네)', text):
+        preds['fn'] = 'unknown'
+        preds['exec_type'] = 'direct_respond'
+        preds['param_direction'] = 'none'
+        preds['param_type'] = 'none'
+
     # "그래도/여전히/아직 더워/추워" → weather_query 오분류 방지
     # "더워/추워" 단독 표현은 ac/heat_control이어야 함
     if preds['fn'] == 'weather_query':
