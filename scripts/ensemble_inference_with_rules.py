@@ -727,6 +727,46 @@ def apply_post_rules(preds, text):
             preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
             preds['param_direction'] = 'none'; preds['param_type'] = 'none'
 
+    # v88: 부정 감각 발화 — "전혀 안/별로 안/딱히 ~지 않" → unknown
+    # "전혀 안 추워", "별로 안 더워" 등 강한 부정 수식어가 있는 감각 발화는 관찰이지 명령이 아님
+    _strong_neg = re.search(r'(?:전혀|별로|딱히|그다지|그렇게)\s*(?:안\s+|않)', text)
+    if _strong_neg and preds['fn'] in ('heat_control', 'ac_control'):
+        if not re.search(r'켜줘|꺼줘|켜|꺼|틀어|올려|낮춰|설정|맞춰', text):
+            preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
+            preds['param_direction'] = 'none'; preds['param_type'] = 'none'
+
+    # v88: "~지 않은데/~진 않은데" 부정 상태 → unknown (진 = 지+는 축약형 포함)
+    if re.search(r'(?:춥|덥|시원하|따뜻하|쌀쌀하|서늘하)(?:지\s*(?:는|도)?\s*않|진\s*않)', text):
+        if preds['fn'] in ('heat_control', 'ac_control') and preds['param_direction'] == 'on':
+            if not re.search(r'켜줘|꺼줘|틀어줘|해줘', text):
+                preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
+                preds['param_direction'] = 'none'; preds['param_type'] = 'none'
+
+    # v88: "안 ~해도 되겠어/될 것 같아/돼" — 불필요 표현 → unknown
+    if re.search(r'안\s*(?:켜도|꺼도|해도|틀어도|열어도|닫아도|올려도|내려도)\s*'
+                 r'(?:되겠어|될\s*것\s*같아|될\s*것\s*같은데|돼|될까)', text):
+        preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
+        preds['param_direction'] = 'none'; preds['param_type'] = 'none'
+
+    # v88: "에어컨/난방까진" — 아직 그 정도는 아님 OOD → unknown ("까진" = 까지는 축약)
+    if re.search(r'(?:에어컨|난방|보일러|조명|불)까지(?:는|야|은|는\s*아니|야\s*아니|은\s*아니)|'
+                 r'(?:에어컨|난방|보일러|조명|불)까진', text):
+        preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
+        preds['param_direction'] = 'none'; preds['param_type'] = 'none'
+
+    # v88: "~면 시원해질까/따뜻해질까" — 수사적 가정 → unknown (명령 아님)
+    if re.search(r'(?:켜|틀어|꺼|올려|낮춰|높여)\s*(?:면|으면)\s*(?:좀\s*)?'
+                 r'(?:시원|따뜻|밝|어둡|좋|나아|편)해질까', text):
+        preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
+        preds['param_direction'] = 'none'; preds['param_type'] = 'none'
+
+    # v88: 조건부 명령 "켜져 있다면/있으면 꺼줘" → dir 복구
+    if preds['fn'] in _device_fns_87 and preds['param_direction'] == 'none':
+        if re.search(r'(?:켜져|켜져있|켜있|작동\s*중이라면?|있다면|있으면)\s*꺼줘?', text):
+            preds['param_direction'] = 'off'
+        elif re.search(r'(?:꺼져|꺼져있|꺼있|있다면|있으면)\s*켜줘?', text):
+            preds['param_direction'] = 'on'
+
     return preds
 
 

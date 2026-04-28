@@ -166,6 +166,16 @@ SINGLE_TESTS = [
     ("불 켜도 될까요",         "light_control",  "on",   None,           "v87_켜도될까요"),
     ("아이가 자는데 조용히 해줘","unknown",       None,   None,           "v87_조용히OOD"),
     ("보일라 켜줘",            "heat_control",   "on",   None,           "v87_보일라STT"),
+
+    # ── v88: 부정감각/완곡/조건부 OOD ────────────────────────────
+    ("전혀 안 추워",           "unknown",        None,   None,           "v88_전혀안추워"),
+    ("별로 안 더워",           "unknown",        None,   None,           "v88_별로안더워"),
+    ("딱히 춥진 않은데",       "unknown",        None,   None,           "v88_딱히춥진않은데"),
+    ("에어컨 안 켜도 되겠어",  "unknown",        None,   None,           "v88_안켜도되겠어"),
+    ("난방 안 해도 될 것 같아","unknown",        None,   None,           "v88_안해도될것같아"),
+    ("좀 덥긴 한데 에어컨까진","unknown",        None,   None,           "v88_에어컨까진"),
+    ("에어컨 켜면 좀 시원해질까","unknown",      None,   None,           "v88_수사적조건"),
+    ("에어컨이 켜져 있다면 꺼줘","ac_control",   "off",  None,           "v88_조건부명령꺼줘"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────
