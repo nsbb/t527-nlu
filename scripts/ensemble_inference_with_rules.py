@@ -41,6 +41,15 @@ def apply_post_rules(preds, text):
     if re.search(r'어둡게', text) and preds['param_direction'] in ('up', 'on'):
         preds['param_direction'] = 'down'
         preds['param_type'] = 'brightness'
+    # 눈부심 비유 (눈이 멀겠어 등) → light_control dir=down (dir=none 교정)
+    if re.search(r'눈이\s*(?:부셔|따가워|아파|멀겠|피로해)|눈을\s*못\s*뜨', text):
+        if preds['fn'] == 'light_control' and preds['param_direction'] == 'none':
+            preds['param_direction'] = 'down'
+    # 한기가 → heat_control/on (preprocess에서 한기→환기 제거했지만 모델이 미학습)
+    if re.search(r'한기가\s*(?:도네|느껴|돌아|나|왔|든)', text):
+        preds['fn'] = 'heat_control'
+        preds['exec_type'] = 'control_then_confirm'
+        preds['param_direction'] = 'on'
 
     # 엘리베이터 호출/불러/올라와/내려와 → control
     if re.search(r'(엘리베이터|엘베|승강기|리프트)', text):
@@ -108,6 +117,18 @@ def apply_post_rules(preds, text):
         preds['exec_type'] = 'direct_respond'
         preds['param_direction'] = 'none'
         preds['param_type'] = 'none'
+
+    # "그래도/여전히/아직 더워/추워" → weather_query 오분류 방지
+    # "더워/추워" 단독 표현은 ac/heat_control이어야 함
+    if preds['fn'] == 'weather_query':
+        if re.search(r'(?:그래도|여전히|아직도|아직|계속|좀|너무|많이)\s*(?:더워|뜨거워|덥네|덥다|더운)', text):
+            preds['fn'] = 'ac_control'
+            preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'on'
+        elif re.search(r'(?:그래도|여전히|아직도|아직|계속|좀|너무|많이)\s*(?:추워|차가워|춥네|춥다|추운)', text):
+            preds['fn'] = 'heat_control'
+            preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'on'
 
     # continuous: 비상 상황 키워드 (가스 냄새/타는 냄새 등) → security_mode emergency
     if re.search(r'가스\s*냄새|타는\s*냄새|연기\s*(?:나|난|올)|불\s*(?:났|붙)|침입|도둑', text):
