@@ -79,6 +79,28 @@ def apply_post_rules(preds, text):
         if preds['fn'] in ('system_meta', 'home_info', 'unknown'):
             preds['fn'] = 'schedule_manage'
 
+    # v80: 시간 표현 + 기기 키워드 → schedule_manage 오예측 교정
+    # TS: "1시간 뒤에 난방 꺼" → heat_control (immediate device cmd, not schedule)
+    # 모델이 "N분 후에/있다가/잠시 후" + 기기 꺼줘를 schedule_manage로 오분류함
+    _time_exp = re.search(
+        r'\d+\s*분\s*(?:후에?|뒤에?|있다가)|잠시\s*(?:후에?|있다가)|\d+\s*시간\s*(?:후에?|뒤에?)', text)
+    if preds['fn'] == 'schedule_manage' and has_device and _time_exp:
+        _dir_kw = 'off' if re.search(r'꺼|끄|끕', text) else \
+                  'on' if re.search(r'켜|틀어|틀|켠', text) else preds['param_direction']
+        if re.search(r'불|조명|램프|전등|스탠드|취침등|복도등|무드등|다운라이트|간접등', text):
+            preds['fn'] = 'light_control'
+        elif re.search(r'에어컨|냉방기', text):
+            preds['fn'] = 'ac_control'
+        elif re.search(r'난방|보일러', text):
+            preds['fn'] = 'heat_control'
+        elif re.search(r'환기|환풍|공기청정', text):
+            preds['fn'] = 'vent_control'
+        elif re.search(r'가스', text):
+            preds['fn'] = 'gas_control'
+        if preds['fn'] != 'schedule_manage':
+            preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = _dir_kw
+
     # continuous: "예약 {삭제/취소/모두}" → schedule_manage (device keyword 없을 때)
     if not has_device and re.search(r'예약\s*(?:삭제|취소|전부|모두|다\s*지워|지워)', text):
         if preds['fn'] != 'schedule_manage':
