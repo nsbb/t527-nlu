@@ -271,6 +271,9 @@ SINGLE_TESTS = [
     ("삼겹살 굽는 중이야",               "vent_control","on",  None,          "v104_삼겹살굽기"),
     ("찌개 끓이고 있어",                 "vent_control","on",  None,          "v104_찌개끓이기"),
     ("밖이 추운 것 같은데",              "weather_query",None, None,          "v104_밖이추운것"),
+    # ── STT+preprocess 보강 ──────────────────────────────────────────────
+    ("거이 불 켜줘",                     "light_control","on",  "living",      "STT_거이거실"),
+    ("조금씩 밝혀줘",                    "light_control","up",  None,          "STT_밝혀줘unknown"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────
