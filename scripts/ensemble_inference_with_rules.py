@@ -156,6 +156,36 @@ def apply_post_rules(preds, text):
             preds['param_direction'] = 'none'
             preds['param_type'] = 'none'
 
+    # 부정 쾌적 표현 → 반대 방향 (모델이 긍정으로 학습됨)
+    # "춥지 않아요/안 추워요" → heat_control off (난방 필요 없음)
+    if re.search(r'춥지\s*않|안\s*춥|별로\s*안\s*춥|그다지\s*안\s*춥', text):
+        if preds['fn'] == 'heat_control' and preds['param_direction'] == 'on':
+            preds['param_direction'] = 'off'
+    # "덥지 않아요/안 더워요" → ac_control off
+    if re.search(r'덥지\s*않|안\s*더워|별로\s*안\s*더워|그다지\s*안\s*더워', text):
+        if preds['fn'] == 'ac_control' and preds['param_direction'] == 'on':
+            preds['param_direction'] = 'off'
+
+    # 건조 표현 → vent_control (가습기 미지원, 환기가 가장 근접)
+    if re.search(r'건조해|건조하네|건조한데|너무\s*건조|공기가\s*건조', text):
+        if preds['fn'] not in ('vent_control', 'ac_control'):
+            preds['fn'] = 'vent_control'
+            preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'on'
+
+    # "올려도 될까요/올려도 돼요" → dir=up (모델이 될까=set 오분류)
+    if re.search(r'올려도\s*(?:될까|돼요|돼|되나요)', text):
+        if preds['fn'] in ('heat_control', 'ac_control', 'light_control') and preds['param_direction'] == 'set':
+            preds['param_direction'] = 'up'
+
+    # 단음절/초단문 미인식 → unknown (security_mode 오분류 방지)
+    if len(text.strip()) <= 3 and not re.search(
+            r'불|켜|꺼|문|문열|환기|난방|에어|조명|가스|커튼', text):
+        if preds['fn'] in ('security_mode', 'home_info', 'system_meta'):
+            preds['fn'] = 'unknown'
+            preds['exec_type'] = 'direct_respond'
+            preds['param_direction'] = 'none'
+
     # continuous: 비상 상황 키워드 (가스 냄새/타는 냄새 등) → security_mode emergency
     if re.search(r'가스\s*냄새|타는\s*냄새|연기\s*(?:나|난|올)|불\s*(?:났|붙)|침입|도둑', text):
         preds['fn'] = 'security_mode'
