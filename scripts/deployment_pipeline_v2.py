@@ -65,7 +65,7 @@ class DeploymentPipelineV2:
     preprocess → ensemble → rules → DST → response_v2
     """
 
-    def __init__(self, onnx_path='checkpoints/nlu_v28_v46_ensemble.onnx',
+    def __init__(self, onnx_path='checkpoints/nlu_v28_v72_ensemble.onnx',
                  tokenizer_path='tokenizer/', timeout=10):
         self.sess = ort.InferenceSession(onnx_path, providers=['CPUExecutionProvider'])
         self.tok = AutoTokenizer.from_pretrained(tokenizer_path)
@@ -127,8 +127,6 @@ class DeploymentPipelineV2:
             'fn': final['fn'],
             'exec_type': final['exec_type'],
             'param_direction': final['param_direction'],
-            'param_type': final.get('param_type', 'none'),
-            'judge': final.get('judge', 'none'),
             'room': final.get('room', 'none'),
             'value': final.get('value'),
             'old_value': final.get('old_value'),
@@ -141,8 +139,6 @@ class DeploymentPipelineV2:
             'fn': final['fn'],
             'exec_type': final['exec_type'],
             'param_direction': final['param_direction'],
-            'param_type': final.get('param_type', 'none'),
-            'judge': final.get('judge', 'none'),
             'room': final.get('room', 'none'),
             'rooms': rooms,
             'value': final.get('value'),

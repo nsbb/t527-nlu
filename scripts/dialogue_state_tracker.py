@@ -268,7 +268,9 @@ class DialogueStateTracker:
                     direction = 'up' if is_up else 'down'
                     current_value = None
 
-        final_value = current_value or inferred_value or self.prev_value
+        # fn이 바뀌면 이전 value 승계 안 함 (hour/minute 등이 다른 fn으로 블리드되는 것 방지)
+        fn_same = (fn == self.prev_fn)
+        final_value = current_value or inferred_value or (self.prev_value if fn_same else None)
 
         # 상태 저장
         self.prev_fn = fn

@@ -4,6 +4,9 @@
 
 | 버전 | 날짜 | 기법 | TS combo | KE fn | 결과 |
 |------|------|------|:---:|:---:|------|
+| **v73** | **04-28** | **rule-only: preprocess 수정 + 후처리 규칙 3개 + 냉난방 충돌 해소** | **95.5%** | **97.20%** | **간접표현 21/21 ★ 재학습 없음** |
+| **v72** | **04-28** | **비유/은유 종합 간접표현 3,961개 추가 + 앙상블 갱신** | **GT-219 ~94%** | **97.20%** | **간접표현 20/21 ★** |
+| **v71** | **04-28** | **간접/유사 표현 데이터 통합 재학습 + 어두침침 dir 수정** | **GT-219 94.06%** | **97.20%** | **GT +0.45%p ★** |
 | iter8 | 04-21 PM | 후처리 rule + preprocess 확장 (알람/OOD/query 복구) | **94.38%** | 97.20% | **모델 변경 없이 +0.85%p ★** |
 | iter7 | 04-21 PM | 프로젝트 통합 문서 (STT+NLU 개요) | 93.59% | 97.79% | 문서화 |
 | iter6 | 04-21 PM | 세션 종합 보고서 + 문서 동기화 | 93.59% | 97.79% | 문서화 |
@@ -51,6 +54,162 @@
 2. v28↔v46 weight space 비볼록 (Model Soup 실패)
 3. CNN 4L > Conformer 2L at 24.5K 샘플
 4. 소규모 패치는 항상 regression 유발
+
+---
+
+## v2-prod-r1861~r1880 (2026-04-28) — v73 간접 표현 21/21 완성 + 냉난방 충돌 자동 해소
+
+**v73 (rule-only, 재학습 없음)** — 간접 표현 20/21 → 21/21, TS combo 94.38% → 95.5% (+1.12%p).
+
+### 변경 내용
+
+**전처리 수정 (`scripts/preprocess.py`)**
+- `'한기': '환기'` 잘못된 STT 교정 제거
+  - 한기(寒氣, cold air)를 환기(ventilation)로 치환 → 추위 표현이 vent_control로 오분류됨
+  - '완기'→'환기'는 유지 (완기는 실존하지 않는 단어)
+
+**후처리 규칙 추가 (`scripts/ensemble_inference_with_rules.py`)**
+- 눈부심 표현 dir=none 교정: `눈이 부셔/따가워/아파/멀겠/피로해`, `눈을 못 뜨` → light_control dir=down
+- 한기가 → heat_control/control_then_confirm/on (preprocess 제거 후 모델이 미학습 상태이므로 rule로 보완)
+
+**응답 패턴 확장 (`scripts/response_generator_v2.py`)**
+- 추위 비유 정규식에 `한기가\s*(?:도네|느껴|돌아|나|왔)` 패턴 추가
+
+**냉난방 충돌 자동 해소 (`test_interactive.py`)**
+- `DeviceState.resolve_hvac_conflict()` 추가
+  - heat_control/on 시 같은 방 ac_control이 켜져 있으면 자동 off 처리
+  - ac_control/on 시 같은 방 heat_control이 켜져 있으면 자동 off 처리
+  - room='none'/'all'이면 모든 방 검색
+- 충돌 발생 시 응답 자동 수정: "에어컨을 끄고 주방 난방을 켭니다." / "난방을 끄고 주방 에어컨을 켭니다."
+- `run_interactive()` 루프에 충돌 감지·해소 로직 연결
+
+### 평가 요약
+
+| 기준 | v72 (before) | v73 (after) | 변화 |
+|------|-------------|-------------|------|
+| 간접 표현 | 20/21 | **21/21** | **+1건 ★** |
+| TS combo | 94.38% | **95.5%** | **+1.12%p ★** |
+| GT-204 combo | — | 96.08% | 신규 측정 |
+| 환기 표현 회귀 | — | 0건 | 정상 |
+
+### 해소된 케이스
+- `"한기가 도네"` → 이전: `환기가 도네` → vent_control/on (오분류) → **수정: heat_control/on**
+- `"눈이 멀겠어"` → 이전: light_control/dir=none (디바이스 명령 누락) → **수정: dir=down**
+
+---
+
+## v2-prod-r1821~r1860 (2026-04-28) — v72 비유/은유 종합 간접 표현 + test_interactive 통합
+
+**v72 앙상블 배포** — 간접 표현 9/21 → 20/21, test_interactive.py + test_api.py 통합.
+
+### 변경 내용
+
+**간접 표현 데이터 (`data/indirect_expressions_v2.json`, 3,961개)**
+- `scripts/build_indirect_expressions_v2.py` 신규 생성
+- 추위 비유 (heat/on): 얼어 죽겠다, 냉동실 같아, 이가 딱딱 부딪혀, 시베리아 같아, 한기가 도네
+- 더위 비유 (ac/on): 쪄 죽겠어, 사우나, 찜통이야, 땀이 뻘뻘, 더위 먹겠다, 기력이 다 빠져
+- 어두움 (light/on): 앞이 안 보여, 동굴 같아, 암흑이야, 눈이 침침해
+- 눈부심 (light/off): 눈이 부셔, 눈이 따가워, 눈을 못 뜨겠어, 눈이 멀겠어
+- 공기 (vent/on): 머리가 띵해, 공기가 탁해/죽어있어, 밀폐된 것 같아
+- 방 prefix 5개(거실/안방/주방/침실/아이방) × 어미 변형 4~5개 증강
+
+**학습 데이터 (`data/train_final_v72.json`, 32,809개)**
+- v71 (29,015개) + indirect_v2 (3,961개) - 중복 = 32,809개
+
+**앙상블 갱신 (`checkpoints/nlu_v28_v72_ensemble.onnx`, 104.9MB)**
+- 전략: fn=v72, exec=v28, dir=v72, param=v28, judge=v72
+- 간접 표현: 9/21 → 20/21
+
+**응답 생성 개선 (`scripts/response_generator_v2.py`)**
+- SPECIFIC_PATTERNS: 비유/은유 공감 응답 25행 추가
+  - "얼어 죽겠어" → "많이 추우시군요. 난방을 켜드릴게요."
+  - "사우나" / "찜통" → "많이 더우시군요. 에어컨을 켜드릴게요."
+  - "동굴 같아" / "암흑" → "어두우시군요. 조명을 켜드릴게요."
+  - "눈이 부셔" → "눈이 많이 부시시군요. 조명을 낮춰드릴게요."
+  - "공기가 탁해" → "공기가 좋지 않으시군요. 환기시스템을 켜드릴게요."
+
+**test_interactive.py 통합**
+- test_interactive.py + test_api.py → 단일 통합 파일로 재작성
+- ApiCache(60s TTL), DeviceState 추가
+- 'd' 명령어로 디바이스 상태 조회
+- Enter×2로 DST 리셋
+- 배치 모드 (pipe/redirect) 지원
+
+**배포 파이프라인 (`scripts/deployment_pipeline_v2.py`)**
+- 기본 ONNX 경로: `nlu_v28_v71_ensemble.onnx` → `nlu_v28_v72_ensemble.onnx`
+
+### 평가 요약
+
+| 기준 | v28+v71 | v28+v72 | 변화 |
+|------|---------|---------|------|
+| GT-219 combo | 94.06% | ~94% | ≈ |
+| 간접 표현 | 9/21 | **20/21** | **+11건 ★** |
+| 더위 먹겠다 | ✗ (dir=none) | 간헐적 개선 | 미완 (v73 목표) |
+
+---
+
+## v2-prod-r1801~r1820 (2026-04-28) — v71 재학습 + 간접/유사 표현 데이터 통합
+
+**v71 앙상블 배포** — GT-219 94.06% (v46 대비 +0.45%p).
+
+### 변경 내용
+
+**학습 데이터 수정 (`data/train_final_v71.json`)**
+- v70 기반 (28,763개) + 어두침침 52개 방향 수정 (`dir=set` → `dir=on`)
+- `data/llm_paraphrases.jsonl` (2,068개): `param_direction` 미추론 문제 해결, 1,846개 신규 추가
+- `data/indirect_expressions.csv` (76개): flat intent(`heating_on`) → multi-head 변환, 52개 추가
+- 중복 제거 후 최종 29,015개 (v70 대비 +252개 순증)
+
+**모델 재학습 (`scripts/train_v71.py`)**
+- v46 recipe 동일: CNN 4L + mixup 0.3, 30 epochs, batch=64, lr=1e-3
+- Best: TS combo=88.73% | KE fn=97.20% | balanced=92.87
+- 저장: `checkpoints/cnn_multihead_v71.pt`
+
+**앙상블 갱신 (`checkpoints/nlu_v28_v71_ensemble.onnx`)**
+- 전략: fn=v71 (간접표현 개선), exec=v28 (안정적 분류), dir=v71 (방향 레이블 수정), param=v28, judge=v71
+- GT-219 평가: 94.06% (v28+v46: 93.61%, +0.45%p)
+- 개선 케이스: 가스밸브, 월패드볼륨
+- 간접 표현: 14/15 (어두침침/어두컴컴 → dir=on 수정, v46에서 dir=set 반환하던 버그 해소)
+
+**배포 파이프라인 (`scripts/deployment_pipeline_v2.py`)**
+- 기본 ONNX 경로: `nlu_v28_v46_ensemble.onnx` → `nlu_v28_v71_ensemble.onnx`
+
+### 평가 요약
+
+| 기준 | v28+v46 | v28+v71 | 변화 |
+|------|---------|---------|------|
+| GT-219 combo | 93.61% | **94.06%** | **+0.45%p** |
+| 간접표현 (10개) | 9/10 | 9/10 | = (다른 케이스) |
+| 어두침침+on 분류 | ✗ (dir=set) | ✓ | 수정 |
+
+---
+
+## v2-prod-r1721~r1730 (2026-04-27) — pt/judge 필드 제거 + 테스트 도구 정리
+
+**아키텍처 정리** — CSV 점수 변화 없음 (exact 212/219, usable 213/219 유지).
+
+### 변경 내용
+
+**pt/judge 필드 제거 (`deployment_pipeline_v2.py`)**
+- `process()` 반환 dict에서 `param_type`, `judge` 키 제거
+- `generate_response_v2()` 에 넘기는 `multihead` dict에서도 제거
+- 근거: response_generator는 두 값을 실제로 읽지 않음 (분기는 전부 `raw_text` regex)
+- 모델 ONNX 자체에는 5-head 그대로 존재하나, `apply_post_rules()`가 항상 `param_type=none` 강제
+- judge head 출력(outdoor_activity 등)은 파이프라인 어디에서도 읽히지 않았음
+- `exec_type='query_then_judge'`는 그대로 사용 (판단형 쿼리 분기용)
+
+**verbose 출력 정리 (`test_interactive.py`)**
+- `-v` 모드에서 `pt=... judge=...` 출력 제거
+- 출력 형식: `exec={et}  rooms={rooms}` 로 단순화
+
+### 배경 (pt/judge 왜 none인가)
+| 버전 | 상태 |
+|------|------|
+| v21 | judge/param_type head 라벨 실제 학습 및 수정 중 |
+| v22 | param_type 수정 시도 → 다른 head regression 유발 |
+| v25 | "param_type은 모델보다 규칙 보정이 효과적" 확정 → 후처리 강제 none |
+| v28 | judge 결과도 규칙으로 none 덮어쓰기, exec_type으로 대체 |
+| 현재 | 모델은 예측하지만 파이프라인이 무시 |
 
 ---
 
