@@ -292,6 +292,11 @@ SINGLE_TESTS = [
     ("불 켜조",                          "light_control", "on",  None,          "v108_켜조_STT"),
     ("에어컨 꺼조",                      "ac_control",    "off", None,          "v108_꺼조_STT"),
     ("외출 모드 해제해줘",               "security_mode", "off", None,          "v108_외출모드해제"),
+    # ── v109: 창문닫았어 교정 / STT껴줘 / 의향형 / 습관형 ────────────────────
+    ("창문 다 닫았어",                   "curtain_control","close",None,         "v109_창문닫았어_gas교정"),
+    ("불 껴줘",                          "light_control",  "on",  None,          "v109_껴줘_STT불켜줘"),
+    ("에어컨 켜야겠어",                  "ac_control",     "on",  None,          "v109_켜야겠어_의향"),
+    ("보통 이 시간엔 에어컨 켜는데",     "ac_control",     "on",  None,          "v109_보통이시간에"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────
@@ -383,6 +388,31 @@ MULTITURN_SCENARIOS = [
             ("에어컨도 틀어줘",    "ac_control",    "on",  None,           "2_에어컨켜"),
             ("온도 조금 낮춰줘",   "ac_control",    "down",None,           "3_온도낮춰"),
             ("이제 그만 됐어",     "ac_control",    "off", None,           "4_그만됐어_AC꺼"),
+        ]
+    },
+    {
+        "name": "v109: 방 전환 후 fn 상속 — 주방→거실",
+        "turns": [
+            ("주방 불 꺼줘",       "light_control", "off", "kitchen",      "1_주방명시"),
+            ("거실은 켜줘",        "light_control", "on",  "living",       "2_거실전환_fn상속"),
+            ("주방도 켜줘",        "light_control", "on",  "kitchen",      "3_주방복귀"),
+        ]
+    },
+    {
+        "name": "v109: 간접비유→기기제어→만족 흐름",
+        "turns": [
+            ("방이 찜통이야",      "ac_control",    "on",  None,           "1_찜통비유_AC켜기"),
+            ("온도 좀 더 낮춰줘",  "ac_control",    "down",None,           "2_온도낮춰"),
+            ("이제 좀 시원하네",   "unknown",       None,  None,           "3_만족관찰"),
+            ("에어컨 꺼줘",        "ac_control",    "off", None,           "4_AC꺼기"),
+        ]
+    },
+    {
+        "name": "v109: 의향형 발화 → 제어 → 상태 확인",
+        "turns": [
+            ("에어컨 켜야겠어",    "ac_control",    "on",  None,           "1_의향형켜기"),
+            ("보통 이 시간엔 온도 낮추는데", "ac_control", "down", None,  "2_습관형온도낮춤"),
+            ("이제 잘 시간이야",   "unknown",       None,  None,           "3_잘시간_수면"),
         ]
     },
 ]

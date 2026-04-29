@@ -14,7 +14,7 @@
 | `scripts/dialogue_state_tracker.py` | 멀티턴 DST (방상속/fn상속/slot filling) | ✅ 메인 |
 | `scripts/response_generator_v2.py` | AI기대응답 생성 (OO placeholder 포함) | ✅ 메인 |
 | `test_api.py` | **CLI 테스트 앱 + 실제 API 연동** | ✅ 완성 — 건드리지 말 것 |
-| `scripts/nlu_test_app.py` | Streamlit 웹 UI (test_api.py 통합 필요) | ⚠️ API 미연동 |
+| `scripts/nlu_test_app.py` | Streamlit 웹 UI (API 통합, DST 인스턴스 분리) | ✅ 완성 |
 | `scripts/run_auto_test.py` | 자동 테스트 (221단일 + 33멀티턴) | ✅ 메인 |
 | `data/test_suite.json` | TS 3043개 GT | ✅ 메인 |
 | `docs/CHANGELOG.md` | 버전별 변경 내역 | ✅ 매 버전 업데이트 |
@@ -46,15 +46,15 @@
 
 ---
 
-## Streamlit 앱 — test_api.py 통합 필요
+## Streamlit 앱 — 완성 (2026-04-29)
 
-**현재 문제:**
-1. API 연동 없음 (날씨/미세먼지/뉴스 OO 그대로 출력)
-2. 단일/멀티턴 파이프라인이 같은 인스턴스 공유 → DST 충돌 버그
+**실행:** `streamlit run scripts/nlu_test_app.py`
 
-**해야 할 작업:**
-- `test_api.py`의 `get_weather()`, `get_air()`, `get_news()`, `fill_placeholders()` 를 Streamlit에 통합
-- 단일발화용 파이프라인 / 멀티턴용 파이프라인 분리 (각각 session_state에 별도 인스턴스)
+**기능:**
+- 단일발화 탭: 개별 발화 테스트 + API 응답 (날씨/미세먼지/뉴스)
+- 멀티턴 탭: DST 상태 추적, 대화 이력, 홈 상태 표시
+- OO placeholder 실데이터 치환 (날씨/미세먼지 API)
+- 단일용/멀티턴용 파이프라인 별도 인스턴스 (DST 충돌 방지)
 
 ---
 
