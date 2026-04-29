@@ -1721,6 +1721,35 @@ def apply_post_rules(preds, text):
             preds['fn'] = 'heat_control'
             preds['param_direction'] = 'up'
 
+    # v127: 동굴/지하실 비유 → light_control/on (어두운 공간 비유 = 불 켜기)
+    if re.search(r'동굴\s*(?:같|이야|이네|이냐|야|인가|이에요)|(?:방|집|여기|실내)\s*(?:이\s*)?(?:지하실|감방|감옥)\s*(?:같|이야|이네)', text):
+        if preds['fn'] in ('unknown', 'light_control', 'home_info'):
+            preds['fn'] = 'light_control'
+            if preds['param_direction'] in ('none', 'off'):
+                preds['param_direction'] = 'on'
+
+    # v127: 조명/불 낮추면 안 될까요 → light_control/down (수사적 허락 요청)
+    if re.search(r'(?:조명|불|전등)\s*(?:좀\s*)?낮추(?:면\s*안\s*될까|면\s*어때|지\s*그래요?|면\s*좋겠)', text):
+        if preds['fn'] == 'light_control':
+            preds['param_direction'] = 'down'
+
+    # v127: 땀이 비/폭포처럼 → ac_control/on (땀 비유 = 더워서)
+    if re.search(r'땀이\s*(?:비|폭포|강|빗물)\s*(?:같이|처럼|마냥)?\s*(?:흘러|나|쏟아|줄줄)', text):
+        if preds['fn'] in ('weather_query', 'unknown', 'home_info'):
+            preds['fn'] = 'ac_control'
+            if preds['param_direction'] in ('none', 'off'):
+                preds['param_direction'] = 'on'
+
+    # v127: 에어컨/난방 이제 안 써도/쓰지 않아도 될 것 같아 → dir=off (완곡한 불필요 표현)
+    if re.search(r'(?:에어컨|냉방|난방|보일러|히터|공기청정기)\s*(?:[은는이가]?\s*)?(?:이제\s*)?(?:안\s*써도|쓰지\s*않아도|사용\s*안\s*해도)\s*될\s*것\s*같', text):
+        if preds['fn'] in _device_fns and preds['param_direction'] in ('on', 'none'):
+            preds['param_direction'] = 'off'
+
+    # v127: 이제 꺼도/껐다가도 될 것 같아요 → dir=off (완곡한 끄기 표현)
+    if re.search(r'(?:이제\s*)?(?:꺼도|끄고\s*싶은데|꺼도\s*좋을\s*것\s*같)\s*될\s*것\s*같', text):
+        if preds['fn'] in _device_fns and preds['param_direction'] == 'on':
+            preds['param_direction'] = 'off'
+
     # v126: 어르신/노인 hearsay + 덥다/춥다 → ac_control/on 또는 heat_control/on
     if re.search(r'(?:어르신|노인|할머니|할아버지|어머니|아버지|부모님|노부모|엄마|아빠)\s*(?:이|가|께서)?\s*(?:덥다고|더우시다고|더워하시|더워한다고|너무\s*덥다)', text):
         if preds['fn'] in ('unknown', 'home_info', 'weather_query', 'heat_control', 'ac_control'):
