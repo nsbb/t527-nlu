@@ -1054,13 +1054,18 @@ def apply_post_rules(preds, text):
             preds['param_direction'] = 'close'
 
     # v97: 더워한대/추워한대/더워한다고 → 신체감각 간접 요청 (hearsay)
-    if re.search(r'더워\s*(?:한대|한다고|해|하는데|하셔|하시는데)', text):
+    # v108: 가족 주어 확장 (남편이/아내가/아이가 + 춥다고/덥다고 해)
+    _hearsay_hot = re.search(r'더워\s*(?:한대|한다고|해|하는데|하셔|하시는데|하나봐|하는것같|한것같)', text)
+    _hearsay_hot2 = re.search(r'(?:덥다고|더운것\s*같다고|더운가\s*봐)\s*(?:해|하더라|하던데|하네)', text)
+    if _hearsay_hot or _hearsay_hot2:
         if preds['fn'] in ('unknown', 'home_info'):
             if not re.search(r'난방|보일러', text):
                 preds['fn'] = 'ac_control'; preds['exec_type'] = 'control_then_confirm'
                 preds['param_direction'] = 'on'
-    if re.search(r'추워\s*(?:한대|한다고|해|하는데|하셔|하시는데)', text):
-        if preds['fn'] in ('unknown', 'home_info'):
+    _hearsay_cold = re.search(r'추워\s*(?:한대|한다고|해|하는데|하셔|하시는데|하나봐|하는것같|한것같)', text)
+    _hearsay_cold2 = re.search(r'(?:춥다고|추운것\s*같다고|추운가\s*봐)\s*(?:해|하더라|하던데|하네)', text)
+    if _hearsay_cold or _hearsay_cold2:
+        if preds['fn'] in ('unknown', 'home_info', 'heat_control'):
             preds['fn'] = 'heat_control'; preds['exec_type'] = 'control_then_confirm'
             preds['param_direction'] = 'on'
 
@@ -1271,6 +1276,20 @@ def apply_post_rules(preds, text):
                 preds['param_direction'] = 'on'
             elif re.search(r'꺼\s*줘|꺼봐|끄\s*줘|꺼요', text):
                 preds['param_direction'] = 'off'
+
+    # v108: "저것도/그것도 꺼줘" 지시어 + 꺼 → dir=off 강제 (fn 무관)
+    if re.search(r'(?:저것도|그것도|저거도|그거도)\s*(?:꺼|끄)', text):
+        preds['param_direction'] = 'off'
+    # "저것도/그것도 켜줘" → dir=on
+    if re.search(r'(?:저것도|그것도|저거도|그거도)\s*(?:켜|틀어)', text):
+        preds['param_direction'] = 'on'
+
+    # v108: "외출 모드 해제/절전 모드 해제" → security_mode/off (복귀 명령)
+    # 주의: "방범 모드 해제"는 TS에서 dir=on → 건드리지 않음
+    # 주의: "취침/독서 모드" 등 scene mode는 light_control → 건드리지 않음
+    if re.search(r'(?:외출|절전)\s*모드\s*해제', text):
+        preds['fn'] = 'security_mode'; preds['exec_type'] = 'control_then_confirm'
+        preds['param_direction'] = 'off'
 
     return preds
 
