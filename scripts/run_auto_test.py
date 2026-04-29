@@ -489,7 +489,7 @@ MULTITURN_SCENARIOS = [
         "name": "냉난방 충돌 (간접)",
         "turns": [
             ("에어컨 켜줘",        "ac_control",   "on",  None,      "1턴_AC켜기"),
-            ("너무 추워",          "heat_control", "on",  None,      "2턴_추워_AC꺼야함"),  # AC off만
+            ("너무 추워",          "ac_control",   "off", None,      "2턴_추워_AC꺼야함"),  # 집상태: AC ON → "추워" → AC OFF
         ]
     },
     {
@@ -497,6 +497,20 @@ MULTITURN_SCENARIOS = [
         "turns": [
             ("에어컨 켜줘",        "ac_control",   "on",  None,      "1턴_AC켜기"),
             ("난방 켜줘",          "heat_control", "on",  None,      "2턴_난방명시_AC끄고켜기"),
+        ]
+    },
+    {
+        "name": "냉난방 충돌 — 신체감각 (땀/떨림)",
+        "turns": [
+            ("난방 켜줘",          "heat_control", "on",  None,      "1턴_난방켜기"),
+            ("땀이 나",            "heat_control", "off", None,      "2턴_땀나_난방꺼야함"),
+        ]
+    },
+    {
+        "name": "냉난방 충돌 — 더워/추워 직접",
+        "turns": [
+            ("난방 켜줘",          "heat_control", "on",  None,      "1턴_난방켜기"),
+            ("너무 더워",          "heat_control", "off", None,      "2턴_더워_난방꺼야함"),
         ]
     },
     {

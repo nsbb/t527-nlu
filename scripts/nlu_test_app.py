@@ -150,6 +150,13 @@ with col_right:
     if "multiturn_history" not in st.session_state:
         st.session_state.multiturn_history = []
 
+    # 현재 집 상태 박스 (항상 표시)
+    home_state_now = get_multi_pipeline().home_state.summary_kr()
+    if home_state_now:
+        st.info(f"🏠 **집 상태:** {home_state_now}")
+    else:
+        st.caption("🏠 집 상태: (아직 제어된 기기 없음)")
+
     for turn in st.session_state.multiturn_history:
         with st.chat_message("user"):
             st.write(turn["input"])
@@ -176,6 +183,7 @@ with col_right:
             "fn": r["fn"], "exec_type": r["exec_type"],
             "param_direction": r["param_direction"], "room": r["room"],
             "dst_applied": r["dst_applied"], "api_used": bool(api_resp),
+            "home_state": r.get("home_state"),
         })
         st.rerun()
 

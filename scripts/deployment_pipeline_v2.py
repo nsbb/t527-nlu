@@ -63,8 +63,10 @@ CONTROL_FNS = {'light_control', 'ac_control', 'heat_control', 'vent_control',
                'gas_control', 'door_control', 'curtain_control', 'elevator_call'}
 
 
-class DeviceState:
-    """디바이스 상태 추적 — 제어 명령 결과를 기억해 집 상태 조회에 활용."""
+class HomeState:
+    """집 상태(HomeState) — 제어 명령 결과를 누적해 충돌 해결/조회에 활용.
+    내부 키: (fn, room) → 'on'|'off'|'open'|'closed'|'temperature=N'
+    """
 
     def __init__(self):
         self._s = {}  # (fn, room) → state str
@@ -80,6 +82,13 @@ class DeviceState:
             self._s[(fn, room)] = 'closed'
         elif direction == 'set' and value:
             self._s[(fn, room)] = f'{value[0]}={value[1]}'
+
+    def is_on(self, fn, room):
+        """특정 방의 기기가 켜진 상태인지 — 'on' 또는 'temperature=N' 모두 켜짐 처리."""
+        st = self._s.get((fn, room))
+        if st is None:
+            return False
+        return st == 'on' or st.startswith('temperature=') or st == 'open'
 
     def summary_kr(self):
         """현재 상태를 한국어 요약 문자열로 반환."""
@@ -122,7 +131,7 @@ class DeploymentPipelineV2:
         self.sess = ort.InferenceSession(onnx_path, providers=['CPUExecutionProvider'])
         self.tok = AutoTokenizer.from_pretrained(tokenizer_path)
         self.dst = DialogueStateTracker(timeout=timeout)
-        self.home_state = DeviceState()
+        self.home_state = HomeState()
 
     def reset_dst(self):
         self.dst.reset()
@@ -181,9 +190,29 @@ class DeploymentPipelineV2:
         room_final = final.get('room', 'none')
         val_final = final.get('value')
 
+        # 4.5. HVAC 충돌 재해석 (집상태 기반, 명시적 기기 키워드 없을 때만)
+        # 반대 HVAC 켜진 상태 + 암시적 신체감각 발화 → 켜진 기기를 끔
+        # (예: AC on + "추워" → heat/on 보다 ac/off가 자연스러움)
+        # 명시적 키워드("난방 켜줘"/"에어컨 켜줘") 있으면 사용자 의도 존중 → 자동 상호배제만
+        _explicit_heat = re.search(r'난방|보일러|히터|라디에이터|온돌', pp)
+        _explicit_ac = re.search(r'에어컨|냉방|에어콘', pp)
+        if fn_final == 'heat_control' and dir_final == 'on' and not _explicit_heat:
+            if self.home_state.is_on('ac_control', room_final):
+                fn_final = 'ac_control'
+                dir_final = 'off'
+        elif fn_final == 'ac_control' and dir_final == 'on' and not _explicit_ac:
+            if self.home_state.is_on('heat_control', room_final):
+                fn_final = 'heat_control'
+                dir_final = 'off'
+
         # 5. 집 상태 업데이트 (제어 명령만)
         if fn_final in CONTROL_FNS:
             self.home_state.update(fn_final, room_final, dir_final, val_final)
+            # 케이스 B: HVAC ON 시 반대 HVAC 자동 OFF (상호배제)
+            if dir_final == 'on' and fn_final in ('ac_control', 'heat_control'):
+                opposite = 'heat_control' if fn_final == 'ac_control' else 'ac_control'
+                if self.home_state.is_on(opposite, room_final):
+                    self.home_state.update(opposite, room_final, 'off')
 
         # 6. Response v2 (AI기대응답 스타일)
         multihead = {
