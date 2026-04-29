@@ -285,6 +285,13 @@ SINGLE_TESTS = [
     ("집이 좀 쾌적했으면 좋겠어",        "ac_control",    "on",  None,          "v106_쾌적했으면"),
     ("퇴근하고 왔어",                    "security_mode", None,  None,          "v106_퇴근하고왔어_귀가"),
     ("불 좀 어둡게 해줄 수 있어?",       "light_control", "down",None,          "v106_어둡게_공손형"),
+    # ── v108: hearsay확장/지시어/STT오인식 ────────────────────────────────
+    ("남편이 춥다고 해",                 "heat_control",  "on",  None,          "v108_춥다고해_hearsay"),
+    ("아내가 덥다고 하네",               "ac_control",    "on",  None,          "v108_덥다고하네_hearsay"),
+    ("저것도 꺼줘",                      "unknown",       "off", None,          "v108_저것도꺼줘_dir"),
+    ("불 켜조",                          "light_control", "on",  None,          "v108_켜조_STT"),
+    ("에어컨 꺼조",                      "ac_control",    "off", None,          "v108_꺼조_STT"),
+    ("외출 모드 해제해줘",               "security_mode", "off", None,          "v108_외출모드해제"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────
