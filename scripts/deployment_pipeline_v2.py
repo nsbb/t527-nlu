@@ -59,6 +59,55 @@ def extract_rooms(text):
     return rooms if rooms else ['none']
 
 
+CONTROL_FNS = {'light_control', 'ac_control', 'heat_control', 'vent_control',
+               'gas_control', 'door_control', 'curtain_control', 'elevator_call'}
+
+
+class DeviceState:
+    """디바이스 상태 추적 — 제어 명령 결과를 기억해 집 상태 조회에 활용."""
+
+    def __init__(self):
+        self._s = {}  # (fn, room) → state str
+
+    def update(self, fn, room, direction, value=None):
+        if direction == 'on':
+            self._s[(fn, room)] = 'on'
+        elif direction == 'off':
+            self._s[(fn, room)] = 'off'
+        elif direction == 'open':
+            self._s[(fn, room)] = 'open'
+        elif direction == 'close':
+            self._s[(fn, room)] = 'closed'
+        elif direction == 'set' and value:
+            self._s[(fn, room)] = f'{value[0]}={value[1]}'
+
+    def summary_kr(self):
+        """현재 상태를 한국어 요약 문자열로 반환."""
+        DEVICE_KR = {
+            'light_control': '조명', 'ac_control': '에어컨', 'heat_control': '난방',
+            'vent_control': '환기', 'gas_control': '가스밸브', 'door_control': '도어락',
+            'curtain_control': '커튼',
+        }
+        ROOM_KR = {
+            'living': '거실', 'bedroom_main': '안방', 'bedroom_sub': '침실',
+            'kitchen': '주방', 'external': '현관', 'all': '전체', 'none': '',
+        }
+        STATE_KR = {'on': '켜짐', 'off': '꺼짐', 'open': '열림', 'closed': '닫힘'}
+        if not self._s:
+            return None
+        items = []
+        for (fn, room), st in self._s.items():
+            dev = DEVICE_KR.get(fn, fn)
+            rm = ROOM_KR.get(room, '')
+            st_kr = STATE_KR.get(st, st)
+            prefix = f'{rm} ' if rm else ''
+            items.append(f'{prefix}{dev} {st_kr}')
+        return ', '.join(items)
+
+    def reset(self):
+        self._s.clear()
+
+
 class DeploymentPipelineV2:
     """NLU v2 배포용 파이프라인 — AI기대응답 생성.
 
@@ -70,9 +119,11 @@ class DeploymentPipelineV2:
         self.sess = ort.InferenceSession(onnx_path, providers=['CPUExecutionProvider'])
         self.tok = AutoTokenizer.from_pretrained(tokenizer_path)
         self.dst = DialogueStateTracker(timeout=timeout)
+        self.home_state = DeviceState()
 
     def reset_dst(self):
         self.dst.reset()
+        self.home_state.reset()
 
     def _split_compound(self, text):
         parts = re.split(r'\s+(?:하고|그리고|그러고|이랑)\s+', text)
@@ -122,28 +173,39 @@ class DeploymentPipelineV2:
             dst_applied = False
             final = {**nlu, 'room': room, 'value': None}
 
-        # 5. Response v2 (AI기대응답 스타일)
+        fn_final = final['fn']
+        dir_final = final['param_direction']
+        room_final = final.get('room', 'none')
+        val_final = final.get('value')
+
+        # 5. 집 상태 업데이트 (제어 명령만)
+        if fn_final in CONTROL_FNS:
+            self.home_state.update(fn_final, room_final, dir_final, val_final)
+
+        # 6. Response v2 (AI기대응답 스타일)
         multihead = {
-            'fn': final['fn'],
+            'fn': fn_final,
             'exec_type': final['exec_type'],
-            'param_direction': final['param_direction'],
-            'room': final.get('room', 'none'),
-            'value': final.get('value'),
+            'param_direction': dir_final,
+            'room': room_final,
+            'value': val_final,
             'old_value': final.get('old_value'),
+            'home_state': self.home_state.summary_kr(),  # 집 상태 조회용
         }
         response = generate_response_v2(multihead, raw_text=pp)
 
         return {
             'raw': text,
             'preprocessed': pp,
-            'fn': final['fn'],
+            'fn': fn_final,
             'exec_type': final['exec_type'],
-            'param_direction': final['param_direction'],
-            'room': final.get('room', 'none'),
+            'param_direction': dir_final,
+            'room': room_final,
             'rooms': rooms,
-            'value': final.get('value'),
+            'value': val_final,
             'dst_applied': dst_applied,
             'response': response,
+            'home_state': self.home_state.summary_kr(),
         }
 
 

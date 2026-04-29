@@ -890,8 +890,7 @@ SPECIFIC_PATTERNS = [
     # 메인 상태/시간/알림
     (r'(?:지금\s*)?몇\s*시\s*야?\s*\??$|지금\s*시간\s*(?:어때|알려|몇|야)|\b현재\s*시간\b',
      '네, 지금은 00시 00분 입니다.'),
-    (r'집\s*상태|지금\s*집\s*(?:어때|상태)',
-     '현재 각실 조명과 난방이 켜져 있고 실내 온도는 00도 입니다'),
+    # '집 상태' 패턴은 fn=home_info 핸들러에서 home_state로 동적 처리
     (r'새로운\s*알림|오늘\s*알림|알림\s*있어',
      '단지 소식 등록되어있을 경우 제목만 읽어주는 알림 서비스로 변경'),
     # 단지소식 읽어줘 — generic보다 먼저 (읽기 요청 시)
@@ -1609,7 +1608,7 @@ def clarify_response(fn, raw_text):
 # Query (상태 조회)
 # ─────────────────────────────────────────────────────────────
 
-def query_response(fn, room, raw_text):
+def query_response(fn, room, raw_text, home_state=None):
     room_kr = ROOM_KR.get(room, '')
     room_pref = f'{room_kr} ' if room_kr else ''
 
@@ -1840,7 +1839,9 @@ def query_response(fn, room, raw_text):
 
     # Home
     if fn == 'home_info':
-        if re.search(r'집\s*상태|집\s*어때', raw_text):
+        if re.search(r'집\s*상태|집\s*어때|뭐가?\s*켜져|켜진\s*게|지금\s*상태', raw_text):
+            if home_state:
+                return f'현재 {home_state}입니다.'
             return '현재 각실 조명과 난방이 켜져 있고 실내 온도는 00도 입니다'
         if re.search(r'몇\s*시|시간', raw_text):
             return '네, 지금은 00시 00분 입니다.'
@@ -2300,6 +2301,7 @@ def generate_response_v2(multihead, raw_text=''):
     room = multihead.get('room', 'none')
     value = multihead.get('value')
     old_value = multihead.get('old_value')
+    home_state = multihead.get('home_state')  # DeviceState.summary_kr() or None
 
     # 1. Emergency (단, 테스트/점검/상태 조회 맥락 및 요리 연기 맥락은 제외)
     if EMERGENCY_PATTERN.search(raw_text):
@@ -2381,7 +2383,7 @@ def generate_response_v2(multihead, raw_text=''):
         return control_response(fn, direction, room, value, raw_text, old_value=old_value)
 
     if exec_t == 'query_then_respond':
-        return query_response(fn, room, raw_text)
+        return query_response(fn, room, raw_text, home_state=home_state)
 
     if exec_t == 'query_then_judge':
         return judge_response(fn, raw_text)

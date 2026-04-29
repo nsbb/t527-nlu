@@ -355,6 +355,14 @@ SINGLE_TESTS = [
     ("에어껀 좀 더 세게",             "ac_control",     "up",  None,          "v117_STT_에어껀_에어컨"),
     ("오늘 삼겹살 구워 먹을 건데",     "vent_control",   "on",  None,          "v117_삼겹살구워먹을건데_vent예고"),
     ("에어컨 있으면 얼마나 좋겠어",   "ac_control",     "on",  None,          "v117_소원형_에어컨있으면"),
+
+    # ── v118: 수사적추위/냉방병/창문볼까/밝혀볼까/STT ─────────────────────────
+    ("이 추위에 어떻게 버텨",          "heat_control",   "on",  None,          "v118_수사적_추위에어떻게"),
+    ("이 추위에 잠을 어떻게 자",       "heat_control",   "on",  None,          "v118_수사적_추위잠어떻게"),
+    ("냉방병 걸리겠어",               "ac_control",     "down",None,          "v118_냉방병_ac_down"),
+    ("창문 좀 열어볼까",              "door_control",   "open",None,          "v118_창문열어볼까_open"),
+    ("불 좀 밝혀볼까",                "light_control",  "up",  None,          "v118_불밝혀볼까_up"),
+    ("헌기 좀 틀어줘",               "vent_control",   "on",  None,          "v118_STT_헌기_환기"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────
@@ -497,6 +505,22 @@ MULTITURN_SCENARIOS = [
             ("완전히 내려줘",       "curtain_control","close","living",      "2_완전히내려_DST변환"),
             ("다시 올려줘",         "curtain_control","up",  "living",       "3_올려주기"),
             ("끝까지 올려줘",       "curtain_control","up",  "living",       "4_끝까지올려_DST변환"),
+        ]
+    },
+    {
+        "name": "v118: 요리 후 식사 완료 → vent/off",
+        "turns": [
+            ("삼겹살 구워 먹을 건데", "vent_control", "on",  None,          "1_요리예고_환기on"),
+            ("환기 좀 세게 해줘",    "vent_control",  "up",  None,           "2_환기강도up"),
+            ("다 먹었어",            "vent_control",  "off", None,           "3_식사완료_환기off"),
+        ]
+    },
+    {
+        "name": "v118: 식사 끝났어 → vent/off (vent 컨텍스트)",
+        "turns": [
+            ("라면 끓이는 중이야",   "vent_control",  "on",  None,           "1_라면요리중"),
+            ("환기 켜줘",            "vent_control",  "on",  None,           "2_환기켜기"),
+            ("식사 끝났어",          "vent_control",  "off", None,           "3_식사끝_환기off"),
         ]
     },
 ]
