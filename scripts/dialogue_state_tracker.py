@@ -399,9 +399,10 @@ class DialogueStateTracker:
             return ('level', int(m.group(1)))
         # iter9: 자연어 레벨 (강/중/약/최대/최소)
         for kw, lvl in [('최대', 'max'), ('최소', 'min'), ('풀가동', 'max'),
-                         ('강하게', 'strong'), ('세게', 'strong'),
-                         ('중간', 'medium'), ('보통', 'medium'),
-                         ('약하게', 'weak'), ('살짝', 'weak'), ('은은', 'weak')]:
+                         ('강하게', 'strong'), ('세게', 'strong'), ('강풍', 'strong'),
+                         ('중간', 'medium'), ('보통', 'medium'), ('중풍', 'medium'),
+                         ('약하게', 'weak'), ('살짝', 'weak'), ('은은', 'weak'), ('약풍', 'weak'),
+                         ('미풍', 'weak')]:
             if kw in text:
                 return ('enum', lvl)
         # iter9: 음량/밝기 등 bare number (음량 50)
