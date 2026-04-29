@@ -1504,6 +1504,30 @@ def apply_post_rules(preds, text):
             preds['exec_type'] = 'query_then_judge'
             preds['param_direction'] = 'off'
 
+    # v118: 수사적 추위 표현 "이 추위에 어떻게 버텨/자/살아" → heat_control/on
+    # "이 더위에 어떻게" (ac_control)와 대칭 (v114)
+    if re.search(r'(?:이|그|이런|이정도의?)\s*추위에?\s*(?:어떻게|누가)\s*(?:버텨|자|살아|잠을\s*자|견뎌)', text):
+        if preds['fn'] in ('weather_query', 'unknown', 'home_info'):
+            preds['fn'] = 'heat_control'; preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'on'
+
+    # v118: 냉방병 걸리겠어 → ac_control/down (AC가 너무 차가운 암묵적 불평)
+    if re.search(r'냉방병\s*(?:걸리겠|걸릴\s*것\s*같|걸릴까)', text):
+        if preds['fn'] in ('ac_control', 'unknown', 'weather_query'):
+            preds['fn'] = 'ac_control'; preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'down'
+
+    # v118: "창문 좀 열어볼까/열어볼게" → door_control/open ("볼까" 때문에 unknown 오예측)
+    if re.search(r'창문\s*(?:좀\s*)?열어\s*볼(?:까|게)', text):
+        if preds['fn'] in ('unknown', 'home_info'):
+            preds['fn'] = 'door_control'; preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'open'
+
+    # v118: "불/조명 좀 밝혀볼까/밝혀볼게" → light_control/up
+    if re.search(r'(?:불|조명|전등)\s*(?:좀\s*)?밝혀\s*볼(?:까|게)', text):
+        if preds['fn'] == 'light_control' and preds['param_direction'] == 'none':
+            preds['param_direction'] = 'up'
+
     return preds
 
 

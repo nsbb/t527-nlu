@@ -269,6 +269,20 @@ class DialogueStateTracker:
             elif re.search(r'올려|열', text):
                 direction = 'up'
 
+        # v118: 식사/요리 완료 표현 → vent_control/off (vent 컨텍스트 활성 시)
+        # "다 먹었어", "밥 다 먹었어", "식사 끝났어" → 환기 끄기 암묵적 의도
+        # 모델이 light_control/gas_control/unknown 등 다양하게 오예측 → fn 범위 확장
+        if (self.is_active() and self.prev_fn == 'vent_control'
+                and fn in ('unknown', 'home_info', 'light_control', 'gas_control', 'heat_control', 'door_control')
+                and not re.search(r'불|조명|전등|난방|보일러|가스|문|창문|도어|잠', text)
+                and re.search(
+                    r'(?:다|밥|음식|요리)\s*(?:먹었(?:어|다|네)?|다\s*먹었|먹고\s*나서)|'
+                    r'식사\s*(?:다\s*했|끝났|마쳤|완료)|'
+                    r'(?:요리|음식)\s*다\s*(?:됐|완성)',
+                    text)):
+            fn = 'vent_control'
+            direction = 'off'
+
         # continuous: "조금/더/많이 올려/내려" fn 상속 (prev_value 없어도 fn만이라도 승계)
         if self.is_active() and self.prev_fn:
             m = re.search(r'^\s*(더|조금|조금만|살짝|많이)\s+(올려|내려|낮춰|줄여|높여|키워)', text)

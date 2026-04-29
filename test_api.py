@@ -79,6 +79,23 @@ def _pm_grade(pm10, pm25):
     return g10, g25
 
 
+def _weather_cond_slot(w):
+    """르엘 슬롯 선택: 맑고/흐리고/비가 오고/춥고/덥고 중 하나."""
+    code = w['code']
+    temp = w['temp']
+    if code in SNOW_CODES:
+        return '눈이 오고'
+    if code in RAIN_CODES:
+        return '비가 오고'
+    if temp >= 28:
+        return '덥고'
+    if temp <= 5:
+        return '춥고'
+    if code >= 3:   # 구름많음/흐림/안개
+        return '흐리고'
+    return '맑고'
+
+
 # ─────────────────────────────────────────────────
 # API 호출
 # ─────────────────────────────────────────────────
@@ -188,17 +205,25 @@ def fill_placeholders(resp, w, a):
         cond  = w['condition']
         code  = w['code']
 
+        # 르엘 슬롯: 맑고/흐리고/비가 오고/춥고/덥고 → 하나 선택
+        slot = _weather_cond_slot(w)
+        resp = re.sub(r'맑고/흐리고/비가\s*오고/춥고/덥고', slot, resp)
+
         # 기온
         resp = re.sub(r'기온은\s*OO도', f'기온은 {t}도', resp)
         resp = re.sub(r'기온은\s*00도', f'기온은 {t}도', resp)
         resp = re.sub(r'체감온도는\s*OO도', f'체감온도는 {feels}도', resp)
 
+        # OO도 (지역+기온 패턴)
+        resp = re.sub(r'은\s*OO도입니다', f'은 {t}도입니다', resp)
+
         # 최저/최고
         if w['min_temp'] is not None:
             resp = re.sub(r'최저 기온은\s*00도', f'최저 기온은 {w["min_temp"]}도', resp)
-            resp = re.sub(r'최저\s*00도', f'최저 {w["min_temp"]}도', resp)
+            resp = re.sub(r'최저\s*00도', f'최저 {round(w["min_temp"])}도', resp)
         if w['max_temp'] is not None:
             resp = re.sub(r'최고 기온은\s*00도', f'최고 기온은 {w["max_temp"]}도', resp)
+            resp = re.sub(r'최고\s*00도', f'최고 {round(w["max_temp"])}도', resp)
 
         # 강수 확률
         resp = re.sub(r'강수 확률은\s*0%', f'강수 확률은 {rain}%', resp)
@@ -257,6 +282,9 @@ def fill_placeholders(resp, w, a):
     if a:
         g10, g25 = a['pm10_grade'], a['pm25_grade']
         pm10, pm25 = a['pm10'], a['pm25']
+
+        # 르엘 슬롯: 나쁨/보통/좋음 → 하나 선택 (PM10 기준)
+        resp = re.sub(r'나쁨/보통/좋음', g10, resp)
 
         # 미세먼지 등급 — 정적 텍스트 교체
         for grade in ('좋음', '보통', '나쁨', '매우나쁨'):
