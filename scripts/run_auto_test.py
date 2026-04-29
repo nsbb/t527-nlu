@@ -335,6 +335,15 @@ SINGLE_TESTS = [
     ("실내가 좀 더운 것 같지 않아요",    "ac_control",     "on",  None,          "v114_더운것같지않아요_수사적on"),
     ("커트 열어줘",                     "curtain_control","open",None,          "v114_STT_커트_커튼"),
     ("벤틸 켜줘",                       "vent_control",   "on",  None,          "v114_STT_벤틸_환기"),
+
+    # ── v115: 르엘 생활 시나리오 추가 (가족hearsay/수면/문맥+춥다/가스방향/창문잠궈) ─
+    ("애들이 불 켜달래",                 "light_control",  "on",  None,          "v115_hearsay_켜달래_on"),
+    ("아이가 불 켜달라고 해",             "light_control",  "on",  None,          "v115_hearsay_켜달라고해_on"),
+    ("이제 잘 건데 거실 불 꺼줘",         "light_control",  "off", None,          "v115_자려는데_불_off"),
+    ("외출하기 전에 가스 좀 잠궈줘",      "gas_control",    "close",None,         "v115_가스잠궈줘_close교정"),
+    ("잠 들기 전에 창문 잠궈줘",         "door_control",   "close",None,         "v115_창문잠궈줘_door"),
+    ("아침에 일어났더니 집이 엄청 춥네",  "heat_control",   "on",  None,          "v115_일어났더니춥네_heat"),
+    ("땀 삐질삐질 흘리겠네",             "ac_control",     "on",  None,          "v115_땀삐질삐질_ac"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────

@@ -1080,9 +1080,10 @@ def apply_post_rules(preds, text):
             preds['exec_type'] = 'direct_respond'
             preds['param_direction'] = 'none'
 
-    # v97: 가스 + 잠가줘/잠그다 → dir=close (조건부 문장에서도 close 복구)
-    if re.search(r'가스', text) and re.search(r'잠가\s*(?:줘|주세요|야|야겠|놔)', text):
-        if preds['fn'] == 'gas_control' and preds['param_direction'] in ('set', 'none', 'on'):
+    # v97: 가스 + 잠가줘/잠궈줘/잠그다 → dir=close (조건부 문장에서도 close 복구)
+    # v115: 잠궈줘 변형 추가 ("외출하기 전에 가스 좀 잠궈줘" → close)
+    if re.search(r'가스', text) and re.search(r'잠(?:가|궈|그)\s*(?:줘|주세요|야|야겠|놔)', text):
+        if preds['fn'] == 'gas_control' and preds['param_direction'] in ('set', 'none', 'on', 'open'):
             preds['param_direction'] = 'close'
 
     # v97: 더워한대/추워한대/더워한다고 → 신체감각 간접 요청 (hearsay)
@@ -1100,6 +1101,35 @@ def apply_post_rules(preds, text):
         if preds['fn'] in ('unknown', 'home_info', 'heat_control'):
             preds['fn'] = 'heat_control'; preds['exec_type'] = 'control_then_confirm'
             preds['param_direction'] = 'on'
+
+    # v115: hearsay + 켜달래/꺼달래 → direction 교정 ("애들이 불 켜달래" = on)
+    # 주의: "불 켜" 단독 패턴은 TS light_control/none 케이스와 충돌 — 제외
+    if re.search(r'켜\s*달래|켜\s*달라고\s*(?:해|하더라|하던데)', text):
+        if preds['fn'] == 'light_control' and preds['param_direction'] in ('none',):
+            preds['param_direction'] = 'on'
+    if re.search(r'꺼\s*달래|꺼\s*달라고\s*(?:해|하더라|하던데)', text):
+        if preds['fn'] == 'light_control' and preds['param_direction'] in ('none',):
+            preds['param_direction'] = 'off'
+
+    # v115: 선행문맥(일어났더니/들어왔더니 등) + 춥다 → heat_control/on (fn=unknown 교정)
+    # "아침에 일어났더니 집이 엄청 춥네" — 문맥+춥다 조합에서 fn=unknown이 나올 때
+    if re.search(r'일어났더니|일어나니|들어오니|귀가하니|들어왔더니', text):
+        if re.search(r'춥|추워|추운|냉기|한기', text):
+            if preds['fn'] in ('unknown', 'home_info'):
+                preds['fn'] = 'heat_control'; preds['exec_type'] = 'control_then_confirm'
+                preds['param_direction'] = 'on'
+
+    # v115: 땀 삐질삐질/줄줄 흘리겠네 → ac_control/on (날씨/unknown 오예측 교정)
+    if re.search(r'땀\s*(?:삐질삐질|줄줄|뻘뻘|뚝뚝|흘리겠|이\s*나겠|이\s*나는\s*것같)', text):
+        if preds['fn'] in ('unknown', 'weather_query', 'home_info'):
+            preds['fn'] = 'ac_control'; preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'on'
+
+    # v115: 자려는데/잘 시간인데/누울 건데 + 불/조명 → light_control/off
+    if re.search(r'(?:자려는데|자려고|잘\s*건데|잘\s*시간인데|이제\s*잘|누울\s*건데)', text):
+        if preds['fn'] == 'light_control' and preds['param_direction'] in ('none',):
+            if re.search(r'불|조명|전등', text):
+                preds['param_direction'] = 'off'
 
     # v97: 조건부 문장 뒤 "켜줘/꺼줘" dir 복구 (일어나면/먹고 나서/나가고 나면 등)
     _cond_then = re.search(r'(?:면|고\s*나서|고\s*나면|뒤에?|다음에?)\s+', text)
@@ -1154,6 +1184,11 @@ def apply_post_rules(preds, text):
         if preds['fn'] in ('gas_control', 'unknown'):
             preds['fn'] = 'door_control'; preds['exec_type'] = 'query_then_respond'
             preds['param_direction'] = 'none'
+    # v115: 창문 + 잠궈줘/잠가줘 → door_control/close (가스 오예측 방지)
+    if re.search(r'창문', text) and re.search(r'잠(?:가|궈|그)\s*(?:줘|주세요|야|야겠)', text):
+        if preds['fn'] in ('gas_control', 'unknown', 'home_info'):
+            preds['fn'] = 'door_control'; preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'close'
 
     # v99: 꿉꿉/눅눅/뭉글 + ac_control 오예측 → vent_control (습도 불쾌감 = 환기)
     if re.search(r'꿉꿉|텁텁|뭉글|눅눅|퀴퀴', text):
