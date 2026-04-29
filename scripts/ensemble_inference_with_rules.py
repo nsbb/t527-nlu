@@ -1130,9 +1130,13 @@ def apply_post_rules(preds, text):
             preds['param_direction'] = 'on'
 
     # v104: 요리 중(볶음/고기/생선 굽기) → vent_control/on (조리 연기 환기 필요)
-    _cooking_food = re.search(r'볶음|고기|생선|전(?:이|을|좀)?$|부침|삼겹|치킨|전골|찌개', text)
-    _cooking_action = re.search(r'굽|요리|조리|끓이|볶|튀기|중이야|하고\s*있어', text)
-    if _cooking_food and _cooking_action:
+    # v110: 라면/국수/전/파스타 등 추가, 전 end anchor 제거
+    _cooking_food = re.search(
+        r'볶음|고기|생선|전(?:이|을|좀)?(?:\s|$)|부침|삼겹|치킨|전골|찌개|라면|국수|파스타|볶음밥|계란|두부', text)
+    _cooking_action = re.search(r'굽|요리|조리|끓이|볶|튀기|중이야|하고\s*있어|부치', text)
+    # 음식명 없이 "요리 중이야/요리하고 있어"만 있어도 vent 처리
+    _generic_cooking = re.search(r'요리\s*(?:중|하고)\s*(?:이야|있어)', text)
+    if (_cooking_food and _cooking_action) or _generic_cooking:
         if preds['fn'] in ('unknown', 'home_info'):
             preds['fn'] = 'vent_control'; preds['exec_type'] = 'control_then_confirm'
             preds['param_direction'] = 'on'
