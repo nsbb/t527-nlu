@@ -686,7 +686,11 @@ def apply_post_rules(preds, text):
         preds['param_direction'] = 'none'; preds['param_type'] = 'none'
 
     # v84: 소원형 "시원했으면/따뜻해졌으면 좋겠어" → 디바이스 dir=on
+    # v117: "에어컨 있으면 얼마나 좋겠어" 수사적 소원형 → ac/on direction 교정
     if re.search(r'시원(?:했으면|해졌으면|해지면\s*좋겠)', text):
+        if preds['fn'] == 'ac_control' and preds['param_direction'] == 'none':
+            preds['param_direction'] = 'on'
+    if re.search(r'(?:에어컨|냉방|에어콘)\s*(?:있으면|틀면|켜면)\s*얼마나', text):
         if preds['fn'] == 'ac_control' and preds['param_direction'] == 'none':
             preds['param_direction'] = 'on'
     if re.search(r'따뜻(?:했으면|해졌으면|해지면\s*좋겠)', text):
@@ -1205,12 +1209,14 @@ def apply_post_rules(preds, text):
     _cooking_action = re.search(r'굽|요리|조리|끓이|볶|튀기|중이야|하고\s*있어|부치|구이', text)
     # 음식명 없이 "요리 중이야/요리하고 있어"만 있어도 vent 처리
     _generic_cooking = re.search(r'요리\s*(?:중|하고)\s*(?:이야|있어)', text)
-    if (_cooking_food and _cooking_action) or _generic_cooking:
+    # v117: 요리 예고형 ("삼겹살 구워 먹을 건데/먹을 거야") → vent/on
+    _cooking_plan = _cooking_food and re.search(r'(?:먹을|해먹을|구워\s*먹|볶아\s*먹|끓여\s*먹)\s*(?:건데|거야|거니까|건가요)', text)
+    if (_cooking_food and _cooking_action) or _generic_cooking or _cooking_plan:
         if preds['fn'] in ('unknown', 'home_info'):
             preds['fn'] = 'vent_control'; preds['exec_type'] = 'control_then_confirm'
             preds['param_direction'] = 'on'
     # 요리 + 냄새/연기 → vent/on (fn=vent이지만 dir=none 교정 포함)
-    if (_cooking_food or _cooking_action or _generic_cooking) and re.search(r'냄새|연기', text):
+    if (_cooking_food or _cooking_action or _generic_cooking or _cooking_plan) and re.search(r'냄새|연기', text):
         if preds['fn'] == 'vent_control' and preds['param_direction'] in ('none',):
             preds['param_direction'] = 'on'
 
