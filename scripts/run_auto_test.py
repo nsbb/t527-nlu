@@ -312,6 +312,14 @@ SINGLE_TESTS = [
     ("불이 좀 어두운 것 같아",           "light_control",  "up",  None,          "v111_어두운것같아_up"),
     ("훈훈하네",                         "unknown",        None,  None,          "v111_훈훈_만족관찰"),
     ("포근하네요",                       "unknown",        None,  None,          "v111_포근_만족관찰"),
+    # ── v112: 수사적반어/이중부정/더시원하게/월패드 ────────────────────────────
+    ("조금 더 시원하게 해줘",            "ac_control",     "up",  None,          "v112_더시원하게_up"),
+    ("좀 더 따뜻하게 해줘",             "heat_control",   "up",  None,          "v112_더따뜻하게_up"),
+    ("에어컨 끄면 안 되나요?",           "ac_control",     "off", None,          "v112_끄면안되나_반어off"),
+    ("불 좀 켜면 안 될까요?",           "light_control",  "on",  None,          "v112_켜면안될까_반어on"),
+    ("에어컨 안 끄면 안 돼?",           "ac_control",     "off", None,          "v112_안끄면안돼_이중부정off"),
+    ("불 안 켜도 안 돼?",               "light_control",  "on",  None,          "v112_안켜도안돼_이중부정on"),
+    ("월패드 좀 꺼줘",                  "unknown",        None,  None,          "v112_월패드꺼줘_unknown"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────
