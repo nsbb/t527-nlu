@@ -1222,9 +1222,10 @@ def apply_post_rules(preds, text):
             preds['param_direction'] = 'on'
 
     # v116: 미세먼지 + 창문 닫아야겠다/닫아줘 → door_control/close
+    # v122: curtain_control 오예측도 교정
     if re.search(r'미세먼지|황사|공기\s*(?:질|오염)', text):
         if re.search(r'창문\s*(?:닫|잠|닫아야|잠가야)', text):
-            if preds['fn'] in ('weather_query', 'unknown', 'home_info'):
+            if preds['fn'] in ('weather_query', 'unknown', 'home_info', 'curtain_control'):
                 preds['fn'] = 'door_control'; preds['exec_type'] = 'control_then_confirm'
                 preds['param_direction'] = 'close'
 
@@ -1596,6 +1597,22 @@ def apply_post_rules(preds, text):
     if re.search(r'어두워서\s*(?:아무것도|뭐가?|뭐도?|사물이?)\s*안\s*(?:보여|보여요|보임)', text):
         if preds['fn'] == 'light_control':
             preds['param_direction'] = 'up'
+
+    # v122: 조명/불 너무 밝은 것 같다 → light_control/down
+    if re.search(r'(?:조명|불)\s*(?:이\s*)?너무\s*밝\w*\s*것\s*같', text):
+        if preds['fn'] == 'light_control' and preds['param_direction'] in ('none', 'off'):
+            preds['param_direction'] = 'down'
+
+    # v122: 에어컨 세다 싶어/것 같아 → ac_control/down (바람 강도 불만)
+    if re.search(r'(?:에어컨|냉방)\s*(?:이\s*)?(?:좀\s*)?세\s*(?:다\s*싶|것\s*같|네)', text):
+        if preds['fn'] == 'ac_control':
+            preds['param_direction'] = 'down'
+
+    # v122: 꺼줄 수 있어/있어요 → dir=off (공손한 끄기 요청)
+    if re.search(r'꺼줄\s*수\s*있', text):
+        if preds['fn'] in _device_fns and preds['param_direction'] != 'off':
+            preds['param_direction'] = 'off'
+            preds['exec_type'] = 'control_then_confirm'
 
     return preds
 
