@@ -236,7 +236,8 @@ def apply_post_rules(preds, text):
     # v83: 신체 감각 온도 표현 → 기기 제어
     # "쌀쌀해/서늘해" = feeling cold → heat_control/on (ac_control 오분류 교정)
     # v84: "서늘해지게 해줘" (소원형 = 시원해지고 싶어) 제외 — ac_control이 맞음
-    if re.search(r'쌀쌀(?:해|하다|하네|하지|해요)|서늘(?:해(?!지게|져|지도록)|하다|하네|하죠)|으슬으슬|추들추들', text):
+    # v121: 형용사형(쌀쌀한/서늘한) 추가
+    if re.search(r'쌀쌀(?:해|하다|하네|하지|해요|한)|서늘(?:해(?!지게|져|지도록)|하다|하네|하죠|한(?!지게|져|지도록))|으슬으슬|추들추들', text):
         if preds['fn'] in ('ac_control', 'weather_query', 'unknown', 'home_info', 'heat_control'):
             preds['fn'] = 'heat_control'
             preds['exec_type'] = 'control_then_confirm'
@@ -1572,6 +1573,29 @@ def apply_post_rules(preds, text):
         preds['fn'] = 'ac_control'
         preds['exec_type'] = 'control_then_confirm'
         preds['param_direction'] = 'off'
+
+    # v121: 수사적 더위 "이 더위에 어떻게 사나/버텨/살아" → ac_control/on
+    if re.search(r'이\s*더위에\s*(?:어떻게|어케)', text):
+        preds['fn'] = 'ac_control'
+        preds['exec_type'] = 'control_then_confirm'
+        preds['param_direction'] = 'on'
+
+    # v121: 조명/전등 깜빡거리다 → unknown (고장 리포트)
+    if re.search(r'(?:조명|전등|불)\s*(?:이|가)?\s*(?:깜빡|깜박)(?:거려|이는|인다|거린다|이다)', text):
+        preds['fn'] = 'unknown'
+        preds['exec_type'] = 'direct_respond'
+        preds['param_direction'] = 'none'
+
+    # v121: 창문 닫아도 될까요/돼요 → door_control/close (완곡 닫기 요청)
+    if re.search(r'창문\s*(?:좀\s*)?닫아도\s*(?:될까|돼요?|괜찮)', text):
+        preds['fn'] = 'door_control'
+        preds['exec_type'] = 'control_then_confirm'
+        preds['param_direction'] = 'close'
+
+    # v121: 어두워서 아무것도/뭐가 안 보여 → light_control/up (강조 어두움)
+    if re.search(r'어두워서\s*(?:아무것도|뭐가?|뭐도?|사물이?)\s*안\s*(?:보여|보여요|보임)', text):
+        if preds['fn'] == 'light_control':
+            preds['param_direction'] = 'up'
 
     return preds
 

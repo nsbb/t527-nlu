@@ -63,10 +63,10 @@
 | 지표 | 수치 |
 |------|------|
 | TS 3043 combo | **100.00%** |
-| auto_test 단일 | **281/281 (100%)** |
+| auto_test 단일 | **289/289 (100%)** |
 | auto_test 멀티턴 | **60/60 (100%)** |
 | KoELECTRA fn | **96.22%** |
-| 최신 규칙 버전 | **v120** |
+| 최신 규칙 버전 | **v121** |
 
 ---
 
@@ -96,6 +96,7 @@
 | v114 | 수사적불평(왜이렇게어둡냐→up, 버티겠어→on), 완곡(더운것같기도→on), STT(커트/벤틸) |
 | v115 | 가스잠궈줘→close, 창문잠궈줘→door, 일어났더니춥네→heat, hearsay켜달래→on, 땀삐질삐질→ac/on |
 | v116 | 습하네/습해서→vent, 생선구이냄새→vent/on, 미세먼지+창문닫아야겠다→door/close |
+| v121 | 이더위에어떻게→ac/on, 쌀쌀한/서늘한형용사형→heat/on, 조명깜빡거려→unknown, 창문닫아도될까요→door/close, 어두워서안보여→light/up |
 | v120 | 비/눈오기시작→door/close, 창문바람들어오→close, 창문열어두고외출→close, 건조해→unknown, 해눈부셔→curtain/close, 에어컨끄면안될까→ac/off |
 | v119 | 전동커튼 열기 멈춰줘 → stop (open 오예측 교정) |
 | v118 | 수사적추위(이추위에어떻게→heat), 냉방병→ac/down, 창문열어볼까→door, 밝혀볼까→up, STT(헌기→환기), DST:식사완료→vent/off, DeviceState파이프라인연동, fill_placeholders슬롯처리(맑고/흐리고/나쁨/보통/좋음) |
