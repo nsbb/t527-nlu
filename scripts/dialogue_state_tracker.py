@@ -243,9 +243,10 @@ class DialogueStateTracker:
                 and not re.search(r'난방|보일러|온돌|히터', text)):
             fn = 'ac_control'
         # v82: "온도 낮춰줘/내려줘" after AC context → ac_control/down (숫자 없어도 적용)
-        # v87: 온도와 낮춰 사이 "조금/좀/약간/더" 허용
+        # v87: 온도와 낮춰 사이 "조금/좀/약간/더" 허용 (중첩 부사 "좀 더"도 포함)
+        # v109: "온도 낮추는데/낮추던데" 습관형도 포함
         if (self.is_active() and self.prev_fn == 'ac_control' and fn == 'heat_control'
-                and re.search(r'온도\s*(?:조금|좀|약간|더)?\s*(?:낮춰|내려|줄여)', text)
+                and re.search(r'온도\s*(?:조금|좀|약간)?\s*(?:더)?\s*(?:낮춰|내려|줄여|낮추는데|낮추던데)', text)
                 and not re.search(r'난방|보일러|온돌|히터', text)):
             fn = 'ac_control'
             direction = 'down'

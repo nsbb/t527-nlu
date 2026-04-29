@@ -1291,6 +1291,57 @@ def apply_post_rules(preds, text):
         preds['fn'] = 'security_mode'; preds['exec_type'] = 'control_then_confirm'
         preds['param_direction'] = 'off'
 
+    # v109: "창문 + 닫았어/닫고" → curtain_control/close 교정 (gas_control 오예측)
+    # 창문/커튼이 이미 닫혔음을 보고하는 과거형 표현
+    if re.search(r'창문', text) and re.search(r'닫[았아]|닫고\s*왔', text):
+        if preds['fn'] == 'gas_control':
+            preds['fn'] = 'curtain_control'
+            preds['param_direction'] = 'close'
+            preds['exec_type'] = 'query_then_respond'
+
+    # v109: "불/조명 껴줘" STT 오인식 → light_control/on ("껴" = "켜" 변형)
+    if re.search(r'(?:불|조명|전등)\s*껴\s*줘', text):
+        if preds['fn'] in ('weather_query', 'unknown', 'home_info'):
+            preds['fn'] = 'light_control'
+            preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'on'
+
+    # v109: 자기 의향형 "~해야겠어/~야겠어" + 기기 → control 의도
+    # "에어컨 꺼야겠어" = 에어컨 끌게(의향) → dir=off (이미 모델이 잘 처리하지만 none인 경우 보완)
+    if re.search(r'(?:켜|틀어)\s*야겠어', text):
+        if preds['fn'] in _device_fns and preds['param_direction'] == 'none':
+            preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'on'
+    if re.search(r'(?:꺼|끄)\s*야겠어', text):
+        if preds['fn'] in _device_fns and preds['param_direction'] == 'none':
+            preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'off'
+
+    # v109: "보통 이 시간엔/보통은 + 기기 켜는데" 습관 표현 → 켜달라는 간접 요청 → dir=on
+    if re.search(r'보통\s*(?:이\s*시간엔?|은?\s*이때|은?\s*오후|은?\s*아침|은?\s*저녁)', text):
+        if re.search(r'켜|틀어', text) and preds['fn'] in _device_fns:
+            if preds['param_direction'] == 'none':
+                preds['param_direction'] = 'on'
+        if re.search(r'꺼|끄', text) and preds['fn'] in _device_fns:
+            if preds['param_direction'] == 'none':
+                preds['param_direction'] = 'off'
+
+    # v109: 만족 관찰 표현 → unknown (상태 확인이지 명령이 아님)
+    # "이제 좀 시원하네/따뜻하네" — 부정어/아직/더 없으면 만족 관찰
+    _sat_cool = re.search(r'(?:이제|많이|꽤|제법|좀|조금)\s*시원(?:하네|해|하다|하죠|한것같)', text)
+    _sat_warm = re.search(r'(?:이제|많이|꽤|제법|좀|조금)\s*따뜻(?:하네|해|하다|하죠|한것같)', text)
+    if (_sat_cool or _sat_warm) and not re.search(r'안|아직|더|못|별로|덜', text):
+        if preds['fn'] in ('ac_control', 'heat_control', 'vent_control'):
+            preds['fn'] = 'unknown'
+            preds['exec_type'] = 'direct_respond'
+            preds['param_direction'] = 'none'
+
+    # v109: 수면/취침 시간 표현 → unknown (기기 명령 아님)
+    if re.search(r'잘\s*(?:시간|게요|게|거야|래|까)', text):
+        if preds['fn'] in _device_fns and preds['param_direction'] == 'none':
+            preds['fn'] = 'unknown'
+            preds['exec_type'] = 'direct_respond'
+
     return preds
 
 
