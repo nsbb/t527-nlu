@@ -1614,6 +1614,35 @@ def apply_post_rules(preds, text):
             preds['param_direction'] = 'off'
             preds['exec_type'] = 'control_then_confirm'
 
+    # v123: 창문이 활짝/많이 열려있네/열려있어 → door_control/close (관찰형 → 닫기 의도)
+    if re.search(r'창문\s*(?:이|이\s*)?(?:활짝|많이|크게|열린\s*채|)?\s*열려\s*있(?:네|어|는데|잖아)', text) and '?' not in text:
+        if preds['fn'] in ('curtain_control', 'unknown', 'home_info', 'weather_query'):
+            preds['fn'] = 'door_control'
+            preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'close'
+
+    # v123: 불/조명 + 아직도/계속 켜져있어 → light_control/off (fn 오예측 포함 교정)
+    if re.search(r'(?:불|조명|전등|전기)\s*(?:이|이\s*)?(?:아직도?|계속)\s*켜\s*져\s*있', text) and '?' not in text:
+        preds['fn'] = 'light_control'
+        preds['exec_type'] = 'query_then_judge'
+        preds['param_direction'] = 'off'
+
+    # v123: 창문 좀 열어주겠어요? → door_control/open (정중 의문형)
+    if re.search(r'창문\s*(?:좀\s*)?열어\s*주겠어요', text):
+        preds['fn'] = 'door_control'
+        preds['exec_type'] = 'control_then_confirm'
+        preds['param_direction'] = 'open'
+
+    # v123: vent_control + 해주시겠어요/해주겠어요 → dir=on (환기 정중 요청)
+    if re.search(r'환기\s*(?:좀\s*)?(?:해주시겠어요?|해주겠어요?|시켜주시겠어요?)', text):
+        if preds['fn'] == 'vent_control':
+            preds['param_direction'] = 'on'
+
+    # v123: 난방/온도 + 더 (단독) → heat_control/up (방향 set 교정)
+    if re.search(r'난방\s*더$|난방\s*좀\s*더$|온도\s*더$', text.strip()):
+        if preds['fn'] == 'heat_control':
+            preds['param_direction'] = 'up'
+
     return preds
 
 
