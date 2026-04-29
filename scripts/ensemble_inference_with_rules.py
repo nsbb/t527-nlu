@@ -56,9 +56,9 @@ def apply_post_rules(preds, text):
         if preds['fn'] in ('light_control', 'unknown', 'home_info', 'weather_query'):
             preds['fn'] = 'vent_control'; preds['exec_type'] = 'control_then_confirm'
             preds['param_direction'] = 'on'; preds['param_type'] = 'none'
-    # 눈부심 비유 (눈이 멀겠어/아파 등) → light_control dir=down (dir=none/off 교정)
-    # "거실이 너무 밝아서 눈이 아파" → down, not off
-    if re.search(r'눈이\s*(?:부셔|따가워|아파|멀겠|피로해)|눈을\s*못\s*뜨', text):
+    # 눈부심 비유 (눈이 멀겠어/아파/눈부셔요 등) → light_control dir=down (dir=none/off 교정)
+    # "거실이 너무 밝아서 눈이 아파" → down, not off / "조명이 좀 눈부셔요" → down
+    if re.search(r'눈이\s*(?:부셔|따가워|아파|멀겠|피로해)|눈을\s*못\s*뜨|눈부셔(?:요|서|서요)?', text):
         if preds['fn'] == 'light_control' and preds['param_direction'] in ('none', 'off'):
             _has_explicit_off_cmd = re.search(r'(?:꺼|끄)\s*줘', text)
             if not _has_explicit_off_cmd:
@@ -962,6 +962,29 @@ def apply_post_rules(preds, text):
             if not re.search(r'어둡게|어둡지\s*않|안\s*어둡', text):
                 preds['fn'] = 'light_control'; preds['exec_type'] = 'control_then_confirm'
                 preds['param_direction'] = 'on'
+
+    # v114: 수사적 어둠/밝기 불평 "왜 이렇게 어둡냐/어두운 거야" → light_control/up
+    if re.search(r'(?:왜|어째서|왜이렇게|어째)\s*(?:이렇게|이리|이렇게나|그렇게)?\s*어둡(?:냐|냐고|냐는|어|긴|나|거야|지)', text):
+        if preds['fn'] in ('light_control', 'unknown', 'home_info'):
+            if not re.search(r'어둡게|어둡지\s*않', text):
+                preds['fn'] = 'light_control'; preds['exec_type'] = 'control_then_confirm'
+                preds['param_direction'] = 'up'
+
+    # v114: "에어컨 없이 어떻게/누가 버티겠어" 수사적 표현 → ac_control/on (direction 교정)
+    if re.search(r'에어컨\s*(?:없이|없으면|안\s*틀면)\s*(?:어떻게|누가)|더위에\s*(?:어떻게|누가)\s*(?:살아|버텨|살겠어|버티겠어)', text):
+        if preds['fn'] == 'ac_control' and preds['param_direction'] in ('none',):
+            preds['param_direction'] = 'on'
+
+    # v114: "더운 것 같지 않아요?" 수사적 부정 질문 → ac_control/on (down 교정)
+    # "실내가 좀 더운 것 같지 않아요" = isn't it hot? → turn on AC
+    if re.search(r'더운\s*(?:것|거)\s*같(?:지\s*않아요|죠|지요|지 않아|지않아|나요)', text):
+        if preds['fn'] == 'ac_control' and preds['param_direction'] in ('none', 'down'):
+            preds['param_direction'] = 'on'
+
+    # v114: "더운 것 같기도 하고/더운 것 같아서" 완곡 → ac_control/on
+    if re.search(r'(?:좀|살짝|약간)?\s*더운\s*(?:것|거)\s*같(?:기도|기도 하고|아서|아요|네요)', text):
+        if preds['fn'] == 'ac_control' and preds['param_direction'] in ('none',):
+            preds['param_direction'] = 'on'
 
     # v94: 특수 조명 + 켜줘/켜봐 → dir=on (간접등/무드등/다운라이트 등 uncommon 단어)
     if re.search(r'간접등|무드등|다운라이트|스탠드|풋라이트|씨링등|밸런스등', text):
