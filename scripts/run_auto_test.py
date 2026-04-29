@@ -367,6 +367,18 @@ SINGLE_TESTS = [
     # ── v119: 커튼 멈춰 + 전동커튼 열기 멈춰줘 오예측 교정 ────────────────────
     ("거실 전동커튼 열기 멈춰줘",      "curtain_control","stop",None,          "v119_전동커튼열기멈춰줘_stop"),
     ("전동커튼 멈춰줘",               "curtain_control","stop",None,          "v119_전동커튼멈춰줘_stop"),
+
+    # ── v120: 비/눈/햇볕 간접암시 / 창문 바람 / 건조 → unknown ───────────────
+    ("비가 오기 시작했어",            "door_control",  "close",None,          "v120_비오기시작_door_close"),
+    ("눈이 오고 있어",               "door_control",  "close",None,          "v120_눈이오고있어_door_close"),
+    ("비가 쏟아지고 있어",           "door_control",  "close",None,          "v120_비쏟아지고있어_door_close"),
+    ("창문 바람이 너무 들어오는데",   "door_control",  "close",None,          "v120_창문바람들어오_door_close"),
+    ("창문 열어두고 외출했어",        "door_control",  "close",None,          "v120_창문열어두고외출_door_close"),
+    ("방이 너무 건조해",             "unknown",       None,  None,           "v120_건조해_unknown"),
+    ("공기가 너무 건조한 것 같아",   "unknown",       None,  None,           "v120_건조한것같아_unknown"),
+    ("해가 너무 눈부셔",             "curtain_control","close",None,          "v120_해눈부셔_curtain_close"),
+    ("햇볕이 너무 눈부신데",         "curtain_control","close",None,          "v120_햇볕눈부신데_curtain_close"),
+    ("괜찮으시다면 에어컨 끄면 안 될까요", "ac_control","off",None,          "v120_에어컨끄면안될까요_ac_off"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────

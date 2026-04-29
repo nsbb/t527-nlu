@@ -1534,6 +1534,45 @@ def apply_post_rules(preds, text):
         if re.search(r'멈춰\s*(?:줘|주세요|요)?|스톱|정지\s*(?:해줘)?', text):
             preds['param_direction'] = 'stop'
 
+    # v120: 비/눈이 오기 시작/오고 있다 → door_control/close (창문 닫기 간접 암시)
+    # "비가 오기 시작했어", "눈이 오고 있어", "비가 쏟아지고 있어"
+    if re.search(r'(?:비|눈)\s*(?:가|이)?\s*(?:오기\s*시작|오고\s*있|쏟아지|내리고\s*있)', text):
+        if not re.search(r'습하|습해|더워|더운|시원|환기', text):
+            preds['fn'] = 'door_control'
+            preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'close'
+
+    # v120: 창문으로 바람이 들어오다 → door_control/close
+    if re.search(r'창문\s*(?:으로|바람).*바람.*들어오|창문.*바람.*(?:들어오|새)', text):
+        preds['fn'] = 'door_control'
+        preds['exec_type'] = 'control_then_confirm'
+        preds['param_direction'] = 'close'
+
+    # v120: 창문 열어두고 외출/나갔어/나왔어 → door_control/close (잊고 나간 경우)
+    if re.search(r'창문\s*(?:을\s*)?열어\s*두고\s*(?:나갔|외출|나왔)', text):
+        preds['fn'] = 'door_control'
+        preds['exec_type'] = 'control_then_confirm'
+        preds['param_direction'] = 'close'
+
+    # v120: 건조해/건조한 → unknown (가습기 미지원, vent 오예측 교정)
+    if re.search(r'건조\s*(?:해|하네|한데|해서|하다|한\s*것\s*같)', text):
+        if preds['fn'] == 'vent_control' and not re.search(r'건조기', text):
+            preds['fn'] = 'unknown'
+            preds['exec_type'] = 'direct_respond'
+            preds['param_direction'] = 'none'
+
+    # v120: 해/햇볕이 너무 눈부셔 → curtain_control/close (빛 차단 암시)
+    if re.search(r'(?:해|햇볕|햇빛)\s*(?:가|이)?\s*(?:너무\s*)?눈부|눈부신?\s*(?:해|햇볕|햇빛)', text):
+        preds['fn'] = 'curtain_control'
+        preds['exec_type'] = 'control_then_confirm'
+        preds['param_direction'] = 'close'
+
+    # v120: "에어컨 끄면 안 될까요" 완곡 요청 → ac_control/off
+    if re.search(r'에어컨\s*(?:좀\s*)?끄면\s*안\s*될까', text):
+        preds['fn'] = 'ac_control'
+        preds['exec_type'] = 'control_then_confirm'
+        preds['param_direction'] = 'off'
+
     return preds
 
 
