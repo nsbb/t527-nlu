@@ -99,9 +99,12 @@ class DeviceState:
         for (fn, room), st in self._s.items():
             dev = DEVICE_KR.get(fn, fn)
             rm = ROOM_KR.get(room, '')
-            st_kr = STATE_KR.get(st, st)
             prefix = f'{rm} ' if rm else ''
-            items.append(f'{prefix}{dev} {st_kr}')
+            if st.startswith('temperature='):
+                temp = st.split('=', 1)[1]
+                items.append(f'{prefix}{dev} {temp}도 켜짐')
+            else:
+                items.append(f'{prefix}{dev} {STATE_KR.get(st, st)}')
         return ', '.join(items)
 
     def reset(self):
