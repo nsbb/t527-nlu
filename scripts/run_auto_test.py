@@ -320,6 +320,11 @@ SINGLE_TESTS = [
     ("에어컨 안 끄면 안 돼?",           "ac_control",     "off", None,          "v112_안끄면안돼_이중부정off"),
     ("불 안 켜도 안 돼?",               "light_control",  "on",  None,          "v112_안켜도안돼_이중부정on"),
     ("월패드 좀 꺼줘",                  "unknown",        None,  None,          "v112_월패드꺼줘_unknown"),
+
+    # ── v113: DST 컨텍스트 오버라이드 (단독발화시 NLU예측 확인용) ─────────────
+    # 온도 높여줘: heat_control/up → DST에서 AC컨텍스트면 ac_control/up 변환 (단독시 heat_control)
+    ("온도 높여줘",                     "heat_control",   "up",  None,          "v113_온도높여줘_단독_heatcontrol"),
+    ("온도 올려줘",                     "heat_control",   "up",  None,          "v113_온도올려줘_단독_heatcontrol"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────
@@ -444,6 +449,24 @@ MULTITURN_SCENARIOS = [
             ("라면 끓이는 중이야",  "vent_control",  "on",  None,           "1_라면요리중"),
             ("환기 좀 세게 해줘",   "vent_control",  "up",  None,           "2_환기강하게"),
             ("이제 그만 됐어",      "vent_control",  "off", None,           "3_요리완료_환기꺼"),
+        ]
+    },
+    {
+        "name": "v113: AC 컨텍스트에서 온도 높여/낮춰 → ac_control",
+        "turns": [
+            ("에어컨 켜줘",         "ac_control",    "on",  None,           "1_AC켜기"),
+            ("온도 높여줘",         "ac_control",    "up",  None,           "2_온도높여_DST변환"),
+            ("온도 좀 낮춰줘",      "ac_control",    "down",None,           "3_온도낮춰_DST변환"),
+            ("온도 올려줘",         "ac_control",    "up",  None,           "4_온도올려_DST변환"),
+        ]
+    },
+    {
+        "name": "v113: 커튼 컨텍스트 후 완전히/끝까지 내려줘 → curtain",
+        "turns": [
+            ("거실 커튼 열어줘",    "curtain_control","open","living",       "1_커튼열기"),
+            ("완전히 내려줘",       "curtain_control","close","living",      "2_완전히내려_DST변환"),
+            ("다시 올려줘",         "curtain_control","up",  "living",       "3_올려주기"),
+            ("끝까지 올려줘",       "curtain_control","up",  "living",       "4_끝까지올려_DST변환"),
         ]
     },
 ]
