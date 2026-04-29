@@ -250,6 +250,24 @@ class DialogueStateTracker:
                 and not re.search(r'난방|보일러|온돌|히터', text)):
             fn = 'ac_control'
             direction = 'down'
+        # v113: "온도 높여줘/올려줘" after AC context → ac_control/up
+        if (self.is_active() and self.prev_fn == 'ac_control' and fn == 'heat_control'
+                and re.search(r'온도\s*(?:조금|좀|약간)?\s*(?:더)?\s*(?:높여|올려)', text)
+                and not re.search(r'난방|보일러|온돌|히터', text)):
+            fn = 'ac_control'
+            direction = 'up'
+        # v113: "완전히/끝까지/다/전부 내려줘/올려줘" after curtain context
+        # 모델이 light_control/heat_control/unknown으로 예측할 수 있음 → curtain_control 복원
+        # TS 기준: 커튼 올려 → up, 블라인드 내려 → close
+        if (self.is_active() and self.prev_fn == 'curtain_control'
+                and fn in ('light_control', 'heat_control', 'unknown', 'home_info')
+                and re.search(r'(?:완전히|끝까지|전부|다)\s*(?:내려|올려|닫|열)', text)
+                and not re.search(r'불|조명|전등|전기|환기|창문', text)):
+            fn = 'curtain_control'
+            if re.search(r'내려|닫', text):
+                direction = 'close'
+            elif re.search(r'올려|열', text):
+                direction = 'up'
 
         # continuous: "조금/더/많이 올려/내려" fn 상속 (prev_value 없어도 fn만이라도 승계)
         if self.is_active() and self.prev_fn:
