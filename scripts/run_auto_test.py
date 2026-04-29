@@ -71,8 +71,8 @@ SINGLE_TESTS = [
 
     # ── 강도/설정 ──────────────────────────────────────────
     ("온도 22도로 맞춰줘",     "heat_control",   "set",  None,           "설정_온도22도"),
-    ("에어컨 세게 틀어줘",     "ac_control",     "on",   None,           "설정_에어컨세게"),
-    ("환기 세게 틀어줘",       "vent_control",   "on",   None,           "설정_환기세게"),
+    ("에어컨 세게 틀어줘",     "ac_control",     "up",   None,           "설정_에어컨세게"),
+    ("환기 세게 틀어줘",       "vent_control",   "up",   None,           "설정_환기세게"),
     ("환기 약하게 틀어줘",     "vent_control",   "on",   None,           "설정_환기약하게"),
     ("불 밝게 해줘",           "light_control",  "up",   None,           "설정_불밝게"),
     ("불 어둡게 해줘",         "light_control",  "down", None,           "설정_불어둡게"),
@@ -436,6 +436,12 @@ SINGLE_TESTS = [
     ("에어컨 이제 안 써도 될 것 같아","ac_control",   "off", None,           "v127_에어컨완곡off"),
     ("이제 불 꺼도 될 것 같아요",    "light_control", "off", None,           "v127_불완곡off"),
     ("난방은 이제 쓰지 않아도 될 것 같아요","heat_control","off",None,       "v127_난방완곡off"),
+
+    # ── v128: 상태조회(v72오예측)/세게틀어줘→up ──────────────────────────
+    ("거실 상태 알려줘",             "home_info",     "none",None,           "v128_상태알려줘_homeinfo"),
+    ("집 전체 상태 확인해줘",        "home_info",     "none",None,           "v128_전체상태_homeinfo"),
+    ("에어컨 세게 틀어줘",           "ac_control",    "up",  None,           "v128_세게틀어줘_up"),
+    ("덥긴 한데 좀 세게 틀어줄래",  "ac_control",    "up",  None,           "v128_세게틀어줄래_up"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────
@@ -482,7 +488,7 @@ MULTITURN_SCENARIOS = [
         "name": "STT변형 포함 멀티턴",
         "turns": [
             ("안방 에어콘 틀어",       "ac_control",    "on",  "bedroom_main", "1턴_STT에어콘"),
-            ("에어컨 쎄게 틀어줘",     "ac_control",    "on",  "bedroom_main", "2턴_명시적으로쎄게"),  # 명시적 에어컨으로 변경
+            ("에어컨 쎄게 틀어줘",     "ac_control",    "up",  "bedroom_main", "2턴_명시적으로쎄게"),  # 명시적 에어컨으로 변경
         ]
     },
     {
@@ -490,7 +496,7 @@ MULTITURN_SCENARIOS = [
         "turns": [
             ("거실이 너무 더워",   "ac_control",    "on",  "living",   "1턴_비유더워"),
             ("그래도 더워",        "ac_control",    "on",  "living",   "2턴_그래도더워"),
-            ("에어컨 쎄게 틀어줘", "ac_control",    "on",  "living",   "3턴_쎄게"),
+            ("에어컨 쎄게 틀어줘", "ac_control",    "up",  "living",   "3턴_쎄게"),
         ]
     },
     {

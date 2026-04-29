@@ -1721,6 +1721,21 @@ def apply_post_rules(preds, text):
             preds['fn'] = 'heat_control'
             preds['param_direction'] = 'up'
 
+    # v128: "OO 상태 알려줘/확인해줘" → home_info (v72: light_control 오예측 교정)
+    if re.search(r'(?:거실|주방|침실|안방|욕실|집|실내|전체)?\s*(?:전체\s*)?상태\s*(?:알려|확인|보여|말해)', text):
+        if preds['fn'] in ('light_control', 'unknown', 'system_meta'):
+            preds['fn'] = 'home_info'
+            preds['param_direction'] = 'none'
+
+    # v128: 에어컨/기기 세게 틀어줘 → dir=up (강도 높이기)
+    if re.search(r'(?:에어컨|냉방|난방|보일러|히터|선풍기|환풍기)\s*(?:\S+\s*){0,2}(?:세게|강하게|빠르게|강풍으로|최대로)\s*(?:틀|켜|해)', text):
+        if preds['fn'] in ('ac_control', 'heat_control', 'vent_control') and preds['param_direction'] == 'on':
+            preds['param_direction'] = 'up'
+    # 앞뒤 순서가 바뀐 경우도 커버: "세게 틀어줄래" with ac context in text
+    if re.search(r'(?:세게|강하게|강풍으로|최대로)\s*(?:틀|켜)(?:어줄래|어줘|어줄게|어줄까|려줘)', text):
+        if preds['fn'] in ('ac_control', 'heat_control', 'vent_control') and preds['param_direction'] == 'on':
+            preds['param_direction'] = 'up'
+
     # v127: 동굴/지하실 비유 → light_control/on (어두운 공간 비유 = 불 켜기)
     if re.search(r'동굴\s*(?:같|이야|이네|이냐|야|인가|이에요)|(?:방|집|여기|실내)\s*(?:이\s*)?(?:지하실|감방|감옥)\s*(?:같|이야|이네)', text):
         if preds['fn'] in ('unknown', 'light_control', 'home_info'):
