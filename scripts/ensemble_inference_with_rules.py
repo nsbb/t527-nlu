@@ -1643,6 +1643,40 @@ def apply_post_rules(preds, text):
         if preds['fn'] == 'heat_control':
             preds['param_direction'] = 'up'
 
+    # v124: 추위를 타다 → heat_control/on (추위 민감성 표현)
+    if re.search(r'추위를?\s*(?:많이\s*)?타|추위에?\s*(?:많이\s*)?약하|추위에?\s*민감', text):
+        if preds['fn'] in ('energy_query', 'unknown', 'weather_query', 'home_info', 'ac_control', 'heat_control'):
+            preds['fn'] = 'heat_control'
+            preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'on'
+
+    # v124: 아주/정말 많이 추워요 → heat_control/on (energy_query 오예측 교정)
+    if re.search(r'(?:아주|정말|너무|되게)\s*많이\s*추워|많이\s*춥(?:다|네|죠)', text):
+        if preds['fn'] in ('energy_query', 'unknown', 'weather_query'):
+            preds['fn'] = 'heat_control'
+            preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'on'
+
+    # v124: 창문 열어도 돼요? → door_control/open (창문 열기 완곡 요청)
+    if re.search(r'창문\s*(?:좀\s*)?열어도\s*돼요?', text):
+        preds['fn'] = 'door_control'
+        preds['exec_type'] = 'control_then_confirm'
+        preds['param_direction'] = 'open'
+
+    # v124: 극도로/아주 심하게 덥습니다 → ac_control/on (heat 오예측 + set 교정)
+    if re.search(r'(?:극도로|아주\s*심하게?|정말\s*너무)\s*덥', text):
+        preds['fn'] = 'ac_control'
+        preds['exec_type'] = 'control_then_confirm'
+        preds['param_direction'] = 'on'
+
+    # v124: 잠깐만 + 켜줘/꺼줘 → dir 교정 (시간 접두어로 dir=none 오예측)
+    if re.search(r'잠깐만\s*(?:\S+\s*)?켜줘', text):
+        if preds['fn'] in _device_fns and preds['param_direction'] == 'none':
+            preds['param_direction'] = 'on'
+    if re.search(r'잠깐만\s*(?:\S+\s*)?꺼줘', text):
+        if preds['fn'] in _device_fns and preds['param_direction'] == 'none':
+            preds['param_direction'] = 'off'
+
     return preds
 
 
