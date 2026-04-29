@@ -442,6 +442,16 @@ SINGLE_TESTS = [
     ("집 전체 상태 확인해줘",        "home_info",     "none",None,           "v128_전체상태_homeinfo"),
     ("에어컨 세게 틀어줘",           "ac_control",    "up",  None,           "v128_세게틀어줘_up"),
     ("덥긴 한데 좀 세게 틀어줄래",  "ac_control",    "up",  None,           "v128_세게틀어줄래_up"),
+
+    # ── v129: 은은하게/환해졌으면/환기됐으면/등줄기/히터잤더니/외출잠가줘 ──
+    ("조명 은은하게 켜줘",           "light_control", "down",None,           "v129_은은하게_down"),
+    ("좀 더 환해졌으면",             "light_control", "up",  None,           "v129_환해졌으면_up"),
+    ("환기 좀 됐으면 좋겠어",        "vent_control",  "on",  None,           "v129_환기됐으면_on"),
+    ("등줄기가 서늘해",              "heat_control",  "on",  None,           "v129_등줄기서늘_on"),
+    ("몸이 으슬으슬 떨려",           "heat_control",  "on",  None,           "v129_으슬으슬_on"),
+    ("어젯밤에 히터 켜놓고 잤더니 더워","heat_control","off", None,          "v129_히터잤더니더워_off"),
+    ("외출할 때 잠가줘",             "security_mode", "on",  None,           "v129_외출잠가줘_on"),
+    ("나갈 때 잠가줘",               "security_mode", "on",  None,           "v129_나갈때잠가줘_on"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────

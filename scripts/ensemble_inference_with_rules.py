@@ -663,7 +663,7 @@ def apply_post_rules(preds, text):
 
     # 어둑어둑/은은하게 → light_control/down (dim 요청)
     if re.search(r'어둑어둑|어스름하게|은은하게|아늑하게', text):
-        if preds['fn'] == 'light_control' and preds['param_direction'] in ('on', 'none'):
+        if preds['fn'] == 'light_control' and preds['param_direction'] in ('on', 'none', 'up'):
             preds['param_direction'] = 'down'
 
     # 쾌적하게/바람 좀 → vent_control (ac_control 오예측)
@@ -703,6 +703,36 @@ def apply_post_rules(preds, text):
     # v97: 밝았으면/환했으면 (소원형 밝기) → light/on
     if re.search(r'(?:좀|더|훨씬)?\s*(?:밝았으면|환했으면|밝아졌으면|환해졌으면)', text):
         if preds['fn'] == 'light_control' and preds['param_direction'] == 'none':
+            preds['param_direction'] = 'on'
+
+    # v129: "좀 더 환해졌으면/밝아졌으면" → light/up (비교급 소원 = 현재보다 밝게)
+    if re.search(r'(?:좀\s*더|더\s*좀|훨씬)\s*(?:환해졌으면|밝아졌으면|환해지면|밝아지면)', text):
+        if preds['fn'] in ('light_control', 'unknown'):
+            preds['fn'] = 'light_control'
+            preds['param_direction'] = 'up'
+
+    # v129: 환기 됐으면 좋겠어/해줬으면 → vent_control/on (소원형 환기 요청)
+    if re.search(r'환기\s*(?:좀\s*)?(?:됐으면|해줬으면|시켜줬으면|됐으면\s*좋겠)', text):
+        if preds['fn'] == 'vent_control' and preds['param_direction'] == 'none':
+            preds['param_direction'] = 'on'
+
+    # v129: 등줄기/온몸이 서늘해 → heat_control/on (한기 신체감각)
+    if re.search(r'(?:등줄기|등골|온몸|몸)\s*(?:이|가|도)?\s*(?:서늘해|서늘하|오싹|으슬으슬|떨려)', text):
+        if preds['fn'] in ('vent_control', 'ac_control', 'unknown', 'home_info'):
+            preds['fn'] = 'heat_control'
+            if preds['param_direction'] in ('none', 'off'):
+                preds['param_direction'] = 'on'
+
+    # v129: 히터/보일러 켜놨더니 더워 → heat_control/off (과열 불만)
+    if re.search(r'(?:히터|보일러|난방|라디에이터)\s*(?:\S+\s*){0,3}(?:켜놨더니|틀었더니|켜놓고\s*잤더니|틀어놓고\s*잤더니)\s*(?:더워|덥다|덥네|더운데)', text):
+        if preds['fn'] in ('ac_control', 'heat_control', 'unknown'):
+            preds['fn'] = 'heat_control'
+            preds['param_direction'] = 'off'
+
+    # v129: 외출할 때/나갈 때 잠가줘 → security_mode/on (방범 활성화)
+    if re.search(r'(?:외출|나갈|나가면서|나갈\s*때|외출\s*할\s*때|나갈\s*때)\s*(?:\S+\s*)?잠가(?:줘|요|주세요|주겠어)', text):
+        if preds['fn'] in ('security_mode', 'door_control', 'unknown'):
+            preds['fn'] = 'security_mode'
             preds['param_direction'] = 'on'
 
     # v84: "어둡게 하지 말아줘/두지 마" → light/on (부정 어둡게 = 밝게)
