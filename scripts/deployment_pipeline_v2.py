@@ -60,48 +60,102 @@ def extract_rooms(text):
 
 
 CONTROL_FNS = {'light_control', 'ac_control', 'heat_control', 'vent_control',
-               'gas_control', 'door_control', 'curtain_control', 'elevator_call'}
+               'gas_control', 'door_control', 'curtain_control', 'elevator_call',
+               'security_mode'}
 
 
 class HomeState:
     """집 상태(HomeState) — 제어 명령 결과를 누적해 충돌 해결/조회에 활용.
-    내부 키: (fn, room) → 'on'|'off'|'open'|'closed'|'temperature=N'
+
+    내부 표현: self._s[(fn, room)] = dict {
+        'power': 'on'|'off'|'open'|'closed'|'stop'|None,
+        'value': (vtype, vnum) or None,    # temperature/percent/level/enum/minute
+        'mode':  '외출'|'재택'|'취침' 등 or None,  # security_mode 전용
+    }
     """
 
     def __init__(self):
-        self._s = {}  # (fn, room) → state str
+        self._s = {}
 
-    def update(self, fn, room, direction, value=None):
+    def _ensure(self, fn, room):
+        key = (fn, room)
+        if key not in self._s:
+            self._s[key] = {'power': None, 'value': None, 'mode': None}
+        return self._s[key]
+
+    def update(self, fn, room, direction, value=None, text=None):
+        st = self._ensure(fn, room)
+        # 보안 모드는 별도: 모드 명칭을 추출
+        if fn == 'security_mode':
+            if direction == 'on':
+                st['power'] = 'on'
+                if text:
+                    if '외출' in text or '나간' in text or '나갈' in text or '집 비울' in text:
+                        st['mode'] = '외출'
+                    elif '재택' in text:
+                        st['mode'] = '재택'
+                    elif '취침' in text or '잠' in text:
+                        st['mode'] = '취침'
+                    elif '방범' in text:
+                        st['mode'] = '방범'
+            elif direction == 'off':
+                st['power'] = 'off'; st['mode'] = None
+            return
+
+        # 전원/개폐/멈춤
         if direction == 'on':
-            self._s[(fn, room)] = 'on'
+            st['power'] = 'on'
+            if value:  # "에어컨 강풍으로 켜줘" 같은 enum/temperature 동시 발화
+                st['value'] = value
         elif direction == 'off':
-            self._s[(fn, room)] = 'off'
+            st['power'] = 'off'
+            st['value'] = None
         elif direction == 'open':
-            self._s[(fn, room)] = 'open'
+            st['power'] = 'open'
         elif direction == 'close':
-            self._s[(fn, room)] = 'closed'
-        elif direction == 'set' and value:
-            self._s[(fn, room)] = f'{value[0]}={value[1]}'
+            st['power'] = 'closed'
+        elif direction == 'stop':
+            st['power'] = 'stop'
+        elif direction == 'set':
+            if value:
+                st['value'] = value
+                if st['power'] in (None, 'off'):
+                    st['power'] = 'on'  # set은 켜짐을 함의
+        elif direction == 'up':
+            # 강도 표현 (밝게/시원하게/세게) — power 켜짐 유지, value enum 가능
+            if st['power'] in (None, 'off'):
+                st['power'] = 'on'
+            if value and value[0] == 'enum':
+                st['value'] = value
+        elif direction == 'down':
+            if st['power'] in (None, 'off'):
+                st['power'] = 'on'
+            if value and value[0] == 'enum':
+                st['value'] = value
 
     def is_on(self, fn, room):
-        """특정 방의 기기가 켜진 상태인지 — 'on' 또는 'temperature=N' 모두 켜짐 처리."""
         st = self._s.get((fn, room))
-        if st is None:
+        if not st:
             return False
-        return st == 'on' or st.startswith('temperature=') or st == 'open'
+        p = st.get('power')
+        return p in ('on', 'open')
 
     def summary_kr(self):
         """현재 상태를 한국어 요약 문자열로 반환."""
         DEVICE_KR = {
             'light_control': '조명', 'ac_control': '에어컨', 'heat_control': '난방',
             'vent_control': '환기', 'gas_control': '가스밸브', 'door_control': '도어락',
-            'curtain_control': '커튼',
+            'curtain_control': '커튼', 'elevator_call': '엘리베이터',
+            'security_mode': '보안',
         }
         ROOM_KR = {
             'living': '거실', 'bedroom_main': '안방', 'bedroom_sub': '침실',
             'kitchen': '주방', 'external': '현관', 'all': '전체', 'none': '',
         }
-        STATE_KR = {'on': '켜짐', 'off': '꺼짐', 'open': '열림', 'closed': '닫힘'}
+        POWER_KR = {'on': '켜짐', 'off': '꺼짐', 'open': '열림',
+                    'closed': '닫힘', 'stop': '정지'}
+        ENUM_KR = {'strong': '강', 'medium': '중', 'weak': '약',
+                   'max': '최대', 'min': '최소'}
         if not self._s:
             return None
         items = []
@@ -109,12 +163,35 @@ class HomeState:
             dev = DEVICE_KR.get(fn, fn)
             rm = ROOM_KR.get(room, '')
             prefix = f'{rm} ' if rm else ''
-            if st.startswith('temperature='):
-                temp = st.split('=', 1)[1]
-                items.append(f'{prefix}{dev} {temp}도 켜짐')
-            else:
-                items.append(f'{prefix}{dev} {STATE_KR.get(st, st)}')
-        return ', '.join(items)
+            # 보안 모드는 모드명 우선
+            if fn == 'security_mode':
+                if st.get('power') == 'on' and st.get('mode'):
+                    items.append(f'보안 {st["mode"]} 모드')
+                elif st.get('power') == 'on':
+                    items.append('보안 켜짐')
+                elif st.get('power') == 'off':
+                    items.append('보안 해제')
+                continue
+            # 일반 기기: value 있으면 value+켜짐, 없으면 power만
+            val = st.get('value')
+            power = st.get('power')
+            if val and power in ('on', 'open', None):
+                vtype, vnum = val
+                if vtype == 'temperature':
+                    items.append(f'{prefix}{dev} {vnum}도 켜짐')
+                elif vtype == 'percent':
+                    items.append(f'{prefix}{dev} {vnum}% 켜짐')
+                elif vtype == 'level':
+                    items.append(f'{prefix}{dev} {vnum}단계 켜짐')
+                elif vtype == 'enum':
+                    items.append(f'{prefix}{dev} {ENUM_KR.get(vnum, vnum)} 켜짐')
+                elif vtype == 'minute':
+                    items.append(f'{prefix}{dev} {vnum}분 예약')
+                else:
+                    items.append(f'{prefix}{dev} {vnum} 켜짐')
+            elif power:
+                items.append(f'{prefix}{dev} {POWER_KR.get(power, power)}')
+        return ', '.join(items) if items else None
 
     def reset(self):
         self._s.clear()
@@ -207,7 +284,7 @@ class DeploymentPipelineV2:
 
         # 5. 집 상태 업데이트 (제어 명령만)
         if fn_final in CONTROL_FNS:
-            self.home_state.update(fn_final, room_final, dir_final, val_final)
+            self.home_state.update(fn_final, room_final, dir_final, val_final, text=pp)
             # 케이스 B: HVAC ON 시 반대 HVAC 자동 OFF (상호배제)
             if dir_final == 'on' and fn_final in ('ac_control', 'heat_control'):
                 opposite = 'heat_control' if fn_final == 'ac_control' else 'ac_control'
