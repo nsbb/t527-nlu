@@ -1751,6 +1751,57 @@ def apply_post_rules(preds, text):
             preds['fn'] = 'heat_control'
             preds['param_direction'] = 'up'
 
+    # v130: 소등 → light_control/off (소등=끄다 직접 표현)
+    if re.search(r'소등\s*(?:해|시켜|부탁|드려|해줘|해주세요)', text):
+        preds['fn'] = 'light_control'
+        preds['param_direction'] = 'off'
+        preds['exec_type'] = 'control_then_confirm'
+
+    # v130: 창문 개방 → door_control/open (개방=열다 직접 표현)
+    if re.search(r'창문\s*(?:을\s*)?개방\s*(?:해|시켜|부탁|드려|해줘|해주세요)', text):
+        preds['fn'] = 'door_control'
+        preds['param_direction'] = 'open'
+        preds['exec_type'] = 'control_then_confirm'
+
+    # v130: 점화/가동 + 보일러/난방 → heat_control/on
+    if re.search(r'(?:보일러|난방|히터)\s*(?:\S+\s*)?(?:점화|가동|작동)\s*(?:해|시켜|부탁)', text):
+        if preds['fn'] in ('heat_control', 'unknown'):
+            preds['fn'] = 'heat_control'
+            if preds['param_direction'] in ('none', 'off'):
+                preds['param_direction'] = 'on'
+
+    # v130: 환기/냉방 가동 부탁드립니다 → dir=on (가동=켜다)
+    if re.search(r'(?:환기|냉방|에어컨|공기청정)\s*(?:좀\s*)?가동\s*(?:해|시켜|부탁|드려)', text):
+        if preds['fn'] in ('vent_control', 'ac_control') and preds['param_direction'] in ('none', 'off'):
+            preds['param_direction'] = 'on'
+
+    # v130: 더위/열기로 녹아내릴 것 같아 → ac_control/on (극단적 더위 비유)
+    if re.search(r'(?:더위|열기)\s*(?:에|로|때문에)?\s*(?:녹아내릴|녹아버릴|녹아|녹을)\s*(?:것\s*)?(?:같|것)', text):
+        if preds['fn'] in ('heat_control', 'unknown', 'weather_query', 'ac_control'):
+            preds['fn'] = 'ac_control'
+            if preds['param_direction'] in ('none', 'off'):
+                preds['param_direction'] = 'on'
+
+    # v130: 답답해/갑갑해 미치겠어/죽겠어 → vent_control/on (밀폐 답답함)
+    if re.search(r'(?:답답해|갑갑해|숨막혀)\s*(?:미치겠어|죽겠어|못\s*살겠어|살겠어)', text):
+        if preds['fn'] in ('weather_query', 'unknown', 'home_info'):
+            preds['fn'] = 'vent_control'
+            if preds['param_direction'] in ('none', 'off'):
+                preds['param_direction'] = 'on'
+
+    # v130: 이 냄새 좀 어떻게 해봐/해줘봐 → vent_control/on (냄새 제거 요청)
+    if re.search(r'(?:이\s*)?냄새\s*(?:좀\s*)?(?:어떻게|뭔가|뭐\s*좀)\s*(?:해봐|해줘|해주세요|해봐요)', text):
+        if preds['fn'] == 'vent_control' and preds['param_direction'] == 'none':
+            preds['param_direction'] = 'on'
+
+    # v130: 도치 표현 "켜줘 에어컨" → ac_control/on, "열어줘 창문" → door_control/open
+    if re.search(r'^켜줘\s*(?:에어컨|냉방)', text):
+        if preds['fn'] == 'ac_control' and preds['param_direction'] == 'none':
+            preds['param_direction'] = 'on'
+    if re.search(r'^열어줘\s*창문', text):
+        preds['fn'] = 'door_control'
+        preds['param_direction'] = 'open'
+
     # v128: "OO 상태 알려줘/확인해줘" → home_info (v72: light_control 오예측 교정)
     if re.search(r'(?:거실|주방|침실|안방|욕실|집|실내|전체)?\s*(?:전체\s*)?상태\s*(?:알려|확인|보여|말해)', text):
         if preds['fn'] in ('light_control', 'unknown', 'system_meta'):
