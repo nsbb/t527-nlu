@@ -1687,6 +1687,52 @@ def apply_post_rules(preds, text):
         if preds['fn'] == 'curtain_control':
             preds['param_direction'] = 'close'
 
+    # v126: 방/집이 얼음창고/냉동실 같아 → heat_control/on (한기 비유)
+    if re.search(r'(?:방|집|여기|실내|거실|침실)\s*(?:이\s*)?(?:얼음창고|냉동창고|냉동실|냉동고|냉장고)\s*같', text):
+        if preds['fn'] in ('unknown', 'home_info', 'ac_control', 'heat_control'):
+            preds['fn'] = 'heat_control'
+            if preds['param_direction'] in ('none', 'off'):
+                preds['param_direction'] = 'on'
+
+    # v126: 에어컨/냉방 + 북극/냉동실 비유 → ac_control/down (냉방 과도 표현)
+    if re.search(r'(?:에어컨|냉방)\s*(?:\S+\s*){0,3}(?:북극|시베리아|냉동실|얼음창고)|(?:북극|시베리아)\s*(?:\S+\s*){0,3}에어컨', text):
+        if preds['fn'] == 'ac_control' and preds['param_direction'] in ('on', 'off', 'none'):
+            preds['param_direction'] = 'down'
+
+    # v126: 창문 닫아야 할 것 같다 → door_control/close (완곡 의무형)
+    if re.search(r'창문\s*(?:좀\s*)?(?:을\s*)?닫아야\s*(?:할\s*것\s*같|겠|하나)', text):
+        preds['fn'] = 'door_control'
+        preds['param_direction'] = 'close'
+
+    # v126: 난방/보일러 올려야 → heat_control/up (의무형 상향)
+    if re.search(r'(?:난방|보일러|히터)\s*(?:\S+\s*){0,2}올려야|온도\s*(?:를\s*)?(?:좀\s*)?올려야\s*할\s*것\s*같', text):
+        if preds['fn'] in ('heat_control', 'unknown'):
+            preds['fn'] = 'heat_control'
+            preds['param_direction'] = 'up'
+
+    # v126: 에어컨 켰는데도/틀어놨는데도 더워 → ac_control/up (효과 부족 = 강도 높이기)
+    if re.search(r'(?:에어컨|냉방)\s*(?:\S+\s*){0,3}(?:켰는데도?|틀었는데도?|켜놨는데도?|틀어놨는데도?)\s*(?:아직도?\s*)?(?:더워|덥다|더운데)', text):
+        if preds['fn'] == 'ac_control' and preds['param_direction'] == 'on':
+            preds['param_direction'] = 'up'
+
+    # v126: 보일러/난방/라디에이터 틀었는데도 추워 → heat_control/up (효과 부족)
+    if re.search(r'(?:난방|보일러|히터|라디에이터)\s*(?:\S+\s*){0,3}(?:켰는데도?|틀었는데도?|켜놨는데도?|틀어놨는데도?)\s*(?:아직도?\s*)?(?:추워|춥다|추운데)', text):
+        if preds['fn'] in ('heat_control', 'energy_query', 'unknown'):
+            preds['fn'] = 'heat_control'
+            preds['param_direction'] = 'up'
+
+    # v126: 어르신/노인 hearsay + 덥다/춥다 → ac_control/on 또는 heat_control/on
+    if re.search(r'(?:어르신|노인|할머니|할아버지|어머니|아버지|부모님|노부모|엄마|아빠)\s*(?:이|가|께서)?\s*(?:덥다고|더우시다고|더워하시|더워한다고|너무\s*덥다)', text):
+        if preds['fn'] in ('unknown', 'home_info', 'weather_query', 'heat_control', 'ac_control'):
+            preds['fn'] = 'ac_control'
+            if preds['param_direction'] in ('none', 'off'):
+                preds['param_direction'] = 'on'
+    if re.search(r'(?:어르신|노인|할머니|할아버지|어머니|아버지|부모님|노부모|엄마|아빠)\s*(?:이|가|께서)?\s*(?:춥다고|추우시다고|추워하시|추워한다고|너무\s*춥다)', text):
+        if preds['fn'] in ('unknown', 'home_info', 'weather_query', 'ac_control', 'heat_control'):
+            preds['fn'] = 'heat_control'
+            if preds['param_direction'] in ('none', 'off'):
+                preds['param_direction'] = 'on'
+
     return preds
 
 
