@@ -1528,6 +1528,12 @@ def apply_post_rules(preds, text):
         if preds['fn'] == 'light_control' and preds['param_direction'] == 'none':
             preds['param_direction'] = 'up'
 
+    # v119: 커튼 + 멈춰줘/스톱/정지 → dir=stop (열기/닫기 명사 오인식 방지)
+    # "전동커튼 열기 멈춰줘" → open 오예측 교정
+    if preds['fn'] == 'curtain_control' and preds['param_direction'] not in ('stop',):
+        if re.search(r'멈춰\s*(?:줘|주세요|요)?|스톱|정지\s*(?:해줘)?', text):
+            preds['param_direction'] = 'stop'
+
     return preds
 
 
