@@ -616,9 +616,9 @@ def apply_post_rules(preds, text):
             preds['exec_type'] = 'query_then_respond'
             preds['param_direction'] = 'none'; preds['param_type'] = 'none'
 
-    # 후텁지근/무더워 → ac_control (heat_control 오예측: 덥고 습함 = 에어컨)
+    # 후텁지근/무더워 → ac_control (heat_control/unknown 오예측: 덥고 습함 = 에어컨)
     if re.search(r'후텁지근|후덥지근|무더워|무덥네|무더운', text):
-        if preds['fn'] == 'heat_control':
+        if preds['fn'] in ('heat_control', 'unknown', 'home_info'):
             preds['fn'] = 'ac_control'
         if preds['fn'] == 'ac_control' and preds['param_direction'] == 'none':
             preds['param_direction'] = 'on'
@@ -1254,8 +1254,8 @@ def apply_post_rules(preds, text):
     # v116: 미세먼지 + 창문 닫아야겠다/닫아줘 → door_control/close
     # v122: curtain_control 오예측도 교정
     if re.search(r'미세먼지|황사|공기\s*(?:질|오염)', text):
-        if re.search(r'창문\s*(?:닫|잠|닫아야|잠가야)', text):
-            if preds['fn'] in ('weather_query', 'unknown', 'home_info', 'curtain_control'):
+        if re.search(r'창문\s*(?:\S+\s*){0,2}(?:닫|잠|닫아야|잠가야)', text):
+            if preds['fn'] in ('weather_query', 'unknown', 'home_info', 'curtain_control', 'gas_control'):
                 preds['fn'] = 'door_control'; preds['exec_type'] = 'control_then_confirm'
                 preds['param_direction'] = 'close'
 
@@ -1324,7 +1324,7 @@ def apply_post_rules(preds, text):
 
     # v105: "탁해/답답해" → vent_control/on (탁한 공기 = 환기 필요)
     if re.search(r'탁해|탁하네|탁한\s*것\s*같|답답해|답답하네', text):
-        if preds['fn'] in ('unknown', 'ac_control', 'home_info'):
+        if preds['fn'] in ('unknown', 'ac_control', 'home_info', 'light_control'):
             if not re.search(r'에어컨|냉방|시원|온도', text):
                 preds['fn'] = 'vent_control'; preds['exec_type'] = 'control_then_confirm'
                 preds['param_direction'] = 'on'
@@ -1439,6 +1439,32 @@ def apply_post_rules(preds, text):
             preds['fn'] = 'light_control'
             preds['exec_type'] = 'control_then_confirm'
             preds['param_direction'] = 'on'
+
+    # v131: 환기 해야겠어/시켜야겠어 → vent_control/on (의향형 환기 요청)
+    if re.search(r'환기\s*(?:좀\s*)?(?:해야겠어|시켜야겠어|해야겠다|시켜야겠다|해야할것같)', text):
+        if preds['fn'] == 'vent_control' and preds['param_direction'] in ('none', 'off'):
+            preds['param_direction'] = 'on'
+
+    # v131: 날씨 좋은데/맑은데 + 환기 → vent_control/on (날씨-환기 연계)
+    if re.search(r'날씨\s*(?:좋은데|맑은데|화창한데|좋으니|맑으니)\s*(?:\S+\s*){0,2}환기', text):
+        if preds['fn'] in ('weather_query', 'unknown', 'home_info'):
+            preds['fn'] = 'vent_control'
+            if preds['param_direction'] in ('none', 'off'):
+                preds['param_direction'] = 'on'
+
+    # v131: 환기시키고/환기하고 청소/요리 → vent_control/on (선행 환기 선언)
+    if re.search(r'환기\s*(?:시키고|하고|좀\s*시키고)\s*(?:청소|요리|조리|닦)', text):
+        if preds['fn'] in ('unknown', 'home_info'):
+            preds['fn'] = 'vent_control'
+            if preds['param_direction'] in ('none', 'off'):
+                preds['param_direction'] = 'on'
+
+    # v131: 월패드/스마트홈 + 제어 가능해/됩니까 → unknown (능력 질문 = 정보 요청)
+    if re.search(r'(?:월패드|스마트홈|앱)\s*(?:\S+\s*){0,3}(?:제어\s*(?:가능|돼|됩니까)|할\s*수\s*있)', text):
+        if preds['fn'] in ('ac_control', 'heat_control', 'light_control', 'vent_control'):
+            if re.search(r'가능|됩니까|할\s*수\s*있|할\s*수\s*있나', text):
+                preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
+                preds['param_direction'] = 'none'
 
     # v109: 자기 의향형 "~해야겠어/~야겠어" + 기기 → control 의도
     # "에어컨 꺼야겠어" = 에어컨 끌게(의향) → dir=off (이미 모델이 잘 처리하지만 none인 경우 보완)
