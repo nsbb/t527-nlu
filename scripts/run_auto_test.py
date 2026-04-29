@@ -302,6 +302,10 @@ SINGLE_TESTS = [
     ("현관 아직 열려있어",               "door_control",   "close",None,         "v110_현관열려있어_close"),
     ("에어컨에서 이상한 소리 나",         "unknown",        None,  None,          "v110_이상한소리_unknown"),
     ("화장실 불 켜져 있어",              "light_control",  "off", None,          "v110_불켜져있어_관찰형off"),
+    # ── v110: 요리패턴 확장 (라면/전/요리중이야) ─────────────────────────────
+    ("라면 끓이는 중이야",               "vent_control",   "on",  None,          "v110_라면끓이기_환기"),
+    ("전 부치는 중이야",                 "vent_control",   "on",  None,          "v110_전부치기_환기"),
+    ("요리 중이야",                      "vent_control",   "on",  None,          "v110_요리중이야"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────
@@ -418,6 +422,14 @@ MULTITURN_SCENARIOS = [
             ("에어컨 켜야겠어",    "ac_control",    "on",  None,           "1_의향형켜기"),
             ("보통 이 시간엔 온도 낮추는데", "ac_control", "down", None,  "2_습관형온도낮춤"),
             ("이제 잘 시간이야",   "unknown",       None,  None,           "3_잘시간_수면"),
+        ]
+    },
+    {
+        "name": "v110: 요리 중 환기 → 완료 후 꺼기",
+        "turns": [
+            ("라면 끓이는 중이야",  "vent_control",  "on",  None,           "1_라면요리중"),
+            ("환기 좀 세게 해줘",   "vent_control",  "up",  None,           "2_환기강하게"),
+            ("이제 그만 됐어",      "vent_control",  "off", None,           "3_요리완료_환기꺼"),
         ]
     },
 ]
