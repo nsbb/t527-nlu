@@ -1342,6 +1342,28 @@ def apply_post_rules(preds, text):
             preds['fn'] = 'unknown'
             preds['exec_type'] = 'direct_respond'
 
+    # v110: 문/현관 + 안 잠겼어/열려있어 → door_control/close (간접 잠금 요청)
+    # "문 안 잠겼어" = 문이 잠기지 않았음 = 잠가달라는 의도
+    if re.search(r'(?:현관|문)\s*(?:이|이\s*)?(?:아직\s*)?(?:열려\s*있어|안\s*잠겼|잠기지\s*않았)', text):
+        if preds['fn'] == 'door_control' and preds['param_direction'] == 'none':
+            preds['param_direction'] = 'close'
+            preds['exec_type'] = 'control_then_confirm'
+
+    # v110: 기기 + "이상한 소리/소리 이상해" → unknown (고장 보고, 제어 명령 아님)
+    if re.search(r'이상한\s*소리|소리\s*이상|소음이|잡음이', text):
+        if preds['fn'] in _device_fns:
+            preds['fn'] = 'unknown'
+            preds['exec_type'] = 'direct_respond'
+            preds['param_direction'] = 'none'
+
+    # v110: 기기 불/조명 + "켜져 있어" 평서형 → query_then_judge/off
+    # 이미 켜져있다는 관찰 표현은 꺼달라는 간접 의도 내포 (v100 "잖아"와 유사)
+    # 주의: "켜져있어?" (질문형) 은 query_then_respond 유지 → ? 포함 시 제외
+    if re.search(r'(?:불|조명|전등|전기)\s*켜\s*져\s*있어', text) and '?' not in text:
+        if preds['fn'] == 'light_control' and preds['exec_type'] == 'query_then_respond':
+            preds['exec_type'] = 'query_then_judge'
+            preds['param_direction'] = 'off'
+
     return preds
 
 
