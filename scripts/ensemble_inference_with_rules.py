@@ -1191,22 +1191,35 @@ def apply_post_rules(preds, text):
             preds['param_direction'] = 'close'
 
     # v99: 꿉꿉/눅눅/뭉글 + ac_control 오예측 → vent_control (습도 불쾌감 = 환기)
-    if re.search(r'꿉꿉|텁텁|뭉글|눅눅|퀴퀴', text):
-        if preds['fn'] == 'ac_control' and not re.search(r'에어컨|냉방|시원|온도|도로\s*맞춰', text):
+    # v116: 습하네/습해서 + weather_query 오예측도 포함
+    if re.search(r'꿉꿉|텁텁|뭉글|눅눅|퀴퀴|습하(?:네|다|군|죠|니|고)|습해서', text):
+        if preds['fn'] in ('ac_control', 'weather_query', 'unknown', 'home_info') and not re.search(r'에어컨|냉방|시원|온도|도로\s*맞춰', text):
             preds['fn'] = 'vent_control'; preds['exec_type'] = 'control_then_confirm'
             preds['param_direction'] = 'on'
 
     # v104: 요리 중(볶음/고기/생선 굽기) → vent_control/on (조리 연기 환기 필요)
     # v110: 라면/국수/전/파스타 등 추가, 전 end anchor 제거
+    # v116: 냄새 심하겠다/냄새가 심해 → direction=on 교정
     _cooking_food = re.search(
         r'볶음|고기|생선|전(?:이|을|좀)?(?:\s|$)|부침|삼겹|치킨|전골|찌개|라면|국수|파스타|볶음밥|계란|두부', text)
-    _cooking_action = re.search(r'굽|요리|조리|끓이|볶|튀기|중이야|하고\s*있어|부치', text)
+    _cooking_action = re.search(r'굽|요리|조리|끓이|볶|튀기|중이야|하고\s*있어|부치|구이', text)
     # 음식명 없이 "요리 중이야/요리하고 있어"만 있어도 vent 처리
     _generic_cooking = re.search(r'요리\s*(?:중|하고)\s*(?:이야|있어)', text)
     if (_cooking_food and _cooking_action) or _generic_cooking:
         if preds['fn'] in ('unknown', 'home_info'):
             preds['fn'] = 'vent_control'; preds['exec_type'] = 'control_then_confirm'
             preds['param_direction'] = 'on'
+    # 요리 + 냄새/연기 → vent/on (fn=vent이지만 dir=none 교정 포함)
+    if (_cooking_food or _cooking_action or _generic_cooking) and re.search(r'냄새|연기', text):
+        if preds['fn'] == 'vent_control' and preds['param_direction'] in ('none',):
+            preds['param_direction'] = 'on'
+
+    # v116: 미세먼지 + 창문 닫아야겠다/닫아줘 → door_control/close
+    if re.search(r'미세먼지|황사|공기\s*(?:질|오염)', text):
+        if re.search(r'창문\s*(?:닫|잠|닫아야|잠가야)', text):
+            if preds['fn'] in ('weather_query', 'unknown', 'home_info'):
+                preds['fn'] = 'door_control'; preds['exec_type'] = 'control_then_confirm'
+                preds['param_direction'] = 'close'
 
     # v104: "밖이/바깥이 + 추운/더운/것 같다" → weather_query (실내 기기 제어 오예측 방지)
     if re.search(r'밖이|바깥이|바깥에', text):
