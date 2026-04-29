@@ -452,6 +452,17 @@ SINGLE_TESTS = [
     ("어젯밤에 히터 켜놓고 잤더니 더워","heat_control","off", None,          "v129_히터잤더니더워_off"),
     ("외출할 때 잠가줘",             "security_mode", "on",  None,           "v129_외출잠가줘_on"),
     ("나갈 때 잠가줘",               "security_mode", "on",  None,           "v129_나갈때잠가줘_on"),
+
+    # ── v130: 소등/개방/가동/더위비유/답답해/도치 ────────────────────────
+    ("조명을 소등해 주세요",          "light_control", "off", None,           "v130_소등_off"),
+    ("창문을 개방해 주세요",          "door_control",  "open",None,           "v130_개방_open"),
+    ("환기 가동 부탁드립니다",        "vent_control",  "on",  None,           "v130_가동_on"),
+    ("보일러 점화해 주십시오",        "heat_control",  "on",  None,           "v130_점화_on"),
+    ("더위로 녹아내릴 것 같아",       "ac_control",    "on",  None,           "v130_녹아내릴비유_on"),
+    ("답답해 미치겠어",              "vent_control",  "on",  None,           "v130_답답해미치겠어_on"),
+    ("이 냄새 좀 어떻게 해봐",        "vent_control",  "on",  None,           "v130_냄새어떻게_on"),
+    ("켜줘 에어컨",                  "ac_control",    "on",  None,           "v130_도치켜줘에어컨"),
+    ("열어줘 창문",                  "door_control",  "open",None,           "v130_도치열어줘창문"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────
