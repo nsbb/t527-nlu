@@ -427,6 +427,15 @@ SINGLE_TESTS = [
     ("어르신이 덥다고 하시네요",     "ac_control",    "on",  None,           "v126_어르신hearsay_on"),
     ("할머니가 덥다고 하셔서요",     "ac_control",    "on",  None,           "v126_할머니hearsay_on"),
     ("아버지가 춥다고 하시네요",     "heat_control",  "on",  None,           "v126_아버지hearsay_on"),
+
+    # ── v127: 동굴비유/낮추면안될까/땀비유/완곡off ─────────────────────────
+    ("이거 동굴이야?",               "light_control", "on",  None,           "v127_동굴비유_on"),
+    ("이 방 왜 동굴같냐",            "light_control", "on",  None,           "v127_동굴비유2_on"),
+    ("조명 좀 낮추면 안 될까요",     "light_control", "down",None,           "v127_낮추면안될까_down"),
+    ("땀이 비처럼 흘러",             "ac_control",    "on",  None,           "v127_땀비유_on"),
+    ("에어컨 이제 안 써도 될 것 같아","ac_control",   "off", None,           "v127_에어컨완곡off"),
+    ("이제 불 꺼도 될 것 같아요",    "light_control", "off", None,           "v127_불완곡off"),
+    ("난방은 이제 쓰지 않아도 될 것 같아요","heat_control","off",None,       "v127_난방완곡off"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────
