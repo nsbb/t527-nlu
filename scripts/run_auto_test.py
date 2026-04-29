@@ -389,6 +389,12 @@ SINGLE_TESTS = [
     ("전등이 깜빡이는 것 같아",     "unknown",       None,  None,           "v121_전등깜빡이는_unknown"),
     ("창문 좀 닫아도 될까요",       "door_control",  "close",None,          "v121_창문닫아도될까요_door_close"),
     ("어두워서 아무것도 안 보여",   "light_control", "up",  None,           "v121_어두워서안보여_light_up"),
+
+    # ── v122: 조명밝은것같/에어컨세다싶/꺼줄수있/미세먼지curtain교정 ─────────
+    ("조명이 너무 밝은 것 같은데요",  "light_control", "down",None,          "v122_조명밝은것같_light_down"),
+    ("에어컨이 좀 세다 싶어요",       "ac_control",    "down",None,          "v122_에어컨세다싶어_ac_down"),
+    ("나가기 전에 에어컨 좀 꺼줄 수 있어?", "ac_control","off",None,        "v122_에어컨꺼줄수있어_ac_off"),
+    ("미세먼지 나쁘면 창문 닫아줘",   "door_control",  "close",None,         "v122_미세먼지창문닫아줘_door_close"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────
