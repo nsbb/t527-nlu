@@ -325,6 +325,16 @@ SINGLE_TESTS = [
     # 온도 높여줘: heat_control/up → DST에서 AC컨텍스트면 ac_control/up 변환 (단독시 heat_control)
     ("온도 높여줘",                     "heat_control",   "up",  None,          "v113_온도높여줘_단독_heatcontrol"),
     ("온도 올려줘",                     "heat_control",   "up",  None,          "v113_온도올려줘_단독_heatcontrol"),
+
+    # ── v114: 수사적 불평/완곡/STT오인식 확장 ────────────────────────────────
+    ("조명이 좀 눈부셔요",              "light_control",  "down",None,          "v114_눈부셔요_down"),
+    ("왜 이렇게 어둡냐",               "light_control",  "up",  None,          "v114_왜이렇게어둡냐_up"),
+    ("에어컨 없이 어떻게 살아",          "ac_control",     "on",  None,          "v114_에어컨없이어떻게살아_on"),
+    ("이 더위에 에어컨 안 틀면 누가 버티겠어", "ac_control", "on", None,        "v114_수사적_버티겠어_on"),
+    ("저 좀 더운 것 같기도 하고",        "ac_control",     "on",  None,          "v114_더운것같기도_완곡_on"),
+    ("실내가 좀 더운 것 같지 않아요",    "ac_control",     "on",  None,          "v114_더운것같지않아요_수사적on"),
+    ("커트 열어줘",                     "curtain_control","open",None,          "v114_STT_커트_커튼"),
+    ("벤틸 켜줘",                       "vent_control",   "on",  None,          "v114_STT_벤틸_환기"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────
