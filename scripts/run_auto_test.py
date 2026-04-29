@@ -297,6 +297,11 @@ SINGLE_TESTS = [
     ("불 껴줘",                          "light_control",  "on",  None,          "v109_껴줘_STT불켜줘"),
     ("에어컨 켜야겠어",                  "ac_control",     "on",  None,          "v109_켜야겠어_의향"),
     ("보통 이 시간엔 에어컨 켜는데",     "ac_control",     "on",  None,          "v109_보통이시간에"),
+    # ── v110: 간접화행 (Indirect Speech Acts) ─────────────────────────────────
+    ("문 안 잠겼어",                     "door_control",   "close",None,         "v110_문안잠겼어_close"),
+    ("현관 아직 열려있어",               "door_control",   "close",None,         "v110_현관열려있어_close"),
+    ("에어컨에서 이상한 소리 나",         "unknown",        None,  None,          "v110_이상한소리_unknown"),
+    ("화장실 불 켜져 있어",              "light_control",  "off", None,          "v110_불켜져있어_관찰형off"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────
