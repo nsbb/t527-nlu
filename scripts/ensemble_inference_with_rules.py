@@ -1677,6 +1677,16 @@ def apply_post_rules(preds, text):
         if preds['fn'] in _device_fns and preds['param_direction'] == 'none':
             preds['param_direction'] = 'off'
 
+    # v125: 송풍해 줘 (공백 없는 형태) → ac_control/set (dir=none 교정)
+    if re.search(r'송풍\s*해\s*줘|송풍\s*해\s*주', text):
+        if preds['fn'] == 'ac_control' and preds['param_direction'] == 'none':
+            preds['param_direction'] = 'set'
+
+    # v125: 커튼 쳐줘/쳐 → curtain_control/close (치다 = 닫다, stop 오예측 교정)
+    if re.search(r'커튼\s*(?:을\s*)?(?:조금만\s*)?쳐(?:줘|줄?|)', text):
+        if preds['fn'] == 'curtain_control':
+            preds['param_direction'] = 'close'
+
     return preds
 
 

@@ -410,6 +410,10 @@ SINGLE_TESTS = [
     ("창문 열어도 돼요?",            "door_control",  "open",None,           "v124_창문열어도돼요_door_open"),
     ("극도로 덥습니다",              "ac_control",    "on",  None,           "v124_극도로덥습니다_ac_on"),
     ("잠깐만 불 켜줘",               "light_control", "on",  None,           "v124_잠깐만불켜줘_light_on"),
+
+    # ── v125: 송풍해줘(공백없음)/커튼쳐줘(close 교정) ─────────────────────────
+    ("송풍해 줘",                    "ac_control",    "set", None,           "v125_송풍해줘_ac_set"),
+    ("커튼 조금만 쳐줘",             "curtain_control","close",None,         "v125_커튼쳐줘_close"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────
