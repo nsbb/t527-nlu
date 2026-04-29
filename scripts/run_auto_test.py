@@ -363,6 +363,10 @@ SINGLE_TESTS = [
     ("창문 좀 열어볼까",              "door_control",   "open",None,          "v118_창문열어볼까_open"),
     ("불 좀 밝혀볼까",                "light_control",  "up",  None,          "v118_불밝혀볼까_up"),
     ("헌기 좀 틀어줘",               "vent_control",   "on",  None,          "v118_STT_헌기_환기"),
+
+    # ── v119: 커튼 멈춰 + 전동커튼 열기 멈춰줘 오예측 교정 ────────────────────
+    ("거실 전동커튼 열기 멈춰줘",      "curtain_control","stop",None,          "v119_전동커튼열기멈춰줘_stop"),
+    ("전동커튼 멈춰줘",               "curtain_control","stop",None,          "v119_전동커튼멈춰줘_stop"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────
