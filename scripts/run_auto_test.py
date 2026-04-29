@@ -414,6 +414,19 @@ SINGLE_TESTS = [
     # ── v125: 송풍해줘(공백없음)/커튼쳐줘(close 교정) ─────────────────────────
     ("송풍해 줘",                    "ac_control",    "set", None,           "v125_송풍해줘_ac_set"),
     ("커튼 조금만 쳐줘",             "curtain_control","close",None,         "v125_커튼쳐줘_close"),
+
+    # ── v126: 비유·의무형·hearsay·효과부족 표현 ────────────────────────────
+    ("난방 좀 올려야 할 것 같아요",  "heat_control",  "up",  None,           "v126_난방올려야_up"),
+    ("창문 닫아야 할 것 같아요",     "door_control",  "close",None,          "v126_창문닫아야_close"),
+    ("방이 얼음창고 같아",           "heat_control",  "on",  None,           "v126_얼음창고비유_on"),
+    ("거실이 냉동실 같아",           "heat_control",  "on",  None,           "v126_냉동실비유_on"),
+    ("에어컨 틀어놓으면 북극이야",   "ac_control",    "down",None,           "v126_북극비유_down"),
+    ("에어컨 켜놨더니 북극 됐잖아",  "ac_control",    "down",None,           "v126_북극비유2_down"),
+    ("라디에이터 틀어놨는데도 아직도 추워", "heat_control","up",None,        "v126_라디에이터효과부족_up"),
+    ("에어컨 켰는데도 더워",         "ac_control",    "up",  None,           "v126_에어컨효과부족_up"),
+    ("어르신이 덥다고 하시네요",     "ac_control",    "on",  None,           "v126_어르신hearsay_on"),
+    ("할머니가 덥다고 하셔서요",     "ac_control",    "on",  None,           "v126_할머니hearsay_on"),
+    ("아버지가 춥다고 하시네요",     "heat_control",  "on",  None,           "v126_아버지hearsay_on"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────
