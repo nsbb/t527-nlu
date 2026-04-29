@@ -1367,6 +1367,44 @@ def apply_post_rules(preds, text):
             preds['fn'] = 'unknown'
             preds['exec_type'] = 'direct_respond'
 
+    # v112: "더 시원하게/따뜻하게/밝게/어둡게 해줘" → dir=up/down
+    # 비교급 "더" + 상태형용사 = 현재보다 강화 요청
+    if re.search(r'(?:더|좀\s*더)\s*시원하게\s*(?:해줘|해주세요|해봐|틀어줘)', text):
+        if preds['fn'] in ('ac_control', 'vent_control') and preds['param_direction'] in ('on', 'none'):
+            preds['param_direction'] = 'up'
+    if re.search(r'(?:더|좀\s*더)\s*따뜻하게\s*(?:해줘|해주세요|해봐)', text):
+        if preds['fn'] in ('heat_control', 'ac_control') and preds['param_direction'] in ('on', 'none'):
+            preds['param_direction'] = 'up'
+    if re.search(r'(?:더|좀\s*더)\s*밝게\s*(?:해줘|해주세요|켜줘)', text):
+        if preds['fn'] == 'light_control' and preds['param_direction'] in ('on', 'none'):
+            preds['param_direction'] = 'up'
+
+    # v112: 수사적 반어 요청 "끄면 안 되나요?/켜면 안 될까요?" → dir=off/on
+    if re.search(r'(?:끄|꺼)\s*(?:면\s*안\s*(?:되나요?|될까요?|돼요?)|도\s*안\s*돼\??|면\s*될까요?)', text):
+        if preds['fn'] in _device_fns and preds['param_direction'] == 'none':
+            preds['param_direction'] = 'off'
+            preds['exec_type'] = 'control_then_confirm'
+    if re.search(r'(?:켜|켜도)\s*(?:면\s*안\s*(?:될까요?|되나요?)|도\s*안\s*돼\??|면\s*될까요?)', text):
+        if preds['fn'] in _device_fns and preds['param_direction'] == 'none':
+            preds['param_direction'] = 'on'
+            preds['exec_type'] = 'control_then_confirm'
+
+    # v112: 이중 부정 강조 "안 끄면 안 돼?" → dir=off, "안 켜도 안 돼?" → dir=on
+    if re.search(r'안\s*(?:끄|꺼)\s*(?:면|도)\s*안\s*돼', text):
+        if preds['fn'] in _device_fns:
+            preds['param_direction'] = 'off'
+            preds['exec_type'] = 'control_then_confirm'
+    if re.search(r'안\s*켜\s*(?:면|도)\s*안\s*돼', text):
+        if preds['fn'] in _device_fns:
+            preds['param_direction'] = 'on'
+            preds['exec_type'] = 'control_then_confirm'
+
+    # v112: 월패드 자체 제어 요청 → unknown (self-referential, 미지원)
+    if re.search(r'월패드\s*(?:좀|를|은|이)?\s*(?:꺼|껐|끄|켜|켰)', text):
+        preds['fn'] = 'unknown'
+        preds['exec_type'] = 'direct_respond'
+        preds['param_direction'] = 'none'
+
     # v110: 문/현관 + 안 잠겼어/열려있어 → door_control/close (간접 잠금 요청)
     # "문 안 잠겼어" = 문이 잠기지 않았음 = 잠가달라는 의도
     if re.search(r'(?:현관|문)\s*(?:이|이\s*)?(?:아직\s*)?(?:열려\s*있어|안\s*잠겼|잠기지\s*않았)', text):
