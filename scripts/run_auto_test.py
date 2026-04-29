@@ -403,6 +403,13 @@ SINGLE_TESTS = [
     ("불이 아직도 켜져있어",         "light_control", "off", None,           "v123_불아직도켜져있어_off"),
     ("창문 좀 열어주겠어요?",        "door_control",  "open",None,           "v123_창문열어주겠어요_open"),
     ("환기 좀 해주시겠어요?",        "vent_control",  "on",  None,           "v123_환기해주시겠어요_on"),
+
+    # ── v124: 추위를타/많이추워/창문열어도돼요/극도로더워/잠깐만켜줘 ─────────
+    ("저만 유독 추위를 많이 타요",   "heat_control",  "on",  None,           "v124_추위를많이타요_heat_on"),
+    ("아주 많이 추워요",             "heat_control",  "on",  None,           "v124_아주많이추워요_heat_on"),
+    ("창문 열어도 돼요?",            "door_control",  "open",None,           "v124_창문열어도돼요_door_open"),
+    ("극도로 덥습니다",              "ac_control",    "on",  None,           "v124_극도로덥습니다_ac_on"),
+    ("잠깐만 불 켜줘",               "light_control", "on",  None,           "v124_잠깐만불켜줘_light_on"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────
