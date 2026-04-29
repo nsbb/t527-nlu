@@ -1459,6 +1459,14 @@ def apply_post_rules(preds, text):
             if preds['param_direction'] in ('none', 'off'):
                 preds['param_direction'] = 'on'
 
+    # v132: "환기도 좀 해줘" → vent_control/on (조사 '도' 영향으로 weather_query 오예측 교정)
+    if re.search(r'환기도?\s*(?:좀\s*)?(?:해|시켜|돌려|틀어)\s*줘', text):
+        if preds['fn'] in ('weather_query', 'unknown'):
+            preds['fn'] = 'vent_control'
+            preds['exec_type'] = 'control_then_confirm'
+            if preds['param_direction'] in ('none', 'off'):
+                preds['param_direction'] = 'on'
+
     # v131: 월패드/스마트홈 + 제어 가능해/됩니까 → unknown (능력 질문 = 정보 요청)
     if re.search(r'(?:월패드|스마트홈|앱)\s*(?:\S+\s*){0,3}(?:제어\s*(?:가능|돼|됩니까)|할\s*수\s*있)', text):
         if preds['fn'] in ('ac_control', 'heat_control', 'light_control', 'vent_control'):
