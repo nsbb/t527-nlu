@@ -203,14 +203,16 @@ def apply_post_rules(preds, text):
 
     # 더위 비유 → dir=none 교정 (SPECIFIC_PATTERNS 응답은 맞지만 디바이스 제어 dir 누락)
     # "사우나야/찜통/쪄 죽겠어" 등 → ac_control dir=on
-    _hot_metaphors = r'사우나|찜통|찜질방|쪄\s*죽|땀이\s*(?:뻘뻘|나|줄줄)|기력이\s*다|더위\s*먹|불가마|가마솥|사막|용광로|불지옥'
+    # v111: 한증막/한증탕 추가
+    _hot_metaphors = r'사우나|찜통|찜질방|한증막|한증탕|쪄\s*죽|뜨거워\s*죽|땀이\s*(?:뻘뻘|나|줄줄)|기력이\s*다|더위\s*먹|불가마|가마솥|사막|용광로|불지옥'
     if preds['fn'] == 'ac_control' and preds['param_direction'] == 'none':
         if re.search(_hot_metaphors, text):
             preds['param_direction'] = 'on'
-    # v101: 더위 비유 + fn=unknown/heat_control 오예측 → ac_control/on 교정
-    # "집이 가마솥 같아", "방이 사우나가 따로 없어" 등
+    # v101: 더위 비유 + fn 오예측 → ac_control/on 교정
+    # "집이 가마솥 같아", "방이 사우나가 따로 없어", "방이 한증막 같아" 등
+    # v111: light_control 오예측도 포함
     if re.search(_hot_metaphors, text):
-        if preds['fn'] in ('unknown', 'heat_control', 'home_info'):
+        if preds['fn'] in ('unknown', 'heat_control', 'home_info', 'light_control'):
             if not re.search(r'난방|보일러|따뜻하게|따뜻해\s*줘', text):
                 preds['fn'] = 'ac_control'; preds['exec_type'] = 'control_then_confirm'
                 preds['param_direction'] = 'on'
@@ -219,6 +221,13 @@ def apply_post_rules(preds, text):
         if preds['fn'] == 'heat_control' and preds['param_direction'] == 'on':
             preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
             preds['param_direction'] = 'none'
+    # v111: 훈훈/포근/나른/아늑 단독 만족 관찰 → unknown (열기기 on 오예측 방지)
+    # 부정어 없으면 만족 표현 (아직/안/너무 있으면 만족이 아님)
+    if re.search(r'훈훈(?:하네|해요?|하다|하군|하죠|해서|한데)$|포근(?:하네|해요?|하다|하군|하죠)', text.strip()):
+        if not re.search(r'안|아직|너무|덜|별로|더|에어컨|에어컨', text):
+            if preds['fn'] in ('heat_control', 'ac_control') and preds['param_direction'] == 'on':
+                preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
+                preds['param_direction'] = 'none'
     # 추위 비유 → dir=none 교정
     if preds['fn'] == 'heat_control' and preds['param_direction'] == 'none':
         if re.search(r'얼어\s*죽|냉동실|냉장고\s*같|시베리아|이글루|덜덜\s*떨|이가\s*딱딱|한기|몸이\s*꽁', text):
@@ -1294,6 +1303,18 @@ def apply_post_rules(preds, text):
     if re.search(r'(?:외출|절전)\s*모드\s*해제', text):
         preds['fn'] = 'security_mode'; preds['exec_type'] = 'control_then_confirm'
         preds['param_direction'] = 'off'
+
+    # v111: "기기가 약한 것 같아/약해 보여" → dir=up (세기 부족 간접 표현)
+    if re.search(r'(?:좀|조금)?\s*약한\s*것\s*같|약해\s*보여|약한\s*것\s*같아요?', text):
+        if preds['fn'] in _device_fns and preds['param_direction'] in ('on', 'none'):
+            if not re.search(r'난방|보일러', text):
+                preds['param_direction'] = 'up'
+
+    # v111: "불/조명이 어두운 것 같아" → light_control/up (간접 밝기 요청)
+    if re.search(r'(?:불|조명|전등|전기|방)\s*(?:이|가)?\s*(?:좀|조금)?\s*어두운\s*것\s*같', text):
+        if preds['fn'] == 'light_control' and preds['param_direction'] in ('on', 'none'):
+            preds['param_direction'] = 'up'
+            preds['param_type'] = 'brightness'
 
     # v109: "창문 + 닫았어/닫고" → curtain_control/close 교정 (gas_control 오예측)
     # 창문/커튼이 이미 닫혔음을 보고하는 과거형 표현
