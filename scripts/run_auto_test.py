@@ -379,6 +379,16 @@ SINGLE_TESTS = [
     ("해가 너무 눈부셔",             "curtain_control","close",None,          "v120_해눈부셔_curtain_close"),
     ("햇볕이 너무 눈부신데",         "curtain_control","close",None,          "v120_햇볕눈부신데_curtain_close"),
     ("괜찮으시다면 에어컨 끄면 안 될까요", "ac_control","off",None,          "v120_에어컨끄면안될까요_ac_off"),
+
+    # ── v121: 수사적더위 / 형용사형추위 / 조명고장 / 창문완곡 / 어두움dir ─────
+    ("이 더위에 어떻게 사나",        "ac_control",    "on",  None,           "v121_이더위에어떻게사나_ac_on"),
+    ("이 더위에 어떻게 버텨",        "ac_control",    "on",  None,           "v121_이더위에어떻게버텨_ac_on"),
+    ("왠지 쌀쌀한 것 같아",         "heat_control",  "on",  None,           "v121_쌀쌀한것같아_heat_on"),
+    ("살짝 서늘한 것 같기도 해",    "heat_control",  "on",  None,           "v121_서늘한것같기도해_heat_on"),
+    ("조명이 깜빡거려",             "unknown",       None,  None,           "v121_조명깜빡거려_unknown"),
+    ("전등이 깜빡이는 것 같아",     "unknown",       None,  None,           "v121_전등깜빡이는_unknown"),
+    ("창문 좀 닫아도 될까요",       "door_control",  "close",None,          "v121_창문닫아도될까요_door_close"),
+    ("어두워서 아무것도 안 보여",   "light_control", "up",  None,           "v121_어두워서안보여_light_up"),
 ]
 
 # ── 멀티턴 시나리오 ──────────────────────────────────────────
