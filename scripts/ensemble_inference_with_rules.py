@@ -1206,7 +1206,7 @@ def apply_post_rules(preds, text):
     if preds['fn'] in _device_fns and preds['param_direction'] in ('on', 'none'):
         if re.search(r'너무\s*(?:세다|강하다|강해|세네|강하네|센\s*것\s*같)', text):
             preds['param_direction'] = 'down'
-    if preds['fn'] in _device_fns and preds['param_direction'] in ('off', 'none', 'down'):
+    if preds['fn'] in _device_fns:
         if re.search(r'너무\s*(?:약해|약하다|약하네|약한\s*것\s*같)', text):
             preds['param_direction'] = 'up'
 
@@ -1214,6 +1214,63 @@ def apply_post_rules(preds, text):
     if re.search(r'꺼\s*도\s*(?:되지|되나|돼|될까)', text):
         if preds['fn'] in _device_fns and preds['param_direction'] == 'none':
             preds['param_direction'] = 'off'
+
+    # v106: 어둡게 → dir=down (v72 모델이 dir=off 오예측 → off도 커버)
+    if re.search(r'어둡게', text):
+        if preds['fn'] == 'light_control' and preds['param_direction'] == 'off':
+            preds['param_direction'] = 'down'
+            preds['param_type'] = 'brightness'
+
+    # v106: 식사/귀가 발화 → door_control 오예측 교정 (v72 "왔어" → door)
+    # "밥 먹으러/먹고/먹으러" 발화 = 상태 보고 → unknown
+    if re.search(r'밥\s*(?:먹으러|먹고|먹으러|먹었|먹을)\s*(?:왔어|왔습니다|왔는데|왔어요)', text):
+        if preds['fn'] == 'door_control':
+            preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
+            preds['param_direction'] = 'none'; preds['param_type'] = 'none'
+    # 귀가 확장: "~하러 왔어/왔는데" 형식 + door_control → unknown (비문 귀가 보고)
+    if re.search(r'(?:일\s*끝나고|퇴근하고|학교\s*끝나고|쇼핑하고|다녀와서)\s*왔어', text):
+        if preds['fn'] == 'door_control':
+            preds['fn'] = 'unknown'; preds['exec_type'] = 'direct_respond'
+            preds['param_direction'] = 'none'; preds['param_type'] = 'none'
+
+    # v106: "집이 좀 쾌적했으면" 바람 표현 → ac_control/on (home_info 오예측)
+    if re.search(r'집이?\s*(?:좀|조금)?\s*쾌적(?:했으면|하면\s*좋겠|해졌으면)', text):
+        if preds['fn'] in ('home_info', 'unknown', 'vent_control'):
+            preds['fn'] = 'ac_control'; preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'on'
+
+    # v107: 부정 명령 "켜지 말아줘/켜지 마" → dir=off (don't turn on = keep off / turn off)
+    if re.search(r'켜\s*(?:지\s*)?(?:말|마)\s*(?:줘|요|세요|아줘|아요)?', text):
+        if preds['fn'] in _device_fns and preds['param_direction'] in ('on', 'none'):
+            preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'off'
+
+    # v107: 과거형 보고 "껐어/꺼졌어" → exec=query_then_respond (과거 행위 보고, 명령 아님)
+    # dir을 off로: 껐다고 했으니 현재 off 상태 확인
+    if re.search(r'껐어|껐는데|껐습니다|끄고\s*왔어', text):
+        if preds['fn'] in _device_fns and preds['param_direction'] in ('on', 'none'):
+            preds['exec_type'] = 'query_then_respond'
+            preds['param_direction'] = 'off'
+    # "저절로 꺼졌어/혼자 꺼졌어" → 상태 진술 (status event, not a command)
+    if re.search(r'(?:저절로|혼자|자동으로|갑자기)\s*(?:꺼졌|켜졌|꺼진|켜진)', text):
+        if preds['fn'] in _device_fns:
+            preds['exec_type'] = 'query_then_judge'
+
+    # v107: "켜놓아줘/켜놓아" → dir=on (contracted "켜놔"가 원형보다 잘 인식됨)
+    if re.search(r'켜\s*놓[아아줘주아]\s*줘?', text):
+        if preds['fn'] in _device_fns and preds['param_direction'] == 'none':
+            preds['exec_type'] = 'control_then_confirm'
+            preds['param_direction'] = 'on'
+
+    # v107: "여기 + 기기명 + 켜/꺼" 지시사 → exec=control_then_confirm, dir 복구
+    if re.search(r'^여기\s*(?:좀\s*)?', text):
+        if preds['fn'] in _device_fns and preds['exec_type'] == 'direct_respond':
+            preds['exec_type'] = 'control_then_confirm'
+        if preds['fn'] in _device_fns and preds['param_direction'] == 'none':
+            if re.search(r'켜\s*줘|틀어\s*줘|켜봐|켜요', text):
+                preds['param_direction'] = 'on'
+            elif re.search(r'꺼\s*줘|꺼봐|끄\s*줘|꺼요', text):
+                preds['param_direction'] = 'off'
 
     return preds
 
