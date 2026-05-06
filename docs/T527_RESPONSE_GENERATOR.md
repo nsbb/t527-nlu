@@ -88,3 +88,57 @@ src/main/kotlin/com/t527/smart_service/integration/
 1. TTS Player 연동 (`assets/tts/` 미리 녹음된 MP3 또는 Android TTS API)
 2. VoiceAiService에 NLU+IntentRouter+ResponseGenerator 체인 통합
 3. 외부 API (날씨/뉴스) 호출 모듈 추가
+
+## 한국어 받침 처리 (2026-05-07 추가)
+
+```kotlin
+private fun josa(word: String, withFinal: String, withoutFinal: String): String {
+    val last = word.last()
+    if (last !in '가'..'힣') return withoutFinal
+    val code = last.code - 0xAC00
+    val finalConsonant = code % 28
+    return if (finalConsonant == 0) withoutFinal else withFinal
+}
+```
+
+적용 결과:
+```
+조명 + 을(받침 ㅇ) → 조명을
+에어컨 + 을(받침 ㄴ) → 에어컨을
+환기 + 를(받침 X) → 환기를
+커튼 + 을(받침 ㄴ) → 커튼을
+보안 모드 + 를(받침 X) → 보안 모드를
+```
+
+## TTS 출력 (MP3 + Android TTS)
+
+T527 디바이스에는 Android TextToSpeech 엔진 없음. 대신 `assets/tts/` 미리 녹음된 98개 MP3 사용:
+
+```
+tts/light_control_on.mp3   ← "조명을 켭니다."
+tts/ac_control_on.mp3      ← "에어컨을 켭니다."
+tts/vent_control_on.mp3    ← "환기를 켭니다."
+tts/curtain_control_close.mp3 ← "커튼을 닫습니다."
+... 총 98개
+```
+
+`mapIntentToTtsKey(fn, dir)` 매핑으로 intent → ttsKey → MP3 파일 재생.
+파일 없으면 텍스트만 출력 (fallback).
+
+## End-to-End 음성 응답 체인
+
+```
+사용자 발화
+  ↓
+Preprocess → NLU → PostRules → IntentRouter → AIDL Mock
+  ↓
+ResponseGenerator (한국어 텍스트 + 받침 처리)
+  ↓
+TtsPlayer (assets/tts/MP3 재생)
+  ↓
+사용자 음성 응답
+```
+
+13개 시나리오 검증:
+- MP3 재생: 4건 (조명/에어컨/환기/커튼)
+- Fallback (텍스트만): 9건 (해당 mp3 없는 fn/dir 조합)
