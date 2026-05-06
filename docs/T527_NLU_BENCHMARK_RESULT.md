@@ -98,3 +98,55 @@ T527 디바이스 (51475789...):
 실시간 응답 예측:
   STT(200ms) + NLU(25ms) + AIDL(100ms) = 325ms
 ```
+
+## 5차 — 골든셋 100개 대규모 디바이스 검증
+
+기존 15개 → **99개 골든셋**으로 정확한 측정.
+
+### 디바이스 (T527 + 61 규칙 V3)
+```
+combo: 91 / 99 = 91.9%
+latency_avg: 18ms (1차 25ms 측정시 warmup 직후 → 캐시 안정 후 18ms)
+```
+
+### 서버 (Xeon + 132 규칙)
+```
+fn:    99 / 99 = 100.0%
+exec:  97 / 99 = 98.0%
+dir:   99 / 99 = 100.0%
+combo: 97 / 99 = 98.0%
+latency: 0.64ms (서버 CPU)
+```
+
+### 차이 분석 — 디바이스가 6건 못 잡는 이유
+
+| 발화 | 서버 | 디바이스 | 원인 |
+|------|------|---------|------|
+| 간접등 켜줘 | clarify/on | clarify/none | dir 보정 규칙 (자동 포팅 못함, 변수 사용) |
+| 오늘날씨 | weather/none | unknown/none | "오늘날씨" STT 변형 규칙 |
+| 불좀켜 | clarify/none | direct_respond/none | exec_type 보정 |
+| 안방 남방 올려줘 | heat/up | heat/on | "남방→난방" STT + 올려→up |
+| 이거 동굴이야? | query_then_judge/on | control_then_confirm/on | exec 보정 |
+| 안방 혹시 불 켜줘 | control_then_confirm/none | clarify/none | exec 보정 |
+
+→ 모두 **자동 포팅 안 된 복잡 규칙** (변수 사용, group capture, 다중 분기). 수동 포팅 가능.
+
+### 서버도 못 잡는 2건
+
+```
+'어르신이 덥다고 하시네요'  GT: ac/control_then_confirm/on  → ac/direct_respond/on  (exec 차이)
+'등줄기가 서늘해'           GT: heat/control_then_confirm/on → heat/direct_respond/on (exec 차이)
+```
+
+→ 모델 자체의 한계 (직접/제어 exec 분류 모호). 별도 규칙 추가 필요.
+
+## 종합 — 디바이스 NLU 결론
+
+```
+T527 NPU 데브킷 (51475789...) NLU 추론 성능:
+  ├─ 모델: 105MB ONNX (CPU 추론)
+  ├─ 정확도: 91.9% combo (99개 골든셋)
+  │   └─ 부족분 6건은 자동 포팅 못 한 복잡 규칙 (수동 포팅 시 잡을 수 있음)
+  ├─ Latency: 18~25ms / 추론
+  └─ 실시간성: STT(200ms) + NLU(20ms) + AIDL(100ms) ≈ 320ms 응답 가능
+```
