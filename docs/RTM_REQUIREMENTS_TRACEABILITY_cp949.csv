@@ -1,0 +1,220 @@
+번호,구분,intent,발화,NLU fn,AIDL/REST,채널,상태
+1,메인,home_status_query,지금 집 상태 어때?,home_info,remote_get_home_total_device,AIDL,?
+2,메인,notification_query,오늘 새로운 알림 있어?,home_info,/v2/ai/announcements,REST,? REST
+3,메인,time_query,지금 몇 시야?,home_info,월패드 자체 시계,SELF,? 자체
+4,메인,manual_capability,네가 할 수 있는 일이 뭐야?,system_meta,내부 FAQ,SELF,? 자체
+5,메인,manual_usage,월패드 사용법을 가르쳐줘,system_meta,내부 FAQ,SELF,? 자체
+6,메인,manual_creator,너는 누가 만들었어?,system_meta,내부 FAQ,SELF,? 자체
+7,메인,manual_name,너는 뭐라고 불러?,system_meta,내부 FAQ,SELF,? 자체
+8,메인,manual_unsupported,네 이름을 바꾸고 싶어,system_meta,내부 FAQ,SELF,? 자체
+9,통화,door_open,문 열어/문 열어줘/열어줘,door_control,?? 명세 미정,?,? 미분류
+10,제어,light_query,주방 불 켜져있어?,light_control,remote_access_livinglight (status),AIDL,?
+11,제어,light_query,주방 불 켜져있어?,light_control,remote_access_livinglight (status),AIDL,?
+12,제어,light_on,(공간명 지정이 없을 때) 불 좀 켜줘,light_control,remote_access_livinglight or _light,AIDL,?
+13,제어,light_dim,거실 조명 은은하게/아늑하게/분위기있게/영화보기 좋게 해 줘,light_control,remote_access_dimming_livinglight,AIDL,?
+14,제어,light_on,거실 '커튼등/간접등' 만 켜 줘,light_control,remote_access_livinglight or _light,AIDL,?
+15,제어,light_on,식탁/주방 '다운라이트' 만 켜 줘,light_control,remote_access_livinglight or _light,AIDL,?
+16,제어,light_on,전체 조명 켜 줘,light_control,remote_access_livinglight or _light,AIDL,?
+17,제어,light_brighten,거실이 좀 어두침침한데?,light_control,remote_access_dimming_livinglight,AIDL,?
+18,제어,light_schedule,조명 예약 뭐있어?,schedule_manage,remote_access_schedule(light),AIDL,? 신규-schedule
+19,제어,light_schedule,취침모드 설정된/예약 어떻게 되어 있어?,schedule_manage,remote_access_schedule(light),AIDL,? 신규-schedule
+20,제어,heating_query,지금 온도 어때?,heat_control,remote_access_temper (status),AIDL,?
+21,제어,heating_on,전체 난방 켜 줘,heat_control,remote_access_temper,AIDL,?
+22,제어,heating_on,각 침실 난방 켜 줘,heat_control,remote_access_temper,AIDL,?
+23,제어,heating_up,전체 난방 좀 올려줘,heat_control,remote_access_temper,AIDL,?
+24,제어,heating_up,난방 좀 올려줘,heat_control,remote_access_temper,AIDL,?
+25,제어,heating_schedule_query,난방 예약 있어?,schedule_manage,remote_access_schedule(temper),AIDL,? 신규-schedule
+26,제어,heating_schedule_cancel,난방 예약을 모두 취소해 줘,schedule_manage,remote_access_schedule(temper),AIDL,? 신규-schedule
+27,제어,heating_schedule_set,오전 10시부터 오후 4시까지 전체 난방 외출 모드로 해 줘,schedule_manage,remote_access_schedule(temper),AIDL,? 신규-schedule
+28,제어,ac_query,지금 에어컨 어때?,ac_control,remote_access_sysaircon (status),AIDL,?
+29,제어,ac_query,에어컨 다 켜져 있어?,ac_control,remote_access_sysaircon (status),AIDL,?
+30,제어,ac_query,에어컨 되고 있나?,ac_control,remote_access_sysaircon (status),AIDL,?
+31,제어,ac_query,에어컨 설정 온도는?,ac_control,remote_access_sysaircon (status),AIDL,?
+32,제어,ac_query,거실 바람 세기 뭐야?,ac_control,remote_access_sysaircon (status),AIDL,?
+33,제어,ac_on,거실 에어컨 켜줘,ac_control,remote_access_sysaircon,AIDL,?
+34,제어,ac_off,OO (공간명) 에어컨 꺼줘,ac_control,remote_access_sysaircon,AIDL,?
+35,제어,ac_temp,거실 에어컨 23도로 맞춰줘,ac_control,remote_access_sysaircon (set_temp),AIDL,?
+36,제어,ac_temp,거실 에어컨 낮춰줘,ac_control,remote_access_sysaircon (set_temp),AIDL,?
+37,제어,ac_mode,거실 제습으로 해 줘,ac_control,remote_access_sysaircon (operation_mode),AIDL,?
+38,제어,ac_mode,거실 송풍해 줘,ac_control,remote_access_sysaircon (operation_mode),AIDL,?
+39,제어,ac_wind,거실 에어컨 세게 해 줘,ac_control,remote_access_sysaircon (wind),AIDL,?
+40,제어,ac_wind,거실 에어컨 줄여줘,ac_control,remote_access_sysaircon (wind),AIDL,?
+41,제어,ac_wind,거실 에어컨 풍향 고정해 줘,ac_control,remote_access_sysaircon (wind),AIDL,?
+42,제어,ac_mode_schedule,자고있을 때 에어컨 자동모드로 해 줘,schedule_manage,remote_access_schedule(sysaircon),AIDL,? 신규-schedule
+43,제어,ac_mode_noroom,송풍해 줘,ac_control,remote_access_sysaircon,AIDL,?
+44,제어,ac_exception,전체 다 켜,ac_control,고장 안내,SELF,? 자체
+45,제어,ac_exception,전기요금 아끼게 해 줘,ac_control,고장 안내,SELF,? 자체
+46,제어,ac_exception,에어컨 고장났어?,ac_control,고장 안내,SELF,? 자체
+47,제어,ventilation_query,지금 환기 되고있나?,vent_control,remote_access_ventil (status),AIDL,?
+48,제어,ventilation_query,지금 환기 상태 어때?,vent_control,remote_access_ventil (status),AIDL,?
+49,제어,ventilation_query,환기 모드 뭐야?,vent_control,remote_access_ventil (status),AIDL,?
+50,제어,ventilation_query,환기 필터 상태 어때?,vent_control,remote_access_ventil (status),AIDL,?
+51,제어,ventilation_query,우리집 환기시스템은 어디꺼야?,vent_control,remote_access_ventil (status),AIDL,?
+52,제어,ventilation_on,공기가 답답하네,vent_control,remote_access_ventil,AIDL,?
+53,제어,ventilation_off,환기 꺼줘/좀 꺼,vent_control,remote_access_ventil,AIDL,?
+54,제어,ventilation_mode,환기 세게 틀어줘,vent_control,remote_access_ventil (mode),AIDL,?
+55,제어,ventilation_mode,환기 모드 바꾸고 싶어,vent_control,remote_access_ventil (mode),AIDL,?
+56,제어,ventilation_exception,환기 필터 주문해줘,vent_control,필터 주문 → 외부 서비스,EXTERNAL,? 외부
+57,제어,ventilation_exception,환기 고쳐줘,vent_control,필터 주문 → 외부 서비스,EXTERNAL,? 외부
+58,제어,ventilation_schedule_query,환기 예약돼 있어?,schedule_manage,remote_access_schedule(ventil),AIDL,? 신규-schedule
+59,제어,ventilation_schedule_set,내일부터 집에 돌아오면 환기 시스템 틀어줘,schedule_manage,remote_access_schedule(ventil),AIDL,? 신규-schedule
+60,제어,gas_query,가스 열려있어?,gas_control,remote_access_gas (status),AIDL,?
+61,제어,gas_query,가스 밸브상태?,gas_control,remote_access_gas (status),AIDL,?
+62,제어,gas_close,가스 밸브 닫아줘 / 열어줘,gas_control,remote_access_gas,AIDL,?
+63,제어,gas_close,가스 밸브 잠금해,gas_control,remote_access_gas,AIDL,?
+64,제어,doorlock_query,도어락 상태 어때?,door_control,remote_access_doorlock (status),AIDL,?
+65,제어,doorlock_open,현관문/현관/현관도어락/도어락 열어줘,door_control,remote_access_doorlock (control 추가),AIDL,? 보강#1
+66,제어,curtain_query,전동커튼 열려있어?,curtain_control,remote_access_curtain (status),AIDL,?
+67,제어,curtain_open,전동커튼 열어줘,curtain_control,remote_access_curtain,AIDL,?
+68,제어,curtain_open,거실 전동커튼 열어줘,curtain_control,remote_access_curtain,AIDL,?
+69,제어,curtain_close,거실 전동커튼 닫아줘,curtain_control,remote_access_curtain,AIDL,?
+70,제어,curtain_stop,거실 전동커튼 열기 멈춰줘,curtain_control,remote_access_curtain (stop 추가),AIDL,? 보강#2
+71,제어,curtain_schedule,기상할 때 전체 전동커튼 열기 해 줘,schedule_manage,remote_access_schedule(curtain),AIDL,? 신규-schedule
+72,제어,curtain_schedule,매일 밤 저녁 9시에 침실 전동커튼을 닫아줘,schedule_manage,remote_access_schedule(curtain),AIDL,? 신규-schedule
+73,방범,security_query,외출모드 설정할 수 있어?,security_mode,remote_access_mode (status),AIDL,?
+74,방범,security_query,외출 설정 대기 시간은 어떻게 되지?,security_mode,remote_access_mode (status),AIDL,?
+75,방범,security_query,외출 설정 대기 시간이 뭐야?,security_mode,remote_access_mode (status),AIDL,?
+76,방범,security_return_set,외출 설정 복귀 시간 설정가능해?,security_mode,remote_access_mode (return_time 필드 추가),AIDL,? 보강#3
+77,방범,security_return_set,외출 설정 복귀 시간이 뭐야?,security_mode,remote_access_mode (return_time 필드 추가),AIDL,? 보강#3
+78,방범,security_activate,외출모드 실행해 줘,security_mode,remote_access_mode,AIDL,?
+79,방범,security_return_set,외출 후 복귀할 때 일괄소등 해제 및 환기시스템 켜 줘,security_mode,remote_access_mode (return_time 필드 추가),AIDL,? 보강#3
+80,방범,security_activate,나 지금 나갈건데/나가/외출해,security_mode,remote_access_mode,AIDL,?
+81,에너지,energy_usage_query,우리집 에너지 사용량 어때?,energy_query,/v2/ai/meter,REST,? REST
+82,에너지,energy_usage_query,우리집 전기를 가장 많이 쓴 달은 언제야?,energy_query,/v2/ai/meter,REST,? REST
+83,에너지,energy_usage_query,가스 사용 작년이랑 비교해 줘,energy_query,/v2/ai/meter,REST,? REST
+84,에너지,energy_goal_set,전기 사용량 목표 설정해 줘,energy_query,remote_access_energy_goal,AIDL,? 신규-energy
+85,에너지,energy_goal_set,전기 사용량 목표를 300으로 설정해 줘,energy_query,remote_access_energy_goal,AIDL,? 신규-energy
+86,에너지,energy_goal_set,가스 사용량 목표를 10으로 설정해 줘,energy_query,remote_access_energy_goal,AIDL,? 신규-energy
+87,에너지,energy_alert_on,사용량 설정값이 초과되면 알려줘,energy_query,remote_access_energy_alert,AIDL,? 신규-energy
+88,에너지,energy_alert_off,에너지 사용량 알림 꺼줘,energy_query,remote_access_energy_alert,AIDL,? 신규-energy
+89,에너지,energy_usage_query,전기요금 많이 나올까?,energy_query,/v2/ai/meter,REST,? REST
+90,에너지,energy_usage_query,이번 달 에너지 어떄?,energy_query,/v2/ai/meter,REST,? REST
+91,더보기,elevator_query,지금 엘리베이터 몇 층에 있어?,elevator_call,엘리베이터 위치 정보,REST,? REST
+92,더보기,elevator_call,엘리베이터 불러줘/호출해 줘,elevator_call,/v2/ai/elevator/{dir},REST,? REST
+93,더보기,notice_query,새로운 단지소식 있어? / 읽어줘,home_info,/v2/ai/announcements,REST,? REST
+94,더보기,notice_query,새로운 단지소식 읽어줘,home_info,/v2/ai/announcements,REST,? REST
+95,더보기,car_history_query,주차 출입 정보 확인하고 싶어,vehicle_manage,/v2/ai/cars/parkinfo,REST,? REST
+96,더보기,car_history_delete,000000 차량 출입 정보만 삭제할 수 있어?,vehicle_manage,/v2/ai/cars/parkinfo,REST,? REST
+97,더보기,ev_charging,충전 상태 어때?,vehicle_manage,/v2/ai/eleccar,REST,? REST
+98,더보기,ev_charging,000000 충전 상태? / 다됐어? / 얼마나 됐어?,vehicle_manage,/v2/ai/eleccar,REST,? REST
+99,더보기,ev_charging,단지 내 충전기 정보 확인해 줘,vehicle_manage,/v2/ai/eleccar,REST,? REST
+100,더보기,ev_charging,단지 내 급속 충전기 쓸수있나?,vehicle_manage,/v2/ai/eleccar,REST,? REST
+101,더보기,visitor_parking_query,0000000 차량 등록되어 있나?,vehicle_manage,/v2/ai/cars/guest,REST,? REST
+102,더보기,visitor_parking_register,0000000 차량 등록해 줘,vehicle_manage,/v2/ai/cars/guest,REST,? REST
+103,더보기,visitor_parking_register,오늘 하루만 00 엄마 차량 0000000 등록해 줘,vehicle_manage,/v2/ai/cars/guest,REST,? REST
+104,설정,system_faq,볼륨 조절할 수 있어?,system_meta,내부 FAQ,SELF,? 자체
+105,설정,system_faq,설정가능한게 뭐야?,system_meta,내부 FAQ,SELF,? 자체
+106,설정,system_faq,볼륨 조절은 어떻게 조절할 수 있어?,system_meta,내부 FAQ,SELF,? 자체
+107,설정,system_faq,화면 밝기는 어떻게 조절할 수 있어?,system_meta,내부 FAQ,SELF,? 자체
+108,설정,system_faq,절전모드 작동시간은 어떻게 조절할 수 있어?,system_meta,내부 FAQ,SELF,? 자체
+109,설정,system_faq,알림음은 변경할 수 있어?,system_meta,내부 FAQ,SELF,? 자체
+110,설정,system_faq,통화 알림음은 변경할 수 있어?,system_meta,내부 FAQ,SELF,? 자체
+111,설정,system_faq,AS /서비스 신청은 어디에 하는거야?,system_meta,내부 FAQ,SELF,? 자체
+112,설정,system_faq,이사갈 때 정보 삭제하고 싶어,system_meta,내부 FAQ,SELF,? 자체
+113,설정,system_faq,이사갈 때 삭제할 수 있는 정보가 어떤게 있어?,system_meta,내부 FAQ,SELF,? 자체
+114,설정,system_volume_set,월패드 볼륨을 최대로 키워줘,system_meta,remote_access_volume,AIDL,? 신규-volume
+115,설정,system_brightness_set,월패드 화면을 어둡게 해줘,system_meta,remote_access_brightness,AIDL,? 신규-brightness
+116,설정,system_exception,거실 조명이 밝을 때 월패드 화면이 어두워졌으면 좋겠어,system_meta,시스템 안내,SELF,? 자체
+117,설정,system_brightness_schedule,월패드 화면을 오전 7시부터 오후 4시까지 어둡게 해줘,schedule_manage,remote_access_schedule(brightness),AIDL,? 신규-schedule
+118,설정,system_exception,(시간대별 자동볼륨 시나리오 반영) 월패드 볼륨을 최대로 키워줘,system_meta,시스템 안내,SELF,? 자체
+119,설정,password_change,현재 월패드 비밀번호 뭐야?,system_meta,월패드 시스템 설정,REST,? REST
+120,설정,password_change,월패드 비밀번호 알아서 바꿔줘/추천해,system_meta,월패드 시스템 설정,REST,? REST
+121,설정,alarm_query,모닝콜 설정하면 어떻게 되는거야?,home_info,월패드 자체 알람,SELF,? 자체
+122,설정,alarm_query,모닝콜 종료는 어떻게 하는거야?,home_info,월패드 자체 알람,SELF,? 자체
+123,설정,alarm_query,모닝콜 설정할 때 연동할 수 있는게 뭐야?,home_info,월패드 자체 알람,SELF,? 자체
+124,설정,alarm_query,모닝콜 설정 어떻게 되어 있어?,home_info,월패드 자체 알람,SELF,? 자체
+125,설정,alarm_set,매일 아침 6시 모닝콜이 울리고 / 울릴 때 조명과 환기 켜줘,home_info,월패드 자체 알람,SELF,? 자체
+126,부가,emergency,경보 울려/긴급상황이야/비상상황이야/화재야/침입자,security_mode,remote_access_emergency,AIDL,? 신규-emergency
+127,부가,emergency,경보 울려,security_mode,remote_access_emergency,AIDL,? 신규-emergency
+128,부가,emergency,긴급 상황,security_mode,remote_access_emergency,AIDL,? 신규-emergency
+129,부가,complex_info,우리 단지 준공일이 어떻게 되지?,home_info,단지 정보,REST,? REST
+130,부가,complex_info,관리사무소 연락처 안내해 줘,home_info,단지 정보,REST,? REST
+131,부가,complex_info,단지 세대수가 어떻게 되지?,home_info,단지 정보,REST,? REST
+132,부가,news_info,뉴스 출처가 어떻게 되지?,news_query,RSS 메타,EXTERNAL,? 외부
+133,부가,news_info,특정 주제 뉴스만 들을 수 있나?,news_query,RSS 메타,EXTERNAL,? 외부
+134,부가,news_play,(특정 주제) OO 뉴스,news_query,경향신문 RSS,EXTERNAL,? 외부
+135,부가,news_play,뉴스 틀어줘/들려줘/오늘 뉴스 알려줘/최신 뉴스 말해줘,news_query,경향신문 RSS,EXTERNAL,? 외부
+136,부가,news_play,최근 OOO에 대한 뉴스,news_query,경향신문 RSS,EXTERNAL,? 외부
+137,부가,news_play,경제 뉴스 들려줘,news_query,경향신문 RSS,EXTERNAL,? 외부
+138,부가,news_play,부동산 뉴스 들려줘,news_query,경향신문 RSS,EXTERNAL,? 외부
+139,부가,news_play,금리 관련 최신 뉴스 들려줘,news_query,경향신문 RSS,EXTERNAL,? 외부
+140,부가,news_play,AI 뉴스 있어?,news_query,경향신문 RSS,EXTERNAL,? 외부
+141,부가,news_play,드라마 관련 뉴스,news_query,경향신문 RSS,EXTERNAL,? 외부
+142,부가,news_play,아이돌 뉴스 있어?,news_query,경향신문 RSS,EXTERNAL,? 외부
+143,부가,news_play,오늘 축구 경기 결과 알려줘,news_query,경향신문 RSS,EXTERNAL,? 외부
+144,부가,news_play,우리 단지 근처 사건 뉴스 있어?,news_query,경향신문 RSS,EXTERNAL,? 외부
+145,부가,news_play,건설 뉴스 뭐 있어?,news_query,경향신문 RSS,EXTERNAL,? 외부
+146,부가,news_play,우리 동네 뉴스 있어?,news_query,경향신문 RSS,EXTERNAL,? 외부
+147,부가,news_exception,매일 아침 7시 증시 뉴스 브리핑 해줘,news_query,RSS 카테고리,EXTERNAL,? 외부
+148,부가,weather_info,오늘 날씨 어때?,weather_query,Open-Meteo,EXTERNAL,? 외부
+149,부가,weather_info,지금 밖에 더워?,weather_query,Open-Meteo,EXTERNAL,? 외부
+150,부가,weather_info,오늘 저녁에 춥나?,weather_query,Open-Meteo,EXTERNAL,? 외부
+151,부가,weather_activity,오늘 한강 바람쐬기 괜찮나?,weather_query,Open-Meteo + judge,EXTERNAL,? 외부
+152,부가,weather_info,오늘 바람 많이 불어?,weather_query,Open-Meteo,EXTERNAL,? 외부
+153,부가,weather_info,주말에 대전 날씨 어때?,weather_query,Open-Meteo,EXTERNAL,? 외부
+154,부가,weather_info,OO (특정 지역명칭 일부만) 날씨는?,weather_query,Open-Meteo,EXTERNAL,? 외부
+155,부가,weather_info,내일 날씨 어때?,weather_query,Open-Meteo,EXTERNAL,? 외부
+156,부가,weather_info,이번주 날씨 알려줘,weather_query,Open-Meteo,EXTERNAL,? 외부
+157,부가,weather_info,오늘밤 날씨 어때?,weather_query,Open-Meteo,EXTERNAL,? 외부
+158,부가,weather_info,이번주 비 와?,weather_query,Open-Meteo,EXTERNAL,? 외부
+159,부가,weather_info,주말에 더워?,weather_query,Open-Meteo,EXTERNAL,? 외부
+160,부가,dust_query,창문 열어도 괜찮아?,weather_query,Open-Meteo Air,EXTERNAL,? 외부
+161,부가,dust_query,환기해도 돼?,weather_query,Open-Meteo Air,EXTERNAL,? 외부
+162,부가,dust_query,공기 안 좋아?,weather_query,Open-Meteo Air,EXTERNAL,? 외부
+163,부가,weather_clothing,오늘 뭐 입고 나가야 돼?,weather_query,Open-Meteo + judge,EXTERNAL,? 외부
+164,부가,weather_clothing,오늘 겉옷 필요해?,weather_query,Open-Meteo + judge,EXTERNAL,? 외부
+165,부가,weather_clothing,오늘 아이 옷 어떻게 입혀?,weather_query,Open-Meteo + judge,EXTERNAL,? 외부
+166,부가,weather_activity,오늘 세차해도 되나?,weather_query,Open-Meteo + judge,EXTERNAL,? 외부
+167,부가,weather_activity,이번주 금요일 캠핑 가도 되나?,weather_query,Open-Meteo + judge,EXTERNAL,? 외부
+168,부가,weather_info,밖에 어때?,weather_query,Open-Meteo,EXTERNAL,? 외부
+169,부가,weather_activity,오늘 나가도 돼?,weather_query,Open-Meteo + judge,EXTERNAL,? 외부
+170,부가,weather_exception,3시간 뒤 비 정확히 몇 mm 와?,weather_query,Open-Meteo (강수정밀),EXTERNAL,? 외부
+171,부가,weather_exception,다음 달 날씨 알려줘,weather_query,Open-Meteo (강수정밀),EXTERNAL,? 외부
+172,부가,traffic_route_query,강남역까지 얼마나 걸려?,traffic_query,경로 API,EXTERNAL,? 외부
+173,부가,traffic_route_query,지금 서울역 가면 몇 분 걸려?,traffic_query,경로 API,EXTERNAL,? 외부
+174,부가,traffic_route_query,지금 차 막혀?,traffic_query,경로 API,EXTERNAL,? 외부
+175,부가,traffic_route_query,회사까지 몇 분 걸려?,traffic_query,경로 API,EXTERNAL,? 외부
+176,부가,traffic_route_query,지금 출발하면 늦어?,traffic_query,경로 API,EXTERNAL,? 외부
+177,부가,traffic_route_query,OOO에 가는 제일 빠른 방법 뭐야?,traffic_query,경로 API,EXTERNAL,? 외부
+178,부가,traffic_route_query,OOO에 갈 때 환승 몇 번이야?,traffic_query,경로 API,EXTERNAL,? 외부
+179,부가,traffic_bus_query,우리 집 앞 버스 언제 와?,traffic_query,버스 API,EXTERNAL,? 외부
+180,부가,traffic_bus_query,우리 집 앞 버스 언제 와?,traffic_query,버스 API,EXTERNAL,? 외부
+181,부가,traffic_bus_query,OO가는 버스 있어?,traffic_query,버스 API,EXTERNAL,? 외부
+182,부가,traffic_bus_query,000번 버스 첫차 언제야?,traffic_query,버스 API,EXTERNAL,? 외부
+183,부가,traffic_exception,택시 불러줘,traffic_query,택시 호출,EXTERNAL,? 외부
+184,부가,medical_search,근처 병원 어디 있어?,medical_query,병원/약국 API,EXTERNAL,? 외부
+185,부가,medical_search,가까운 병원 알려줘,medical_query,병원/약국 API,EXTERNAL,? 외부
+186,부가,medical_search,우리 동네 병원 찾아줘,medical_query,병원/약국 API,EXTERNAL,? 외부
+187,부가,medical_search,지금 갈 수 있는 병원 어디야?,medical_query,병원/약국 API,EXTERNAL,? 외부
+188,부가,medical_search,야간 진료하는 병원 있어?,medical_query,병원/약국 API,EXTERNAL,? 외부
+189,부가,medical_search,소아과 찾아줘,medical_query,병원/약국 API,EXTERNAL,? 외부
+190,부가,medical_search,가까운 소아과 병원 2군데 이름 가르쳐 줘,medical_query,병원/약국 API,EXTERNAL,? 외부
+191,부가,medical_hours,OOOOO 오늘 진료해?,medical_query,병원 진료시간,EXTERNAL,? 외부
+192,부가,medical_hours,OOOOO 점심시간이야?,medical_query,병원 진료시간,EXTERNAL,? 외부
+193,부가,medical_search,대체공휴일 여는 병원있어?,medical_query,병원/약국 API,EXTERNAL,? 외부
+194,부가,medical_search,24시간 약국 있어?,medical_query,병원/약국 API,EXTERNAL,? 외부
+195,부가,medical_search,공휴일에 여는 치과 있어?,medical_query,병원/약국 API,EXTERNAL,? 외부
+196,부가,medical_exception,OOO 증상 있는데 어디 가야 해?,medical_query,증상→병원 매핑,EXTERNAL,? 외부
+197,부가,medical_exception,OOO 병원 대기 몇 명이야?,medical_query,증상→병원 매핑,EXTERNAL,? 외부
+198,부가,medical_exception,OOO 병원 예약해 줘,medical_query,증상→병원 매핑,EXTERNAL,? 외부
+199,부가,fuel_price_query,유가 어때?,market_query,유가 API,EXTERNAL,? 외부
+200,부가,fuel_price_query,고급 휘발유 얼마야?,market_query,유가 API,EXTERNAL,? 외부
+201,부가,fuel_price_query,우리 동네 기름값 얼마야?,market_query,유가 API,EXTERNAL,? 외부
+202,부가,fuel_station_search,근처에서 제일 싼 주유소 어디야?,market_query,주유소 API,EXTERNAL,? 외부
+203,부가,fuel_station_search,가까운 저가 주유소 추천해줘,market_query,주유소 API,EXTERNAL,? 외부
+204,부가,fuel_price_query,오늘 주유해도 되나?,market_query,유가 API,EXTERNAL,? 외부
+205,부가,fuel_exception,오늘 최저가 할인하는 곳 있어?,market_query,유가 할인 정보,EXTERNAL,? 외부
+206,부가,fuel_exception,기다리면 휘발유 떨어질까?,market_query,유가 할인 정보,EXTERNAL,? 외부
+207,부가,fuel_exception,정유사 마진 얼마야?,market_query,유가 할인 정보,EXTERNAL,? 외부
+208,부가,stock_index_query,오늘 주식 어때?,market_query,지수 API,EXTERNAL,? 외부
+209,부가,stock_index_query,증시 어때?,market_query,지수 API,EXTERNAL,? 외부
+210,부가,stock_index_query,코스피 얼마야?,market_query,지수 API,EXTERNAL,? 외부
+211,부가,stock_index_query,오늘 코스닥 떨어졌어?,market_query,지수 API,EXTERNAL,? 외부
+212,부가,stock_price_query,삼성전자 얼마야?,market_query,종목 가격,EXTERNAL,? 외부
+213,부가,stock_price_query,하이닉스 올랐어?,market_query,종목 가격,EXTERNAL,? 외부
+214,부가,stock_price_query,네이버 종가 알려줘,market_query,종목 가격,EXTERNAL,? 외부
+215,부가,stock_exception,뭐 사야 돼?,market_query,주식 추천,EXTERNAL,? 외부
+216,부가,stock_exception,내 계좌 수익률 얼마야?,market_query,주식 추천,EXTERNAL,? 외부
+217,부가,stock_exception,OOO 매수 타이밍 알려줘,market_query,주식 추천,EXTERNAL,? 외부
+218,부가,community_query,골프장 예약해 줘,home_info,단지 시설/예약 서비스,REST,? REST
+219,부가,community_query,OOO 예약 취소해 줘,home_info,단지 시설/예약 서비스,REST,? REST

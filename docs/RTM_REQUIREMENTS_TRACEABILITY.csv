@@ -1,4 +1,4 @@
-번호,구분,intent,발화,NLU fn,AIDL/REST,채널,상태
+﻿번호,구분,intent,발화,NLU fn,AIDL/REST,채널,상태
 1,메인,home_status_query,지금 집 상태 어때?,home_info,remote_get_home_total_device,AIDL,✅
 2,메인,notification_query,오늘 새로운 알림 있어?,home_info,/v2/ai/announcements,REST,🔵 REST
 3,메인,time_query,지금 몇 시야?,home_info,월패드 자체 시계,SELF,⚪ 자체
