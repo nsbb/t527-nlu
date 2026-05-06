@@ -294,3 +294,47 @@ Python 시뮬 (핵심 규칙만): 468/491 = 95.3%
 ### 결정
 
 디바이스 NLU 93.5%는 실용 수준. 더 깊은 정밀화보다 **본격 통합** (STT→NLU→AIDL end-to-end)이 우선. PostRules 추가 정밀화는 점진적 작업.
+
+## 10차 — Raw vs PostRules 정밀 비교 + 부작용 격리
+
+NluBenchmarkActivity에 **raw 모드 옵션** 추가 (PostRules OFF). 491 골든셋에서 비교:
+
+```
+GOLDEN_RULES combo: 459/491 = 93.5% (PostRules ON)
+RAW combo:          460/491 = 93.7% (PostRules OFF)
+
+PostRules 효과:
+  ✓ raw 오답 → rules 정답 (도움): 0건
+  ✗ raw 정답 → rules 오답 (부작용): 1건 → "시스템 볼륨"
+  순효과: -1건 ⚠
+```
+
+### 부작용 1건 격리 + 수정
+
+원인: 자동 포팅 [12] "볼륨|선풍기|음악" 규칙이 home_info를 unknown으로 변경.
+
+수정: "시스템" 또는 query 키워드 있으면 보존
+```kotlin
+if (Regex("볼륨|선풍기|음악|...").containsMatchIn(text)) {
+    val isSystemQuery = Regex("시스템|얼마|뭐야|확인|알려|보여|상태").containsMatchIn(text)
+    if (!isSystemQuery && p.fn in setOf("home_info", "system_meta", ...)) {
+        // 미지원 처리
+    }
+}
+```
+
+### 수정 후 결과
+
+```
+GOLDEN_RULES combo: 460/491 = 93.7%  (raw와 동일)
+순효과: 0건 (도움 0, 부작용 0)
+```
+
+부작용 격리 완료. PostRules가 raw와 **동등한 정확도** 유지.
+
+### 의미
+
+491 골든셋은 일반 TS 시나리오 분포라 PostRules가 잡는 비유/완곡/STT 패턴이 적음 → 도움 0건이 정상.
+실 사용에서 비유 케이스가 들어오면 PostRules가 효과 발휘 (르엘 219 시나리오 검증에서 확인됨).
+
+핵심: **PostRules는 raw 모델을 손상시키지 않음**. 부작용 없는 안전 상태.
