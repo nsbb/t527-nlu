@@ -150,3 +150,47 @@ T527 NPU 데브킷 (51475789...) NLU 추론 성능:
   ├─ Latency: 18~25ms / 추론
   └─ 실시간성: STT(200ms) + NLU(20ms) + AIDL(100ms) ≈ 320ms 응답 가능
 ```
+
+## 6차 — Preprocess 모듈 통합 (V4)
+
+**Python `preprocess.py`의 296개 매핑 + 5개 regex sub을 JSON으로 export → Kotlin Preprocess.kt에서 로드 + 적용.**
+
+```
+T527 디바이스 V4:
+  combo: 94 / 99 = 94.9% (V3 91.9% → +3.0%p)
+  latency: 20ms / 추론 (preprocess 포함)
+  
+잡힌 3건:
+  ✓ '오늘날씨'         → '오늘 날씨' (공백 분리)
+  ✓ '불좀켜'          → '불 켜' (구어체 정리)
+  ✓ '안방 남방 올려줘'   → '안방 난방 올려줘' (STT 교정)
+  
+남은 5건 (모두 exec_type 차이):
+  - 간접등 켜줘 (clarify/none → clarify/none, dir 보정 필요)
+  - 어르신이 덥다고 하시네요 (direct → control_then_confirm)
+  - 이거 동굴이야? (control_then_confirm → query_then_judge)
+  - 등줄기가 서늘해 (direct → control_then_confirm)
+  - 안방 혹시 불 켜줘 (clarify → control_then_confirm)
+```
+
+## 종합 — 디바이스 NLU 진화 과정
+
+| 차수 | 구성 | combo | latency |
+|---|---|---|---|
+| V1 | raw 모델만 | 66.7% (10/15) | 17ms |
+| V2 | + 자동 포팅 87 + 수동 25 (회귀) | 93% (14/15) | 28ms |
+| V3 | + 안전 자동 36 + 수동 25 | 91.9% (91/99) | 18ms |
+| **V4** | **V3 + Preprocess (296 매핑)** | **94.9% (94/99)** | **20ms** |
+| 서버 | 132 규칙 + preprocess + ensemble | 98% (97/99) | 0.64ms |
+
+**3.1%p 잔차 = 모델 자체의 exec_type 미세 분류 한계.** 후처리로는 100% 도달 어렵고 재학습 필요.
+
+## 산출물
+
+```
+android_assets/stt_correction_v2.json       15.6KB (296 매핑 + 5 regex)
+PostRulesV3.kt + PostRules.kt               61개 규칙
+Preprocess.kt                               STT/공백 정규화
+NluBenchmarkActivity                        골든셋 99 자동 검증
+docs/T527_NLU_BENCHMARK_RESULT.md           벤치마크 진화 기록
+```
