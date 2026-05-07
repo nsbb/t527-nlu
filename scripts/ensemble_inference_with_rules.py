@@ -1892,6 +1892,12 @@ def apply_post_rules(preds, text):
             if preds['param_direction'] in ('none', 'off'):
                 preds['param_direction'] = 'on'
 
+    # v133: device control fn + 명확한 dir → exec=control_then_confirm 보정
+    # 모델이 종종 direct_respond로 잘못 예측. 비유 56개에서 +13건 회복.
+    _device_action = {'on','off','open','close','up','down','stop','set'}
+    if preds['fn'] in _device_fns and preds['param_direction'] in _device_action and preds['exec_type'] == 'direct_respond':
+        preds['exec_type'] = 'control_then_confirm'
+
     return preds
 
 
