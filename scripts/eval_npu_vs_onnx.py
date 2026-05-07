@@ -77,9 +77,24 @@ def main():
             print(f'  {i+1}/{N} done')
 
     bin_path = f'{out_dir}/inputs.bin'
+    bin_i16_path = f'{out_dir}/inputs_int16.bin'
     ref_path = f'{out_dir}/refs.json'
     with open(bin_path, 'wb') as f:
         f.write(bytes(bin_data))
+    # Also generate int16 inputs (for v46 int16 NB)
+    bin_i16 = bytearray()
+    SCALE = 2**15
+    for i in range(N):
+        # Re-tokenize and re-embed (faster than storing intermediate)
+        utt = data[i]['utterance']
+        pp = preprocess(utt)
+        enc = tok(pp, padding='max_length', max_length=32, truncation=True, return_tensors='np')
+        ids = enc['input_ids'].astype(np.int64)
+        emb = sess_emb.run(None, {'token_ids': ids})[0].astype(np.float32)
+        q = np.round(emb * SCALE).clip(-32768, 32767).astype(np.int16)
+        bin_i16 += q.tobytes()
+    with open(bin_i16_path, 'wb') as f:
+        f.write(bytes(bin_i16))
     with open(ref_path, 'w') as f:
         json.dump({'count': N, 'samples': refs}, f, ensure_ascii=False)
 
