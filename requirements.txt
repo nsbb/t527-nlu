@@ -1,0 +1,8 @@
+# Core
+torch>=2.0
+onnxruntime>=1.15
+numpy>=1.21
+transformers>=4.30
+
+# CI/Test
+pytest>=7.0
