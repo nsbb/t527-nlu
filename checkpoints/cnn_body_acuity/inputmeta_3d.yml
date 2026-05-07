@@ -1,0 +1,22 @@
+input_meta:
+  databases:
+  - path: dataset3d.txt
+    type: TEXT
+    ports:
+    - lid: embedded_38
+      category: tensor
+      dtype: float32
+      sparse: false
+      layout: nhc
+      shape:
+      - 1
+      - 32
+      - 768
+      fitting: scale
+      preprocess:
+        reverse_channel: false
+        scale: 1.0
+        preproc_node_params:
+          add_preproc_node: false
+          preproc_type: TENSOR
+      redirect_to_output: false
