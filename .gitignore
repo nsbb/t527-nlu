@@ -17,8 +17,17 @@ pure_cnn*.json
 minilm_*.json
 multi_minilm_*.json
 
-# Large model checkpoints
-checkpoints/cnn_24L_best.pt
+# Large model checkpoints — 모두 ignore (학습 산출물, 재현 가능)
+*.pt
+*.pth
+*.h5
+*.hdf5
+*.ckpt
+*.safetensors
+*.npy
+checkpoints/cnn_body_*acuity/calib*/
+checkpoints/cnn_body_*acuity/wksp_*/
+checkpoints/npu_test_inputs/
 
 # Experiments (not tracked)
 experiments/
