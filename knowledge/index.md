@@ -18,7 +18,7 @@
 
 ## Decisions
 
-- (TBD)
+- [wiki/decisions/regression-harness.md](wiki/decisions/regression-harness.md) — pre-commit 회귀 체크 hook (0.4초, 99셋+219셋, -2%p 임계값)
 
 ## Evaluations
 

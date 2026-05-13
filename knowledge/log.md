@@ -1,5 +1,17 @@
 # t527-nlu Knowledge Log
 
+## 2026-05-13 (오후)
+
+- **회귀 테스트 하네스 도입** — pre-commit hook + ci_quick_check.py
+  - 트리거: NLU 영향 있는 파일 변경 시 자동 실행
+  - 평가: golden_99 + 르엘 219 (~0.4초)
+  - Baseline: `data/ci_baseline_quick.json`
+  - Threshold: -2%p 이상 떨어지면 commit BLOCK
+- 초기 baseline 측정값:
+  - golden_99: fn 94.9% / combo 83.8%
+  - 르엘 219: fn 82.2% / combo 59.4%
+- 새 페이지: `wiki/decisions/regression-harness.md`
+
 ## 2026-05-13
 
 - **Knowledge wiki 초기화** — 팀 wiki (`wewonnim/t527_llm_wiki`) schema 그대로 따름
