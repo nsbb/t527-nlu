@@ -11,6 +11,7 @@
 ## Models
 
 - [wiki/models/cnn-multihead-v72.md](wiki/models/cnn-multihead-v72.md) — Production NLU 모델 (v28+v72 ensemble, 서버)
+- [wiki/models/version-matrix.md](wiki/models/version-matrix.md) — **전체 버전 매트릭스** (학습 모델 v1~v72 + 앙상블 + 룰 v100~v133/v73~v78 + NPU NB + 위치별 사용)
 
 ## Issues
 
