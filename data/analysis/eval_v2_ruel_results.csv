@@ -10,7 +10,7 @@ no,cat,utt,expected,actual,fn,exec,dir,room,value
 9,통화/로비,문 열어,"(기존 공동현관 문 열림 화면, 응답)","네, 공동현관 문을 열었습니다.",door_control,control_then_confirm,open,none,
 10,제어/조명,주방 불 켜져있어?,현재 주방 조명은 모두 꺼져 있습니다.,현재 주방 조명은 모두 꺼져 있습니다.,light_control,query_then_respond,none,kitchen,
 11,제어/조명,주방 불 켜져있어?,현재 주방 조명은 다운라이트만 켜져 있습니다.,현재 주방 조명은 모두 꺼져 있습니다.,light_control,query_then_respond,none,kitchen,
-12,제어/조명,(공간명 지정이 없을 때) 불 좀 켜줘,"월패드로는 거실과 주방 조명 조절이 가능해요, 조절이 필요한 공간명으로 요청해주세요","월패드로는 거실과 주방 조명 조절이 가능해요, 조절이 필요한 공간명으로 요청해주세요",light_control,direct_respond,on,none,
+12,제어/조명,(공간명 지정이 없을 때) 불 좀 켜줘,"월패드로는 거실과 주방 조명 조절이 가능해요, 조절이 필요한 공간명으로 요청해주세요","월패드로는 거실과 주방 조명 조절이 가능해요, 조절이 필요한 공간명으로 요청해주세요",light_control,control_then_confirm,on,none,
 13,제어/조명,거실 조명 은은하게,"네, 거실 조명을 조절했습니다 (밝기 1단계)","네, 거실 조명을 조절했습니다",light_control,control_then_confirm,down,living,"('enum', 'weak')"
 14,제어/조명,거실 '커튼등,"네, 거실 '커튼등/간접등' 을 켰습니다 (회로수, 월패드 적용명칭에 따라 종류별로 ON/OFF)","네, 거실 커튼등을 켰습니다.",light_control,control_then_confirm,on,living,
 15,제어/조명,식탁,"네, 식탁/주방 '다운라이트' 를 켰습니다 (회로수, 월패드 적용명칭에 따라 종류별로 ON/OFF)",죄송합니다. 해당 요청은 아직 지원하지 않거나 잘 알아듣지 못했어요. 다시 말씀해주시겠어요?,unknown,direct_respond,none,none,
@@ -18,7 +18,7 @@ no,cat,utt,expected,actual,fn,exec,dir,room,value
 17,제어/조명,거실이 좀 어두침침한데?,(현재 거실 조명 밝기는 60% 또는 6단계 화면 팝업) 조명을 최대 밝기로 켰습니다.,조명을 최대 밝기로 켰습니다.,light_control,control_then_confirm,on,living,
 18,제어/조명,조명 예약 뭐있어?,전체 조명이 매일 밤 10시 취침모드로 설정되어 있습니다. (몇시 몇분 또는 몇분뒤 실행하는 스케쥴 창 등록정보에 따라서 TTS처리),전체 조명이 매일 밤 10시 취침모드로 설정되어 있습니다.,light_control,query_then_respond,none,none,
 19,제어/조명,취침모드 설정된,매일 밤 10시 [1단계 밝기] 로 켜지도록 설정되어 있습니다.,매일 밤 10시 [1단계 밝기] 로 켜지도록 설정되어 있습니다.,light_control,query_then_respond,none,none,
-20,제어/난방,지금 온도 어때?,현재 실내 온도는 23도이며 난방 설정은 25도로 되어 있습니다.,현재 실내 온도는 23도이며 난방 설정은 25도로 되어 있습니다.,heat_control,query_then_respond,none,none,
+20,제어/난방,지금 온도 어때?,현재 실내 온도는 23도이며 난방 설정은 25도로 되어 있습니다.,현재 실내 온도는 23도이며 난방 설정은 25도로 되어 있습니다.,home_info,query_then_respond,none,none,
 21,제어/난방,전체 난방 켜 줘,"네, 전체 난방을 켰습니다","네, 전체 난방을 켰습니다",heat_control,control_then_confirm,on,all,
 22,제어/난방,각 침실 난방 켜 줘,"네, 각 침실 난방을 켰습니다","네, 각 침실 난방을 켰습니다",heat_control,control_then_confirm,on,bedroom_sub,
 23,제어/난방,전체 난방 좀 올려줘,"네, 전체 난방 설정 온도를 22도에서 24도로 올리겠습니다.","네, 전체 난방 설정 온도를 22도에서 24도로 올리겠습니다.",heat_control,control_then_confirm,up,all,
@@ -41,10 +41,10 @@ no,cat,utt,expected,actual,fn,exec,dir,room,value
 40,제어/에어컨,거실 에어컨 줄여줘,"네, 거실 에어컨 풍량을 강풍에서 중풍으로 낮춥니다.","네, 거실 에어컨 풍량을 강풍에서 중풍으로 낮춥니다.",ac_control,control_then_confirm,down,living,
 41,제어/에어컨,거실 에어컨 풍향 고정해 줘,"네, 거실 에어컨 풍향을 회전에서 고정으로 변경합니다.","네, 거실 에어컨 풍향을 회전에서 고정으로 변경합니다.",ac_control,control_then_confirm,set,living,
 42,제어/에어컨,자고있을 때 에어컨 자동모드로 해 줘,"네, 취침모드 오후 0시 부터 기상모드 오전 7시 전까지 전체 에어컨을 자동모드로 운전합니다.","네, 취침모드 오후 0시 부터 기상모드 오전 7시 전까지 전체 에어컨을 자동모드로 운전합니다.",ac_control,control_then_confirm,set,none,
-43,제어/에어컨,송풍해 줘,에어컨을 송풍으로 제어할 공간명을 포함하여 다시 말씀해주세요,에어컨을 송풍으로 제어할 공간명을 포함하여 다시 말씀해주세요,ac_control,clarify,none,none,
+43,제어/에어컨,송풍해 줘,에어컨을 송풍으로 제어할 공간명을 포함하여 다시 말씀해주세요,에어컨을 송풍으로 제어할 공간명을 포함하여 다시 말씀해주세요,ac_control,clarify,set,none,
 44,제어/에어컨,전체 다 켜,"저는 조명, 난방, 에어컨, 환기 시스템을 켤 수 있어요. 필요한 것을 정해서 말씀해주세요","저는 조명, 난방, 에어컨, 환기 시스템을 켤 수 있어요. 필요한 것을 정해서 말씀해주세요",ac_control,clarify,none,all,
 45,제어/에어컨,전기요금 아끼게 해 줘,자동 절전 설정은 지원하지 않습니다. 냉난방기 온도 조정을 권장합니다.,자동 절전 설정은 지원하지 않습니다. 냉난방기 온도 조정을 권장합니다.,unknown,direct_respond,none,none,
-46,제어/에어컨,에어컨 고장났어?,에어컨 이상감지 정보는 할 수 없습니다. 관리사무소에 문의해주세요,에어컨 이상감지 정보는 할 수 없습니다. 관리사무소에 문의해주세요,ac_control,direct_respond,none,none,
+46,제어/에어컨,에어컨 고장났어?,에어컨 이상감지 정보는 할 수 없습니다. 관리사무소에 문의해주세요,에어컨 이상감지 정보는 할 수 없습니다. 관리사무소에 문의해주세요,unknown,direct_respond,none,none,
 47,제어/환기,지금 환기 되고있나?,"네, 현재 환기 장치는 동작 중입니다","네, 현재 환기 장치는 동작 중입니다",vent_control,query_then_respond,none,none,
 48,제어/환기,지금 환기 상태 어때?,현재 내부 순환 모드로 켜져있고 풍량은 약풍으로 설정돼 있습니다,현재 내부 순환 모드로 켜져있고 풍량은 약풍으로 설정돼 있습니다,vent_control,query_then_respond,none,none,
 49,제어/환기,환기 모드 뭐야?,현재 환기 운전모드는 자동 운전 입니다.,현재 환기 운전모드는 자동 운전 입니다.,vent_control,direct_respond,none,none,
@@ -52,7 +52,7 @@ no,cat,utt,expected,actual,fn,exec,dir,room,value
 51,제어/환기,우리집 환기시스템은 어디꺼야?,우리집 환기 시스템은 독일 호발입니다.,우리집 환기 시스템은 독일 호발입니다.,vent_control,query_then_respond,none,none,
 52,제어/환기,공기가 답답하네,실내 환기시스템을 켰습니다.,실내 환기시스템을 켰습니다.,vent_control,query_then_judge,on,none,
 53,제어/환기,환기 꺼줘,"네, 실내 환기시스템 전원을 끕니다.","네, 실내 환기시스템 전원을 끕니다.",vent_control,control_then_confirm,off,none,
-54,제어/환기,환기 세게 틀어줘,"네, 실내 환기시스템 풍량을 강풍으로 조절했습니다.","네, 실내 환기시스템 풍량을 강풍으로 조절했습니다.",vent_control,control_then_confirm,on,none,"('enum', 'strong')"
+54,제어/환기,환기 세게 틀어줘,"네, 실내 환기시스템 풍량을 강풍으로 조절했습니다.","네, 실내 환기시스템 풍량을 강풍으로 조절했습니다.",vent_control,control_then_confirm,up,none,"('enum', 'strong')"
 55,제어/환기,환기 모드 바꾸고 싶어,현재 환기시스템 운전모드는 OO 입니다. 변경할 운전모드를 말씀해주세요.,현재 환기시스템 운전모드는 OO 입니다. 변경할 운전모드를 말씀해주세요.,vent_control,control_then_confirm,set,none,
 56,제어/환기,환기 필터 주문해줘,현재 환기시스템 필터 구매는 지원하지 않습니다. 관리사무소에 문의해주세요. (고정값),현재 환기시스템 필터 구매는 지원하지 않습니다. 관리사무소에 문의해주세요.,unknown,direct_respond,none,none,
 57,제어/환기,환기 고쳐줘,현재 환기 기기 진단은 지원하지 않습니다. 관리사무소에 문의해주세요. (고정값),현재 환기 기기 진단은 지원하지 않습니다. 관리사무소에 문의해주세요.,unknown,direct_respond,none,none,
@@ -68,7 +68,7 @@ no,cat,utt,expected,actual,fn,exec,dir,room,value
 67,제어/전동커튼,전동커튼 열어줘,전동커튼을 열고자 하는 공간명을 포함하여 다시 말씀해주세요,전동커튼을 열고자 하는 공간명을 포함하여 다시 말씀해주세요,curtain_control,clarify,open,none,
 68,제어/전동커튼,거실 전동커튼 열어줘,네 거실 전동커튼을 열고 있습니다,네 거실 전동커튼을 열고 있습니다,curtain_control,control_then_confirm,open,living,
 69,제어/전동커튼,거실 전동커튼 닫아줘,네 거실 전동커튼을 닫고 있습니다,네 거실 전동커튼을 닫고 있습니다,curtain_control,control_then_confirm,close,living,
-70,제어/전동커튼,거실 전동커튼 열기 멈춰줘,네 거실 전동커튼 열림을 중단시켰습니다,네 거실 전동커튼 열림을 중단시켰습니다,curtain_control,control_then_confirm,open,living,
+70,제어/전동커튼,거실 전동커튼 열기 멈춰줘,네 거실 전동커튼 열림을 중단시켰습니다,네 거실 전동커튼 열림을 중단시켰습니다,curtain_control,control_then_confirm,stop,living,
 71,제어/전동커튼,기상할 때 전체 전동커튼 열기 해 줘,네 내일부터 모닝콜이 울리는 시간에 전체 전동커튼 열겠습니다,네 내일부터 모닝콜이 울리는 시간에 전체 전동커튼 열겠습니다,curtain_control,control_then_confirm,open,all,
 72,제어/전동커튼,매일 밤 저녁 9시에 침실 전동커튼을 닫아줘,네 매일 오후 9시 침실 전동커튼을 닫겠습니다.,네 매일 오후 9시 침실 전동커튼을 닫겠습니다.,curtain_control,control_then_confirm,close,bedroom_sub,"('hour', 9)"
 73,방범/외출/재택,외출모드 설정할 수 있어?,"네, 외출 및 재택방범 메뉴에서 실행 및 대기시간을 설정할 수 있습니다.","네, 외출 및 재택방범 메뉴에서 실행 및 대기시간을 설정할 수 있습니다.",security_mode,direct_respond,none,none,
@@ -77,7 +77,7 @@ no,cat,utt,expected,actual,fn,exec,dir,room,value
 76,방범/외출/재택,외출 설정 복귀 시간 설정가능해?,"네, 외출 복귀 대기 시간은 30초, 1분, 2분, 3분 중에 설정할 수 있습니다.","네, 외출 복귀 대기 시간은 30초, 1분, 2분, 3분 중에 설정할 수 있습니다.",security_mode,direct_respond,none,none,
 77,방범/외출/재택,외출 설정 복귀 시간이 뭐야?,외출복귀 대기시간은 귀가 시 월패드에 비밀번호를 입력하여 외출방범을 해제하기까지 소요되는 시간을 의미합니다.,외출복귀 대기시간은 귀가 시 월패드에 비밀번호를 입력하여 외출방범을 해제하기까지 소요되는 시간을 의미합니다.,security_mode,direct_respond,none,none,
 78,방범/외출/재택,외출모드 실행해 줘,"네, 외출 감지 0초/0분 후 외출모드로 전환됩니다.","네, 외출 감지 0초/0분 후 외출모드로 전환됩니다.",security_mode,control_then_confirm,on,none,
-79,방범/외출/재택,외출 후 복귀할 때 일괄소등 해제 및 환기시스템 켜 줘,"네, 외출복귀 시 일괄소등 해제, 환기시스템 켜기가 설정되었습니다.","네, 외출복귀 시 일괄소등 해제, 환기시스템 켜기가 설정되었습니다.",security_mode,control_then_confirm,on,none,
+79,방범/외출/재택,외출 후 복귀할 때 일괄소등 해제 및 환기시스템 켜 줘,"네, 외출복귀 시 일괄소등 해제, 환기시스템 켜기가 설정되었습니다.","네, 외출복귀 시 일괄소등 해제, 환기시스템 켜기가 설정되었습니다.",light_control,control_then_confirm,off,none,
 80,방범/외출/재택,나 지금 나갈건데,"네, (외출모드 설정값 브리핑) 외출 감지 0초/0분 후 엘리베이터 호출 및 일괄 소등을 실행합니다.","네,  외출 감지 0초/0분 후 엘리베이터 호출 및 일괄 소등을 실행합니다.",security_mode,control_then_confirm,on,none,
 81,에너지/원격 검침,우리집 에너지 사용량 어때?,최근 3개월 간 에너지 사용량이 감소하고 있습니다.,최근 3개월 간 에너지 사용량이 감소하고 있습니다.,energy_query,query_then_respond,none,none,
 82,에너지/원격 검침,우리집 전기를 가장 많이 쓴 달은 언제야?,최근 3개월 중 8월 사용량이 가장 높습니다.,최근 3개월 중 8월 사용량이 가장 높습니다.,energy_query,query_then_respond,none,none,
@@ -109,14 +109,14 @@ no,cat,utt,expected,actual,fn,exec,dir,room,value
 108,설정/환경설정,절전모드 작동시간은 어떻게 조절할 수 있어?,"절전모드 작동시간은 60초, 120초, 180초 3가지 중 선택 가능합니다.","절전모드 작동시간은 60초, 120초, 180초 3가지 중 선택 가능합니다.",home_info,direct_respond,none,none,
 109,설정/환경설정,알림음은 변경할 수 있어?,알림음은 변경할 수 없습니다. 이벤트 발생 시 알림음 켜고 끄기만 가능합니다.,알림음은 변경할 수 없습니다. 이벤트 발생 시 알림음 켜고 끄기만 가능합니다.,home_info,direct_respond,none,none,
 110,설정/환경설정,통화 알림음은 변경할 수 있어?,통화 알림음은 변경할 수 없습니다. 통화 알림음은 켜고 끄기만 가능합니다.,통화 알림음은 변경할 수 없습니다. 통화 알림음은 켜고 끄기만 가능합니다.,home_info,direct_respond,none,none,
-111,설정/환경설정,AS,월패드 환경설정 메뉴에서 A/S센터 전화번호를 확인 후 유선 접수하시면 됩니다.,월패드 환경설정 메뉴에서 A/S센터 전화번호를 확인 후 유선 접수하시면 됩니다.,home_info,query_then_respond,none,none,
+111,설정/환경설정,AS,월패드 환경설정 메뉴에서 A/S센터 전화번호를 확인 후 유선 접수하시면 됩니다.,월패드 환경설정 메뉴에서 A/S센터 전화번호를 확인 후 유선 접수하시면 됩니다.,unknown,direct_respond,none,none,
 112,설정/환경설정,이사갈 때 정보 삭제하고 싶어,월패드 환경설정 메뉴에서 이사 시 월패드 정보를 삭제할 수 있는 팝업이 뜹니다.,월패드 환경설정 메뉴에서 이사 시 월패드 정보를 삭제할 수 있는 팝업이 뜹니다.,home_info,query_then_respond,none,none,
 113,설정/환경설정,이사갈 때 삭제할 수 있는 정보가 어떤게 있어?,"월패드 정보 삭제 시 일정표, 등록된 모바일 기기, 카드, 차량 정보, 방문자 정보, 통화 내역이 삭제됩니다.","월패드 정보 삭제 시 일정표, 등록된 모바일 기기, 카드, 차량 정보, 방문자 정보, 통화 내역이 삭제됩니다.",home_info,direct_respond,none,none,
 114,설정/환경설정,월패드 볼륨을 최대로 키워줘,시스템 볼륨을 0단계에서 10단계로 조절합니다.,시스템 볼륨을 0단계에서 10단계로 조절합니다.,home_info,control_then_confirm,up,none,"('enum', 'max')"
 115,설정/환경설정,월패드 화면을 어둡게 해줘,월패드 화면 밝기를 1단계로 조절합니다.,월패드 화면 밝기를 1단계로 조절합니다.,home_info,control_then_confirm,down,none,
 116,설정/환경설정,거실 조명이 밝을 때 월패드 화면이 어두워졌으면 좋겠어,죄송합니다. 해당 기능은 지원하지 않는 기능입니다.,죄송합니다. 해당 기능은 지원하지 않는 기능입니다.,system_meta,direct_respond,none,living,
 117,설정/환경설정,월패드 화면을 오전 7시부터 오후 4시까지 어둡게 해줘,"네, 오전 7시부터 오후 4시까지 월패드 화면 밝기를 2단계로 설정합니다.","네, 오전 7시부터 오후 4시까지 월패드 화면 밝기를 2단계로 설정합니다.",home_info,control_then_confirm,down,none,"('hour', 7)"
-118,설정/환경설정,(시간대별 자동볼륨 시나리오 반영) 월패드 볼륨을 최대로 키워줘,지금은 에티켓모드 시간대로 시스템 볼륨을 키울 수 없습니다.,지금은 에티켓모드 시간대로 시스템 볼륨을 키울 수 없습니다.,home_info,direct_respond,none,none,"('enum', 'max')"
+118,설정/환경설정,(시간대별 자동볼륨 시나리오 반영) 월패드 볼륨을 최대로 키워줘,지금은 에티켓모드 시간대로 시스템 볼륨을 키울 수 없습니다.,지금은 에티켓모드 시간대로 시스템 볼륨을 키울 수 없습니다.,home_info,control_then_confirm,up,none,"('enum', 'max')"
 119,설정/비밀번호 변경,현재 월패드 비밀번호 뭐야?,죄송합니다. 세대 보안을 위해 비밀번호는 음성으로 안내할 수 없습니다.,죄송합니다. 세대 보안을 위해 비밀번호는 음성으로 안내할 수 없습니다.,system_meta,direct_respond,none,none,
 120,설정/비밀번호 변경,월패드 비밀번호 알아서 바꿔줘,비밀번호 관련 정보는 세대 정보 보호 대상입니다. 월패드 화면에서 직접 진행해주세요,비밀번호 관련 정보는 세대 정보 보호 대상입니다. 월패드 화면에서 직접 진행해주세요,system_meta,direct_respond,none,none,
 121,설정/모닝콜,모닝콜 설정하면 어떻게 되는거야?,모닝콜이 울릴 때 월패드 화면에 팝업이 뜨고 알림음이 함께 나옵니다.,모닝콜이 울릴 때 월패드 화면에 팝업이 뜨고 알림음이 함께 나옵니다.,schedule_manage,query_then_respond,none,none,

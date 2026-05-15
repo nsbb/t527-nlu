@@ -63,11 +63,14 @@ NPU 실측 (2026-05-07):
 
 ### E. 위치별 현재 사용 (3 곳 gap)
 
-| 위치 | 모델 | 룰 | 르엘 219 |
+| 위치 | 모델 | 룰 | 르엘 219 (진짜 GT) |
 |---|---|---|---|
-| **서버 production** (`deployment_pipeline_v2.py`) | v28+v72 ensemble | v78 | **94.06%** |
-| 디바이스 CPU (`t527_smart_v2` 앱) | v28+v46 ensemble | PostRulesV4 (v133 일부) | ~81% |
-| 디바이스 NPU | v46 단독 cnn_body int16 | PostRulesV4 | **60.7%** |
+| **서버 production** (`deployment_pipeline_v2.py`) | v28+v72 ensemble | v78 | **fn 96.3% / combo 93.2%** |
+| 디바이스 CPU (`t527_smart_v2` 앱) | v28+v46 ensemble | PostRulesV4 (v133 일부) | (미측정) |
+| 디바이스 NPU v72 | v72 단독 cnn_body int16 | PostRulesV4 | **fn 93.6% / combo 89.0%** (2026-05-15) |
+| 디바이스 NPU v46 | v46 단독 cnn_body int16 | PostRulesV4 | (자동매핑 GT 60.7% — 진짜 GT 미측정) |
+
+⚠️ 이전 NPU 측정값 60.7%는 **자동매핑 GT** (삭제된 golden_ruel_219.json, 라벨 38% 오류) 기준. 진짜 GT (gt_known_v2 + gt_unknown 219) 로 v72 NB 재측정 시 **combo 89.0%**.
 
 ## Known-good settings
 

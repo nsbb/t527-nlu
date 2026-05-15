@@ -6,7 +6,12 @@
 
 ```
 data/
-├── golden/    평가 셋 (15) — gt_*, golden_*, test_suite_*
+├── golden/    평가 셋 (5) — 르엘 진짜 GT + TS 3043 + 학습시드 + 회사원본
+│   ├── gt_known_scenarios_v2.json   (204) ★ production GT
+│   ├── gt_unknown_scenarios.json    (15)  ★ production GT
+│   ├── test_suite.json              (3043) 학습 회귀 체크용
+│   ├── gt_seeds_integrated.json     학습 데이터 시드
+│   └── test_ruel.csv                회사 원본 csv (응답 평가)
 ├── train/     학습 데이터 (33) — train_*.json, val_*.json
 ├── raw/       회사 원본 + 외부 데이터 (16) — 르엘 csv, AIDL xlsx, ko-electra/massive/ha
 ├── augment/   증강 소스 (4) — indirect, paraphrase, STT 변형
@@ -14,6 +19,11 @@ data/
 ├── ci/        CI baseline (2)
 └── archive/   레거시 (79)
 ```
+
+2026-05-15 추가: data/golden/ 안의 자동 생성 시험용 파일 10개 삭제.
+- 삭제: `golden_test_100/500.json`, `golden_indirect_55.json`, `gt_known_scenarios.json` (v1), `gt_unknown_scenarios_v2.json` (중복), `test_final_v9.json`, `test_suite_before_fix*.json`, `test_suite_suspects.json`, `test_suite_v67.json`
+- 사유: 이름이 "golden_*"이라 진짜 production GT처럼 보였지만 자동 생성 시험용 → 측정값이 매번 헷갈렸음.
+- ci_quick_check.py / ci_regression_check.py 도 219만 평가하도록 갱신.
 
 ## Known-good settings
 

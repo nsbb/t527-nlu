@@ -1,4 +1,22 @@
 # t527-nlu Knowledge Log
+
+## 2026-05-15 (밤) — NPU 진짜 GT 219 측정 ⭐
+
+- **NPU v72 NB + rule, 진짜 GT 219 (gt_known_v2 + gt_unknown)**: fn 93.6% / **combo 89.0%** / 11.72ms
+- 서버 ONNX (93.2%) 대비 -4.2%p — int16 양자화 + 단일 NB ensemble 효과 손실 합산
+- **이전 60.7% 측정은 자동매핑 GT (삭제된 golden_ruel_219.json) 기준 — 진짜 GT로는 +28%p 폭증**
+- fn 오답 8건: 볼륨/화면 밝기(home_info↔system_meta) 5건 + 모호 케이스 3건
+- 새 source-note: `raw/source-notes/src-npu-real-gt-219-20260515.md`
+
+## 2026-05-15 (밤) — data/golden/ 정리
+
+- **자동 생성 시험용 셋 10개 삭제**: golden_test_100/500, golden_indirect_55, test_final_v9, test_suite_before_fix*, test_suite_suspects, test_suite_v67, gt_known_scenarios (v1), gt_unknown_scenarios_v2 (중복)
+- 남은 5개: **gt_known_v2 (204) + gt_unknown (15) = production GT 219** / test_suite.json (3043, 회귀용) / gt_seeds_integrated.json (학습 시드) / test_ruel.csv (회사 원본)
+- ci_quick_check.py: golden_99 평가 제거, 219만 측정
+- ci_regression_check.py: GOLDEN_SETS = test_suite + gt_known_v2 + gt_unknown 3개로 축소
+- 새 baseline: ruel_219 fn 96.3% / combo 93.2% (단일 측정값)
+- 사유: 이름이 "golden_*"이라 진짜 GT처럼 보였지만 자동 생성 시험용 → 매번 60% vs 93% 혼동의 근원
+
 ## 2026-05-15 (저녁)
 
 - **golden_ruel_219.json 삭제** — intent 91개 자동 매핑이라 진짜 GT (gt_known_v2 + gt_unknown)와 라벨 38% 차이. 사용자 매번 측정 답 달라진 원인.

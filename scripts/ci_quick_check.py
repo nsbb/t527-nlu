@@ -27,12 +27,11 @@ ONNX_PATH = ROOT / 'checkpoints' / 'nlu_v28_v72_ensemble.onnx'
 TOK_PATH  = ROOT / 'tokenizer'
 
 # 진짜 production GT — gt_known_v2 + gt_unknown = 219개 사람 검증된 라벨
-# (golden_ruel_219.json 은 자동 매핑이라 라벨 38% 오류, 사용 안 함)
+# (다른 golden_test_*, golden_indirect_* 는 자동 생성 시험용 → 2026-05-15 폐기)
 GOLDEN_RUEL_FILES = [
     ROOT / 'data' / 'golden' / 'gt_known_scenarios_v2.json',
     ROOT / 'data' / 'golden' / 'gt_unknown_scenarios.json',
 ]
-GOLDEN_99 = ROOT / 'data' / 'golden' / 'golden_test_100.json'
 
 HEAD_FN = ['light_control','heat_control','ac_control','vent_control','gas_control',
            'door_control','curtain_control','elevator_call','security_mode',
@@ -88,9 +87,7 @@ def main():
     tok = AutoTokenizer.from_pretrained(str(TOK_PATH))
 
     results = {}
-    if GOLDEN_99.exists():
-        results['golden_99'] = eval_set(sess, tok, load_set(GOLDEN_99))
-    # ruel 219 = gt_known_v2 + gt_unknown
+    # ruel 219 = gt_known_v2 + gt_unknown (단일 production GT)
     ruel_items = []
     for p in GOLDEN_RUEL_FILES:
         if p.exists():

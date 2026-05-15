@@ -6,11 +6,12 @@ T527 월패드용 한국어 NLU 시스템. multi-head CNN (20 fn × 5 exec × 9 
 
 **중요: 서버 production과 디바이스 production이 다른 모델을 쓰고 있다.**
 
-| 위치 | 모델 | 정확도 (GT-219 ref) |
+| 위치 | 모델 | 정확도 (진짜 GT-219, gt_known_v2+unknown) |
 |---|---|---|
-| 서버 (`deployment_pipeline_v2.py`) | **v28+v72 ensemble** | HANDOFF 주장 94.06% combo (rule 포함, 미검증) |
-| 디바이스 (`t527_smart_v2` 앱) | **v28+v46 ensemble** (110MB ONNX) | raw 60.3% combo, +rule TBD |
-| 디바이스 NPU (`cnn_body_v46_int16.nb`) | **v46 단독 CNN body** (int16) | NPU+rule 60.7% combo (직접 측정 2026-05-07) |
+| 서버 (`deployment_pipeline_v2.py`) | **v28+v72 ensemble** + rule | **fn 96.3% / combo 93.2%** (ci_quick_check 실측) |
+| 디바이스 (`t527_smart_v2` 앱) | **v28+v46 ensemble** (110MB ONNX) | (진짜 GT 미측정) |
+| 디바이스 NPU (`cnn_body_v72_int16.nb`) | **v72 단독 CNN body** (int16) + rule | **fn 93.6% / combo 89.0%** (2026-05-15 실측, 11.7ms) |
+| 디바이스 NPU (`cnn_body_v46_int16.nb`) | v46 단독 CNN body (int16) + rule | (이전 60.7%는 자동매핑 GT 기준 — 진짜 GT 재측정 필요) |
 
 → 디바이스가 서버보다 한 세대 뒤처짐. v72 ONNX 디바이스 배포 + v72 NB 변환이 미완 작업.
 

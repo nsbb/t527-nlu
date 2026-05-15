@@ -41,13 +41,14 @@ T527 NPU에서 CNN body 추론. NB 파일은 `cnn_body_v46_int16.nb` (2.7MB, int
 ## Open issues
 
 - ✅ v72 cnn_body NB 변환 완료 (2026-05-15, 10/10 ONNX 일치 검증)
-- v72 NB 정량 정확도 측정 미완 — golden 99/491/219 batch 평가 시 ART JIT crash 재발 (이전 v46 NB 491에서 본 것과 동일 패턴)
-- ART crash 해결책 후보: batch 분할 + GC, embedding mmap, ONNX session 해제
-- 정확도 측정 결과:
-  - Golden 99: fn 100% / combo 89.9%
-  - Golden 491: fn 98.6% / combo 92.7% (ONNX 95.5% 대비 -2.8%p)
-  - 르엘 219: fn 82.2% / combo 60.7% (ONNX 60.3% 대비 +0.4%p)
-- 491 셋 batch 추론에서 ART JIT thread SIGSEGV crash 발생 (메모리 압박 추정, 미해결)
+- ✅ v72 NB 진짜 GT 219 측정 (2026-05-15, 25 batch + GC):
+  - **fn 93.6% / exec 95.9% / dir 94.5% / combo 89.0%** (11.72ms/추론)
+  - ONNX agreement: fn 96.3%, combo 91.3%
+  - 서버 ONNX (combo 93.2%) 대비 -4.2%p (int16 양자화 + 단일 NB ensemble 효과 손실 합산)
+- ⚠️ 이전 NPU 측정값 (60.7%)은 **자동매핑 GT** (`golden_ruel_219.json`, 삭제됨, 라벨 38% 오류) 기준. 진짜 GT (gt_known_v2 + gt_unknown) 로 재측정 시 +28%p
+- 491 batch 추론 ART JIT crash 미해결 (25 batch + GC도 부족)
+- fn 오답 8건 중 5건이 home_info ↔ system_meta 모호 경계 (볼륨/화면 밝기)
+- 다음 단계: v28 cnn_body int16 NB 변환 + JNI head별 선택 → production v72 ensemble 재현 → 93%대 회복 시도
 - ARM NEON SIMD quantize 적용 시 5ms 미만 가능 (미적용)
 
 ## Related sources

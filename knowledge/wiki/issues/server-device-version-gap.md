@@ -10,11 +10,12 @@
 | 디바이스 (`t527_smart_v2` 앱) | **v28+v46 ensemble** | d33228b64544ff09deb13916e2494370 |
 | NPU NB (`/data/local/tmp/cnn_body_v46_int16.nb`) | **v46 단독 cnn_body int16** | (NB는 md5 무의미) |
 
-- 서버는 v72까지 진척 (간접표현 20/21, GT-219 94.06% combo with rule 주장)
-- 디바이스는 4월 20일 v46 ensemble 그대로 멈춤
-- NPU는 v46 단독 → 가장 뒤처짐
+- 서버는 v72까지 진척, 진짜 GT 219 실측 **combo 93.2% / fn 96.3%** (2026-05-15 ci_quick_check)
+- 디바이스 CPU는 4월 20일 v46 ensemble 그대로 멈춤 (진짜 GT 미측정)
+- 디바이스 NPU에 v72 NB 추가됨 → 진짜 GT **combo 89.0% / fn 93.6%** (2026-05-15 NpuClassifierFullEval)
+- 서버 ↔ NPU gap: -4.2%p (int16 양자화 + 단일 NB ensemble 효과 손실)
 
-영향: 매 작업마다 "v46 맞아 v72 맞아?" 혼동 발생. 정확도 측정 시 어느 위치 기준인지 매번 다름 (NPU 60.7% vs 서버 94.06% 주장).
+영향: 매 작업마다 "v46 맞아 v72 맞아?" 혼동 발생했음. 이전 NPU 60.7% 측정값은 **자동매핑 GT** (삭제됨) 기준이었던 게 2026-05-15 확정. 진짜 GT (gt_known_v2 + gt_unknown 219) 로 통일.
 
 ## Known-good settings
 
