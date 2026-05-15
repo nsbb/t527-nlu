@@ -29,6 +29,8 @@
 
 - [raw/catalog.tsv](raw/catalog.tsv) — Source 인덱스
 - [raw/source-notes/src-model-version-gap-20260513.md](raw/source-notes/src-model-version-gap-20260513.md) — 서버↔디바이스 ONNX md5 비교
+- [raw/source-notes/src-v72-nb-conversion-20260515.md](raw/source-notes/src-v72-nb-conversion-20260515.md) — v72 cnn_body NB 변환 + 10 시나리오 검증
+- [raw/source-notes/src-v72-nb-eval-20260515.md](raw/source-notes/src-v72-nb-eval-20260515.md) — v72 NB 99/219 정량 측정 (v46 NB와 거의 동등, ensemble 효과 못 살림)
 
 ## Schema
 

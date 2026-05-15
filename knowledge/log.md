@@ -1,5 +1,33 @@
 # t527-nlu Knowledge Log
 
+## 2026-05-15 (오후)
+
+- **v72 NB 정확도 측정 — v46 NB와 거의 동등 또는 약간 낮음**
+  - Golden 99: combo 89.9% (v46과 동등), fn 99% (v46 100% 대비 -1)
+  - 르엘 219: combo 58.0% (v46 59.8% 대비 -1.8)
+  - 원인: NPU에 올린 v72는 단일 cnn_body. 서버 production v72는 ensemble (fn/dir=v72, exec/param=v28)
+  - 즉 ensemble 효과 NPU에서 못 살림
+- 25개 batch + System.gc() + 120ms sleep으로 99/219 평가 가능 (491은 여전히 crash)
+- 다음 작업: v28 cnn_body int16 NB 추가 변환 + JNI에서 head별 선택 → ensemble 재현
+- 추가: `raw/source-notes/src-v72-nb-eval-20260515.md`
+
+## 2026-05-15
+
+- **v72 cnn_body NB 변환 성공**
+  - `cnn_multihead_v72.pt` → `nlu_v72_generalization.onnx` (export_v72_standalone_onnx.py)
+  - extract_cnn_body.py + shape fix [1,32,768] + onnxsim
+  - Acuity 6.12 import → int16 quantize (fl=15) → export NB
+  - 결과: `/data/local/tmp/cnn_body_v72_int16.nb` (2.74MB)
+- **NpuClassifierTestActivity v72 NB 검증 (10 시나리오)**
+  - ONNX 26.5ms vs NPU 9.3ms (2.8x speedup)
+  - ONNX↔NPU agreement: 10/10
+  - 모든 발화 정답 (raw, post-rules 없이)
+- **미해결: 큰 셋 (99/491/219) batch 평가시 ART JIT crash 재발**
+  - libart.so JitCodeCache::Reserve / GarbageCollectCache
+  - 정량 정확도 측정 보류
+- 추가: `raw/source-notes/src-v72-nb-conversion-20260515.md`
+- index.md, wiki/projects/t527-npu-integration.md 갱신
+
 ## 2026-05-14
 
 - **전체 버전 매트릭스 정리** — `wiki/models/version-matrix.md`

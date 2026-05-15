@@ -11,9 +11,10 @@ T527 NPU에서 CNN body 추론. NB 파일은 `cnn_body_v46_int16.nb` (2.7MB, int
 | 경로 | 크기 | 용도 |
 |---|---|---|
 | `/data/local/tmp/cnn_body_v46.nb` | 1.36MB | uint8 (정확도 약함 — 폐기 권장) |
-| `/data/local/tmp/cnn_body_v46_int16.nb` | 2.7MB | int16 (현재 NPU 모드 default) |
+| `/data/local/tmp/cnn_body_v46_int16.nb` | 2.74MB | int16 v46 (이전 default, fn 97%) |
+| **`/data/local/tmp/cnn_body_v72_int16.nb`** | **2.74MB** | **int16 v72 (2026-05-15 추가, 10/10 ONNX 일치)** |
 | `/data/local/tmp/cnn_body_v28.nb` | 1.36MB | uint8 (ensemble 시도용 — 폐기) |
-| `/data/data/com.t527.smart_v2/files/token_emb_v46.bin` | 93.75MB | embedding lookup table |
+| `/data/data/com.t527.smart_v2/files/token_emb_v46.bin` | 93.75MB | embedding lookup table (v28/v46/v71/v72 모두 동일 ko-sbert frozen — 재사용) |
 
 ### 파이프라인
 
@@ -39,7 +40,9 @@ T527 NPU에서 CNN body 추론. NB 파일은 `cnn_body_v46_int16.nb` (2.7MB, int
 
 ## Open issues
 
-- v72 cnn_body 추출 + NB 변환 미완 — 서버 production과 동기화 필요
+- ✅ v72 cnn_body NB 변환 완료 (2026-05-15, 10/10 ONNX 일치 검증)
+- v72 NB 정량 정확도 측정 미완 — golden 99/491/219 batch 평가 시 ART JIT crash 재발 (이전 v46 NB 491에서 본 것과 동일 패턴)
+- ART crash 해결책 후보: batch 분할 + GC, embedding mmap, ONNX session 해제
 - 정확도 측정 결과:
   - Golden 99: fn 100% / combo 89.9%
   - Golden 491: fn 98.6% / combo 92.7% (ONNX 95.5% 대비 -2.8%p)
