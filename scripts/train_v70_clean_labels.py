@@ -90,7 +90,7 @@ def collate_fn(batch):
 
 def eval_ts(model, tok, device):
     import re
-    suite = json.load(open('data/test_suite.json'))
+    suite = json.load(open('data/golden/test_suite.json'))
     fn_ok = exec_ok = dir_ok = all_ok = 0
     for t in suite:
         text = re.sub(r'\s+', ' ', ''.join(c if c.isprintable() or c == ' ' else ' ' for c in t['utterance'])).strip()
@@ -108,7 +108,7 @@ def eval_ts(model, tok, device):
 
 
 def eval_ke(model, tok, device):
-    ke = json.load(open('data/koelectra_converted_val.json'))
+    ke = json.load(open('data/raw/koelectra_converted_val.json'))
     ok = 0
     for d in ke:
         tk = tok(d['utterance'], padding='max_length', truncation=True, max_length=32, return_tensors='pt').to(device)
@@ -124,7 +124,7 @@ def main():
     print(f"Device: {device}\n")
 
     # 원본 train (v34 == v46의 base)
-    with open('data/train_final_v34.json') as f:
+    with open('data/train/train_final_v34.json') as f:
         train = json.load(f)
     print(f"train_final_v34 원본: {len(train)}개")
 
@@ -137,11 +137,11 @@ def main():
     print(f"라벨 수정: {n_fixed}건")
 
     # 저장 (재학습 데이터)
-    with open('data/train_final_v70.json', 'w', encoding='utf-8') as f:
+    with open('data/train/train_final_v70.json', 'w', encoding='utf-8') as f:
         json.dump(train, f, ensure_ascii=False, indent=2)
 
     # Val
-    val = json.load(open('data/val_final_v33.json'))
+    val = json.load(open('data/train/val_final_v33.json'))
     print(f"val: {len(val)}")
 
     # Setup

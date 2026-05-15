@@ -11,7 +11,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
 
 # 기존 로드
-existing = json.load(open('data/test_suite.json'))
+existing = json.load(open('data/golden/test_suite.json'))
 print(f"기존 Test Suite: {len(existing)}")
 
 new_cases = []
@@ -183,7 +183,7 @@ print(f"  direction: {sum(1 for c in new_unique if c['source']=='test_suite_dire
 
 # Save
 all_suite = existing + new_unique
-with open('data/test_suite_v67.json', 'w', encoding='utf-8') as f:
+with open('data/golden/test_suite_v67.json', 'w', encoding='utf-8') as f:
     json.dump(all_suite, f, ensure_ascii=False, indent=2)
 
-print(f"\n총 {len(all_suite)}개 → data/test_suite_v67.json")
+print(f"\n총 {len(all_suite)}개 → data/golden/test_suite_v67.json")

@@ -25,7 +25,7 @@ HEAD_DIR = ['none','up','down','set','on','off','open','close','stop']
 HEAD_EXEC = ['query_then_respond','control_then_confirm','query_then_judge','direct_respond','clarify']
 
 def main():
-    in_path = sys.argv[1] if len(sys.argv) > 1 else '/home/nsbb/travail/claude/T527/t527-nlu/data/golden_test_100.json'
+    in_path = sys.argv[1] if len(sys.argv) > 1 else '/home/nsbb/travail/claude/T527/t527-nlu/data/golden/golden_test_100.json'
     out_dir = sys.argv[2] if len(sys.argv) > 2 else '/tmp/npu_eval_99'
     os.makedirs(out_dir, exist_ok=True)
 

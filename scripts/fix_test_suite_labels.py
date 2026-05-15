@@ -24,7 +24,7 @@ FIXES = [
 ]
 
 def main():
-    path = 'data/test_suite.json'
+    path = 'data/golden/test_suite.json'
     backup = 'data/test_suite_before_fix.json'
 
     # Backup

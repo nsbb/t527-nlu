@@ -18,7 +18,7 @@ def collect_utterances():
     utts = set()
     # Golden test 100/500
     for path in [f'{DATA}/golden_test_100.json', f'{DATA}/golden_test_500.json',
-                 f'{DATA}/golden_indirect_55.json', f'{DATA}/golden_ruel_219.json']:
+                 f'{DATA}/golden/golden_indirect_55.json', f'{DATA}/golden/gt_known_scenarios_v2.json']:
         if not os.path.exists(path): continue
         d = json.load(open(path))
         if isinstance(d, list):

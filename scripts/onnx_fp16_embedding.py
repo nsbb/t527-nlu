@@ -74,7 +74,7 @@ def verify_equivalence(original_path, fp16_path, n_samples=50):
         return False
 
     import json
-    suite = json.load(open('data/test_suite.json'))[:n_samples]
+    suite = json.load(open('data/golden/test_suite.json'))[:n_samples]
 
     match = 0
     max_diff = 0

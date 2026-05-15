@@ -14,13 +14,13 @@ print(f"Vocab size: {len(tok)}")
 
 # 모든 데이터 로드
 datasets = {
-    'train_v34': 'data/train_final_v34.json',
-    'train_v68': 'data/train_final_v68.json',
-    'test_suite': 'data/test_suite.json',
-    'gt_known': 'data/gt_known_scenarios.json',
-    'gt_unknown': 'data/gt_unknown_scenarios.json',
-    'ke_train': 'data/koelectra_converted_train.json',
-    'ke_val': 'data/koelectra_converted_val.json',
+    'train_v34': 'data/train/train_final_v34.json',
+    'train_v68': 'data/train/train_final_v68.json',
+    'test_suite': 'data/golden/test_suite.json',
+    'gt_known': 'data/golden/gt_known_scenarios.json',
+    'gt_unknown': 'data/golden/gt_unknown_scenarios.json',
+    'ke_train': 'data/raw/koelectra_converted_train.json',
+    'ke_val': 'data/raw/koelectra_converted_val.json',
 }
 
 all_tokens = Counter()

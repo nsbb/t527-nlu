@@ -40,7 +40,7 @@ def main():
     tok = AutoTokenizer.from_pretrained('tokenizer/')
     m46 = load_model('v46')
     m68 = load_model('v68')
-    suite = json.load(open('data/test_suite.json'))
+    suite = json.load(open('data/golden/test_suite.json'))
 
     # 1. 수정된 11건에서의 성능
     fixed_utts = [

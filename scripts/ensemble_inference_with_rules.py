@@ -1920,8 +1920,8 @@ def main():
                                  providers=['CPUExecutionProvider'])
     tok = AutoTokenizer.from_pretrained('tokenizer/')
 
-    suite = json.load(open('data/test_suite.json'))
-    ke = json.load(open('data/koelectra_converted_val.json'))
+    suite = json.load(open('data/golden/test_suite.json'))
+    ke = json.load(open('data/raw/koelectra_converted_val.json'))
 
     # Without rules
     fn_ok = exec_ok = dir_ok = all_ok = 0

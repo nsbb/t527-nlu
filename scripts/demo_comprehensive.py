@@ -167,7 +167,7 @@ def main():
     print("5. 성능 측정")
     print("=" * 60)
     import time, random
-    test = json.load(open('data/test_suite.json'))
+    test = json.load(open('data/golden/test_suite.json'))
     random.seed(42)
     sample = random.sample(test, 100)
     t0 = time.perf_counter()

@@ -95,7 +95,7 @@ def train(config):
     # Data
     print("Loading data...")
     smarthome = pd.read_csv("data/smarthome_intent.csv")
-    kochat = pd.read_csv("data/kochat_intent.csv")
+    kochat = pd.read_csv("data/raw/kochat_intent.csv")
 
     # label mapping
     all_labels = sorted(set(smarthome["label"].tolist() + kochat["label"].tolist()))

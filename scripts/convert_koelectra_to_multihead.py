@@ -9,8 +9,8 @@
     ../wewonnim/koelectra_wallpad/data/val_v8.jsonl    (1,536개)
 
 출력:
-    data/koelectra_converted_train.json   — 멀티헤드 5축 학습데이터
-    data/koelectra_converted_val.json     — 멀티헤드 5축 검증데이터
+    data/raw/koelectra_converted_train.json   — 멀티헤드 5축 학습데이터
+    data/raw/koelectra_converted_val.json     — 멀티헤드 5축 검증데이터
     data/koelectra_conversion_report.txt  — 변환 통계 리포트
 
 발화문 텍스트에서 param_type/judge를 추가 추론하여 라벨만으로

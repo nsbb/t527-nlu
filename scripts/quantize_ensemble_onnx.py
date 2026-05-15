@@ -43,7 +43,7 @@ def main():
     sess_int8 = ort.InferenceSession(int8_path, providers=['CPUExecutionProvider'])
 
     # Test Suite eval (both)
-    suite = json.load(open('data/test_suite.json'))
+    suite = json.load(open('data/golden/test_suite.json'))
 
     def eval_sess(sess, name):
         fn_ok = exec_ok = dir_ok = all_ok = 0
@@ -70,7 +70,7 @@ def main():
     print(f"  combo 차이: {drop:+.2f}%p")
 
     # KoELECTRA
-    ke_val = json.load(open('data/koelectra_converted_val.json'))
+    ke_val = json.load(open('data/raw/koelectra_converted_val.json'))
     def eval_ke(sess, name):
         fn_ok = 0
         for d in ke_val:

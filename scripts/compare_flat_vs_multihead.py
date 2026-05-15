@@ -211,8 +211,8 @@ def main():
     # Test 3: GT 219 (fn만 비교)
     # ============================================================
     print(f"\n{'─'*70}\n  Test 3: GT 219개 (fn 비교)\n{'─'*70}")
-    gt_known = json.load(open('data/gt_known_scenarios.json'))
-    gt_unk = json.load(open('data/gt_unknown_scenarios.json'))
+    gt_known = json.load(open('data/golden/gt_known_scenarios.json'))
+    gt_unk = json.load(open('data/golden/gt_unknown_scenarios.json'))
     all_gt = gt_known + gt_unk
 
     flat_ok = mh_ok = 0
@@ -237,7 +237,7 @@ def main():
     # Test 4: KoELECTRA 1,536 (진짜 일반화)
     # ============================================================
     print(f"\n{'─'*70}\n  Test 4: KoELECTRA 1,536개 (외부 일반화 ← 핵심)\n{'─'*70}")
-    ke = json.load(open('data/koelectra_converted_val.json'))
+    ke = json.load(open('data/raw/koelectra_converted_val.json'))
     flat_ok = mh_ok = 0
     for d in ke:
         exp = d['labels']['fn']

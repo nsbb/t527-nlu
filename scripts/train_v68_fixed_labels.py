@@ -92,7 +92,7 @@ def collate_fn(batch):
 
 
 def eval_test_suite(model, tok, device):
-    suite = json.load(open('data/test_suite.json'))
+    suite = json.load(open('data/golden/test_suite.json'))
     fn_ok = exec_ok = dir_ok = all_ok = 0
     for t in suite:
         text = re.sub(r'\s+', ' ', ''.join(c if c.isprintable() or c == ' ' else ' ' for c in t['utterance'])).strip()
@@ -111,7 +111,7 @@ def eval_test_suite(model, tok, device):
     return fn_ok/n*100, exec_ok/n*100, dir_ok/n*100, all_ok/n*100
 
 def eval_koelectra(model, tok, device):
-    ke_val = json.load(open('data/koelectra_converted_val.json'))
+    ke_val = json.load(open('data/raw/koelectra_converted_val.json'))
     fn_ok = 0
     for d in ke_val:
         t = tok(d['utterance'], padding='max_length', truncation=True, max_length=32, return_tensors='pt')
@@ -124,17 +124,17 @@ def train():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(f"Device: {device}")
 
-    with open('data/train_final_v43.json') as f: train_data = json.load(f)
+    with open('data/train/train_final_v43.json') as f: train_data = json.load(f)
     print(f"Train before fix: {len(train_data)}")
 
     # Fix labels
     train_data = fix_train_labels(train_data)
 
     # Save fixed data
-    with open('data/train_final_v68.json', 'w', encoding='utf-8') as f:
+    with open('data/train/train_final_v68.json', 'w', encoding='utf-8') as f:
         json.dump(train_data, f, ensure_ascii=False, indent=2)
 
-    with open('data/val_final_v43.json') as f: val_data = json.load(f)
+    with open('data/train/val_final_v43.json') as f: val_data = json.load(f)
 
     tok = AutoTokenizer.from_pretrained('tokenizer/')
     sbert = AutoModel.from_pretrained('jhgan/ko-sbert-sts')

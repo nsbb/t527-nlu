@@ -40,7 +40,7 @@ def main():
     tok = AutoTokenizer.from_pretrained('tokenizer/')
 
     # Test Suite 전체 평가
-    suite = json.load(open('data/test_suite.json'))
+    suite = json.load(open('data/golden/test_suite.json'))
     match_all = 0
     fn_diff = exec_diff = dir_diff = 0
 
@@ -91,7 +91,7 @@ def main():
     print(f"  combo: {all_ok/n*100:.2f}%")
 
     # KE
-    ke = json.load(open('data/koelectra_converted_val.json'))
+    ke = json.load(open('data/raw/koelectra_converted_val.json'))
     ke_ok = 0
     for d in ke:
         tk = tok(d['utterance'], padding='max_length', truncation=True, max_length=32, return_tensors='np')

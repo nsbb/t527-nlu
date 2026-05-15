@@ -7,7 +7,7 @@ import json, re, os, sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 os.chdir(ROOT)
 
-suite = json.load(open('data/test_suite.json'))
+suite = json.load(open('data/golden/test_suite.json'))
 print(f"Total: {len(suite)}")
 
 suspects = []

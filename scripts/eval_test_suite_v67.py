@@ -33,7 +33,7 @@ def main():
     sess = ort.InferenceSession('checkpoints/nlu_v28_v46_ensemble.onnx',
                                 providers=['CPUExecutionProvider'])
 
-    suite = json.load(open('data/test_suite_v67.json'))
+    suite = json.load(open('data/golden/test_suite_v67.json'))
     print(f"Total: {len(suite)}")
 
     # Overall + by source

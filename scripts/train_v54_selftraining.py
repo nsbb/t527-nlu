@@ -32,7 +32,7 @@ def repseudo_label_koelectra():
     print(f"v46 loaded (epoch {ckpt46['epoch']}, combo {ckpt46['combo']:.1f}%)")
 
     # Load KoELECTRA original train data (with original fn labels)
-    with open('data/koelectra_converted_train.json') as f:
+    with open('data/raw/koelectra_converted_train.json') as f:
         ke_data = json.load(f)
     print(f"KoELECTRA train: {len(ke_data)} samples")
 
@@ -80,7 +80,7 @@ def repseudo_label_koelectra():
     print(f"Re-labeled: {len(relabeled)} samples (filtered low-conf)")
 
     # Save
-    with open('data/koelectra_pseudo_v46.json', 'w', encoding='utf-8') as f:
+    with open('data/raw/koelectra_pseudo_v46.json', 'w', encoding='utf-8') as f:
         json.dump(relabeled, f, ensure_ascii=False, indent=2)
 
     return relabeled, pw, tok
@@ -91,7 +91,7 @@ def repseudo_label_koelectra():
 # ============================================================
 def build_v54_data(relabeled_ke):
     """Replace old KoELECTRA pseudo labels in v34 data with v46 re-labels"""
-    with open('data/train_final_v34.json') as f:
+    with open('data/train/train_final_v34.json') as f:
         v34_data = json.load(f)
 
     # Remove old KoELECTRA pseudo-labeled data
@@ -102,7 +102,7 @@ def build_v54_data(relabeled_ke):
     v54_data = non_ke + relabeled_ke
     random.shuffle(v54_data)
 
-    with open('data/train_final_v54.json', 'w', encoding='utf-8') as f:
+    with open('data/train/train_final_v54.json', 'w', encoding='utf-8') as f:
         json.dump(v54_data, f, ensure_ascii=False, indent=2)
 
     print(f"v54 total: {len(v54_data)} samples")

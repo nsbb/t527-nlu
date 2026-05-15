@@ -184,7 +184,7 @@ def generate_variants(seed_utt, fn, labels, count=100):
 
 
 def main():
-    with open('data/gt_known_scenarios.json', encoding='utf-8') as f:
+    with open('data/golden/gt_known_scenarios.json', encoding='utf-8') as f:
         scenarios = json.load(f)
 
     PER_SCENARIO = 100
@@ -224,7 +224,7 @@ def main():
             })
 
     # 저장
-    with open('data/train_gt_augmented.json', 'w', encoding='utf-8') as f:
+    with open('data/train/train_gt_augmented.json', 'w', encoding='utf-8') as f:
         json.dump(all_data, f, ensure_ascii=False, indent=2)
 
     # 통계

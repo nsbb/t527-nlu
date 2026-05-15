@@ -115,7 +115,7 @@ def collate_fn(batch):
 
 
 def eval_ts(model, tok, device):
-    suite = json.load(open('data/test_suite.json'))
+    suite = json.load(open('data/golden/test_suite.json'))
     fn_ok = exec_ok = dir_ok = all_ok = 0
     for t in suite:
         text = re.sub(r'\s+', ' ', ''.join(c if c.isprintable() or c == ' ' else ' ' for c in t['utterance'])).strip()
@@ -134,7 +134,7 @@ def eval_ts(model, tok, device):
 
 
 def eval_ke(model, tok, device):
-    ke = json.load(open('data/koelectra_converted_val.json'))
+    ke = json.load(open('data/raw/koelectra_converted_val.json'))
     ok = 0
     for d in ke:
         tk = tok(d['utterance'], padding='max_length', truncation=True, max_length=32, return_tensors='pt')
@@ -150,7 +150,7 @@ def main():
     print(f"Device: {device}")
 
     # 원본 v28 train
-    train_orig = json.load(open('data/train_final_v28.json'))
+    train_orig = json.load(open('data/train/train_final_v28.json'))
     print(f"v28 원본 train: {len(train_orig)}")
 
     # 라벨 수정 적용
@@ -181,7 +181,7 @@ def main():
     print(f"최종 train: {len(train_all)}")
 
     # Val (기존 사용)
-    val = json.load(open('data/val_final_v33.json'))
+    val = json.load(open('data/train/val_final_v33.json'))
     print(f"val: {len(val)}")
 
     # Tokenizer + model load (warm start from v28)

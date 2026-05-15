@@ -32,8 +32,8 @@ def main():
         models[name] = m
         print(f"Loaded {name}: combo={ckpt.get('combo', '-'):.1f}")
 
-    suite = json.load(open('data/test_suite.json'))
-    ke_val = json.load(open('data/koelectra_converted_val.json'))
+    suite = json.load(open('data/golden/test_suite.json'))
+    ke_val = json.load(open('data/raw/koelectra_converted_val.json'))
 
     # 모든 모델의 logit 캐시
     print(f"\nCaching logits for {len(suite)} suite + {len(ke_val)} KE...")

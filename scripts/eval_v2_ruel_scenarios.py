@@ -16,7 +16,7 @@ def main():
     print("Ready.\n")
 
     rows = []
-    with open('data/ruel_scenarios_final.csv') as f:
+    with open('data/raw/ruel_scenarios_final.csv') as f:
         for row in csv.DictReader(f):
             rows.append(row)
 
@@ -54,13 +54,13 @@ def main():
         print()
 
     # CSV 저장
-    with open('data/eval_v2_ruel_results.csv', 'w', newline='') as f:
+    with open('data/analysis/eval_v2_ruel_results.csv', 'w', newline='') as f:
         w = csv.DictWriter(f, fieldnames=['no', 'cat', 'utt', 'expected', 'actual',
                                             'fn', 'exec', 'dir', 'room', 'value'])
         w.writeheader()
         for r in results:
             w.writerow(r)
-    print(f'Saved → data/eval_v2_ruel_results.csv')
+    print(f'Saved → data/analysis/eval_v2_ruel_results.csv')
 
 
 if __name__ == '__main__':

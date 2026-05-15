@@ -60,7 +60,7 @@ def main():
                                 providers=['CPUExecutionProvider'])
 
     # Test Suite
-    suite = json.load(open('data/test_suite.json'))
+    suite = json.load(open('data/golden/test_suite.json'))
     fn_ok = exec_ok = dir_ok = all_ok = 0
     preprocessed_diff = 0
     for t in suite:
@@ -82,7 +82,7 @@ def main():
     print(f"  combo: {all_ok}/{n} = {all_ok/n*100:.1f}%")
 
     # KoELECTRA
-    ke_val = json.load(open('data/koelectra_converted_val.json'))
+    ke_val = json.load(open('data/raw/koelectra_converted_val.json'))
     ke_ok = 0
     for d in ke_val:
         p, clean, conf = predict_full_pipeline(d['utterance'], sess, tok)

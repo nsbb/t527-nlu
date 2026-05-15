@@ -44,7 +44,7 @@ def collate_fn(batch):
             {h: torch.tensor([b[1][h] for b in batch]) for h in HEAD_NAMES})
 
 def eval_test_suite(model, tok, device):
-    suite = json.load(open('data/test_suite.json'))
+    suite = json.load(open('data/golden/test_suite.json'))
     fn_ok = exec_ok = dir_ok = all_ok = 0
     for t in suite:
         text = re.sub(r'\s+', ' ', ''.join(c if c.isprintable() or c == ' ' else ' ' for c in t['utterance'])).strip()
@@ -63,7 +63,7 @@ def eval_test_suite(model, tok, device):
     return fn_ok/n*100, exec_ok/n*100, dir_ok/n*100, all_ok/n*100
 
 def eval_koelectra(model, tok, device):
-    ke_val = json.load(open('data/koelectra_converted_val.json'))
+    ke_val = json.load(open('data/raw/koelectra_converted_val.json'))
     fn_ok = 0
     for d in ke_val:
         t = tok(d['utterance'], padding='max_length', truncation=True, max_length=32, return_tensors='pt')
@@ -75,8 +75,8 @@ def train():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(f"Device: {device}")
 
-    with open('data/train_final_v43.json') as f: train_data = json.load(f)
-    with open('data/val_final_v43.json') as f: val_data = json.load(f)
+    with open('data/train/train_final_v43.json') as f: train_data = json.load(f)
+    with open('data/train/val_final_v43.json') as f: val_data = json.load(f)
     print(f"Train: {len(train_data)}, Val: {len(val_data)}")
 
     tok = AutoTokenizer.from_pretrained('tokenizer/')

@@ -42,8 +42,8 @@ def main():
 
     # Retrieval hybrid setup
     encoder = SentenceEncoder(device)
-    gt_known = json.load(open('data/gt_known_scenarios.json'))
-    gt_unknown = json.load(open('data/gt_unknown_scenarios.json'))
+    gt_known = json.load(open('data/golden/gt_known_scenarios.json'))
+    gt_unknown = json.load(open('data/golden/gt_unknown_scenarios.json'))
     gt_all = gt_known + gt_unknown
     retriever = GTRetriever(encoder, gt_all)
 
@@ -64,8 +64,8 @@ def main():
     hybrid = HybridPredictor(encoder, retriever, model_v46, tok_v46,
                              high_threshold=0.85, low_threshold=0.5)
 
-    test_suite = json.load(open('data/test_suite.json'))
-    ke_val = json.load(open('data/koelectra_converted_val.json'))
+    test_suite = json.load(open('data/golden/test_suite.json'))
+    ke_val = json.load(open('data/raw/koelectra_converted_val.json'))
 
     print("=" * 70)
     print("  Retrieval Hybrid (v46 fallback) vs Ensemble v28+v46")

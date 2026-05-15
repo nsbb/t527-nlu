@@ -250,16 +250,16 @@ for row in ws.iter_rows(min_row=2, values_only=True):
     (unknown if is_unk else known).append(entry)
     sid += 1
 
-with open('data/gt_known_scenarios_v2.json', 'w', encoding='utf-8') as f:
+with open('data/golden/gt_known_scenarios_v2.json', 'w', encoding='utf-8') as f:
     json.dump(known, f, ensure_ascii=False, indent=2)
-with open('data/gt_unknown_scenarios_v2.json', 'w', encoding='utf-8') as f:
+with open('data/golden/gt_unknown_scenarios_v2.json', 'w', encoding='utf-8') as f:
     json.dump(unknown, f, ensure_ascii=False, indent=2)
 
 print(f"Known: {len(known)}개, Unknown: {len(unknown)}개\n")
 
 # v1 vs v2 비교
-gt1_known = json.load(open('data/gt_known_scenarios.json'))
-gt1_unknown = json.load(open('data/gt_unknown_scenarios.json'))
+gt1_known = json.load(open('data/golden/gt_known_scenarios.json'))
+gt1_unknown = json.load(open('data/golden/gt_unknown_scenarios.json'))
 gt1_all = {s['utterance']: s['labels'] for s in gt1_known + gt1_unknown}
 
 gt2_all = {s['utterance']: s['labels'] for s in known + unknown}

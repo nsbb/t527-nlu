@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""테스트 스위트 실행 — data/test_suite.json 기준
+"""테스트 스위트 실행 — data/golden/test_suite.json 기준
 사용법: python3 scripts/run_test_suite.py [v21|v23|checkpoint_path]
 """
 import torch, torch.nn.functional as F, json, os, sys, re
@@ -38,7 +38,7 @@ def pred(text):
     return p
 
 # 테스트 스위트 로드
-with open('data/test_suite.json') as f:
+with open('data/golden/test_suite.json') as f:
     suite = json.load(f)
 
 fn_ok = exec_ok = dir_ok = all_ok = 0

@@ -45,8 +45,8 @@ def main():
     m46.load_state_dict(torch.load('checkpoints/cnn_multihead_v46.pt', map_location='cpu', weights_only=False)['state'])
     m46.eval()
 
-    suite = json.load(open('data/test_suite.json'))
-    ke = json.load(open('data/koelectra_converted_val.json'))
+    suite = json.load(open('data/golden/test_suite.json'))
+    ke = json.load(open('data/raw/koelectra_converted_val.json'))
 
     strategies = {
         'B (baseline)': {'fn': 'v46', 'exec': 'v28', 'dir_default': 'v28', 'dir_override': None},

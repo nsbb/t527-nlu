@@ -2,11 +2,11 @@
 """변환된 KoELECTRA 데이터를 기존 멀티헤드 학습데이터에 합침
 
 사용법:
-    python3 scripts/merge_koelectra_data.py --base data/train_final_v32.json --version 33
+    python3 scripts/merge_koelectra_data.py --base data/train/train_final_v32.json --version 33
 
 입력:
     --base: 기존 멀티헤드 학습데이터 (e.g. train_final_v32.json)
-    data/koelectra_converted_train.json  (13,540개, 자동 로드)
+    data/raw/koelectra_converted_train.json  (13,540개, 자동 로드)
 
 출력:
     data/train_final_v{version}.json     — 합친 학습데이터
@@ -31,8 +31,8 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('--base', required=True, help='기존 train 파일 경로')
     parser.add_argument('--version', required=True, help='출력 버전 번호')
-    parser.add_argument('--koelectra', default='data/koelectra_converted_train.json',
-                        help='변환된 KoELECTRA 데이터 (기본: data/koelectra_converted_train.json)')
+    parser.add_argument('--koelectra', default='data/raw/koelectra_converted_train.json',
+                        help='변환된 KoELECTRA 데이터 (기본: data/raw/koelectra_converted_train.json)')
     args = parser.parse_args()
 
     base_path = Path(args.base)
@@ -94,7 +94,7 @@ def main():
             json.dump(val_data, f, ensure_ascii=False, indent=2)
         print(f"       {val_out} (기존 val 복사, {len(val_data)}개)")
 
-    print(f"\n★ KoELECTRA val (1,536개)은 data/koelectra_converted_val.json에 별도 보존")
+    print(f"\n★ KoELECTRA val (1,536개)은 data/raw/koelectra_converted_val.json에 별도 보존")
     print(f"  → 교차검증 테스트셋으로 활용 가능")
 
 

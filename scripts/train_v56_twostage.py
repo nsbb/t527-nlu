@@ -84,7 +84,7 @@ def eval_model(model, val_dl, device):
 
 def eval_koelectra(model, tok, device):
     """Evaluate on KoELECTRA val set"""
-    ke_val = json.load(open('data/koelectra_converted_val.json'))
+    ke_val = json.load(open('data/raw/koelectra_converted_val.json'))
     fn_ok = 0
     for d in ke_val:
         t = tok(d['utterance'], padding='max_length', truncation=True, max_length=32, return_tensors='pt')
@@ -101,8 +101,8 @@ def train():
     print(f"Device: {device}")
 
     # Use same data as v46
-    train_file = 'data/train_final_v43.json'
-    val_file = 'data/val_final_v43.json'
+    train_file = 'data/train/train_final_v43.json'
+    val_file = 'data/train/val_final_v43.json'
     with open(train_file) as f: train_data = json.load(f)
     with open(val_file) as f: val_data = json.load(f)
     print(f"Train: {len(train_data)}, Val: {len(val_data)}")

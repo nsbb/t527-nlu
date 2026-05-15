@@ -1,8 +1,10 @@
 #!/usr/bin/env python3
 """빠른 회귀 체크 (~2초) — pre-commit hook용.
 
-골든셋 99 + 르엘 219만 측정. baseline 대비 -2%p 이상 떨어지면 exit 1.
-baseline은 data/ci_baseline.json. 의도된 개선이면 --update로 갱신.
+진짜 production GT (gt_known_v2 + gt_unknown = 219) + golden_test_100 사용.
+golden_ruel_219.json은 자동 매핑이라 잘못된 라벨 — 사용 안 함.
+
+baseline은 data/ci/ci_baseline_quick.json. 의도된 개선이면 --update로 갱신.
 
 사용:
   python3 scripts/ci_quick_check.py            # 체크 (회귀시 exit 1)
@@ -18,15 +20,19 @@ from transformers import AutoTokenizer
 from preprocess import preprocess
 
 ROOT = Path(__file__).parent.parent
-BASELINE = ROOT / 'data' / 'ci_baseline_quick.json'
+BASELINE = ROOT / 'data' / 'ci' / 'ci_baseline_quick.json'
 THRESHOLD = -2.0  # %p
 
 ONNX_PATH = ROOT / 'checkpoints' / 'nlu_v28_v72_ensemble.onnx'
 TOK_PATH  = ROOT / 'tokenizer'
-SETS = [
-    ('golden_99', ROOT / 'data' / 'golden_test_100.json'),
-    ('golden_ruel_219', ROOT / 'data' / 'golden_ruel_219.json'),
+
+# 진짜 production GT — gt_known_v2 + gt_unknown = 219개 사람 검증된 라벨
+# (golden_ruel_219.json 은 자동 매핑이라 라벨 38% 오류, 사용 안 함)
+GOLDEN_RUEL_FILES = [
+    ROOT / 'data' / 'golden' / 'gt_known_scenarios_v2.json',
+    ROOT / 'data' / 'golden' / 'gt_unknown_scenarios.json',
 ]
+GOLDEN_99 = ROOT / 'data' / 'golden' / 'golden_test_100.json'
 
 HEAD_FN = ['light_control','heat_control','ac_control','vent_control','gas_control',
            'door_control','curtain_control','elevator_call','security_mode',
@@ -37,10 +43,23 @@ HEAD_EX = ['query_then_respond','control_then_confirm','query_then_judge','direc
 HEAD_DIR = ['none','up','down','set','on','off','open','close','stop']
 
 
-def eval_set(sess, tok, path):
+def load_set(path):
+    """golden_test 형식 (utterance/fn/exec/dir) 또는 gt_known 형식 (labels) 모두 처리."""
     data = json.load(open(path))
-    fn = ex = dr = cb = 0
+    items = []
     for it in data:
+        utt = it['utterance']
+        if 'labels' in it:
+            l = it['labels']
+            items.append({'utterance': utt, 'fn': l['fn'], 'exec': l['exec_type'], 'dir': l['param_direction']})
+        else:
+            items.append({'utterance': utt, 'fn': it['fn'], 'exec': it['exec'], 'dir': it['dir']})
+    return items
+
+
+def eval_set(sess, tok, items):
+    fn = ex = dr = cb = 0
+    for it in items:
         enc = tok(preprocess(it['utterance']), padding='max_length', max_length=32, truncation=True, return_tensors='np')
         outs = sess.run(None, {'input_ids': enc['input_ids'].astype(np.int64)})
         d = dict(zip([o.name for o in sess.get_outputs()], outs))
@@ -51,7 +70,7 @@ def eval_set(sess, tok, path):
         if e == it['exec']: ex += 1
         if di == it['dir']: dr += 1
         if f == it['fn'] and e == it['exec'] and di == it['dir']: cb += 1
-    n = len(data)
+    n = len(items)
     return {'fn': fn/n*100, 'exec': ex/n*100, 'dir': dr/n*100, 'combo': cb/n*100, 'n': n}
 
 
@@ -61,7 +80,7 @@ def main():
     args = ap.parse_args()
 
     if not ONNX_PATH.exists():
-        print(f'⚠️  ONNX 없음: {ONNX_PATH} — 스킵 (개발 환경 미준비)')
+        print(f'⚠️  ONNX 없음: {ONNX_PATH} — 스킵')
         return 0
 
     t0 = time.time()
@@ -69,16 +88,21 @@ def main():
     tok = AutoTokenizer.from_pretrained(str(TOK_PATH))
 
     results = {}
-    for name, path in SETS:
-        if not path.exists(): continue
-        results[name] = eval_set(sess, tok, path)
+    if GOLDEN_99.exists():
+        results['golden_99'] = eval_set(sess, tok, load_set(GOLDEN_99))
+    # ruel 219 = gt_known_v2 + gt_unknown
+    ruel_items = []
+    for p in GOLDEN_RUEL_FILES:
+        if p.exists():
+            ruel_items += load_set(p)
+    if ruel_items:
+        results['ruel_219'] = eval_set(sess, tok, ruel_items)
 
     elapsed = time.time() - t0
     print(f'⚡ Quick CI check ({elapsed:.1f}s)')
     for name, r in results.items():
-        print(f"  {name:20s} fn {r['fn']:5.1f}%  combo {r['combo']:5.1f}%  (n={r['n']})")
+        print(f"  {name:12s} fn {r['fn']:5.1f}%  combo {r['combo']:5.1f}%  (n={r['n']})")
 
-    # baseline 비교 / 업데이트
     if args.update:
         BASELINE.parent.mkdir(parents=True, exist_ok=True)
         with open(BASELINE, 'w') as f:
@@ -87,7 +111,7 @@ def main():
         return 0
 
     if not BASELINE.exists():
-        print(f'\nℹ️  baseline 없음 — 첫 실행. --update 로 초기 baseline 저장하세요.')
+        print(f'\nℹ️  baseline 없음 — --update 로 초기 baseline 저장하세요.')
         return 0
 
     base = json.load(open(BASELINE))
@@ -103,7 +127,7 @@ def main():
         print(f'\n❌ REGRESSION 감지 (임계값 {THRESHOLD}%p):')
         for name, k, old, new, delta in regressed:
             print(f"   {name}/{k}: {old:.1f}% → {new:.1f}% ({delta:+.1f}%p)")
-        print('\n의도된 개선이면 `python3 scripts/ci_quick_check.py --update` 로 baseline 갱신 후 commit')
+        print('\n의도된 개선이면 `python3 scripts/ci_quick_check.py --update`')
         return 1
     print('\n✅ 회귀 없음')
     return 0

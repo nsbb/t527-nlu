@@ -76,7 +76,7 @@ def train_qat(config):
 
     # Data
     smarthome = pd.read_csv("data/smarthome_intent.csv")
-    kochat = pd.read_csv("data/kochat_intent.csv")
+    kochat = pd.read_csv("data/raw/kochat_intent.csv")
     all_texts = smarthome["question"].tolist() + kochat["question"].tolist()
     all_labels = [label2id[l] for l in smarthome["label"].tolist() + kochat["label"].tolist()]
 

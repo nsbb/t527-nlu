@@ -20,6 +20,8 @@
 ## Decisions
 
 - [wiki/decisions/regression-harness.md](wiki/decisions/regression-harness.md) — pre-commit 회귀 체크 hook (0.4초, 99셋+219셋, -2%p 임계값)
+- [wiki/decisions/ruel-gt-set.md](wiki/decisions/ruel-gt-set.md) — 르엘 219 진짜 GT (gt_known_v2 + gt_unknown), golden_ruel_219.json 폐기
+- [wiki/decisions/data-organization.md](wiki/decisions/data-organization.md) — data/ 폴더 6개 하위 분류
 
 ## Evaluations
 

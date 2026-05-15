@@ -218,8 +218,8 @@ def main():
     print(f"Device: {device}\n")
 
     # GT pool — known + unknown (unknown도 retrieval에 포함, 미지원 발화 거부)
-    gt_known = json.load(open('data/gt_known_scenarios.json'))
-    gt_unknown = json.load(open('data/gt_unknown_scenarios.json'))
+    gt_known = json.load(open('data/golden/gt_known_scenarios.json'))
+    gt_unknown = json.load(open('data/golden/gt_unknown_scenarios.json'))
     gt_all = gt_known + gt_unknown
     print(f"GT pool: {len(gt_known)} known + {len(gt_unknown)} unknown = {len(gt_all)}\n")
 
@@ -241,8 +241,8 @@ def main():
         print("  ✓ v46 로드됨")
 
     # Eval datasets
-    test_suite = json.load(open('data/test_suite.json'))
-    ke_val = json.load(open('data/koelectra_converted_val.json'))
+    test_suite = json.load(open('data/golden/test_suite.json'))
+    ke_val = json.load(open('data/raw/koelectra_converted_val.json'))
 
     if args.threshold_sweep:
         print(f"\n{'='*70}")

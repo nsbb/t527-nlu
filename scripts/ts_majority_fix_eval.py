@@ -22,7 +22,7 @@ def main():
     sess = ort.InferenceSession('checkpoints/nlu_v28_v46_ensemble.onnx', providers=['CPUExecutionProvider'])
     tok = AutoTokenizer.from_pretrained('tokenizer/')
 
-    test_orig = json.load(open('data/test_suite.json'))
+    test_orig = json.load(open('data/golden/test_suite.json'))
     fixes = json.load(open('data/ts_label_fix_candidates.json'))
 
     # Build utterance → majority label map

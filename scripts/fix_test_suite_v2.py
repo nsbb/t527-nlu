@@ -52,7 +52,7 @@ FIXES_CATEGORY_C = [
 
 
 def main():
-    path = 'data/test_suite.json'
+    path = 'data/golden/test_suite.json'
     backup = 'data/test_suite_before_fix_v2.json'
 
     shutil.copy(path, backup)

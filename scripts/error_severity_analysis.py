@@ -59,7 +59,7 @@ def main():
     print("Loading...")
     sess = ort.InferenceSession('checkpoints/nlu_v28_v46_ensemble.onnx', providers=['CPUExecutionProvider'])
     tok = AutoTokenizer.from_pretrained('tokenizer/')
-    test = json.load(open('data/test_suite.json'))
+    test = json.load(open('data/golden/test_suite.json'))
     print(f"Loaded {len(test)} TS cases.\n")
 
     from collections import Counter

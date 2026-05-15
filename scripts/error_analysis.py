@@ -136,7 +136,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('model', nargs='?', default='v46', help='Model name (v28, v46, ensemble)')
     parser.add_argument('--export', help='Export errors to CSV file')
-    parser.add_argument('--suite', default='data/test_suite.json', help='Test suite file')
+    parser.add_argument('--suite', default='data/golden/test_suite.json', help='Test suite file')
     args = parser.parse_args()
 
     print(f"Model: {args.model}")

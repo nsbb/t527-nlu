@@ -5,7 +5,7 @@
 기존 indirect_expressions.csv는 52개로 너무 적음.
 각 fn별로 다양한 표현 패턴을 체계적으로 수집.
 
-출력: data/indirect_expressions_v2.json
+출력: data/augment/indirect_expressions_v2.json
 """
 import json, os, random
 
@@ -302,7 +302,7 @@ print(f"\ndirection 분포:")
 for k, v in dir_dist.most_common():
     print(f"  {k}: {v}")
 
-out_path = 'data/indirect_expressions_v2.json'
+out_path = 'data/augment/indirect_expressions_v2.json'
 with open(out_path, 'w', encoding='utf-8') as f:
     json.dump(deduped, f, ensure_ascii=False, indent=2)
 print(f"\n저장: {out_path}")

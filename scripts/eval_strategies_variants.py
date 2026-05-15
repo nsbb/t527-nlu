@@ -63,7 +63,7 @@ KEY_MAP = {'fn': 'fn', 'exec': 'exec_type', 'dir': 'param_direction', 'param': '
 
 
 def eval_ts(m28, m46, tok, strategy):
-    ts = json.load(open('data/test_suite.json'))
+    ts = json.load(open('data/golden/test_suite.json'))
     n = 0
     exact = 0
     per_head = {h: 0 for h in HEAD_NAMES}
@@ -98,7 +98,7 @@ def eval_ts(m28, m46, tok, strategy):
 
 
 def eval_ke(m28, m46, tok, strategy, max_n=None):
-    ke_path = 'data/koelectra_converted_val.json'
+    ke_path = 'data/raw/koelectra_converted_val.json'
     if not os.path.exists(ke_path):
         return None
     ke = json.load(open(ke_path))

@@ -23,14 +23,14 @@ from model_cnn_multihead import HEAD_I2L, HEAD_NAMES
 
 
 GOLDEN_SETS = [
-    ('test_suite', 'data/test_suite.json', 'TS 3043'),
-    ('golden_99', 'data/golden_test_100.json', '99 골든셋 (over-fit 위험 small)'),
-    ('golden_491', 'data/golden_test_500.json', '491 골든셋 (정직 측정)'),
-    ('golden_indirect_56', 'data/golden_indirect_55.json', '비유/완곡/STT 56개'),
-    ('golden_ruel_219', 'data/golden_ruel_219.json', '르엘 공식 219 (자동 매핑)'),
+    ('test_suite', 'data/golden/test_suite.json', 'TS 3043'),
+    ('golden_99', 'data/golden/golden_test_100.json', '99 골든셋 (over-fit 위험 small)'),
+    ('golden_491', 'data/golden/golden_test_500.json', '491 골든셋 (정직 측정)'),
+    ('golden_indirect_56', 'data/golden/golden_indirect_55.json', '비유/완곡/STT 56개'),
+    ('golden_ruel_219', 'data/golden/gt_known_scenarios_v2.json', '르엘 공식 GT (gt_known_v2, 사람검증)'),
 ]
 
-BASELINE_PATH = 'data/ci_baseline.json'
+BASELINE_PATH = 'data/ci/ci_baseline.json'
 REGRESSION_THRESHOLD = -2.0  # %p
 
 

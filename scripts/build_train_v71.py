@@ -7,7 +7,7 @@ build_train_v71.py — v70 기반 데이터 수정 + 신규 소스 통합
   2. llm_paraphrases.jsonl: 2,068개 param_direction 추론 후 추가
   3. indirect_expressions.csv: 76개 flat→multi-head 변환 후 추가
 
-출력: data/train_final_v71.json
+출력: data/train/train_final_v71.json
 """
 
 import json, csv, re, os, sys
@@ -20,7 +20,7 @@ os.chdir(ROOT)
 # 1. v70 로드 + 어두침침 fix
 # ============================================================
 print("=== Step 1: v70 로드 + 어두침침 fix ===")
-with open('data/train_final_v70.json', encoding='utf-8') as f:
+with open('data/train/train_final_v70.json', encoding='utf-8') as f:
     data = json.load(f)
 
 n_fixed = 0
@@ -99,7 +99,7 @@ def infer_direction(utterance: str, fn: str) -> str:
     return 'none'
 
 
-with open('data/llm_paraphrases.jsonl', encoding='utf-8') as f:
+with open('data/augment/llm_paraphrases.jsonl', encoding='utf-8') as f:
     para_lines = [json.loads(l) for l in f]
 
 llm_items = []
@@ -162,7 +162,7 @@ FLAT_TO_MULTIHEAD = {
 
 indirect_items = []
 skipped = []
-with open('data/indirect_expressions.csv', encoding='utf-8') as f:
+with open('data/augment/indirect_expressions.csv', encoding='utf-8') as f:
     reader = csv.DictReader(f)
     for row in reader:
         intent = row['intent'].strip()
@@ -244,7 +244,7 @@ print(f"\nfn 분포 (top10):")
 for k, v in fn_dist.most_common(10):
     print(f"  {k}: {v}")
 
-out_path = 'data/train_final_v71.json'
+out_path = 'data/train/train_final_v71.json'
 with open(out_path, 'w', encoding='utf-8') as f:
     json.dump(deduped, f, ensure_ascii=False, indent=2)
 print(f"\n저장 완료: {out_path}")

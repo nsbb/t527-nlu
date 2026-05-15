@@ -1,4 +1,13 @@
 # t527-nlu Knowledge Log
+## 2026-05-15 (저녁)
+
+- **golden_ruel_219.json 삭제** — intent 91개 자동 매핑이라 진짜 GT (gt_known_v2 + gt_unknown)와 라벨 38% 차이. 사용자 매번 측정 답 달라진 원인.
+- **data/ 폴더 6개 하위 분류**: golden/ train/ raw/ augment/ analysis/ ci/ + archive/
+- **ci_quick_check.py 진짜 GT로 교체**: golden_99 + ruel_219(gt_known_v2)
+- 새 baseline: golden_99 combo 83.8%, ruel_219 combo **93.2%** (사용자 작업 결실)
+- 신규 wiki: decisions/ruel-gt-set.md, decisions/data-organization.md
+
+
 
 ## 2026-05-15 (오후)
 

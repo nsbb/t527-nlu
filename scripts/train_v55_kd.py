@@ -167,13 +167,13 @@ def train_v55():
     print(f"Device: {device}")
 
     # Use v43 train/val (what v46 was trained with)
-    train_file = 'data/train_final_v43.json'
-    val_file = 'data/val_final_v43.json'
+    train_file = 'data/train/train_final_v43.json'
+    val_file = 'data/train/val_final_v43.json'
 
     # Fallback
     if not os.path.exists(train_file):
-        train_file = 'data/train_final_v34.json'
-        val_file = 'data/val_final_v34.json'
+        train_file = 'data/train/train_final_v34.json'
+        val_file = 'data/train/val_final_v34.json'
 
     with open(train_file) as f:
         train_data = json.load(f)

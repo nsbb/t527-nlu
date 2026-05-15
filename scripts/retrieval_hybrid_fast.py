@@ -126,8 +126,8 @@ def main():
     print(f"  v46 ({time.time()-t0:.1f}s)")
 
     # GT pool
-    gt_known = json.load(open('data/gt_known_scenarios.json'))
-    gt_unknown = json.load(open('data/gt_unknown_scenarios.json'))
+    gt_known = json.load(open('data/golden/gt_known_scenarios.json'))
+    gt_unknown = json.load(open('data/golden/gt_unknown_scenarios.json'))
     gt_all = gt_known + gt_unknown
     gt_utts = [preprocess(d['utterance']) for d in gt_all]
     gt_labels = [d['labels'] for d in gt_all]
@@ -138,7 +138,7 @@ def main():
     print(f"  {gt_embs.shape} ({time.time()-t0:.1f}s)")
 
     # Test Suite 임베딩 + 모델 예측 (한 번만)
-    test_suite = json.load(open('data/test_suite.json'))
+    test_suite = json.load(open('data/golden/test_suite.json'))
     ts_utts = [preprocess(t['utterance']) for t in test_suite]
     print(f"\n=== Test Suite 임베딩 ({len(test_suite)}개) ===")
     t0 = time.time()
@@ -151,7 +151,7 @@ def main():
     print(f"  {len(ts_model_preds)}개 ({time.time()-t0:.1f}s)")
 
     # KoELECTRA 임베딩 + 모델 예측
-    ke_val = json.load(open('data/koelectra_converted_val.json'))
+    ke_val = json.load(open('data/raw/koelectra_converted_val.json'))
     ke_utts = [preprocess(d['utterance']) for d in ke_val]
     print(f"\n=== KoELECTRA 임베딩 ({len(ke_val)}개) ===")
     t0 = time.time()

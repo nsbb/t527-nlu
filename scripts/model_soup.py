@@ -15,7 +15,7 @@ from transformers import AutoModel, AutoTokenizer
 
 
 def eval_test_suite(model, tok, device):
-    suite = json.load(open('data/test_suite.json'))
+    suite = json.load(open('data/golden/test_suite.json'))
     fn_ok = exec_ok = dir_ok = all_ok = 0
     for t in suite:
         text = re.sub(r'\s+', ' ', ''.join(c if c.isprintable() or c == ' ' else ' ' for c in t['utterance'])).strip()
@@ -35,7 +35,7 @@ def eval_test_suite(model, tok, device):
 
 
 def eval_koelectra(model, tok, device):
-    ke_val = json.load(open('data/koelectra_converted_val.json'))
+    ke_val = json.load(open('data/raw/koelectra_converted_val.json'))
     fn_ok = 0
     for d in ke_val:
         t = tok(d['utterance'], padding='max_length', truncation=True, max_length=32, return_tensors='pt')

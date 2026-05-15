@@ -215,7 +215,7 @@ def augment_scenario(seed_utt, fn, labels, target=100):
 
 
 def main():
-    with open('data/gt_known_scenarios.json', encoding='utf-8') as f:
+    with open('data/golden/gt_known_scenarios.json', encoding='utf-8') as f:
         scenarios = json.load(f)
 
     PER_SCENARIO = 100
@@ -253,7 +253,7 @@ def main():
     print(f"유니크 <20: {sum(1 for u in uniq_counts if u < 20)}개")
     print(f"유니크 >=50: {sum(1 for u in uniq_counts if u >= 50)}개")
 
-    with open('data/train_gt_augmented_v2.json', 'w', encoding='utf-8') as f:
+    with open('data/train/train_gt_augmented_v2.json', 'w', encoding='utf-8') as f:
         json.dump(all_data, f, ensure_ascii=False, indent=2)
 
     fn_c = Counter(d['labels']['fn'] for d in all_data)

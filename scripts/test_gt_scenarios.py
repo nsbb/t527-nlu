@@ -100,8 +100,8 @@ def main():
     models, tok = load_models()
 
     # GT 로드
-    gt_known = json.load(open('data/gt_known_scenarios.json'))
-    gt_unk = json.load(open('data/gt_unknown_scenarios.json'))
+    gt_known = json.load(open('data/golden/gt_known_scenarios.json'))
+    gt_unk = json.load(open('data/golden/gt_unknown_scenarios.json'))
     all_gt = gt_known + gt_unk
     print(f"\n총 시나리오: {len(all_gt)}개 (known {len(gt_known)} + unknown {len(gt_unk)})")
 

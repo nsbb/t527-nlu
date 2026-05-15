@@ -143,7 +143,7 @@ def main():
 
     if not args.fast:
         # 3. Test Suite 전체
-        suite = json.load(open('data/test_suite.json'))
+        suite = json.load(open('data/golden/test_suite.json'))
         fn_ok = exec_ok = dir_ok = all_ok = 0
         for t in suite:
             p = predict(t['utterance'], sess, tok)
@@ -177,7 +177,7 @@ def main():
             print(f"      fn={ts['fn']:.2f} exec={ts['exec']:.2f} dir={ts['dir']:.2f}")
 
         # 4. KoELECTRA
-        ke_val = json.load(open('data/koelectra_converted_val.json'))
+        ke_val = json.load(open('data/raw/koelectra_converted_val.json'))
         ke_ok = 0
         for d in ke_val:
             p = predict(d['utterance'], sess, tok)

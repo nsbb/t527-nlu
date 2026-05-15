@@ -103,7 +103,7 @@ def main():
     m28, m46, tok = load_ensemble()
 
     print("\n=== Test Suite 로드 ===")
-    suite = json.load(open('data/test_suite.json'))
+    suite = json.load(open('data/golden/test_suite.json'))
     print(f"  {len(suite)}개")
 
     # Test Suite에 대해 각 케이스 분석

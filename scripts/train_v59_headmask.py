@@ -72,7 +72,7 @@ def collate_fn(batch):
 
 def eval_test_suite(model, tok, device):
     import re
-    suite = json.load(open('data/test_suite.json'))
+    suite = json.load(open('data/golden/test_suite.json'))
     fn_ok = exec_ok = dir_ok = all_ok = 0
     for t in suite:
         text = re.sub(r'\s+', ' ', ''.join(c if c.isprintable() or c == ' ' else ' ' for c in t['utterance'])).strip()
@@ -92,7 +92,7 @@ def eval_test_suite(model, tok, device):
 
 
 def eval_koelectra(model, tok, device):
-    ke_val = json.load(open('data/koelectra_converted_val.json'))
+    ke_val = json.load(open('data/raw/koelectra_converted_val.json'))
     fn_ok = 0
     for d in ke_val:
         t = tok(d['utterance'], padding='max_length', truncation=True, max_length=32, return_tensors='pt')
@@ -106,8 +106,8 @@ def train():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(f"Device: {device}")
 
-    with open('data/train_final_v43.json') as f: train_data = json.load(f)
-    with open('data/val_final_v43.json') as f: val_data = json.load(f)
+    with open('data/train/train_final_v43.json') as f: train_data = json.load(f)
+    with open('data/train/val_final_v43.json') as f: val_data = json.load(f)
 
     # Count data sources
     gt_count = sum(1 for d in train_data if not d.get('source', '').startswith('koelectra'))

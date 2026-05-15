@@ -188,9 +188,9 @@ for row in ws.iter_rows(min_row=2, values_only=True):
     sid += 1
 
 # 저장
-with open('data/gt_known_scenarios.json', 'w', encoding='utf-8') as f:
+with open('data/golden/gt_known_scenarios.json', 'w', encoding='utf-8') as f:
     json.dump(known, f, ensure_ascii=False, indent=2)
-with open('data/gt_unknown_scenarios.json', 'w', encoding='utf-8') as f:
+with open('data/golden/gt_unknown_scenarios.json', 'w', encoding='utf-8') as f:
     json.dump(unknown, f, ensure_ascii=False, indent=2)
 
 # 통계

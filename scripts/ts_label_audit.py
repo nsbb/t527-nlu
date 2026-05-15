@@ -16,7 +16,7 @@ from collections import defaultdict, Counter
 
 
 def main():
-    test = json.load(open('data/test_suite.json'))
+    test = json.load(open('data/golden/test_suite.json'))
     print(f"Total TS: {len(test)}\n")
 
     # Group by fn + semantic pattern

@@ -56,7 +56,7 @@ def collate_fn(batch):
 
 def eval_ts(model, tok, device):
     import re
-    suite = json.load(open('data/test_suite.json'))
+    suite = json.load(open('data/golden/test_suite.json'))
     fn_ok = exec_ok = dir_ok = all_ok = 0
     for t in suite:
         text = re.sub(r'\s+', ' ', ''.join(c if c.isprintable() or c == ' ' else ' ' for c in t['utterance'])).strip()
@@ -74,7 +74,7 @@ def eval_ts(model, tok, device):
 
 
 def eval_ke(model, tok, device):
-    ke = json.load(open('data/koelectra_converted_val.json'))
+    ke = json.load(open('data/raw/koelectra_converted_val.json'))
     ok = 0
     for d in ke:
         tk = tok(d['utterance'], padding='max_length', truncation=True, max_length=32, return_tensors='pt').to(device)
@@ -89,8 +89,8 @@ def main():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     print(f"Device: {device}\n")
 
-    train = json.load(open('data/train_final_v71.json'))
-    val   = json.load(open('data/val_final_v33.json'))
+    train = json.load(open('data/train/train_final_v71.json'))
+    val   = json.load(open('data/train/val_final_v33.json'))
     print(f"Train: {len(train)}, Val: {len(val)}")
 
     src_dist = Counter(x.get('source', '?') for x in train)

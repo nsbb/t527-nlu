@@ -202,7 +202,7 @@ def translate(item, fn):
 
 
 def main():
-    with open('data/ha_english_clean.json') as f:
+    with open('data/raw/ha_english_clean.json') as f:
         eng_data = json.load(f)
 
     all_translated = []
@@ -232,7 +232,7 @@ def main():
             seen.add(key)
             deduped.append(d)
 
-    with open('data/ha_translated_kr.json', 'w', encoding='utf-8') as f:
+    with open('data/raw/ha_translated_kr.json', 'w', encoding='utf-8') as f:
         json.dump(deduped, f, ensure_ascii=False, indent=2)
 
     fn_c = Counter(d['labels']['fn'] for d in deduped)

@@ -257,8 +257,8 @@ def summarize(suspects, name):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--train', default='data/train_final_v43.json', help='학습 데이터')
-    parser.add_argument('--test', default='data/test_suite.json', help='테스트 데이터')
+    parser.add_argument('--train', default='data/train/train_final_v43.json', help='학습 데이터')
+    parser.add_argument('--test', default='data/golden/test_suite.json', help='테스트 데이터')
     parser.add_argument('--use-model', action='store_true', help='모델 기반 검증 추가')
     parser.add_argument('--no-train', action='store_true', help='학습 데이터 스킵 (빠름)')
     parser.add_argument('--output', default='data/label_audit_report.json')

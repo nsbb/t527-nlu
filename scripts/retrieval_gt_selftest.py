@@ -19,8 +19,8 @@ def main():
     device = 'cuda' if torch.cuda.is_available() else 'cpu'
     encoder = SentenceEncoder(device)
 
-    gt_known = json.load(open('data/gt_known_scenarios.json'))
-    gt_unknown = json.load(open('data/gt_unknown_scenarios.json'))
+    gt_known = json.load(open('data/golden/gt_known_scenarios.json'))
+    gt_unknown = json.load(open('data/golden/gt_unknown_scenarios.json'))
     gt_all = gt_known + gt_unknown
     print(f"GT total: {len(gt_all)}\n")
 

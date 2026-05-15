@@ -64,7 +64,7 @@ def main():
     print("Ready.\n")
 
     rows = []
-    with open('data/ruel_scenarios_final.csv') as f:
+    with open('data/raw/ruel_scenarios_final.csv') as f:
         for row in csv.DictReader(f):
             rows.append(row)
 
