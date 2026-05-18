@@ -34,6 +34,8 @@
 - [raw/source-notes/src-v72-nb-conversion-20260515.md](raw/source-notes/src-v72-nb-conversion-20260515.md) — v72 cnn_body NB 변환 + 10 시나리오 검증
 - [raw/source-notes/src-v72-nb-eval-20260515.md](raw/source-notes/src-v72-nb-eval-20260515.md) — v72 NB 99/219 정량 측정 (자동매핑 GT 기준 — 폐기)
 - [raw/source-notes/src-npu-real-gt-219-20260515.md](raw/source-notes/src-npu-real-gt-219-20260515.md) — ⭐ **NPU v72 NB 진짜 GT 219 = combo 89.0% / fn 93.6%** (이전 60.7%는 자동매핑 GT였음)
+- [raw/source-notes/src-npu-ts3043-ensemble-attempt-20260518.md](raw/source-notes/src-npu-ts3043-ensemble-attempt-20260518.md) — ⭐ **TS 3043 NPU = 91.6% / fn 98.9%** + Ensemble 시도 실패 + 디바이스 앱 매핑
+- [raw/source-notes/src-pipeline-port-handoff-20260515.md](raw/source-notes/src-pipeline-port-handoff-20260515.md) — 다음 세션 파이프라인 포팅 인수인계 (t527_vad_service 기준)
 
 ## Schema
 

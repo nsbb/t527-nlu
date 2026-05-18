@@ -63,14 +63,29 @@ NPU 실측 (2026-05-07):
 
 ### E. 위치별 현재 사용 (3 곳 gap)
 
-| 위치 | 모델 | 룰 | 르엘 219 (진짜 GT) |
-|---|---|---|---|
-| **서버 production** (`deployment_pipeline_v2.py`) | v28+v72 ensemble | v78 | **fn 96.3% / combo 93.2%** |
-| 디바이스 CPU (`t527_smart_v2` 앱) | v28+v46 ensemble | PostRulesV4 (v133 일부) | (미측정) |
-| 디바이스 NPU v72 | v72 단독 cnn_body int16 | PostRulesV4 | **fn 93.6% / combo 89.0%** (2026-05-15) |
-| 디바이스 NPU v46 | v46 단독 cnn_body int16 | PostRulesV4 | (자동매핑 GT 60.7% — 진짜 GT 미측정) |
+### GT-219 측정 (르엘 진짜 GT)
 
-⚠️ 이전 NPU 측정값 60.7%는 **자동매핑 GT** (삭제된 golden_ruel_219.json, 라벨 38% 오류) 기준. 진짜 GT (gt_known_v2 + gt_unknown 219) 로 v72 NB 재측정 시 **combo 89.0%**.
+| 위치 | 모델 | 룰 | fn | combo |
+|---|---|---|---|---|
+| 서버 ONNX (raw, 룰 미적용) | v28+v72 ensemble | — | 96.3% | **93.2%** |
+| 서버 ONNX + Python rule | v28+v72 ensemble | apply_post_rules | 95.0% | 91.3% |
+| **디바이스 NPU v72** | v72 단독 NB int16 | Kotlin PostRulesV4 | 93.6% | **89.0%** |
+| 디바이스 NPU v28 단독 raw | v28 단독 NB int16 | — | 95.9% | 92.7% |
+| 디바이스 NPU **ensemble** (v72.fn + v28.exec + v72.dir) | v28+v72 NB sequential 합성 | Python rule | 94.5% | **89.0%** ← 회복 실패 |
+
+### TS-3043 측정 (르엘 + 비유 + STT + 오탈자, 2026-05-18 신규)
+
+| 위치 | fn | combo |
+|---|---|---|
+| 서버 ONNX + Python rule | 99.0% | **94.0%** |
+| **T527 NPU v72 NB + Python rule** | 98.9% | **91.6%** (5.3ms/추론) |
+
+→ NPU vs ONNX gap = **combo -2.4%p (일관)**. 양자화 손실 + Kotlin/Python 룰 mismatch.
+
+⚠️ NPU ensemble 시도 (head별 NB 합성, v28+v72) = **실패**:
+- 한 process 내 두 NB sequential init = libVIPlite SEGV (driver 한계)
+- 두 Activity 분리 + 호스트 합성 = combo 89.0% (단독 v72와 동일, 회복 안 됨)
+- 양자화 손실이 두 NB 모두에 있어 합성으로 메꿈 불가
 
 ## Known-good settings
 

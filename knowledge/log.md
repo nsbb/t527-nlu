@@ -1,5 +1,19 @@
 # t527-nlu Knowledge Log
 
+## 2026-05-18 — NPU TS 3043 + Ensemble 시도 ⭐
+
+- **TS 3043 (르엘 + 비유 + STT 변형) NPU 측정**: T527 v72 NB + Python rule = fn 98.9% / **combo 91.6%** (5.3ms/추론, 500/100 분할 batch)
+- 서버 ONNX (같은 셋): fn 99.0% / combo 94.0% → NPU gap -2.4%p (양자화 손실 일관)
+- **Ensemble 시도 (v28+v72 head별 합성) = 실패**:
+  - 한 process 두 NB sequential = libVIPlite SEGV (driver 한계)
+  - 두 Activity 분리 + 호스트 Python 합성 = combo 89.0% (v72 단독과 동일, 회복 안 됨)
+  - v28 raw 92.7% (단독, 룰 없음)이 의외로 가장 높음 — GT-219 unknown 라벨 케이스에서 v28 보수 분류가 우연히 매치
+- **NPU 천장 = 89~91% 근처. ensemble 실익 없음 확정**
+- 인수인계: `src-pipeline-port-handoff-20260515.md` (다음 세션이 t527_vad_service에 NLU 풀 포팅)
+- 새 source-note: `src-npu-ts3043-ensemble-attempt-20260518.md`
+- 디바이스 패키지 매핑 확인 — production active = `com.hdclabs.ondevice.voice` (NLU 없음, STT만 ALSA → 단지서버 REST)
+- 다음 작업: PostRulesV4 풀 포팅 (601 if → Kotlin)으로 NPU 91.6 → ~94% 회복 시도
+
 ## 2026-05-15 (밤) — NPU 진짜 GT 219 측정 ⭐
 
 - **NPU v72 NB + rule, 진짜 GT 219 (gt_known_v2 + gt_unknown)**: fn 93.6% / **combo 89.0%** / 11.72ms
