@@ -138,12 +138,14 @@ Ensemble 전략: `fn=v72, exec=v28, dir=v72, param=v28, judge=v72`. 자세히는
 
 ## Android 통합
 
-| 앱 | applicationId | 역할 |
+| 프로젝트 폴더 | applicationId | 역할 |
 |---|---|---|
-| t527_vad_service | com.t527.vad_service | NLU 풀 통합 (PostRules · DST · HomeState · IntentRouter) |
-| t527_smart_v2 | com.t527.smart_v2 | NLU 측정 / 테스트 Activity |
-| t527_ondevicevoice_service | com.hdclabs.ondevice.voice | 음성 캡처 + STT (ALSA · Conformer NPU) |
-| t527_ondevice_ai_agent | com.t527.wallpad_agent | AI 홈 에이전트 시연대 |
+| `t527_vad_service` | `com.hdclabs.ondevice.voice` | 통합 production (음성 캡처 + STT + NLU 풀 스택). Kotlin nlu 패키지 `com.hdclabs.ondevice.voice.nlu` |
+| `t527_ondevicevoice_service` | `com.hdclabs.ondevice.voice` | 동일 패키지명의 이전 빌드 (음성 캡처 + STT만, NLU 없음, Java) |
+| `t527_smart_v2` | `com.t527.smart_v2` | NLU 측정 · 테스트 전용 Activity |
+| `t527_ondevice_ai_agent` (WSL) | `com.t527.wallpad_agent` | AI 홈 에이전트 시연대 |
+
+> `t527_vad_service`와 `t527_ondevicevoice_service`는 동일 applicationId(`com.hdclabs.ondevice.voice`)로 빌드되므로 디바이스에는 마지막 install된 빌드 하나만 존재한다.
 
 ## 평가 셋
 
