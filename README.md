@@ -4,19 +4,22 @@
 
 ## 성능
 
-진짜 GT 219개 (`data/golden/gt_known_scenarios_v2.json` 204 + `gt_unknown_scenarios.json` 15) 기준.
+기준 평가셋 — **르엘 GT 219개** (`data/golden/gt_known_scenarios_v2.json` 204 + `gt_unknown_scenarios.json` 15).
 
 | 환경 | fn | exec | dir | combo | latency |
 |---|:---:|:---:|:---:|:---:|:---:|
-| 서버 ONNX (v28+v72 ensemble + 후처리 룰) | 95.0% | 98.2% | 95.9% | **91.3%** | 0.32 ms |
-| 디바이스 NPU (v72 cnn_body int16 + PostRulesV4) | 93.6% | 95.9% | 94.5% | **89.0%** | 11.7 ms |
+| 서버 ONNX raw (룰 미적용) | 96.3% | 98.6% | 96.3% | 93.2% | 0.32 ms |
+| 서버 ONNX + Python `apply_post_rules` | 95.0% | 98.2% | 95.9% | **91.3%** | 0.32 ms |
+| 디바이스 NPU (v72 NB int16) + Kotlin PostRulesV4 | 93.6% | 95.9% | 94.5% | **89.0%** | 11.7 ms |
 
-확장 평가셋(르엘 시나리오 + 비유 · STT 오류 · 오탈자 변형, `data/golden/test_suite.json` 3,043개):
+확장 평가셋 — **3,043개** (르엘 시나리오 + 비유 · STT 오류 · 오탈자 변형, `data/golden/test_suite.json`).
 
 | 환경 | fn | combo |
 |---|:---:|:---:|
-| 서버 ONNX | 99.0% | **94.0%** |
-| 디바이스 NPU | 98.9% | **91.6%** |
+| 서버 ONNX + Python `apply_post_rules` | 99.0% | **94.0%** |
+| 디바이스 NPU (v72 NB) + Python `apply_post_rules` | 98.9% | **91.6%** |
+
+> 디바이스 후처리 룰의 Kotlin 포팅이 진행 중이라 GT 219(Kotlin)와 TS 3043(Python) 측정 시 적용된 룰이 다르다.
 
 ## 아키텍처
 
@@ -146,11 +149,11 @@ Ensemble 전략: `fn=v72, exec=v28, dir=v72, param=v28, judge=v72`. 자세히는
 
 | 파일 | 개수 | 용도 |
 |---|:---:|---|
-| `data/golden/gt_known_scenarios_v2.json` | 204 | 르엘 진짜 GT (known intent) |
-| `data/golden/gt_unknown_scenarios.json` | 15 | 르엘 진짜 GT (unknown class) |
+| `data/golden/gt_known_scenarios_v2.json` | 204 | 르엘 GT (known intent) |
+| `data/golden/gt_unknown_scenarios.json` | 15 | 르엘 GT (unknown class) |
 | `data/golden/test_suite.json` | 3,043 | 219 시나리오 + 비유 · STT · 오탈자 변형 |
+| `data/golden/test_ruel.csv` | 431 | 회사 원본 flat intent csv (응답 평가 참조용) |
 | `data/golden/gt_seeds_integrated.json` | — | 학습 데이터 시드 |
-| `data/golden/test_ruel.csv` | 219 | 회사 원본 시나리오 (응답 평가용) |
 
 ## 회귀 체크
 
