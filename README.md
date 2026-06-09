@@ -149,11 +149,13 @@ Ensemble 전략: `fn=v72, exec=v28, dir=v72, param=v28, judge=v72`. 자세히는
 
 | 파일 | 개수 | 용도 |
 |---|:---:|---|
-| `data/golden/gt_known_scenarios_v2.json` | 204 | 르엘 GT (known intent) |
-| `data/golden/gt_unknown_scenarios.json` | 15 | 르엘 GT (unknown class) |
-| `data/golden/test_suite.json` | 3,043 | 219 시나리오 + 비유 · STT · 오탈자 변형 |
-| `data/golden/test_ruel.csv` | 431 | 회사 원본 flat intent csv (응답 평가 참조용) |
+| `data/raw/ruel_scenarios_final.csv` | 219 | 회사 원본 르엘 시나리오 (사용자 발화 + intent + 기대 응답) |
+| `data/golden/gt_known_scenarios_v2.json` | 204 | 위 원본에 사람 검증 multi-head 라벨링 (known intent) |
+| `data/golden/gt_unknown_scenarios.json` | 15 | 위 원본에 사람 검증 multi-head 라벨링 (unknown class) |
+| `data/golden/test_suite.json` | 3,043 | 219 시나리오 + 비유 · STT · 오탈자 변형 (회귀 체크용) |
 | `data/golden/gt_seeds_integrated.json` | — | 학습 데이터 시드 |
+
+성능 측정은 **회사 원본 219개에 사람이 multi-head 라벨링한 `gt_known_scenarios_v2.json` + `gt_unknown_scenarios.json` 219개**를 단일 기준으로 사용한다.
 
 ## 회귀 체크
 
